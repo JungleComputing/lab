@@ -1,0 +1,12 @@
+<project name="CycleSoup" default="build" basedir=".">
+
+    <description>CycleSoup build script. </description>
+
+    <property environment="env" />
+    <property name="satin-main-class"  value="CycleSoup" />
+    <property name="ibis"   value="${env.IBIS_HOME}" />
+    <property name="build"  location="build"/>
+
+    <import file="${ibis}/build-files/apps/build-satin-app.xml"/>
+</project>
+

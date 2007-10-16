@@ -1,0 +1,13 @@
+#!/bin/sh
+JOB=$1
+CMD="povray +W720 +H540 +FN16 +Q9 -V -GW -GS -GR -D +A0.05 +R5 +AM2 +J0 +I$1.pov +O$1.png"
+SANDBOX=/tmp/cyclesoup-$$
+INCFILES="actors.inc globalsettings.inc ContainerKamer.inc kamer.inc"
+mkdir $SANDBOX
+cd $SANDBOX
+scp lily:'kunst/gliders/*.inc' .
+scp lily:kunst/gliders/frames/$1.pov .
+$CMD > $1-out.txt 2> $1-err.txt
+scp $1.png lily:kunst/gliders/cells/$1.png
+scp $1-out.txt $1-err.txt lily:kunst/gliders/log/
+rm -rf $SANDBOX
