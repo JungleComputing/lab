@@ -12,10 +12,10 @@ public class SatinSimulator extends Model
 {
     static final boolean showInReport = true;
     static final boolean showInTrace = true;
-    static final int NUMBER_PROCESSORS = 4;
+    static final int NUMBER_PROCESSORS = 16;
     private IntDistUniform stealVictim;
     private SatinProcessor processors[] = new SatinProcessor[NUMBER_PROCESSORS];
-    private static final int START_LEVEL = 8;
+    private static final int START_LEVEL = 11;
 
     // define model components here
 

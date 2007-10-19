@@ -6,7 +6,7 @@ import desmoj.core.simulator.SimTime;
 /** A job. */
 public class SatinJob extends SimProcess
 {
-    private final SatinProcessor processor;
+    private SatinProcessor processor;
     private final Model model;
     private static final double PROCESS_DURATION = 4.2;
     private final int depth;
@@ -37,12 +37,20 @@ public class SatinJob extends SimProcess
     {
         hold( new SimTime( PROCESS_DURATION ) );
         if( depth>0 ){
-            SatinJob joba = new SatinJob( model, getName() + "a", TRACE_JOBS, processor, depth-1 );
-            SatinJob jobb = new SatinJob( model, getName() + "b", TRACE_JOBS, processor, depth-1 );
+            SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1 );
+            SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1 );
             processor.queueJob( joba );
             processor.queueJob( jobb );
         }
         processor.activateAfter( this );
+    }
+
+    /** Assign this job to the given processor.
+     * @param p The new owner of this job.
+     */
+    public void setProcessor( SatinProcessor p )
+    {
+        processor = p;
     }
 
 }
