@@ -4,31 +4,44 @@ import desmoj.core.simulator.SimTime;
 
 
 /** A job. */
-public class SatinJob extends SimProcess {
-	private final SatinProcess processor;
-	private final Model model;
-	private static final double PROCESS_DURATION = 4.2;
-	private final int depth;
-	private static final boolean TRACE_JOBS = true;
+public class SatinJob extends SimProcess
+{
+    private final SatinProcessor processor;
+    private final Model model;
+    private static final double PROCESS_DURATION = 4.2;
+    private final int depth;
+    private static final boolean TRACE_JOBS = true;
 
-	public SatinJob( Model model, String name, boolean trace, SatinProcess processor, int depth )
-	{
-		super( model, name, trace );
-		this.processor = processor;
-		this.model = model;
-		this.depth = depth;
-	}
+    /**
+     * Constructs a new SatinJob.
+     * @param model The model this job belongs to.
+     * @param name The name of the job
+     * @param trace Trace execution of this job?
+     * @param processor The processor the job belongs to.
+     * @param depth The recursion depth of the satin jobs.
+     */
+    public SatinJob( Model model, String name, boolean trace, SatinProcessor processor, int depth )
+    {
+        super( model, name, trace );
+        this.processor = processor;
+        this.model = model;
+        this.depth = depth;
+    }
 
-	@Override
-	public void lifeCycle()
-	{
-		activate( new SimTime( PROCESS_DURATION ) );
-		if( depth>0 ){
-			SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1 );
-			SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1 );
-			processor.queueJob( joba );
-			processor.queueJob( jobb );
-		}
-	}
+    /**
+     * The execution cycle of a Satin job. (Overrides method in superclass.)
+     *
+     */
+    @Override
+    public void lifeCycle()
+    {
+        activate( new SimTime( PROCESS_DURATION ) );
+        if( depth>0 ){
+            SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1 );
+            SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1 );
+            processor.queueJob( joba );
+            processor.queueJob( jobb );
+        }
+    }
 
 }

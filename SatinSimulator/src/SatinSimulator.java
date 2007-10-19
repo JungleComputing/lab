@@ -1,4 +1,5 @@
 
+import desmoj.core.dist.IntDistUniform;
 import desmoj.core.simulator.Experiment;
 import desmoj.core.simulator.Model;
 import desmoj.core.simulator.SimTime;
@@ -9,30 +10,47 @@ import desmoj.core.simulator.SimTime;
  */
 public class SatinSimulator extends Model
 {
+    static final boolean showInReport = true;
+    static final boolean showInTrace = true;
+    static final int NUMBER_PROCESSORS = 4;
+    private IntDistUniform stealVictim;
+    private SatinProcessor processors[] = new SatinProcessor[NUMBER_PROCESSORS];
+    private static final int START_LEVEL = 8;
 
     // define model components here
 
     /** constructs a model... */
     public SatinSimulator()
     {
-	super( null, "SatinSimulator", true, true );
+        super( null, "SatinSimulator", showInReport, showInTrace );
     }
 
     /** initialise static components */
+    @Override
     public void init()
     {
-	// TODO:
+        stealVictim = new IntDistUniform( this, "StealVictimStream", 0, NUMBER_PROCESSORS, true, false );
     }
 
     /** activate dynamic components */
+    @Override
     public void doInitialSchedules()
     {
-	// TODO:
+        for( int i=0; i<NUMBER_PROCESSORS; i++ ) {
+            SatinProcessor p = new SatinProcessor( this, processors, i );
+            processors[i] = p;
+        }
+        SatinJob rootjob = new SatinJob( this, "rootjob", true, processors[0], START_LEVEL );
+        processors[0].queueJob( rootjob );
+        for( int i=0; i<NUMBER_PROCESSORS; i++ ) {
+            processors[i].activate( new SimTime( 0.0 ) );
+        }
     }
 
     /** returns a description of this model to be used in the report.
      * @return The description.
      */
+    @Override
     public String description()
     {
 	return "The Satin workstealing environment";
