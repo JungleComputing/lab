@@ -8,6 +8,7 @@ import desmoj.core.simulator.SimTime;
  */
 public class SatinProcessor extends SimProcess
 {
+    private SatinSimulator model;
     private SatinProcessor workers[];
     private ProcessQueue workQueue;
     private final int procno;
@@ -19,7 +20,8 @@ public class SatinProcessor extends SimProcess
      */
     public SatinProcessor( SatinSimulator model, SatinProcessor workers[], int procno )
     {
-        super( model, "SatinProcess", true );
+        super( model, "P"+procno, true );
+        this.model = model;
         this.workers = workers;
         this.procno = procno;
         workQueue = new ProcessQueue( model, "P" + procno + " Process queue", true, true );
@@ -35,12 +37,34 @@ public class SatinProcessor extends SimProcess
                 workQueue.remove( job );
                 System.out.println( "P" + procno+ ": Executing job " + job );
                 job.activateAfter( this );
+                passivate();
             }
             else {
-                System.out.println( "P" + procno + ": Idle. TODO: try to steal work" );
-                hold( new SimTime( 1.0 ) );
+                int victim = model.getStealVictim( procno );
+
+                workers[victim].requestWork( procno );
+                passivate();
             }
         }
+    }
+
+    /** Request a job from this processor.
+     * @param requester The processor to request work from.
+     */
+    private void requestWork( int requester )
+    {
+        SatinProcessor p = workers[requester];
+
+        if( workQueue.length()>1 ) {
+            SatinJob job = (SatinJob) workQueue.first();
+            if( job != null ) {
+                p.queueJob( job );
+                // FIXME: model transmission time.
+                workQueue.remove( job );
+                System.out.println( "P" + procno + ": P" + requester + " just stole job " + job );
+            }
+        }
+        p.activate( new SimTime( 0.1 ) );
     }
 
     /** Put the given job on the work queue.

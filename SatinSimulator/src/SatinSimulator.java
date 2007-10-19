@@ -29,7 +29,7 @@ public class SatinSimulator extends Model
     @Override
     public void init()
     {
-        stealVictim = new IntDistUniform( this, "StealVictimStream", 0, NUMBER_PROCESSORS, true, false );
+        stealVictim = new IntDistUniform( this, "StealVictimStream", 0, NUMBER_PROCESSORS-2, true, false );
     }
 
     /** activate dynamic components */
@@ -67,7 +67,7 @@ public class SatinSimulator extends Model
 
 	// create model and experiment
 	SatinSimulator model = new SatinSimulator();
-	Experiment exp = new Experiment( "<MyModelExperimentName>" );
+	Experiment exp = new Experiment( "Experiment" );
 	// and connect them
 	model.connectToExperiment( exp );
 
@@ -83,5 +83,19 @@ public class SatinSimulator extends Model
 	// generate report and shut everything off
 	exp.report();
 	exp.finish();
+    }
+
+    /** Given our own processor number, return the victim to
+     * steal work from.
+     * @param procno Our own processor number.
+     * @return The processor to steal from.
+     */
+    public int getStealVictim( int procno )
+    {
+        int res = (int) stealVictim.sample();
+        if( res>=procno ) {
+            res++;
+        }
+        return res;
     }
 }
