@@ -1,5 +1,6 @@
 
 import desmoj.core.dist.IntDistUniform;
+import desmoj.core.dist.RealDistUniform;
 import desmoj.core.simulator.Experiment;
 import desmoj.core.simulator.Model;
 import desmoj.core.simulator.SimTime;
@@ -14,6 +15,8 @@ public class SatinSimulator extends Model
     static final boolean showInTrace = true;
     static final int NUMBER_PROCESSORS = 16;
     private IntDistUniform stealVictim;
+    private RealDistUniform preSpawnExecutionTime;
+    private RealDistUniform postSpawnExecutionTime;
     private SatinProcessor processors[] = new SatinProcessor[NUMBER_PROCESSORS];
     private static final int START_LEVEL = 11;
 
@@ -30,6 +33,8 @@ public class SatinSimulator extends Model
     public void init()
     {
         stealVictim = new IntDistUniform( this, "StealVictimStream", 0, NUMBER_PROCESSORS-2, true, false );
+        preSpawnExecutionTime = new RealDistUniform( this, "PreSpawnExecutionTimeStream", 0.1, 0.1, true, false );
+        postSpawnExecutionTime = new RealDistUniform( this, "PostSpawnExecutionTimeStream", 10, 15, true, false );
     }
 
     /** activate dynamic components */
@@ -73,7 +78,7 @@ public class SatinSimulator extends Model
 
 	// set experiment parameters
 	exp.setShowProgressBar( true );
-	SimTime stopTime = new SimTime( 1440.0 );
+	SimTime stopTime = new SimTime( 6000.0 );
 	exp.tracePeriod( new SimTime(0.0), stopTime );
 	exp.stop( stopTime );
 
@@ -97,5 +102,21 @@ public class SatinSimulator extends Model
             res++;
         }
         return res;
+    }
+
+    /** Return the execution time of a process.
+     * @return The execution time.
+     */
+    public double getPreSpawnExecutionTime()
+    {
+        return preSpawnExecutionTime.sample();
+    }
+
+    /** Return the execution time of a process.
+     * @return The execution time.
+     */
+    public double getPostSpawnExecutionTime()
+    {
+        return postSpawnExecutionTime.sample();
     }
 }

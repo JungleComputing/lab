@@ -24,7 +24,7 @@ public class SatinProcessor extends SimProcess
         this.model = model;
         this.workers = workers;
         this.procno = procno;
-        workQueue = new ProcessQueue( model, "P" + procno + " job queue", true, true );
+        workQueue = new ProcessQueue( model, getName() + " job queue", true, true );
     }
 
     /** describes this process's life cycle */
@@ -35,7 +35,7 @@ public class SatinProcessor extends SimProcess
             SatinJob job = (SatinJob) workQueue.last();
             if( job != null ){
                 workQueue.remove( job );
-                System.out.println( "P" + procno+ ": Executing job " + job );
+                System.out.println( getName() + ": Executing job " + job );
                 job.activateAfter( this );
                 passivate();
             }
@@ -58,10 +58,9 @@ public class SatinProcessor extends SimProcess
         SatinJob job = (SatinJob) workQueue.first();
         if( job != null ) {
             workQueue.remove( job );
-            // FIXME: model transmission time.
             job.setProcessor( p );
             p.queueJob( job );
-            System.out.println( "P" + procno + ": P" + requester + " just stole job " + job );
+            System.out.println( getName() + ": P" + requester + " just stole job " + job );
             p.activate( new SimTime( 0.0 ) );
         }
         else {
