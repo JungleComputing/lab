@@ -12,6 +12,7 @@ public class SatinProcessor extends SimProcess
     private SatinProcessor workers[];
     private ProcessQueue workQueue;
     private final int procno;
+    private double idleTime = 0.0;
 
     /** constructs a process... 
      * @param model The model the process belongs to.
@@ -64,8 +65,16 @@ public class SatinProcessor extends SimProcess
             p.activate( new SimTime( 0.0 ) );
         }
         else {
-            p.activate( new SimTime( 0.1 ) );
+            double sleepTime = 0.1;
+
+            idleTime += sleepTime;
+			p.activate( new SimTime( sleepTime ) );
         }
+    }
+
+    public double getIdleTime()
+    {
+    	return idleTime;
     }
 
     /** Put the given job on the work queue.

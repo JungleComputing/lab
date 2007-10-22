@@ -45,7 +45,7 @@ public class SatinSimulator extends Model
             SatinProcessor p = new SatinProcessor( this, processors, i );
             processors[i] = p;
         }
-        SatinJob rootjob = new SatinJob( this, "rootjob", true, processors[0], START_LEVEL );
+        SatinJob rootjob = new SatinJob( this, "rootjob", true, processors[0], START_LEVEL, null );
         processors[0].queueJob( rootjob );
         for( int i=0; i<NUMBER_PROCESSORS; i++ ) {
             processors[i].activate( new SimTime( 0.0 ) );
@@ -58,7 +58,7 @@ public class SatinSimulator extends Model
     @Override
     public String description()
     {
-	return "The Satin workstealing environment";
+    	return "The Satin workstealing environment";
     }
 
     // define any additional methods if necessary,
