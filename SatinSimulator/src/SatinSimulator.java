@@ -19,6 +19,9 @@ public class SatinSimulator extends Model
     private RealDistUniform postSpawnExecutionTime;
     private SatinProcessor processors[] = new SatinProcessor[NUMBER_PROCESSORS];
     private static final int START_LEVEL = 11;
+    private static final double MAX_EXEC_TIME = 0.1+15;
+    private static final double SIMULATION_TIME = (1.5*MAX_EXEC_TIME * (1<<START_LEVEL))/Math.sqrt( NUMBER_PROCESSORS );
+    private boolean finished = false;
 
     // define model components here
 
@@ -45,7 +48,7 @@ public class SatinSimulator extends Model
             SatinProcessor p = new SatinProcessor( this, processors, i );
             processors[i] = p;
         }
-        SatinJob rootjob = new SatinJob( this, "rootjob", true, processors[0], START_LEVEL, null );
+        SatinJob rootjob = new SatinJob( this, "rootjob", true, processors[0], START_LEVEL, null, 0 );
         processors[0].queueJob( rootjob );
         for( int i=0; i<NUMBER_PROCESSORS; i++ ) {
             processors[i].activate( new SimTime( 0.0 ) );
@@ -69,7 +72,6 @@ public class SatinSimulator extends Model
      */
     public static void main( String[] args )
     {
-
 	// create model and experiment
 	SatinSimulator model = new SatinSimulator();
 	Experiment exp = new Experiment( "Experiment" );
@@ -78,7 +80,7 @@ public class SatinSimulator extends Model
 
 	// set experiment parameters
 	exp.setShowProgressBar( true );
-	SimTime stopTime = new SimTime( 6000.0 );
+	SimTime stopTime = new SimTime( SIMULATION_TIME );
 	exp.tracePeriod( new SimTime(0.0), stopTime );
 	exp.stop( stopTime );
 
@@ -97,6 +99,9 @@ public class SatinSimulator extends Model
      */
     public int getStealVictim( int procno )
     {
+	if( finished ) {
+	    return -1;
+	}
         int res = (int) stealVictim.sample();
         if( res>=procno ) {
             res++;
@@ -118,5 +123,11 @@ public class SatinSimulator extends Model
     public double getPostSpawnExecutionTime()
     {
         return postSpawnExecutionTime.sample();
+    }
+
+    /** Signal that the root process has finished. */
+    public void rootHasFinished()
+    {
+	finished = true;
     }
 }

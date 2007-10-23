@@ -11,8 +11,8 @@ public class SatinProcessor extends SimProcess
     private SatinSimulator model;
     private SatinProcessor workers[];
     private ProcessQueue workQueue;
+    private ProcessQueue stealMode;
     private final int procno;
-    private double idleTime = 0.0;
 
     /** constructs a process... 
      * @param model The model the process belongs to.
@@ -25,7 +25,8 @@ public class SatinProcessor extends SimProcess
         this.model = model;
         this.workers = workers;
         this.procno = procno;
-        workQueue = new ProcessQueue( model, getName() + " job queue", true, true );
+        workQueue = new ProcessQueue( model, "job queue P" + procno, true, true );
+        stealMode = new ProcessQueue( model, "steal mode P" + procno, true, true );
     }
 
     /** describes this process's life cycle */
@@ -36,13 +37,15 @@ public class SatinProcessor extends SimProcess
             SatinJob job = (SatinJob) workQueue.last();
             if( job != null ){
                 workQueue.remove( job );
-                System.out.println( getName() + ": Executing job " + job );
+                sendTraceNote( "Executing job " + job );
                 job.activateAfter( this );
                 passivate();
             }
             else {
                 int victim = model.getStealVictim( procno );
-
+                if( victim<0 ) {
+                    break;
+                }
                 workers[victim].requestWork( procno );
                 passivate();
             }
@@ -61,20 +64,16 @@ public class SatinProcessor extends SimProcess
             workQueue.remove( job );
             job.setProcessor( p );
             p.queueJob( job );
-            System.out.println( getName() + ": P" + requester + " just stole job " + job );
+            sendTraceNote(  "P" + requester + " just stole job " + job );
             p.activate( new SimTime( 0.0 ) );
         }
         else {
             double sleepTime = 0.1;
 
-            idleTime += sleepTime;
-			p.activate( new SimTime( sleepTime ) );
+            stealMode.insert( this );
+            p.activate( new SimTime( sleepTime ) );
+            stealMode.remove( this );
         }
-    }
-
-    public double getIdleTime()
-    {
-    	return idleTime;
     }
 
     /** Put the given job on the work queue.
@@ -84,4 +83,5 @@ public class SatinProcessor extends SimProcess
     {
         workQueue.insert( job );
     }
+
 }

@@ -8,8 +8,9 @@ public class SatinJob extends SimProcess
     private final SatinSimulator model;
     private final int depth;
     private static final boolean TRACE_JOBS = true;
-    private SatinJob parent;
-    private int children;
+    private final SatinJob parent;
+    private final int childNo;
+    private boolean[] childrenReady;
 
     /**
      * Constructs a new SatinJob.
@@ -19,45 +20,55 @@ public class SatinJob extends SimProcess
      * @param processor The processor the job belongs to.
      * @param depth The recursion depth of the satin jobs.
      * @param parent Who is the parent of this job?
+     * @param childNo What is the child number of this job?
      */
-    public SatinJob( SatinSimulator model, String name, boolean trace, SatinProcessor processor, int depth, SatinJob parent )
+    public SatinJob( SatinSimulator model, String name, boolean trace, SatinProcessor processor, int depth, SatinJob parent, int childNo )
     {
 	super( model, name, trace );
 	this.processor = processor;
 	this.model = model;
 	this.depth = depth;
 	this.parent = parent;
+	this.childNo = childNo;
     }
 
+    private boolean childrenAreReady()
+    {
+	if( childrenReady == null ) {
+	    return true;
+	}
+	for( boolean ready: childrenReady ) {
+	    if( !ready ) {
+		return false;
+	    }
+	}
+	return true;
+    }
     /**
      * The execution cycle of a Satin job. (Overrides method in superclass.)
-     *
      */
     @Override
     public void lifeCycle()
     {
 	hold( new SimTime( model.getPreSpawnExecutionTime() ) );
 	if( depth>0 ){
-	    SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1, this );
+	    SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1, this, 0 );
 	    processor.queueJob( joba );
-	    SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1, this );
+	    SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1, this, 1 );
 	    processor.queueJob( jobb );
-	    children = 2;
+	    childrenReady = new boolean[2];
 	}
 	hold( new SimTime( model.getPostSpawnExecutionTime() ) );
 	processor.activateAfter( this );
-	if( children>0 ) {
-	    processor.enterWaitingList( this );
+	while( !childrenAreReady() ) {
 	    passivate();
-	    processor.leaveWaitingList( this );
 	}
 	if( parent == null ){
 	    sendTraceNote( "Root job has finished" );
 	    model.rootHasFinished();
 	}
 	else {
-	    ComputationEndEvent e = new ComputationEndEvent( model, "endEvent", true );
-	    e.scheduleAfter( parent, processor );
+	    parent.registerChildCompleted( childNo );
 	}
     }
 
@@ -69,12 +80,14 @@ public class SatinJob extends SimProcess
 	processor = p;
     }
 
-    /** Register the fact that one of the children has finished. */
-    public void decrementActiveChildren()
+    /** Tell the job that the child with the given number is ready.
+     * 
+     * @param no The child that is ready.
+     */
+    public void registerChildCompleted( int no )
     {
-	children--;
-	if( processor.isInWaitingList( this ) && children<=0 ){
-	    this.activate( new SimTime( 0.0 ) );
-	}
+	childrenReady[no] = true;
+	activate( new SimTime( 0.0 ) );
     }
+
 }
