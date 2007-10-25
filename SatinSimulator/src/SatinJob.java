@@ -58,12 +58,14 @@ public class SatinJob extends SimProcess
 			processor.queueJob( jobb );
 			childrenReady = new boolean[2];
 		}
-		double postSpawnExecutionTime = model.getPostSpawnExecutionTime( processor.getSlowdown() );
-		hold( new SimTime( postSpawnExecutionTime ) );
+		double preSyncExecutionTime = model.getPreSyncExecutionTime( processor.getSlowdown() );
+		hold( new SimTime( preSyncExecutionTime ) );
 		processor.activateAfter( this );
 		while( !childrenAreReady() ) {
 			passivate();
 		}
+		double postSyncExecutionTime = model.getPostSyncExecutionTime( processor.getSlowdown() );
+		hold( new SimTime( postSyncExecutionTime ) );
 		if( parent == null ){
 			sendTraceNote( "Root job has finished" );
 			model.rootHasFinished();

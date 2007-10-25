@@ -51,30 +51,28 @@ public class SatinProcessor extends SimProcess
 					break;
 				}
 				stealWork( processors[victim] );
-				passivate();
 			}
 		}
 	}
 
 	private void stealWork( SatinProcessor victim )
 	{
-		System.out.println( "P" + procno + ": try to steal a job from P" + victim.procno );
 		SatinJob job = (SatinJob) victim.workQueue.first();
 		if( job == null ) {
 			double sleepTime = 0.1;
 
 			idleTime += sleepTime;
 			activate( new SimTime( sleepTime ) );
+			passivate();
 		}
 		else {
 			victim.workQueue.remove( job );
 			job.setProcessor( this );
-			queueJob( job );
-			System.out.println(  "P" + procno + ": steals a job " + job + " from P" + victim.procno );
 			sendTraceNote(  "steals a job " + job + " from P" + victim.procno );
-			double stealTime = model.getStealTime();
-			activate( new SimTime( 0.0 ) );
-			//activate( new SimTime( stealTime ) );
+			double stealTime = model.getStealTime( this, victim );
+			activate( new SimTime( stealTime ) );
+			passivate();
+			queueJob( job );
 		}
 	}
 
