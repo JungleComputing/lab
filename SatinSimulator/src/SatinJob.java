@@ -50,7 +50,7 @@ public class SatinJob extends SimProcess
     @Override
     public void lifeCycle()
     {
-	hold( new SimTime( model.getPreSpawnExecutionTime() ) );
+	hold( new SimTime( model.getPreSpawnExecutionTime( processor.getSlowdown() ) ) );
 	if( depth>0 ){
 	    SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1, this, 0 );
 	    processor.queueJob( joba );
@@ -58,7 +58,8 @@ public class SatinJob extends SimProcess
 	    processor.queueJob( jobb );
 	    childrenReady = new boolean[2];
 	}
-	hold( new SimTime( model.getPostSpawnExecutionTime() ) );
+	double postSpawnExecutionTime = model.getPostSpawnExecutionTime( processor.getSlowdown() );
+	hold( new SimTime( postSpawnExecutionTime ) );
 	processor.activateAfter( this );
 	while( !childrenAreReady() ) {
 	    passivate();

@@ -9,24 +9,27 @@ import desmoj.core.simulator.SimTime;
 public class SatinProcessor extends SimProcess
 {
     private SatinSimulator model;
-    private SatinProcessor workers[];
+    private SatinProcessor processors[];
     private ProcessQueue workQueue;
-    private ProcessQueue stealMode;
+    private final double slowdown;
+    private double idleTime;
     private final int procno;
 
     /** constructs a process... 
      * @param model The model the process belongs to.
-     * @param workers The processors that participate in the computation.
+     * @param processors The processors that participate in the computation.
      * @param procno The processor number.
+     * @param slowdown The computation time multiplier of this processor.
      */
-    public SatinProcessor( SatinSimulator model, SatinProcessor workers[], int procno )
+    public SatinProcessor( SatinSimulator model, SatinProcessor processors[], int procno, double slowdown )
     {
         super( model, "P"+procno, true );
         this.model = model;
-        this.workers = workers;
+        this.processors = processors;
         this.procno = procno;
+        this.slowdown = slowdown;
         workQueue = new ProcessQueue( model, "job queue P" + procno, true, true );
-        stealMode = new ProcessQueue( model, "steal mode P" + procno, true, true );
+        idleTime = 0.0;
     }
 
     /** describes this process's life cycle */
@@ -46,34 +49,28 @@ public class SatinProcessor extends SimProcess
                 if( victim<0 ) {
                     break;
                 }
-                workers[victim].requestWork( procno );
+                stealWork( processors[victim] );
                 passivate();
             }
         }
     }
 
-    /** Request a job from this processor.
-     * @param requester The processor to request work from.
-     */
-    private void requestWork( int requester )
+    private void stealWork( SatinProcessor victim )
     {
-        SatinProcessor p = workers[requester];
-
-        SatinJob job = (SatinJob) workQueue.first();
-        if( job != null ) {
-            workQueue.remove( job );
-            job.setProcessor( p );
-            p.queueJob( job );
-            sendTraceNote(  "P" + requester + " just stole job " + job );
-            p.activate( new SimTime( 0.0 ) );
-        }
-        else {
-            double sleepTime = 0.1;
-
-            stealMode.insert( this );
-            p.activate( new SimTime( sleepTime ) );
-            stealMode.remove( this );
-        }
+	SatinJob job = (SatinJob) victim.workQueue.first();
+	if( job == null ) {
+	    double sleepTime = 0.1;
+	    
+	    idleTime += sleepTime;
+	    activate( new SimTime( sleepTime ) );
+	}
+	else {
+	    job.setProcessor( this );
+	    queueJob( job );
+            sendTraceNote(  "steals a job " + job + " from P" + victim.procno );
+            double stealTime = model.getStealTime();
+            activate( new SimTime( 0.0 ) );
+	}
     }
 
     /** Put the given job on the work queue.
@@ -84,4 +81,24 @@ public class SatinProcessor extends SimProcess
         workQueue.insert( job );
     }
 
+    /**
+     * Returns the idle time of this processor.
+     * @return The idle time.
+     */
+    public double getIdleTime()
+    {
+	return idleTime;
+    }
+
+    /** Returns the slowdown of this processor. The slowdown is
+     * the multiplication factor for execution times on this processor.
+     * Slow processors, compared to the reference, have a factor
+     * above 1, fast processors have a slowdown below 1.
+     * 
+     * @return The slowdown of this processor.
+     */
+    public double getSlowdown()
+    {
+	return slowdown;
+    }
 }
