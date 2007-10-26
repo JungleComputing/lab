@@ -3,5 +3,29 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="jars/desmoj_2.1.1.jar"/>
+	<classpathentry kind="lib" path="jars/bcel-5.1-fixed.jar"/>
+	<classpathentry kind="lib" path="jars/commons-jxpath-1.1.jar"/>
+	<classpathentry kind="lib" path="jars/commons-logging.jar"/>
+	<classpathentry kind="lib" path="jars/commons-logging-api.jar"/>
+	<classpathentry kind="lib" path="jars/ganymed-ssh2-build211beta4-jason.jar"/>
+	<classpathentry kind="lib" path="jars/ibis-frontend-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ibis-io-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ibis-poolinfo-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ibis-server-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ibis-util-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/impl-dummy-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/impl-nio-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/impl-tcp-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ipl-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/ipl-impl-2.0rc1.jar"/>
+	<classpathentry kind="lib" path="jars/jstun-0.6.1.jar"/>
+	<classpathentry kind="lib" path="jars/junit-3.8.2.jar"/>
+	<classpathentry kind="lib" path="jars/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="jars/lrmc.jar"/>
+	<classpathentry kind="lib" path="jars/satin-api.jar"/>
+	<classpathentry kind="lib" path="jars/satin-impl.jar"/>
+	<classpathentry kind="lib" path="jars/sbbi-upnplib-1.0.2.jar"/>
+	<classpathentry kind="lib" path="jars/smartsockets-1.0rc60.jar"/>
+	<classpathentry kind="lib" path="jars/TGGraphLayout-JM.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
