@@ -1,10 +1,10 @@
 <project
-    name="ibis.apps.satin.mtdf-othello.so"
+    name="ibis.lab.Reference"
     default="jar"
     basedir=".">
 
     <property name="satinc-flags" value="-keep"/>
-    <property name="satin-classes" value="Othello,TranspositionTable"/>
+    <property name="satin-classes" value="Reference"/>
 
     <property name="test-par-java-args" value="-Dsatin.closed -Xmx256M"/>
     <property name="test-par-run"
