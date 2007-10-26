@@ -12,16 +12,31 @@ public class Reference  extends ibis.satin.SatinObject implements ReferenceSatin
 {
     /** Contractual obligation. */
     private static final long serialVersionUID = 7331296260507993758L;
+    private static final int preSpawnDelay = 10;
+    private static final int preSyncDelay = 10;
+    private static final int postSyncDelay = 20;
 
     /**
      * The spawned method.
      * @param level The recursion level.
      */
     public void spawn( int level ) {
-        if( level>0 ) {
-            spawn( level-1 );
-            spawn( level-1 );
-            sync();
+        try{
+            Thread.sleep( preSpawnDelay );
+            if( level>0 ) {
+                spawn( level-1 );
+                spawn( level-1 );
+                Thread.sleep( preSyncDelay );
+                sync();
+            }
+            else {
+                Thread.sleep( preSyncDelay );
+            }
+            Thread.sleep( postSyncDelay );
+        }
+        catch( InterruptedException e ){
+            System.err.println( "Who interrupted my sleep??: " );
+            e.printStackTrace();
         }
     }
 
