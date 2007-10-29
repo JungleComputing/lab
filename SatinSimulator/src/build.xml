@@ -1,7 +1,7 @@
 <project
     name="ibis.lab.Reference"
     default="jar"
-    basedir=".">
+    basedir="ibis/lab/Reference">
 
     <property name="satinc-flags" value="-keep"/>
     <property name="satin-classes" value="Reference"/>
@@ -13,6 +13,7 @@
     <property name="test-seq-run"
 	      value="Othello 2"/>
 
-    <import file="../build-satin-app.xml"/>
+    <property environment="env"/>
+    <import file="${env.IBIS_HOME}/build-scripts/build-satin-app.xml"/>
 
 </project>
