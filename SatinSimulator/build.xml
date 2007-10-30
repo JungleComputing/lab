@@ -1,7 +1,7 @@
 <project
     name="ibis.lab.Reference"
     default="jar"
-    basedir="ibis/lab/Reference">
+    basedir="src/ibis/lab/Reference">
 
     <property name="satinc-flags" value="-keep"/>
     <property name="satin-classes" value="Reference"/>
