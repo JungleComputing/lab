@@ -1,19 +1,61 @@
-<project
-    name="ibis.lab.Reference"
-    default="jar"
-    basedir="src/ibis/lab/Reference">
+<project name="Reference" default="build" basedir=".">
+	<description>
+      Build file for gene sequencing application
+    </description>
 
-    <property name="satinc-flags" value="-keep"/>
-    <property name="satin-classes" value="Reference"/>
+	<!-- Global properties -->
+	<property environment="env"/>
+	<property name="env.SATIN_HOME" location=".." /> 
+        <property name="satin_lib" location="${env.SATIN_HOME}/lib" />
 
-    <property name="test-par-java-args" value="-Dsatin.closed -Xmx256M"/>
-    <property name="test-par-run"
-	      value="Othello 2"/>
-    <property name="test-seq-java-args" value="-Dsatin.closed -Xmx256M"/>
-    <property name="test-seq-run"
-	      value="Othello 2"/>
+	<property name="src" location="src" />
+	<property name="tmp" location="tmp" />
+	<property name="lib" location="lib" />
+	<property name="desmoj_jar" location="jars/desmoj_2.1.1.jar" />
 
-    <property environment="env"/>
-    <import file="${env.IBIS_HOME}/build-scripts/build-satin-app.xml"/>
+	<property name="java.debug.value" value="true" />
 
+	<path id="external_jars">
+		<fileset dir="${satin_lib}">
+			<include name="*.jar" />
+		</fileset>
+                <pathelement location="${desmoj_jar}" />
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${lib}" />
+		<mkdir dir="${tmp}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+
+		<!-- Compile the java code from ${src} into ${tmp} -->
+		<javac srcdir="${src}" destdir="${tmp}" debug="on" includes="ibis/lab/Reference/**">
+			<classpath refid="external_jars" />
+		</javac>
+	</target>
+
+	<target name="reference-jar" depends="clean,compile" description="build the JAR file">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${lib}" />
+
+		<jar jarfile="${lib}/reference.jar" basedir="${tmp}" />
+		<delete dir="${tmp}" />
+	</target>
+
+	<target name="build" depends="reference-jar"/>
+
+	<target name="clean" description="clean up">
+		<delete dir="${tmp}" />
+		<delete dir="${lib}" />
+	</target>
+
+	<target name="test" description="test" depends="build">
+		<delete dir="${tmp}" />
+		<delete dir="${lib}" />
+	</target>
 </project>
