@@ -1,4 +1,5 @@
-#!/bin/sh
-IBIS_ROOT=$HOME/ibis
+#!/bin/sh -x
+CP=$IBIS_HOME/lib/satin-api.jar:$IBIS_HOME/lib/satin-impl.jar
+MAINCLASS=src/ibis/lab/Reference/tmp/ibis/lab/Reference/Reference
 
-java -cp $IBIS_ROOT/3rdparty/junit.jar:$IBIS_ROOT/build:build -Dibis.property.file=$IBIS_ROOT/properties $*
+java -cp $CP $MAINCLASS

@@ -43,6 +43,16 @@
 		<!-- Create the distribution directory -->
 		<mkdir dir="${lib}" />
 
+		<java classname="ibis.frontend.Ibisc"
+			taskname="Ibisc"
+			failonerror="true"
+			dir="${tmp}"
+			maxmemory="512m"
+			fork="true">
+			<arg line="." />
+			<classpath refid="external_jars" />
+		</java>
+
 		<jar jarfile="${lib}/reference.jar" basedir="${tmp}" />
 		<delete dir="${tmp}" />
 	</target>
