@@ -47,6 +47,7 @@ public class Reference  extends ibis.satin.SatinObject implements ReferenceSatin
     {
         Reference r = new Reference();
         
+	System.out.println( "Started" );
         long start = System.currentTimeMillis();
         r.spawn( 8 );
         r.sync();

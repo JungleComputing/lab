@@ -1,0 +1,2 @@
+prun -v -np 4 $IBIS_HOME/bin/ibis-run -Dibis.server.address=fs0:8889 -Dibis.pool.name=foo ibis.lab.Reference.Reference
+

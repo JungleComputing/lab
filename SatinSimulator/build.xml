@@ -37,11 +37,6 @@
 		<javac srcdir="${src}" destdir="${tmp}" debug="on" includes="ibis/lab/Reference/**">
 			<classpath refid="external_jars" />
 		</javac>
-	</target>
-
-	<target name="reference-jar" depends="clean,compile" description="build the JAR file">
-		<!-- Create the distribution directory -->
-		<mkdir dir="${lib}" />
 
 		<java classname="ibis.frontend.Ibisc"
 			taskname="Ibisc"
@@ -49,9 +44,14 @@
 			dir="${tmp}"
 			maxmemory="512m"
 			fork="true">
-			<arg line="." />
+			<arg line="-satin ibis.lab.Reference.Reference ." />
 			<classpath refid="external_jars" />
 		</java>
+	</target>
+
+	<target name="reference-jar" depends="clean,compile" description="build the JAR file">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${lib}" />
 
 		<jar jarfile="${lib}/reference.jar" basedir="${tmp}" />
 		<delete dir="${tmp}" />
