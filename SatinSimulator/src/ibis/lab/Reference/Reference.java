@@ -12,20 +12,20 @@ public class Reference  extends ibis.satin.SatinObject implements ReferenceSatin
 {
     /** Contractual obligation. */
     private static final long serialVersionUID = 7331296260507993758L;
-    private static final int preSpawnDelay = 10;
-    private static final int preSyncDelay = 10;
-    private static final int postSyncDelay = 20;
+    private static final int preSpawnDelay = 50;
+    private static final int preSyncDelay = 50;
+    private static final int postSyncDelay = 50;
 
     /**
      * The spawned method.
-     * @param level The recursion level.
+     * @param depth The recursion depth.
      */
-    public void spawn( int level ) {
+    public void spawn( int depth ) {
         try{
             Thread.sleep( preSpawnDelay );
-            if( level>0 ) {
-                spawn( level-1 );
-                spawn( level-1 );
+            if( depth>0 ) {
+                spawn( depth-1 );
+                spawn( depth-1 );
                 Thread.sleep( preSyncDelay );
                 sync();
             }
@@ -49,7 +49,7 @@ public class Reference  extends ibis.satin.SatinObject implements ReferenceSatin
         
 	System.out.println( "Started" );
         long start = System.currentTimeMillis();
-        r.spawn( 8 );
+        r.spawn( 11 );
         r.sync();
         long stop = System.currentTimeMillis();
         System.out.println( "Run time: " + (stop-start) + " ms" );
