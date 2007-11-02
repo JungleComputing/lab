@@ -12,19 +12,19 @@ import desmoj.core.simulator.SimTime;
  */
 public class SatinSimulator extends Model
 {
-    private static final double MAX_POST_SYNC_TIME = 20e-3;
-    private static final double MAX_PRE_SPAWN_TIME = 2e-3;
-    private static final double MAX_PRE_SYNC_TIME = 20e-3;
-    private static final double MIN_POST_SYNC_TIME = 1e-3;
-    private static final double MIN_PRE_SPAWN_TIME = 1e-3;
-    private static final double MIN_PRE_SYNC_TIME = 1e-3;
-    static final int NUMBER_PROCESSORS = 16;
+    private static final double MIN_PRE_SPAWN_TIME = 50e-3;
+    private static final double MAX_PRE_SPAWN_TIME = 50e-3;
+    private static final double MIN_PRE_SYNC_TIME = 50e-3;
+    private static final double MAX_PRE_SYNC_TIME = 50e-3;
+    private static final double MAX_POST_SYNC_TIME = 50e-3;
+    private static final double MIN_POST_SYNC_TIME = 50e-3;
+    static final int NUMBER_PROCESSORS = 4;
     static final boolean showInReport = true;
     static final boolean showInTrace = true;
-    private static final int START_LEVEL = 16;
-    private static final double STEAL_TIME = 20.0e-3;
+    private static final int START_LEVEL = 11;
+    private static final double STEAL_TIME = 835e-6;
     private static final double MAX_EXEC_TIME = MAX_PRE_SPAWN_TIME + MAX_PRE_SYNC_TIME + MAX_POST_SYNC_TIME + STEAL_TIME;
-    private static final double SIMULATION_TIME = (1.5*MAX_EXEC_TIME * (1<<START_LEVEL))/Math.sqrt( NUMBER_PROCESSORS );
+    private static final double SIMULATION_TIME = (1.5*MAX_EXEC_TIME * (2<<START_LEVEL))/Math.sqrt( NUMBER_PROCESSORS );
 
     /** runs the model.
      * @param args Command-line parameters.
@@ -40,6 +40,7 @@ public class SatinSimulator extends Model
         // set experiment parameters
         exp.setShowProgressBar( true );
         final SimTime stopTime = new SimTime( SIMULATION_TIME );
+        System.out.println( "Simulation time: " + stopTime );
         exp.tracePeriod( new SimTime(0.0), stopTime );
         exp.stop( stopTime );
 
@@ -51,7 +52,7 @@ public class SatinSimulator extends Model
         {
             double totalIdle = 0.0;
             double maxIdle = 0;
-            double maxIdleProcessor = -1;
+            int maxIdleProcessor = -1;
 
             for( int i=0; i<NUMBER_PROCESSORS; i++ ) {
                 final double idleTime = model.processors[i].getIdleTime();
@@ -63,8 +64,10 @@ public class SatinSimulator extends Model
                 }
             }
             final double t = model.getFinishTime();
-            System.out.println( "Average idle fraction: " + totalIdle/(t*NUMBER_PROCESSORS) );
-            System.out.println( "Maximal idle fraction: " + maxIdle/t + " (P" + maxIdleProcessor + ")" );
+            System.out.println( SatinJob.getSpawns() + " spawns" );
+            System.out.println( "SATIN: USEFUL_APP_TIME:    agv. per machine " + SatinJob.getAppTime()/NUMBER_PROCESSORS );
+            System.out.println( "Average idle fraction: " + (totalIdle/(t*NUMBER_PROCESSORS)) );
+            System.out.println( "Maximal idle fraction: " + (maxIdle/t) + " (P" + maxIdleProcessor + ")" );
         }
         System.out.println( "Finish time: " + model.getFinishTime() );
 
@@ -105,7 +108,7 @@ public class SatinSimulator extends Model
             double slowdown = 1.0;
 
             if( (i % 2)  == 1 ) {
-                slowdown = 4.0;
+                slowdown = 1.0;
             }
             final SatinProcessor p = new SatinProcessor( this, processors, i, slowdown );
             processors[i] = p;

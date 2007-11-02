@@ -7,6 +7,8 @@ import desmoj.core.simulator.SimTime;
 public class SatinJob extends SimProcess
 {
     private static final boolean TRACE_JOBS = true;
+    private static int spawns = 0;
+    private static double appTime = 0.0;
     private final int childNo;
     private boolean[] childrenReady;
     private final int depth;
@@ -32,9 +34,10 @@ public class SatinJob extends SimProcess
         this.depth = depth;
         this.parent = parent;
         this.childNo = childNo;
+        spawns++;
     }
 
-    private boolean childrenAreReady()
+    boolean childrenAreReady()
     {
         if( childrenReady == null ) {
             return true;
@@ -52,22 +55,26 @@ public class SatinJob extends SimProcess
     @Override
     public void lifeCycle()
     {
-        hold( new SimTime( model.getPreSpawnExecutionTime( processor.getSlowdown() ) ) );
+        double preSpawnExecutionTime = model.getPreSpawnExecutionTime( processor.getSlowdown() );
+        hold( new SimTime( preSpawnExecutionTime ) );
+        appTime += preSpawnExecutionTime;
+        final double preSyncExecutionTime = model.getPreSyncExecutionTime( processor.getSlowdown() );
         if( depth>0 ){
             final SatinJob joba = new SatinJob( model, "job" + depth + "a", TRACE_JOBS, processor, depth-1, this, 0 );
             processor.queueJob( joba );
             final SatinJob jobb = new SatinJob( model, "job" + depth + "b", TRACE_JOBS, processor, depth-1, this, 1 );
             processor.queueJob( jobb );
             childrenReady = new boolean[2];
+            hold( new SimTime( preSyncExecutionTime ) );
+            processor.sync( this );
         }
-        final double preSyncExecutionTime = model.getPreSyncExecutionTime( processor.getSlowdown() );
-        hold( new SimTime( preSyncExecutionTime ) );
-        processor.activateAfter( this );
-        while( !childrenAreReady() ) {
-            passivate();
+        else {
+            hold( new SimTime( preSyncExecutionTime ) );            
         }
+        appTime += preSyncExecutionTime;
         final double postSyncExecutionTime = model.getPostSyncExecutionTime( processor.getSlowdown() );
         hold( new SimTime( postSyncExecutionTime ) );
+        appTime += postSyncExecutionTime;
         if( parent == null ){
             sendTraceNote( "Root job has finished" );
             model.rootHasFinished();
@@ -75,6 +82,7 @@ public class SatinJob extends SimProcess
         else {
             parent.registerChildCompleted( childNo );
         }
+        processor.activateAfter( this );
     }
 
     /** Tell the job that the child with the given number is ready.
@@ -84,7 +92,6 @@ public class SatinJob extends SimProcess
     public void registerChildCompleted( final int no )
     {
         childrenReady[no] = true;
-        activate( new SimTime( 0.0 ) );
     }
 
     /** Assign this job to the given processor.
@@ -95,4 +102,13 @@ public class SatinJob extends SimProcess
         processor = p;
     }
 
+    public static int getSpawns()
+    {
+        return spawns;
+    }
+    
+    public static double getAppTime()
+    {
+        return appTime;
+    }
 }

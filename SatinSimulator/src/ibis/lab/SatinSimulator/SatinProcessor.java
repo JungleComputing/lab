@@ -17,6 +17,7 @@ public class SatinProcessor extends SimProcess
     private final int procno;
     private final double slowdown;
     private final ProcessQueue workQueue;
+    private final ProcessQueue syncStack;
 
     /** constructs a process...
      * @param model The model the process belongs to.
@@ -32,6 +33,7 @@ public class SatinProcessor extends SimProcess
         this.procno = procno;
         this.slowdown = slowdown;
         workQueue = new ProcessQueue( model, "job queue P" + procno, true, true );
+        syncStack = new ProcessQueue( model, "sync stack P" + procno, true, true );
         idleTime = 0.0;
     }
 
@@ -61,19 +63,32 @@ public class SatinProcessor extends SimProcess
     public void lifeCycle()
     {
         while( true ){
-            final SatinJob job = (SatinJob) workQueue.last();
-            if( job != null ){
-                workQueue.remove( job );
-                sendTraceNote( "Executing job " + job );
-                job.activateAfter( this );
-                passivate();
-            }
-            else {
-                final int victim = model.getStealVictim( procno );
-                if( victim<0 ) {
-                    break;
+            boolean progress = false;
+
+            if( !syncStack.isEmpty() ) {
+                SatinJob idler = (SatinJob) syncStack.last();
+                if( idler.childrenAreReady() ) {
+                    syncStack.remove( idler );
+                    idler.activateAfter( this );
+                    passivate();
+                    progress = true;
                 }
-                stealWork( processors[victim] );
+            }
+            if( !progress ) {
+                final SatinJob job = (SatinJob) workQueue.last();
+                if( job != null ){
+                    workQueue.remove( job );
+                    sendTraceNote( "Executing job " + job );
+                    job.activateAfter( this );
+                    passivate();
+                }
+                else {
+                    final int victim = model.getStealVictim( procno );
+                    if( victim<0 ) {
+                        break;
+                    }
+                    stealWork( processors[victim] );
+                }
             }
         }
     }
@@ -86,23 +101,31 @@ public class SatinProcessor extends SimProcess
         workQueue.insert( job );
     }
 
+    /** Put the given job on the work queue.
+     * @param job The job to queue.
+     */
+    public void sync( final SatinJob job )
+    {
+        syncStack.insert( job );
+        activateAfter( job );
+        job.passivate();
+    }
+
     private void stealWork( final SatinProcessor victim )
     {
         final SatinJob job = (SatinJob) victim.workQueue.first();
         if( job == null ) {
-            final double sleepTime = 0.1;
+            final double sleepTime = model.getStealTime( this, victim );
 
             idleTime += sleepTime;
-            activate( new SimTime( sleepTime ) );
-            passivate();
+            hold( new SimTime( sleepTime ) );
         }
         else {
             victim.workQueue.remove( job );
             job.setProcessor( this );
             sendTraceNote(  "steals a job " + job + " from P" + victim.procno );
             final double stealTime = model.getStealTime( this, victim );
-            activate( new SimTime( stealTime ) );
-            passivate();
+            hold( new SimTime( stealTime ) );
             queueJob( job );
         }
     }
