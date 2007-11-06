@@ -18,6 +18,7 @@ public class SatinProcessor extends SimProcess
     private final double slowdown;
     private final ProcessQueue workQueue;
     private final ProcessQueue syncStack;
+    private static final int STEAL_PACKET_SIZE = 30;
 
     /** constructs a process...
      * @param model The model the process belongs to.
@@ -33,7 +34,7 @@ public class SatinProcessor extends SimProcess
         this.procno = procno;
         this.slowdown = slowdown;
         workQueue = new ProcessQueue( model, "job queue P" + procno, true, true );
-        syncStack = new ProcessQueue( model, "sync stack P" + procno, true, true );
+        syncStack = new ProcessQueue( model, "sync stack P" + procno, false, false );
         idleTime = 0.0;
     }
 
@@ -113,20 +114,28 @@ public class SatinProcessor extends SimProcess
 
     private void stealWork( final SatinProcessor victim )
     {
+        // Send a steal request.
+        final double requestTime = model.getTransmissionTime( this, victim, STEAL_PACKET_SIZE );
+        System.out.println( "Steal request to " + victim + " takes " + requestTime );
+        hold( new SimTime( requestTime ) );
+        idleTime += requestTime;
         final SatinJob job = (SatinJob) victim.workQueue.first();
         if( job == null ) {
-            final double sleepTime = model.getStealTime( this, victim );
+            final double rejectTime = model.getTransmissionTime( this, victim, STEAL_PACKET_SIZE );
 
-            idleTime += sleepTime;
-            hold( new SimTime( sleepTime ) );
+            idleTime += rejectTime;
+            System.out.println( "Steal reject from " + victim + " takes " + rejectTime );
+            hold( new SimTime( rejectTime ) );
         }
         else {
             victim.workQueue.remove( job );
             job.setProcessor( this );
-            sendTraceNote(  "steals a job " + job + " from P" + victim.procno );
-            final double stealTime = model.getStealTime( this, victim );
+            sendTraceNote(  "steals job " + job + " from P" + victim.procno );
+            final double stealTime = model.getTransmissionTime( this, victim, job.getContextSize() );
             hold( new SimTime( stealTime ) );
+            idleTime += stealTime;
             queueJob( job );
         }
     }
+
 }

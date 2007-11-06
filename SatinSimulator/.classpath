@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="jars/desmoj_2.1.1.jar"/>
 	<classpathentry kind="lib" path="jars/bcel-5.1-fixed.jar"/>
 	<classpathentry kind="lib" path="jars/commons-jxpath-1.1.jar"/>
 	<classpathentry kind="lib" path="jars/commons-logging.jar"/>
@@ -27,5 +26,6 @@
 	<classpathentry kind="lib" path="jars/sbbi-upnplib-1.0.2.jar"/>
 	<classpathentry kind="lib" path="jars/smartsockets-1.0rc60.jar"/>
 	<classpathentry kind="lib" path="jars/TGGraphLayout-JM.jar"/>
+	<classpathentry kind="lib" path="jars/desmoj_2.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

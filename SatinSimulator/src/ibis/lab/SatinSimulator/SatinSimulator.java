@@ -22,9 +22,11 @@ public class SatinSimulator extends Model
     static final boolean showInReport = true;
     static final boolean showInTrace = true;
     private static final int START_LEVEL = 11;
-    private static final double STEAL_TIME = 835e-6;
+    private static final double STEAL_TIME = 1e-3; // Only used for stop time estimate.
     private static final double MAX_EXEC_TIME = MAX_PRE_SPAWN_TIME + MAX_PRE_SYNC_TIME + MAX_POST_SYNC_TIME + STEAL_TIME;
     private static final double SIMULATION_TIME = (1.5*MAX_EXEC_TIME * (2<<START_LEVEL))/Math.sqrt( NUMBER_PROCESSORS );
+    private static final double TRANSMISSION_TIME_PER_BYTE = 10e-10;
+    private static final double TRANSMISSION_STARTUP_TIME = 10e-5;
 
     /** runs the model.
      * @param args Command-line parameters.
@@ -162,12 +164,13 @@ public class SatinSimulator extends Model
      * a job from one to the other.
      * @param thief The process that steals the job.
      * @param victim The process from whom the job is stolen.
+     * @param packetSize 
      * @return The time in seconds to steal the job.
      */
-    public double getStealTime(final SatinProcessor thief, final SatinProcessor victim)
+    public double getTransmissionTime(final SatinProcessor thief, final SatinProcessor victim, int packetSize)
     {
         final double slowdown = Math.max( thief.getSlowdown(), victim.getSlowdown() );
-        return slowdown*STEAL_TIME;
+        return slowdown*TRANSMISSION_STARTUP_TIME+(packetSize*TRANSMISSION_TIME_PER_BYTE);
     }
 
     /** Given our own processor number, return the victim to

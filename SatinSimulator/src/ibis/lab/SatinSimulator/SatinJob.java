@@ -14,6 +14,7 @@ public class SatinJob extends SimProcess
     private final int depth;
     private final SatinSimulator model;
     private final SatinJob parent;
+    private static final int JOB_CONTEXT_SIZE = 1000;
     private SatinProcessor processor;
 
     /**
@@ -102,13 +103,28 @@ public class SatinJob extends SimProcess
         processor = p;
     }
 
+    /** Returns the number of spawns that have been done.
+     * @return The number of spawns.
+     */
     public static int getSpawns()
     {
         return spawns;
     }
     
+    /** Returns the total time spent on the application.
+     * (As opposed to overhead or idlin.
+     * @return The total application time.
+     */
     public static double getAppTime()
     {
         return appTime;
+    }
+
+    /** Returns the size of the context of this job.
+     * @return The number of bytes in the context of this job.
+     */
+    public int getContextSize()
+    {
+        return JOB_CONTEXT_SIZE;
     }
 }
