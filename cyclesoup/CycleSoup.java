@@ -31,6 +31,7 @@ public class CycleSoup extends SatinObject implements CycleSoupSatinInterface {
     static {
         // Set some ibis properies that are essential for this program
         //System.setProperty( "satin.ft", "true" );
+	// FIXME: is this one still necessary
         System.setProperty( "satin.branching-factor", "2" );
     }
 
@@ -38,7 +39,7 @@ public class CycleSoup extends SatinObject implements CycleSoupSatinInterface {
      * Given a file <code>f</code>, returns a byte array with the contents of thie file.
      * @param f The file to read.
      * @return The content of the file.
-     * @throws IOException
+     * @throws IOException Thrown if for some reason the file cannot be read.
      */
     public static byte[] readFile( File f ) throws IOException
     {
@@ -74,7 +75,7 @@ public class CycleSoup extends SatinObject implements CycleSoupSatinInterface {
     {
         File files[] = f.listFiles();
 
-        for( int i=0; i<files.length; i++ ){
+        for( File f: files ) {
             files[i].delete();
         }
         f.delete();
