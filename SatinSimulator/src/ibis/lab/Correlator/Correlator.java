@@ -4,7 +4,7 @@ package ibis.lab.Correlator;
 
 /**
  * Real Satin program with similar behaviour to the one that is simulated.
- * Usueful to compare real and simulated statistics.
+ * Useful to compare real and simulated statistics.
  * 
  * @author Kees van Reeuwijk.
  */
