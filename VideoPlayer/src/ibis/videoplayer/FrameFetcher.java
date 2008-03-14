@@ -1,10 +1,13 @@
 package ibis.videoplayer;
 
-import java.util.Arrays;
-
 import ibis.maestro.Job;
 import ibis.maestro.JobContext;
+import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
+import ibis.maestro.ReportResultJob;
+import ibis.maestro.TaskIdentifier;
+
+import java.util.Arrays;
 
 /**
  * A job to fetch a frame.
@@ -21,21 +24,48 @@ public class FrameFetcher implements Job {
 
     FrameFetcher( int frameno )
     {
-	this.frameno = frameno;
+        this.frameno = frameno;
     }
 
+    /**
+     * Returns the type of this job.
+     * @return The job type.
+     */
     @Override
     public JobType getType() {
-	// TODO: Auto-generated method stub
-	return jobType;
+        // TODO: Auto-generated method stub
+        return jobType;
+    }
+    
+    static class FrameIdentifier implements TaskIdentifier {
+        private static final long serialVersionUID = -4017660605155497064L;
+        final int frameno;
+        
+        FrameIdentifier( int frameno )
+        {
+            this.frameno = frameno;
+        }
     }
 
+    static class Frame implements JobResultValue {
+        private static final long serialVersionUID = 8797700803728846092L;
+        final int array[];
+        
+        Frame( int array[] ){
+            this.array = array;
+        }
+    }
+
+    /** Runs this job. */
     @Override
     public void run(JobContext context)
     {
-	int filler = frameno;
-	
-	int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
-	Arrays.fill( array, filler );
+        int filler = frameno;
+
+        int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
+        Arrays.fill( array, filler );
+        JobResultValue value = new Frame( array );
+        Job j = new ReportResultJob( new FrameIdentifier( frameno ), value );
+        context.submit( j );
     }
 }
