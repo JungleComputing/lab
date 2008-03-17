@@ -1,6 +1,12 @@
 
 package ibis.videoplayer;
 
+/**
+ * Settings for the video player.
+ * 
+ * @author Kees van Reeuwijk
+ *
+ */
 public class Settings {
 
     /** The number of bytes in a frame. */

@@ -1,9 +1,9 @@
 package ibis.videoplayer;
 
 import ibis.maestro.Job;
-import ibis.maestro.JobContext;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
+import ibis.maestro.Node;
 import ibis.maestro.ReportResultJob;
 import ibis.maestro.TaskIdentifier;
 
@@ -15,14 +15,14 @@ import java.util.Arrays;
  * @author Kees van Reeuwijk
  *
  */
-public class FrameFetcher implements Job {
+public class FetchFrame implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch. */
     private final int frameno;
-    private static final JobType jobType = new JobType( "FrameFetcher" );
+    private static final JobType jobType = new JobType( "FetchFrame" );
 
-    FrameFetcher( int frameno )
+    FetchFrame( int frameno )
     {
         this.frameno = frameno;
     }
@@ -33,7 +33,6 @@ public class FrameFetcher implements Job {
      */
     @Override
     public JobType getType() {
-        // TODO: Auto-generated method stub
         return jobType;
     }
     
@@ -58,7 +57,7 @@ public class FrameFetcher implements Job {
 
     /** Runs this job. */
     @Override
-    public void run(JobContext context)
+    public void run(Node context)
     {
         int filler = frameno;
 
