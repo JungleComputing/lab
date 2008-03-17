@@ -57,7 +57,7 @@ public class FetchFrame implements Job {
 
     /** Runs this job. */
     @Override
-    public void run(Node context)
+    public void run(Node context, TaskIdentifier taskid )
     {
         int filler = frameno;
 
@@ -65,6 +65,6 @@ public class FetchFrame implements Job {
         Arrays.fill( array, filler );
         JobResultValue value = new Frame( array );
         Job j = new ReportResultJob( new FrameIdentifier( frameno ), value );
-        context.submit( j );
+        context.submit( j, taskid );
     }
 }

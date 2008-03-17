@@ -20,19 +20,23 @@ public class JobWaiter implements CompletionListener {
     private ArrayList<JobResultValue> results = new ArrayList<JobResultValue>();
 
     private static class WaiterTaskIdentifier implements TaskIdentifier {
-	final int id;
-	
-	WaiterTaskIdentifier( int id )
-	{
-	    this.id = id;
-	}
+        /**
+         * 
+         */
+        private static final long serialVersionUID = -3256737277889247302L;
+        final int id;
+
+        WaiterTaskIdentifier( int id )
+        {
+            this.id = id;
+        }
     }
 
     public synchronized void submit( Node node, Job j )
     {
-	TaskIdentifier id = new WaiterTaskIdentifier( jobNo++ );
-	outstandingJobs++;
-	node.submitTask( j, this, id );
+        TaskIdentifier id = new WaiterTaskIdentifier( jobNo++ );
+        outstandingJobs++;
+        node.submitTask( j, this, id );
     }
 
     /**
@@ -42,11 +46,12 @@ public class JobWaiter implements CompletionListener {
      * @param result
      */
     @Override
-    public void jobCompleted( Node node, TaskIdentifier id, JobResultValue result )
+    public synchronized void jobCompleted( Node node, TaskIdentifier id, JobResultValue result )
     {
-	int ix = ((WaiterTaskIdentifier) id).id;
-	results.set( ix, result );
-	outstandingJobs--;
+        int ix = ((WaiterTaskIdentifier) id).id;
+        results.set( ix, result );
+        outstandingJobs--;
+        notify();
     }
 
     /**
@@ -55,14 +60,26 @@ public class JobWaiter implements CompletionListener {
      */
     public JobResultValue[] sync()
     {
-	while( true ) {
-	    if( outstandingJobs == 0 ) {
-		break;
-	    }
-	    // FIXME: actually do some waiting.
-	}
-	JobResultValue res[] = new JobResultValue[results.size()];
-	results.toArray( res );
-	return res;
+        JobResultValue res[];
+        while( true ) {
+            synchronized( this ){
+                if( outstandingJobs == 0 ){
+                    res = new JobResultValue[results.size()];
+                    results.toArray( res );
+
+                    // Prepare for a possible new round.
+                    results.clear();
+                    outstandingJobs = 0;
+                    jobNo = 0;
+                    break;
+                }
+                try {
+                    wait();
+                } catch (InterruptedException e) {
+                    // Not interesting.
+                }
+            }
+        }
+        return res;
     }
 }

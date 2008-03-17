@@ -6,6 +6,7 @@ package ibis.videoplayer;
 import ibis.maestro.Job;
 import ibis.maestro.JobType;
 import ibis.maestro.Node;
+import ibis.maestro.TaskIdentifier;
 
 /**
  * @author Kees van Reeuwijk
@@ -35,7 +36,7 @@ public final class BuildFragment implements Job {
     }
 
     @Override
-    public void run( Node node )
+    public void run( Node node, TaskIdentifier taskId )
     {
 	JobWaiter waiter = new JobWaiter();
 	for( int frame=startFrame; frame<=endFrame; frame++ ) {
