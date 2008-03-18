@@ -3,6 +3,7 @@ package ibis.videoplayer;
 import ibis.maestro.Job;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
+import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
@@ -14,16 +15,16 @@ import java.util.Arrays;
  * @author Kees van Reeuwijk
  *
  */
-public class FetchFrame implements Job {
+public class ScaleFrame implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch. */
     private final int frameno;
     private static final JobType jobType = new JobType( "FetchFrame" );
 
-    FetchFrame( int frameno )
+    ScaleFrame( int frameno )
     {
-        this.frameno = frameno;
+	this.frameno = frameno;
     }
 
     /**
@@ -32,27 +33,25 @@ public class FetchFrame implements Job {
      */
     @Override
     public JobType getType() {
-        return jobType;
+	return jobType;
     }
 
     static class Frame implements JobResultValue {
-        private static final long serialVersionUID = 8797700803728846092L;
-        final int array[];
-        
-        Frame( int array[] ){
-            this.array = array;
-        }
+	private static final long serialVersionUID = 8797700803728846092L;
+	final int array[];
+
+	Frame( int array[] ){
+	    this.array = array;
+	}
     }
 
     /** Runs this job. */
     @Override
-    public void run( Node context, TaskIdentifier taskid )
+    public void run( Node node, TaskIdentifier taskid )
     {
-        int filler = frameno;
-
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
-        Arrays.fill( array, filler );
-        JobResultValue value = new Frame( array );
-        taskid.reportResult(context, value);
+	JobWaiter waiter = new JobWaiter();
+	Job j = new FetchFrame( frameno );
+	waiter.submit( node, j );
+	waiter.sync( node );
     }
 }

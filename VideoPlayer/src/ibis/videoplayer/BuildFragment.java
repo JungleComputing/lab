@@ -5,6 +5,7 @@ package ibis.videoplayer;
 
 import ibis.maestro.Job;
 import ibis.maestro.JobType;
+import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
@@ -35,6 +36,11 @@ public final class BuildFragment implements Job {
 	return jobType;
     }
 
+    /**
+     * Runs this fragment building job.
+     * @param node The node this job is running on.
+     * @param taskId The task identifier this job belongs to.
+     */
     @Override
     public void run( Node node, TaskIdentifier taskId )
     {
@@ -43,7 +49,7 @@ public final class BuildFragment implements Job {
 	    Job j = new FetchFrame( frame );
 	    waiter.submit( node, j );
 	}
-	waiter.sync();
+	waiter.sync( node );
     }
 
 }
