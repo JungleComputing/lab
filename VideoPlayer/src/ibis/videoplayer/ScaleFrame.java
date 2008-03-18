@@ -7,8 +7,6 @@ import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
-import java.util.Arrays;
-
 /**
  * A job to fetch a frame.
  * 
@@ -20,7 +18,7 @@ public class ScaleFrame implements Job {
 
     /** The frame to fetch. */
     private final int frameno;
-    private static final JobType jobType = new JobType( "FetchFrame" );
+    static final JobType jobType = new JobType( "FetchFrame" );
 
     ScaleFrame( int frameno )
     {

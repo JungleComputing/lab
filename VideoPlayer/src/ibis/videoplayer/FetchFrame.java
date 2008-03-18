@@ -19,7 +19,7 @@ public class FetchFrame implements Job {
 
     /** The frame to fetch. */
     private final int frameno;
-    private static final JobType jobType = new JobType( "FetchFrame" );
+    static final JobType jobType = new JobType( "FetchFrame" );
 
     FetchFrame( int frameno )
     {

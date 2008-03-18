@@ -13,14 +13,14 @@ import ibis.maestro.TaskIdentifier;
  * @author Kees van Reeuwijk
  *
  */
-public final class BuildFragment implements Job {
+public final class BuildFragmentJob implements Job {
     /** */
     private static final long serialVersionUID = 6769001575637882594L;
-    private static final JobType jobType = new JobType( "BuildFragment" );
+    static final JobType jobType = new JobType( "BuildFragment" );
     private final int startFrame;
     private final int endFrame;
 
-    BuildFragment( int startFrame, int endFrame )
+    BuildFragmentJob( int startFrame, int endFrame )
     {
         this.startFrame = startFrame;
         this.endFrame = endFrame;
