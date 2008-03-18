@@ -1,5 +1,11 @@
 package ibis.videoplayer;
 
+/**
+ * Some helper methods.
+ * 
+ * @author Kees van Reeuwijk
+ *
+ */
 public class Service {
     /** Prints the platform version that is used. */
     static String getPlatformVersion()

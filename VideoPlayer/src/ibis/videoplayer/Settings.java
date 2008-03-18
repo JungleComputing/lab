@@ -16,7 +16,8 @@ public class Settings {
     public static final int FRAME_FRAGMENT_COUNT = 25;
     
     // ----------------------
-    public static final boolean traceFetcher = true;
-    public static final boolean traceFragmentBuilder = true;
-    public static final boolean traceScaler = true;
+
+    static final boolean traceFetcher = true;
+    static final boolean traceFragmentBuilder = true;
+    static final boolean traceScaler = true;
 }
