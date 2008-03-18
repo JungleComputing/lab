@@ -46,13 +46,16 @@ public class FetchFrame implements Job {
 
     /** Runs this job. */
     @Override
-    public void run( Node context, TaskIdentifier taskid )
+    public void run( Node node, TaskIdentifier taskid )
     {
         int filler = frameno;
 
         int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
         Arrays.fill( array, filler );
         JobResultValue value = new Frame( array );
-        taskid.reportResult(context, value);
+        if( Settings.traceFetcher ){
+            System.out.println( "Building frame " + frameno );
+        }
+        taskid.reportResult( node, value );
     }
 }

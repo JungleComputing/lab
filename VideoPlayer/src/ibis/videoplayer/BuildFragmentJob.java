@@ -3,11 +3,15 @@
  */
 package ibis.videoplayer;
 
+import java.util.Arrays;
+
 import ibis.maestro.Job;
+import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
 import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
+import ibis.videoplayer.FetchFrame.Frame;
 
 /**
  * @author Kees van Reeuwijk
@@ -45,11 +49,25 @@ public final class BuildFragmentJob implements Job {
     public void run( Node node, TaskIdentifier taskId )
     {
 	JobWaiter waiter = new JobWaiter();
-	for( int frame=startFrame; frame<=endFrame; frame++ ) {
+
+        if( Settings.traceFragmentBuilder ){
+            System.out.println( "Collecting frames for fragment [" + startFrame + "..." + endFrame + "]" );
+        }
+        for( int frame=startFrame; frame<=endFrame; frame++ ) {
 	    Job j = new FetchFrame( frame );
 	    waiter.submit( node, j );
 	}
-	waiter.sync( node );
+	JobResultValue res[] = waiter.sync( node );
+        if( Settings.traceFragmentBuilder ){
+            System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
+        }
+        int array[] = new int[Settings.FRAME_SAMPLE_COUNT*Settings.FRAME_FRAGMENT_COUNT];
+        Arrays.fill( array, 42 );
+        JobResultValue value = new Frame( array );
+        if( Settings.traceFragmentBuilder ){
+            System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
+        }
+        taskId.reportResult( node, value );
     }
 
 }

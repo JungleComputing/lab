@@ -51,5 +51,9 @@ public class ScaleFrame implements Job {
 	Job j = new FetchFrame( frameno );
 	waiter.submit( node, j );
 	waiter.sync( node );
+        if( Settings.traceScaler ){
+            System.out.println( "Scaling frame " + frameno );
+        }
+        // FIXME: implement this & report result.
     }
 }
