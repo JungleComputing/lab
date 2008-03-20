@@ -3,8 +3,6 @@
  */
 package ibis.videoplayer;
 
-import java.util.Arrays;
-
 import ibis.maestro.Job;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
@@ -57,11 +55,25 @@ public final class BuildFragmentJob implements Job {
 	    waiter.submit( node, j );
 	}
 	JobResultValue res[] = waiter.sync( node );
+        int sz = 0;
+        for( int i=0; i<res.length; i++ ){
+            Frame frame = (Frame) res[i];
+            sz += (1+frame.array.length)/2;
+        }
+        int array[] = new int[Settings.FRAME_SAMPLE_COUNT*Settings.FRAME_FRAGMENT_COUNT];
+        int ix = 0;
+        for( int i=0; i<res.length; i++ ){
+            Frame frame = (Frame) res[i];
+            int a[] = frame.array;
+            for( int j=0; j<a.length; j++ ){
+                int v = (a[j]+a[j+1]);
+
+                array[ix++] = v;
+            }
+        }
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
         }
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT*Settings.FRAME_FRAGMENT_COUNT];
-        Arrays.fill( array, 42 );
         JobResultValue value = new VideoFragment( startFrame, endFrame, array );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
