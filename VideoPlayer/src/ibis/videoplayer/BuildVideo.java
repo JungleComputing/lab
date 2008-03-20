@@ -41,7 +41,6 @@ public class BuildVideo {
     }
 
     private static class TestTypeInformation implements TypeInformation {
-
 	/**
 	 * Registers that a neighbor supports the given type of job.
 	 * @param w The worker to register the info with.
@@ -72,6 +71,9 @@ public class BuildVideo {
          * Job types further down the stream are more important than job types
          * upstream, since once we start a job we should finish it as soon as
          * possible.
+         * @param a One of the job types to compare.
+         * @param b The other job type to compare.
+         * @return The comparison result.
          */
         public int compare( JobType a, JobType b )
         {
@@ -116,7 +118,7 @@ public class BuildVideo {
                 final int endFrame = frame+Settings.FRAME_FRAGMENT_COUNT-1;
         	TaskIdentifier id = node.buildTaskIdentifier( frame );
 		BuildFragmentJob j = new BuildFragmentJob( frame, endFrame  );
-        	node.submitTask( j, listener, id );
+        	node.submitTaskWhenRoom( j, listener, id );
             }
         }
         node.waitToTerminate();

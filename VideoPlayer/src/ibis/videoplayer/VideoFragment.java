@@ -14,6 +14,12 @@ public class VideoFragment implements JobResultValue
     int endFrame;
     int array[];
 
+    /**
+     * Constructs a new video fragment.
+     * @param startFrame The start frame of the fragment.
+     * @param endFrame The end frame of the fragment.
+     * @param array The data array that simulates the actual video data.
+     */
     public VideoFragment( int startFrame, int endFrame, int[] array )
     {
         this.startFrame = startFrame;
