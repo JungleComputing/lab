@@ -6,7 +6,7 @@ import ibis.maestro.JobType;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
-import java.util.Arrays;
+import java.util.Random;
 
 /**
  * A job to fetch a frame.
@@ -20,6 +20,7 @@ public class FetchFrameJob implements Job {
     /** The frame to fetch. */
     private final int frameno;
     static final JobType jobType = new JobType( "FetchFrame" );
+    private static final Random rng = new Random();
 
     FetchFrameJob( int frameno )
     {
@@ -39,11 +40,11 @@ public class FetchFrameJob implements Job {
     @Override
     public void run( Node node, TaskIdentifier taskid )
     {
-        int filler = frameno;
-
         int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
-        Arrays.fill( array, filler );
-        JobResultValue value = new Frame( array );
+        for( int i=0; i<array.length; i++ ){
+            array[i] = rng.nextInt();
+        }
+        JobResultValue value = new Frame( frameno, array );
         if( Settings.traceFetcher ){
             System.out.println( "Building frame " + frameno );
         }

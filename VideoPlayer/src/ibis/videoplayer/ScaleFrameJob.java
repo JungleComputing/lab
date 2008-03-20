@@ -1,11 +1,8 @@
 package ibis.videoplayer;
 
-import java.util.Arrays;
-
 import ibis.maestro.Job;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
-import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
@@ -17,14 +14,16 @@ import ibis.maestro.TaskIdentifier;
  */
 public class ScaleFrameJob implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
+    /** How often do we repeat the loop to fake a more elaborate scaler. */
+    private static final int REPEAT = 4;
 
     /** The frame to fetch and scale. */
-    private final int frameno;
+    private final Frame frame;
     static final JobType jobType = new JobType( "ScaleFrame" );
 
-    ScaleFrameJob( int frameno )
+    ScaleFrameJob( Frame frame )
     {
-	this.frameno = frameno;
+	this.frame = frame;
     }
 
     /**
@@ -36,32 +35,27 @@ public class ScaleFrameJob implements Job {
 	return jobType;
     }
 
-    static class Frame implements JobResultValue {
-	private static final long serialVersionUID = 8797700803728846092L;
-	final int array[];
-
-	Frame( int array[] ){
-	    this.array = array;
-	}
-    }
-
     /** Runs this job. */
     @Override
     public void run( Node node, TaskIdentifier taskid )
     {
-	JobWaiter waiter = new JobWaiter();
-	Job j = new FetchFrameJob( frameno );
-	waiter.submit( node, j );
-	waiter.sync( node );
         if( Settings.traceScaler ){
-            System.out.println( "Scaling frame " + frameno );
+            System.out.println( "Scaling frame " + frame.frameno );
         }
         // FIXME: implement this properly.
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT/4];
-        Arrays.fill( array, 0 );
-        JobResultValue value = new Frame( array );
+        int outarray[] = new int[Settings.FRAME_SAMPLE_COUNT/4];
+        for( int n=0; n<REPEAT; n++ ){
+            int ix = 0;
+            int array[] = frame.array;
+
+            for( int i=0; i<array.length; i += 4 ){
+                int v = (array[i] + array[i+1] + array[i+2] + array[i+3])/2;
+                outarray[ix++] = v;
+            }
+        }
+        JobResultValue value = new Frame( frame.frameno, outarray );
         if( Settings.traceFetcher ){
-            System.out.println( "Scaling frame " + frameno );
+            System.out.println( "Scaling frame " + frame.frameno );
         }
         taskid.reportResult( node, value );
     }

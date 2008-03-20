@@ -50,7 +50,7 @@ public final class BuildFragmentJob implements Job {
 	JobWaiter waiter = new JobWaiter();
 
         if( Settings.traceFragmentBuilder ){
-            System.out.println( "Collecting frames for fragment [" + startFrame + "..." + endFrame + "]" );
+            System.out.println( "Collecting frames for fragment [" + startFrame + ".." + endFrame + "]" );
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
 	    Job j = new FetchFrameJob( frame );
@@ -62,7 +62,7 @@ public final class BuildFragmentJob implements Job {
         }
         int array[] = new int[Settings.FRAME_SAMPLE_COUNT*Settings.FRAME_FRAGMENT_COUNT];
         Arrays.fill( array, 42 );
-        JobResultValue value = new Frame( array );
+        JobResultValue value = new VideoFragment( startFrame, endFrame, array );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
         }

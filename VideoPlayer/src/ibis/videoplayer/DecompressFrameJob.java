@@ -6,24 +6,28 @@ import ibis.maestro.JobType;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
 
-import java.util.Arrays;
-
 /**
- * A job to fetch a frame.
+ * A job to decompress a frame. We fake decompressing a video frame
+ * by simply doubling the frame and repeating the content.
  * 
  * @author Kees van Reeuwijk
  *
  */
 public class DecompressFrameJob implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
+    
+    /** How many times should I repeat the fake decompression loop to approximate
+     * the real decompression process.
+     */
+    private static final int REPEAT = 4;
 
-    /** The frame to fetch. */
-    private final int frameno;
-    static final JobType jobType = new JobType( "FetchFrame" );
+    /** The frame to decomress. */
+    private final Frame frame;
+    static final JobType jobType = new JobType( "DecompressFrame" );
 
-    DecompressFrameJob( int frameno )
+    DecompressFrameJob( Frame frame )
     {
-        this.frameno = frameno;
+        this.frame = frame;
     }
 
     /**
@@ -39,13 +43,20 @@ public class DecompressFrameJob implements Job {
     @Override
     public void run( Node node, TaskIdentifier taskid )
     {
-        int filler = frameno;
+        int array[] = new int[frame.array.length*2];
 
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
-        Arrays.fill( array, filler );
-        JobResultValue value = new Frame( array );
+        for( int n=0; n<REPEAT; n++ ){
+            int outix = 0;
+
+            for( int ix=0; ix<frame.array.length; ix++ ){
+                int v = frame.array[ix];
+                array[outix++] = v;
+                array[outix++] = v;
+            }
+        }
+        JobResultValue value = new Frame( frame.frameno, array );
         if( Settings.traceFetcher ){
-            System.out.println( "Building frame " + frameno );
+            System.out.println( "Decompressing frame " + frame.frameno );
         }
         taskid.reportResult( node, value );
     }
