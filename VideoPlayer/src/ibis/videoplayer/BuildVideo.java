@@ -5,7 +5,7 @@ import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
-import ibis.maestro.TypeAdder;
+import ibis.maestro.TypeInformation;
 
 /**
  * Small test program.
@@ -40,7 +40,7 @@ public class BuildVideo {
 	}
     }
 
-    private static class TestTypeAdder implements TypeAdder {
+    private static class TestTypeInformation implements TypeInformation {
 
 	/**
 	 * Registers that a neighbor supports the given type of job.
@@ -61,16 +61,50 @@ public class BuildVideo {
 	public void initialize(Node w)
 	{
 	    w.allowJobType( BuildFragmentJob.jobType );
-            w.allowJobType( ScaleFrame.jobType );
-            w.allowJobType( FetchFrame.jobType );
+            w.allowJobType( ScaleFrameJob.jobType );
+            w.allowJobType( FetchFrameJob.jobType );
 	}
+
+        /**
+         * Compares two job types based on priority. Returns
+         * 1 if type a has more priority as b, etc.
+         * 
+         * Job types further down the stream are more important than job types
+         * upstream, since once we start a job we should finish it as soon as
+         * possible.
+         */
+        public int compare( JobType a, JobType b )
+        {
+            if( a.equals( b ) ){
+                return 0;
+            }
+            if( a.equals( BuildFragmentJob.jobType ) ){
+                return 1;
+            }
+            if( b.equals( BuildFragmentJob.jobType ) ){
+                return -1;
+            }
+            if( a.equals( ScaleFrameJob.jobType ) ){
+                return 1;
+            }
+            if( b.equals( ScaleFrameJob.jobType ) ){
+                return -1;
+            }
+            if( a.equals( FetchFrameJob.jobType ) ){
+                return 1;
+            }
+            if( b.equals( FetchFrameJob.jobType ) ){
+                return -1;
+            }
+            return 0;
+        }
 	
     }
     
     @SuppressWarnings("synthetic-access")
     private void run( int frameCount, boolean goForMaestro ) throws Exception
     {
-        Node node = new Node( new TestTypeAdder(), goForMaestro );
+        Node node = new Node( new TestTypeInformation(), goForMaestro );
         // How many fragments will there be?
         int fragmentCount = (frameCount+Settings.FRAME_FRAGMENT_COUNT-1)/Settings.FRAME_FRAGMENT_COUNT;
         Listener listener = new Listener( fragmentCount );

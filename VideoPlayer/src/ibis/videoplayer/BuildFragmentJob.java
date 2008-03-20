@@ -11,7 +11,6 @@ import ibis.maestro.JobType;
 import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskIdentifier;
-import ibis.videoplayer.FetchFrame.Frame;
 
 /**
  * @author Kees van Reeuwijk
@@ -54,7 +53,7 @@ public final class BuildFragmentJob implements Job {
             System.out.println( "Collecting frames for fragment [" + startFrame + "..." + endFrame + "]" );
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
-	    Job j = new FetchFrame( frame );
+	    Job j = new FetchFrameJob( frame );
 	    waiter.submit( node, j );
 	}
 	JobResultValue res[] = waiter.sync( node );

@@ -14,14 +14,14 @@ import java.util.Arrays;
  * @author Kees van Reeuwijk
  *
  */
-public class FetchFrame implements Job {
+public class FetchFrameJob implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch. */
     private final int frameno;
     static final JobType jobType = new JobType( "FetchFrame" );
 
-    FetchFrame( int frameno )
+    FetchFrameJob( int frameno )
     {
         this.frameno = frameno;
     }
@@ -33,15 +33,6 @@ public class FetchFrame implements Job {
     @Override
     public JobType getType() {
         return jobType;
-    }
-
-    static class Frame implements JobResultValue {
-        private static final long serialVersionUID = 8797700803728846092L;
-        final int array[];
-        
-        Frame( int array[] ){
-            this.array = array;
-        }
     }
 
     /** Runs this job. */
