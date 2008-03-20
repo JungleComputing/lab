@@ -65,7 +65,7 @@ public final class BuildFragmentJob implements Job {
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
             int a[] = frame.array;
-            for( int j=0; j<a.length; j++ ){
+            for( int j=0; j<a.length; j += 2 ){
                 int v = (a[j]+a[j+1]);
 
                 array[ix++] = v;

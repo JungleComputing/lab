@@ -129,7 +129,7 @@ public class BuildVideo {
     public static void main( String args[] )
     {
         boolean goForMaestro = true;
-        int jobCount = 0;
+        int frameCount = 0;
 
         if( args.length == 0 ){
             System.err.println( "Missing parameter: I need a job count, or 'worker'" );
@@ -140,11 +140,11 @@ public class BuildVideo {
             goForMaestro = false;
         }
         else {
-            jobCount = Integer.parseInt( arg );
+            frameCount = Integer.parseInt( arg );
         }
-	System.out.println( "Running on platform " + Service.getPlatformVersion() + " args.length=" + args.length + " goForMaestro=" + goForMaestro + "; jobCount=" + jobCount );
+	System.out.println( "Running on platform " + Service.getPlatformVersion() + " args.length=" + args.length + " goForMaestro=" + goForMaestro + "; frameCount=" + frameCount );
 	try {
-            new BuildVideo().run( jobCount, goForMaestro );
+            new BuildVideo().run( frameCount, goForMaestro );
         }
         catch( Exception e ) {
             e.printStackTrace( System.err );

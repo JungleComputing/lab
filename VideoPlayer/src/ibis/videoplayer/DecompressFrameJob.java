@@ -55,7 +55,7 @@ public class DecompressFrameJob implements Job {
             }
         }
         JobResultValue value = new Frame( frame.frameno, array );
-        if( Settings.traceFetcher ){
+        if( Settings.traceDecompressor ){
             System.out.println( "Decompressing frame " + frame.frameno );
         }
         taskid.reportResult( node, value );

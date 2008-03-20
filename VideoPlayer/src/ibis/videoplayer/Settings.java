@@ -20,4 +20,5 @@ public class Settings {
     static final boolean traceFetcher = true;
     static final boolean traceFragmentBuilder = true;
     static final boolean traceScaler = true;
+    static final boolean traceDecompressor = true;
 }
