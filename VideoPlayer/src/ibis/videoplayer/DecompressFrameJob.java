@@ -21,9 +21,8 @@ public class DecompressFrameJob implements Job {
      */
     private static final int REPEAT = 4;
 
-    /** The frame to decomress. */
+    /** The frame to decompress. */
     private final Frame frame;
-    static final JobType jobType = new JobType( "DecompressFrame" );
 
     DecompressFrameJob( Frame frame )
     {
@@ -36,7 +35,7 @@ public class DecompressFrameJob implements Job {
      */
     @Override
     public JobType getType() {
-        return jobType;
+        return new JobType( 2, "DecompressFrameJob" );
     }
 
     /** Runs this job. */

@@ -19,11 +19,15 @@ public class ScaleFrameJob implements Job {
 
     /** The frame to fetch and scale. */
     private final Frame frame;
-    static final JobType jobType = new JobType( "ScaleFrame" );
 
     ScaleFrameJob( Frame frame )
     {
 	this.frame = frame;
+    }
+
+    static JobType buildJobType()
+    {
+	return new JobType( 3, "FetchFrameJob" );
     }
 
     /**
@@ -32,7 +36,7 @@ public class ScaleFrameJob implements Job {
      */
     @Override
     public JobType getType() {
-	return jobType;
+	return buildJobType();
     }
 
     /** Runs this job. */

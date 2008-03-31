@@ -19,12 +19,16 @@ public class FetchFrameJob implements Job {
 
     /** The frame to fetch. */
     private final int frameno;
-    static final JobType jobType = new JobType( "FetchFrame" );
     private static final Random rng = new Random();
 
     FetchFrameJob( int frameno )
     {
         this.frameno = frameno;
+    }
+
+    static JobType buildJobType()
+    {
+	return new JobType( 1, "FetchFrameJob" );
     }
 
     /**
@@ -33,7 +37,7 @@ public class FetchFrameJob implements Job {
      */
     @Override
     public JobType getType() {
-        return jobType;
+        return buildJobType();
     }
 
     /** Runs this job. */

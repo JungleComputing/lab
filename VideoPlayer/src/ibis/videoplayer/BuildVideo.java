@@ -59,9 +59,9 @@ public class BuildVideo {
 	@Override
 	public void initialize(Node w)
 	{
-	    w.allowJobType( BuildFragmentJob.jobType );
-            w.allowJobType( ScaleFrameJob.jobType );
-            w.allowJobType( FetchFrameJob.jobType );
+	    w.allowJobType( BuildFragmentJob.buildJobType() );
+            w.allowJobType( ScaleFrameJob.buildJobType() );
+            w.allowJobType( FetchFrameJob.buildJobType() );
 	}
 
         /**
@@ -77,28 +77,7 @@ public class BuildVideo {
          */
         public int compare( JobType a, JobType b )
         {
-            if( a.equals( b ) ){
-                return 0;
-            }
-            if( a.equals( BuildFragmentJob.jobType ) ){
-                return 1;
-            }
-            if( b.equals( BuildFragmentJob.jobType ) ){
-                return -1;
-            }
-            if( a.equals( ScaleFrameJob.jobType ) ){
-                return 1;
-            }
-            if( b.equals( ScaleFrameJob.jobType ) ){
-                return -1;
-            }
-            if( a.equals( FetchFrameJob.jobType ) ){
-                return 1;
-            }
-            if( b.equals( FetchFrameJob.jobType ) ){
-                return -1;
-            }
-            return 0;
+            return JobType.comparePriorities( a, b );
         }
 	
     }

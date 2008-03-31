@@ -17,7 +17,6 @@ import ibis.maestro.TaskIdentifier;
 public final class BuildFragmentJob implements Job {
     /** */
     private static final long serialVersionUID = 6769001575637882594L;
-    static final JobType jobType = new JobType( "BuildFragment" );
     private final int startFrame;
     private final int endFrame;
 
@@ -34,7 +33,7 @@ public final class BuildFragmentJob implements Job {
     @Override
     public JobType getType()
     {
-	return jobType;
+	return buildJobType();
     }
 
     /**
@@ -79,6 +78,11 @@ public final class BuildFragmentJob implements Job {
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
         }
         taskId.reportResult( node, value );
+    }
+
+    static JobType buildJobType()
+    {
+	return new JobType( 0, "BuildFragment" );
     }
 
 }
