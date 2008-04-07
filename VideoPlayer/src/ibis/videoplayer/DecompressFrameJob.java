@@ -15,18 +15,12 @@ import ibis.maestro.TaskIdentifier;
  */
 public class DecompressFrameJob implements Job {
     private static final long serialVersionUID = -3938044583266505212L;
-    
-    /** How many times should I repeat the fake decompression loop to approximate
-     * the real decompression process.
-     */
-    private static final int REPEAT = 4;
 
-    /** The frame to decompress. */
-    private final Frame frame;
+    DecompressFrameAction action;
 
     DecompressFrameJob( Frame frame )
     {
-        this.frame = frame;
+        this.action = new DecompressFrameAction( frame );
     }
 
     /**
@@ -34,29 +28,16 @@ public class DecompressFrameJob implements Job {
      * @return The job type.
      */
     @Override
-    public JobType getType() {
-        return new JobType( 2, "DecompressFrameJob" );
+    public JobType getType()
+    {
+	return action.getType();
     }
 
     /** Runs this job. */
     @Override
     public void run( Node node, TaskIdentifier taskid )
     {
-        int array[] = new int[frame.array.length*2];
-
-        for( int n=0; n<REPEAT; n++ ){
-            int outix = 0;
-
-            for( int ix=0; ix<frame.array.length; ix++ ){
-                int v = frame.array[ix];
-                array[outix++] = v;
-                array[outix++] = v;
-            }
-        }
-        JobResultValue value = new Frame( frame.frameno, array );
-        if( Settings.traceDecompressor ){
-            System.out.println( "Decompressing frame " + frame.frameno );
-        }
+        JobResultValue value = action.run();
         taskid.reportResult( node, value );
     }
 }

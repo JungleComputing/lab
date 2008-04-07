@@ -41,9 +41,9 @@ public class BuildVideo {
     }
 
     private static class TestTypeInformation implements TypeInformation {
-        private static final long serialVersionUID = -4668477198718023902L;
+	private static final long serialVersionUID = -4668477198718023902L;
 
-    /**
+	/**
 	 * Registers that a neighbor supports the given type of job.
 	 * @param w The worker to register the info with.
 	 * @param t The type a neighbor supports.

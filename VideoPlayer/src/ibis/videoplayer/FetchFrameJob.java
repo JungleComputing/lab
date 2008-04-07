@@ -44,11 +44,15 @@ public class FetchFrameJob implements Job {
     @Override
     public void run( Node node, TaskIdentifier taskid )
     {
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT];
-        for( int i=0; i<array.length; i++ ){
-            array[i] = rng.nextInt();
+        short r[] = new short[Settings.FRAME_SAMPLE_COUNT];
+        short g[] = new short[Settings.FRAME_SAMPLE_COUNT];
+        short b[] = new short[Settings.FRAME_SAMPLE_COUNT];
+        for( int i=0; i<r.length; i++ ){
+            r[i] = (short) (rng.nextInt() & 0xFFFF);
+            g[i] = (short) (rng.nextInt() & 0xFFFF);
+            b[i] = (short) (rng.nextInt() & 0xFFFF);
         }
-        JobResultValue value = new Frame( frameno, array );
+        JobResultValue value = new Frame( frameno, r, g, b );
         if( Settings.traceFetcher ){
             System.out.println( "Building frame " + frameno );
         }

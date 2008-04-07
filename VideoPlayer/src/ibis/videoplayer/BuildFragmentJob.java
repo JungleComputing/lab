@@ -54,26 +54,34 @@ public final class BuildFragmentJob implements Job {
 	    waiter.submit( node, j );
 	}
 	JobResultValue res[] = waiter.sync( node );
-        int sz = 0;
+        int szr = 0;
+        int szg = 0;
+        int szb = 0;
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
-            sz += (1+frame.array.length)/2;
+            szr += frame.r.length;
+            szg += frame.g.length;
+            szb += frame.b.length;
         }
-        int array[] = new int[Settings.FRAME_SAMPLE_COUNT*Settings.FRAME_FRAGMENT_COUNT];
-        int ix = 0;
+        short r[] = new short[szr];
+        short g[] = new short[szg];
+        short b[] = new short[szb];
+        int ixr = 0;
+        int ixg = 0;
+        int ixb = 0;
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
-            int a[] = frame.array;
-            for( int j=0; j<a.length; j += 2 ){
-                int v = (a[j]+a[j+1]);
-
-                array[ix++] = v;
-            }
+            System.arraycopy( frame.r, 0, r, ixr, r.length );
+            ixr += r.length;
+            System.arraycopy( frame.g, 0, g, ixg, g.length );
+            ixb += g.length;
+            System.arraycopy( frame.b, 0, b, ixb, b.length );
+            ixb += b.length;
         }
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
         }
-        JobResultValue value = new VideoFragment( startFrame, endFrame, array );
+        JobResultValue value = new VideoFragment( startFrame, endFrame, r, g, b );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
         }
