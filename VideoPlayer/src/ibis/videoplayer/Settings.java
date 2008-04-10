@@ -7,13 +7,9 @@ package ibis.videoplayer;
  * @author Kees van Reeuwijk
  *
  */
-public class Settings {
-
-    /** The number of bytes in a frame. */
-    public static final int FRAME_SAMPLE_COUNT = 10000;
-    
+public class Settings {    
     /** The number of frames in a fragment. */
-    public static final int FRAME_FRAGMENT_COUNT = 25;
+    public static final int FRAME_FRAGMENT_COUNT = 30;
     
     // ----------------------
 
