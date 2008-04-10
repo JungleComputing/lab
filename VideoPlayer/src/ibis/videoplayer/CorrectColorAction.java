@@ -54,6 +54,6 @@ public class CorrectColorAction implements Serializable
 	    g[i] = (short) vg;
 	    g[i] = (short) vb;
 	}
-	return new Frame( frame.frameno, r, g, b );
+	return new Frame( frame.frameno, frame.width, frame.height, r, g, b );
     }
 }

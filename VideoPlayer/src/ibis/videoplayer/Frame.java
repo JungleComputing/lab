@@ -10,9 +10,13 @@ class Frame implements JobResultValue {
     final short r[];
     final short g[];
     final short b[];
+    final int width;
+    final int height;
     final int frameno;
     
-    Frame( int frameno, short r[], short g[], short b[] ){
+    Frame( int frameno, int width, int height, short r[], short g[], short b[] ){
+        this.width = width;
+        this.height = height;
 	this.r = r;
 	this.g = g;
 	this.b = b;

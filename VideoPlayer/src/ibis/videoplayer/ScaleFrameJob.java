@@ -74,7 +74,7 @@ public class ScaleFrameJob implements Job {
 		outb[ix++] = v;
 	    }
 	}
-	JobResultValue value = new Frame( frame.frameno, outr, outg, outb );
+	JobResultValue value = new Frame( frame.frameno, frame.width/2, frame.height/2, outr, outg, outb );
 	if( Settings.traceFetcher ){
 	    System.out.println( "Scaling frame " + frame.frameno );
 	}
