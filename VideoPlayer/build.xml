@@ -5,7 +5,7 @@
 
     <property name="version" value="0.0.1" />
 
-    <property name="dist-name" value="${ant.project.name}${version}" />
+    <property name="dist-name" value="${ant.project.name}-${version}" />
 
     <!-- Import environment properties -->
 
@@ -17,33 +17,14 @@
 
     <target name="test"
             description="Run tests"
-            depends="workertest" />
+            depends="" />
 
     <property name="src" location="src" />
     <property name="tmp" location="tmp" />
     <property name="lib" location="lib" />
-    <property name="external" location="ibis" />
+    <property name="external" location="support-libs" />
     <property name="javadoc" location="javadoc" />
     <property name="sources" location="sources" />
-
-    <!-- copy external dependancies to lib, including provided GAT -->
-    <target name="copy-included-gat">
-        <mkdir dir="${lib}" />
-
-        <copy todir="${lib}">
-            <fileset dir="GAT" />
-        </copy>
-    </target>
-
-    <!-- copy javaGAT specified by GAT-location  -->
-    <target name="copy-external-gat">
-        <mkdir dir="${lib}" />
-
-        <copy todir="${lib}">
-            <fileset dir="${gat}/lib" />
-        </copy>
-
-    </target>
 
     <!-- Compile -->
     <target name="compile">

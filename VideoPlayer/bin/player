@@ -3,9 +3,9 @@
 SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=fs0.das3.cs.vu.nl
 
-# Check setting of MAESTRO_HOME
-if [ -z "$MAESTRO_HOME" ];  then
-    echo "please set MAESTRO_HOME to the location of your Maestro installation" 1>&2
+# Check setting of VIDEOPLAYER_HOME
+if [ -z "$VIDEOPLAYER_HOME" ];  then
+    echo "please set VIDEOPLAYER_HOME to the location of your Maestro installation" 1>&2
     exit 1
 fi
 
@@ -23,14 +23,14 @@ add_to_libclasspath () {
 }
 
 # Add the jar files in the Maestro lib dir to the classpath.
-add_to_libclasspath "${MAESTRO_HOME}"/lib
+add_to_libclasspath "${VIDEOPLAYER_HOME}"/lib
 
 # And finally, run ...
-#    -Dsmartsockets.file="$MAESTRO_HOME"/smartsockets.properties \
+#    -Dsmartsockets.file="$VIDEOPLAYER_HOME"/smartsockets.properties \
 exec java \
     -server \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
-    -Dlog4j.configuration=file:"$MAESTRO_HOME"/log4j.properties \
+    -Dlog4j.configuration=file:"$VIDEOPLAYER_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
     -Xmx1500M \
      ibis.maestro.TestProg "$@"
