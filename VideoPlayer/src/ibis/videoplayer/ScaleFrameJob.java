@@ -25,7 +25,7 @@ public class ScaleFrameJob implements Job {
 
     static JobType buildJobType()
     {
-	return new JobType( 3, "FetchFrameJob" );
+	return new JobType( 3, "ScaleFrameJob" );
     }
 
     /**

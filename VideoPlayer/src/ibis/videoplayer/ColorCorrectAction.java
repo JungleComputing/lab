@@ -11,14 +11,14 @@ import java.io.Serializable;
  * @author Kees van Reeuwijk
  *
  */
-public class CorrectColorAction implements Serializable
+public class ColorCorrectAction implements Serializable
 {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to decompress. */
     private final Frame frame;
 
-    CorrectColorAction( Frame frame )
+    ColorCorrectAction( Frame frame )
     {
 	this.frame = frame;
     }

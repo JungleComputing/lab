@@ -3,6 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/Maestro"/>
-	<classpathentry kind="lib" path="ibis/ipl.jar"/>
+	<classpathentry kind="lib" path="support-libs/ipl-2.1.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

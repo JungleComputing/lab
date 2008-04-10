@@ -62,8 +62,9 @@ public class BuildVideo {
 	public void initialize(Node w)
 	{
 	    w.allowJobType( BuildFragmentJob.buildJobType() );
-            w.allowJobType( ScaleFrameJob.buildJobType() );
-            w.allowJobType( FetchFrameJob.buildJobType() );
+            w.allowJobType( BuildFragmentJob.ColorCorrectFrameJob.buildJobType() );
+            w.allowJobType( BuildFragmentJob.ScaleFrameJob.buildJobType() );
+            w.allowJobType( BuildFragmentJob.FetchFrameJob.buildJobType() );
 	}
 
         /**
@@ -81,9 +82,8 @@ public class BuildVideo {
         {
             return JobType.comparePriorities( a, b );
         }
-	
     }
-    
+
     @SuppressWarnings("synthetic-access")
     private void run( int frameCount, boolean goForMaestro ) throws Exception
     {

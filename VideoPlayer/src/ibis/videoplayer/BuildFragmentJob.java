@@ -36,6 +36,102 @@ public final class BuildFragmentJob implements Job {
 	return buildJobType();
     }
 
+    private static class DecompressFrameJob implements Job {
+        private static final long serialVersionUID = -3938044583266505212L;
+
+        DecompressFrameAction action;
+
+        DecompressFrameJob( Frame frame )
+        {
+            this.action = new DecompressFrameAction( frame );
+        }
+
+        /**
+         * Returns the type of this job.
+         * @return The job type.
+         */
+        @Override
+        public JobType getType()
+        {
+    	return action.getType();
+        }
+
+        /** Runs this job. */
+        @Override
+        public void run( Node node, TaskIdentifier taskid )
+        {
+            Frame frame = action.run();
+	    node.submit( new ColorCorrectFrameJob( frame ), taskid );
+        }
+    }
+
+
+    static class ColorCorrectFrameJob implements Job {
+        private static final long serialVersionUID = -3938044583266505212L;
+
+        ColorCorrectAction action;
+
+        ColorCorrectFrameJob( Frame frame )
+        {
+            this.action = new ColorCorrectAction( frame );
+        }
+
+        /**
+         * Returns the type of this job.
+         * @return The job type.
+         */
+        @Override
+        public JobType getType()
+        {
+    	return action.getType();
+        }
+
+        /** Runs this job. */
+        @Override
+        public void run( Node node, TaskIdentifier taskid )
+        {
+            JobResultValue value = action.run();
+            taskid.reportResult( node, value );
+        }
+    }
+
+    static class FetchFrameJob implements Job {
+        private static final long serialVersionUID = -3938044583266505212L;
+
+        FetchFrameAction action;
+
+        FetchFrameJob( int frameno )
+        {
+            this.action = new FetchFrameAction( frameno );
+        }
+
+        static JobType buildJobType()
+        {
+            return new JobType( 1, "FetchFrameJob" );
+        }
+
+        /**
+         * Returns the type of this job.
+         * @return The job type.
+         */
+        @Override
+        public JobType getType()
+        {
+            return buildJobType();
+        }
+
+        /** Runs this job. */
+        @Override
+        public void run( Node node, TaskIdentifier taskid )
+        {
+            if( Settings.traceFetcher ){
+                System.out.println( "Building frame " + action );
+            }
+            Frame frame = action.run();
+	    node.submit( new DecompressFrameJob( frame ), taskid );
+        }
+    }
+
     /**
      * Runs this fragment building job.
      * @param node The node this job is running on.
@@ -54,6 +150,9 @@ public final class BuildFragmentJob implements Job {
 	    waiter.submit( node, j );
 	}
 	JobResultValue res[] = waiter.sync( node );
+        if( Settings.traceFragmentBuilder ){
+            System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
+        }
         int szr = 0;
         int szg = 0;
         int szb = 0;
@@ -71,15 +170,12 @@ public final class BuildFragmentJob implements Job {
         int ixb = 0;
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
-            System.arraycopy( frame.r, 0, r, ixr, r.length );
-            ixr += r.length;
-            System.arraycopy( frame.g, 0, g, ixg, g.length );
-            ixb += g.length;
-            System.arraycopy( frame.b, 0, b, ixb, b.length );
-            ixb += b.length;
-        }
-        if( Settings.traceFragmentBuilder ){
-            System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
+            System.arraycopy( frame.r, 0, r, ixr, frame.r.length );
+            ixr += frame.r.length;
+            System.arraycopy( frame.g, 0, g, ixg, frame.g.length );
+            ixg += frame.g.length;
+            System.arraycopy( frame.b, 0, b, ixb, frame.b.length );
+            ixb += frame.b.length;
         }
         JobResultValue value = new VideoFragment( startFrame, endFrame, r, g, b );
         if( Settings.traceFragmentBuilder ){

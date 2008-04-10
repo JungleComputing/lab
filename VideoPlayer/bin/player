@@ -5,7 +5,7 @@ SERVERHOST=babylon.few.vu.nl
 
 # Check setting of VIDEOPLAYER_HOME
 if [ -z "$VIDEOPLAYER_HOME" ];  then
-    echo "please set VIDEOPLAYER_HOME to the location of your Maestro installation" 1>&2
+    echo "please set VIDEOPLAYER_HOME to the location of your VideoPlayer installation" 1>&2
     exit 1
 fi
 
@@ -22,7 +22,7 @@ add_to_libclasspath () {
     done
 }
 
-# Add the jar files in the Maestro lib dir to the classpath.
+# Add the jar files in the VideoPlayer lib dir to the classpath.
 add_to_libclasspath "${VIDEOPLAYER_HOME}"/lib
 
 # And finally, run ...
@@ -33,4 +33,4 @@ exec java \
     -Dlog4j.configuration=file:"$VIDEOPLAYER_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
     -Xmx1500M \
-     ibis.maestro.TestProg "$@"
+     ibis.videoplayer.BuildVideo "$@"
