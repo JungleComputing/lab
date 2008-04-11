@@ -135,7 +135,6 @@ public final class BuildFragmentJob implements Job {
         public void run( Node node, TaskIdentifier taskid )
         {
             Frame frame = action.run();
-            System.out.println( "Scaled " + frame );
             taskid.reportResult( node, frame );
         }
     }

@@ -55,7 +55,7 @@ public class ScaleFrameAction implements Serializable
 		outb[ix++] = v;
 	    }
 	}
-	if( Settings.traceFetcher ){
+	if( Settings.traceScaler ){
 	    System.out.println( "Scaling frame " + frame.frameno );
 	}
 	return new Frame( frame.frameno, frame.width/2, frame.height/2, outr, outg, outb );

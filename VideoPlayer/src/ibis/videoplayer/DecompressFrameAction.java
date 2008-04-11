@@ -1,7 +1,5 @@
 package ibis.videoplayer;
 
-import ibis.maestro.JobType;
-
 import java.io.Serializable;
 
 /**

@@ -14,11 +14,11 @@ public class Settings {
     // ----------------------
 
     static final boolean traceFetcher = false;
-    static final boolean traceFragmentBuilder = true;
-    static final boolean traceScaler = true;
-    static final boolean traceDecompressor = true;
+    static final boolean traceFragmentBuilder = false;
+    static final boolean traceScaler = false;
+    static final boolean traceDecompressor = false;
 
-    static boolean traceActions = true;
+    static boolean traceActions = false;
 
     static final int FRAME_HEIGHT = 100*2;
     static final int FRAME_WIDTH = 160*2;
