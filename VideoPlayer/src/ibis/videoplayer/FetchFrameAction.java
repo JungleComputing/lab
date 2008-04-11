@@ -35,6 +35,10 @@ public class FetchFrameAction
             g[i] = (short) (rng.nextInt() & 0xFFFF);
             b[i] = (short) (rng.nextInt() & 0xFFFF);
         }
-        return new Frame( frameno, Settings.FRAME_WIDTH, Settings.FRAME_HEIGHT, r, g, b );
+        Frame frame = new Frame( frameno, Settings.FRAME_WIDTH, Settings.FRAME_HEIGHT, r, g, b );
+        if( Settings.traceActions ) {
+            System.out.println( "Fetched frame " + frame );
+        }
+	return frame;
     }
 }

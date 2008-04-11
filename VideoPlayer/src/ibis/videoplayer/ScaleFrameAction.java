@@ -1,45 +1,23 @@
 package ibis.videoplayer;
 
-import ibis.maestro.Job;
-import ibis.maestro.JobResultValue;
-import ibis.maestro.JobType;
-import ibis.maestro.Node;
-import ibis.maestro.TaskIdentifier;
-
 /**
  * A job to fetch and scale a frame.
  * 
  * @author Kees van Reeuwijk
  *
  */
-public class ScaleFrameJob implements Job {
+public class ScaleFrameAction {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch and scale. */
     private final Frame frame;
 
-    ScaleFrameJob( Frame frame )
+    ScaleFrameAction( Frame frame )
     {
 	this.frame = frame;
     }
 
-    static JobType buildJobType()
-    {
-	return new JobType( 3, "ScaleFrameJob" );
-    }
-
-    /**
-     * Returns the type of this job.
-     * @return The job type.
-     */
-    @Override
-    public JobType getType() {
-	return buildJobType();
-    }
-
-    /** Runs this job. */
-    @Override
-    public void run( Node node, TaskIdentifier taskid )
+    Frame run()
     {
 	if( Settings.traceScaler ){
 	    System.out.println( "Scaling frame " + frame.frameno );
@@ -74,10 +52,9 @@ public class ScaleFrameJob implements Job {
 		outb[ix++] = v;
 	    }
 	}
-	JobResultValue value = new Frame( frame.frameno, frame.width/2, frame.height/2, outr, outg, outb );
 	if( Settings.traceFetcher ){
 	    System.out.println( "Scaling frame " + frame.frameno );
 	}
-	taskid.reportResult( node, value );
+	return new Frame( frame.frameno, frame.width/2, frame.height/2, outr, outg, outb );
     }
 }

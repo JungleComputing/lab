@@ -62,6 +62,7 @@ public class BuildVideo {
 	public void initialize(Node w)
 	{
 	    w.allowJobType( BuildFragmentJob.buildJobType() );
+            w.allowJobType( BuildFragmentJob.DecompressFrameJob.buildJobType() );
             w.allowJobType( BuildFragmentJob.ColorCorrectFrameJob.buildJobType() );
             w.allowJobType( BuildFragmentJob.ScaleFrameJob.buildJobType() );
             w.allowJobType( BuildFragmentJob.FetchFrameJob.buildJobType() );

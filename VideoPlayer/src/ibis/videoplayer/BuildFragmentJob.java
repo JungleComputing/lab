@@ -36,7 +36,7 @@ public final class BuildFragmentJob implements Job {
 	return buildJobType();
     }
 
-    private static class DecompressFrameJob implements Job {
+    static class DecompressFrameJob implements Job {
         private static final long serialVersionUID = -3938044583266505212L;
 
         DecompressFrameAction action;
@@ -46,6 +46,11 @@ public final class BuildFragmentJob implements Job {
             this.action = new DecompressFrameAction( frame );
         }
 
+        static JobType buildJobType()
+        {
+            return new JobType( 2, "DecompressFrameJob" );
+        }
+
         /**
          * Returns the type of this job.
          * @return The job type.
@@ -53,7 +58,7 @@ public final class BuildFragmentJob implements Job {
         @Override
         public JobType getType()
         {
-    	return action.getType();
+            return action.getType();
         }
 
         /** Runs this job. */
@@ -61,6 +66,7 @@ public final class BuildFragmentJob implements Job {
         public void run( Node node, TaskIdentifier taskid )
         {
             Frame frame = action.run();
+            System.out.println( "Decompressed " + frame );
 	    node.submit( new ColorCorrectFrameJob( frame ), taskid );
         }
     }
@@ -83,15 +89,57 @@ public final class BuildFragmentJob implements Job {
         @Override
         public JobType getType()
         {
-    	return action.getType();
+            return buildJobType();
+        }
+
+        static JobType buildJobType()
+        {
+            return new JobType( 1, "ColorCorrectFrameJob" );
         }
 
         /** Runs this job. */
         @Override
         public void run( Node node, TaskIdentifier taskid )
         {
-            JobResultValue value = action.run();
-            taskid.reportResult( node, value );
+            Frame frame = action.run();
+            System.out.println( "Color-corrected " + frame );
+	    node.submit( new ScaleFrameJob( frame ), taskid );
+        }
+    }
+
+    static class ScaleFrameJob implements Job {
+        private static final long serialVersionUID = -3938044583266505212L;
+
+        ScaleFrameAction action;
+
+        ScaleFrameJob( Frame frame )
+        {
+            this.action = new ScaleFrameAction( frame );
+        }
+
+
+        static JobType buildJobType()
+        {
+            return new JobType( 0, "ScaleFrameJob" );
+        }
+
+        /**
+         * Returns the type of this job.
+         * @return The job type.
+         */
+        @Override
+        public JobType getType()
+        {
+            return buildJobType();
+        }
+
+        /** Runs this job. */
+        @Override
+        public void run( Node node, TaskIdentifier taskid )
+        {
+            Frame frame = action.run();
+            System.out.println( "Scaled " + frame );
+            taskid.reportResult( node, frame );
         }
     }
 
@@ -107,7 +155,7 @@ public final class BuildFragmentJob implements Job {
 
         static JobType buildJobType()
         {
-            return new JobType( 1, "FetchFrameJob" );
+            return new JobType( 4, "FetchFrameJob" );
         }
 
         /**
@@ -128,6 +176,7 @@ public final class BuildFragmentJob implements Job {
                 System.out.println( "Building frame " + action );
             }
             Frame frame = action.run();
+            System.out.println( "Fetched " + frame );
 	    node.submit( new DecompressFrameJob( frame ), taskid );
         }
     }
@@ -186,7 +235,7 @@ public final class BuildFragmentJob implements Job {
 
     static JobType buildJobType()
     {
-	return new JobType( 0, "BuildFragment" );
+	return new JobType( 5, "BuildFragment" );
     }
 
 }

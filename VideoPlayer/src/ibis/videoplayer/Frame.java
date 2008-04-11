@@ -22,4 +22,14 @@ class Frame implements JobResultValue {
 	this.b = b;
         this.frameno = frameno;
     }
+    
+    /**
+     * Returns a string representation of this frame.
+     * @return The string representation.
+     */
+    @Override
+    public String toString()
+    {
+	return "frame " + frameno + " " + width + "x" + height;
+    }
 }
