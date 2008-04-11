@@ -14,6 +14,8 @@ import ibis.maestro.TypeInformation;
  *
  */
 public class BuildVideo {
+    private static final int OUTSTANDING_FRAGMENTS = 4;
+
     private static class Listener implements CompletionListener
     {
         int jobsCompleted = 0;
@@ -45,7 +47,7 @@ public class BuildVideo {
         public synchronized void waitForRoom()
         {
             runningJobs++;
-            while( runningJobs>2 ){
+            while( runningJobs>OUTSTANDING_FRAGMENTS ){
                 try {
                     wait();
                 }
