@@ -4,17 +4,17 @@ import ibis.maestro.JobResultValue;
 
 /** A video fragment.
  * 
- * @author reeuwijk
+ * @author Kees van Reeuwijk
  *
  */
-public class VideoFragment implements JobResultValue 
+class VideoFragment implements JobResultValue 
 {
     private static final long serialVersionUID = -791160275253169225L;
-    int startFrame;
-    int endFrame;
-    short r[];
-    short g[];
-    short b[];
+    final int startFrame;
+    final int endFrame;
+    final short r[];
+    final short g[];
+    final short b[];
 
     /**
      * Constructs a new video fragment.

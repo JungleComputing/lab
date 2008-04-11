@@ -58,7 +58,7 @@ public final class BuildFragmentJob implements Job {
         @Override
         public JobType getType()
         {
-            return action.getType();
+            return buildJobType();
         }
 
         /** Runs this job. */
@@ -66,7 +66,6 @@ public final class BuildFragmentJob implements Job {
         public void run( Node node, TaskIdentifier taskid )
         {
             Frame frame = action.run();
-            System.out.println( "Decompressed " + frame );
 	    node.submit( new ColorCorrectFrameJob( frame ), taskid );
         }
     }
@@ -94,7 +93,7 @@ public final class BuildFragmentJob implements Job {
 
         static JobType buildJobType()
         {
-            return new JobType( 1, "ColorCorrectFrameJob" );
+            return new JobType( 3, "ColorCorrectFrameJob" );
         }
 
         /** Runs this job. */
@@ -102,7 +101,6 @@ public final class BuildFragmentJob implements Job {
         public void run( Node node, TaskIdentifier taskid )
         {
             Frame frame = action.run();
-            System.out.println( "Color-corrected " + frame );
 	    node.submit( new ScaleFrameJob( frame ), taskid );
         }
     }
@@ -117,10 +115,9 @@ public final class BuildFragmentJob implements Job {
             this.action = new ScaleFrameAction( frame );
         }
 
-
         static JobType buildJobType()
         {
-            return new JobType( 0, "ScaleFrameJob" );
+            return new JobType( 4, "ScaleFrameJob" );
         }
 
         /**
@@ -155,7 +152,7 @@ public final class BuildFragmentJob implements Job {
 
         static JobType buildJobType()
         {
-            return new JobType( 4, "FetchFrameJob" );
+            return new JobType( 1, "FetchFrameJob" );
         }
 
         /**
@@ -176,7 +173,6 @@ public final class BuildFragmentJob implements Job {
                 System.out.println( "Building frame " + action );
             }
             Frame frame = action.run();
-            System.out.println( "Fetched " + frame );
 	    node.submit( new DecompressFrameJob( frame ), taskid );
         }
     }
@@ -235,7 +231,7 @@ public final class BuildFragmentJob implements Job {
 
     static JobType buildJobType()
     {
-	return new JobType( 5, "BuildFragment" );
+	return new JobType( 0, "BuildFragment" );
     }
 
 }

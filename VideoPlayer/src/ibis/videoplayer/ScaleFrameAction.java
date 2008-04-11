@@ -1,12 +1,15 @@
 package ibis.videoplayer;
 
+import java.io.Serializable;
+
 /**
  * A job to fetch and scale a frame.
  * 
  * @author Kees van Reeuwijk
  *
  */
-public class ScaleFrameAction {
+public class ScaleFrameAction implements Serializable
+{
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch and scale. */

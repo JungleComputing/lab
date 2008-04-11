@@ -55,7 +55,7 @@ public class ColorCorrectAction implements Serializable
 	    g[i] = (short) vb;
 	}
 	if( Settings.traceActions ) {
-	    System.out.println( "Color-corrected frame " + frame );
+	    System.out.println( "Color-corrected " + frame );
 	}
 	return new Frame( frame.frameno, frame.width, frame.height, r, g, b );
     }

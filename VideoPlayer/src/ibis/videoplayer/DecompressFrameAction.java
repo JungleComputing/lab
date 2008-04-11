@@ -28,14 +28,6 @@ public class DecompressFrameAction implements Serializable
 	this.frame = frame;
     }
 
-    /**
-     * Returns the type of this job.
-     * @return The job type.
-     */
-    public JobType getType() {
-	return new JobType( 2, "DecompressFrameAction" );
-    }
-
     private void enlarge( short out[], short in[], int width, int height )
     {
         int outix = 0;

@@ -1,5 +1,6 @@
 package ibis.videoplayer;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -8,7 +9,7 @@ import java.util.Random;
  * @author Kees van Reeuwijk
  *
  */
-public class FetchFrameAction
+public class FetchFrameAction implements Serializable
 {
     private static final long serialVersionUID = -3938044583266505212L;
 
@@ -37,7 +38,7 @@ public class FetchFrameAction
         }
         Frame frame = new Frame( frameno, Settings.FRAME_WIDTH, Settings.FRAME_HEIGHT, r, g, b );
         if( Settings.traceActions ) {
-            System.out.println( "Fetched frame " + frame );
+            System.out.println( "Fetched " + frame );
         }
 	return frame;
     }
