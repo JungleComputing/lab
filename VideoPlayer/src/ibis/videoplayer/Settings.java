@@ -9,7 +9,7 @@ package ibis.videoplayer;
  */
 public class Settings {    
     /** The number of frames in a fragment. */
-    public static final int FRAME_FRAGMENT_COUNT = 30;
+    public static final int FRAME_FRAGMENT_COUNT = 10;
     
     // ----------------------
 
@@ -20,6 +20,6 @@ public class Settings {
 
     static boolean traceActions = false;
 
-    static final int FRAME_HEIGHT = 100*2;
-    static final int FRAME_WIDTH = 160*2;
+    static final int FRAME_HEIGHT = 500;
+    static final int FRAME_WIDTH = 800;
 }

@@ -14,7 +14,7 @@ import ibis.maestro.TypeInformation;
  *
  */
 public class BuildVideo {
-    private static final int OUTSTANDING_FRAGMENTS = 4;
+    private static final int OUTSTANDING_FRAGMENTS = 3*32;
 
     private static class Listener implements CompletionListener
     {
