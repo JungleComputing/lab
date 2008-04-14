@@ -20,6 +20,6 @@ public class Settings {
 
     static boolean traceActions = false;
 
-    static final int FRAME_HEIGHT = 500;
-    static final int FRAME_WIDTH = 800;
+    static final int FRAME_HEIGHT = 400;
+    static final int FRAME_WIDTH = 750;
 }
