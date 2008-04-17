@@ -1,10 +1,12 @@
-/**
- * 
- */
 package ibis.videoplayer;
 
 import ibis.maestro.JobResultValue;
 
+/**
+ * A video frame.
+ * 
+ * @author Kees van Reeuwijk
+ */
 class Frame implements JobResultValue {
     private static final long serialVersionUID = 8797700803728846092L;
     final short r[];

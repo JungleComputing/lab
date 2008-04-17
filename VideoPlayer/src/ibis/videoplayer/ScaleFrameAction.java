@@ -1,6 +1,8 @@
 package ibis.videoplayer;
 
-import java.io.Serializable;
+import ibis.maestro.Job;
+import ibis.maestro.Node;
+import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * A job to fetch and scale a frame.
@@ -8,20 +10,14 @@ import java.io.Serializable;
  * @author Kees van Reeuwijk
  *
  */
-public class ScaleFrameAction implements Serializable
+public class ScaleFrameAction implements Job
 {
     private static final long serialVersionUID = -3938044583266505212L;
 
-    /** The frame to fetch and scale. */
-    private final Frame frame;
-
-    ScaleFrameAction( Frame frame )
+    @Override
+    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
     {
-	this.frame = frame;
-    }
-
-    Frame run()
-    {
+	Frame frame = (Frame) obj;
 	if( Settings.traceScaler ){
 	    System.out.println( "Scaling frame " + frame.frameno );
 	}

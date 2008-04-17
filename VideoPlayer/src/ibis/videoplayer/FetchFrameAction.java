@@ -1,5 +1,9 @@
 package ibis.videoplayer;
 
+import ibis.maestro.Job;
+import ibis.maestro.Node;
+import ibis.maestro.TaskInstanceIdentifier;
+
 import java.io.Serializable;
 import java.util.Random;
 
@@ -9,24 +13,20 @@ import java.util.Random;
  * @author Kees van Reeuwijk
  *
  */
-public class FetchFrameAction implements Serializable
+public class FetchFrameAction implements Job
 {
     private static final long serialVersionUID = -3938044583266505212L;
 
     /** The frame to fetch. */
-    private final int frameno;
     private static final Random rng = new Random();
-
-    FetchFrameAction( int frameno )
-    {
-        this.frameno = frameno;
-    }
 
     /** Runs this action.
      * @return The frame we have fetched.
      */
-    public Frame run()
+    @Override
+    public Object run( Object obj, Node node, TaskInstanceIdentifier taskId )
     {
+	Integer frameno = (Integer) obj;
         final int sz = Settings.FRAME_WIDTH*Settings.FRAME_HEIGHT;
         short r[] = new short[sz];
         short g[] = new short[sz];

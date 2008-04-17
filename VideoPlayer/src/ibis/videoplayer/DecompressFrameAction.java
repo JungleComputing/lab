@@ -1,6 +1,7 @@
 package ibis.videoplayer;
 
-import java.io.Serializable;
+import ibis.maestro.Node;
+import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * An action to decompress a frame. We fake decompressing a video frame
@@ -9,7 +10,7 @@ import java.io.Serializable;
  * @author Kees van Reeuwijk
  *
  */
-public class DecompressFrameAction implements Serializable
+public class DecompressFrameAction implements ibis.maestro.Job
 {
     private static final long serialVersionUID = -3938044583266505212L;
 
@@ -17,14 +18,6 @@ public class DecompressFrameAction implements Serializable
      * the real decompression process.
      */
     private static final int REPEAT = 2;
-
-    /** The frame to decompress. */
-    private final Frame frame;
-
-    DecompressFrameAction( Frame frame )
-    {
-	this.frame = frame;
-    }
 
     private void enlarge( short out[], short in[], int width, int height )
     {
@@ -46,8 +39,10 @@ public class DecompressFrameAction implements Serializable
     /** Runs this job.
      * @return The decompressed frame.
      */
-    public Frame run()
+    @Override
+    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
     {
+	Frame frame = (Frame) obj;
 	short r[] = new short[frame.r.length*REPEAT*REPEAT];
 	short g[] = new short[frame.g.length*REPEAT*REPEAT];
 	short b[] = new short[frame.b.length*REPEAT*REPEAT];

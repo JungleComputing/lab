@@ -1,6 +1,9 @@
 package ibis.videoplayer;
 
+import ibis.maestro.Job;
 import ibis.maestro.JobType;
+import ibis.maestro.Node;
+import ibis.maestro.TaskInstanceIdentifier;
 
 import java.io.Serializable;
 
@@ -11,31 +14,18 @@ import java.io.Serializable;
  * @author Kees van Reeuwijk
  *
  */
-public class ColorCorrectAction implements Serializable
+public class ColorCorrectAction implements Job
 {
     private static final long serialVersionUID = -3938044583266505212L;
-
-    /** The frame to decompress. */
-    private final Frame frame;
-
-    ColorCorrectAction( Frame frame )
-    {
-	this.frame = frame;
-    }
-
-    /**
-     * Returns the type of this job.
-     * @return The job type.
-     */
-    public JobType getType() {
-	return new JobType( 2, "DecompressFrameAction" );
-    }
 
     /** Runs this job.
      * @return The decompressed frame.
      */
-    public Frame run()
+    @Override
+    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
     {
+	Frame frame = (Frame) obj;
+
 	double frr = 0.0, frg = 0.0, frb = 1.0;
 	double fgr = 0.0, fgg = 1.0, fgb = 0.0;
 	double fbr = 1.0, fbg = 0.0, fbb = 0.0;
@@ -59,4 +49,5 @@ public class ColorCorrectAction implements Serializable
 	}
 	return new Frame( frame.frameno, frame.width, frame.height, r, g, b );
     }
+
 }

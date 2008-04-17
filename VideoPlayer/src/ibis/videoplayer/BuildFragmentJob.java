@@ -6,6 +6,7 @@ package ibis.videoplayer;
 import ibis.maestro.Job;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
+import ibis.maestro.Task;
 import ibis.maestro.TaskWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskInstanceIdentifier;
@@ -14,166 +15,15 @@ import ibis.maestro.TaskInstanceIdentifier;
  * @author Kees van Reeuwijk
  *
  */
-public final class BuildFragmentJob implements Job {
+public final class BuildFragmentJob implements Job
+{
     /** */
     private static final long serialVersionUID = 6769001575637882594L;
-    private final int startFrame;
-    private final int endFrame;
+    private Task fetchTask;
 
-    BuildFragmentJob( int startFrame, int endFrame )
+    BuildFragmentJob( Task fetchTask )
     {
-        this.startFrame = startFrame;
-        this.endFrame = endFrame;
-    }
-
-    /**
-     * Returns the type of this job.
-     * @return The type of this job.
-     */
-    @Override
-    public JobType getType()
-    {
-	return buildJobType();
-    }
-
-    static class DecompressFrameJob implements Job {
-        private static final long serialVersionUID = -3938044583266505212L;
-
-        DecompressFrameAction action;
-
-        DecompressFrameJob( Frame frame )
-        {
-            this.action = new DecompressFrameAction( frame );
-        }
-
-        static JobType buildJobType()
-        {
-            return new JobType( 2, "DecompressFrameJob" );
-        }
-
-        /**
-         * Returns the type of this job.
-         * @return The job type.
-         */
-        @Override
-        public JobType getType()
-        {
-            return buildJobType();
-        }
-
-        /** Runs this job. */
-        @Override
-        public void run( Node node, TaskInstanceIdentifier taskid )
-        {
-            Frame frame = action.run();
-	    node.submit( new ColorCorrectFrameJob( frame ), taskid );
-        }
-    }
-
-
-    static class ColorCorrectFrameJob implements Job {
-        private static final long serialVersionUID = -3938044583266505212L;
-
-        ColorCorrectAction action;
-
-        ColorCorrectFrameJob( Frame frame )
-        {
-            this.action = new ColorCorrectAction( frame );
-        }
-
-        /**
-         * Returns the type of this job.
-         * @return The job type.
-         */
-        @Override
-        public JobType getType()
-        {
-            return buildJobType();
-        }
-
-        static JobType buildJobType()
-        {
-            return new JobType( 3, "ColorCorrectFrameJob" );
-        }
-
-        /** Runs this job. */
-        @Override
-        public void run( Node node, TaskInstanceIdentifier taskid )
-        {
-            Frame frame = action.run();
-	    node.submit( new ScaleFrameJob( frame ), taskid );
-        }
-    }
-
-    static class ScaleFrameJob implements Job {
-        private static final long serialVersionUID = -3938044583266505212L;
-
-        ScaleFrameAction action;
-
-        ScaleFrameJob( Frame frame )
-        {
-            this.action = new ScaleFrameAction( frame );
-        }
-
-        static JobType buildJobType()
-        {
-            return new JobType( 4, "ScaleFrameJob" );
-        }
-
-        /**
-         * Returns the type of this job.
-         * @return The job type.
-         */
-        @Override
-        public JobType getType()
-        {
-            return buildJobType();
-        }
-
-        /** Runs this job. */
-        @Override
-        public void run( Node node, TaskInstanceIdentifier taskid )
-        {
-            Frame frame = action.run();
-            taskid.reportResult( node, frame );
-        }
-    }
-
-    static class FetchFrameJob implements Job {
-        private static final long serialVersionUID = -3938044583266505212L;
-
-        FetchFrameAction action;
-
-        FetchFrameJob( int frameno )
-        {
-            this.action = new FetchFrameAction( frameno );
-        }
-
-        static JobType buildJobType()
-        {
-            return new JobType( 1, "FetchFrameJob" );
-        }
-
-        /**
-         * Returns the type of this job.
-         * @return The job type.
-         */
-        @Override
-        public JobType getType()
-        {
-            return buildJobType();
-        }
-
-        /** Runs this job. */
-        @Override
-        public void run( Node node, TaskInstanceIdentifier taskid )
-        {
-            if( Settings.traceFetcher ){
-                System.out.println( "Building frame " + action );
-            }
-            Frame frame = action.run();
-	    node.submit( new DecompressFrameJob( frame ), taskid );
-        }
+	this.fetchTask = fetchTask;
     }
 
     /**
@@ -182,16 +32,20 @@ public final class BuildFragmentJob implements Job {
      * @param taskId The task identifier this job belongs to.
      */
     @Override
-    public void run( Node node, TaskInstanceIdentifier taskId )
+    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
     {
 	TaskWaiter waiter = new TaskWaiter();
 
+        FrameNumberRange range = (FrameNumberRange) obj;
+        int startFrame = range.startFrameNumber;
+        int endFrame = range.endFrameNumber;
+        
         if( Settings.traceFragmentBuilder ){
-            System.out.println( "Collecting frames for fragment [" + startFrame + ".." + endFrame + "]" );
+            System.out.println( "Collecting frames for fragment " + range  );
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
-	    Job j = new FetchFrameJob( frame );
-	    waiter.submit( node, j );
+	    Integer frameno = new Integer( frame );
+	    fetchTask.submit( node, frameno );
 	}
 	JobResultValue res[] = waiter.sync( node );
         if( Settings.traceFragmentBuilder ){
@@ -226,11 +80,17 @@ public final class BuildFragmentJob implements Job {
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
         }
         taskId.reportResult( node, value );
+        return new Integer( 0 );
     }
 
     static JobType buildJobType()
     {
 	return new JobType( 0, "BuildFragment" );
+    }
+
+    static Task createGetFrameTask( Node node )
+    {
+	return node.createTask( "getFRame", new FetchFrameAction(), new DecompressFrameAction(), new ColorCorrectAction(), new ScaleFrameAction() );
     }
 
 }

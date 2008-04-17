@@ -4,6 +4,7 @@ import ibis.maestro.CompletionListener;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
 import ibis.maestro.Node;
+import ibis.maestro.Task;
 import ibis.maestro.TaskInstanceIdentifier;
 import ibis.maestro.TypeInformation;
 
@@ -44,7 +45,7 @@ public class BuildVideo {
             notifyAll();
         }
 
-        public synchronized void waitForRoom()
+        synchronized void waitForRoom()
         {
             runningJobs++;
             while( runningJobs>OUTSTANDING_FRAGMENTS ){
@@ -79,11 +80,6 @@ public class BuildVideo {
         @Override
         public void initialize(Node w)
         {
-            w.allowJobType( BuildFragmentJob.buildJobType() );
-            w.allowJobType( BuildFragmentJob.FetchFrameJob.buildJobType() );
-            w.allowJobType( BuildFragmentJob.DecompressFrameJob.buildJobType() );
-            w.allowJobType( BuildFragmentJob.ColorCorrectFrameJob.buildJobType() );
-            w.allowJobType( BuildFragmentJob.ScaleFrameJob.buildJobType() );
         }
 
         /**
@@ -110,16 +106,18 @@ public class BuildVideo {
         // How many fragments will there be?
         int fragmentCount = (frameCount+Settings.FRAME_FRAGMENT_COUNT-1)/Settings.FRAME_FRAGMENT_COUNT;
         Listener listener = new Listener( fragmentCount );
+	Task getFrameTask = BuildFragmentJob.createGetFrameTask( node );
+	Task playTask = node.createTask( "videoplayer", new BuildFragmentJob( getFrameTask ) );
 
         System.out.println( "Node created" );
         if( node.isMaestro() ) {
             System.out.println( "I am maestro; building a movie of " + frameCount + " frames" );
             for( int frame=0; frame<frameCount; frame += Settings.FRAME_FRAGMENT_COUNT ){
                 final int endFrame = frame+Settings.FRAME_FRAGMENT_COUNT-1;
-                TaskInstanceIdentifier id = node.buildTaskIdentifier( frame );
-                BuildFragmentJob j = new BuildFragmentJob( frame, endFrame  );
+                TaskInstanceIdentifier id = playTask.buildTaskInstanceIdentifier( frame );
+                FrameNumberRange range = new FrameNumberRange( frame, endFrame );
                 listener.waitForRoom();
-                node.submitTask( j, listener, id );
+                node.submitTask( range, listener, id );
             }
         }
         node.waitToTerminate();
