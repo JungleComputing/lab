@@ -8,7 +8,7 @@ import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
 import ibis.maestro.JobWaiter;
 import ibis.maestro.Node;
-import ibis.maestro.TaskIdentifier;
+import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * @author Kees van Reeuwijk
@@ -63,7 +63,7 @@ public final class BuildFragmentJob implements Job {
 
         /** Runs this job. */
         @Override
-        public void run( Node node, TaskIdentifier taskid )
+        public void run( Node node, TaskInstanceIdentifier taskid )
         {
             Frame frame = action.run();
 	    node.submit( new ColorCorrectFrameJob( frame ), taskid );
@@ -98,7 +98,7 @@ public final class BuildFragmentJob implements Job {
 
         /** Runs this job. */
         @Override
-        public void run( Node node, TaskIdentifier taskid )
+        public void run( Node node, TaskInstanceIdentifier taskid )
         {
             Frame frame = action.run();
 	    node.submit( new ScaleFrameJob( frame ), taskid );
@@ -132,7 +132,7 @@ public final class BuildFragmentJob implements Job {
 
         /** Runs this job. */
         @Override
-        public void run( Node node, TaskIdentifier taskid )
+        public void run( Node node, TaskInstanceIdentifier taskid )
         {
             Frame frame = action.run();
             taskid.reportResult( node, frame );
@@ -166,7 +166,7 @@ public final class BuildFragmentJob implements Job {
 
         /** Runs this job. */
         @Override
-        public void run( Node node, TaskIdentifier taskid )
+        public void run( Node node, TaskInstanceIdentifier taskid )
         {
             if( Settings.traceFetcher ){
                 System.out.println( "Building frame " + action );
@@ -182,7 +182,7 @@ public final class BuildFragmentJob implements Job {
      * @param taskId The task identifier this job belongs to.
      */
     @Override
-    public void run( Node node, TaskIdentifier taskId )
+    public void run( Node node, TaskInstanceIdentifier taskId )
     {
 	JobWaiter waiter = new JobWaiter();
 

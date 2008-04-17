@@ -4,7 +4,7 @@ import ibis.maestro.CompletionListener;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
 import ibis.maestro.Node;
-import ibis.maestro.TaskIdentifier;
+import ibis.maestro.TaskInstanceIdentifier;
 import ibis.maestro.TypeInformation;
 
 /**
@@ -32,7 +32,7 @@ public class BuildVideo {
          * @param result The result of the job.
          */
         @Override
-        public synchronized void jobCompleted( Node node, TaskIdentifier id, JobResultValue result ) {
+        public synchronized void jobCompleted( Node node, TaskInstanceIdentifier id, JobResultValue result ) {
             //System.out.println( "result is " + result );
             jobsCompleted++;
             runningJobs--;
@@ -116,7 +116,7 @@ public class BuildVideo {
             System.out.println( "I am maestro; building a movie of " + frameCount + " frames" );
             for( int frame=0; frame<frameCount; frame += Settings.FRAME_FRAGMENT_COUNT ){
                 final int endFrame = frame+Settings.FRAME_FRAGMENT_COUNT-1;
-                TaskIdentifier id = node.buildTaskIdentifier( frame );
+                TaskInstanceIdentifier id = node.buildTaskIdentifier( frame );
                 BuildFragmentJob j = new BuildFragmentJob( frame, endFrame  );
                 listener.waitForRoom();
                 node.submitTask( j, listener, id );
