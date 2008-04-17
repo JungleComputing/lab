@@ -6,7 +6,7 @@ package ibis.videoplayer;
 import ibis.maestro.Job;
 import ibis.maestro.JobResultValue;
 import ibis.maestro.JobType;
-import ibis.maestro.JobWaiter;
+import ibis.maestro.TaskWaiter;
 import ibis.maestro.Node;
 import ibis.maestro.TaskInstanceIdentifier;
 
@@ -184,7 +184,7 @@ public final class BuildFragmentJob implements Job {
     @Override
     public void run( Node node, TaskInstanceIdentifier taskId )
     {
-	JobWaiter waiter = new JobWaiter();
+	TaskWaiter waiter = new TaskWaiter();
 
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Collecting frames for fragment [" + startFrame + ".." + endFrame + "]" );
