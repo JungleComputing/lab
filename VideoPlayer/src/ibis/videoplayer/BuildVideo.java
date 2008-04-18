@@ -117,7 +117,7 @@ public class BuildVideo {
                 TaskInstanceIdentifier id = playTask.buildTaskInstanceIdentifier( frame );
                 FrameNumberRange range = new FrameNumberRange( frame, endFrame );
                 listener.waitForRoom();
-                node.submitTask( range, listener, id );
+                playTask.submit( range, listener, id );
             }
         }
         node.waitToTerminate();

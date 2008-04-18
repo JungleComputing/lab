@@ -83,11 +83,6 @@ public final class BuildFragmentJob implements Job
         return new Integer( 0 );
     }
 
-    static JobType buildJobType()
-    {
-	return new JobType( 0, "BuildFragment" );
-    }
-
     static Task createGetFrameTask( Node node )
     {
 	return node.createTask( "getFRame", new FetchFrameAction(), new DecompressFrameAction(), new ColorCorrectAction(), new ScaleFrameAction() );
