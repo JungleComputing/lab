@@ -2,7 +2,6 @@ package ibis.videoplayer;
 
 import ibis.maestro.Job;
 import ibis.maestro.Node;
-import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * A job to fetch and scale a frame.
@@ -15,7 +14,7 @@ public class ScaleFrameAction implements Job
     private static final long serialVersionUID = -3938044583266505212L;
 
     @Override
-    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
+    public Object run(Object obj, Node node )
     {
 	Frame frame = (Frame) obj;
 	if( Settings.traceScaler ){

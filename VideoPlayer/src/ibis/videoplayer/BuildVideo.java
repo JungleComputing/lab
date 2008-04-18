@@ -1,12 +1,8 @@
 package ibis.videoplayer;
 
 import ibis.maestro.CompletionListener;
-import ibis.maestro.JobResultValue;
-import ibis.maestro.JobType;
 import ibis.maestro.Node;
 import ibis.maestro.Task;
-import ibis.maestro.TaskInstanceIdentifier;
-import ibis.maestro.TypeInformation;
 
 /**
  * Small test program.
@@ -33,7 +29,7 @@ public class BuildVideo {
          * @param result The result of the job.
          */
         @Override
-        public synchronized void jobCompleted( Node node, TaskInstanceIdentifier id, JobResultValue result ) {
+        public synchronized void jobCompleted( Node node, Object id, Object result ) {
             //System.out.println( "result is " + result );
             jobsCompleted++;
             runningJobs--;
@@ -59,50 +55,10 @@ public class BuildVideo {
         }
     }
 
-    private static class TestTypeInformation implements TypeInformation {
-        private static final long serialVersionUID = -4668477198718023902L;
-
-        /**
-         * Registers that a neighbor supports the given type of job.
-         * @param w The worker to register the info with.
-         * @param t The type a neighbor supports.
-         */
-        @Override
-        public void registerNeighborType( Node w, JobType t )
-        {
-            // Nothing to do.
-        }
-
-        /** Registers the initial types of this worker.
-         * 
-         * @param w The worker to initialize.
-         */
-        @Override
-        public void initialize(Node w)
-        {
-        }
-
-        /**
-         * Compares two job types based on priority. Returns
-         * 1 if type a has more priority as b, etc.
-         * 
-         * Job types further down the stream are more important than job types
-         * upstream, since once we start a job we should finish it as soon as
-         * possible.
-         * @param a One of the job types to compare.
-         * @param b The other job type to compare.
-         * @return The comparison result.
-         */
-        public int compare( JobType a, JobType b )
-        {
-            return JobType.comparePriorities( a, b );
-        }
-    }
-
     @SuppressWarnings("synthetic-access")
     private void run( int frameCount, boolean goForMaestro ) throws Exception
     {
-        Node node = new Node( new TestTypeInformation(), goForMaestro );
+        Node node = new Node( goForMaestro );
         // How many fragments will there be?
         int fragmentCount = (frameCount+Settings.FRAME_FRAGMENT_COUNT-1)/Settings.FRAME_FRAGMENT_COUNT;
         Listener listener = new Listener( fragmentCount );
@@ -114,10 +70,9 @@ public class BuildVideo {
             System.out.println( "I am maestro; building a movie of " + frameCount + " frames" );
             for( int frame=0; frame<frameCount; frame += Settings.FRAME_FRAGMENT_COUNT ){
                 final int endFrame = frame+Settings.FRAME_FRAGMENT_COUNT-1;
-                TaskInstanceIdentifier id = playTask.buildTaskInstanceIdentifier( frame );
                 FrameNumberRange range = new FrameNumberRange( frame, endFrame );
                 listener.waitForRoom();
-                playTask.submit( range, listener, id );
+                playTask.submit( range, frame, listener );
             }
         }
         node.waitToTerminate();

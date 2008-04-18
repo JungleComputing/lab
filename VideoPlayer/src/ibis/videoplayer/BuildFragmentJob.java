@@ -4,12 +4,9 @@
 package ibis.videoplayer;
 
 import ibis.maestro.Job;
-import ibis.maestro.JobResultValue;
-import ibis.maestro.JobType;
+import ibis.maestro.Node;
 import ibis.maestro.Task;
 import ibis.maestro.TaskWaiter;
-import ibis.maestro.Node;
-import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * @author Kees van Reeuwijk
@@ -28,11 +25,11 @@ public final class BuildFragmentJob implements Job
 
     /**
      * Runs this fragment building job.
+     * @param obj The input to this task.
      * @param node The node this job is running on.
-     * @param taskId The task identifier this job belongs to.
      */
     @Override
-    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
+    public Object run( Object obj, Node node )
     {
 	TaskWaiter waiter = new TaskWaiter();
 
@@ -45,9 +42,9 @@ public final class BuildFragmentJob implements Job
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
 	    Integer frameno = new Integer( frame );
-	    fetchTask.submit( node, frameno );
+	    fetchTask.submit( node, frameno, waiter );
 	}
-	JobResultValue res[] = waiter.sync( node );
+	Object res[] = waiter.sync( node );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
         }
@@ -75,17 +72,16 @@ public final class BuildFragmentJob implements Job
             System.arraycopy( frame.b, 0, b, ixb, frame.b.length );
             ixb += frame.b.length;
         }
-        JobResultValue value = new VideoFragment( startFrame, endFrame, r, g, b );
+        VideoFragment value = new VideoFragment( startFrame, endFrame, r, g, b );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Sending fragment [" + startFrame + "..." + endFrame + "]" );
         }
-        taskId.reportResult( node, value );
-        return new Integer( 0 );
+        return value;
     }
 
     static Task createGetFrameTask( Node node )
     {
-	return node.createTask( "getFRame", new FetchFrameAction(), new DecompressFrameAction(), new ColorCorrectAction(), new ScaleFrameAction() );
+	return node.createTask( "getFrame", new FetchFrameAction(), new DecompressFrameAction(), new ColorCorrectAction(), new ScaleFrameAction() );
     }
 
 }

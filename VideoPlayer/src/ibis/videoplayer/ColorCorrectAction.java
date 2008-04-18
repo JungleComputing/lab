@@ -1,11 +1,7 @@
 package ibis.videoplayer;
 
 import ibis.maestro.Job;
-import ibis.maestro.JobType;
 import ibis.maestro.Node;
-import ibis.maestro.TaskInstanceIdentifier;
-
-import java.io.Serializable;
 
 /**
  * An action to color-correct a frame. We fake this by a video frame
@@ -22,7 +18,7 @@ public class ColorCorrectAction implements Job
      * @return The decompressed frame.
      */
     @Override
-    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
+    public Object run(Object obj, Node node )
     {
 	Frame frame = (Frame) obj;
 

@@ -1,7 +1,6 @@
 package ibis.videoplayer;
 
 import ibis.maestro.Node;
-import ibis.maestro.TaskInstanceIdentifier;
 
 /**
  * An action to decompress a frame. We fake decompressing a video frame
@@ -40,7 +39,7 @@ public class DecompressFrameAction implements ibis.maestro.Job
      * @return The decompressed frame.
      */
     @Override
-    public Object run(Object obj, Node node, TaskInstanceIdentifier taskId)
+    public Object run(Object obj, Node node )
     {
 	Frame frame = (Frame) obj;
 	short r[] = new short[frame.r.length*REPEAT*REPEAT];

@@ -1,13 +1,11 @@
 package ibis.videoplayer;
 
-import ibis.maestro.JobResultValue;
-
 /** A video fragment.
  * 
  * @author Kees van Reeuwijk
  *
  */
-class VideoFragment implements JobResultValue 
+class VideoFragment 
 {
     private static final long serialVersionUID = -791160275253169225L;
     final int startFrame;

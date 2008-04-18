@@ -2,9 +2,7 @@ package ibis.videoplayer;
 
 import ibis.maestro.Job;
 import ibis.maestro.Node;
-import ibis.maestro.TaskInstanceIdentifier;
 
-import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -24,7 +22,7 @@ public class FetchFrameAction implements Job
      * @return The frame we have fetched.
      */
     @Override
-    public Object run( Object obj, Node node, TaskInstanceIdentifier taskId )
+    public Object run( Object obj, Node node )
     {
 	Integer frameno = (Integer) obj;
         final int sz = Settings.FRAME_WIDTH*Settings.FRAME_HEIGHT;
