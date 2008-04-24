@@ -20,7 +20,7 @@ public final class BuildFragmentJob implements Job
 
     BuildFragmentJob( Task fetchTask )
     {
-	this.fetchTask = fetchTask;
+        this.fetchTask = fetchTask;
     }
 
     /**
@@ -31,20 +31,20 @@ public final class BuildFragmentJob implements Job
     @Override
     public Object run( Object obj, Node node )
     {
-	TaskWaiter waiter = new TaskWaiter();
+        TaskWaiter waiter = new TaskWaiter();
 
         FrameNumberRange range = (FrameNumberRange) obj;
         int startFrame = range.startFrameNumber;
         int endFrame = range.endFrameNumber;
-        
+
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Collecting frames for fragment " + range  );
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
-	    Integer frameno = new Integer( frame );
-	    waiter.submit( fetchTask, frameno );
-	}
-	Object res[] = waiter.sync( node );
+            Integer frameno = new Integer( frame );
+            waiter.submit( fetchTask, frameno );
+        }
+        Object res[] = waiter.sync( node );
         if( Settings.traceFragmentBuilder ){
             System.out.println( "Building fragment [" + startFrame + "..." + endFrame + "]" );
         }
@@ -53,9 +53,11 @@ public final class BuildFragmentJob implements Job
         int szb = 0;
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
-            szr += frame.r.length;
-            szg += frame.g.length;
-            szb += frame.b.length;
+            if( frame != null ){
+                szr += frame.r.length;
+                szg += frame.g.length;
+                szb += frame.b.length;
+            }
         }
         short r[] = new short[szr];
         short g[] = new short[szg];
@@ -65,12 +67,14 @@ public final class BuildFragmentJob implements Job
         int ixb = 0;
         for( int i=0; i<res.length; i++ ){
             Frame frame = (Frame) res[i];
-            System.arraycopy( frame.r, 0, r, ixr, frame.r.length );
-            ixr += frame.r.length;
-            System.arraycopy( frame.g, 0, g, ixg, frame.g.length );
-            ixg += frame.g.length;
-            System.arraycopy( frame.b, 0, b, ixb, frame.b.length );
-            ixb += frame.b.length;
+            if( frame != null ){
+                System.arraycopy( frame.r, 0, r, ixr, frame.r.length );
+                ixr += frame.r.length;
+                System.arraycopy( frame.g, 0, g, ixg, frame.g.length );
+                ixg += frame.g.length;
+                System.arraycopy( frame.b, 0, b, ixb, frame.b.length );
+                ixb += frame.b.length;
+            }
         }
         VideoFragment value = new VideoFragment( startFrame, endFrame, r, g, b );
         if( Settings.traceFragmentBuilder ){
@@ -81,7 +85,13 @@ public final class BuildFragmentJob implements Job
 
     static Task createGetFrameTask( Node node )
     {
-	return node.createTask( "getFrame", new FetchFrameAction(), new DecompressFrameAction(), new ColorCorrectAction(), new ScaleFrameAction() );
+        return node.createTask(
+                "getFrame",
+                new FetchFrameAction(),
+                new DecompressFrameAction(),
+                new ColorCorrectAction(),
+                new ScaleFrameAction()
+        );
     }
 
 }
