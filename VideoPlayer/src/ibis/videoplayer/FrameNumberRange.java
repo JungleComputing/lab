@@ -3,7 +3,10 @@
  */
 package ibis.videoplayer;
 
-class FrameNumberRange {
+import java.io.Serializable;
+
+class FrameNumberRange implements Serializable
+{
     final int startFrameNumber;
     final int endFrameNumber;
 
