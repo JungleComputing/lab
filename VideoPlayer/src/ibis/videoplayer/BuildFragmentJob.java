@@ -42,7 +42,7 @@ public final class BuildFragmentJob implements Job
         }
         for( int frame=startFrame; frame<=endFrame; frame++ ) {
 	    Integer frameno = new Integer( frame );
-	    fetchTask.submit( node, frameno, waiter );
+	    waiter.submit( fetchTask, frameno );
 	}
 	Object res[] = waiter.sync( node );
         if( Settings.traceFragmentBuilder ){
