@@ -30,6 +30,6 @@ public class ImagePair implements Serializable {
     String compare()
     {
         // For this dummy implementation we just concatename the strings.
-        return before + "+" + after;
+        return before + "+" + after +'\n';
     }
 }

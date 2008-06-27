@@ -16,24 +16,27 @@ public class Main {
      * @param f The file  to read from.
      * @return The list of pairs.
      */
-    private static ImagePair[] readPairs( File f )
+    private static void readPairs( ArrayList<ImagePair> l, File f )
     {
-        ArrayList<ImagePair> l = new ArrayList<ImagePair>();
-
         l.add( new ImagePair( "a", "b" ) );
         l.add( new ImagePair( "c", "d" ) );
         l.add( new ImagePair( "e", "f" ) );
-        ImagePair res[] = new ImagePair[l.size()];
-        l.toArray( res );
-        return res;
     }
 
     /**
      * Runs this program.
      * @param args The command-line parameters.
      */
-    public static void main(String[] args) {
-	System.out.println( "Hello world" );
+    public static void main( String[] args )
+    {
+        ArrayList<ImagePair> l = new ArrayList<ImagePair>();        
+        readPairs( l, new File( "dummy" ) );
+        ImagePair res[] = new ImagePair[l.size()];
+        l.toArray( res );
+        Comparator c = new Comparator();
+        long start = System.currentTimeMillis();
+        String result = c.compareAllPairs( res, 0, res.length );
+        System.out.println( result );
     }
 
 }
