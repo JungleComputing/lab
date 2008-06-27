@@ -54,6 +54,7 @@ public class Main {
      */
     public static void main( String[] args )
     {
+        File imageDirectory = new File( "." );
         ArrayList<ImagePair> l = new ArrayList<ImagePair>();
         for( String fnm: args ) {
             readPairs( l, new File( fnm ) );
@@ -65,7 +66,7 @@ public class Main {
         ImagePair res[] = new ImagePair[l.size()];
         l.toArray( res );
         Comparator c = new Comparator();
-        String result = c.compareAllPairs( res, 0, res.length );
+        String result = c.compareAllPairs( res, 0, res.length, imageDirectory );
         System.out.println( result );
     }
 

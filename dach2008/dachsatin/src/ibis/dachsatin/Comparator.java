@@ -3,6 +3,8 @@
  */
 package ibis.dachsatin;
 
+import java.io.File;
+
 import ibis.satin.SatinObject;
 
 /**
@@ -19,13 +21,13 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
      * @param pairs The list of pairs to compare.
      * @return The list of comparison results.
      */
-    public String compareAllPairs(ImagePair[] pairs, int from, int to  ){
+    public String compareAllPairs(ImagePair[] pairs, int from, int to, File imageDirectory ){
         if( from+1 == to ){
-            return pairs[from].compare();
+            return pairs[from].compare( imageDirectory );
         }
         int mid = (from+to)/2;
-        String resa = compareAllPairs(pairs, from, mid );
-        String resb = compareAllPairs(pairs, mid, to );
+        String resa = compareAllPairs(pairs, from, mid, imageDirectory );
+        String resb = compareAllPairs(pairs, mid, to, imageDirectory );
         sync();
         return resa+resb;
     }

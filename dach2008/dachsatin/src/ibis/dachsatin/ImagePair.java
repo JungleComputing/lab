@@ -1,4 +1,7 @@
 package ibis.dachsatin;
+import ibis.util.RunProcess;
+
+import java.io.File;
 import java.io.Serializable;
 
 /**
@@ -22,14 +25,48 @@ public class ImagePair implements Serializable {
         this.before = before;
         this.after = after;
     }
-    
+
+    static String compareImages( String before, String after, File imageDirectory )
+    {
+        String res = null;
+
+        String comparatorExecutable = System.getenv( "DACHCOMPARATOR" );
+        if( comparatorExecutable == null ) {
+            comparatorExecutable = "/usr/bin/diff";
+        }
+        System.out.println( "Comparing '" + before + "' and '" + after + "'" );
+        String command[] = {
+                comparatorExecutable,
+                new File( imageDirectory, before ).getAbsolutePath(),
+                new File( imageDirectory, after ).getAbsolutePath()
+        };
+        RunProcess p = new RunProcess( command );
+        p.run();
+        int exit = p.getExitStatus();
+        if( exit != 0 ) {
+            String cmd = "";
+            for( String c: command ) {
+                if( !cmd.isEmpty() ) {
+                    cmd += ' ';
+                }
+                cmd += c;
+            }
+            System.err.println( "Comparison command '" + cmd + "' failed:" );
+            System.err.println( new String( p.getStdout() ) );
+            System.err.println( new String( p.getStderr() ) );
+            return null;
+        }
+        res = new String( p.getStdout() );
+        return res;
+
+    }
+
     /**
      * Compares the two images, and returns the verdict.
      * @return The result of the comparison.
      */
-    String compare()
+    String compare( File imageDirectory )
     {
-        // For this dummy implementation we just concatename the strings.
-        return before + "+" + after +'\n';
+        return compareImages( before, after, imageDirectory );
     }
 }

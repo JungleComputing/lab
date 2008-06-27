@@ -1,5 +1,7 @@
 package ibis.dachsatin;
 
+import java.io.File;
+
 import ibis.satin.Spawnable;
 
 /**
@@ -9,5 +11,5 @@ import ibis.satin.Spawnable;
  *
  */
 public interface ComparatorSatinInterface extends Spawnable {
-    String compareAllPairs( ImagePair pairs[], int from, int to );
+    String compareAllPairs( ImagePair pairs[], int from, int to, File imageDirectory );
 }
