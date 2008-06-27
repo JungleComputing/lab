@@ -1,6 +1,10 @@
 package ibis.dachsatin;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -18,9 +22,30 @@ public class Main {
      */
     private static void readPairs( ArrayList<ImagePair> l, File f )
     {
-        l.add( new ImagePair( "a", "b" ) );
-        l.add( new ImagePair( "c", "d" ) );
-        l.add( new ImagePair( "e", "f" ) );
+        try {
+            BufferedReader br = new BufferedReader( new FileReader( f ) );
+            while( true ) {
+                String line = br.readLine();
+                if( line == null ) {
+                    break;
+                }
+                String parts[] = line.split( " " );
+                if( parts.length != 2 ) {
+                    System.err.println( "Malformed image pair [" + line + "]: it has " + parts.length + " parts, not two" );
+                    System.exit( 1 );
+                }
+                l.add( new ImagePair( parts[0], parts[1] ) );
+            }
+            br.close();
+        }
+        catch( FileNotFoundException x ) {
+            System.err.println( "File '" + f + "' not found:" + x.getLocalizedMessage() );
+            System.exit( 1 );
+        }
+        catch( IOException x ) {
+            System.err.println( "Cannot read file: '" + f + "':" + x.getLocalizedMessage() );
+            System.exit( 1 );
+        }
     }
 
     /**
@@ -29,12 +54,17 @@ public class Main {
      */
     public static void main( String[] args )
     {
-        ArrayList<ImagePair> l = new ArrayList<ImagePair>();        
-        readPairs( l, new File( "dummy" ) );
+        ArrayList<ImagePair> l = new ArrayList<ImagePair>();
+        for( String fnm: args ) {
+            readPairs( l, new File( fnm ) );
+        }
+        if( l.size() == 0 ) {
+            System.err.println( "Empty image list??" );
+            System.exit( 1 );
+        }
         ImagePair res[] = new ImagePair[l.size()];
         l.toArray( res );
         Comparator c = new Comparator();
-        long start = System.currentTimeMillis();
         String result = c.compareAllPairs( res, 0, res.length );
         System.out.println( result );
     }
