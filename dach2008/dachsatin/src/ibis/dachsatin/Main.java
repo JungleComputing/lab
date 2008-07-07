@@ -1,73 +1,89 @@
 package ibis.dachsatin;
 
-import java.io.BufferedReader;
+
+import ibis.util.FindPairs;
+import ibis.util.Pair;
+
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Command-line interface.
  * 
- * @author Kees van Reeuwijk
+ * @author Kees van Reeuwijk, Jason Maassen
  *
  */
 public class Main {
-
-    /**
-     * Given a filename, read a list of pairs from that file.
-     * @param f The file  to read from.
-     * @return The list of pairs.
-     */
-    private static void readPairs( ArrayList<ImagePair> l, File f )
-    {
-        try {
-            BufferedReader br = new BufferedReader( new FileReader( f ) );
-            while( true ) {
-                String line = br.readLine();
-                if( line == null ) {
-                    break;
-                }
-                String parts[] = line.split( " " );
-                if( parts.length != 2 ) {
-                    System.err.println( "Malformed image pair [" + line + "]: it has " + parts.length + " parts, not two" );
-                    System.exit( 1 );
-                }
-                l.add( new ImagePair( parts[0], parts[1] ) );
-            }
-            br.close();
-        }
-        catch( FileNotFoundException x ) {
-            System.err.println( "File '" + f + "' not found:" + x.getLocalizedMessage() );
-            System.exit( 1 );
-        }
-        catch( IOException x ) {
-            System.err.println( "Cannot read file: '" + f + "':" + x.getLocalizedMessage() );
-            System.exit( 1 );
-        }
-    }
-
+   
+    private static void usage() { 
+		System.err.println("Usage: Main <directory>");
+		System.exit(1);
+	}
+    
     /**
      * Runs this program.
      * @param args The command-line parameters.
      */
-    public static void main( String[] args )
-    {
-        File imageDirectory = new File( "." );
-        ArrayList<ImagePair> l = new ArrayList<ImagePair>();
-        for( String fnm: args ) {
-            readPairs( l, new File( fnm ) );
-        }
-        if( l.size() == 0 ) {
-            System.err.println( "Empty image list??" );
-            System.exit( 1 );
-        }
-        ImagePair res[] = new ImagePair[l.size()];
-        l.toArray( res );
-        Comparator c = new Comparator();
-        String result = c.compareAllPairs( res, 0, res.length, imageDirectory );
-        System.out.println( result );
+    public static void main(String[] args) {
+    
+    	long start = System.currentTimeMillis();
+    	
+    	if (args.length == 0) { 
+    		usage();
+    	}
+
+    	File dir = null;
+    	boolean verbose = false;
+    	
+    	for (String a : args) { 
+    		
+    		if (a.equals("-v") || a.equals("--verbose")) { 
+    			verbose = true;
+    		} else if (dir == null) {  
+    			dir = new File(a);    	    			
+    		} else { 
+    			usage();
+    		}
+    	}
+    	
+    	if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
+    		System.err.println("Directory " + dir + " cannot be accessed!");
+    		System.exit(1);
+    	}
+
+    	FindPairs finder = new FindPairs(dir);
+    	
+    	Pair [] pairs = finder.getPairs();
+    	
+    	if (pairs.length == 0) { 
+    		System.err.println("No pairs found in directory " + args[0]);
+    		System.exit(1);
+    	}
+    	
+    	Comparator c = new Comparator();
+    	Result r = c.start(pairs);
+        
+        long end = System.currentTimeMillis();
+        
+        System.out.println(r.mergeOutput());        
+        
+        if (verbose) { 
+        	
+        	int jobs = r.time.length;
+        	long total = r.totalTime();
+        	long app = (end-start);
+        	
+        	double avg = ((double) total) / jobs;
+        	double speedup = ((double) total) / app;
+        	
+        	System.out.printf("Application took       : %d ms.\n", app);        	        	
+        	System.out.printf("Processed jobs         : %d\n", jobs);        	
+        	System.out.printf("Accum. processing time : %d ms.\n", total);
+        	System.out.printf("Avg time/job           : %.2f ms.\n", avg);
+        	System.out.printf("Speedup                : %.2f\n", speedup);        	
+        	System.out.printf("Job Times              : " + Arrays.toString(r.time) + "\n");
+        	
+        }        
     }
 
 }
