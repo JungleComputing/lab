@@ -83,6 +83,10 @@ public class Main {
     		System.exit(1);
     	}
     	
+    	if (verbose) { 
+    		System.out.printf("Starting comparison of " + pairs.length + " pairs.");        	        	        	
+    	}
+    	
     	Comparator c = new Comparator();
     	Result r = c.start(pairs, command);
         

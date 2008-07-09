@@ -32,7 +32,6 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 		}
 		
 		System.out.println("Comparing '" + pair.before + "' and '" + pair.after + "'");
-
 		
 		String command [] = {
 				exec,
@@ -58,6 +57,8 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 			return "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
 				+ " stderr: " + new String(p.getStderr());
 		}
+
+		System.out.println("Completed '" + pair.before + "' and '" + pair.after + "'");
 		
 		return new String(p.getStdout());
 	}
