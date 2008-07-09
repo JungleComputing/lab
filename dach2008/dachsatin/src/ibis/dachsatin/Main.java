@@ -34,23 +34,46 @@ public class Main {
 
     	File dir = null;
     	boolean verbose = false;
+    	String command = null;
     	
-    	for (String a : args) { 
+    	for (int i=0;i<args.length;i++) { 
     		
-    		if (a.equals("-v") || a.equals("--verbose")) { 
+    		if (args[i].equals("-v") || args[i].equals("--verbose")) { 
     			verbose = true;
-    		} else if (dir == null) {  
-    			dir = new File(a);    	    			
+    		} else if (args[i].equals("-c") || args[i].equals("--command")) {
+    			if (command == null) { 
+    				command = args[++i];
+    			} else { 
+    				System.err.println("Command already specified!");
+    				System.exit(1);
+    			}
+    		} else if (args[i].equals("-d") || args[i].equals("--directory")) { 
+    			if (dir == null) {  
+    				dir = new File(args[++i]);
+    			} else { 
+    				System.err.println("Directory already specified!");
+    				System.exit(1);
+    			}    			
     		} else { 
     			usage();
     		}
+    	}
+    	
+    	if (dir == null) { 
+    		System.err.println("No directory specified!");
+			System.exit(1);	
+    	}
+    	
+    	if (command == null) { 
+    		System.err.println("No command specified!");
+			System.exit(1);	
     	}
     	
     	if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
     		System.err.println("Directory " + dir + " cannot be accessed!");
     		System.exit(1);
     	}
-
+    	     
     	FindPairs finder = new FindPairs(dir);
     	
     	Pair [] pairs = finder.getPairs();
@@ -61,7 +84,7 @@ public class Main {
     	}
     	
     	Comparator c = new Comparator();
-    	Result r = c.start(pairs);
+    	Result r = c.start(pairs, command);
         
         long end = System.currentTimeMillis();
         

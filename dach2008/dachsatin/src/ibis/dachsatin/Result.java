@@ -1,5 +1,7 @@
 package ibis.dachsatin;
 
+import ibis.util.Pair;
+
 import java.io.Serializable;
 import java.util.Arrays;
 
@@ -7,15 +9,20 @@ public class Result implements Serializable {
 
 	private static final long serialVersionUID = -1661420366726877489L;
 	
+	public final Pair [] input;	
 	public final String [] output;
 	public final long [] time;
 	
-	public Result(String output, long time) { 
+	public Result(Pair [] input, String output, long time) {
+		this.input = input;
 		this.output = new String [] { output };
 		this.time = new long [] { time };
 	}	
 	
-	public Result(Result resA, Result resB) {
+	public Result(Result resA, Result resB) {		
+		input = Arrays.copyOf(resA.input, resA.input.length + resB.input.length);
+		System.arraycopy(resB.input, 0, input, resA.input.length, resB.input.length);
+		
 		output = Arrays.copyOf(resA.output, resA.output.length + resB.output.length);
 		System.arraycopy(resB.output, 0, output, resA.output.length, resB.output.length);
 		

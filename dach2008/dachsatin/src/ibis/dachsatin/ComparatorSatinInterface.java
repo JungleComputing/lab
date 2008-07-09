@@ -10,5 +10,5 @@ import ibis.util.Pair;
  *
  */
 public interface ComparatorSatinInterface extends Spawnable {
-    Result compareAllPairs(Pair [] pairs);
+    Result compareAllPairs(Pair [] pairs, String command);
 }

@@ -19,20 +19,23 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 	/** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
 
-    private String compare(Pair pair) {
+    private String compare(Pair pair, String exec) {
 
 		String res = null;
 
-		String comparatorExecutable = System.getenv("DACHCOMPARATOR");
-
-		if( comparatorExecutable == null ) {
-			comparatorExecutable = "/usr/bin/diff";
+		if (exec == null) { 		
+			exec = System.getenv("DACHCOMPARATOR");
+			
+			if (exec == null ) {
+				return "No command found!";
+			}
 		}
-
+		
 		System.out.println("Comparing '" + pair.before + "' and '" + pair.after + "'");
 
-		String command[] = {
-				comparatorExecutable,
+		
+		String command [] = {
+				exec,
 				pair.before.getAbsolutePath(),
 				pair.after.getAbsolutePath()
 		};
@@ -52,16 +55,11 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 				cmd += c;
 			}
 			
-			System.err.println("Comparison command '" + cmd + "' failed:");
-			System.err.println("stdout: " + new String(p.getStdout()));
-			System.err.println("stderr: " + new String(p.getStderr()));
-			
-			return null;
+			return "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+				+ " stderr: " + new String(p.getStderr());
 		}
 		
-		res = new String(p.getStdout());
-		
-		return res;
+		return new String(p.getStdout());
 	}
     
     /**
@@ -69,19 +67,19 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
      * @param pairs The list of pairs to compare.
      * @return The list of comparison results.
      */
-    public Result compareAllPairs(Pair [] pairs) {
+    public Result compareAllPairs(Pair [] pairs, String command) {
         
     	if (pairs.length == 1) {    		
     		long start = System.currentTimeMillis();    		
-            String output = compare(pairs[0]);
+            String output = compare(pairs[0], command);
             long end = System.currentTimeMillis();            
-            return new Result(output, end-start);
+            return new Result(pairs, output, end-start);
         }
         
     	int mid = pairs.length / 2;
     	   	
-    	Result resa = compareAllPairs(Arrays.copyOfRange(pairs, 0, mid));
-        Result resb = compareAllPairs(Arrays.copyOfRange(pairs, mid, pairs.length));
+    	Result resa = compareAllPairs(Arrays.copyOfRange(pairs, 0, mid), command);
+        Result resb = compareAllPairs(Arrays.copyOfRange(pairs, mid, pairs.length), command);
         
         sync();
         
@@ -89,8 +87,8 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     }
     
     
-    public Result start(Pair [] pairs) {
-        Result r = compareAllPairs(pairs);
+    public Result start(Pair [] pairs, String command) {
+        Result r = compareAllPairs(pairs, command);
         sync();
         return r;    	
     }
