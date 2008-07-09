@@ -2,7 +2,8 @@
 
 #SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=lily.local
-SERVERHOST=fs0.das3.cs.vu.nl
+#SERVERHOST=fs0.das3.cs.vu.nl
+SERVERHOST=localhost
 
 # Check setting of DACHSATIN_HOME
 if [ -z "$DACHSATIN_HOME" ];  then
@@ -10,6 +11,8 @@ if [ -z "$DACHSATIN_HOME" ];  then
     exit 1
 fi
 
+export DACHCOMPARATOR=/home/jason/data-challenge/dach/finder/dach.sh
+	
 # Jar-files from library.
 LIBCLASSPATH=""
 add_to_libclasspath () {
@@ -29,8 +32,8 @@ add_to_libclasspath "${DACHSATIN_HOME}"/lib
 # And finally, run ...
 #    -Dsmartsockets.file="$DACHSATIN_HOME"/smartsockets.properties \
 exec java \
-    -server \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHSATIN_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
+    -Dibis.pool.name=DACH \
      ibis.dachsatin.Main "$@"

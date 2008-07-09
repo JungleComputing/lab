@@ -29,4 +29,4 @@ add_to_libclasspath "${DACHSATIN_HOME}"/support-libs
 exec java \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHSATIN_HOME"/log4j.properties \
-     ibis.server.Server --stats --events --port 5437
+     ibis.server.Server --stats --events --port 5437 $@

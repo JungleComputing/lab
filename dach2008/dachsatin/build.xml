@@ -5,6 +5,7 @@
 
     <property name="version" value="0.0.1" />
 
+    <property name="satinc-flags" value="-keep"/>
     <property name="dist-name" value="${ant.project.name}-${version}" />
 
     <!-- Import environment properties -->
@@ -13,7 +14,7 @@
 
     <target name="build"
             description="Build build all sources"
-            depends="clean,compile,javadoc" />
+            depends="clean,compile,satinc,javadoc" />
 
     <target name="test"
             description="Run tests"
@@ -56,9 +57,24 @@
         <!-- Create jar file -->
         <jar destfile="${lib}/${dist-name}.jar" basedir="${tmp}" includes="**/*.class">
         </jar>
-        <delete dir="${tmp}" />
 
-        <!-- Copy external libraries to lib directory -->
+        <delete dir="${tmp}" />
+    </target>
+
+    <target name="satinc">
+        <mkdir dir="${tmp}" />
+
+	<java	classname="ibis.compile.Ibisc"
+		taskname="Ibisc"
+		dir="${tmp}"
+		failonerror="true"
+		maxmemory="512M"
+		fork="true">
+		<arg line="${satinc-flags} -satin ibis.dachsatin.Comparator,ibis.dachsatin.Main ${lib}/${dist-name}.jar"/>
+		<classpath refid="default.classpath"/>
+	</java>
+
+<!--        <delete dir="${tmp}" /> -->
     </target>
 
     <!-- Generate javadoc -->
