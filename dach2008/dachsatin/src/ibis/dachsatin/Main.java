@@ -69,28 +69,28 @@ public class Main {
             System.err.println("No command specified!");
             System.exit(1);	
         }
-
-        if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
-            System.err.println("Directory " + dir + " cannot be accessed!");
-            System.exit(1);
-        }
-
-        FindPairs finder = new FindPairs(dir);
-
-        Pair [] pairs = finder.getPairs();
-
-        if (pairs.length == 0) { 
-            System.err.println("No pairs found in directory " + args[0]);
-            System.exit(1);
-        }
-
-        if (verbose) { 
-            System.out.printf("Starting comparison of " + pairs.length + " pairs.");        	        	        	
-        }
-
-        Comparator c = new Comparator();
-        Result r = c.start(pairs, command);
-
+    	
+    	if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
+    		System.err.println("Directory " + dir + " cannot be accessed!");
+    		System.exit(1);
+    	}
+    	     
+    	FindPairs finder = new FindPairs(dir);
+    	
+    	Pair [] pairs = finder.getPairs();
+    	
+    	if (pairs.length == 0) { 
+    		System.err.println("No pairs found in directory " + args[0]);
+    		System.exit(1);
+    	}
+    	
+    	if (verbose) { 
+    		System.out.println("Main starting comparison of " + pairs.length + " pairs.");        	        	        	
+    	}
+    	
+    	Comparator c = new Comparator();
+    	Result r = c.start(pairs, command);
+        
         long end = System.currentTimeMillis();
 
         System.out.println(r.mergeOutput());        

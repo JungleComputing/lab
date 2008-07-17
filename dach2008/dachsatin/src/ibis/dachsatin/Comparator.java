@@ -19,8 +19,15 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 	/** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
 
+    // Timing hack
+    private static long start = -1;
+    
     private String compare(Pair pair, String exec) {
 
+		long time = System.currentTimeMillis() - start;
+		
+		System.out.println(time + ": Comparing '" + pair.before + "' and '" + pair.after + "'");
+		
 		if (exec == null) { 		
 			exec = System.getenv("DACHCOMPARATOR");
 			
@@ -28,8 +35,6 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 				return "No command found!";
 			}
 		}
-		
-		System.out.println("Comparing '" + pair.before + "' and '" + pair.after + "'");
 		
 		String command [] = {
 				exec,
@@ -51,12 +56,18 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 				}
 				cmd += c;
 			}
+
+			long time2 = System.currentTimeMillis() - start;
 			
-			return "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
-				+ " stderr: " + new String(p.getStderr());
+			System.out.println(time2 + ": Failed '" + pair.before + "' and '" + pair.after + "' in " + (time2-time) + " ms. " +
+					"stdout: " + new String(p.getStdout()) + " stderr: " + new String(p.getStderr()));
+			
+			return "";
 		}
 
-		System.out.println("Completed '" + pair.before + "' and '" + pair.after + "'");
+		long time2 = System.currentTimeMillis() - start;
+		
+		System.out.println(time2 + ": Completed '" + pair.before + "' and '" + pair.after + "' in " + (time2-time) + " ms.");
 		
 		return new String(p.getStdout());
 	}
@@ -68,6 +79,10 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
      */
     public Result compareAllPairs(Pair [] pairs, String command) {
         
+    	if (start == -1) { 
+    		start = System.currentTimeMillis();
+    	}
+    	
     	if (pairs.length == 1) {    		
     		long start = System.currentTimeMillis();    		
             String output = compare(pairs[0], command);
