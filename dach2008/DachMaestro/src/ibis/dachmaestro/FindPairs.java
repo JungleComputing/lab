@@ -7,94 +7,88 @@ import java.util.HashMap;
 /**
  * Utility class that finds file pair in a given directory. 
  * 
- * @author Jason Maassen
+ * @author Jason Maassen, Kees van Reeuwijk
  *
  */
 public class FindPairs {
 
-	private final boolean verbose;
-	private final File directory;
+    private static void addFile( ArrayList<Pair> pairs, HashMap<String, File> single, File f, boolean verbose)
+    {
+	String name = f.getName();
 
-	private final HashMap<String, File> single = new HashMap<String, File>();
-
-	private final ArrayList<Pair> pairs = new ArrayList<Pair>();
-
-	public FindPairs(File directory) { 
-		this(directory, false);
+	if (verbose) { 
+	    System.out.println("Adding file: " + f.getName());
 	}
 
-	public FindPairs(File directory, boolean verbose) { 
-		this.directory = directory;
-		this.verbose = verbose;
+	name = name.substring(0, name.length()-5); 
+
+	if (name.endsWith("t0")) { 
+
+	    String other = name.substring(0, name.length()-2) + "t1";
+
+	    File tmp = single.remove(other);
+
+	    if (tmp != null) { 
+		pairs.add(new Pair(f, tmp));
+	    } else { 
+		single.put(name, f);
+	    }
+
+	} else if (name.endsWith("t1")) { 
+
+	    String other = name.substring(0, name.length()-2) + "t0";
+
+	    File tmp = single.remove(other);
+
+	    if (tmp != null) { 
+		pairs.add(new Pair(tmp, f));
+	    } else { 
+		single.put(name, f);
+	    }
+	} else { 
+	    if (verbose) { 
+		System.out.println("Cannot handle file: " + f);
+	    }
 	}
+    }
 
-	private void addFile(File f) { 
+    /**
+     * Given a directory, returns the pairs that occur in that directory.
+     * @param directory The directory to examine.
+     * @param verbose Trace the proceedings of this method?
+     * @return The pairs in the directory.
+     */
+    static ArrayList<Pair> getPairs( File directory, boolean verbose )
+    {
+	final HashMap<String, File> single = new HashMap<String, File>();
 
-		String name = f.getName();
+	final ArrayList<Pair> pairs = new ArrayList<Pair>();
 
+	File [] files = directory.listFiles();
+
+	for (File f : files) { 
+
+	    if (f.getName().endsWith(".fits")) { 
+		addFile(pairs, single, f, verbose );
+	    } else {
 		if (verbose) { 
-			System.out.println("Adding file: " + f.getName());
+		    System.out.println("Skipping: " + f);
 		}
-
-		name = name.substring(0, name.length()-5); 
-
-		if (name.endsWith("t0")) { 
-
-			String other = name.substring(0, name.length()-2) + "t1";
-
-			File tmp = single.remove(other);
-
-			if (tmp != null) { 
-				pairs.add(new Pair(f, tmp));
-			} else { 
-				single.put(name, f);
-			}
-
-		} else if (name.endsWith("t1")) { 
-
-			String other = name.substring(0, name.length()-2) + "t0";
-
-			File tmp = single.remove(other);
-
-			if (tmp != null) { 
-				pairs.add(new Pair(tmp, f));
-			} else { 
-				single.put(name, f);
-			}
-		} else { 
-			if (verbose) { 
-				System.out.println("Cannot handle file: " + f);
-			}
-		}
+	    }
 	}
 
-	public Pair [] getPairs() { 
+	if (verbose && single.size() > 0) { 
+	    System.out.println("Unpaired files:");
 
-		File [] files = directory.listFiles();
+	    for (String k : single.keySet()) { 
+		System.out.println( k );
+	    }
 
-		for (File f : files) { 
-
-			if (f.getName().endsWith(".fits")) { 
-				addFile(f);
-			} else {
-				if (verbose) { 
-					System.out.println("Skipping: " + f);
-				}
-			}
-		}
-
-		if (verbose && single.size() > 0) { 
-			System.out.println("Unpaired files:");
-
-			for (String k : single.keySet()) { 
-				System.out.println(k);
-			}
-
-			single.clear();
-		}
-
-		return pairs.toArray(new Pair[pairs.size()]);
+	    single.clear();
 	}
+
+	return pairs;
+    }
 }
 
 
