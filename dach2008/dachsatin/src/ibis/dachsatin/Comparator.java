@@ -3,15 +3,15 @@
  */
 package ibis.dachsatin;
 
-import java.util.Arrays;
-
 import ibis.satin.SatinObject;
 import ibis.util.Pair;
 import ibis.util.RunProcess;
 
+import java.util.Arrays;
+
 /**
  * This class implements a divide-and-conquer parallel comparator for a given list of image pairs.
- * @author Kees van Reeuwijk
+ * @author Kees van Reeuwijk, Jason Maassen
  *
  */
 public class Comparator extends SatinObject implements ComparatorSatinInterface {
@@ -20,8 +20,6 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     private static final long serialVersionUID = -858338988356512054L;
 
     private String compare(Pair pair, String exec) {
-
-		String res = null;
 
 		if (exec == null) { 		
 			exec = System.getenv("DACHCOMPARATOR");

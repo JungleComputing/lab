@@ -1,5 +1,4 @@
 package ibis.util;
-import ibis.util.RunProcess;
 
 import java.io.File;
 import java.io.Serializable;
