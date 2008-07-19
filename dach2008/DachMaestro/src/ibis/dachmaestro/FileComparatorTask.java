@@ -2,6 +2,7 @@ package ibis.dachmaestro;
 
 import ibis.maestro.Node;
 import ibis.maestro.Task;
+import ibis.maestro.Service;
 import ibis.util.RunProcess;
 
 /**
@@ -9,25 +10,21 @@ import ibis.util.RunProcess;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class Comparator implements Task {
+public class FileComparatorTask implements Task {
 
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;
     
-    Comparator( String exec ) throws Exception
+    FileComparatorTask( String exec ) throws Exception
     {
 	this.exec = exec;
-        exec = System.getenv("DACHCOMPARATOR");
-
-        if (exec == null ) {
-            throw new Exception( "No comparison command as parameter or in DACHCOMPARATOR" );
-        }
     }
 
-    private String compare( Pair pair )
+    private Result compare( Pair pair )
     {
-        System.out.println("Comparing '" + pair.before + "' and '" + pair.after + "'");
+        System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        long startTime = System.nanoTime();
 
         String command [] = {
             exec,
@@ -37,10 +34,11 @@ public class Comparator implements Task {
 
         RunProcess p = new RunProcess(command);
         p.run();
+        long time = System.nanoTime()-startTime;
 
         int exit = p.getExitStatus();
 
-        if (exit != 0) {
+        if( exit != 0 ) {
             String cmd = "";
 
             for (String c: command) {
@@ -50,13 +48,17 @@ public class Comparator implements Task {
                 cmd += c;
             }
 
-            return "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
-            + " stderr: " + new String(p.getStderr());
+            return new Result(
+        	null,
+        	time,
+                "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+                    + " stderr: " + new String( p.getStderr() )
+            );
         }
 
-        System.out.println("Completed '" + pair.before + "' and '" + pair.after + "'");
+        System.out.println("Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
 
-        return new String(p.getStdout());
+        return new Result( new String( p.getStdout() ), time, null );
     }
 
     /**

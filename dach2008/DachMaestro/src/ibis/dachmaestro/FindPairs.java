@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class FindPairs {
 
-    private static void addFile( ArrayList<Pair> pairs, HashMap<String, File> single, File f, boolean verbose)
+    private static void addFile( ArrayList<Pair> pairs, HashMap<String, File> singles, File f, boolean verbose)
     {
 	String name = f.getName();
 
@@ -20,32 +20,35 @@ public class FindPairs {
 	    System.out.println("Adding file: " + f.getName());
 	}
 
-	name = name.substring(0, name.length()-5); 
+	// Remove the '.fits' extension.
+	name = name.substring( 0, name.length()-5 ); 
 
-	if (name.endsWith("t0")) { 
+	if( name.endsWith( "t0" ) ) {
 
 	    String other = name.substring(0, name.length()-2) + "t1";
 
-	    File tmp = single.remove(other);
+	    File tmp = singles.remove(other);
 
 	    if (tmp != null) { 
-		pairs.add(new Pair(f, tmp));
+		pairs.add( new Pair( f, tmp ) );
 	    } else { 
-		single.put(name, f);
+		singles.put( name, f );
 	    }
 
-	} else if (name.endsWith("t1")) { 
+	}
+	else if (name.endsWith("t1")) { 
 
 	    String other = name.substring(0, name.length()-2) + "t0";
 
-	    File tmp = single.remove(other);
+	    File tmp = singles.remove(other);
 
 	    if (tmp != null) { 
-		pairs.add(new Pair(tmp, f));
+		pairs.add( new Pair( tmp, f ) );
 	    } else { 
-		single.put(name, f);
+		singles.put( name, f );
 	    }
-	} else { 
+	}
+	else { 
 	    if (verbose) { 
 		System.out.println("Cannot handle file: " + f);
 	    }
@@ -69,8 +72,9 @@ public class FindPairs {
 	for (File f : files) { 
 
 	    if (f.getName().endsWith(".fits")) { 
-		addFile(pairs, single, f, verbose );
-	    } else {
+		addFile( pairs, single, f, verbose );
+	    }
+	    else {
 		if (verbose) { 
 		    System.out.println("Skipping: " + f);
 		}

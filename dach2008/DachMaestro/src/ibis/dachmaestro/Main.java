@@ -26,21 +26,35 @@ public class Main {
     {
 	private final LabelTracker labelTracker = new LabelTracker();
 	private boolean sentFinal = false;
+	private StringBuilder resultString = new StringBuilder();
 
-	/** Handle the completion of task 'j': the result is 'result'.
+	/** Handle the completion of task with identifier 'id': the result is 'result'.
+	 * @param node The node we're running this on.
 	 * @param id The task that was completed.
-	 * @param result The result of the task.
+	 * @param resultObject The result of the task.
 	 */
 	@Override
-	public void jobCompleted( Node node, Object id, Object result )
+	public void jobCompleted( Node node, Object id, Object resultObject )
 	{
-	    if( !(id instanceof LabelTracker.Label)) {
-		System.err.println( "Internal error: Object id is not a tracker label: " + id );
+	    if( !(id instanceof LabelTracker.Label) ){
+		System.err.println( "Internal error: Object id is not a tracker label but a " + resultObject.getClass() + ": " + id );
 		System.exit( 1 );
+	    }
+	    if( !(resultObject instanceof Result) ) {
+		System.err.println( "Internal error: result is not a Result but a " + resultObject.getClass() + ": " + resultObject );
+		System.exit( 1 );
+	    }
+	    Result result = (Result) resultObject;
+	    if( result.error == null ) {
+		// All went well.
+		resultString.append( result.result );
+	    }
+	    else {
+		System.err.println( "Comparison failed: " + result.error );
 	    }
 	    labelTracker.returnLabel( (LabelTracker.Label) id );
 	    if( sentFinal && labelTracker.allAreReturned() ) {
-		System.out.println( "I got all job results back; stopping test program" );
+		System.out.println( "I got all job results back; stopping program" );
 		node.setStopped();
 	    }
 	}
@@ -51,6 +65,11 @@ public class Main {
 
 	void setFinished() {
 	    sentFinal = true;	    
+	}
+	
+	String getResult()
+	{
+	    return resultString.toString();
 	}
     }
 
@@ -75,41 +94,49 @@ public class Main {
 
 		if (args[i].equals("-v") || args[i].equals("--verbose")) { 
 		    verbose = true;
-		} else if (args[i].equals("-c") || args[i].equals("--command")) {
+		}
+		else if (args[i].equals("-c") || args[i].equals("--command")) {
 		    if (command == null) { 
 			command = args[++i];
-		    } else { 
+		    }
+		    else { 
 			System.err.println("Command already specified!");
 			System.exit(1);
 		    }
-		} else if (args[i].equals("-d") || args[i].equals("--directory")) { 
+		}
+		else if (args[i].equals("-d") || args[i].equals("--directory")) { 
 		    if (dir == null) {  
 			dir = new File(args[++i]);
 		    } else { 
-			System.err.println("Directory already specified!");
-			System.exit(1);
-		    }    			
-		} else { 
+			System.err.println( "Directory already specified!");
+			System.exit( 1 );
+		    }
+		}
+		else {
 		    usage();
 		}
 	    }
 
-	    if (command == null) { 
-		System.err.println("No command specified!");
-		System.exit(1);	
+	    if (command == null) {
+	        command = System.getenv( "DACHCOMPARATOR" );
+
+	        if (command == null ) {
+	            System.err.println( "No comparison command given, and DACHCOMPARATOR environement variable is not set" );
+	            System.exit( 1 );	
+	        }
 	    }
 
 	    if( dir != null ) {
 		goForMaestro = true;
 		if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
 		    System.err.println("Directory " + dir + " cannot be accessed!");
-		    System.exit(1);
+		    System.exit( 1 );
 		}
 	    }
 	    JobList jobs = new JobList();
 	    Job job = jobs.createJob(
-		    "comparison",
-		    new Comparator( command )
+		"comparison",
+		new FileComparatorTask( command )
 	    );
 	    Listener listener = new Listener();
 
