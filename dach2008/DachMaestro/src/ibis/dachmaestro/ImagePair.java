@@ -1,6 +1,5 @@
 package ibis.dachmaestro;
 
-import java.io.File;
 import java.io.Serializable;
 
 /**
@@ -9,18 +8,18 @@ import java.io.Serializable;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class Pair implements Serializable {
+public class ImagePair implements Serializable {
 
 	/** Contractual obligation. */
 	private static final long serialVersionUID = -3325234510023855038L;
 
-	/** The local filename of the 'before' file. */
-	public final File before;
+	/** The 'before' image. */
+	public final Image before;
 
-	/** The local filename of the 'after' file. */
-	public final File after;
+	/** The 'after' image. */
+	public final Image after;
 
-	Pair(final File before, final File after) {
+	ImagePair(final Image before, final Image after) {
 		this.before = before;
 		this.after = after;
 	}

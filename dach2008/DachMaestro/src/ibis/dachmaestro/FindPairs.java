@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 public class FindPairs {
 
-    private static void addFile( ArrayList<Pair> pairs, HashMap<String, File> singles, File f, boolean verbose)
+    private static void addFile( ArrayList<FilePair> pairs, HashMap<String, File> singles, File f, boolean verbose)
     {
 	String name = f.getName();
 
@@ -30,7 +30,7 @@ public class FindPairs {
 	    File tmp = singles.remove(other);
 
 	    if (tmp != null) { 
-		pairs.add( new Pair( f, tmp ) );
+		pairs.add( new FilePair( f, tmp ) );
 	    } else { 
 		singles.put( name, f );
 	    }
@@ -43,7 +43,7 @@ public class FindPairs {
 	    File tmp = singles.remove(other);
 
 	    if (tmp != null) { 
-		pairs.add( new Pair( tmp, f ) );
+		pairs.add( new FilePair( tmp, f ) );
 	    } else { 
 		singles.put( name, f );
 	    }
@@ -61,11 +61,11 @@ public class FindPairs {
      * @param verbose Trace the proceedings of this method?
      * @return The pairs in the directory.
      */
-    static ArrayList<Pair> getPairs( File directory, boolean verbose )
+    static ArrayList<FilePair> getPairs( File directory, boolean verbose )
     {
 	final HashMap<String, File> single = new HashMap<String, File>();
 
-	final ArrayList<Pair> pairs = new ArrayList<Pair>();
+	final ArrayList<FilePair> pairs = new ArrayList<FilePair>();
 
 	File [] files = directory.listFiles();
 

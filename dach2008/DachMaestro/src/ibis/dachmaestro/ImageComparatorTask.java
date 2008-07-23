@@ -1,5 +1,8 @@
 package ibis.dachmaestro;
 
+import java.io.File;
+import java.io.IOException;
+
 import ibis.maestro.Node;
 import ibis.maestro.Task;
 import ibis.maestro.Service;
@@ -10,30 +13,51 @@ import ibis.util.RunProcess;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class FileComparatorTask implements Task {
+public class ImageComparatorTask implements Task {
 
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;
-    
-    FileComparatorTask( String exec ) throws Exception
+    private final File scratchDirectory;
+
+    ImageComparatorTask( String exec, File scratchDirectory ) throws Exception
     {
 	this.exec = exec;
+	this.scratchDirectory = scratchDirectory;
     }
 
-    private Result compare( FilePair pair )
+    private Result compare( ImagePair pair )
     {
+        File beforeFile;
+        File afterFile;
+
         System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        try {
+            beforeFile = pair.before.write( scratchDirectory );
+        }
+        catch( IOException x ) {
+            String error = "Could not write file '" + pair.before.file + "': " + x.getLocalizedMessage();
+            return new Result( null, 0l, error );
+        }
+        try {
+            afterFile = pair.after.write( scratchDirectory );
+        }
+        catch( IOException x ) {
+            String error = "Could not write file '" + pair.after.file + "': " + x.getLocalizedMessage();
+            return new Result( null, 0l, error );
+        }
         long startTime = System.nanoTime();
 
         String command [] = {
             exec,
-            pair.before.getAbsolutePath(),
-            pair.after.getAbsolutePath()
+            beforeFile.getAbsolutePath(),
+            afterFile.getAbsolutePath()
         };
 
-        RunProcess p = new RunProcess(command);
+        RunProcess p = new RunProcess( command );
         p.run();
+        beforeFile.delete();
+        afterFile.delete();
         long time = System.nanoTime()-startTime;
 
         int exit = p.getExitStatus();
@@ -80,7 +104,10 @@ public class FileComparatorTask implements Task {
     @Override
     public Object run( Object in, Node node )
     {
-	FilePair pair = (FilePair) in;
+	if( !(in instanceof ImagePair) ) {
+	    System.err.println( "Internal error: ImageComparatorTask requires an ImagePair, but got a " + in.getClass() );
+	}
+	ImagePair pair = (ImagePair) in;
 	return compare( pair );
     }
 

@@ -140,7 +140,7 @@ public class Main {
 	    );
 	    Listener listener = new Listener();
 
-	    ArrayList<Pair> pairs = FindPairs.getPairs( dir, verbose );
+	    ArrayList<FilePair> pairs = FindPairs.getPairs( dir, verbose );
 
 	    if (pairs.isEmpty() ) { 
 		System.err.println("No pairs found in directory " + args[0]);
@@ -156,7 +156,7 @@ public class Main {
 	    System.out.println( "Node created" );
 	    long startTime = System.nanoTime();
 	    if( node.isMaestro() ) {
-		for( Pair pair: pairs ) {
+		for( FilePair pair: pairs ) {
 		    Object label = listener.getLabel();
 		    job.submit( node, pair, label, listener );
 		}
