@@ -1,20 +1,20 @@
 package ibis.dachmaestro;
 
-import java.io.File;
-import java.io.IOException;
-
+import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
-import ibis.maestro.Task;
 import ibis.maestro.Service;
 import ibis.util.RunProcess;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This class implements a divide-and-conquer parallel comparator for a given list of image pairs.
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class ImageComparatorTask implements Task {
-
+public class ImageComparatorTask implements AtomicTask
+{
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;

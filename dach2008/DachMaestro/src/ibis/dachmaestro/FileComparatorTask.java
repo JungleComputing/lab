@@ -1,7 +1,7 @@
 package ibis.dachmaestro;
 
+import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
-import ibis.maestro.Task;
 import ibis.maestro.Service;
 import ibis.util.RunProcess;
 
@@ -10,8 +10,8 @@ import ibis.util.RunProcess;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class FileComparatorTask implements Task {
-
+public class FileComparatorTask implements AtomicTask
+{
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;
