@@ -26,6 +26,16 @@ public class ImageComparatorTask implements AtomicTask
 	this.scratchDirectory = scratchDirectory;
     }
 
+    /**
+     * Returns the name of this task.
+     * @return The name.
+     */
+    @Override
+    public String getName()
+    {
+	return "Compare images";
+    }
+
     private Result compare( ImagePair pair )
     {
         File beforeFile;

@@ -16,6 +16,17 @@ public class FileComparatorTask implements AtomicTask
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;
     
+
+    /**
+     * Returns the name of this task.
+     * @return The name.
+     */
+    @Override
+    public String getName()
+    {
+	return "Compare files";
+    }
+
     FileComparatorTask( String exec ) throws Exception
     {
 	this.exec = exec;
@@ -26,6 +37,7 @@ public class FileComparatorTask implements AtomicTask
         System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         long startTime = System.nanoTime();
 
+        // FIXME: specify temp directory.
         String command [] = {
             exec,
             pair.before.getAbsolutePath(),
