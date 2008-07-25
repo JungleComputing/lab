@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $1 in
+    "--get_problem") echo ID$$ $HOME/lab/dach-problems/$2
+    ;;
+
+    "--check_ans") echo ANSWER $2 $3
+    ;;
+
+    *)
+        echo "Unknown command '$1'"
+        exit 1
+esac
