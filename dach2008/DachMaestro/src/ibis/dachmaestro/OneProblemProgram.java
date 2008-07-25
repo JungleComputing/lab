@@ -77,6 +77,7 @@ public class OneProblemProgram {
      * Runs this program.
      * @param args The command-line parameters.
      */
+    @SuppressWarnings("synthetic-access")
     public static void main( String[] args )
     {
 	boolean goForMaestro = false;

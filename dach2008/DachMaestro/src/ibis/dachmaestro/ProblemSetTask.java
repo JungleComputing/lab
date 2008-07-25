@@ -80,7 +80,7 @@ class ProblemSetTask implements MapReduceTask
                 cmd += c;
             }
 
-            return "ERROR: Oracle access command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+            return "ERROR: command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() );
         }
         String verdict = new String( p.getStdout() );
@@ -120,7 +120,7 @@ class ProblemSetTask implements MapReduceTask
             }
 
             reportError(
-                "Oracle access command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+                "command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() ) );
             return;
         }
