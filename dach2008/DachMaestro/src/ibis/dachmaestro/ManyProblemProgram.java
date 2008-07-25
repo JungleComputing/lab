@@ -6,8 +6,11 @@ import ibis.maestro.JobList;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
+import ibis.maestro.LabelTracker.Label;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -22,11 +25,12 @@ public class ManyProblemProgram {
         System.err.println( "Usage: ManyProblemProgram <problem-name> .. <problem-name>" );
         System.exit( 1 );
     }
+
     private static class Listener implements CompletionListener
     {
         private final LabelTracker labelTracker = new LabelTracker();
         private boolean sentFinal = false;
-        private StringBuilder resultString = new StringBuilder();
+        private final HashMap<LabelTracker.Label,String> results = new HashMap<LabelTracker.Label,String>();
 
         /** Handle the completion of task with identifier 'id': the result is 'result'.
          * @param node The node we're running this on.
@@ -40,36 +44,32 @@ public class ManyProblemProgram {
                 System.err.println( "Internal error: Object id is not a tracker label but a " + resultObject.getClass() + ": " + id );
                 System.exit( 1 );
             }
-            if( !(resultObject instanceof Result) ) {
-                System.err.println( "Internal error: result is not a Result but a " + resultObject.getClass() + ": " + resultObject );
+            if( !(resultObject instanceof String) ) {
+                System.err.println( "Internal error: result is not a string but a " + resultObject.getClass() + ": " + resultObject );
                 System.exit( 1 );
             }
-            Result result = (Result) resultObject;
-            if( result.error == null ) {
-                // All went well.
-                resultString.append( result.result );
-            }
-            else {
-                System.err.println( "Comparison failed: " + result.error );
-            }
-            labelTracker.returnLabel( (LabelTracker.Label) id );
+            String result = (String) resultObject;
+            LabelTracker.Label label = (LabelTracker.Label) id;
+            labelTracker.returnLabel( label );
+            System.out.println( "Result for " + label + " is " + result );
+            results.put( label, result );
             if( sentFinal && labelTracker.allAreReturned() ) {
                 System.out.println( "I got all job results back; stopping program" );
                 node.setStopped();
             }
         }
 
-        Object getLabel() {
+        Label getLabel() {
             return labelTracker.nextLabel();
         }
 
         void setFinished() {
             sentFinal = true;	    
         }
-
-        String getResult()
+        
+        HashMap<Label, String> getResults()
         {
-            return resultString.toString();
+            return results;
         }
     }
 
@@ -88,6 +88,7 @@ public class ManyProblemProgram {
 
         try {
             String oracleHomeName = "/home/dach911";
+            ArrayList<Label> labels = new ArrayList<Label>();
             boolean verbose = false;
             String command = null;
             LinkedList<String> problems = new LinkedList<String>();
@@ -107,13 +108,7 @@ public class ManyProblemProgram {
                     }
                 }
                 else if (args[i].equals("-o") || args[i].equals("--oraclehome")) {
-                    if (oracleHomeName == null) { 
-                        oracleHomeName = args[++i];
-                    }
-                    else { 
-                        System.err.println("Oracle home already specified!");
-                        System.exit(1);
-                    }
+                    oracleHomeName = args[++i];
                 }
                 else {
                     problems.add( args[i] );
@@ -143,7 +138,7 @@ public class ManyProblemProgram {
 
             if( !problems.isEmpty() ) {
                 if (verbose) { 
-                    System.out.printf("Starting " + problems.size() + " problem sets");
+                    System.out.println( "Starting " + problems.size() + " problem sets" );
                 }
                 goForMaestro = true;
             }
@@ -154,13 +149,19 @@ public class ManyProblemProgram {
             long startTime = System.nanoTime();
             if( node.isMaestro() ) {
                 for( String problem: problems ) {
-                    Object label = listener.getLabel();
+                    Label label = listener.getLabel();
                     problemSetJob.submit( node, problem, label, listener );
+                    labels.add( label );
                 }
                 listener.setFinished();
                 System.out.println( "Jobs submitted" );
             }
             node.waitToTerminate();
+            HashMap<Label, String> l = listener.getResults();
+            for( Label label: labels ) {
+                String res = l.get( label );
+                System.out.println( label + "->" + res );
+            }
             long stopTime = System.nanoTime();
             System.out.println( "Duration of this run: " + Service.formatNanoseconds( stopTime-startTime ) );
         }

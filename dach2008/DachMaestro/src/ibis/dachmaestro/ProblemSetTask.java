@@ -31,7 +31,7 @@ class ProblemSetTask implements MapReduceTask
 
     private String errorString = null;
 
-    private static final String oracleName = "dach-api";
+    private static final String oracleName = "dach_api";
 
     private void reportError( String s )
     {
@@ -91,10 +91,10 @@ class ProblemSetTask implements MapReduceTask
     /**
      * Given the name of a problem set, generate jobs for all comparison pairs.
      * @param input The name of the problem set.
-     * @param arg1 The handler.
+     * @param handler The handler.
      */
     @Override
-    public void map( Object input, MapReduceHandler arg1 )
+    public void map( Object input, MapReduceHandler handler )
     {
         String problemSet = (String) input;
 
@@ -124,7 +124,8 @@ class ProblemSetTask implements MapReduceTask
                 + " stderr: " + new String( p.getStderr() ) );
             return;
         }
-        String oracleOutput = new String( p.getStdout() );
+        String oracleOutput = new String( p.getStdout() ).trim();
+        System.out.println( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
         String words[] = oracleOutput.split( " " );
         handle = words[0];
         File directory = new File( oracleHome, words[1] );
@@ -154,7 +155,7 @@ class ProblemSetTask implements MapReduceTask
         }
         int serial = 0;
         for( FilePair pair: pairs ) {
-            arg1.submit( compareJob, pair, serial++ );
+            handler.submit( compareJob, pair, serial++ );
         }
     }
 
@@ -189,7 +190,11 @@ class ProblemSetTask implements MapReduceTask
     public boolean isSupported()
     {
         File f = new File( oracleHome, oracleName );
-        return f.exists();
+        boolean res = f.exists();
+        if( !res ) {
+            System.out.println( "No oracle at [" + f + "]" );
+        }
+        return res;
     }
 
 }
