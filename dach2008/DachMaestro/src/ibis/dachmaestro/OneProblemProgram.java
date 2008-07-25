@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class Main {
+public class OneProblemProgram {
 
     private static void usage() { 
 	System.err.println("Usage: Main <directory>");
