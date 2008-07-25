@@ -1,0 +1,6 @@
+#!/bin/sh
+diff $*
+if [ $? = 0 ]; then
+    echo "Files" $* "are equal"
+fi
+exit 0

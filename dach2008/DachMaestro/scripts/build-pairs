@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+import random
+npairs = 120
+linewidth = 78
+lines = 10000
+
+def writeFile( fnm, differ ):
+    f = open( fnm, 'w' )
+    code = 0x21
+    for l in range(lines):
+        charCode = code
+        if differ and l == 10:
+            charCode = code+1
+        char = '%c' % charCode
+        f.write( char*linewidth )
+        f.write( '\n' )
+        code += 1
+        if code>126:
+            code = 0x21
+    f.close()
+
+for n in range(npairs):
+    fa = '%06x-t0.fits' % n
+    fb = '%06x-t1.fits' % n
+    print "build pair " + fa + ' ' + fb
+    writeFile( fa, False )
+    diff = random.random()>0.9
+    writeFile( fb, diff )
