@@ -5,8 +5,8 @@ import ibis.dachsatin.Problem;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 
 /**
  * Utility class that finds file pair in a given directory. 
@@ -20,13 +20,13 @@ public class FindPairs {
 
 	private final File directory;
 	
-	private final List<Problem> problems;
+	private final Collection<Problem> problems;
 
 	private final HashMap<String, File> single = new HashMap<String, File>();
 
 	private final ArrayList<Pair> pairs = new ArrayList<Pair>();
 
-	public FindPairs(File directory, List<Problem> problems, boolean verbose) { 
+	public FindPairs(File directory, Collection<Problem> problems, boolean verbose) { 
 		this.directory = directory;
 		this.problems = problems;
 		this.verbose = verbose;

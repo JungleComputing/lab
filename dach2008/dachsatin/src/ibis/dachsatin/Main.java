@@ -7,6 +7,7 @@ import ibis.util.Pair;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Main {
 
         long start = System.currentTimeMillis();
 
-        LinkedList<Problem> problems = new LinkedList<Problem>();
+        HashMap<String, Problem> problems = new HashMap<String, Problem>();
         
         boolean verbose = false;
         boolean robust = false;
@@ -40,7 +41,7 @@ public class Main {
             	String ID = args[++i];
             	String dir = args[++i];
             	
-            	problems.add(new Problem(ID, dir));
+            	problems.put(ID, new Problem(ID, dir));
             } else { 
             	System.err.println("FATAL: Unknown option: " + args[i]);
             	System.exit(1);
@@ -66,7 +67,7 @@ public class Main {
 			System.exit(1);
         }	
       	     
-    	FindPairs finder = new FindPairs(dir, problems, verbose);
+        FindPairs finder = new FindPairs(dir, problems.values(), verbose);
     	
     	ArrayList<Pair> pairs = null;
     	
@@ -107,11 +108,31 @@ public class Main {
         
         for (Result r : results) { 
         	
-        	System.out.println("STATS: Pair: " + r.input.before + " - " + r.input.after);        
-        	System.out.println("STATS: Time: " + r.time);        
-        	System.out.println("STATS: Error:\n" + r.stderr);        
-        	System.out.println("STATS: Output:\n" + r.stdout);
+        	System.out.println("STATS: Pair  : " + r.input.before + " - " + r.input.after);        
+        	System.out.println("STATS: Time  : " + r.time);        
+        	System.out.println("STATS: Error : " + r.stderr);        
+        	System.out.println("STATS: Output: " + r.stdout);
+        	System.out.println("STATS: Result: " + r.result.length() + " characters.");
         	System.out.println();        
+        
+        	Problem p = problems.get(r.input.ID);
+        	
+        	if (p == null) { 
+        		System.err.println("ERROR: Failed to find problem " + r.input.ID);
+        	} else { 
+        
+        		try { 
+        			p.writeResult(r.result);
+        		} catch (Exception e) {
+        			System.err.println("ERROR: Failed to write result " + r.input.before 
+        					+ " - " + r.input.after + " of problem " + p.directory 
+        					+ " to output " + r.input.ID);
+        		}       		
+        	}
+        }
+        
+        for (Problem p : problems.values()) { 
+        	p.done();
         }
     }
 
