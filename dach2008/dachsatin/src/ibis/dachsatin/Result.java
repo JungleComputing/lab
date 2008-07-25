@@ -17,7 +17,8 @@ public class Result implements Serializable {
 	public String result;
 	
 	public long time;
-
+	public long transferTime;
+	
 	public boolean failed = false;
 	
 	private transient long startTime;
@@ -29,10 +30,13 @@ public class Result implements Serializable {
 		this.stdout = "";
 		this.stderr = "";
 		this.result = "";		
-		this.time = 0;
 		
 		startTime = System.currentTimeMillis();
 	}	
+	
+	public void addTransferTime(long time) { 
+		transferTime += time;
+	}
 	
 	private long time() { 
 		return System.currentTimeMillis() - startTime;

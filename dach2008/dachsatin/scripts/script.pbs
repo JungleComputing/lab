@@ -1,7 +1,7 @@
 # This is a sample PBS script
 # for parallel jobs
 #   Request 8 CPUS
-#PBS -l nodes=8
+#PBS -l nodes=60
 #PBS -l walltime=1:00:00
 
 #   Request that regular output and terminal output go to the same file
@@ -33,7 +33,7 @@ INPUT=/home/dach004/dfs/problems/sample0_0123
 for node in `cat $PBS_NODEFILE`
 do
 echo Creating connection to $node
-ssh -oStrictHostKeyChecking=no $node /bin/sh ./bin/script.local -d /tmp/dach004/dfs/problems/sample0_0123 -c /home/dach/finder/dach.sh -v > out.$PBS_JOBID/out.$count.$node 2> out.$PBS_JOBID/err.$count.$node & 
+ssh -oStrictHostKeyChecking=no $node /bin/sh ./bin/script.local -p ID-0_0123 problems/sample0_0123 -v > out.$PBS_JOBID/out.$count.$node 2> out.$PBS_JOBID/err.$count.$node & 
 let "count += 1"
 done
 

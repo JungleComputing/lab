@@ -9,8 +9,6 @@ import ibis.util.RunProcess;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 /**
@@ -34,6 +32,9 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 	// Local temp dir hack
 	private static String tmpDir = null;
 
+	// Local copy operation hack
+	private static String cpExec = null;
+	
     // Machine identification hack
 	private static String machineID = null;
 	
@@ -80,7 +81,21 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     		// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
     		System.exit(1);
     	}
-    
+
+    	cpExec = System.getenv("DACH_COPY");
+
+    	if (cpExec == null ) {
+    		System.err.println("DACH_COPY not set!");
+    		// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
+    		System.exit(1);
+    	}
+
+    	if (!fileExists(cpExec)) {
+    		System.err.println("DACH_COPY (" + cpExec + ") not found!");
+    		// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
+    		System.exit(1);
+    	}
+    	
     	tmpDir = System.getenv("DACH_TMP_DIR");
 		
     	if (tmpDir == null) {  
@@ -111,32 +126,63 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     private static boolean directoryExists(String dir) {
     	return directoryExists(new File(dir));
     }
-	
+    
+    private static long time() { 
+    	return System.currentTimeMillis() - start;
+    }
+    
+    private boolean prepareInputFile(Result r, String file) { 
+    	
+    	long start = System.currentTimeMillis();
+    	
+    	if (!fileExists(file)) { 
+    		r.fatal("Input file " + file + " not found\n");
+    		return false;
+    	}
+
+    	String [] cp = new String [] { cpExec, file, tmpDir };
+		RunProcess p = new RunProcess(cp);
+		p.run();
+
+		int exit = p.getExitStatus();
+		
+		if (exit != 0) {
+			r.fatal("Failed to copy file " + file + " (stdout: " + new String(p.getStdout()) 
+				+ ") (stderr: " + new String(p.getStderr()) + ")\n");
+			return false;
+		}
+
+		long end = System.currentTimeMillis();
+		
+		r.info("Copying " + file + " took " + (end-start) + " ms.");
+		r.addTransferTime(end-start);
+		
+		return true;
+    }
+    
     private Result compare(Pair pair) {
 
     	Result r = new Result(pair, machineID);
+
+    	r.info("Comparing '" + pair.before + "' and '" + pair.after + "'\n");
     	
+    	String problem = pair.getProblemDir(dataDir);
     	String before = pair.getBeforePath(dataDir);
     	String after = pair.getAfterPath(dataDir);
-    	String problem = pair.getProblemDir(dataDir);
-    	
-    	r.info("Comparing '" + pair.before + "' and '" + pair.after + "'\n");
     	
     	if (!directoryExists(problem)) { 
 			r.fatal("Problem directory " + pair.getProblemDir(dataDir) + " not found!\n");
 			return r;		
-		}	
+		}
     	
-    	if (!fileExists(before)) { 
-    		r.fatal("Input file " + before + " not found\n");
+    	if (!prepareInputFile(r, before)) { 
     		return r;
     	}
-		
-		if (!fileExists(after)) { 
-			r.fatal("Input file " + after + " not found\n");
-			return r;
-		}
-		
+    	
+    	if (!prepareInputFile(r, after)) { 
+    		return r;
+    	}
+    			
 		String [] command = new String [] { exec, "-w", tmpDir, before, after };
 		
 		RunProcess p = new RunProcess(command);
@@ -144,18 +190,8 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 
 		int exit = p.getExitStatus();
 
-		System.out.println("Starting command: " + Arrays.toString(command));
 		
 		if (exit != 0) {
-			String cmd = "";
-			
-			for (String c: command) {
-				if (!cmd.isEmpty()) {
-					cmd += ' ';
-				}
-				cmd += c;
-			}
-
 			r.fatal("Failed to run comparison: (stdout: " + new String(p.getStdout()) 
 				+ ") (stderr: " + new String(p.getStderr()) + ")\n");
 			
@@ -188,6 +224,7 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
         }
         
     	int mid = pairs.size() / 2;
+    	
     	
     	// NOTE: Need this because Satin is way too strict about passing non-serializable 
     	// interfaces! As a result, we cannot pass a 'List', and the type returned by subList 
@@ -224,7 +261,7 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
         	
         	// TODO: how do I force these jobs to run on a different machine ????
         	
-        	System.err.println("Respawning " + failed.size() + " failed jobs!");
+        	System.out.println("INFO(" + time() + "): Respawning " + failed.size() + " failed jobs!");
         	
         	List<Result> res = compareAllPairs(failed);            
         	sync();
@@ -261,6 +298,10 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     				success.add(r);
     			}
     		}
+    		
+    		if (pairs.size() > 0) { 
+    			System.out.println("INFO(" + time() + "): Respawning " + pairs.size() + " failed jobs!");
+		    }	
     	}
     	
         return success;    	

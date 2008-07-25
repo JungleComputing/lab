@@ -1,20 +1,12 @@
 #!/bin/sh
 
-#SERVERHOST=babylon.few.vu.nl
-#SERVERHOST=lily.local
-#SERVERHOST=fs0.das3.cs.vu.nl
-SERVERHOST=localhost
+SERVERHOST=157.1.129.10
 
 # Check setting of DACHSATIN_HOME
 if [ -z "$DACHSATIN_HOME" ];  then
     echo "please set DACHSATIN_HOME to the location of your dachsatin installation" 1>&2
     exit 1
 fi
-
-export DACH_EXECUTABLE=/tmp/dach/bin/exec.sh
-export DACH_MACHINE_ID=machine001
-export DACH_DATA_DIR=/tmp/dach
-export DACH_TMP_DIR=/tmp/dach/tmp
 
 # Jar-files from library.
 LIBCLASSPATH=""

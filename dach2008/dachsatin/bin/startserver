@@ -1,7 +1,6 @@
 #!/bin/sh
 
-SERVERHOST=babylon.cs.vu.nl
-#SERVERHOST=fs0.das3.cs.vu.nl
+export DACHSATIN_HOME=/home/dach004/dachsatin-0.7
 
 # Check setting of DACHSATIN_HOME
 if [ -z "$DACHSATIN_HOME" ];  then
@@ -23,7 +22,7 @@ add_to_libclasspath () {
 }
 
 # Add the jar files in the Tweaker lib dir to the classpath.
-add_to_libclasspath "${DACHSATIN_HOME}"/support-libs
+add_to_libclasspath "${DACHSATIN_HOME}"/lib
 
 # And finally, run ...
 exec java \

@@ -25,7 +25,6 @@
     <property name="lib" location="lib" />
     <property name="external" location="support-libs" />
     <property name="javadoc" location="javadoc" />
-    <property name="sources" location="sources" />
 
     <!-- Compile -->
     <target name="compile">
@@ -74,7 +73,7 @@
 		<classpath refid="default.classpath"/>
 	</java>
 
-<!--        <delete dir="${tmp}" /> -->
+        <delete dir="${tmp}"/>
     </target>
 
     <!-- Generate javadoc -->
@@ -98,32 +97,35 @@
         <delete dir="${javadoc}" />
     </target>
 
-    <target name="dist" depends="build">
-        <delete file="${dist-name}.zip" />
-        <delete dir="${sources}" />
-
-        <mkdir dir="${sources}" />
-
-        <zip destfile="${sources}/${dist-name}-src.zip">
-            <zipfileset dir="src"
-                        includes="**/*.java"
-                        prefix="${dist-name}" />
-
-            <zipfileset dir="."
-                        includes="LICENSE.txt"
-                        prefix="${sources-filename}" />
-        </zip>
-
-        <zip destfile="${dist-name}.zip">
+    <target name="dist-bin" depends="build">
+        <delete file="${dist-name}-bin.zip" />
+        <zip destfile="${dist-name}-bin.zip">
             <zipfileset dir="."
                         prefix="${dist-name}"
-                        includes="javadoc/**,docs/*.pdf,lib/**,notices/**,sources/**,BUGS.txt,LICENSE.txt,HISTORY.txt,README.txt,INSTALL.txt,ibis.properties.example,log4j.properties,smartsockets.properties.example,examples/**,benchmarks/**"/>
+                        includes="lib/*.jar,ibis.properties,log4j.properties,smartsockets.properties"/>
             <zipfileset dir="."
                         prefix="${dist-name}"
                         filemode="755"
-                        includes="bin/**" />
+                        includes="bin/**,scripts/**" />
         </zip>
+    </target>
 
+    <target name="dist-src" depends="clean">
+        <delete file="${dist-name}-src.zip" />
+
+        <zip destfile="${dist-name}-src.zip">
+            <zipfileset dir="."                         
+                        includes="src/**,scripts/**,support-libs/**,ibis.properties.example,log4j.properties,smartsockets.properties.example,build.xml"
+                        prefix="${dist-name}" />
+
+            <zipfileset dir="."
+                        prefix="${dist-name}"
+                        filemode="755"
+                        includes="bin/**,scripts/**" />
+        </zip>
+    </target>
+
+    <target name="dist" depends="dist-src,dist-bin">
     </target>
 
 </project>
