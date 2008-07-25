@@ -183,6 +183,9 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     		return r;
     	}
     			
+    	before = tmpDir + File.separator + pair.before;
+    	after = tmpDir + File.separator + pair.after;
+    	
 		String [] command = new String [] { exec, "-w", tmpDir, before, after };
 		
 		RunProcess p = new RunProcess(command);
