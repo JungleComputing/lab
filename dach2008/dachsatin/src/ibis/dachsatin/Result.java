@@ -3,57 +3,91 @@ package ibis.dachsatin;
 import ibis.util.Pair;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.List;
 
 public class Result implements Serializable {
 
 	private static final long serialVersionUID = -1661420366726877489L;
 	
-	public final Pair [] input;	
-	public final String [] output;
-	public final long [] time;
+	public final Pair input;
+	public final String machineID;	
 	
-	public Result(Pair [] input, String output, long time) {
+	public String stdout;
+	public String stderr;
+	public String result;
+	
+	public long time;
+
+	public boolean failed = false;
+	
+	private transient long startTime;
+	
+	public Result(Pair input, String machineID) {
 		this.input = input;
-		this.output = new String [] { output };
-		this.time = new long [] { time };
+		this.machineID = machineID;
+		
+		this.stdout = "";
+		this.stderr = "";
+		this.result = "";		
+		this.time = 0;
+		
+		startTime = System.currentTimeMillis();
 	}	
 	
-	public Result(Result resA, Result resB) {		
-		input = Arrays.copyOf(resA.input, resA.input.length + resB.input.length);
-		System.arraycopy(resB.input, 0, input, resA.input.length, resB.input.length);
-		
-		output = Arrays.copyOf(resA.output, resA.output.length + resB.output.length);
-		System.arraycopy(resB.output, 0, output, resA.output.length, resB.output.length);
-		
-		time = Arrays.copyOf(resA.time, resA.time.length + resB.time.length);
-		System.arraycopy(resB.time, 0, time, resA.time.length, resB.time.length);
-	}	
+	private long time() { 
+		return System.currentTimeMillis() - startTime;
+	}
 	
-	public String mergeOutput() {
+	public void info(String text) {
+		stdout += time() + ": " + text;
+		
+		System.out.println("INFO(" + time() + "): " + text);
+	}
+
+	public void fatal(String text) { 
+		stderr += time() + ": " + text;
+		failed = true;
+		
+		System.out.println("FATAL(" + time() + "): " + text);
+	}
+	
+	public void error(String text) { 
+		stderr += time() + ": " + text;
+
+		System.out.println("ERROR(" + time() + "): " + text);
+	}
+
+	public void setResult(String text) { 
+		result = text;		
+		time = System.currentTimeMillis() - startTime;
+
+		System.out.println("RESULT(" + time() + "): finished job " + input.before + " - " 
+				+ input.after + " in " + time + " ms.");
+	}
+	
+	public static String mergeResult(List<Result> results) {
 		
 		StringBuilder sb = new StringBuilder();
 		
-		for (String s : output) { 
-			sb.append(s);			
+		for (Result r : results) { 
+			sb.append(r.result);			
 		}
 		
 		return sb.toString();
 	}
 	
-	public long totalTime() {
+	public static long totalTime(List<Result> results) {
 		
 		long total = 0;
 		
-		for (int i=0;i<time.length;i++) { 
-			total += time[i];			
+		for (Result r : results) { 
+			total += r.time;			
 		}
 		
 		return total;
 	}
 	
-	public long avgTime() {
-		return totalTime() / time.length;
-	}
-	
+	public static long averageTime(List<Result> results) {
+		return totalTime(results) / results.size();
+	}	
 }

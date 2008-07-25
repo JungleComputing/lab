@@ -11,8 +11,11 @@ if [ -z "$DACHSATIN_HOME" ];  then
     exit 1
 fi
 
-export DACHCOMPARATOR=/home/jason/data-challenge/dach/finder/dach.sh
-	
+export DACH_EXECUTABLE=/tmp/dach/bin/exec.sh
+export DACH_MACHINE_ID=machine001
+export DACH_DATA_DIR=/tmp/dach
+export DACH_TMP_DIR=/tmp/dach/tmp
+
 # Jar-files from library.
 LIBCLASSPATH=""
 add_to_libclasspath () {

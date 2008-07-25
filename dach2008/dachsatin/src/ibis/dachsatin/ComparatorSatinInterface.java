@@ -1,5 +1,6 @@
 package ibis.dachsatin;
 
+import java.util.ArrayList;
 import ibis.satin.Spawnable;
 import ibis.util.Pair;
 
@@ -10,5 +11,5 @@ import ibis.util.Pair;
  *
  */
 public interface ComparatorSatinInterface extends Spawnable {
-    Result compareAllPairs(Pair [] pairs, String command);
+    ArrayList<Result> compareAllPairs(ArrayList<Pair> pairs);
 }

@@ -5,7 +5,10 @@ import ibis.util.FindPairs;
 import ibis.util.Pair;
 
 import java.io.File;
-import java.util.Arrays;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Command-line interface.
@@ -15,12 +18,7 @@ import java.util.Arrays;
  */
 public class Main {
 
-    private static void usage() { 
-        System.err.println("Usage: Main <directory>");
-        System.exit(1);
-    }
-
-    /**
+	/**
      * Runs this program.
      * @param args The command-line parameters.
      */
@@ -28,90 +26,93 @@ public class Main {
 
         long start = System.currentTimeMillis();
 
-        if (args.length == 0) { 
-            usage();
-        }
-
-        File dir = null;
+        LinkedList<Problem> problems = new LinkedList<Problem>();
+        
         boolean verbose = false;
-        String command = null;
+        boolean robust = false;
 
         for (int i=0;i<args.length;i++) { 
 
             if (args[i].equals("-v") || args[i].equals("--verbose")) { 
                 verbose = true;
-            } else if (args[i].equals("-c") || args[i].equals("--command")) {
-                if (command == null) { 
-                    command = args[++i];
-                } else { 
-                    System.err.println("Command already specified!");
-                    System.exit(1);
-                }
-            } else if (args[i].equals("-d") || args[i].equals("--directory")) { 
-                if (dir == null) {  
-                    dir = new File(args[++i]);
-                } else { 
-                    System.err.println("Directory already specified!");
-                    System.exit(1);
-                }    			
+            } else if (args[i].equals("-p") || args[i].equals("--problem")) {
+            	
+            	String ID = args[++i];
+            	String dir = args[++i];
+            	
+            	problems.add(new Problem(ID, dir));
             } else { 
-                usage();
+            	System.err.println("FATAL: Unknown option: " + args[i]);
+            	System.exit(1);
             }
         }
 
-        if (dir == null) { 
-            System.err.println("No directory specified!");
-            System.exit(1);
-            return;  // Only here for the stupid code analyzer.
+        if (problems.size() == 0) { 
+        	System.err.println("FATAL: No problems specified!");
+        	System.exit(1);
         }
-
-        if (command == null) { 
-            System.err.println("No command specified!");
-            System.exit(1);	
-        }
+        
+        String localDir = System.getenv("DACH_DATA_DIR");
+			
+		if (localDir == null ) {
+			System.err.println("FATAL: DACH_DATA_DIR not set!!");
+			System.exit(1);
+		}
+		
+		File dir = new File(localDir);
+        
+        if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
+			System.err.println("FATAL: DACH_DATA_DIR " + dir + " does not exist");
+			System.exit(1);
+        }	
+      	     
+    	FindPairs finder = new FindPairs(dir, problems, verbose);
     	
-    	if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
-    		System.err.println("Directory " + dir + " cannot be accessed!");
+    	ArrayList<Pair> pairs = null;
+    	
+    	try { 
+    		pairs = finder.getPairs(robust);
+    	} catch (IOException e) {
+    		System.err.println("FATAL: Failed to load all pairs from directory " + dir);
+    		e.printStackTrace(System.err);
     		System.exit(1);
     	}
-    	     
-    	FindPairs finder = new FindPairs(dir);
     	
-    	Pair [] pairs = finder.getPairs();
-    	
-    	if (pairs.length == 0) { 
-    		System.err.println("No pairs found in directory " + args[0]);
+    	if (pairs.size() == 0) { 
+    		System.err.println("FATAL: No pairs found in directory " + dir);
     		System.exit(1);
     	}
     	
     	if (verbose) { 
-    		System.out.println("Main starting comparison of " + pairs.length + " pairs.");        	        	        	
+    		System.out.println("Main starting comparison of " + pairs.size() + " pairs.");        	        	        	
     	}
     	
     	Comparator c = new Comparator();
-    	Result r = c.start(pairs, command);
+    	ArrayList<Result> results = c.start(pairs);
         
         long end = System.currentTimeMillis();
 
-        System.out.println(r.mergeOutput());        
+        int jobs = results.size();
+        long total = Result.totalTime(results);
+        long app = (end-start);
 
-        if (verbose) { 
+        double avg = ((double) total) / jobs;
+        double speedup = ((double) total) / app;
 
-            int jobs = r.time.length;
-            long total = r.totalTime();
-            long app = (end-start);
-
-            double avg = ((double) total) / jobs;
-            double speedup = ((double) total) / app;
-
-            System.out.printf("Application took       : %d ms.\n", app);        	        	
-            System.out.printf("Processed jobs         : %d\n", jobs);        	
-            System.out.printf("Accum. processing time : %d ms.\n", total);
-            System.out.printf("Avg time/job           : %.2f ms.\n", avg);
-            System.out.printf("Speedup                : %.2f\n", speedup);        	
-            System.out.printf("Job Times              : " + Arrays.toString(r.time) + "\n");
-
-        }        
+        System.out.printf("DONE: Application took       : %d ms.\n", app);        	        	
+        System.out.printf("DONE: Processed jobs         : %d\n", jobs);        	
+        System.out.printf("DONE: Accum. processing time : %d ms.\n", total);
+        System.out.printf("DONE: Avg time/job           : %.2f ms.\n", avg);
+        System.out.printf("DONE: Speedup                : %.2f\n", speedup);        	
+        
+        for (Result r : results) { 
+        	
+        	System.out.println("STATS: Pair: " + r.input.before + " - " + r.input.after);        
+        	System.out.println("STATS: Time: " + r.time);        
+        	System.out.println("STATS: Error:\n" + r.stderr);        
+        	System.out.println("STATS: Output:\n" + r.stdout);
+        	System.out.println();        
+        }
     }
 
 }
