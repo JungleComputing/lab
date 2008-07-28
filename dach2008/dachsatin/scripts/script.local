@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 export JAVA_HOME=/usr/local/jdk
 export PATH=/data/local/gfarm_v2/bin:$JAVA_HOME/bin:$PATH
@@ -27,6 +27,11 @@ echo Mounting DFS on $DIR/dfs
 
 gfarm2fs $DIR/dfs
 
+if [ -d $DIR/dfs/problems ];
+then
+echo "$DIR/dfs mounted succesfully"
+fi
+
 echo Starting Satin with parameters $@
 
 $DACHSATIN_HOME/bin/compare $@
@@ -35,7 +40,7 @@ echo Unmounting DFS
 
 fusermount -u $DIR/dfs
 
-rmdir -r $DIR
+rm -r $DIR
 
 
 
