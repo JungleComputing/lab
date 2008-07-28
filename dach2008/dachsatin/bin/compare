@@ -30,5 +30,5 @@ exec java \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHSATIN_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
-    -Dibis.pool.name=DACH \
+    -Dibis.pool.name=DACH -Dsatin.detailedStats \
      ibis.dachsatin.Main "$@"

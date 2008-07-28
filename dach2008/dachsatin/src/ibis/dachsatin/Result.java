@@ -1,6 +1,5 @@
 package ibis.dachsatin;
 
-import ibis.util.Pair;
 
 import java.io.Serializable;
 import java.util.List;
@@ -42,30 +41,30 @@ public class Result implements Serializable {
 		return System.currentTimeMillis() - startTime;
 	}
 	
-	public void info(String text) {
-		stdout += time() + ": " + text;
+	public void info(String text, long time) {
+		stdout += time + ", " + time() + ": " + text;
 		
-		System.out.println("INFO(" + time() + "): " + text);
+		System.out.println("INFO( " + time + ", " + time() + " ): " + text);
 	}
 
-	public void fatal(String text) { 
-		stderr += time() + ": " + text;
+	public void fatal(String text, long time) { 
+		stderr += time + " , " + time() + ": " + text;
 		failed = true;
 		
-		System.out.println("FATAL(" + time() + "): " + text);
+		System.out.println("FATAL( " + time + " , " + time() + " ): " + text);
 	}
 	
-	public void error(String text) { 
-		stderr += time() + ": " + text;
+	public void error(String text, long time) { 
+		stderr += time + ", " + time() + ": " + text;
 
-		System.out.println("ERROR(" + time() + "): " + text);
+		System.out.println("ERROR( " + time + " , " + time() + " ): " + text);
 	}
 
-	public void setResult(String text) { 
+	public void setResult(String text, long t) { 
 		result = text;		
 		time = System.currentTimeMillis() - startTime;
 
-		System.out.println("RESULT(" + time() + "): finished job " + input.before + " - " 
+		System.out.println("RESULT( " + t + " , " + time() + " ): finished job " + input.before + " - " 
 				+ input.after + " in " + time + " ms.");
 	}
 	

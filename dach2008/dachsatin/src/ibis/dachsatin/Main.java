@@ -1,8 +1,6 @@
 package ibis.dachsatin;
 
 
-import ibis.util.FindPairs;
-import ibis.util.Pair;
 
 import java.io.File;
 import java.io.IOException;

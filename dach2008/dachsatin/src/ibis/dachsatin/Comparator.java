@@ -4,7 +4,6 @@
 package ibis.dachsatin;
 
 import ibis.satin.SatinObject;
-import ibis.util.Pair;
 import ibis.util.RunProcess;
 
 import java.io.File;
@@ -136,7 +135,7 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     	long start = System.currentTimeMillis();
     	
     	if (!fileExists(file)) { 
-    		r.fatal("Input file " + file + " not found\n");
+    		r.fatal("Input file " + file + " not found\n", time());
     		return false;
     	}
 
@@ -148,13 +147,13 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 		
 		if (exit != 0) {
 			r.fatal("Failed to copy file " + file + " (stdout: " + new String(p.getStdout()) 
-				+ ") (stderr: " + new String(p.getStderr()) + ")\n");
+				+ ") (stderr: " + new String(p.getStderr()) + ")\n", time());
 			return false;
 		}
 
 		long end = System.currentTimeMillis();
 		
-		r.info("Copying " + file + " took " + (end-start) + " ms.");
+		r.info("Copying " + file + " took " + (end-start) + " ms.", time());
 		r.addTransferTime(end-start);
 		
 		return true;
@@ -164,14 +163,14 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 
     	Result r = new Result(pair, machineID);
 
-    	r.info("Comparing '" + pair.before + "' and '" + pair.after + "'\n");
+    	r.info("Comparing '" + pair.before + "' and '" + pair.after + "'\n", time());
     	
     	String problem = pair.getProblemDir(dataDir);
     	String before = pair.getBeforePath(dataDir);
     	String after = pair.getAfterPath(dataDir);
     	
     	if (!directoryExists(problem)) { 
-			r.fatal("Problem directory " + pair.getProblemDir(dataDir) + " not found!\n");
+			r.fatal("Problem directory " + pair.getProblemDir(dataDir) + " not found!\n", time());
 			return r;		
 		}
     	
@@ -196,14 +195,14 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 		
 		if (exit != 0) {
 			r.fatal("Failed to run comparison: (stdout: " + new String(p.getStdout()) 
-				+ ") (stderr: " + new String(p.getStderr()) + ")\n");
+				+ ") (stderr: " + new String(p.getStderr()) + ")\n", time());
 			
 			return r;
 		}
 
-		r.error(new String(p.getStderr()));		
-		r.setResult(new String(p.getStdout()));
-		r.info("Completed '" + before + "' and '" + after + "' in " + r.time + " ms.");
+		r.error(new String(p.getStderr()), time());		
+		r.setResult(new String(p.getStdout()), time());
+		r.info("Completed '" + before + "' and '" + after + "' in " + r.time + " ms.", time());
 		
 		return r;
     }

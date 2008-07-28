@@ -16,7 +16,7 @@ echo Available cores $CORES
 mkdir -p $DIR/dfs
 mkdir -p $DIR/tmp
 
-export DACHSATIN_HOME=/home/dach004/dachsatin-0.7
+export DACHSATIN_HOME=/home/dach004/dachsatin-0.8
 export DACH_EXECUTABLE=/home/dach/finder/dach.sh
 export DACH_COPY=/bin/cp
 export DACH_MACHINE_ID=$HOST$DIR

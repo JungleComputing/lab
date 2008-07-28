@@ -1,6 +1,5 @@
-package ibis.util;
+package ibis.dachsatin;
 
-import ibis.dachsatin.Problem;
 
 import java.io.File;
 import java.io.IOException;

@@ -2,7 +2,6 @@ package ibis.dachsatin;
 
 import java.util.ArrayList;
 import ibis.satin.Spawnable;
-import ibis.util.Pair;
 
 /**
  * The methods that are spawnable.

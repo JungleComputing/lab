@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export DACHSATIN_HOME=/home/dach004/dachsatin-0.7
+export DACHSATIN_HOME=/home/dach004/dachsatin-0.8
 
 # Check setting of DACHSATIN_HOME
 if [ -z "$DACHSATIN_HOME" ];  then

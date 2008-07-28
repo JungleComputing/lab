@@ -1,4 +1,4 @@
-package ibis.util;
+package ibis.dachsatin;
 
 import java.io.File;
 import java.io.Serializable;
