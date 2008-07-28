@@ -1,0 +1,47 @@
+#!/bin/bash
+
+export JAVA_HOME=/usr/local/jdk
+export PATH=/data/local/gfarm_v2/bin:$JAVA_HOME/bin:$PATH
+
+HOST=`/bin/hostname -f`
+
+DIR=`mktemp -d`
+
+echo Running on $HOST 
+
+CORES=`cat /proc/cpuinfo | grep bogomips | wc -l`
+
+echo Available cores $CORES
+
+mkdir -p $DIR/dfs
+mkdir -p $DIR/tmp
+
+export DACHSATIN_HOME=/home/dach004/dachsatin-0.8
+export DACH_EXECUTABLE=/home/dach/finder/dach.sh
+export DACH_COPY=/bin/cp
+export DACH_MACHINE_ID=$HOST$DIR
+export DACH_DATA_DIR=$DIR/dfs
+export DACH_TMP_DIR=$DIR/tmp
+
+echo Mounting DFS on $DIR/dfs
+
+gfarm2fs $DIR/dfs
+
+if [ -d $DIR/dfs/problems ];
+then
+echo "$DIR/dfs mounted succesfully"
+fi
+
+echo Starting Satin with parameters $@
+
+$DACHSATIN_HOME/bin/compare $@ > out.$HOST 2> err.$HOST 
+
+echo Unmounting DFS
+
+fusermount -u $DIR/dfs
+
+rm -r $DIR
+
+
+
+
