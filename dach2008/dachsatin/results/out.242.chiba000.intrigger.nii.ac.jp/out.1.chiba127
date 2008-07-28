@@ -1,0 +1,1127 @@
+Running on chiba127.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.evQNIC4561/dfs
+/tmp/tmp.evQNIC4561/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+Adding file: r000_00_t0.fits
+Adding file: r000_00_t1.fits
+Adding file: r000_01_t0.fits
+Adding file: r000_01_t1.fits
+Adding file: r000_10_t0.fits
+Adding file: r000_10_t1.fits
+Adding file: r000_11_t0.fits
+Adding file: r000_11_t1.fits
+Adding file: r000_20_t0.fits
+Adding file: r000_20_t1.fits
+Adding file: r000_21_t0.fits
+Adding file: r000_21_t1.fits
+Adding file: r000_30_t0.fits
+Adding file: r000_30_t1.fits
+Adding file: r000_31_t0.fits
+Adding file: r000_31_t1.fits
+Adding file: r000_40_t0.fits
+Adding file: r000_40_t1.fits
+Adding file: r000_41_t0.fits
+Adding file: r000_41_t1.fits
+Adding file: r001_00_t0.fits
+Adding file: r001_00_t1.fits
+Adding file: r001_01_t0.fits
+Adding file: r001_01_t1.fits
+Adding file: r001_10_t0.fits
+Adding file: r001_10_t1.fits
+Adding file: r001_11_t0.fits
+Adding file: r001_11_t1.fits
+Adding file: r001_20_t0.fits
+Adding file: r001_20_t1.fits
+Adding file: r001_21_t0.fits
+Adding file: r001_21_t1.fits
+Adding file: r001_30_t0.fits
+Adding file: r001_30_t1.fits
+Adding file: r001_31_t0.fits
+Adding file: r001_31_t1.fits
+Adding file: r001_40_t0.fits
+Adding file: r001_40_t1.fits
+Adding file: r001_41_t0.fits
+Adding file: r001_41_t1.fits
+Adding file: r002_00_t0.fits
+Adding file: r002_00_t1.fits
+Adding file: r002_01_t0.fits
+Adding file: r002_01_t1.fits
+Adding file: r002_10_t0.fits
+Adding file: r002_10_t1.fits
+Adding file: r002_11_t0.fits
+Adding file: r002_11_t1.fits
+Adding file: r002_20_t0.fits
+Adding file: r002_20_t1.fits
+Adding file: r002_21_t0.fits
+Adding file: r002_21_t1.fits
+Adding file: r002_30_t0.fits
+Adding file: r002_30_t1.fits
+Adding file: r002_31_t0.fits
+Adding file: r002_31_t1.fits
+Adding file: r002_40_t0.fits
+Adding file: r002_40_t1.fits
+Adding file: r002_41_t0.fits
+Adding file: r002_41_t1.fits
+Adding file: r003_00_t0.fits
+Adding file: r003_00_t1.fits
+Adding file: r003_01_t0.fits
+Adding file: r003_01_t1.fits
+Adding file: r003_10_t0.fits
+Adding file: r003_10_t1.fits
+Adding file: r003_11_t0.fits
+Adding file: r003_11_t1.fits
+Adding file: r003_20_t0.fits
+Adding file: r003_20_t1.fits
+Adding file: r003_21_t0.fits
+Adding file: r003_21_t1.fits
+Adding file: r003_30_t0.fits
+Adding file: r003_30_t1.fits
+Adding file: r003_31_t0.fits
+Adding file: r003_31_t1.fits
+Adding file: r003_40_t0.fits
+Adding file: r003_40_t1.fits
+Adding file: r003_41_t0.fits
+Adding file: r003_41_t1.fits
+Adding file: r004_00_t0.fits
+Adding file: r004_00_t1.fits
+Adding file: r004_01_t0.fits
+Adding file: r004_01_t1.fits
+Adding file: r004_10_t0.fits
+Adding file: r004_10_t1.fits
+Adding file: r004_11_t0.fits
+Adding file: r004_11_t1.fits
+Adding file: r004_20_t0.fits
+Adding file: r004_20_t1.fits
+Adding file: r004_21_t0.fits
+Adding file: r004_21_t1.fits
+Adding file: r004_30_t0.fits
+Adding file: r004_30_t1.fits
+Adding file: r004_31_t0.fits
+Adding file: r004_31_t1.fits
+Adding file: r004_40_t0.fits
+Adding file: r004_40_t1.fits
+Adding file: r004_41_t0.fits
+Adding file: r004_41_t1.fits
+Adding file: r005_00_t0.fits
+Adding file: r005_00_t1.fits
+Adding file: r005_01_t0.fits
+Adding file: r005_01_t1.fits
+Adding file: r005_10_t0.fits
+Adding file: r005_10_t1.fits
+Adding file: r005_11_t0.fits
+Adding file: r005_11_t1.fits
+Adding file: r005_20_t0.fits
+Adding file: r005_20_t1.fits
+Adding file: r005_21_t0.fits
+Adding file: r005_21_t1.fits
+Adding file: r005_30_t0.fits
+Adding file: r005_30_t1.fits
+Adding file: r005_31_t0.fits
+Adding file: r005_31_t1.fits
+Adding file: r005_40_t0.fits
+Adding file: r005_40_t1.fits
+Adding file: r005_41_t0.fits
+Adding file: r005_41_t1.fits
+Adding file: r006_00_t0.fits
+Adding file: r006_00_t1.fits
+Adding file: r006_01_t0.fits
+Adding file: r006_01_t1.fits
+Adding file: r006_10_t0.fits
+Adding file: r006_10_t1.fits
+Adding file: r006_11_t0.fits
+Adding file: r006_11_t1.fits
+Adding file: r006_20_t0.fits
+Adding file: r006_20_t1.fits
+Adding file: r006_21_t0.fits
+Adding file: r006_21_t1.fits
+Adding file: r006_30_t0.fits
+Adding file: r006_30_t1.fits
+Adding file: r006_31_t0.fits
+Adding file: r006_31_t1.fits
+Adding file: r006_40_t0.fits
+Adding file: r006_40_t1.fits
+Adding file: r006_41_t0.fits
+Adding file: r006_41_t1.fits
+Adding file: r007_00_t0.fits
+Adding file: r007_00_t1.fits
+Adding file: r007_01_t0.fits
+Adding file: r007_01_t1.fits
+Adding file: r007_10_t0.fits
+Adding file: r007_10_t1.fits
+Adding file: r007_11_t0.fits
+Adding file: r007_11_t1.fits
+Adding file: r007_20_t0.fits
+Adding file: r007_20_t1.fits
+Adding file: r007_21_t0.fits
+Adding file: r007_21_t1.fits
+Adding file: r007_30_t0.fits
+Adding file: r007_30_t1.fits
+Adding file: r007_31_t0.fits
+Adding file: r007_31_t1.fits
+Adding file: r007_40_t0.fits
+Adding file: r007_40_t1.fits
+Adding file: r007_41_t0.fits
+Adding file: r007_41_t1.fits
+Adding file: r008_00_t0.fits
+Adding file: r008_00_t1.fits
+Adding file: r008_01_t0.fits
+Adding file: r008_01_t1.fits
+Adding file: r008_10_t0.fits
+Adding file: r008_10_t1.fits
+Adding file: r008_11_t0.fits
+Adding file: r008_11_t1.fits
+Adding file: r008_20_t0.fits
+Adding file: r008_20_t1.fits
+Adding file: r008_21_t0.fits
+Adding file: r008_21_t1.fits
+Adding file: r008_30_t0.fits
+Adding file: r008_30_t1.fits
+Adding file: r008_31_t0.fits
+Adding file: r008_31_t1.fits
+Adding file: r008_40_t0.fits
+Adding file: r008_40_t1.fits
+Adding file: r008_41_t0.fits
+Adding file: r008_41_t1.fits
+Adding file: r009_00_t0.fits
+Adding file: r009_00_t1.fits
+Adding file: r009_01_t0.fits
+Adding file: r009_01_t1.fits
+Adding file: r009_10_t0.fits
+Adding file: r009_10_t1.fits
+Adding file: r009_11_t0.fits
+Adding file: r009_11_t1.fits
+Adding file: r009_20_t0.fits
+Adding file: r009_20_t1.fits
+Adding file: r009_21_t0.fits
+Adding file: r009_21_t1.fits
+Adding file: r009_30_t0.fits
+Adding file: r009_30_t1.fits
+Adding file: r009_31_t0.fits
+Adding file: r009_31_t1.fits
+Adding file: r009_40_t0.fits
+Adding file: r009_40_t1.fits
+Adding file: r009_41_t0.fits
+Adding file: r009_41_t1.fits
+Adding file: r010_00_t0.fits
+Adding file: r010_00_t1.fits
+Adding file: r010_01_t0.fits
+Adding file: r010_01_t1.fits
+Adding file: r010_10_t0.fits
+Adding file: r010_10_t1.fits
+Adding file: r010_11_t0.fits
+Adding file: r010_11_t1.fits
+Adding file: r010_20_t0.fits
+Adding file: r010_20_t1.fits
+Adding file: r010_21_t0.fits
+Adding file: r010_21_t1.fits
+Adding file: r010_30_t0.fits
+Adding file: r010_30_t1.fits
+Adding file: r010_31_t0.fits
+Adding file: r010_31_t1.fits
+Adding file: r010_40_t0.fits
+Adding file: r010_40_t1.fits
+Adding file: r010_41_t0.fits
+Adding file: r010_41_t1.fits
+Adding file: r011_00_t0.fits
+Adding file: r011_00_t1.fits
+Adding file: r011_01_t0.fits
+Adding file: r011_01_t1.fits
+Adding file: r011_10_t0.fits
+Adding file: r011_10_t1.fits
+Adding file: r011_11_t0.fits
+Adding file: r011_11_t1.fits
+Adding file: r011_20_t0.fits
+Adding file: r011_20_t1.fits
+Adding file: r011_21_t0.fits
+Adding file: r011_21_t1.fits
+Adding file: r011_30_t0.fits
+Adding file: r011_30_t1.fits
+Adding file: r011_31_t0.fits
+Adding file: r011_31_t1.fits
+Adding file: r011_40_t0.fits
+Adding file: r011_40_t1.fits
+Adding file: r011_41_t0.fits
+Adding file: r011_41_t1.fits
+Main starting comparison of 120 pairs.
+INFO(20, 0): Comparing 'r011_41_t0.fits' and 'r011_41_t1.fits'
+
+INFO(11318, 11298): Copying /tmp/tmp.evQNIC4561/dfs/problems/sample0_0123/r011_41_t0.fits took 11292 ms.
+INFO(17029, 17009): Copying /tmp/tmp.evQNIC4561/dfs/problems/sample0_0123/r011_41_t1.fits took 5711 ms.
+ERROR(727436, 727416): 
+RESULT(727436, 727416): finished job r011_41_t0.fits - r011_41_t1.fits in 727416 ms.
+INFO(727436, 727416): Completed '/tmp/tmp.evQNIC4561/tmp/r011_41_t0.fits' and '/tmp/tmp.evQNIC4561/tmp/r011_41_t1.fits' in 727416 ms.
+DONE: Application took       : 1613552 ms.
+DONE: Processed jobs         : 120
+DONE: Accum. processing time : 59142296 ms.
+DONE: Avg time/job           : 492852.47 ms.
+DONE: Speedup                : 36.65
+STATS: Pair  : r000_00_t0.fits - r000_00_t1.fits
+STATS: Time  : 838949
+STATS: Error : 838970, 838943: 
+STATS: Output: 27, 0: Comparing 'r000_00_t0.fits' and 'r000_00_t1.fits'
+1555, 1528: Copying /tmp/tmp.JwwHdB3187/dfs/problems/sample0_0123/r000_00_t0.fits took 1508 ms.3498, 3471: Copying /tmp/tmp.JwwHdB3187/dfs/problems/sample0_0123/r000_00_t1.fits took 1943 ms.838976, 838949: Completed '/tmp/tmp.JwwHdB3187/tmp/r000_00_t0.fits' and '/tmp/tmp.JwwHdB3187/tmp/r000_00_t1.fits' in 838949 ms.
+STATS: Result: 23736 characters.
+
+STATS: Pair  : r000_01_t0.fits - r000_01_t1.fits
+STATS: Time  : 622362
+STATS: Error : 667944, 622361: 
+STATS: Output: 45583, 0: Comparing 'r000_01_t0.fits' and 'r000_01_t1.fits'
+47848, 2265: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r000_01_t0.fits took 2251 ms.84204, 38621: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r000_01_t1.fits took 36356 ms.667945, 622362: Completed '/tmp/tmp.nqxxe20591/tmp/r000_01_t0.fits' and '/tmp/tmp.nqxxe20591/tmp/r000_01_t1.fits' in 622362 ms.
+STATS: Result: 22678 characters.
+
+STATS: Pair  : r000_10_t0.fits - r000_10_t1.fits
+STATS: Time  : 879411
+STATS: Error : 879420, 879402: 
+STATS: Output: 18, 0: Comparing 'r000_10_t0.fits' and 'r000_10_t1.fits'
+3442, 3424: Copying /tmp/tmp.bTbgl30152/dfs/problems/sample0_0123/r000_10_t0.fits took 3417 ms.6390, 6372: Copying /tmp/tmp.bTbgl30152/dfs/problems/sample0_0123/r000_10_t1.fits took 2948 ms.879429, 879411: Completed '/tmp/tmp.bTbgl30152/tmp/r000_10_t0.fits' and '/tmp/tmp.bTbgl30152/tmp/r000_10_t1.fits' in 879411 ms.
+STATS: Result: 28037 characters.
+
+STATS: Pair  : r000_11_t0.fits - r000_11_t1.fits
+STATS: Time  : 685057
+STATS: Error : 749386, 685057: 
+STATS: Output: 64329, 0: Comparing 'r000_11_t0.fits' and 'r000_11_t1.fits'
+70898, 6569: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r000_11_t0.fits took 6557 ms.72398, 8069: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r000_11_t1.fits took 1500 ms.749386, 685057: Completed '/tmp/tmp.xJJSlx9650/tmp/r000_11_t0.fits' and '/tmp/tmp.xJJSlx9650/tmp/r000_11_t1.fits' in 685057 ms.
+STATS: Result: 23713 characters.
+
+STATS: Pair  : r000_20_t0.fits - r000_20_t1.fits
+STATS: Time  : 688662
+STATS: Error : 731458, 688660: 
+STATS: Output: 42798, 0: Comparing 'r000_20_t0.fits' and 'r000_20_t1.fits'
+45686, 2888: Copying /tmp/tmp.ewmNi12091/dfs/problems/sample0_0123/r000_20_t0.fits took 2876 ms.51186, 8388: Copying /tmp/tmp.ewmNi12091/dfs/problems/sample0_0123/r000_20_t1.fits took 5500 ms.731460, 688662: Completed '/tmp/tmp.ewmNi12091/tmp/r000_20_t0.fits' and '/tmp/tmp.ewmNi12091/tmp/r000_20_t1.fits' in 688662 ms.
+STATS: Result: 31326 characters.
+
+STATS: Pair  : r000_21_t0.fits - r000_21_t1.fits
+STATS: Time  : 664838
+STATS: Error : 825338, 664838: 
+STATS: Output: 160500, 0: Comparing 'r000_21_t0.fits' and 'r000_21_t1.fits'
+162443, 1943: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r000_21_t0.fits took 1931 ms.168854, 8354: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r000_21_t1.fits took 6411 ms.825338, 664838: Completed '/tmp/tmp.usaGu26633/tmp/r000_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r000_21_t1.fits' in 664838 ms.
+STATS: Result: 23667 characters.
+
+STATS: Pair  : r000_30_t0.fits - r000_30_t1.fits
+STATS: Time  : 667540
+STATS: Error : 667559, 667539: 
+STATS: Output: 20, 0: Comparing 'r000_30_t0.fits' and 'r000_30_t1.fits'
+7108, 7088: Copying /tmp/tmp.QloBhFw540/dfs/problems/sample0_0123/r000_30_t0.fits took 7082 ms.9706, 9686: Copying /tmp/tmp.QloBhFw540/dfs/problems/sample0_0123/r000_30_t1.fits took 2598 ms.667560, 667540: Completed '/tmp/tmp.QloBhFw540/tmp/r000_30_t0.fits' and '/tmp/tmp.QloBhFw540/tmp/r000_30_t1.fits' in 667540 ms.
+STATS: Result: 31717 characters.
+
+STATS: Pair  : r000_31_t0.fits - r000_31_t1.fits
+STATS: Time  : 663788
+STATS: Error : 761321, 663787: 
+STATS: Output: 97534, 0: Comparing 'r000_31_t0.fits' and 'r000_31_t1.fits'
+101188, 3654: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r000_31_t0.fits took 3641 ms.103337, 5803: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r000_31_t1.fits took 2148 ms.761322, 663788: Completed '/tmp/tmp.lVfQk12672/tmp/r000_31_t0.fits' and '/tmp/tmp.lVfQk12672/tmp/r000_31_t1.fits' in 663788 ms.
+STATS: Result: 28129 characters.
+
+STATS: Pair  : r000_40_t0.fits - r000_40_t1.fits
+STATS: Time  : 622005
+STATS: Error : 622035, 622005: 
+STATS: Output: 30, 0: Comparing 'r000_40_t0.fits' and 'r000_40_t1.fits'
+3280, 3250: Copying /tmp/tmp.tqOmj32174/dfs/problems/sample0_0123/r000_40_t0.fits took 3226 ms.5676, 5646: Copying /tmp/tmp.tqOmj32174/dfs/problems/sample0_0123/r000_40_t1.fits took 2396 ms.622035, 622005: Completed '/tmp/tmp.tqOmj32174/tmp/r000_40_t0.fits' and '/tmp/tmp.tqOmj32174/tmp/r000_40_t1.fits' in 622005 ms.
+STATS: Result: 26266 characters.
+
+STATS: Pair  : r000_41_t0.fits - r000_41_t1.fits
+STATS: Time  : 862824
+STATS: Error : 862851, 862822: 
+STATS: Output: 29, 0: Comparing 'r000_41_t0.fits' and 'r000_41_t1.fits'
+1694, 1665: Copying /tmp/tmp.xxMkx22255/dfs/problems/sample0_0123/r000_41_t0.fits took 1640 ms.3287, 3258: Copying /tmp/tmp.xxMkx22255/dfs/problems/sample0_0123/r000_41_t1.fits took 1593 ms.862853, 862824: Completed '/tmp/tmp.xxMkx22255/tmp/r000_41_t0.fits' and '/tmp/tmp.xxMkx22255/tmp/r000_41_t1.fits' in 862824 ms.
+STATS: Result: 25507 characters.
+
+STATS: Pair  : r001_00_t0.fits - r001_00_t1.fits
+STATS: Time  : 44819
+STATS: Error : 44841, 44817: 
+STATS: Output: 24, 0: Comparing 'r001_00_t0.fits' and 'r001_00_t1.fits'
+12436, 12412: Copying /tmp/tmp.PgQSj11822/dfs/problems/sample0_0123/r001_00_t0.fits took 12398 ms.30388, 30364: Copying /tmp/tmp.PgQSj11822/dfs/problems/sample0_0123/r001_00_t1.fits took 17951 ms.44843, 44819: Completed '/tmp/tmp.PgQSj11822/tmp/r001_00_t0.fits' and '/tmp/tmp.PgQSj11822/tmp/r001_00_t1.fits' in 44819 ms.
+STATS: Result: 32821 characters.
+
+STATS: Pair  : r001_01_t0.fits - r001_01_t1.fits
+STATS: Time  : 40735
+STATS: Error : 97488, 40734: 
+STATS: Output: 56754, 0: Comparing 'r001_01_t0.fits' and 'r001_01_t1.fits'
+70067, 13313: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r001_01_t0.fits took 13300 ms.76014, 19260: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r001_01_t1.fits took 5947 ms.97489, 40735: Completed '/tmp/tmp.lVfQk12672/tmp/r001_01_t0.fits' and '/tmp/tmp.lVfQk12672/tmp/r001_01_t1.fits' in 40735 ms.
+STATS: Result: 29946 characters.
+
+STATS: Pair  : r001_10_t0.fits - r001_10_t1.fits
+STATS: Time  : 56726
+STATS: Error : 56753, 56725: 
+STATS: Output: 28, 0: Comparing 'r001_10_t0.fits' and 'r001_10_t1.fits'
+10771, 10743: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r001_10_t0.fits took 10722 ms.32871, 32843: Copying /tmp/tmp.lVfQk12672/dfs/problems/sample0_0123/r001_10_t1.fits took 22100 ms.56754, 56726: Completed '/tmp/tmp.lVfQk12672/tmp/r001_10_t0.fits' and '/tmp/tmp.lVfQk12672/tmp/r001_10_t1.fits' in 56726 ms.
+STATS: Result: 37697 characters.
+
+STATS: Pair  : r001_11_t0.fits - r001_11_t1.fits
+STATS: Time  : 17595
+STATS: Error : 44544, 17594: 
+STATS: Output: 26950, 0: Comparing 'r001_11_t0.fits' and 'r001_11_t1.fits'
+28381, 1431: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r001_11_t0.fits took 1418 ms.29255, 2305: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r001_11_t1.fits took 874 ms.44545, 17595: Completed '/tmp/tmp.upndnQ8839/tmp/r001_11_t0.fits' and '/tmp/tmp.upndnQ8839/tmp/r001_11_t1.fits' in 17595 ms.
+STATS: Result: 37283 characters.
+
+STATS: Pair  : r001_20_t0.fits - r001_20_t1.fits
+STATS: Time  : 26919
+STATS: Error : 26942, 26911: 
+STATS: Output: 31, 0: Comparing 'r001_20_t0.fits' and 'r001_20_t1.fits'
+2228, 2197: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r001_20_t0.fits took 2190 ms.11651, 11620: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r001_20_t1.fits took 9423 ms.26950, 26919: Completed '/tmp/tmp.upndnQ8839/tmp/r001_20_t0.fits' and '/tmp/tmp.upndnQ8839/tmp/r001_20_t1.fits' in 26919 ms.
+STATS: Result: 40066 characters.
+
+STATS: Pair  : r001_21_t0.fits - r001_21_t1.fits
+STATS: Time  : 56574
+STATS: Error : 95225, 56574: 
+STATS: Output: 38651, 0: Comparing 'r001_21_t0.fits' and 'r001_21_t1.fits'
+59429, 20778: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r001_21_t0.fits took 20766 ms.72969, 34318: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r001_21_t1.fits took 13540 ms.95225, 56574: Completed '/tmp/tmp.ocFzw12375/tmp/r001_21_t0.fits' and '/tmp/tmp.ocFzw12375/tmp/r001_21_t1.fits' in 56574 ms.
+STATS: Result: 42619 characters.
+
+STATS: Pair  : r001_30_t0.fits - r001_30_t1.fits
+STATS: Time  : 50723
+STATS: Error : 79042, 50722: 
+STATS: Output: 28320, 0: Comparing 'r001_30_t0.fits' and 'r001_30_t1.fits'
+34334, 6014: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r001_30_t0.fits took 6001 ms.56049, 27729: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r001_30_t1.fits took 21715 ms.79043, 50723: Completed '/tmp/tmp.wUVzQB3680/tmp/r001_30_t0.fits' and '/tmp/tmp.wUVzQB3680/tmp/r001_30_t1.fits' in 50723 ms.
+STATS: Result: 41515 characters.
+
+STATS: Pair  : r001_31_t0.fits - r001_31_t1.fits
+STATS: Time  : 28292
+STATS: Error : 28319, 28291: 
+STATS: Output: 28, 1: Comparing 'r001_31_t0.fits' and 'r001_31_t1.fits'
+3566, 3538: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r001_31_t0.fits took 3531 ms.6378, 6350: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r001_31_t1.fits took 2812 ms.28320, 28292: Completed '/tmp/tmp.wUVzQB3680/tmp/r001_31_t0.fits' and '/tmp/tmp.wUVzQB3680/tmp/r001_31_t1.fits' in 28292 ms.
+STATS: Result: 45931 characters.
+
+STATS: Pair  : r001_40_t0.fits - r001_40_t1.fits
+STATS: Time  : 32773
+STATS: Error : 32800, 32773: 
+STATS: Output: 27, 0: Comparing 'r001_40_t0.fits' and 'r001_40_t1.fits'
+7985, 7958: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r001_40_t0.fits took 7939 ms.9684, 9657: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r001_40_t1.fits took 1699 ms.32800, 32773: Completed '/tmp/tmp.NryGC21026/tmp/r001_40_t0.fits' and '/tmp/tmp.NryGC21026/tmp/r001_40_t1.fits' in 32773 ms.
+STATS: Result: 40664 characters.
+
+STATS: Pair  : r001_41_t0.fits - r001_41_t1.fits
+STATS: Time  : 47904
+STATS: Error : 47936, 47902: 
+STATS: Output: 34, 0: Comparing 'r001_41_t0.fits' and 'r001_41_t1.fits'
+5351, 5317: Copying /tmp/tmp.bVRui19254/dfs/problems/sample0_0123/r001_41_t0.fits took 5305 ms.32306, 32272: Copying /tmp/tmp.bVRui19254/dfs/problems/sample0_0123/r001_41_t1.fits took 26955 ms.47939, 47905: Completed '/tmp/tmp.bVRui19254/tmp/r001_41_t0.fits' and '/tmp/tmp.bVRui19254/tmp/r001_41_t1.fits' in 47904 ms.
+STATS: Result: 35696 characters.
+
+STATS: Pair  : r002_00_t0.fits - r002_00_t1.fits
+STATS: Time  : 761076
+STATS: Error : 761098, 761072: 
+STATS: Output: 26, 0: Comparing 'r002_00_t0.fits' and 'r002_00_t1.fits'
+27085, 27059: Copying /tmp/tmp.VkHBj24020/dfs/problems/sample0_0123/r002_00_t0.fits took 27040 ms.46943, 46917: Copying /tmp/tmp.VkHBj24020/dfs/problems/sample0_0123/r002_00_t1.fits took 19858 ms.761102, 761076: Completed '/tmp/tmp.VkHBj24020/tmp/r002_00_t0.fits' and '/tmp/tmp.VkHBj24020/tmp/r002_00_t1.fits' in 761076 ms.
+STATS: Result: 27761 characters.
+
+STATS: Pair  : r002_01_t0.fits - r002_01_t1.fits
+STATS: Time  : 594021
+STATS: Error : 594055, 594021: 
+STATS: Output: 34, 0: Comparing 'r002_01_t0.fits' and 'r002_01_t1.fits'
+34696, 34662: Copying /tmp/tmp.TvPTg16112/dfs/problems/sample0_0123/r002_01_t0.fits took 34656 ms.37660, 37626: Copying /tmp/tmp.TvPTg16112/dfs/problems/sample0_0123/r002_01_t1.fits took 2963 ms.594055, 594021: Completed '/tmp/tmp.TvPTg16112/tmp/r002_01_t0.fits' and '/tmp/tmp.TvPTg16112/tmp/r002_01_t1.fits' in 594021 ms.
+STATS: Result: 23276 characters.
+
+STATS: Pair  : r002_10_t0.fits - r002_10_t1.fits
+STATS: Time  : 614180
+STATS: Error : 691023, 614179: 
+STATS: Output: 76844, 0: Comparing 'r002_10_t0.fits' and 'r002_10_t1.fits'
+85952, 9108: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r002_10_t0.fits took 9095 ms.93249, 16405: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r002_10_t1.fits took 7297 ms.691024, 614180: Completed '/tmp/tmp.yMUgnX5525/tmp/r002_10_t0.fits' and '/tmp/tmp.yMUgnX5525/tmp/r002_10_t1.fits' in 614180 ms.
+STATS: Result: 29371 characters.
+
+STATS: Pair  : r002_11_t0.fits - r002_11_t1.fits
+STATS: Time  : 815336
+STATS: Error : 878527, 815336: 
+STATS: Output: 63191, 0: Comparing 'r002_11_t0.fits' and 'r002_11_t1.fits'
+71434, 8243: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r002_11_t0.fits took 8230 ms.73316, 10125: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r002_11_t1.fits took 1882 ms.878527, 815336: Completed '/tmp/tmp.yQHzgB1133/tmp/r002_11_t0.fits' and '/tmp/tmp.yQHzgB1133/tmp/r002_11_t1.fits' in 815336 ms.
+STATS: Result: 30107 characters.
+
+STATS: Pair  : r002_20_t0.fits - r002_20_t1.fits
+STATS: Time  : 674143
+STATS: Error : 749983, 674142: 
+STATS: Output: 75841, 0: Comparing 'r002_20_t0.fits' and 'r002_20_t1.fits'
+112238, 36397: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r002_20_t0.fits took 36384 ms.148022, 72181: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r002_20_t1.fits took 35784 ms.749984, 674143: Completed '/tmp/tmp.hiKYSQ3839/tmp/r002_20_t0.fits' and '/tmp/tmp.hiKYSQ3839/tmp/r002_20_t1.fits' in 674143 ms.
+STATS: Result: 33557 characters.
+
+STATS: Pair  : r002_21_t0.fits - r002_21_t1.fits
+STATS: Time  : 836127
+STATS: Error : 881791, 836127: 
+STATS: Output: 45664, 0: Comparing 'r002_21_t0.fits' and 'r002_21_t1.fits'
+55905, 10241: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r002_21_t0.fits took 10229 ms.65159, 19495: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r002_21_t1.fits took 9254 ms.881791, 836127: Completed '/tmp/tmp.maQsF12240/tmp/r002_21_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r002_21_t1.fits' in 836127 ms.
+STATS: Result: 29762 characters.
+
+STATS: Pair  : r002_30_t0.fits - r002_30_t1.fits
+STATS: Time  : 657966
+STATS: Error : 1252121, 657965: 
+STATS: Output: 594156, 0: Comparing 'r002_30_t0.fits' and 'r002_30_t1.fits'
+595660, 1504: Copying /tmp/tmp.TvPTg16112/dfs/problems/sample0_0123/r002_30_t0.fits took 1492 ms.601159, 7003: Copying /tmp/tmp.TvPTg16112/dfs/problems/sample0_0123/r002_30_t1.fits took 5499 ms.1252122, 657966: Completed '/tmp/tmp.TvPTg16112/tmp/r002_30_t0.fits' and '/tmp/tmp.TvPTg16112/tmp/r002_30_t1.fits' in 657966 ms.
+STATS: Result: 35328 characters.
+
+STATS: Pair  : r002_31_t0.fits - r002_31_t1.fits
+STATS: Time  : 829255
+STATS: Error : 877247, 829255: 
+STATS: Output: 47992, 0: Comparing 'r002_31_t0.fits' and 'r002_31_t1.fits'
+59466, 11474: Copying /tmp/tmp.bVRui19254/dfs/problems/sample0_0123/r002_31_t0.fits took 11461 ms.61637, 13645: Copying /tmp/tmp.bVRui19254/dfs/problems/sample0_0123/r002_31_t1.fits took 2170 ms.877247, 829255: Completed '/tmp/tmp.bVRui19254/tmp/r002_31_t0.fits' and '/tmp/tmp.bVRui19254/tmp/r002_31_t1.fits' in 829255 ms.
+STATS: Result: 36984 characters.
+
+STATS: Pair  : r002_40_t0.fits - r002_40_t1.fits
+STATS: Time  : 677221
+STATS: Error : 1340595, 677220: 
+STATS: Output: 663375, 0: Comparing 'r002_40_t0.fits' and 'r002_40_t1.fits'
+671277, 7902: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r002_40_t0.fits took 7889 ms.678650, 15275: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r002_40_t1.fits took 7373 ms.1340597, 677222: Completed '/tmp/tmp.xmpuA32667/tmp/r002_40_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r002_40_t1.fits' in 677221 ms.
+STATS: Result: 34017 characters.
+
+STATS: Pair  : r002_41_t0.fits - r002_41_t1.fits
+STATS: Time  : 826669
+STATS: Error : 826685, 826667: 
+STATS: Output: 18, 0: Comparing 'r002_41_t0.fits' and 'r002_41_t1.fits'
+10115, 10097: Copying /tmp/tmp.PfrJs13814/dfs/problems/sample0_0123/r002_41_t0.fits took 10090 ms.12268, 12250: Copying /tmp/tmp.PfrJs13814/dfs/problems/sample0_0123/r002_41_t1.fits took 2153 ms.826687, 826669: Completed '/tmp/tmp.PfrJs13814/tmp/r002_41_t0.fits' and '/tmp/tmp.PfrJs13814/tmp/r002_41_t1.fits' in 826669 ms.
+STATS: Result: 29762 characters.
+
+STATS: Pair  : r003_00_t0.fits - r003_00_t1.fits
+STATS: Time  : 859557
+STATS: Error : 859584, 859554: 
+STATS: Output: 30, 0: Comparing 'r003_00_t0.fits' and 'r003_00_t1.fits'
+28374, 28344: Copying /tmp/tmp.DEhKcf2927/dfs/problems/sample0_0123/r003_00_t0.fits took 28330 ms.49024, 48994: Copying /tmp/tmp.DEhKcf2927/dfs/problems/sample0_0123/r003_00_t1.fits took 20650 ms.859587, 859557: Completed '/tmp/tmp.DEhKcf2927/tmp/r003_00_t0.fits' and '/tmp/tmp.DEhKcf2927/tmp/r003_00_t1.fits' in 859557 ms.
+STATS: Result: 47375 characters.
+
+STATS: Pair  : r003_01_t0.fits - r003_01_t1.fits
+STATS: Time  : 621498
+STATS: Error : 654615, 621497: 
+STATS: Output: 33118, 0: Comparing 'r003_01_t0.fits' and 'r003_01_t1.fits'
+46886, 13768: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r003_01_t0.fits took 13756 ms.50304, 17186: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r003_01_t1.fits took 3418 ms.654616, 621498: Completed '/tmp/tmp.sINsZ12359/tmp/r003_01_t0.fits' and '/tmp/tmp.sINsZ12359/tmp/r003_01_t1.fits' in 621498 ms.
+STATS: Result: 33575 characters.
+
+STATS: Pair  : r003_10_t0.fits - r003_10_t1.fits
+STATS: Time  : 715377
+STATS: Error : 715397, 715377: 
+STATS: Output: 20, 0: Comparing 'r003_10_t0.fits' and 'r003_10_t1.fits'
+33299, 33279: Copying /tmp/tmp.nrxzSn5559/dfs/problems/sample0_0123/r003_10_t0.fits took 33224 ms.55479, 55459: Copying /tmp/tmp.nrxzSn5559/dfs/problems/sample0_0123/r003_10_t1.fits took 22179 ms.715397, 715377: Completed '/tmp/tmp.nrxzSn5559/tmp/r003_10_t0.fits' and '/tmp/tmp.nrxzSn5559/tmp/r003_10_t1.fits' in 715377 ms.
+STATS: Result: 40975 characters.
+
+STATS: Pair  : r003_11_t0.fits - r003_11_t1.fits
+STATS: Time  : 685841
+STATS: Error : 781086, 685841: 
+STATS: Output: 95245, 0: Comparing 'r003_11_t0.fits' and 'r003_11_t1.fits'
+102580, 7335: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r003_11_t0.fits took 7323 ms.118104, 22859: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r003_11_t1.fits took 15524 ms.781086, 685841: Completed '/tmp/tmp.ocFzw12375/tmp/r003_11_t0.fits' and '/tmp/tmp.ocFzw12375/tmp/r003_11_t1.fits' in 685841 ms.
+STATS: Result: 45350 characters.
+
+STATS: Pair  : r003_20_t0.fits - r003_20_t1.fits
+STATS: Time  : 676044
+STATS: Error : 736330, 676044: 
+STATS: Output: 60286, 0: Comparing 'r003_20_t0.fits' and 'r003_20_t1.fits'
+62422, 2136: Copying /tmp/tmp.lRpjQ23276/dfs/problems/sample0_0123/r003_20_t0.fits took 2124 ms.64541, 4255: Copying /tmp/tmp.lRpjQ23276/dfs/problems/sample0_0123/r003_20_t1.fits took 2119 ms.736330, 676044: Completed '/tmp/tmp.lRpjQ23276/tmp/r003_20_t0.fits' and '/tmp/tmp.lRpjQ23276/tmp/r003_20_t1.fits' in 676044 ms.
+STATS: Result: 41925 characters.
+
+STATS: Pair  : r003_21_t0.fits - r003_21_t1.fits
+STATS: Time  : 677198
+STATS: Error : 742796, 677196: 
+STATS: Output: 65600, 0: Comparing 'r003_21_t0.fits' and 'r003_21_t1.fits'
+73680, 8080: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r003_21_t0.fits took 8068 ms.89468, 23868: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r003_21_t1.fits took 15788 ms.742798, 677198: Completed '/tmp/tmp.NryGC21026/tmp/r003_21_t0.fits' and '/tmp/tmp.NryGC21026/tmp/r003_21_t1.fits' in 677198 ms.
+STATS: Result: 36350 characters.
+
+STATS: Pair  : r003_30_t0.fits - r003_30_t1.fits
+STATS: Time  : 658688
+STATS: Error : 658707, 658688: 
+STATS: Output: 19, 0: Comparing 'r003_30_t0.fits' and 'r003_30_t1.fits'
+6641, 6622: Copying /tmp/tmp.fGlyZ16791/dfs/problems/sample0_0123/r003_30_t0.fits took 6608 ms.9285, 9266: Copying /tmp/tmp.fGlyZ16791/dfs/problems/sample0_0123/r003_30_t1.fits took 2643 ms.658707, 658688: Completed '/tmp/tmp.fGlyZ16791/tmp/r003_30_t0.fits' and '/tmp/tmp.fGlyZ16791/tmp/r003_30_t1.fits' in 658688 ms.
+STATS: Result: 42750 characters.
+
+STATS: Pair  : r003_31_t0.fits - r003_31_t1.fits
+STATS: Time  : 861145
+STATS: Error : 906010, 861145: 
+STATS: Output: 44865, 0: Comparing 'r003_31_t0.fits' and 'r003_31_t1.fits'
+60589, 15724: Copying /tmp/tmp.PgQSj11822/dfs/problems/sample0_0123/r003_31_t0.fits took 15708 ms.78495, 33630: Copying /tmp/tmp.PgQSj11822/dfs/problems/sample0_0123/r003_31_t1.fits took 17906 ms.906010, 861145: Completed '/tmp/tmp.PgQSj11822/tmp/r003_31_t0.fits' and '/tmp/tmp.PgQSj11822/tmp/r003_31_t1.fits' in 861145 ms.
+STATS: Result: 38225 characters.
+
+STATS: Pair  : r003_40_t0.fits - r003_40_t1.fits
+STATS: Time  : 644062
+STATS: Error : 644120, 644061: 
+STATS: Output: 59, 0: Comparing 'r003_40_t0.fits' and 'r003_40_t1.fits'
+4485, 4426: Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r003_40_t0.fits took 4414 ms.6767, 6708: Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r003_40_t1.fits took 2282 ms.644121, 644062: Completed '/tmp/tmp.PaLOU20518/tmp/r003_40_t0.fits' and '/tmp/tmp.PaLOU20518/tmp/r003_40_t1.fits' in 644062 ms.
+STATS: Result: 33450 characters.
+
+STATS: Pair  : r003_41_t0.fits - r003_41_t1.fits
+STATS: Time  : 841999
+STATS: Error : 842015, 841997: 
+STATS: Output: 18, 0: Comparing 'r003_41_t0.fits' and 'r003_41_t1.fits'
+1537, 1519: Copying /tmp/tmp.WLlJn12276/dfs/problems/sample0_0123/r003_41_t0.fits took 1498 ms.7804, 7786: Copying /tmp/tmp.WLlJn12276/dfs/problems/sample0_0123/r003_41_t1.fits took 6267 ms.842018, 842000: Completed '/tmp/tmp.WLlJn12276/tmp/r003_41_t0.fits' and '/tmp/tmp.WLlJn12276/tmp/r003_41_t1.fits' in 841999 ms.
+STATS: Result: 36850 characters.
+
+STATS: Pair  : r004_00_t0.fits - r004_00_t1.fits
+STATS: Time  : 38578
+STATS: Error : 38599, 38578: 
+STATS: Output: 21, 0: Comparing 'r004_00_t0.fits' and 'r004_00_t1.fits'
+4473, 4452: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r004_00_t0.fits took 4439 ms.16955, 16934: Copying /tmp/tmp.ocFzw12375/dfs/problems/sample0_0123/r004_00_t1.fits took 12481 ms.38600, 38579: Completed '/tmp/tmp.ocFzw12375/tmp/r004_00_t0.fits' and '/tmp/tmp.ocFzw12375/tmp/r004_00_t1.fits' in 38578 ms.
+STATS: Result: 46690 characters.
+
+STATS: Pair  : r004_01_t0.fits - r004_01_t1.fits
+STATS: Time  : 39158
+STATS: Error : 118222, 39157: 
+STATS: Output: 79065, 0: Comparing 'r004_01_t0.fits' and 'r004_01_t1.fits'
+85039, 5974: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r004_01_t0.fits took 5961 ms.98076, 19011: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r004_01_t1.fits took 13037 ms.118223, 39158: Completed '/tmp/tmp.wUVzQB3680/tmp/r004_01_t0.fits' and '/tmp/tmp.wUVzQB3680/tmp/r004_01_t1.fits' in 39158 ms.
+STATS: Result: 38019 characters.
+
+STATS: Pair  : r004_10_t0.fits - r004_10_t1.fits
+STATS: Time  : 24656
+STATS: Error : 80068, 24655: 
+STATS: Output: 55413, 0: Comparing 'r004_10_t0.fits' and 'r004_10_t1.fits'
+58005, 2592: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_10_t0.fits took 2576 ms.59653, 4240: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_10_t1.fits took 1646 ms.80069, 24656: Completed '/tmp/tmp.eDGpy20217/tmp/r004_10_t0.fits' and '/tmp/tmp.eDGpy20217/tmp/r004_10_t1.fits' in 24656 ms.
+STATS: Result: 49128 characters.
+
+STATS: Pair  : r004_11_t0.fits - r004_11_t1.fits
+STATS: Time  : 22420
+STATS: Error : 55413, 22420: 
+STATS: Output: 32993, 0: Comparing 'r004_11_t0.fits' and 'r004_11_t1.fits'
+35961, 2968: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_11_t0.fits took 2951 ms.39194, 6201: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_11_t1.fits took 3232 ms.55413, 22420: Completed '/tmp/tmp.eDGpy20217/tmp/r004_11_t0.fits' and '/tmp/tmp.eDGpy20217/tmp/r004_11_t1.fits' in 22420 ms.
+STATS: Result: 52164 characters.
+
+STATS: Pair  : r004_20_t0.fits - r004_20_t1.fits
+STATS: Time  : 32960
+STATS: Error : 32990, 32958: 
+STATS: Output: 32, 0: Comparing 'r004_20_t0.fits' and 'r004_20_t1.fits'
+10828, 10796: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_20_t0.fits took 10790 ms.15950, 15918: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r004_20_t1.fits took 5122 ms.32993, 32961: Completed '/tmp/tmp.eDGpy20217/tmp/r004_20_t0.fits' and '/tmp/tmp.eDGpy20217/tmp/r004_20_t1.fits' in 32960 ms.
+STATS: Result: 47541 characters.
+
+STATS: Pair  : r004_21_t0.fits - r004_21_t1.fits
+STATS: Time  : 37262
+STATS: Error : 69344, 37261: 
+STATS: Output: 32083, 0: Comparing 'r004_21_t0.fits' and 'r004_21_t1.fits'
+33726, 1643: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r004_21_t0.fits took 1631 ms.47124, 15041: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r004_21_t1.fits took 13398 ms.69345, 37262: Completed '/tmp/tmp.usaGu26633/tmp/r004_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r004_21_t1.fits' in 37262 ms.
+STATS: Result: 50163 characters.
+
+STATS: Pair  : r004_30_t0.fits - r004_30_t1.fits
+STATS: Time  : 32663
+STATS: Error : 65575, 32662: 
+STATS: Output: 32913, 0: Comparing 'r004_30_t0.fits' and 'r004_30_t1.fits'
+37189, 4276: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r004_30_t0.fits took 4263 ms.41882, 8969: Copying /tmp/tmp.NryGC21026/dfs/problems/sample0_0123/r004_30_t1.fits took 4693 ms.65576, 32663: Completed '/tmp/tmp.NryGC21026/tmp/r004_30_t0.fits' and '/tmp/tmp.NryGC21026/tmp/r004_30_t1.fits' in 32663 ms.
+STATS: Result: 50623 characters.
+
+STATS: Pair  : r004_31_t0.fits - r004_31_t1.fits
+STATS: Time  : 45546
+STATS: Error : 45561, 45542: 
+STATS: Output: 19, 0: Comparing 'r004_31_t0.fits' and 'r004_31_t1.fits'
+10998, 10979: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r004_31_t0.fits took 10972 ms.19241, 19222: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r004_31_t1.fits took 8243 ms.45566, 45547: Completed '/tmp/tmp.nqxxe20591/tmp/r004_31_t0.fits' and '/tmp/tmp.nqxxe20591/tmp/r004_31_t1.fits' in 45546 ms.
+STATS: Result: 54395 characters.
+
+STATS: Pair  : r004_40_t0.fits - r004_40_t1.fits
+STATS: Time  : 30161
+STATS: Error : 64302, 30160: 
+STATS: Output: 34142, 0: Comparing 'r004_40_t0.fits' and 'r004_40_t1.fits'
+38860, 4718: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r004_40_t0.fits took 4705 ms.40462, 6320: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r004_40_t1.fits took 1602 ms.64303, 30161: Completed '/tmp/tmp.xJJSlx9650/tmp/r004_40_t0.fits' and '/tmp/tmp.xJJSlx9650/tmp/r004_40_t1.fits' in 30161 ms.
+STATS: Result: 47863 characters.
+
+STATS: Pair  : r004_41_t0.fits - r004_41_t1.fits
+STATS: Time  : 34119
+STATS: Error : 34142, 34119: 
+STATS: Output: 23, 0: Comparing 'r004_41_t0.fits' and 'r004_41_t1.fits'
+2463, 2440: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r004_41_t0.fits took 2208 ms.10658, 10635: Copying /tmp/tmp.xJJSlx9650/dfs/problems/sample0_0123/r004_41_t1.fits took 8195 ms.34142, 34119: Completed '/tmp/tmp.xJJSlx9650/tmp/r004_41_t0.fits' and '/tmp/tmp.xJJSlx9650/tmp/r004_41_t1.fits' in 34119 ms.
+STATS: Result: 50140 characters.
+
+STATS: Pair  : r005_00_t0.fits - r005_00_t1.fits
+STATS: Time  : 647172
+STATS: Error : 647205, 647171: 
+STATS: Output: 34, 0: Comparing 'r005_00_t0.fits' and 'r005_00_t1.fits'
+8950, 8916: Copying /tmp/tmp.HtLzv11737/dfs/problems/sample0_0123/r005_00_t0.fits took 8902 ms.10695, 10661: Copying /tmp/tmp.HtLzv11737/dfs/problems/sample0_0123/r005_00_t1.fits took 1744 ms.647206, 647172: Completed '/tmp/tmp.HtLzv11737/tmp/r005_00_t0.fits' and '/tmp/tmp.HtLzv11737/tmp/r005_00_t1.fits' in 647172 ms.
+STATS: Result: 31096 characters.
+
+STATS: Pair  : r005_01_t0.fits - r005_01_t1.fits
+STATS: Time  : 609666
+STATS: Error : 609684, 609665: 
+STATS: Output: 19, 0: Comparing 'r005_01_t0.fits' and 'r005_01_t1.fits'
+15524, 15505: Copying /tmp/tmp.cxqnJ10617/dfs/problems/sample0_0123/r005_01_t0.fits took 15498 ms.22331, 22312: Copying /tmp/tmp.cxqnJ10617/dfs/problems/sample0_0123/r005_01_t1.fits took 6807 ms.609685, 609666: Completed '/tmp/tmp.cxqnJ10617/tmp/r005_01_t0.fits' and '/tmp/tmp.cxqnJ10617/tmp/r005_01_t1.fits' in 609666 ms.
+STATS: Result: 21275 characters.
+
+STATS: Pair  : r005_10_t0.fits - r005_10_t1.fits
+STATS: Time  : 646585
+STATS: Error : 646608, 646585: 
+STATS: Output: 23, 0: Comparing 'r005_10_t0.fits' and 'r005_10_t1.fits'
+14545, 14522: Copying /tmp/tmp.vRvkA17670/dfs/problems/sample0_0123/r005_10_t0.fits took 14515 ms.16556, 16533: Copying /tmp/tmp.vRvkA17670/dfs/problems/sample0_0123/r005_10_t1.fits took 2011 ms.646608, 646585: Completed '/tmp/tmp.vRvkA17670/tmp/r005_10_t0.fits' and '/tmp/tmp.vRvkA17670/tmp/r005_10_t1.fits' in 646585 ms.
+STATS: Result: 25231 characters.
+
+STATS: Pair  : r005_11_t0.fits - r005_11_t1.fits
+STATS: Time  : 868796
+STATS: Error : 868812, 868794: 
+STATS: Output: 18, 0: Comparing 'r005_11_t0.fits' and 'r005_11_t1.fits'
+9196, 9178: Copying /tmp/tmp.AmgBkp7566/dfs/problems/sample0_0123/r005_11_t0.fits took 9171 ms.12962, 12944: Copying /tmp/tmp.AmgBkp7566/dfs/problems/sample0_0123/r005_11_t1.fits took 3766 ms.868814, 868796: Completed '/tmp/tmp.AmgBkp7566/tmp/r005_11_t0.fits' and '/tmp/tmp.AmgBkp7566/tmp/r005_11_t1.fits' in 868796 ms.
+STATS: Result: 29440 characters.
+
+STATS: Pair  : r005_20_t0.fits - r005_20_t1.fits
+STATS: Time  : 880927
+STATS: Error : 880953, 880925: 
+STATS: Output: 28, 0: Comparing 'r005_20_t0.fits' and 'r005_20_t1.fits'
+21314, 21286: Copying /tmp/tmp.WjVOTm1276/dfs/problems/sample0_0123/r005_20_t0.fits took 21273 ms.46236, 46208: Copying /tmp/tmp.WjVOTm1276/dfs/problems/sample0_0123/r005_20_t1.fits took 24922 ms.880955, 880927: Completed '/tmp/tmp.WjVOTm1276/tmp/r005_20_t0.fits' and '/tmp/tmp.WjVOTm1276/tmp/r005_20_t1.fits' in 880927 ms.
+STATS: Result: 29371 characters.
+
+STATS: Pair  : r005_21_t0.fits - r005_21_t1.fits
+STATS: Time  : 879644
+STATS: Error : 879656, 879638: 
+STATS: Output: 18, 0: Comparing 'r005_21_t0.fits' and 'r005_21_t1.fits'
+4426, 4408: Copying /tmp/tmp.XOJHb18216/dfs/problems/sample0_0123/r005_21_t0.fits took 4400 ms.26920, 26902: Copying /tmp/tmp.XOJHb18216/dfs/problems/sample0_0123/r005_21_t1.fits took 22494 ms.879662, 879644: Completed '/tmp/tmp.XOJHb18216/tmp/r005_21_t0.fits' and '/tmp/tmp.XOJHb18216/tmp/r005_21_t1.fits' in 879644 ms.
+STATS: Result: 33281 characters.
+
+STATS: Pair  : r005_30_t0.fits - r005_30_t1.fits
+STATS: Time  : 604569
+STATS: Error : 604626, 604569: 
+STATS: Output: 57, 0: Comparing 'r005_30_t0.fits' and 'r005_30_t1.fits'
+7662, 7605: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r005_30_t0.fits took 7599 ms.9199, 9142: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r005_30_t1.fits took 1537 ms.604626, 604569: Completed '/tmp/tmp.xmpuA32667/tmp/r005_30_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r005_30_t1.fits' in 604569 ms.
+STATS: Result: 28543 characters.
+
+STATS: Pair  : r005_31_t0.fits - r005_31_t1.fits
+STATS: Time  : 844799
+STATS: Error : 844810, 844792: 
+STATS: Output: 18, 0: Comparing 'r005_31_t0.fits' and 'r005_31_t1.fits'
+3376, 3358: Copying /tmp/tmp.rmXuFK6571/dfs/problems/sample0_0123/r005_31_t0.fits took 3352 ms.8134, 8116: Copying /tmp/tmp.rmXuFK6571/dfs/problems/sample0_0123/r005_31_t1.fits took 4758 ms.844817, 844799: Completed '/tmp/tmp.rmXuFK6571/tmp/r005_31_t0.fits' and '/tmp/tmp.rmXuFK6571/tmp/r005_31_t1.fits' in 844799 ms.
+STATS: Result: 32223 characters.
+
+STATS: Pair  : r005_40_t0.fits - r005_40_t1.fits
+STATS: Time  : 670580
+STATS: Error : 670602, 670579: 
+STATS: Output: 23, 0: Comparing 'r005_40_t0.fits' and 'r005_40_t1.fits'
+15793, 15770: Copying /tmp/tmp.wglexC8740/dfs/problems/sample0_0123/r005_40_t0.fits took 15763 ms.21353, 21330: Copying /tmp/tmp.wglexC8740/dfs/problems/sample0_0123/r005_40_t1.fits took 5560 ms.670603, 670580: Completed '/tmp/tmp.wglexC8740/tmp/r005_40_t0.fits' and '/tmp/tmp.wglexC8740/tmp/r005_40_t1.fits' in 670580 ms.
+STATS: Result: 30061 characters.
+
+STATS: Pair  : r005_41_t0.fits - r005_41_t1.fits
+STATS: Time  : 854641
+STATS: Error : 854655, 854634: 
+STATS: Output: 21, 0: Comparing 'r005_41_t0.fits' and 'r005_41_t1.fits'
+11494, 11473: Copying /tmp/tmp.fHOtW13125/dfs/problems/sample0_0123/r005_41_t0.fits took 11467 ms.14245, 14224: Copying /tmp/tmp.fHOtW13125/dfs/problems/sample0_0123/r005_41_t1.fits took 2750 ms.854663, 854642: Completed '/tmp/tmp.fHOtW13125/tmp/r005_41_t0.fits' and '/tmp/tmp.fHOtW13125/tmp/r005_41_t1.fits' in 854641 ms.
+STATS: Result: 32545 characters.
+
+STATS: Pair  : r006_00_t0.fits - r006_00_t1.fits
+STATS: Time  : 36405
+STATS: Error : 36436, 36405: 
+STATS: Output: 31, 0: Comparing 'r006_00_t0.fits' and 'r006_00_t1.fits'
+2171, 2140: Copying /tmp/tmp.yRcsX14411/dfs/problems/sample0_0123/r006_00_t0.fits took 2116 ms.7467, 7436: Copying /tmp/tmp.yRcsX14411/dfs/problems/sample0_0123/r006_00_t1.fits took 5295 ms.36437, 36406: Completed '/tmp/tmp.yRcsX14411/tmp/r006_00_t0.fits' and '/tmp/tmp.yRcsX14411/tmp/r006_00_t1.fits' in 36405 ms.
+STATS: Result: 36248 characters.
+
+STATS: Pair  : r006_01_t0.fits - r006_01_t1.fits
+STATS: Time  : 34180
+STATS: Error : 76801, 34179: 
+STATS: Output: 42622, 0: Comparing 'r006_01_t0.fits' and 'r006_01_t1.fits'
+45344, 2722: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r006_01_t0.fits took 2709 ms.50103, 7481: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r006_01_t1.fits took 4758 ms.76802, 34180: Completed '/tmp/tmp.yMUgnX5525/tmp/r006_01_t0.fits' and '/tmp/tmp.yMUgnX5525/tmp/r006_01_t1.fits' in 34180 ms.
+STATS: Result: 26634 characters.
+
+STATS: Pair  : r006_10_t0.fits - r006_10_t1.fits
+STATS: Time  : 42446
+STATS: Error : 42621, 42445: 
+STATS: Output: 176, 0: Comparing 'r006_10_t0.fits' and 'r006_10_t1.fits'
+2167, 1991: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r006_10_t0.fits took 1977 ms.15861, 15685: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r006_10_t1.fits took 13694 ms.42622, 42446: Completed '/tmp/tmp.yMUgnX5525/tmp/r006_10_t0.fits' and '/tmp/tmp.yMUgnX5525/tmp/r006_10_t1.fits' in 42446 ms.
+STATS: Result: 38939 characters.
+
+STATS: Pair  : r006_11_t0.fits - r006_11_t1.fits
+STATS: Time  : 32024
+STATS: Error : 32054, 32024: 
+STATS: Output: 30, 0: Comparing 'r006_11_t0.fits' and 'r006_11_t1.fits'
+2871, 2841: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r006_11_t0.fits took 2826 ms.4795, 4765: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r006_11_t1.fits took 1923 ms.32055, 32025: Completed '/tmp/tmp.usaGu26633/tmp/r006_11_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r006_11_t1.fits' in 32024 ms.
+STATS: Result: 33005 characters.
+
+STATS: Pair  : r006_20_t0.fits - r006_20_t1.fits
+STATS: Time  : 79837
+STATS: Error : 79867, 79836: 
+STATS: Output: 31, 0: Comparing 'r006_20_t0.fits' and 'r006_20_t1.fits'
+11334, 11303: Copying /tmp/tmp.SOXUT29204/dfs/problems/sample0_0123/r006_20_t0.fits took 11070 ms.50876, 50845: Copying /tmp/tmp.SOXUT29204/dfs/problems/sample0_0123/r006_20_t1.fits took 39542 ms.79868, 79837: Completed '/tmp/tmp.SOXUT29204/tmp/r006_20_t0.fits' and '/tmp/tmp.SOXUT29204/tmp/r006_20_t1.fits' in 79837 ms.
+STATS: Result: 39629 characters.
+
+STATS: Pair  : r006_21_t0.fits - r006_21_t1.fits
+STATS: Time  : 37545
+STATS: Error : 37574, 37544: 
+STATS: Output: 30, 0: Comparing 'r006_21_t0.fits' and 'r006_21_t1.fits'
+8323, 8293: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r006_21_t0.fits took 8271 ms.11050, 11020: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r006_21_t1.fits took 2727 ms.37575, 37545: Completed '/tmp/tmp.hiKYSQ3839/tmp/r006_21_t0.fits' and '/tmp/tmp.hiKYSQ3839/tmp/r006_21_t1.fits' in 37545 ms.
+STATS: Result: 36018 characters.
+
+STATS: Pair  : r006_30_t0.fits - r006_30_t1.fits
+STATS: Time  : 33053
+STATS: Error : 33071, 33052: 
+STATS: Output: 19, 0: Comparing 'r006_30_t0.fits' and 'r006_30_t1.fits'
+1264, 1245: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r006_30_t0.fits took 1237 ms.5154, 5135: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r006_30_t1.fits took 3890 ms.33072, 33053: Completed '/tmp/tmp.sINsZ12359/tmp/r006_30_t0.fits' and '/tmp/tmp.sINsZ12359/tmp/r006_30_t1.fits' in 33053 ms.
+STATS: Result: 42481 characters.
+
+STATS: Pair  : r006_31_t0.fits - r006_31_t1.fits
+STATS: Time  : 27479
+STATS: Error : 107583, 27479: 
+STATS: Output: 80104, 0: Comparing 'r006_31_t0.fits' and 'r006_31_t1.fits'
+83301, 3197: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r006_31_t0.fits took 3182 ms.84347, 4243: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r006_31_t1.fits took 1045 ms.107583, 27479: Completed '/tmp/tmp.eDGpy20217/tmp/r006_31_t0.fits' and '/tmp/tmp.eDGpy20217/tmp/r006_31_t1.fits' in 27479 ms.
+STATS: Result: 39399 characters.
+
+STATS: Pair  : r006_40_t0.fits - r006_40_t1.fits
+STATS: Time  : 38167
+STATS: Error : 75813, 38166: 
+STATS: Output: 37647, 0: Comparing 'r006_40_t0.fits' and 'r006_40_t1.fits'
+38961, 1314: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r006_40_t0.fits took 1301 ms.48655, 11008: Copying /tmp/tmp.hiKYSQ3839/dfs/problems/sample0_0123/r006_40_t1.fits took 9694 ms.75814, 38167: Completed '/tmp/tmp.hiKYSQ3839/tmp/r006_40_t0.fits' and '/tmp/tmp.hiKYSQ3839/tmp/r006_40_t1.fits' in 38167 ms.
+STATS: Result: 38042 characters.
+
+STATS: Pair  : r006_41_t0.fits - r006_41_t1.fits
+STATS: Time  : 28741
+STATS: Error : 62980, 28741: 
+STATS: Output: 34239, 0: Comparing 'r006_41_t0.fits' and 'r006_41_t1.fits'
+38299, 4060: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r006_41_t0.fits took 4047 ms.39875, 5636: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r006_41_t1.fits took 1576 ms.62980, 28741: Completed '/tmp/tmp.yQHzgB1133/tmp/r006_41_t0.fits' and '/tmp/tmp.yQHzgB1133/tmp/r006_41_t1.fits' in 28741 ms.
+STATS: Result: 38065 characters.
+
+STATS: Pair  : r007_00_t0.fits - r007_00_t1.fits
+STATS: Time  : 34220
+STATS: Error : 34237, 34219: 
+STATS: Output: 18, 1: Comparing 'r007_00_t0.fits' and 'r007_00_t1.fits'
+15862, 15844: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r007_00_t0.fits took 15837 ms.19954, 19936: Copying /tmp/tmp.yQHzgB1133/dfs/problems/sample0_0123/r007_00_t1.fits took 4092 ms.34239, 34221: Completed '/tmp/tmp.yQHzgB1133/tmp/r007_00_t0.fits' and '/tmp/tmp.yQHzgB1133/tmp/r007_00_t1.fits' in 34220 ms.
+STATS: Result: 25530 characters.
+
+STATS: Pair  : r007_01_t0.fits - r007_01_t1.fits
+STATS: Time  : 59936
+STATS: Error : 59979, 59936: 
+STATS: Output: 43, 0: Comparing 'r007_01_t0.fits' and 'r007_01_t1.fits'
+34149, 34106: Copying /tmp/tmp.lRpjQ23276/dfs/problems/sample0_0123/r007_01_t0.fits took 34085 ms.40291, 40248: Copying /tmp/tmp.lRpjQ23276/dfs/problems/sample0_0123/r007_01_t1.fits took 6141 ms.59979, 59936: Completed '/tmp/tmp.lRpjQ23276/tmp/r007_01_t0.fits' and '/tmp/tmp.lRpjQ23276/tmp/r007_01_t1.fits' in 59936 ms.
+STATS: Result: 24840 characters.
+
+STATS: Pair  : r007_10_t0.fits - r007_10_t1.fits
+STATS: Time  : 42719
+STATS: Error : 42737, 42718: 
+STATS: Output: 19, 0: Comparing 'r007_10_t0.fits' and 'r007_10_t1.fits'
+16123, 16104: Copying /tmp/tmp.ewmNi12091/dfs/problems/sample0_0123/r007_10_t0.fits took 16097 ms.20509, 20490: Copying /tmp/tmp.ewmNi12091/dfs/problems/sample0_0123/r007_10_t1.fits took 4386 ms.42738, 42719: Completed '/tmp/tmp.ewmNi12091/tmp/r007_10_t0.fits' and '/tmp/tmp.ewmNi12091/tmp/r007_10_t1.fits' in 42719 ms.
+STATS: Result: 30567 characters.
+
+STATS: Pair  : r007_11_t0.fits - r007_11_t1.fits
+STATS: Time  : 18327
+STATS: Error : 45650, 18326: 
+STATS: Output: 27324, 0: Comparing 'r007_11_t0.fits' and 'r007_11_t1.fits'
+29589, 2265: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_11_t0.fits took 2251 ms.31882, 4558: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_11_t1.fits took 2293 ms.45651, 18327: Completed '/tmp/tmp.maQsF12240/tmp/r007_11_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r007_11_t1.fits' in 18327 ms.
+STATS: Result: 34615 characters.
+
+STATS: Pair  : r007_20_t0.fits - r007_20_t1.fits
+STATS: Time  : 27306
+STATS: Error : 27322, 27304: 
+STATS: Output: 18, 0: Comparing 'r007_20_t0.fits' and 'r007_20_t1.fits'
+8061, 8043: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_20_t0.fits took 8036 ms.14226, 14208: Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_20_t1.fits took 6164 ms.27324, 27306: Completed '/tmp/tmp.maQsF12240/tmp/r007_20_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r007_20_t1.fits' in 27306 ms.
+STATS: Result: 29187 characters.
+
+STATS: Pair  : r007_21_t0.fits - r007_21_t1.fits
+STATS: Time  : 33947
+STATS: Error : 160449, 33946: 
+STATS: Output: 126503, 0: Comparing 'r007_21_t0.fits' and 'r007_21_t1.fits'
+132551, 6048: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_21_t0.fits took 6036 ms.138130, 11627: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_21_t1.fits took 5579 ms.160450, 33947: Completed '/tmp/tmp.usaGu26633/tmp/r007_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_21_t1.fits' in 33947 ms.
+STATS: Result: 31142 characters.
+
+STATS: Pair  : r007_30_t0.fits - r007_30_t1.fits
+STATS: Time  : 28285
+STATS: Error : 126502, 28284: 
+STATS: Output: 98218, 0: Comparing 'r007_30_t0.fits' and 'r007_30_t1.fits'
+102958, 4740: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_30_t0.fits took 4728 ms.105038, 6820: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_30_t1.fits took 2080 ms.126503, 28285: Completed '/tmp/tmp.usaGu26633/tmp/r007_30_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_30_t1.fits' in 28285 ms.
+STATS: Result: 32775 characters.
+
+STATS: Pair  : r007_31_t0.fits - r007_31_t1.fits
+STATS: Time  : 28753
+STATS: Error : 98217, 28752: 
+STATS: Output: 69465, 0: Comparing 'r007_31_t0.fits' and 'r007_31_t1.fits'
+75247, 5782: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_31_t0.fits took 5770 ms.77378, 7913: Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_31_t1.fits took 2131 ms.98218, 28753: Completed '/tmp/tmp.usaGu26633/tmp/r007_31_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_31_t1.fits' in 28753 ms.
+STATS: Result: 33143 characters.
+
+STATS: Pair  : r007_40_t0.fits - r007_40_t1.fits
+STATS: Time  : 29799
+STATS: Error : 663285, 29798: 
+STATS: Output: 633487, 0: Comparing 'r007_40_t0.fits' and 'r007_40_t1.fits'
+636571, 3084: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_40_t0.fits took 3071 ms.642485, 8998: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_40_t1.fits took 5914 ms.663286, 29799: Completed '/tmp/tmp.xmpuA32667/tmp/r007_40_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r007_40_t1.fits' in 29799 ms.
+STATS: Result: 32407 characters.
+
+STATS: Pair  : r007_41_t0.fits - r007_41_t1.fits
+STATS: Time  : 28838
+STATS: Error : 633483, 28834: 
+STATS: Output: 604649, 0: Comparing 'r007_41_t0.fits' and 'r007_41_t1.fits'
+609579, 4930: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_41_t0.fits took 4918 ms.612757, 8108: Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_41_t1.fits took 3178 ms.633487, 28838: Completed '/tmp/tmp.xmpuA32667/tmp/r007_41_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r007_41_t1.fits' in 28838 ms.
+STATS: Result: 29854 characters.
+
+STATS: Pair  : r008_00_t0.fits - r008_00_t1.fits
+STATS: Time  : 588080
+STATS: Error : 1232232, 588079: 
+STATS: Output: 644153, 0: Comparing 'r008_00_t0.fits' and 'r008_00_t1.fits'
+645934, 1781: Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r008_00_t0.fits took 1767 ms.648433, 4280: Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r008_00_t1.fits took 2499 ms.1232233, 588080: Completed '/tmp/tmp.PaLOU20518/tmp/r008_00_t0.fits' and '/tmp/tmp.PaLOU20518/tmp/r008_00_t1.fits' in 588080 ms.
+STATS: Result: 27209 characters.
+
+STATS: Pair  : r008_01_t0.fits - r008_01_t1.fits
+STATS: Time  : 745737
+STATS: Error : 745759, 745729: 
+STATS: Output: 30, 0: Comparing 'r008_01_t0.fits' and 'r008_01_t1.fits'
+3169, 3139: Copying /tmp/tmp.NVQLYD8904/dfs/problems/sample0_0123/r008_01_t0.fits took 3124 ms.4448, 4418: Copying /tmp/tmp.NVQLYD8904/dfs/problems/sample0_0123/r008_01_t1.fits took 1279 ms.745767, 745737: Completed '/tmp/tmp.NVQLYD8904/tmp/r008_01_t0.fits' and '/tmp/tmp.NVQLYD8904/tmp/r008_01_t1.fits' in 745737 ms.
+STATS: Result: 22977 characters.
+
+STATS: Pair  : r008_10_t0.fits - r008_10_t1.fits
+STATS: Time  : 649253
+STATS: Error : 1316956, 649252: 
+STATS: Output: 667704, 0: Comparing 'r008_10_t0.fits' and 'r008_10_t1.fits'
+669305, 1601: Copying /tmp/tmp.QloBhFw540/dfs/problems/sample0_0123/r008_10_t0.fits took 1589 ms.674822, 7118: Copying /tmp/tmp.QloBhFw540/dfs/problems/sample0_0123/r008_10_t1.fits took 5517 ms.1316957, 649253: Completed '/tmp/tmp.QloBhFw540/tmp/r008_10_t0.fits' and '/tmp/tmp.QloBhFw540/tmp/r008_10_t1.fits' in 649253 ms.
+STATS: Result: 29026 characters.
+
+STATS: Pair  : r008_11_t0.fits - r008_11_t1.fits
+STATS: Time  : 657362
+STATS: Error : 1304028, 657362: 
+STATS: Output: 646666, 0: Comparing 'r008_11_t0.fits' and 'r008_11_t1.fits'
+652247, 5581: Copying /tmp/tmp.vRvkA17670/dfs/problems/sample0_0123/r008_11_t0.fits took 5569 ms.654531, 7865: Copying /tmp/tmp.vRvkA17670/dfs/problems/sample0_0123/r008_11_t1.fits took 2284 ms.1304028, 657362: Completed '/tmp/tmp.vRvkA17670/tmp/r008_11_t0.fits' and '/tmp/tmp.vRvkA17670/tmp/r008_11_t1.fits' in 657362 ms.
+STATS: Result: 31993 characters.
+
+STATS: Pair  : r008_20_t0.fits - r008_20_t1.fits
+STATS: Time  : 689962
+STATS: Error : 1357986, 689962: 
+STATS: Output: 668024, 0: Comparing 'r008_20_t0.fits' and 'r008_20_t1.fits'
+669879, 1855: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r008_20_t0.fits took 1843 ms.702319, 34295: Copying /tmp/tmp.nqxxe20591/dfs/problems/sample0_0123/r008_20_t1.fits took 32439 ms.1357986, 689962: Completed '/tmp/tmp.nqxxe20591/tmp/r008_20_t0.fits' and '/tmp/tmp.nqxxe20591/tmp/r008_20_t1.fits' in 689962 ms.
+STATS: Result: 29256 characters.
+
+STATS: Pair  : r008_21_t0.fits - r008_21_t1.fits
+STATS: Time  : 693160
+STATS: Error : 1283439, 693160: 
+STATS: Output: 590279, 0: Comparing 'r008_21_t0.fits' and 'r008_21_t1.fits'
+592524, 2246: Copying /tmp/tmp.iyFMzk9009/dfs/problems/sample0_0123/r008_21_t0.fits took 2233 ms.623342, 33063: Copying /tmp/tmp.iyFMzk9009/dfs/problems/sample0_0123/r008_21_t1.fits took 30817 ms.1283439, 693160: Completed '/tmp/tmp.iyFMzk9009/tmp/r008_21_t0.fits' and '/tmp/tmp.iyFMzk9009/tmp/r008_21_t1.fits' in 693160 ms.
+STATS: Result: 29900 characters.
+
+STATS: Pair  : r008_30_t0.fits - r008_30_t1.fits
+STATS: Time  : 641257
+STATS: Error : 1300003, 641257: 
+STATS: Output: 658746, 0: Comparing 'r008_30_t0.fits' and 'r008_30_t1.fits'
+660900, 2154: Copying /tmp/tmp.fGlyZ16791/dfs/problems/sample0_0123/r008_30_t0.fits took 2141 ms.662258, 3512: Copying /tmp/tmp.fGlyZ16791/dfs/problems/sample0_0123/r008_30_t1.fits took 1358 ms.1300003, 641257: Completed '/tmp/tmp.fGlyZ16791/tmp/r008_30_t0.fits' and '/tmp/tmp.fGlyZ16791/tmp/r008_30_t1.fits' in 641257 ms.
+STATS: Result: 33557 characters.
+
+STATS: Pair  : r008_31_t0.fits - r008_31_t1.fits
+STATS: Time  : 651314
+STATS: Error : 1259750, 651313: 
+STATS: Output: 608437, 0: Comparing 'r008_31_t0.fits' and 'r008_31_t1.fits'
+614396, 5959: Copying /tmp/tmp.PJBFB30737/dfs/problems/sample0_0123/r008_31_t0.fits took 5946 ms.615922, 7485: Copying /tmp/tmp.PJBFB30737/dfs/problems/sample0_0123/r008_31_t1.fits took 1526 ms.1259751, 651314: Completed '/tmp/tmp.PJBFB30737/tmp/r008_31_t0.fits' and '/tmp/tmp.PJBFB30737/tmp/r008_31_t1.fits' in 651314 ms.
+STATS: Result: 34868 characters.
+
+STATS: Pair  : r008_40_t0.fits - r008_40_t1.fits
+STATS: Time  : 663218
+STATS: Error : 1285277, 663218: 
+STATS: Output: 622059, 0: Comparing 'r008_40_t0.fits' and 'r008_40_t1.fits'
+624601, 2542: Copying /tmp/tmp.tqOmj32174/dfs/problems/sample0_0123/r008_40_t0.fits took 2528 ms.627307, 5248: Copying /tmp/tmp.tqOmj32174/dfs/problems/sample0_0123/r008_40_t1.fits took 2706 ms.1285278, 663219: Completed '/tmp/tmp.tqOmj32174/tmp/r008_40_t0.fits' and '/tmp/tmp.tqOmj32174/tmp/r008_40_t1.fits' in 663218 ms.
+STATS: Result: 29164 characters.
+
+STATS: Pair  : r008_41_t0.fits - r008_41_t1.fits
+STATS: Time  : 816946
+STATS: Error : 816963, 816944: 
+STATS: Output: 19, 0: Comparing 'r008_41_t0.fits' and 'r008_41_t1.fits'
+6342, 6323: Copying /tmp/tmp.xOhmD25675/dfs/problems/sample0_0123/r008_41_t0.fits took 6316 ms.7611, 7592: Copying /tmp/tmp.xOhmD25675/dfs/problems/sample0_0123/r008_41_t1.fits took 1268 ms.816965, 816946: Completed '/tmp/tmp.xOhmD25675/tmp/r008_41_t0.fits' and '/tmp/tmp.xOhmD25675/tmp/r008_41_t1.fits' in 816946 ms.
+STATS: Result: 31441 characters.
+
+STATS: Pair  : r009_00_t0.fits - r009_00_t1.fits
+STATS: Time  : 669602
+STATS: Error : 1312185, 669601: 
+STATS: Output: 642584, 0: Comparing 'r009_00_t0.fits' and 'r009_00_t1.fits'
+658786, 16202: Copying /tmp/tmp.MkWvx14541/dfs/problems/sample0_0123/r009_00_t0.fits took 16190 ms.672246, 29662: Copying /tmp/tmp.MkWvx14541/dfs/problems/sample0_0123/r009_00_t1.fits took 13460 ms.1312186, 669602: Completed '/tmp/tmp.MkWvx14541/tmp/r009_00_t0.fits' and '/tmp/tmp.MkWvx14541/tmp/r009_00_t1.fits' in 669602 ms.
+STATS: Result: 30038 characters.
+
+STATS: Pair  : r009_01_t0.fits - r009_01_t1.fits
+STATS: Time  : 645026
+STATS: Error : 1299644, 645025: 
+STATS: Output: 654619, 0: Comparing 'r009_01_t0.fits' and 'r009_01_t1.fits'
+667224, 12605: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r009_01_t0.fits took 12592 ms.681950, 27331: Copying /tmp/tmp.sINsZ12359/dfs/problems/sample0_0123/r009_01_t1.fits took 14726 ms.1299645, 645026: Completed '/tmp/tmp.sINsZ12359/tmp/r009_01_t0.fits' and '/tmp/tmp.sINsZ12359/tmp/r009_01_t1.fits' in 645026 ms.
+STATS: Result: 21574 characters.
+
+STATS: Pair  : r009_10_t0.fits - r009_10_t1.fits
+STATS: Time  : 669670
+STATS: Error : 749577, 669670: 
+STATS: Output: 79907, 0: Comparing 'r009_10_t0.fits' and 'r009_10_t1.fits'
+96575, 16668: Copying /tmp/tmp.SOXUT29204/dfs/problems/sample0_0123/r009_10_t0.fits took 16656 ms.99259, 19352: Copying /tmp/tmp.SOXUT29204/dfs/problems/sample0_0123/r009_10_t1.fits took 2684 ms.749577, 669670: Completed '/tmp/tmp.SOXUT29204/tmp/r009_10_t0.fits' and '/tmp/tmp.SOXUT29204/tmp/r009_10_t1.fits' in 669670 ms.
+STATS: Result: 23391 characters.
+
+STATS: Pair  : r009_11_t0.fits - r009_11_t1.fits
+STATS: Time  : 635230
+STATS: Error : 753486, 635228: 
+STATS: Output: 118258, 0: Comparing 'r009_11_t0.fits' and 'r009_11_t1.fits'
+120125, 1867: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r009_11_t0.fits took 1854 ms.131911, 13653: Copying /tmp/tmp.wUVzQB3680/dfs/problems/sample0_0123/r009_11_t1.fits took 11786 ms.753488, 635230: Completed '/tmp/tmp.wUVzQB3680/tmp/r009_11_t0.fits' and '/tmp/tmp.wUVzQB3680/tmp/r009_11_t1.fits' in 635230 ms.
+STATS: Result: 25760 characters.
+
+STATS: Pair  : r009_20_t0.fits - r009_20_t1.fits
+STATS: Time  : 853695
+STATS: Error : 961357, 853694: 
+STATS: Output: 107663, 0: Comparing 'r009_20_t0.fits' and 'r009_20_t1.fits'
+119413, 11750: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r009_20_t0.fits took 11738 ms.127128, 19465: Copying /tmp/tmp.eDGpy20217/dfs/problems/sample0_0123/r009_20_t1.fits took 7715 ms.961358, 853695: Completed '/tmp/tmp.eDGpy20217/tmp/r009_20_t0.fits' and '/tmp/tmp.eDGpy20217/tmp/r009_20_t1.fits' in 853695 ms.
+STATS: Result: 29923 characters.
+
+STATS: Pair  : r009_21_t0.fits - r009_21_t1.fits
+STATS: Time  : 674534
+STATS: Error : 1284248, 674533: 
+STATS: Output: 609715, 0: Comparing 'r009_21_t0.fits' and 'r009_21_t1.fits'
+626499, 16784: Copying /tmp/tmp.cxqnJ10617/dfs/problems/sample0_0123/r009_21_t0.fits took 16771 ms.633221, 23506: Copying /tmp/tmp.cxqnJ10617/dfs/problems/sample0_0123/r009_21_t1.fits took 6722 ms.1284249, 674534: Completed '/tmp/tmp.cxqnJ10617/tmp/r009_21_t0.fits' and '/tmp/tmp.cxqnJ10617/tmp/r009_21_t1.fits' in 674534 ms.
+STATS: Result: 23092 characters.
+
+STATS: Pair  : r009_30_t0.fits - r009_30_t1.fits
+STATS: Time  : 878572
+STATS: Error : 923135, 878572: 
+STATS: Output: 44563, 0: Comparing 'r009_30_t0.fits' and 'r009_30_t1.fits'
+61495, 16932: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r009_30_t0.fits took 16919 ms.77033, 32470: Copying /tmp/tmp.upndnQ8839/dfs/problems/sample0_0123/r009_30_t1.fits took 15538 ms.923135, 878572: Completed '/tmp/tmp.upndnQ8839/tmp/r009_30_t0.fits' and '/tmp/tmp.upndnQ8839/tmp/r009_30_t1.fits' in 878572 ms.
+STATS: Result: 28842 characters.
+
+STATS: Pair  : r009_31_t0.fits - r009_31_t1.fits
+STATS: Time  : 920649
+STATS: Error : 1612939, 920649: 
+STATS: Output: 692290, 0: Comparing 'r009_31_t0.fits' and 'r009_31_t1.fits'
+708025, 15735: Copying /tmp/tmp.TFuZD30681/dfs/problems/sample0_0123/r009_31_t0.fits took 15715 ms.725022, 32732: Copying /tmp/tmp.TFuZD30681/dfs/problems/sample0_0123/r009_31_t1.fits took 16997 ms.1612939, 920649: Completed '/tmp/tmp.TFuZD30681/tmp/r009_31_t0.fits' and '/tmp/tmp.TFuZD30681/tmp/r009_31_t1.fits' in 920649 ms.
+STATS: Result: 26864 characters.
+
+STATS: Pair  : r009_40_t0.fits - r009_40_t1.fits
+STATS: Time  : 690567
+STATS: Error : 1361412, 690566: 
+STATS: Output: 670846, 0: Comparing 'r009_40_t0.fits' and 'r009_40_t1.fits'
+672610, 1764: Copying /tmp/tmp.wglexC8740/dfs/problems/sample0_0123/r009_40_t0.fits took 1745 ms.674086, 3240: Copying /tmp/tmp.wglexC8740/dfs/problems/sample0_0123/r009_40_t1.fits took 1476 ms.1361417, 690571: Completed '/tmp/tmp.wglexC8740/tmp/r009_40_t0.fits' and '/tmp/tmp.wglexC8740/tmp/r009_40_t1.fits' in 690567 ms.
+STATS: Result: 26036 characters.
+
+STATS: Pair  : r009_41_t0.fits - r009_41_t1.fits
+STATS: Time  : 707043
+STATS: Error : 1383324, 707043: 
+STATS: Output: 676281, 0: Comparing 'r009_41_t0.fits' and 'r009_41_t1.fits'
+710806, 34525: Copying /tmp/tmp.lXsvXX4590/dfs/problems/sample0_0123/r009_41_t0.fits took 34512 ms.728342, 52061: Copying /tmp/tmp.lXsvXX4590/dfs/problems/sample0_0123/r009_41_t1.fits took 17536 ms.1383325, 707044: Completed '/tmp/tmp.lXsvXX4590/tmp/r009_41_t0.fits' and '/tmp/tmp.lXsvXX4590/tmp/r009_41_t1.fits' in 707043 ms.
+STATS: Result: 23736 characters.
+
+STATS: Pair  : r010_00_t0.fits - r010_00_t1.fits
+STATS: Time  : 652191
+STATS: Error : 1265310, 652190: 
+STATS: Output: 613120, 0: Comparing 'r010_00_t0.fits' and 'r010_00_t1.fits'
+619348, 6228: Copying /tmp/tmp.TJmVr23132/dfs/problems/sample0_0123/r010_00_t0.fits took 6215 ms.625242, 12123: Copying /tmp/tmp.TJmVr23132/dfs/problems/sample0_0123/r010_00_t1.fits took 5894 ms.1265311, 652191: Completed '/tmp/tmp.TJmVr23132/tmp/r010_00_t0.fits' and '/tmp/tmp.TJmVr23132/tmp/r010_00_t1.fits' in 652191 ms.
+STATS: Result: 28451 characters.
+
+STATS: Pair  : r010_01_t0.fits - r010_01_t1.fits
+STATS: Time  : 599648
+STATS: Error : 1273642, 599645: 
+STATS: Output: 673997, 0: Comparing 'r010_01_t0.fits' and 'r010_01_t1.fits'
+689405, 15408: Copying /tmp/tmp.Bwubp15499/dfs/problems/sample0_0123/r010_01_t0.fits took 15395 ms.695104, 21107: Copying /tmp/tmp.Bwubp15499/dfs/problems/sample0_0123/r010_01_t1.fits took 5699 ms.1273645, 599648: Completed '/tmp/tmp.Bwubp15499/tmp/r010_01_t0.fits' and '/tmp/tmp.Bwubp15499/tmp/r010_01_t1.fits' in 599648 ms.
+STATS: Result: 24403 characters.
+
+STATS: Pair  : r010_10_t0.fits - r010_10_t1.fits
+STATS: Time  : 640658
+STATS: Error : 1287923, 640658: 
+STATS: Output: 647265, 0: Comparing 'r010_10_t0.fits' and 'r010_10_t1.fits'
+660812, 13547: Copying /tmp/tmp.HtLzv11737/dfs/problems/sample0_0123/r010_10_t0.fits took 13535 ms.662475, 15211: Copying /tmp/tmp.HtLzv11737/dfs/problems/sample0_0123/r010_10_t1.fits took 1662 ms.1287924, 640659: Completed '/tmp/tmp.HtLzv11737/tmp/r010_10_t0.fits' and '/tmp/tmp.HtLzv11737/tmp/r010_10_t1.fits' in 640658 ms.
+STATS: Result: 26059 characters.
+
+STATS: Pair  : r010_11_t0.fits - r010_11_t1.fits
+STATS: Time  : 675839
+STATS: Error : 1366962, 675839: 
+STATS: Output: 691123, 0: Comparing 'r010_11_t0.fits' and 'r010_11_t1.fits'
+704983, 13860: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r010_11_t0.fits took 13840 ms.710701, 19578: Copying /tmp/tmp.yMUgnX5525/dfs/problems/sample0_0123/r010_11_t1.fits took 5718 ms.1366963, 675840: Completed '/tmp/tmp.yMUgnX5525/tmp/r010_11_t0.fits' and '/tmp/tmp.yMUgnX5525/tmp/r010_11_t1.fits' in 675839 ms.
+STATS: Result: 29624 characters.
+
+STATS: Pair  : r010_20_t0.fits - r010_20_t1.fits
+STATS: Time  : 792764
+STATS: Error : 792781, 792762: 
+STATS: Output: 19, 0: Comparing 'r010_20_t0.fits' and 'r010_20_t1.fits'
+10808, 10789: Copying /tmp/tmp.Aqrys29019/dfs/problems/sample0_0123/r010_20_t0.fits took 10782 ms.12518, 12499: Copying /tmp/tmp.Aqrys29019/dfs/problems/sample0_0123/r010_20_t1.fits took 1710 ms.792783, 792764: Completed '/tmp/tmp.Aqrys29019/tmp/r010_20_t0.fits' and '/tmp/tmp.Aqrys29019/tmp/r010_20_t1.fits' in 792764 ms.
+STATS: Result: 29141 characters.
+
+STATS: Pair  : r010_21_t0.fits - r010_21_t1.fits
+STATS: Time  : 590219
+STATS: Error : 590243, 590219: 
+STATS: Output: 24, 0: Comparing 'r010_21_t0.fits' and 'r010_21_t1.fits'
+20982, 20958: Copying /tmp/tmp.iyFMzk9009/dfs/problems/sample0_0123/r010_21_t0.fits took 20936 ms.26809, 26785: Copying /tmp/tmp.iyFMzk9009/dfs/problems/sample0_0123/r010_21_t1.fits took 5827 ms.590243, 590219: Completed '/tmp/tmp.iyFMzk9009/tmp/r010_21_t0.fits' and '/tmp/tmp.iyFMzk9009/tmp/r010_21_t1.fits' in 590219 ms.
+STATS: Result: 28681 characters.
+
+STATS: Pair  : r010_30_t0.fits - r010_30_t1.fits
+STATS: Time  : 642529
+STATS: Error : 642552, 642526: 
+STATS: Output: 26, 0: Comparing 'r010_30_t0.fits' and 'r010_30_t1.fits'
+21780, 21754: Copying /tmp/tmp.MkWvx14541/dfs/problems/sample0_0123/r010_30_t0.fits took 21733 ms.43499, 43473: Copying /tmp/tmp.MkWvx14541/dfs/problems/sample0_0123/r010_30_t1.fits took 21719 ms.642555, 642529: Completed '/tmp/tmp.MkWvx14541/tmp/r010_30_t0.fits' and '/tmp/tmp.MkWvx14541/tmp/r010_30_t1.fits' in 642529 ms.
+STATS: Result: 29785 characters.
+
+STATS: Pair  : r010_31_t0.fits - r010_31_t1.fits
+STATS: Time  : 814314
+STATS: Error : 814329, 814309: 
+STATS: Output: 20, 0: Comparing 'r010_31_t0.fits' and 'r010_31_t1.fits'
+8474, 8454: Copying /tmp/tmp.ffIOu16232/dfs/problems/sample0_0123/r010_31_t0.fits took 8441 ms.10934, 10914: Copying /tmp/tmp.ffIOu16232/dfs/problems/sample0_0123/r010_31_t1.fits took 2460 ms.814334, 814314: Completed '/tmp/tmp.ffIOu16232/tmp/r010_31_t0.fits' and '/tmp/tmp.ffIOu16232/tmp/r010_31_t1.fits' in 814314 ms.
+STATS: Result: 30107 characters.
+
+STATS: Pair  : r010_40_t0.fits - r010_40_t1.fits
+STATS: Time  : 653152
+STATS: Error : 689618, 653152: 
+STATS: Output: 36466, 0: Comparing 'r010_40_t0.fits' and 'r010_40_t1.fits'
+56418, 19952: Copying /tmp/tmp.yRcsX14411/dfs/problems/sample0_0123/r010_40_t0.fits took 19940 ms.62336, 25870: Copying /tmp/tmp.yRcsX14411/dfs/problems/sample0_0123/r010_40_t1.fits took 5918 ms.689619, 653153: Completed '/tmp/tmp.yRcsX14411/tmp/r010_40_t0.fits' and '/tmp/tmp.yRcsX14411/tmp/r010_40_t1.fits' in 653152 ms.
+STATS: Result: 30659 characters.
+
+STATS: Pair  : r010_41_t0.fits - r010_41_t1.fits
+STATS: Time  : 613065
+STATS: Error : 613100, 613065: 
+STATS: Output: 35, 0: Comparing 'r010_41_t0.fits' and 'r010_41_t1.fits'
+10654, 10619: Copying /tmp/tmp.TJmVr23132/dfs/problems/sample0_0123/r010_41_t0.fits took 10593 ms.16716, 16681: Copying /tmp/tmp.TJmVr23132/dfs/problems/sample0_0123/r010_41_t1.fits took 6062 ms.613100, 613065: Completed '/tmp/tmp.TJmVr23132/tmp/r010_41_t0.fits' and '/tmp/tmp.TJmVr23132/tmp/r010_41_t1.fits' in 613065 ms.
+STATS: Result: 27876 characters.
+
+STATS: Pair  : r011_00_t0.fits - r011_00_t1.fits
+STATS: Time  : 675629
+STATS: Error : 675674, 675629: 
+STATS: Output: 45, 0: Comparing 'r011_00_t0.fits' and 'r011_00_t1.fits'
+3297, 3252: Copying /tmp/tmp.lXsvXX4590/dfs/problems/sample0_0123/r011_00_t0.fits took 3236 ms.25733, 25688: Copying /tmp/tmp.lXsvXX4590/dfs/problems/sample0_0123/r011_00_t1.fits took 22436 ms.675674, 675629: Completed '/tmp/tmp.lXsvXX4590/tmp/r011_00_t0.fits' and '/tmp/tmp.lXsvXX4590/tmp/r011_00_t1.fits' in 675629 ms.
+STATS: Result: 26450 characters.
+
+STATS: Pair  : r011_01_t0.fits - r011_01_t1.fits
+STATS: Time  : 910271
+STATS: Error : 910289, 910270: 
+STATS: Output: 19, 0: Comparing 'r011_01_t0.fits' and 'r011_01_t1.fits'
+34529, 34510: Copying /tmp/tmp.qBeNX20901/dfs/problems/sample0_0123/r011_01_t0.fits took 34503 ms.37648, 37629: Copying /tmp/tmp.qBeNX20901/dfs/problems/sample0_0123/r011_01_t1.fits took 3119 ms.910291, 910272: Completed '/tmp/tmp.qBeNX20901/tmp/r011_01_t0.fits' and '/tmp/tmp.qBeNX20901/tmp/r011_01_t1.fits' in 910271 ms.
+STATS: Result: 25737 characters.
+
+STATS: Pair  : r011_10_t0.fits - r011_10_t1.fits
+STATS: Time  : 907231
+STATS: Error : 907257, 907228: 
+STATS: Output: 29, 0: Comparing 'r011_10_t0.fits' and 'r011_10_t1.fits'
+4817, 4788: Copying /tmp/tmp.pVzQg29051/dfs/problems/sample0_0123/r011_10_t0.fits took 4764 ms.6479, 6450: Copying /tmp/tmp.pVzQg29051/dfs/problems/sample0_0123/r011_10_t1.fits took 1662 ms.907260, 907231: Completed '/tmp/tmp.pVzQg29051/tmp/r011_10_t0.fits' and '/tmp/tmp.pVzQg29051/tmp/r011_10_t1.fits' in 907231 ms.
+STATS: Result: 28221 characters.
+
+STATS: Pair  : r011_11_t0.fits - r011_11_t1.fits
+STATS: Time  : 608377
+STATS: Error : 608409, 608376: 
+STATS: Output: 33, 0: Comparing 'r011_11_t0.fits' and 'r011_11_t1.fits'
+33594, 33561: Copying /tmp/tmp.PJBFB30737/dfs/problems/sample0_0123/r011_11_t0.fits took 33555 ms.44327, 44294: Copying /tmp/tmp.PJBFB30737/dfs/problems/sample0_0123/r011_11_t1.fits took 10733 ms.608410, 608377: Completed '/tmp/tmp.PJBFB30737/tmp/r011_11_t0.fits' and '/tmp/tmp.PJBFB30737/tmp/r011_11_t1.fits' in 608377 ms.
+STATS: Result: 25714 characters.
+
+STATS: Pair  : r011_20_t0.fits - r011_20_t1.fits
+STATS: Time  : 673628
+STATS: Error : 673647, 673627: 
+STATS: Output: 20, 0: Comparing 'r011_20_t0.fits' and 'r011_20_t1.fits'
+1661, 1641: Copying /tmp/tmp.Bwubp15499/dfs/problems/sample0_0123/r011_20_t0.fits took 1634 ms.33225, 33205: Copying /tmp/tmp.Bwubp15499/dfs/problems/sample0_0123/r011_20_t1.fits took 31563 ms.673648, 673628: Completed '/tmp/tmp.Bwubp15499/tmp/r011_20_t0.fits' and '/tmp/tmp.Bwubp15499/tmp/r011_20_t1.fits' in 673628 ms.
+STATS: Result: 25691 characters.
+
+STATS: Pair  : r011_21_t0.fits - r011_21_t1.fits
+STATS: Time  : 692151
+STATS: Error : 692169, 692150: 
+STATS: Output: 19, 0: Comparing 'r011_21_t0.fits' and 'r011_21_t1.fits'
+3117, 3098: Copying /tmp/tmp.TFuZD30681/dfs/problems/sample0_0123/r011_21_t0.fits took 3091 ms.20651, 20632: Copying /tmp/tmp.TFuZD30681/dfs/problems/sample0_0123/r011_21_t1.fits took 17534 ms.692170, 692151: Completed '/tmp/tmp.TFuZD30681/tmp/r011_21_t0.fits' and '/tmp/tmp.TFuZD30681/tmp/r011_21_t1.fits' in 692151 ms.
+STATS: Result: 23874 characters.
+
+STATS: Pair  : r011_30_t0.fits - r011_30_t1.fits
+STATS: Time  : 841075
+STATS: Error : 841096, 841073: 
+STATS: Output: 23, 0: Comparing 'r011_30_t0.fits' and 'r011_30_t1.fits'
+29405, 29382: Copying /tmp/tmp.gEFxx10247/dfs/problems/sample0_0123/r011_30_t0.fits took 29369 ms.30637, 30614: Copying /tmp/tmp.gEFxx10247/dfs/problems/sample0_0123/r011_30_t1.fits took 1232 ms.841098, 841075: Completed '/tmp/tmp.gEFxx10247/tmp/r011_30_t0.fits' and '/tmp/tmp.gEFxx10247/tmp/r011_30_t1.fits' in 841075 ms.
+STATS: Result: 26174 characters.
+
+STATS: Pair  : r011_31_t0.fits - r011_31_t1.fits
+STATS: Time  : 706078
+STATS: Error : 706094, 706076: 
+STATS: Output: 18, 0: Comparing 'r011_31_t0.fits' and 'r011_31_t1.fits'
+5758, 5740: Copying /tmp/tmp.Hzyci10505/dfs/problems/sample0_0123/r011_31_t0.fits took 5733 ms.35178, 35160: Copying /tmp/tmp.Hzyci10505/dfs/problems/sample0_0123/r011_31_t1.fits took 29420 ms.706096, 706078: Completed '/tmp/tmp.Hzyci10505/tmp/r011_31_t0.fits' and '/tmp/tmp.Hzyci10505/tmp/r011_31_t1.fits' in 706078 ms.
+STATS: Result: 24472 characters.
+
+STATS: Pair  : r011_40_t0.fits - r011_40_t1.fits
+STATS: Time  : 892376
+STATS: Error : 892382, 892363: 
+STATS: Output: 19, 0: Comparing 'r011_40_t0.fits' and 'r011_40_t1.fits'
+2492, 2473: Copying /tmp/tmp.rMaiM22319/dfs/problems/sample0_0123/r011_40_t0.fits took 2466 ms.27205, 27186: Copying /tmp/tmp.rMaiM22319/dfs/problems/sample0_0123/r011_40_t1.fits took 24712 ms.892395, 892376: Completed '/tmp/tmp.rMaiM22319/tmp/r011_40_t0.fits' and '/tmp/tmp.rMaiM22319/tmp/r011_40_t1.fits' in 892376 ms.
+STATS: Result: 22356 characters.
+
+STATS: Pair  : r011_41_t0.fits - r011_41_t1.fits
+STATS: Time  : 727416
+STATS: Error : 727436, 727416: 
+STATS: Output: 20, 0: Comparing 'r011_41_t0.fits' and 'r011_41_t1.fits'
+11318, 11298: Copying /tmp/tmp.evQNIC4561/dfs/problems/sample0_0123/r011_41_t0.fits took 11292 ms.17029, 17009: Copying /tmp/tmp.evQNIC4561/dfs/problems/sample0_0123/r011_41_t1.fits took 5711 ms.727436, 727416: Completed '/tmp/tmp.evQNIC4561/tmp/r011_41_t0.fits' and '/tmp/tmp.evQNIC4561/tmp/r011_41_t1.fits' in 727416 ms.
+STATS: Result: 21919 characters.
+
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 15 executed = 8 syncs = 8 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': MSG_STATS: intra = 4246949, bytes = 76,458,565 inter = 0, bytes = 0
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 1957110 success = 0 (0.0 %) time = 881.445  s requests = 2289872 jobs stolen = 7 time =  33.753  s
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 7 total time =  20.714 ms invocationRecordReads = 0 total time =   0.000  s returnRecordWrites = 0 total time =   0.000  s returnRecordReads = 7 total time = 366.136 ms
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 0, location chiba127@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+-------------------------------SATIN STATISTICS--------------------------------
+SATIN: SPAWN:       239 spawns, 239 executed, 120 syncs
+SATIN: STEAL:       137,094,243 attempts, 107 successes (0.000 %)
+SATIN: MESSAGES:    intra 274,188,131 msgs, 4,948,637,598 bytes; inter 0 msgs, 0 bytes
+-------------------------------SATIN TOTAL TIMES-------------------------------
+SATIN: STEAL_TIME:                 total 37125.787  s time/req    270.805 us
+SATIN: HANDLE_STEAL_TIME:          total 2018.669  s time/handle  14.725 us
+SATIN: THROTTLE_STEAL_TIME:        total   0.000  s time/req      0.000  s
+SATIN: INV SERIALIZATION_TIME:     total 154.388 ms time/write    1.443 ms
+SATIN: INV DESERIALIZATION_TIME:   total   3.166  s time/read    29.590 ms
+SATIN: RET SERIALIZATION_TIME:     total   2.089  s time/write   19.520 ms
+SATIN: RET DESERIALIZATION_TIME:   total   1.407  s time/read    13.151 ms
+-------------------------------SATIN RUN TIME BREAKDOWN------------------------
+SATIN: TOTAL_RUN_TIME:                              1613.702  s
+SATIN: STEAL_THROTTLE_TIME:        agv. per machine   0.000  s ( 0.000 %)
+SATIN: (DE)SERIALIZATION_TIME:     agv. per machine 113.605 ms ( 0.007 %)
+SATIN: LOAD_BALANCING_TIME:        agv. per machine 618.650  s (38.337 %)
+
+SATIN: TOTAL_PARALLEL_OVERHEAD:    agv. per machine 618.763  s (38.344 %)
+SATIN: USEFUL_APP_TIME:            agv. per machine 994.938  s (61.656 %)
+Unmounting DFS

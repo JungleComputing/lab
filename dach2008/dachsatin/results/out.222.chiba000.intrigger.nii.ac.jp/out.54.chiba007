@@ -1,0 +1,14 @@
+Running on chiba007.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.nahZXc4166
+Starting Satin with parameters -d /tmp/tmp.nahZXc4166/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+1: Comparing 'r009_10_t0.fits' and 'r009_10_t1.fits'
+796584: Completed '/tmp/tmp.nahZXc4166/problems/sample0_0123/r009_10_t0.fits' and '/tmp/tmp.nahZXc4166/problems/sample0_0123/r009_10_t1.fits' in 796583 ms.
+04:27:20 WARN  [main] ibis.satin.comm - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': unable to connect to (Ibis 58, location chiba003@intrigger@nii@ac@jp), might have crashed
+04:27:20 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': received a reply from (Ibis 50, location chiba018@intrigger@nii@ac@jp) who caused a timeout before. I am stealing from (Ibis 34, location chiba023@intrigger@nii@ac@jp)
+04:27:30 WARN  [main] ibis.satin.comm - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': unable to connect to (Ibis 58, location chiba003@intrigger@nii@ac@jp), might have crashed
+04:27:30 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': received a reply from (Ibis 51, location chiba008@intrigger@nii@ac@jp) who caused a timeout before. I am stealing from (Ibis 45, location chiba125@intrigger@nii@ac@jp)
+04:27:48 WARN  [main] ibis.satin.comm - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': unable to connect to (Ibis 58, location chiba003@intrigger@nii@ac@jp), might have crashed
+04:27:48 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': received a reply from (Ibis 27, location chiba006@intrigger@nii@ac@jp) who caused a timeout before. I am stealing from (Ibis 56, location chiba103@intrigger@nii@ac@jp)
+04:28:22 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 40, location chiba007@intrigger@nii@ac@jp)': received a reply from (Ibis 58, location chiba003@intrigger@nii@ac@jp) which is supposed to be dead
+Unmounting DFS

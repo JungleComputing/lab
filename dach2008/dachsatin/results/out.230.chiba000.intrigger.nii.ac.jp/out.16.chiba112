@@ -1,0 +1,11 @@
+Running on chiba112.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.WaiWM32334/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(1): Comparing 'r002_21_t0.fits' and 'r002_21_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.WaiWM32334/tmp, /tmp/tmp.WaiWM32334/dfs/problems/sample0_0123/r002_21_t0.fits, /tmp/tmp.WaiWM32334/dfs/problems/sample0_0123/r002_21_t1.fits]
+ERROR(904320): 
+RESULT(904323): finished job r002_21_t0.fits - r002_21_t1.fits in 904323 ms.
+INFO(904323): Completed '/tmp/tmp.WaiWM32334/dfs/problems/sample0_0123/r002_21_t0.fits' and '/tmp/tmp.WaiWM32334/dfs/problems/sample0_0123/r002_21_t1.fits' in 904323 ms.
+Unmounting DFS

@@ -1,0 +1,180 @@
+out.0.chiba128 2
+RESULT(44843, 44819): finished job r001_00_t0.fits - r001_00_t1.fits in 44819 ms.
+RESULT(906010, 861145): finished job r003_31_t0.fits - r003_31_t1.fits in 861145 ms.
+out.1.chiba127 1
+RESULT(727436, 727416): finished job r011_41_t0.fits - r011_41_t1.fits in 727416 ms.
+out.10.chiba118 3
+RESULT(27324, 27306): finished job r007_20_t0.fits - r007_20_t1.fits in 27306 ms.
+RESULT(45651, 18327): finished job r007_11_t0.fits - r007_11_t1.fits in 18327 ms.
+RESULT(881791, 836127): finished job r002_21_t0.fits - r002_21_t1.fits in 836127 ms.
+out.11.chiba117 1
+RESULT(841098, 841075): finished job r011_30_t0.fits - r011_30_t1.fits in 841075 ms.
+out.12.chiba116 1
+RESULT(859587, 859557): finished job r003_00_t0.fits - r003_00_t1.fits in 859557 ms.
+out.13.chiba115 2
+RESULT(47938, 47904): finished job r001_41_t0.fits - r001_41_t1.fits in 47904 ms.
+RESULT(877247, 829255): finished job r002_31_t0.fits - r002_31_t1.fits in 829255 ms.
+out.14.chiba114 1
+RESULT(842017, 841999): finished job r003_41_t0.fits - r003_41_t1.fits in 841999 ms.
+out.15.chiba113 1
+RESULT(826687, 826669): finished job r002_41_t0.fits - r002_41_t1.fits in 826669 ms.
+out.16.chiba112 1
+RESULT(792783, 792764): finished job r010_20_t0.fits - r010_20_t1.fits in 792764 ms.
+out.17.chiba111 1
+RESULT(862853, 862824): finished job r000_41_t0.fits - r000_41_t1.fits in 862824 ms.
+out.18.chiba110 1
+RESULT(706096, 706078): finished job r011_31_t0.fits - r011_31_t1.fits in 706078 ms.
+out.19.chiba109 1
+RESULT(879662, 879644): finished job r005_21_t0.fits - r005_21_t1.fits in 879644 ms.
+out.2.chiba126 3
+RESULT(26950, 26919): finished job r001_20_t0.fits - r001_20_t1.fits in 26919 ms.
+RESULT(44545, 17595): finished job r001_11_t0.fits - r001_11_t1.fits in 17595 ms.
+RESULT(923135, 878572): finished job r009_30_t0.fits - r009_30_t1.fits in 878572 ms.
+out.20.chiba108 1
+RESULT(761102, 761076): finished job r002_00_t0.fits - r002_00_t1.fits in 761076 ms.
+out.21.chiba107 1
+RESULT(879429, 879411): finished job r000_10_t0.fits - r000_10_t1.fits in 879411 ms.
+out.22.chiba106 1
+RESULT(892395, 892376): finished job r011_40_t0.fits - r011_40_t1.fits in 892376 ms.
+out.23.chiba105 1
+RESULT(844817, 844799): finished job r005_31_t0.fits - r005_31_t1.fits in 844799 ms.
+out.24.chiba104 5
+RESULT(32992, 32960): finished job r004_20_t0.fits - r004_20_t1.fits in 32960 ms.
+RESULT(55413, 22420): finished job r004_11_t0.fits - r004_11_t1.fits in 22420 ms.
+RESULT(80069, 24656): finished job r004_10_t0.fits - r004_10_t1.fits in 24656 ms.
+RESULT(107583, 27479): finished job r006_31_t0.fits - r006_31_t1.fits in 27479 ms.
+RESULT(961358, 853695): finished job r009_20_t0.fits - r009_20_t1.fits in 853695 ms.
+out.25.chiba103 1
+RESULT(907260, 907231): finished job r011_10_t0.fits - r011_10_t1.fits in 907231 ms.
+out.26.chiba102 1
+RESULT(880955, 880927): finished job r005_20_t0.fits - r005_20_t1.fits in 880927 ms.
+out.27.chiba101 1
+RESULT(745767, 745737): finished job r008_01_t0.fits - r008_01_t1.fits in 745737 ms.
+out.28.chiba100 2
+RESULT(692170, 692151): finished job r011_21_t0.fits - r011_21_t1.fits in 692151 ms.
+RESULT(1612939, 920649): finished job r009_31_t0.fits - r009_31_t1.fits in 920649 ms.
+out.29.chiba066 2
+RESULT(642554, 642529): finished job r010_30_t0.fits - r010_30_t1.fits in 642529 ms.
+RESULT(1312186, 669602): finished job r009_00_t0.fits - r009_00_t1.fits in 669602 ms.
+out.3.chiba125 1
+RESULT(854662, 854641): finished job r005_41_t0.fits - r005_41_t1.fits in 854641 ms.
+out.30.chiba065 3
+RESULT(33072, 33053): finished job r006_30_t0.fits - r006_30_t1.fits in 33053 ms.
+RESULT(654616, 621498): finished job r003_01_t0.fits - r003_01_t1.fits in 621498 ms.
+RESULT(1299645, 645026): finished job r009_01_t0.fits - r009_01_t1.fits in 645026 ms.
+out.31.chiba064 2
+RESULT(644121, 644062): finished job r003_40_t0.fits - r003_40_t1.fits in 644062 ms.
+RESULT(1232233, 588080): finished job r008_00_t0.fits - r008_00_t1.fits in 588080 ms.
+out.32.chiba055 3
+RESULT(38599, 38578): finished job r004_00_t0.fits - r004_00_t1.fits in 38578 ms.
+RESULT(95225, 56574): finished job r001_21_t0.fits - r001_21_t1.fits in 56574 ms.
+RESULT(781086, 685841): finished job r003_11_t0.fits - r003_11_t1.fits in 685841 ms.
+out.33.chiba031 2
+RESULT(673648, 673628): finished job r011_20_t0.fits - r011_20_t1.fits in 673628 ms.
+RESULT(1273645, 599648): finished job r010_01_t0.fits - r010_01_t1.fits in 599648 ms.
+out.34.chiba030 1
+RESULT(715397, 715377): finished job r003_10_t0.fits - r003_10_t1.fits in 715377 ms.
+out.35.chiba029 2
+RESULT(42738, 42719): finished job r007_10_t0.fits - r007_10_t1.fits in 42719 ms.
+RESULT(731460, 688662): finished job r000_20_t0.fits - r000_20_t1.fits in 688662 ms.
+out.36.chiba028 3
+RESULT(37575, 37545): finished job r006_21_t0.fits - r006_21_t1.fits in 37545 ms.
+RESULT(75814, 38167): finished job r006_40_t0.fits - r006_40_t1.fits in 38167 ms.
+RESULT(749984, 674143): finished job r002_20_t0.fits - r002_20_t1.fits in 674143 ms.
+out.37.chiba027 2
+RESULT(667560, 667540): finished job r000_30_t0.fits - r000_30_t1.fits in 667540 ms.
+RESULT(1316957, 649253): finished job r008_10_t0.fits - r008_10_t1.fits in 649253 ms.
+out.38.chiba026 2
+RESULT(675674, 675629): finished job r011_00_t0.fits - r011_00_t1.fits in 675629 ms.
+RESULT(1383324, 707043): finished job r009_41_t0.fits - r009_41_t1.fits in 707043 ms.
+out.39.chiba025 4
+RESULT(604626, 604569): finished job r005_30_t0.fits - r005_30_t1.fits in 604569 ms.
+RESULT(633487, 28838): finished job r007_41_t0.fits - r007_41_t1.fits in 28838 ms.
+RESULT(663286, 29799): finished job r007_40_t0.fits - r007_40_t1.fits in 29799 ms.
+RESULT(1340596, 677221): finished job r002_40_t0.fits - r002_40_t1.fits in 677221 ms.
+out.4.chiba124 1
+RESULT(814334, 814314): finished job r010_31_t0.fits - r010_31_t1.fits in 814314 ms.
+out.40.chiba024 3
+RESULT(56754, 56726): finished job r001_10_t0.fits - r001_10_t1.fits in 56726 ms.
+RESULT(97489, 40735): finished job r001_01_t0.fits - r001_01_t1.fits in 40735 ms.
+RESULT(761322, 663788): finished job r000_31_t0.fits - r000_31_t1.fits in 663788 ms.
+out.41.chiba023 3
+RESULT(45565, 45546): finished job r004_31_t0.fits - r004_31_t1.fits in 45546 ms.
+RESULT(667945, 622362): finished job r000_01_t0.fits - r000_01_t1.fits in 622362 ms.
+RESULT(1357986, 689962): finished job r008_20_t0.fits - r008_20_t1.fits in 689962 ms.
+out.42.chiba022 4
+RESULT(42622, 42446): finished job r006_10_t0.fits - r006_10_t1.fits in 42446 ms.
+RESULT(76802, 34180): finished job r006_01_t0.fits - r006_01_t1.fits in 34180 ms.
+RESULT(691024, 614180): finished job r002_10_t0.fits - r002_10_t1.fits in 614180 ms.
+RESULT(1366962, 675839): finished job r010_11_t0.fits - r010_11_t1.fits in 675839 ms.
+out.43.chiba021 2
+RESULT(622035, 622005): finished job r000_40_t0.fits - r000_40_t1.fits in 622005 ms.
+RESULT(1285277, 663218): finished job r008_40_t0.fits - r008_40_t1.fits in 663218 ms.
+out.44.chiba020 2
+RESULT(609685, 609666): finished job r005_01_t0.fits - r005_01_t1.fits in 609666 ms.
+RESULT(1284249, 674534): finished job r009_21_t0.fits - r009_21_t1.fits in 674534 ms.
+out.45.chiba019 2
+RESULT(594055, 594021): finished job r002_01_t0.fits - r002_01_t1.fits in 594021 ms.
+RESULT(1252122, 657966): finished job r002_30_t0.fits - r002_30_t1.fits in 657966 ms.
+out.46.chiba018 2
+RESULT(646608, 646585): finished job r005_10_t0.fits - r005_10_t1.fits in 646585 ms.
+RESULT(1304028, 657362): finished job r008_11_t0.fits - r008_11_t1.fits in 657362 ms.
+out.47.chiba017 2
+RESULT(658707, 658688): finished job r003_30_t0.fits - r003_30_t1.fits in 658688 ms.
+RESULT(1300003, 641257): finished job r008_30_t0.fits - r008_30_t1.fits in 641257 ms.
+out.48.chiba016 4
+RESULT(28320, 28292): finished job r001_31_t0.fits - r001_31_t1.fits in 28292 ms.
+RESULT(79043, 50723): finished job r001_30_t0.fits - r001_30_t1.fits in 50723 ms.
+RESULT(118223, 39158): finished job r004_01_t0.fits - r004_01_t1.fits in 39158 ms.
+RESULT(753488, 635230): finished job r009_11_t0.fits - r009_11_t1.fits in 635230 ms.
+out.49.chiba013 2
+RESULT(36436, 36405): finished job r006_00_t0.fits - r006_00_t1.fits in 36405 ms.
+RESULT(689618, 653152): finished job r010_40_t0.fits - r010_40_t1.fits in 653152 ms.
+out.5.chiba123 1
+RESULT(910290, 910271): finished job r011_01_t0.fits - r011_01_t1.fits in 910271 ms.
+out.50.chiba011 3
+RESULT(34142, 34119): finished job r004_41_t0.fits - r004_41_t1.fits in 34119 ms.
+RESULT(64303, 30161): finished job r004_40_t0.fits - r004_40_t1.fits in 30161 ms.
+RESULT(749386, 685057): finished job r000_11_t0.fits - r000_11_t1.fits in 685057 ms.
+out.51.chiba010 6
+RESULT(32054, 32024): finished job r006_11_t0.fits - r006_11_t1.fits in 32024 ms.
+RESULT(69345, 37262): finished job r004_21_t0.fits - r004_21_t1.fits in 37262 ms.
+RESULT(98218, 28753): finished job r007_31_t0.fits - r007_31_t1.fits in 28753 ms.
+RESULT(126503, 28285): finished job r007_30_t0.fits - r007_30_t1.fits in 28285 ms.
+RESULT(160450, 33947): finished job r007_21_t0.fits - r007_21_t1.fits in 33947 ms.
+RESULT(825338, 664838): finished job r000_21_t0.fits - r000_21_t1.fits in 664838 ms.
+out.52.chiba009 2
+RESULT(613100, 613065): finished job r010_41_t0.fits - r010_41_t1.fits in 613065 ms.
+RESULT(1265311, 652191): finished job r010_00_t0.fits - r010_00_t1.fits in 652191 ms.
+out.53.chiba008 2
+RESULT(608410, 608377): finished job r011_11_t0.fits - r011_11_t1.fits in 608377 ms.
+RESULT(1259751, 651314): finished job r008_31_t0.fits - r008_31_t1.fits in 651314 ms.
+out.54.chiba007 2
+RESULT(79868, 79837): finished job r006_20_t0.fits - r006_20_t1.fits in 79837 ms.
+RESULT(749577, 669670): finished job r009_10_t0.fits - r009_10_t1.fits in 669670 ms.
+out.55.chiba006 2
+RESULT(590243, 590219): finished job r010_21_t0.fits - r010_21_t1.fits in 590219 ms.
+RESULT(1283439, 693160): finished job r008_21_t0.fits - r008_21_t1.fits in 693160 ms.
+out.56.chiba004 2
+RESULT(59979, 59936): finished job r007_01_t0.fits - r007_01_t1.fits in 59936 ms.
+RESULT(736330, 676044): finished job r003_20_t0.fits - r003_20_t1.fits in 676044 ms.
+out.57.chiba003 2
+RESULT(647206, 647172): finished job r005_00_t0.fits - r005_00_t1.fits in 647172 ms.
+RESULT(1287923, 640658): finished job r010_10_t0.fits - r010_10_t1.fits in 640658 ms.
+out.58.chiba002 3
+RESULT(32800, 32773): finished job r001_40_t0.fits - r001_40_t1.fits in 32773 ms.
+RESULT(65576, 32663): finished job r004_30_t0.fits - r004_30_t1.fits in 32663 ms.
+RESULT(742798, 677198): finished job r003_21_t0.fits - r003_21_t1.fits in 677198 ms.
+out.59.chiba001 2
+RESULT(670603, 670580): finished job r005_40_t0.fits - r005_40_t1.fits in 670580 ms.
+RESULT(1361413, 690571): finished job r009_40_t0.fits - r009_40_t1.fits in 690567 ms.
+out.6.chiba122 1
+RESULT(868814, 868796): finished job r005_11_t0.fits - r005_11_t1.fits in 868796 ms.
+out.7.chiba121 3
+RESULT(34238, 34220): finished job r007_00_t0.fits - r007_00_t1.fits in 34220 ms.
+RESULT(62980, 28741): finished job r006_41_t0.fits - r006_41_t1.fits in 28741 ms.
+RESULT(878527, 815336): finished job r002_11_t0.fits - r002_11_t1.fits in 815336 ms.
+out.8.chiba120 1
+RESULT(838976, 838949): finished job r000_00_t0.fits - r000_00_t1.fits in 838949 ms.
+out.9.chiba119 1
+RESULT(816965, 816946): finished job r008_41_t0.fits - r008_41_t1.fits in 816946 ms.

@@ -1,0 +1,47 @@
+Running on chiba065.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.ZzHvc26535/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r006_30_t0.fits' and 'r006_30_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_30_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_30_t1.fits]
+ERROR(40451): 
+RESULT(40451): finished job r006_30_t0.fits - r006_30_t1.fits in 40451 ms.
+INFO(40451): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_30_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_30_t1.fits' in 40451 ms.
+INFO(0): Comparing 'r006_21_t0.fits' and 'r006_21_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_21_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_21_t1.fits]
+ERROR(116252): 
+RESULT(116252): finished job r006_21_t0.fits - r006_21_t1.fits in 116252 ms.
+INFO(116252): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_21_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_21_t1.fits' in 116252 ms.
+INFO(0): Comparing 'r006_20_t0.fits' and 'r006_20_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_20_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_20_t1.fits]
+ERROR(48189): 
+RESULT(48190): finished job r006_20_t0.fits - r006_20_t1.fits in 48190 ms.
+INFO(48190): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_20_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_20_t1.fits' in 48190 ms.
+INFO(0): Comparing 'r006_11_t0.fits' and 'r006_11_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_11_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_11_t1.fits]
+ERROR(41590): 
+RESULT(41590): finished job r006_11_t0.fits - r006_11_t1.fits in 41590 ms.
+INFO(41590): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_11_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_11_t1.fits' in 41590 ms.
+INFO(0): Comparing 'r006_10_t0.fits' and 'r006_10_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_10_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_10_t1.fits]
+ERROR(54948): 
+RESULT(54948): finished job r006_10_t0.fits - r006_10_t1.fits in 54948 ms.
+INFO(54948): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_10_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_10_t1.fits' in 54948 ms.
+INFO(0): Comparing 'r006_01_t0.fits' and 'r006_01_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_01_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_01_t1.fits]
+ERROR(41219): 
+RESULT(41219): finished job r006_01_t0.fits - r006_01_t1.fits in 41219 ms.
+INFO(41219): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_01_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r006_01_t1.fits' in 41219 ms.
+INFO(0): Comparing 'r003_20_t0.fits' and 'r003_20_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ZzHvc26535/tmp, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r003_20_t0.fits, /tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r003_20_t1.fits]
+ERROR(683086): 
+RESULT(683087): finished job r003_20_t0.fits - r003_20_t1.fits in 683087 ms.
+INFO(683087): Completed '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r003_20_t0.fits' and '/tmp/tmp.ZzHvc26535/dfs/problems/sample0_0123/r003_20_t1.fits' in 683087 ms.
+Unmounting DFS

@@ -1,0 +1,10 @@
+Running on chiba118.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.yfMEO25262
+Starting Satin with parameters -d /tmp/tmp.yfMEO25262/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+0: Comparing 'r005_30_t0.fits' and 'r005_30_t1.fits'
+837693: Completed '/tmp/tmp.yfMEO25262/problems/sample0_0123/r005_30_t0.fits' and '/tmp/tmp.yfMEO25262/problems/sample0_0123/r005_30_t1.fits' in 837693 ms.
+04:27:59 WARN  [main] ibis.satin.comm - SATIN '(Ibis 37, location chiba118@intrigger@nii@ac@jp)': unable to connect to (Ibis 58, location chiba003@intrigger@nii@ac@jp), might have crashed
+04:28:00 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 37, location chiba118@intrigger@nii@ac@jp)': received a reply from (Ibis 20, location chiba110@intrigger@nii@ac@jp) who caused a timeout before. I am stealing from (Ibis 52, location chiba025@intrigger@nii@ac@jp)
+04:28:11 WARN  [main] ibis.satin.comm - SATIN '(Ibis 37, location chiba118@intrigger@nii@ac@jp)': unable to connect to (Ibis 58, location chiba003@intrigger@nii@ac@jp), might have crashed
+Unmounting DFS

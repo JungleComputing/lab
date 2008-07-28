@@ -1,0 +1,38 @@
+Running on chiba115.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.fDbma15666/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:03 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(0): Comparing 'r001_10_t0.fits' and 'r001_10_t1.fits'
+
+INFO(4629): Copying /tmp/tmp.fDbma15666/dfs/problems/sample0_0123/r001_10_t0.fits took 4617 ms.
+INFO(74067): Copying /tmp/tmp.fDbma15666/dfs/problems/sample0_0123/r001_10_t1.fits took 69438 ms.
+ERROR(91874): 
+RESULT(91877): finished job r001_10_t0.fits - r001_10_t1.fits in 91877 ms.
+INFO(91877): Completed '/tmp/tmp.fDbma15666/tmp/r001_10_t0.fits' and '/tmp/tmp.fDbma15666/tmp/r001_10_t1.fits' in 91877 ms.
+INFO(0): Comparing 'r009_31_t0.fits' and 'r009_31_t1.fits'
+
+INFO(31035): Copying /tmp/tmp.fDbma15666/dfs/problems/sample0_0123/r009_31_t0.fits took 31020 ms.
+INFO(44641): Copying /tmp/tmp.fDbma15666/dfs/problems/sample0_0123/r009_31_t1.fits took 13606 ms.
+ERROR(883278): 
+RESULT(883279): finished job r009_31_t0.fits - r009_31_t1.fits in 883279 ms.
+INFO(883279): Completed '/tmp/tmp.fDbma15666/tmp/r009_31_t0.fits' and '/tmp/tmp.fDbma15666/tmp/r009_31_t1.fits' in 883279 ms.
+Unmounting DFS

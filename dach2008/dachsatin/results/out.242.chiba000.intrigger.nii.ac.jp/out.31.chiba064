@@ -1,0 +1,28 @@
+Running on chiba064.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.PaLOU20518/dfs
+/tmp/tmp.PaLOU20518/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+INFO(59, 0): Comparing 'r003_40_t0.fits' and 'r003_40_t1.fits'
+
+INFO(4485, 4426): Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r003_40_t0.fits took 4414 ms.
+INFO(6767, 6708): Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r003_40_t1.fits took 2282 ms.
+ERROR(644120, 644061): 
+RESULT(644121, 644062): finished job r003_40_t0.fits - r003_40_t1.fits in 644062 ms.
+INFO(644121, 644062): Completed '/tmp/tmp.PaLOU20518/tmp/r003_40_t0.fits' and '/tmp/tmp.PaLOU20518/tmp/r003_40_t1.fits' in 644062 ms.
+INFO(644153, 0): Comparing 'r008_00_t0.fits' and 'r008_00_t1.fits'
+
+INFO(645934, 1781): Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r008_00_t0.fits took 1767 ms.
+INFO(648433, 4280): Copying /tmp/tmp.PaLOU20518/dfs/problems/sample0_0123/r008_00_t1.fits took 2499 ms.
+ERROR(1232232, 588079): 
+RESULT(1232233, 588080): finished job r008_00_t0.fits - r008_00_t1.fits in 588080 ms.
+INFO(1232233, 588080): Completed '/tmp/tmp.PaLOU20518/tmp/r008_00_t0.fits' and '/tmp/tmp.PaLOU20518/tmp/r008_00_t1.fits' in 588080 ms.
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 2 executed = 3 syncs = 1 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': MSG_STATS: intra = 4366529, bytes = 78,699,708 inter = 0, bytes = 0
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 2080135 success = 2 (9.614760580443095E-5 %) time = 376.346  s requests = 2286392 jobs stolen = 1 time =  33.825  s
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 1 total time = 651.063 us invocationRecordReads = 2 total time =  87.096 ms returnRecordWrites = 2 total time =  19.212 ms returnRecordReads = 1 total time =   9.186 ms
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 16, location chiba064@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+Unmounting DFS

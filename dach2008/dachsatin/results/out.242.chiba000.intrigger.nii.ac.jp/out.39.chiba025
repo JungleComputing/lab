@@ -1,0 +1,42 @@
+Running on chiba025.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.xmpuA32667/dfs
+/tmp/tmp.xmpuA32667/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+INFO(57, 0): Comparing 'r005_30_t0.fits' and 'r005_30_t1.fits'
+
+INFO(7662, 7605): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r005_30_t0.fits took 7599 ms.
+INFO(9199, 9142): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r005_30_t1.fits took 1537 ms.
+ERROR(604626, 604569): 
+RESULT(604626, 604569): finished job r005_30_t0.fits - r005_30_t1.fits in 604569 ms.
+INFO(604626, 604569): Completed '/tmp/tmp.xmpuA32667/tmp/r005_30_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r005_30_t1.fits' in 604569 ms.
+INFO(604649, 0): Comparing 'r007_41_t0.fits' and 'r007_41_t1.fits'
+
+INFO(609579, 4930): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_41_t0.fits took 4918 ms.
+INFO(612757, 8108): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_41_t1.fits took 3178 ms.
+ERROR(633483, 28834): 
+RESULT(633487, 28838): finished job r007_41_t0.fits - r007_41_t1.fits in 28838 ms.
+INFO(633487, 28838): Completed '/tmp/tmp.xmpuA32667/tmp/r007_41_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r007_41_t1.fits' in 28838 ms.
+INFO(633487, 0): Comparing 'r007_40_t0.fits' and 'r007_40_t1.fits'
+
+INFO(636571, 3084): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_40_t0.fits took 3071 ms.
+INFO(642485, 8998): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r007_40_t1.fits took 5914 ms.
+ERROR(663285, 29798): 
+RESULT(663286, 29799): finished job r007_40_t0.fits - r007_40_t1.fits in 29799 ms.
+INFO(663286, 29799): Completed '/tmp/tmp.xmpuA32667/tmp/r007_40_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r007_40_t1.fits' in 29799 ms.
+INFO(663375, 0): Comparing 'r002_40_t0.fits' and 'r002_40_t1.fits'
+
+INFO(671277, 7902): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r002_40_t0.fits took 7889 ms.
+INFO(678650, 15275): Copying /tmp/tmp.xmpuA32667/dfs/problems/sample0_0123/r002_40_t1.fits took 7373 ms.
+ERROR(1340595, 677220): 
+RESULT(1340596, 677221): finished job r002_40_t0.fits - r002_40_t1.fits in 677221 ms.
+INFO(1340597, 677222): Completed '/tmp/tmp.xmpuA32667/tmp/r002_40_t0.fits' and '/tmp/tmp.xmpuA32667/tmp/r002_40_t1.fits' in 677221 ms.
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 2 executed = 5 syncs = 1 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': MSG_STATS: intra = 3737861, bytes = 67,409,513 inter = 0, bytes = 0
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 1438063 success = 3 (2.0861394806764378E-4 %) time = 269.120  s requests = 2299795 jobs stolen = 0 time =  34.344  s
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 0 total time =   0.000  s invocationRecordReads = 3 total time =  80.660 ms returnRecordWrites = 3 total time =  16.830 ms returnRecordReads = 0 total time =   0.000  s
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 28, location chiba025@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+Unmounting DFS

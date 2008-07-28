@@ -1,0 +1,21 @@
+Running on chiba124.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.ffIOu16232/dfs
+/tmp/tmp.ffIOu16232/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+INFO(20, 0): Comparing 'r010_31_t0.fits' and 'r010_31_t1.fits'
+
+INFO(8474, 8454): Copying /tmp/tmp.ffIOu16232/dfs/problems/sample0_0123/r010_31_t0.fits took 8441 ms.
+INFO(10934, 10914): Copying /tmp/tmp.ffIOu16232/dfs/problems/sample0_0123/r010_31_t1.fits took 2460 ms.
+ERROR(814329, 814309): 
+RESULT(814334, 814314): finished job r010_31_t0.fits - r010_31_t1.fits in 814314 ms.
+INFO(814334, 814314): Completed '/tmp/tmp.ffIOu16232/tmp/r010_31_t0.fits' and '/tmp/tmp.ffIOu16232/tmp/r010_31_t1.fits' in 814314 ms.
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 4 executed = 3 syncs = 2 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': MSG_STATS: intra = 4048781, bytes = 72,970,457 inter = 0, bytes = 0
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 1755044 success = 1 (5.697862845603871E-5 %) time = 794.351  s requests = 2293807 jobs stolen = 2 time =  33.914  s
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 2 total time = 874.000 us invocationRecordReads = 1 total time =  89.843 ms returnRecordWrites = 1 total time =  22.735 ms returnRecordReads = 2 total time =   8.476 ms
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 13, location chiba124@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+Unmounting DFS

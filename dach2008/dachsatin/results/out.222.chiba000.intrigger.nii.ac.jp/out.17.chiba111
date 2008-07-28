@@ -1,0 +1,8 @@
+Running on chiba111.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.IxpXPH3161
+Starting Satin with parameters -d /tmp/tmp.IxpXPH3161/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+0: Comparing 'r008_41_t0.fits' and 'r008_41_t1.fits'
+821788: Completed '/tmp/tmp.IxpXPH3161/problems/sample0_0123/r008_41_t0.fits' and '/tmp/tmp.IxpXPH3161/problems/sample0_0123/r008_41_t1.fits' in 821788 ms.
+04:28:19 WARN  [Connection Handler] ibis.satin.ft - SATIN '(Ibis 2, location chiba111@intrigger@nii@ac@jp)': received a reply from (Ibis 58, location chiba003@intrigger@nii@ac@jp) which is supposed to be dead
+Unmounting DFS

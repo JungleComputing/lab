@@ -1,0 +1,11 @@
+Running on chiba114.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.NEvZe12690/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r011_30_t0.fits' and 'r011_30_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NEvZe12690/tmp, /tmp/tmp.NEvZe12690/dfs/problems/sample0_0123/r011_30_t0.fits, /tmp/tmp.NEvZe12690/dfs/problems/sample0_0123/r011_30_t1.fits]
+ERROR(914436): 
+RESULT(914439): finished job r011_30_t0.fits - r011_30_t1.fits in 914439 ms.
+INFO(914439): Completed '/tmp/tmp.NEvZe12690/dfs/problems/sample0_0123/r011_30_t0.fits' and '/tmp/tmp.NEvZe12690/dfs/problems/sample0_0123/r011_30_t1.fits' in 914439 ms.
+Unmounting DFS

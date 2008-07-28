@@ -1,0 +1,29 @@
+Running on chiba108.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.LCLVU14925/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r007_10_t0.fits' and 'r007_10_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.LCLVU14925/tmp, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_10_t0.fits, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_10_t1.fits]
+ERROR(124664): 
+RESULT(124666): finished job r007_10_t0.fits - r007_10_t1.fits in 124666 ms.
+INFO(124666): Completed '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_10_t0.fits' and '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_10_t1.fits' in 124666 ms.
+INFO(0): Comparing 'r007_01_t0.fits' and 'r007_01_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.LCLVU14925/tmp, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_01_t0.fits, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_01_t1.fits]
+ERROR(152629): 
+RESULT(152629): finished job r007_01_t0.fits - r007_01_t1.fits in 152629 ms.
+INFO(152629): Completed '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_01_t0.fits' and '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r007_01_t1.fits' in 152629 ms.
+INFO(0): Comparing 'r006_00_t0.fits' and 'r006_00_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.LCLVU14925/tmp, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r006_00_t0.fits, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r006_00_t1.fits]
+ERROR(33324): 
+RESULT(33324): finished job r006_00_t0.fits - r006_00_t1.fits in 33324 ms.
+INFO(33324): Completed '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r006_00_t0.fits' and '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r006_00_t1.fits' in 33324 ms.
+INFO(0): Comparing 'r000_40_t0.fits' and 'r000_40_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.LCLVU14925/tmp, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r000_40_t0.fits, /tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r000_40_t1.fits]
+ERROR(1002683): 
+RESULT(1002683): finished job r000_40_t0.fits - r000_40_t1.fits in 1002683 ms.
+INFO(1002683): Completed '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r000_40_t0.fits' and '/tmp/tmp.LCLVU14925/dfs/problems/sample0_0123/r000_40_t1.fits' in 1002683 ms.
+Unmounting DFS

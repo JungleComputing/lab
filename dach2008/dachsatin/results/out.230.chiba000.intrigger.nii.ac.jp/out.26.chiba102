@@ -1,0 +1,35 @@
+Running on chiba102.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.KxPvu21295/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r007_00_t0.fits' and 'r007_00_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.KxPvu21295/tmp, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r007_00_t0.fits, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r007_00_t1.fits]
+ERROR(137549): 
+RESULT(137550): finished job r007_00_t0.fits - r007_00_t1.fits in 137550 ms.
+INFO(137551): Completed '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r007_00_t0.fits' and '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r007_00_t1.fits' in 137550 ms.
+INFO(0): Comparing 'r006_41_t0.fits' and 'r006_41_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.KxPvu21295/tmp, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_41_t0.fits, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_41_t1.fits]
+ERROR(39686): 
+RESULT(39686): finished job r006_41_t0.fits - r006_41_t1.fits in 39686 ms.
+INFO(39686): Completed '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_41_t0.fits' and '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_41_t1.fits' in 39686 ms.
+INFO(0): Comparing 'r006_40_t0.fits' and 'r006_40_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.KxPvu21295/tmp, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_40_t0.fits, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_40_t1.fits]
+ERROR(33036): 
+RESULT(33036): finished job r006_40_t0.fits - r006_40_t1.fits in 33036 ms.
+INFO(33036): Completed '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_40_t0.fits' and '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_40_t1.fits' in 33036 ms.
+INFO(0): Comparing 'r006_31_t0.fits' and 'r006_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.KxPvu21295/tmp, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_31_t0.fits, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_31_t1.fits]
+ERROR(32139): 
+RESULT(32139): finished job r006_31_t0.fits - r006_31_t1.fits in 32139 ms.
+INFO(32139): Completed '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_31_t0.fits' and '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r006_31_t1.fits' in 32139 ms.
+INFO(0): Comparing 'r002_31_t0.fits' and 'r002_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.KxPvu21295/tmp, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r002_31_t0.fits, /tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r002_31_t1.fits]
+ERROR(891024): 
+RESULT(891024): finished job r002_31_t0.fits - r002_31_t1.fits in 891024 ms.
+INFO(891024): Completed '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r002_31_t0.fits' and '/tmp/tmp.KxPvu21295/dfs/problems/sample0_0123/r002_31_t1.fits' in 891024 ms.
+Unmounting DFS

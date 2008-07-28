@@ -1,0 +1,17 @@
+Running on chiba064.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.qpRqcl7496/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r010_31_t0.fits' and 'r010_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.qpRqcl7496/tmp, /tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r010_31_t0.fits, /tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r010_31_t1.fits]
+ERROR(730475): 
+RESULT(730475): finished job r010_31_t0.fits - r010_31_t1.fits in 730475 ms.
+INFO(730475): Completed '/tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r010_31_t0.fits' and '/tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r010_31_t1.fits' in 730475 ms.
+INFO(0): Comparing 'r007_41_t0.fits' and 'r007_41_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.qpRqcl7496/tmp, /tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r007_41_t0.fits, /tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r007_41_t1.fits]
+ERROR(147136): 
+RESULT(147136): finished job r007_41_t0.fits - r007_41_t1.fits in 147136 ms.
+INFO(147136): Completed '/tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r007_41_t0.fits' and '/tmp/tmp.qpRqcl7496/dfs/problems/sample0_0123/r007_41_t1.fits' in 147136 ms.
+Unmounting DFS

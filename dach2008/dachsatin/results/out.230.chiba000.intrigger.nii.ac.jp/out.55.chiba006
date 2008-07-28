@@ -1,0 +1,11 @@
+Running on chiba006.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.ExnTu20171/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r003_00_t0.fits' and 'r003_00_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.ExnTu20171/tmp, /tmp/tmp.ExnTu20171/dfs/problems/sample0_0123/r003_00_t0.fits, /tmp/tmp.ExnTu20171/dfs/problems/sample0_0123/r003_00_t1.fits]
+ERROR(835117): 
+RESULT(835117): finished job r003_00_t0.fits - r003_00_t1.fits in 835117 ms.
+INFO(835117): Completed '/tmp/tmp.ExnTu20171/dfs/problems/sample0_0123/r003_00_t0.fits' and '/tmp/tmp.ExnTu20171/dfs/problems/sample0_0123/r003_00_t1.fits' in 835117 ms.
+Unmounting DFS

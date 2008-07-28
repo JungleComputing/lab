@@ -1,0 +1,53 @@
+Running on chiba118.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.Bsmdm16135/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r004_41_t0.fits' and 'r004_41_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_41_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_41_t1.fits]
+ERROR(86848): 
+RESULT(86852): finished job r004_41_t0.fits - r004_41_t1.fits in 86852 ms.
+INFO(86853): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_41_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_41_t1.fits' in 86852 ms.
+INFO(0): Comparing 'r004_40_t0.fits' and 'r004_40_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_40_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_40_t1.fits]
+ERROR(66383): 
+RESULT(66383): finished job r004_40_t0.fits - r004_40_t1.fits in 66383 ms.
+INFO(66383): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_40_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_40_t1.fits' in 66383 ms.
+INFO(0): Comparing 'r004_10_t0.fits' and 'r004_10_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_10_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_10_t1.fits]
+ERROR(142592): 
+RESULT(142593): finished job r004_10_t0.fits - r004_10_t1.fits in 142593 ms.
+INFO(142593): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_10_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_10_t1.fits' in 142593 ms.
+INFO(0): Comparing 'r004_01_t0.fits' and 'r004_01_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_01_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_01_t1.fits]
+ERROR(98185): 
+RESULT(98185): finished job r004_01_t0.fits - r004_01_t1.fits in 98185 ms.
+INFO(98185): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_01_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r004_01_t1.fits' in 98185 ms.
+INFO(0): Comparing 'r001_31_t0.fits' and 'r001_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_31_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_31_t1.fits]
+ERROR(19574): 
+RESULT(19574): finished job r001_31_t0.fits - r001_31_t1.fits in 19574 ms.
+INFO(19574): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_31_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_31_t1.fits' in 19574 ms.
+INFO(0): Comparing 'r001_30_t0.fits' and 'r001_30_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_30_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_30_t1.fits]
+ERROR(73694): 
+RESULT(73694): finished job r001_30_t0.fits - r001_30_t1.fits in 73694 ms.
+INFO(73695): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_30_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_30_t1.fits' in 73694 ms.
+INFO(0): Comparing 'r001_21_t0.fits' and 'r001_21_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_21_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_21_t1.fits]
+ERROR(84058): 
+RESULT(84059): finished job r001_21_t0.fits - r001_21_t1.fits in 84059 ms.
+INFO(84059): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_21_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r001_21_t1.fits' in 84059 ms.
+INFO(0): Comparing 'r002_40_t0.fits' and 'r002_40_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.Bsmdm16135/tmp, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r002_40_t0.fits, /tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r002_40_t1.fits]
+ERROR(894454): 
+RESULT(894454): finished job r002_40_t0.fits - r002_40_t1.fits in 894454 ms.
+INFO(894454): Completed '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r002_40_t0.fits' and '/tmp/tmp.Bsmdm16135/dfs/problems/sample0_0123/r002_40_t1.fits' in 894454 ms.
+Unmounting DFS

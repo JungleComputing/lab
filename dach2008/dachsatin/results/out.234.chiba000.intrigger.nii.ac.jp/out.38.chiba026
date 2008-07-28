@@ -1,0 +1,59 @@
+Running on chiba026.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.lYUqnO5639/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:03 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(0): Comparing 'r004_20_t0.fits' and 'r004_20_t1.fits'
+
+INFO(29498): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_20_t0.fits took 29485 ms.
+INFO(51409): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_20_t1.fits took 21911 ms.
+ERROR(74279): 
+RESULT(74280): finished job r004_20_t0.fits - r004_20_t1.fits in 74280 ms.
+INFO(74280): Completed '/tmp/tmp.lYUqnO5639/tmp/r004_20_t0.fits' and '/tmp/tmp.lYUqnO5639/tmp/r004_20_t1.fits' in 74280 ms.
+INFO(1): Comparing 'r004_11_t0.fits' and 'r004_11_t1.fits'
+
+INFO(24050): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_11_t0.fits took 24037 ms.
+INFO(27894): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_11_t1.fits took 3844 ms.
+ERROR(50316): 
+RESULT(50317): finished job r004_11_t0.fits - r004_11_t1.fits in 50317 ms.
+INFO(50317): Completed '/tmp/tmp.lYUqnO5639/tmp/r004_11_t0.fits' and '/tmp/tmp.lYUqnO5639/tmp/r004_11_t1.fits' in 50317 ms.
+INFO(0): Comparing 'r004_10_t0.fits' and 'r004_10_t1.fits'
+
+INFO(5018): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_10_t0.fits took 5006 ms.
+INFO(18681): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_10_t1.fits took 13663 ms.
+ERROR(43544): 
+RESULT(43545): finished job r004_10_t0.fits - r004_10_t1.fits in 43545 ms.
+INFO(43545): Completed '/tmp/tmp.lYUqnO5639/tmp/r004_10_t0.fits' and '/tmp/tmp.lYUqnO5639/tmp/r004_10_t1.fits' in 43545 ms.
+INFO(0): Comparing 'r004_01_t0.fits' and 'r004_01_t1.fits'
+
+INFO(30704): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_01_t0.fits took 30691 ms.
+INFO(47006): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r004_01_t1.fits took 16301 ms.
+ERROR(67044): 
+RESULT(67045): finished job r004_01_t0.fits - r004_01_t1.fits in 67045 ms.
+INFO(67045): Completed '/tmp/tmp.lYUqnO5639/tmp/r004_01_t0.fits' and '/tmp/tmp.lYUqnO5639/tmp/r004_01_t1.fits' in 67045 ms.
+INFO(0): Comparing 'r003_10_t0.fits' and 'r003_10_t1.fits'
+
+INFO(16089): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r003_10_t0.fits took 16077 ms.
+INFO(31744): Copying /tmp/tmp.lYUqnO5639/dfs/problems/sample0_0123/r003_10_t1.fits took 15655 ms.
+ERROR(702928): 
+RESULT(702929): finished job r003_10_t0.fits - r003_10_t1.fits in 702929 ms.
+INFO(702929): Completed '/tmp/tmp.lYUqnO5639/tmp/r003_10_t0.fits' and '/tmp/tmp.lYUqnO5639/tmp/r003_10_t1.fits' in 702929 ms.
+Unmounting DFS

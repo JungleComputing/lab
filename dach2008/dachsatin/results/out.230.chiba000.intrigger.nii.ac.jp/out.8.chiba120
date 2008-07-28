@@ -1,0 +1,35 @@
+Running on chiba120.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.NSLTR12217/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r001_20_t0.fits' and 'r001_20_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NSLTR12217/tmp, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_20_t0.fits, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_20_t1.fits]
+ERROR(183462): 
+RESULT(183467): finished job r001_20_t0.fits - r001_20_t1.fits in 183467 ms.
+INFO(183467): Completed '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_20_t0.fits' and '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_20_t1.fits' in 183467 ms.
+INFO(0): Comparing 'r001_11_t0.fits' and 'r001_11_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NSLTR12217/tmp, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_11_t0.fits, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_11_t1.fits]
+ERROR(99472): 
+RESULT(99473): finished job r001_11_t0.fits - r001_11_t1.fits in 99473 ms.
+INFO(99473): Completed '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_11_t0.fits' and '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_11_t1.fits' in 99473 ms.
+INFO(0): Comparing 'r001_10_t0.fits' and 'r001_10_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NSLTR12217/tmp, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_10_t0.fits, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_10_t1.fits]
+ERROR(68693): 
+RESULT(68693): finished job r001_10_t0.fits - r001_10_t1.fits in 68693 ms.
+INFO(68693): Completed '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_10_t0.fits' and '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_10_t1.fits' in 68693 ms.
+INFO(0): Comparing 'r001_01_t0.fits' and 'r001_01_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NSLTR12217/tmp, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_01_t0.fits, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_01_t1.fits]
+ERROR(71672): 
+RESULT(71672): finished job r001_01_t0.fits - r001_01_t1.fits in 71672 ms.
+INFO(71672): Completed '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_01_t0.fits' and '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r001_01_t1.fits' in 71672 ms.
+INFO(0): Comparing 'r010_01_t0.fits' and 'r010_01_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.NSLTR12217/tmp, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r010_01_t0.fits, /tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r010_01_t1.fits]
+ERROR(877383): 
+RESULT(877383): finished job r010_01_t0.fits - r010_01_t1.fits in 877383 ms.
+INFO(877383): Completed '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r010_01_t0.fits' and '/tmp/tmp.NSLTR12217/dfs/problems/sample0_0123/r010_01_t1.fits' in 877383 ms.
+Unmounting DFS

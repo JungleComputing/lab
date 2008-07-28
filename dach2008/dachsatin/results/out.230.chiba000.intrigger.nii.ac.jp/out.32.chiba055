@@ -1,0 +1,29 @@
+Running on chiba055.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.PiScuT4307/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r004_31_t0.fits' and 'r004_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PiScuT4307/tmp, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_31_t0.fits, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_31_t1.fits]
+ERROR(221356): 
+RESULT(221356): finished job r004_31_t0.fits - r004_31_t1.fits in 221356 ms.
+INFO(221357): Completed '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_31_t0.fits' and '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_31_t1.fits' in 221356 ms.
+INFO(0): Comparing 'r004_30_t0.fits' and 'r004_30_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PiScuT4307/tmp, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_30_t0.fits, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_30_t1.fits]
+ERROR(101219): 
+RESULT(101220): finished job r004_30_t0.fits - r004_30_t1.fits in 101220 ms.
+INFO(101220): Completed '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_30_t0.fits' and '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_30_t1.fits' in 101220 ms.
+INFO(0): Comparing 'r004_21_t0.fits' and 'r004_21_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PiScuT4307/tmp, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_21_t0.fits, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_21_t1.fits]
+ERROR(163599): 
+RESULT(163600): finished job r004_21_t0.fits - r004_21_t1.fits in 163600 ms.
+INFO(163600): Completed '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_21_t0.fits' and '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r004_21_t1.fits' in 163600 ms.
+INFO(0): Comparing 'r002_30_t0.fits' and 'r002_30_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PiScuT4307/tmp, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r002_30_t0.fits, /tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r002_30_t1.fits]
+ERROR(650551): 
+RESULT(650551): finished job r002_30_t0.fits - r002_30_t1.fits in 650551 ms.
+INFO(650552): Completed '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r002_30_t0.fits' and '/tmp/tmp.PiScuT4307/dfs/problems/sample0_0123/r002_30_t1.fits' in 650551 ms.
+Unmounting DFS

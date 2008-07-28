@@ -1,0 +1,25 @@
+Running on chiba003.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.itZOk13508
+Starting Satin with parameters -d /tmp/tmp.itZOk13508/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+0: Comparing 'r009_11_t0.fits' and 'r009_11_t1.fits'
+262885: Completed '/tmp/tmp.itZOk13508/problems/sample0_0123/r009_11_t0.fits' and '/tmp/tmp.itZOk13508/problems/sample0_0123/r009_11_t1.fits' in 262885 ms.
+262885: WARN STDERR='/home/dach/bin32/run_imsub3vp3.sh: line 45: 14112 Segmentation fault      $BINDIR/imsub3vp3 ${ref_base}.fits ${img_base}.fits $ref.det ${thres}
+fits_open_file:could not open the named file r009_11_t1_sub.fits
+
+> *Error*: cannot open r009_11_t1_sub_msk.fits
+
+awk: cannot open r009_11_t1.result (No such file or directory)
+'
+269807: Comparing 'r003_40_t0.fits' and 'r003_40_t1.fits'
+434187: Completed '/tmp/tmp.itZOk13508/problems/sample0_0123/r003_40_t0.fits' and '/tmp/tmp.itZOk13508/problems/sample0_0123/r003_40_t1.fits' in 164380 ms.
+434187: WARN STDERR='/home/dach/bin32/run_imsub3vp3.sh: line 45: 14452 Segmentation fault      $BINDIR/imsub3vp3 ${ref_base}.fits ${img_base}.fits $ref.det ${thres}
+fits_open_file:could not open the named file r003_40_t1_sub.fits
+
+> *Error*: cannot open r003_40_t1_sub_msk.fits
+
+awk: cannot open r003_40_t1.result (No such file or directory)
+'
+436644: Comparing 'r009_21_t0.fits' and 'r009_21_t1.fits'
+04:28:20 ERROR [upcaller] ibis.satin.ft - SATIN '(Ibis 58, location chiba003@intrigger@nii@ac@jp)': the registry thinks I have crashed! Exiting.
+Unmounting DFS

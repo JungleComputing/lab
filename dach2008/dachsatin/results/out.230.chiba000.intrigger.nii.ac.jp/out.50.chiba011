@@ -1,0 +1,17 @@
+Running on chiba011.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.PLgDj27106/dfs
+Starting Satin with parameters -p problems/sample0_0123 -v
+INFO(0): Comparing 'r008_10_t0.fits' and 'r008_10_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PLgDj27106/tmp, /tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r008_10_t0.fits, /tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r008_10_t1.fits]
+ERROR(607913): 
+RESULT(607914): finished job r008_10_t0.fits - r008_10_t1.fits in 607914 ms.
+INFO(607914): Completed '/tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r008_10_t0.fits' and '/tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r008_10_t1.fits' in 607914 ms.
+INFO(0): Comparing 'r000_31_t0.fits' and 'r000_31_t1.fits'
+
+Starting command: [/home/dach/finder/dach.sh, -w, /tmp/tmp.PLgDj27106/tmp, /tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r000_31_t0.fits, /tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r000_31_t1.fits]
+ERROR(731521): 
+RESULT(731522): finished job r000_31_t0.fits - r000_31_t1.fits in 731522 ms.
+INFO(731522): Completed '/tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r000_31_t0.fits' and '/tmp/tmp.PLgDj27106/dfs/problems/sample0_0123/r000_31_t1.fits' in 731522 ms.
+Unmounting DFS

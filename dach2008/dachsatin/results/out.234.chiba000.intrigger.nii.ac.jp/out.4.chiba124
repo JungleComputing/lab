@@ -1,0 +1,31 @@
+Running on chiba124.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.iLRKr14818/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:02 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(1): Comparing 'r008_01_t0.fits' and 'r008_01_t1.fits'
+
+INFO(2470): Copying /tmp/tmp.iLRKr14818/dfs/problems/sample0_0123/r008_01_t0.fits took 2451 ms.
+INFO(3826): Copying /tmp/tmp.iLRKr14818/dfs/problems/sample0_0123/r008_01_t1.fits took 1356 ms.
+ERROR(745174): 
+RESULT(745176): finished job r008_01_t0.fits - r008_01_t1.fits in 745176 ms.
+INFO(745176): Completed '/tmp/tmp.iLRKr14818/tmp/r008_01_t0.fits' and '/tmp/tmp.iLRKr14818/tmp/r008_01_t1.fits' in 745176 ms.
+Unmounting DFS

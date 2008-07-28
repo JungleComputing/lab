@@ -1,0 +1,52 @@
+Running on chiba017.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.sFMZF18988/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:03 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(0): Comparing 'r001_31_t0.fits' and 'r001_31_t1.fits'
+
+INFO(6937): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r001_31_t0.fits took 6924 ms.
+INFO(8855): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r001_31_t1.fits took 1918 ms.
+ERROR(30326): 
+RESULT(30327): finished job r001_31_t0.fits - r001_31_t1.fits in 30327 ms.
+INFO(30327): Completed '/tmp/tmp.sFMZF18988/tmp/r001_31_t0.fits' and '/tmp/tmp.sFMZF18988/tmp/r001_31_t1.fits' in 30327 ms.
+INFO(0): Comparing 'r008_40_t0.fits' and 'r008_40_t1.fits'
+
+INFO(1082): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r008_40_t0.fits took 1070 ms.
+INFO(2557): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r008_40_t1.fits took 1475 ms.
+ERROR(603048): 
+RESULT(603048): finished job r008_40_t0.fits - r008_40_t1.fits in 603048 ms.
+INFO(603048): Completed '/tmp/tmp.sFMZF18988/tmp/r008_40_t0.fits' and '/tmp/tmp.sFMZF18988/tmp/r008_40_t1.fits' in 603048 ms.
+INFO(0): Comparing 'r004_41_t0.fits' and 'r004_41_t1.fits'
+
+INFO(18991): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r004_41_t0.fits took 18979 ms.
+INFO(30991): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r004_41_t1.fits took 12000 ms.
+ERROR(53190): 
+RESULT(53191): finished job r004_41_t0.fits - r004_41_t1.fits in 53191 ms.
+INFO(53191): Completed '/tmp/tmp.sFMZF18988/tmp/r004_41_t0.fits' and '/tmp/tmp.sFMZF18988/tmp/r004_41_t1.fits' in 53191 ms.
+INFO(0): Comparing 'r005_31_t0.fits' and 'r005_31_t1.fits'
+
+INFO(16113): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r005_31_t0.fits took 16101 ms.
+INFO(18301): Copying /tmp/tmp.sFMZF18988/dfs/problems/sample0_0123/r005_31_t1.fits took 2188 ms.
+ERROR(709680): 
+RESULT(709683): finished job r005_31_t0.fits - r005_31_t1.fits in 709683 ms.
+INFO(709684): Completed '/tmp/tmp.sFMZF18988/tmp/r005_31_t0.fits' and '/tmp/tmp.sFMZF18988/tmp/r005_31_t1.fits' in 709683 ms.
+Unmounting DFS

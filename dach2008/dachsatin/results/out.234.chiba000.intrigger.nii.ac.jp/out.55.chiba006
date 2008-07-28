@@ -1,0 +1,45 @@
+Running on chiba006.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.zQrArl8036/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:03 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(0): Comparing 'r000_00_t0.fits' and 'r000_00_t1.fits'
+
+INFO(4152): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r000_00_t0.fits took 4140 ms.
+INFO(6589): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r000_00_t1.fits took 2436 ms.
+ERROR(634620): 
+RESULT(634621): finished job r000_00_t0.fits - r000_00_t1.fits in 634621 ms.
+INFO(634621): Completed '/tmp/tmp.zQrArl8036/tmp/r000_00_t0.fits' and '/tmp/tmp.zQrArl8036/tmp/r000_00_t1.fits' in 634621 ms.
+INFO(0): Comparing 'r004_40_t0.fits' and 'r004_40_t1.fits'
+
+INFO(12802): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r004_40_t0.fits took 12789 ms.
+INFO(14143): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r004_40_t1.fits took 1340 ms.
+ERROR(36685): 
+RESULT(36686): finished job r004_40_t0.fits - r004_40_t1.fits in 36686 ms.
+INFO(36686): Completed '/tmp/tmp.zQrArl8036/tmp/r004_40_t0.fits' and '/tmp/tmp.zQrArl8036/tmp/r004_40_t1.fits' in 36686 ms.
+INFO(0): Comparing 'r005_00_t0.fits' and 'r005_00_t1.fits'
+
+INFO(5377): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r005_00_t0.fits took 5364 ms.
+INFO(10119): Copying /tmp/tmp.zQrArl8036/dfs/problems/sample0_0123/r005_00_t1.fits took 4742 ms.
+ERROR(687604): 
+RESULT(687604): finished job r005_00_t0.fits - r005_00_t1.fits in 687604 ms.
+INFO(687605): Completed '/tmp/tmp.zQrArl8036/tmp/r005_00_t0.fits' and '/tmp/tmp.zQrArl8036/tmp/r005_00_t1.fits' in 687604 ms.
+Unmounting DFS

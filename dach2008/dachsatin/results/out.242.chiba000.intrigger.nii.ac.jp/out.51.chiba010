@@ -1,0 +1,56 @@
+Running on chiba010.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.usaGu26633/dfs
+/tmp/tmp.usaGu26633/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+INFO(30, 0): Comparing 'r006_11_t0.fits' and 'r006_11_t1.fits'
+
+INFO(2871, 2841): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r006_11_t0.fits took 2826 ms.
+INFO(4795, 4765): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r006_11_t1.fits took 1923 ms.
+ERROR(32054, 32024): 
+RESULT(32054, 32024): finished job r006_11_t0.fits - r006_11_t1.fits in 32024 ms.
+INFO(32055, 32025): Completed '/tmp/tmp.usaGu26633/tmp/r006_11_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r006_11_t1.fits' in 32024 ms.
+INFO(32083, 0): Comparing 'r004_21_t0.fits' and 'r004_21_t1.fits'
+
+INFO(33726, 1643): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r004_21_t0.fits took 1631 ms.
+INFO(47124, 15041): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r004_21_t1.fits took 13398 ms.
+ERROR(69344, 37261): 
+RESULT(69345, 37262): finished job r004_21_t0.fits - r004_21_t1.fits in 37262 ms.
+INFO(69345, 37262): Completed '/tmp/tmp.usaGu26633/tmp/r004_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r004_21_t1.fits' in 37262 ms.
+INFO(69465, 0): Comparing 'r007_31_t0.fits' and 'r007_31_t1.fits'
+
+INFO(75247, 5782): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_31_t0.fits took 5770 ms.
+INFO(77378, 7913): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_31_t1.fits took 2131 ms.
+ERROR(98217, 28752): 
+RESULT(98218, 28753): finished job r007_31_t0.fits - r007_31_t1.fits in 28753 ms.
+INFO(98218, 28753): Completed '/tmp/tmp.usaGu26633/tmp/r007_31_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_31_t1.fits' in 28753 ms.
+INFO(98218, 0): Comparing 'r007_30_t0.fits' and 'r007_30_t1.fits'
+
+INFO(102958, 4740): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_30_t0.fits took 4728 ms.
+INFO(105038, 6820): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_30_t1.fits took 2080 ms.
+ERROR(126502, 28284): 
+RESULT(126503, 28285): finished job r007_30_t0.fits - r007_30_t1.fits in 28285 ms.
+INFO(126503, 28285): Completed '/tmp/tmp.usaGu26633/tmp/r007_30_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_30_t1.fits' in 28285 ms.
+INFO(126503, 0): Comparing 'r007_21_t0.fits' and 'r007_21_t1.fits'
+
+INFO(132551, 6048): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_21_t0.fits took 6036 ms.
+INFO(138130, 11627): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r007_21_t1.fits took 5579 ms.
+ERROR(160449, 33946): 
+RESULT(160450, 33947): finished job r007_21_t0.fits - r007_21_t1.fits in 33947 ms.
+INFO(160450, 33947): Completed '/tmp/tmp.usaGu26633/tmp/r007_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r007_21_t1.fits' in 33947 ms.
+INFO(160500, 0): Comparing 'r000_21_t0.fits' and 'r000_21_t1.fits'
+
+INFO(162443, 1943): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r000_21_t0.fits took 1931 ms.
+INFO(168854, 8354): Copying /tmp/tmp.usaGu26633/dfs/problems/sample0_0123/r000_21_t1.fits took 6411 ms.
+ERROR(825338, 664838): 
+RESULT(825338, 664838): finished job r000_21_t0.fits - r000_21_t1.fits in 664838 ms.
+INFO(825338, 664838): Completed '/tmp/tmp.usaGu26633/tmp/r000_21_t0.fits' and '/tmp/tmp.usaGu26633/tmp/r000_21_t1.fits' in 664838 ms.
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 4 executed = 8 syncs = 2 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': MSG_STATS: intra = 6694194, bytes = 120,703,908 inter = 0, bytes = 0
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 4443382 success = 4 (9.002151964427097E-5 %) time = 769.451  s requests = 2250808 jobs stolen = 0 time =  34.211  s
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 0 total time =   0.000  s invocationRecordReads = 4 total time =  57.689 ms returnRecordWrites = 4 total time =  46.612 ms returnRecordReads = 0 total time =   0.000  s
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 50, location chiba010@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+Unmounting DFS

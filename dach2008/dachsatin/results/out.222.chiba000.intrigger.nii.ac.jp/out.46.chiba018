@@ -1,0 +1,9 @@
+Running on chiba018.intrigger.nii.ac.jp
+Available cores 1
+Mounting DFS on /tmp/tmp.LOmXV12058
+Starting Satin with parameters -d /tmp/tmp.LOmXV12058/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+1: Comparing 'r002_21_t0.fits' and 'r002_21_t1.fits'
+736798: Completed '/tmp/tmp.LOmXV12058/problems/sample0_0123/r002_21_t0.fits' and '/tmp/tmp.LOmXV12058/problems/sample0_0123/r002_21_t1.fits' in 736797 ms.
+739200: Comparing 'r003_20_t0.fits' and 'r003_20_t1.fits'
+1464075: Completed '/tmp/tmp.LOmXV12058/problems/sample0_0123/r003_20_t0.fits' and '/tmp/tmp.LOmXV12058/problems/sample0_0123/r003_20_t1.fits' in 724875 ms.
+Unmounting DFS

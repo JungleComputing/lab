@@ -1,0 +1,38 @@
+Running on chiba101.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.VkfuL19912/dfs
+Starting Satin with parameters -p ID-0_0123 problems/sample0_0123 -v
+22:35:03 WARN  [main] ibis.smartsockets.virtual.misc - Failed to connect service link to hub!
+java.io.IOException: No connection to hub!
+	at ibis.smartsockets.hub.servicelink.ServiceLink.waitConnected(ServiceLink.java:259)
+	at ibis.smartsockets.hub.servicelink.ServiceLink.getAddress(ServiceLink.java:1135)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createServiceLink(VirtualSocketFactory.java:399)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.<init>(VirtualSocketFactory.java:203)
+	at ibis.smartsockets.virtual.VirtualSocketFactory.createSocketFactory(VirtualSocketFactory.java:1480)
+	at ibis.server.Client.getFactory(Client.java:149)
+	at ibis.ipl.impl.tcp.IbisSocketFactory.<init>(IbisSocketFactory.java:36)
+	at ibis.ipl.impl.tcp.TcpIbis.getData(TcpIbis.java:65)
+	at ibis.ipl.impl.Ibis.<init>(Ibis.java:134)
+	at ibis.ipl.impl.tcp.TcpIbis.<init>(TcpIbis.java:52)
+	at ibis.ipl.impl.tcp.TcpIbisStarter.startIbis(TcpIbisStarter.java:97)
+	at ibis.ipl.IbisStarter.startIbis(IbisStarter.java:115)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:431)
+	at ibis.ipl.IbisFactory.createIbis(IbisFactory.java:192)
+	at ibis.satin.impl.communication.Communication.<init>(Communication.java:58)
+	at ibis.satin.impl.Satin.<init>(Satin.java:126)
+	at ibis.dachsatin.Main.main(Main.java)
+INFO(0): Comparing 'r001_20_t0.fits' and 'r001_20_t1.fits'
+
+INFO(950): Copying /tmp/tmp.VkfuL19912/dfs/problems/sample0_0123/r001_20_t0.fits took 938 ms.
+INFO(71081): Copying /tmp/tmp.VkfuL19912/dfs/problems/sample0_0123/r001_20_t1.fits took 70131 ms.
+ERROR(85983): 
+RESULT(85985): finished job r001_20_t0.fits - r001_20_t1.fits in 85985 ms.
+INFO(85985): Completed '/tmp/tmp.VkfuL19912/tmp/r001_20_t0.fits' and '/tmp/tmp.VkfuL19912/tmp/r001_20_t1.fits' in 85985 ms.
+INFO(0): Comparing 'r002_30_t0.fits' and 'r002_30_t1.fits'
+
+INFO(817): Copying /tmp/tmp.VkfuL19912/dfs/problems/sample0_0123/r002_30_t0.fits took 805 ms.
+INFO(2446): Copying /tmp/tmp.VkfuL19912/dfs/problems/sample0_0123/r002_30_t1.fits took 1629 ms.
+ERROR(818655): 
+RESULT(818655): finished job r002_30_t0.fits - r002_30_t1.fits in 818655 ms.
+INFO(818655): Completed '/tmp/tmp.VkfuL19912/tmp/r002_30_t0.fits' and '/tmp/tmp.VkfuL19912/tmp/r002_30_t1.fits' in 818655 ms.
+Unmounting DFS

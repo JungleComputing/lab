@@ -1,0 +1,13 @@
+Running on chiba117.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.Fvpju16352
+Starting Satin with parameters -d /tmp/tmp.Fvpju16352/problems/sample0_0123 -c /home/dach/finder/dach.sh -v
+1: Comparing 'r007_20_t0.fits' and 'r007_20_t1.fits'
+110278: Completed '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_20_t0.fits' and '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_20_t1.fits' in 110277 ms.
+110283: Comparing 'r007_11_t0.fits' and 'r007_11_t1.fits'
+155217: Completed '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_11_t0.fits' and '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_11_t1.fits' in 44934 ms.
+155218: Comparing 'r007_10_t0.fits' and 'r007_10_t1.fits'
+268679: Completed '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_10_t0.fits' and '/tmp/tmp.Fvpju16352/problems/sample0_0123/r007_10_t1.fits' in 113461 ms.
+268692: Comparing 'r009_41_t0.fits' and 'r009_41_t1.fits'
+1120760: Completed '/tmp/tmp.Fvpju16352/problems/sample0_0123/r009_41_t0.fits' and '/tmp/tmp.Fvpju16352/problems/sample0_0123/r009_41_t1.fits' in 852068 ms.
+Unmounting DFS

@@ -1,0 +1,35 @@
+Running on chiba118.intrigger.nii.ac.jp
+Available cores 2
+Mounting DFS on /tmp/tmp.maQsF12240/dfs
+/tmp/tmp.maQsF12240/dfs mounted succesfully
+Starting Satin with parameters -p ID-0_0123-2 problems/sample0_0123 -v
+INFO(18, 0): Comparing 'r007_20_t0.fits' and 'r007_20_t1.fits'
+
+INFO(8061, 8043): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_20_t0.fits took 8036 ms.
+INFO(14226, 14208): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_20_t1.fits took 6164 ms.
+ERROR(27322, 27304): 
+RESULT(27324, 27306): finished job r007_20_t0.fits - r007_20_t1.fits in 27306 ms.
+INFO(27324, 27306): Completed '/tmp/tmp.maQsF12240/tmp/r007_20_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r007_20_t1.fits' in 27306 ms.
+INFO(27324, 0): Comparing 'r007_11_t0.fits' and 'r007_11_t1.fits'
+
+INFO(29589, 2265): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_11_t0.fits took 2251 ms.
+INFO(31882, 4558): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r007_11_t1.fits took 2293 ms.
+ERROR(45650, 18326): 
+RESULT(45651, 18327): finished job r007_11_t0.fits - r007_11_t1.fits in 18327 ms.
+INFO(45651, 18327): Completed '/tmp/tmp.maQsF12240/tmp/r007_11_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r007_11_t1.fits' in 18327 ms.
+INFO(45664, 0): Comparing 'r002_21_t0.fits' and 'r002_21_t1.fits'
+
+INFO(55905, 10241): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r002_21_t0.fits took 10229 ms.
+INFO(65159, 19495): Copying /tmp/tmp.maQsF12240/dfs/problems/sample0_0123/r002_21_t1.fits took 9254 ms.
+ERROR(881791, 836127): 
+RESULT(881791, 836127): finished job r002_21_t0.fits - r002_21_t1.fits in 836127 ms.
+INFO(881791, 836127): Completed '/tmp/tmp.maQsF12240/tmp/r002_21_t0.fits' and '/tmp/tmp.maQsF12240/tmp/r002_21_t1.fits' in 836127 ms.
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': SPAWN_STATS: spawns = 12 executed = 9 syncs = 6 aborts = 0 abort msgs = 0 aborted jobs = 0 total time =   0.000  s
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': MSG_STATS: intra = 3900281, bytes = 70,857,422 inter = 0, bytes = 0
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': STEAL_STATS: attempts = 1605536 success = 2 (1.2456899129013613E-4 %) time = 727.488  s requests = 2294776 jobs stolen = 5 time =  33.630  s
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': STEAL_THROTTLE_STATS: throttles = 0 time =   0.000  s
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': SERIALIZATION_STATS: invocationRecordWrites = 5 total time =   2.246 ms invocationRecordReads = 2 total time =  42.166 ms returnRecordWrites = 2 total time = 114.572 ms returnRecordReads = 5 total time =  49.502 ms
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': GRT_STATS: updates = 0 lock updates = 0 update time =   0.000  s handle update time =   0.000  s msgs = 0 lookups = 0 lookup time =   0.000  s handle lookup time =   0.000  s remote lookups = 0 successful lookups = 0 max size = 0
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': FT_STATS: handle crash time =   0.000  s redo time =   0.000  s orphans killed = 0 jobs restarted = 0
+SATIN '(Ibis 3, location chiba118@intrigger@nii@ac@jp)': SO_STATS:  invocations = 0 size = 0 time =   0.000  s transfers = 0 size = 0 time =   0.000  s
+Unmounting DFS
