@@ -1,10 +1,12 @@
-package ibis.deployment.clusterstub;
+package ibis.dachsatin.deployment.cluster;
 
+import java.io.File;
 import java.util.LinkedList;
 
+import org.gridlab.gat.resources.JobDescription;
+import org.gridlab.gat.resources.SoftwareDescription;
 import org.gridlab.gat.resources.Job.JobState;
 
-import ibis.dachsatin.Problem;
 import ibis.deploy.Application;
 import ibis.deploy.Deployer;
 import ibis.deploy.Grid;
@@ -13,11 +15,54 @@ import ibis.deploy.SubJob;
 
 public class Main {
 
-	private static String [] getArguments(LinkedList<Problem> problems) { 
+	private static String cluster = null;    	
+	private static String pool = null;
+	private static String server = null;
+	private static String exec = "/home/dach/finder/dach.sh";
+	private static String copy = "/bin/cp";
+	private static String localID = null;
+	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
+	private static String unmount = "/usr/bin/fusermount";
+	private static String outputDir = null;
+	
+	private static LinkedList<Problem> problems = new LinkedList<Problem>(); 
+	
+	private static String getOuputDir() { 
+
+		String dir = System.getProperty("user.dir");
 		
-		String [] result = new String[problems.size() * 3 + 1];
+		File tmp = new File(dir + File.separator + "output");
+		tmp.mkdir();
 		
-		result[0] = "-v";
+		if (!tmp.exists()) { 
+			return null;
+		}
+		
+		return tmp.getPath();
+	}
+	
+	private static String [] getOptions() { 
+		return new String[] { "-classpath ", "./lib/ibis/*.jar" };  
+	}
+	
+	private static String [] getProperties() { 
+		return new String[] { 
+				"-Dibis.server.address=" + server,  
+			    "-Dibis.pool.name=" + pool, 
+			    "-Dsatin.detailedStats", 
+			    "-Ddach.executable=" + exec, 
+			    "-Ddach.copy=" + copy, 
+			    "-Ddach.master.ID=" + localID, 
+			    "-Ddach.dir.output=" + outputDir, 
+			    "-Dlog4j.configuration=file:log4j.properties" };
+	}
+	
+	private static String [] getArguments() { 
+		
+		String [] result = new String[problems.size() * 3 + 2];
+		
+		result[0] = "ibis.dachsatin.Main";
+		result[1] = "-v";
 		
 		int index = 1;
 		
@@ -29,20 +74,50 @@ public class Main {
 
 		return result;
 	}
-	
-	
-    public static void main(String[] args) {
+		
+	/*
+	private static JobDescription createJobDescription() { 
+		 
+		SoftwareDescription sd = new SoftwareDescription();
+	    sd.setExecutable("/bin/hostname");
+	        File stdout = GAT.createFile("hostname.txt");
+	        sd.setStdout(stdout);
 
-    	String cluster = null;    	
-    	String pool = null;
-    	String server = null;
-    	
-    	LinkedList<Problem> problems = new LinkedList<Problem>(); 
+	        JobDescription jd = new JobDescription(sd);
+	        ResourceBroker broker = GAT.createResourceBroker(new URI(args[0]));
+	        Job job = broker.submitJob(jd);
+
+	        while ((job.getState() != JobState.STOPPED)
+	                && (job.getState() != JobState.SUBMISSION_ERROR)) {
+	            Thread.sleep(1000);
+	        }
+	}
+	
+	
+	private void start() { 
+		
+		
+		
+		
+		
+	}
+	*/
+    public static void main(String[] args) {
     	
     	for (int i=0;i<args.length;i++) { 
     		
-    		if (args[i].equals("-pool") && i != args.length-1) { 
+    		if (args[i].equals("-id") && i != args.length-1) { 
+    			localID = args[++i];
+    		} else if (args[i].equals("-copy") && i != args.length-1) { 
+    			copy = args[++i];
+    		} else if (args[i].equals("-exec") && i != args.length-1) { 
+    			exec = args[++i];
+    		} else if (args[i].equals("-pool") && i != args.length-1) { 
     			pool = args[++i];
+    		} else if (args[i].equals("-mount") && i != args.length-1) { 
+    			mount = args[++i];
+    		} else if (args[i].equals("-unmount") && i != args.length-1) { 
+    			unmount = args[++i];
     		} else if (args[i].equals("-cluster") && i != args.length-1) { 
     			cluster = args[++i];
     		} else if (args[i].equals("-server") && i != args.length-1) { 
@@ -71,39 +146,75 @@ public class Main {
     		System.err.println("Ibis cluster not set!");
     		System.exit(1);
     	}
-    	    	
+    
+    	if (localID == null) { 
+    		System.err.println("Local ID not set!");
+    		System.exit(1);
+    	}
+    	
+    	if (copy == null) { 
+    		System.err.println("Copy executable not set!");
+    		System.exit(1);
+    	}
+    
+    	if (exec == null) { 
+    		System.err.println("DACH executable not set!");
+    		System.exit(1);
+    	}
+    
+    	if (mount == null) { 
+    		System.err.println("Mount executable not set!");
+    		System.exit(1);
+    	}
+    
+    	if (unmount == null) { 
+    		System.err.println("unmount executable not set!");
+    		System.exit(1);
+    	}
+    
     	if (problems.size() == 0) { 
     		System.err.println("No problems specified!");
     		System.exit(1);
     	}
     	
+    	outputDir = getOuputDir();
+    	
+    	if (outputDir == null) { 
+    		System.err.println("Failed to create output dir!");
+    		System.exit(1);
+    	}
+    		
+    		
+    /*
+    	try { 
+    		new Main().start();
+    	} catch (Exception e) {
+    		System.err.println("Main failed!");
+    		e.printStackTrace(System.err);
+    	}
+    	*/
     	
     	
         try {
+        	
             // first create a new deployer object
             Deployer deployer = new Deployer();
 
             // then we've to create the application description, we can do that
             // by loading a properties file or by creating an Application object
             Application application = new Application(
-            		"DACH2008-Satin",         // name of the application
-                    "ibis.dachsatin.Main",    // main class
-                    new String[] { },         // java options 
+            		"DACH2008-Worker",         // name of the application
+                    "ibis.deployment.wapper.Wrapper",    // main class
+                   
+                    getOptions(),    // java options   
+                    getProperties(), // java system properties 
+                    getArguments(),  // java arguments
                     
-                    new String[] { "-Dibis.server.address=" + server,        // java system properties 
-            				       "-Dibis.pool.name=" + pool, 
-            				       "-Dsatin.detailedStats", 
-            				       "-Dlog4j.configuration=file:log4j.properties" },  
-            				       
-                    getArguments(problems), // java arguments
-                    
-                    // HIERO -- JaSON
-                    
-                    new String[] { "sleep", "sleep/log4j.properties" }, // pre stage 
-
-                    null, // post stage
-                    null // ibis server pre stage
+                    null,  // no pre stage (within cluster we have NFS) 
+                    null,  // post stage (same)
+                    null   // ibis server pre stage (not used)
             );
+        
             // add this application description to the deployer. Now the
             // deployer knows about this application using its name
             deployer.addApplication(application);

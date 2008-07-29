@@ -1,13 +1,5 @@
 #!/bin/sh
 
-export DACHSATIN_HOME=/home/dach004/dachsatin-0.8
-
-# Check setting of DACHSATIN_HOME
-if [ -z "$DACHSATIN_HOME" ];  then
-    echo "please set DACHSATIN_HOME to the location of your dachsatin installation" 1>&2
-    exit 1
-fi
-
 # Jar-files from library.
 LIBCLASSPATH=""
 add_to_libclasspath () {
@@ -22,10 +14,10 @@ add_to_libclasspath () {
 }
 
 # Add the jar files in the Tweaker lib dir to the classpath.
-add_to_libclasspath "${DACHSATIN_HOME}"/lib
+add_to_libclasspath ./lib/ibis
 
 # And finally, run ...
 exec java \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
-    -Dlog4j.configuration=file:"$DACHSATIN_HOME"/log4j.properties \
+    -Dlog4j.configuration=file:./log4j.properties \
      ibis.server.Server --stats --events --port 5437 $@

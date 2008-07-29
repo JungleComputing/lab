@@ -33,16 +33,16 @@
 
         <!-- copy jars in external directory to lib -->
         <copy todir="${lib}">
-            <fileset dir="${external}" includes="*.jar" />
+            <fileset dir="${external}" includes="**/*.jar" />
         </copy>
 
         <path id="default.classpath">
             <fileset dir="${lib}">
-                <include name="*.jar" />
+                <include name="**/*.jar" />
             </fileset>
             <pathelement path="${tmp}" />
         </path>
-
+	
         <!-- Compile the java code from ${src} into ${tmp} -->
         <javac srcdir="${src}" 
                destdir="${tmp}" 

@@ -1,6 +1,8 @@
-package ibis.dachsatin;
+package ibis.dachsatin.worker;
 
 
+
+import ibis.dachsatin.util.Util;
 
 import java.io.File;
 import java.io.IOException;
@@ -51,21 +53,9 @@ public class Main {
         	System.exit(1);
         }
         
-        String localDir = System.getenv("DACH_DATA_DIR");
-			
-		if (localDir == null ) {
-			System.err.println("FATAL: DACH_DATA_DIR not set!!");
-			System.exit(1);
-		}
-		
-		File dir = new File(localDir);
+		File dir = new File(Util.dataDir);
         
-        if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
-			System.err.println("FATAL: DACH_DATA_DIR " + dir + " does not exist");
-			System.exit(1);
-        }	
-      	     
-        FindPairs finder = new FindPairs(dir, problems.values(), verbose);
+		FindPairs finder = new FindPairs(dir, problems.values(), verbose);
     	
     	ArrayList<Pair> pairs = null;
     	

@@ -1,4 +1,4 @@
-package ibis.dachsatin;
+package ibis.dachsatin.worker;
 
 import java.util.ArrayList;
 import ibis.satin.Spawnable;

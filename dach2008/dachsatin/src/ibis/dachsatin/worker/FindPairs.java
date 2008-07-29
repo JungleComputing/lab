@@ -1,4 +1,4 @@
-package ibis.dachsatin;
+package ibis.dachsatin.worker;
 
 
 import java.io.File;
