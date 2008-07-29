@@ -98,6 +98,11 @@ public class FileUtils {
     }
 	
 	public static boolean deleteDirectory(String dir) { 
+		
+		if (dir == null || dir.trim().length() == 0) { 
+			return false;
+		}
+		
 		return deleteDirectory(new File(dir));
 	}
 	

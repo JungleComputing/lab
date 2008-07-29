@@ -14,7 +14,7 @@
 
     <target name="build"
             description="Build build all sources"
-            depends="clean,compile,satinc,javadoc" />
+            depends="clean,compile,satinc" />
 
     <target name="test"
             description="Run tests"
@@ -69,7 +69,7 @@
 		failonerror="true"
 		maxmemory="512M"
 		fork="true">
-		<arg line="${satinc-flags} -satin ibis.dachsatin.Comparator,ibis.dachsatin.Main ${lib}/${dist-name}.jar"/>
+		<arg line="${satinc-flags} -satin ibis.dachsatin.worker.Comparator,ibis.dachsatin.worker.Main ${lib}/${dist-name}.jar"/>
 		<classpath refid="default.classpath"/>
 	</java>
 

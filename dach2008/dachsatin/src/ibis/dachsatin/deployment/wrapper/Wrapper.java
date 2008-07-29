@@ -30,7 +30,7 @@ public class Wrapper {
 			throw new IOException("Property java.io.tmpdir not set!");
 		}
 		
-		String tmpRoot = tmp + File.separator + uniqueID + ".dir";
+		tmpRoot = tmp + File.separator + uniqueID + ".dir";
 		dfsDir = tmpRoot + File.separator + "dfs";
 		tmpDir = tmpRoot + File.separator + "tmp";
 		
