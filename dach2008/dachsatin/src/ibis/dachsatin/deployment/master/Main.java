@@ -5,39 +5,39 @@ import ibis.dachsatin.deployment.util.JobController;
 import ibis.dachsatin.deployment.util.JobHandler;
 import ibis.dachsatin.deployment.util.Problem;
 import ibis.dachsatin.util.FileUtils;
+import ibis.server.Server;
+import ibis.server.ServerProperties;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Properties;
 
-import org.gridlab.gat.GATContext;
 import org.gridlab.gat.GATObjectCreationException;
 import org.gridlab.gat.URI;
 import org.gridlab.gat.resources.JavaSoftwareDescription;
 import org.gridlab.gat.resources.JobDescription;
-import org.gridlab.gat.security.CertificateSecurityContext;
-import org.gridlab.gat.security.SecurityContext;
 
 public class Main {
 
 	// These are set (or overwitten) by command line arguments
 	private static int submitThreads = 15;
 
-	private static String cluster = null;
 	private static String pool = null;
-	private static String server = null;
 	private static String exec = "/home/dach/finder/dach.sh";
 	private static String copy = "/bin/cp";
 	private static String java = "/usr/local/jdk/bin/java";
 	
-	private static String localID = null;
 	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
 
 	private static boolean dryRun = false;
+
+	private static Server server;
+	private static int serverPort = 5678;
 	
 	// These are generated once
 	private static HashMap<String, String> properties = null;
@@ -96,8 +96,7 @@ public class Main {
 	}
 
 	private static String getServerAddress() {
-		// FIXME!!!
-		return "localhost";
+		return server.getLocalAddress();
 	}
 
 	private static String[] getArguments(Cluster c) {
@@ -187,6 +186,31 @@ public class Main {
 		controller.addJobToSubmit(h);
 	}
 
+	private static void createServer() { 
+		
+		 Properties properties = new Properties();
+
+		 //properties.setProperty(ServerProperties.START_HUB, "false");
+		 //properties.setProperty(ServerProperties.HUB_ONLY, "true");
+		 //properties.setProperty(ServerProperties.HUB_ADDRESSES, args[i]);
+		 //properties.setProperty(ServerProperties.HUB_ADDRESS_FILE, file);
+		 
+		 properties.put(ServerProperties.PORT, Integer.toString(serverPort));
+		 properties.setProperty(ServerProperties.PRINT_EVENTS, "true");
+	     properties.setProperty(ServerProperties.PRINT_ERRORS, "true");
+	     properties.setProperty(ServerProperties.PRINT_STATS, "true");
+	     // properties.setProperty(ServerProperties.REMOTE, "true");
+
+	     try {
+	    	 server = new Server(properties);
+	     } catch (Throwable t) {
+	    	 System.err.println("Could not start Ibis Server: " + t);
+	    	 System.exit(1);
+	     }
+	     
+	     System.out.println("Create Ibis server on: " + server.getLocalAddress());
+	}
+	
 	public static void main(String[] args) {
 
 		for (int i = 0; i < args.length; i++) {
@@ -268,6 +292,9 @@ public class Main {
 			System.exit(1);
 		}
 
+		createServer();
+		
+		
 		for (String f : clusterFiles) {
 			try {
 				clusters.add(Cluster.read(f));
@@ -325,6 +352,8 @@ public class Main {
 				}
 			}
 		}
+		
+		server.end(10000);
 
 	}
 
