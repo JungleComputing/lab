@@ -89,7 +89,10 @@ public class Main {
 
 		if (properties == null) {
 			properties = new HashMap<String, String>();
-			properties.put("log4j.configuration", "file:log4j.properties");
+			properties.put("log4j.configuration", "file:" + homeDir 
+					+ File.separator + "log4j.properties");
+			properties.put("gat.adaptor.path", homeDir + File.separator + "lib" 
+					+ File.separator + "deploy" + File.separator + "adaptors");
 		}
 
 		return properties;
