@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Wrapper {
@@ -14,8 +15,8 @@ public class Wrapper {
 	private static PrintStream out = System.out;
 	private static PrintStream err = System.err;
 	
-	private static String [] mountCMD = { "/home/jason/bin/gfarm2fs", "" }; 
-	private static String [] umountCMD = { "/home/jason/bin/fusermount", "-u", "" };
+	private static String [] mountCMD = { "/data/local/gfarm_v2/bin/gfarm2fs", "" }; 
+	private static String [] umountCMD = { "f/usr/bin/usermount", "-u", "" };
 	
 	private static String uniqueID;
 	private static String tmpRoot;
@@ -78,11 +79,37 @@ public class Wrapper {
 	
 	public static void main(String [] args) { 
 		
+		int dryRun = -1;
+		
+		String targetClass = null;
+		
+		ArrayList<String> newArgs = new ArrayList<String>();
+ 	
+		for (int i=0;i<args.length;i++) { 
+			
+			if (args[i].equals("-dryRun") && i != args.length-1) { 
+    			dryRun = Integer.parseInt(args[++i]);
+			} else if (args[i].equals("-mount") && i != args.length - 1) {
+				mountCMD[0] = args[++i];
+			} else if (args[i].equals("-unmount") && i != args.length - 1) {
+				umountCMD[0] = args[++i];
+			} else if (args[i].equals("-class") && i != args.length - 1) {
+				targetClass = args[++i];
+			} else { 
+				newArgs.add(args[i]);
+			}
+		}
+
+		if (targetClass == null) { 
+			err.println("Target class not set!");
+			System.exit(0);
+		}
+		
 		String out = System.getProperty("dach.dir.output");
 		
 		if (out == null) { 
-			err.println("Ouput directory not set!");
-			System.exit(1);
+			err.println("Output directory not set!");
+			System.exit(0);
 		}
 		
 		try { 
@@ -90,7 +117,7 @@ public class Wrapper {
 		} catch (Exception e) {
 			err.println("Failed to generate unique name!");
 			e.printStackTrace(System.err);
-			System.exit(1);
+			System.exit(0);
 		}
 	
 		try { 
@@ -99,9 +126,8 @@ public class Wrapper {
 		} catch (Exception e) {
 			err.println("Failed to re-route stdout/stderr!");
 			e.printStackTrace(System.err);
-			System.exit(1);
+			System.exit(0);
 		}
-		
 		
 		try { 
 			createTMP();
@@ -117,16 +143,22 @@ public class Wrapper {
 		System.setProperty("dach.machine.id", uniqueID);
 		
 		try { 
+			System.out.println("Using wrapper for class: " + targetClass);
 			
-			System.out.println("Using wrapper for class: " + args[0]);
-			
-			Class<?> c = Class.forName(args[0]);
+			Class<?> c = Class.forName(targetClass);
 			Method m = c.getDeclaredMethod("main", new Class [] { String [].class });
-			m.invoke(null, new Object [] { Arrays.copyOfRange(args, 1, args.length) });
+			
+			String [] a = newArgs.toArray(new String[newArgs.size()]);
+			
+			if (dryRun == 0) { 
+				System.out.println("DryRun -- NOT invoking: " + targetClass + ".main(" 
+						+ Arrays.toString(a) + ")");
+			} else { 
+				m.invoke(null, new Object [] { a });
+			}
 		} catch (Exception e) {
 			System.err.println("Failed to wrap java class!!");
 			e.printStackTrace(System.err);
-	
 		}
 		
 		try {

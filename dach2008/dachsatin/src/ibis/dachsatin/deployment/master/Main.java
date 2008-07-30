@@ -34,7 +34,7 @@ public class Main {
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
 
-	private static boolean dryRun = false;
+	private static int dryRun = -1;
 
 	private static Server server;
 	private static int serverPort = 5678;
@@ -93,6 +93,7 @@ public class Main {
 					+ File.separator + "log4j.properties");
 			properties.put("gat.adaptor.path", homeDir + File.separator + "lib" 
 					+ File.separator + "deploy" + File.separator + "adaptors");
+			properties.put("gat.debug", "");
 		}
 
 		return properties;
@@ -106,8 +107,9 @@ public class Main {
 
 		ArrayList<String> arguments = new ArrayList<String>();
 
-		if (dryRun) { 
+		if (dryRun > 0) { 
 			arguments.add("-dryRun");
+			arguments.add(Integer.toString(dryRun-1));
 		}
 		
 		arguments.add("-pool");
@@ -186,9 +188,13 @@ public class Main {
 		JobHandler h = new JobHandler(controller, c.getID(), jd, new URI(
 				"any://" + c.master));
 		
-		controller.addJobToSubmit(h);
+		if (dryRun == 0) { 
+			System.err.println("DryRun -- NOT submitting job " + c.getID() + " to " + c.master);
+		} else { 
+			controller.addJobToSubmit(h);
+		}
 	}
-
+	
 	private static void createServer() { 
 		
 		 Properties properties = new Properties();
@@ -218,9 +224,9 @@ public class Main {
 
 		for (int i = 0; i < args.length; i++) {
 			
-			if (args[i].equals("-dryRun")) { 
-    			dryRun = true;
-    		} else if (args[i].equals("-copy") && i != args.length - 1) {
+			if (args[i].equals("-dryRun") && i != args.length-1) { 
+    			dryRun = Integer.parseInt(args[++i]);
+			} else if (args[i].equals("-copy") && i != args.length - 1) {
 				copy = args[++i];
 			} else if (args[i].equals("-pool") && i != args.length - 1) {
 				pool = args[++i];

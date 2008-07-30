@@ -7,6 +7,7 @@ import ibis.dachsatin.deployment.util.Problem;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -31,7 +32,7 @@ public class Main {
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
 	
-	private static boolean dryRun = false;
+	private static int dryRun = -1;
 	
 	// These are generated once
 	private static HashMap<String,String> properties = null; 
@@ -86,7 +87,7 @@ public class Main {
 			properties.put("dach.executable", exec); 
 			properties.put("dach.copy", copy); 
 			properties.put("dach.master.ID", localID); 
-			properties.put("dach.dir.output", outputDir); 
+			properties.put("dach.dir.output", outputDir);
 			properties.put("log4j.configuration", "file:log4j.properties");
 		}
 		
@@ -96,19 +97,31 @@ public class Main {
 	private static String [] getArguments() { 
 		
 		if (arguments == null) { 
-			arguments = new String[problems.size() * 3 + 2];
-		
-			arguments[0] = "ibis.dachsatin.worker.Main";
-			arguments[1] = "-v";
-		
-			int index = 2;
+			ArrayList<String> args = new ArrayList<String>();
 
+			if (dryRun > 0) { 
+				args.add("-dryRun");
+				args.add(Integer.toString(dryRun-1));
+			}
+		
+			args.add("-class");
+			args.add("ibis.dachsatin.worker.Main");
+			
+			args.add("-mount");
+			args.add(mount);
+			
+			args.add("-unmount");
+			args.add(unmount);
+			
+			args.add("-v");
+			
 			for (Problem p : problems) { 
-				arguments[index++] = "-p";
-				arguments[index++] = p.ID;
-				arguments[index++] = p.directory;
+				args.add("-p");
+				args.add(p.ID);
+				args.add(p.directory);
 			}
 
+			arguments = args.toArray(new String [args.size()]);
 		}
 		
 		return arguments;
@@ -159,6 +172,8 @@ public class Main {
 		sd.setJavaArguments(getArguments());
 		sd.setJavaClassPath(getClassPath());
 		
+		sd.setExecutable(java);
+		
 		sd.addAttribute("sandbox.root", homeDir);
 		sd.addAttribute("sandbox.useroot", "true");
 		sd.addAttribute("sandbox.delete", "false");
@@ -167,7 +182,7 @@ public class Main {
         
         JobHandler h = new JobHandler(controller, ID, jd, new URI("any://" + target));
 
-        if (dryRun) { 
+        if (dryRun == 0) { 
         	System.err.println("DryRun -- NOT submitting job " + ID + " to " + target);
         } else { 
         	controller.addJobToSubmit(h);
@@ -178,8 +193,8 @@ public class Main {
     	
     	for (int i=0;i<args.length;i++) { 
     		
-    		if (args[i].equals("-dryRun")) { 
-    			dryRun = true;
+    		if (args[i].equals("-dryRun") && i != args.length-1) { 
+    			dryRun = Integer.parseInt(args[++i]);
     		} else if (args[i].equals("-id") && i != args.length-1) { 
     			localID = args[++i];
     		} else if (args[i].equals("-copy") && i != args.length-1) { 
