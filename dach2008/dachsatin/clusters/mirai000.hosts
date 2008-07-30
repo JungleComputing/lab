@@ -1,0 +1,24 @@
+127.0.0.1	localhost.localdomain	localhost
+
+# Lucy's IP address used while installation
+10.0.1.67	mirai-lucy.intrigger.jp	mirai-lucy
+
+# Private IPs
+
+# Global IPs
+202.209.203.66	mirai-charlie.intrigger.jp	mirai-charlie
+202.209.203.67	mirai-lucy.intrigger.jp	mirai-lucy
+202.209.203.68	mirai000.intrigger.jp	mirai000
+202.209.203.69	mirai001.intrigger.jp	mirai001
+202.209.203.70	mirai002.intrigger.jp	mirai002
+202.209.203.71	mirai003.intrigger.jp	mirai003
+202.209.203.72	mirai004.intrigger.jp	mirai004
+202.209.203.73	mirai005.intrigger.jp	mirai005
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

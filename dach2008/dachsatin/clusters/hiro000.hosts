@@ -1,0 +1,29 @@
+127.0.0.1	localhost.localdomain	localhost
+
+# Lucy's IP address used while installation
+10.0.1.240	hiro-lucy.net.hiroshima-u.ac.jp	hiro-lucy
+
+# Private IPs
+
+# Global IPs
+133.41.10.239	hiro-charlie.net.hiroshima-u.ac.jp	hiro-charlie
+133.41.10.240	hiro-lucy.net.hiroshima-u.ac.jp	hiro-lucy
+133.41.10.241	hiro000.net.hiroshima-u.ac.jp	hiro000
+133.41.10.242	hiro001.net.hiroshima-u.ac.jp	hiro001
+133.41.10.243	hiro002.net.hiroshima-u.ac.jp	hiro002
+133.41.10.244	hiro003.net.hiroshima-u.ac.jp	hiro003
+133.41.10.245	hiro004.net.hiroshima-u.ac.jp	hiro004
+133.41.10.246	hiro005.net.hiroshima-u.ac.jp	hiro005
+133.41.10.247	hiro006.net.hiroshima-u.ac.jp	hiro006
+133.41.10.248	hiro007.net.hiroshima-u.ac.jp	hiro007
+133.41.10.249	hiro008.net.hiroshima-u.ac.jp	hiro008
+133.41.10.250	hiro009.net.hiroshima-u.ac.jp	hiro009
+133.41.10.251	hiro010.net.hiroshima-u.ac.jp	hiro010
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

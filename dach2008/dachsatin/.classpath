@@ -2,11 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="support-libs/ibis/bcel-5.1-fixed.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/commons-jxpath-1.1.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/commons-logging.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/commons-logging-api.jar"/>
-	<classpathentry kind="lib" path="support-libs/ibis/ibis-compile-2.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/ibis-io-2.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/ibis-poolinfo-2.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/ibis-server-2.2.jar"/>
@@ -17,13 +15,12 @@
 	<classpathentry kind="lib" path="support-libs/ibis/ipl-impl-nio-2.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/ipl-impl-tcp-2.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/jstun-0.6.1.jar"/>
-	<classpathentry kind="lib" path="support-libs/ibis/log4j-1.2.13.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/lrmc.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/satin-2.2-DC.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/sbbi-upnplib-1.0.2.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/smartsockets-1.21.jar"/>
-	<classpathentry kind="lib" path="support-libs/ibis/TGGraphLayout-JM.jar"/>
 	<classpathentry kind="lib" path="support-libs/ibis/trilead-ssh2-build213.jar"/>
-	<classpathentry kind="lib" path="support-libs/deploy/GAT-API.jar"/>
+	<classpathentry kind="lib" path="support-libs/deploy/GAT-API.jar" sourcepath="/javagat-2.0-trunk"/>
+	<classpathentry kind="lib" path="support-libs/log4j-1.2.13.jar"/>
 	<classpathentry kind="output" path="classes"/>
 </classpath>

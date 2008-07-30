@@ -1,0 +1,31 @@
+127.0.0.1	localhost.localdomain	localhost
+
+# Lucy's IP address used while installation
+133.9.245.67	okubo-lucy.yama.info.waseda.ac.jp	okubo-lucy
+
+# Private IPs
+
+# Global IPs
+133.9.245.66	okubo-charlie.yama.info.waseda.ac.jp	okubo-charlie
+133.9.245.68	okubo000.yama.info.waseda.ac.jp	okubo000
+133.9.245.69	okubo001.yama.info.waseda.ac.jp	okubo001
+133.9.245.70	okubo002.yama.info.waseda.ac.jp	okubo002
+133.9.245.71	okubo003.yama.info.waseda.ac.jp	okubo003
+133.9.245.72	okubo004.yama.info.waseda.ac.jp	okubo004
+133.9.245.73	okubo005.yama.info.waseda.ac.jp	okubo005
+133.9.245.74	okubo006.yama.info.waseda.ac.jp	okubo006
+133.9.245.75	okubo007.yama.info.waseda.ac.jp	okubo007
+133.9.245.76	okubo008.yama.info.waseda.ac.jp	okubo008
+133.9.245.77	okubo009.yama.info.waseda.ac.jp	okubo009
+133.9.245.78	okubo010.yama.info.waseda.ac.jp	okubo010
+133.9.245.79	okubo011.yama.info.waseda.ac.jp	okubo011
+133.9.245.80	okubo012.yama.info.waseda.ac.jp	okubo012
+133.9.245.81	okubo013.yama.info.waseda.ac.jp	okubo013
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

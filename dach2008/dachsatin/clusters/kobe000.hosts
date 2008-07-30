@@ -1,0 +1,29 @@
+127.0.0.1	localhost.localdomain	localhost
+
+# Lucy's IP address used while installation
+10.0.1.99	kobe-lucy.intrigger.scitec.kobe-u.ac.jp	kobe-lucy
+
+# Private IPs
+
+# Global IPs
+133.30.111.98	kobe-charlie.intrigger.scitec.kobe-u.ac.jp	kobe-charlie
+133.30.111.99	kobe-lucy.intrigger.scitec.kobe-u.ac.jp	kobe-lucy
+133.30.111.100	kobe000.intrigger.scitec.kobe-u.ac.jp	kobe000
+133.30.111.101	kobe001.intrigger.scitec.kobe-u.ac.jp	kobe001
+133.30.111.102	kobe002.intrigger.scitec.kobe-u.ac.jp	kobe002
+133.30.111.103	kobe003.intrigger.scitec.kobe-u.ac.jp	kobe003
+133.30.111.104	kobe004.intrigger.scitec.kobe-u.ac.jp	kobe004
+133.30.111.105	kobe005.intrigger.scitec.kobe-u.ac.jp	kobe005
+133.30.111.106	kobe006.intrigger.scitec.kobe-u.ac.jp	kobe006
+133.30.111.107	kobe007.intrigger.scitec.kobe-u.ac.jp	kobe007
+133.30.111.108	kobe008.intrigger.scitec.kobe-u.ac.jp	kobe008
+133.30.111.109	kobe009.intrigger.scitec.kobe-u.ac.jp	kobe009
+133.30.111.110	kobe010.intrigger.scitec.kobe-u.ac.jp	kobe010
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

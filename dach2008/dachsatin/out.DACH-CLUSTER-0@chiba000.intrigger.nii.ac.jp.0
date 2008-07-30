@@ -1,0 +1,374 @@
+In script on chiba000
+Creating output dir: /home/dach004/dachsatin-0.9/output
+Creating dir result: false
+Starting application on 185 nodes: 
+   chiba001.intrigger.nii.ac.jp
+Submitting DACH-0 to chiba001.intrigger.nii.ac.jp
+   chiba002.intrigger.nii.ac.jp
+Submitting DACH-1 to chiba002.intrigger.nii.ac.jp
+   chiba003.intrigger.nii.ac.jp
+Submitting DACH-2 to chiba003.intrigger.nii.ac.jp
+   chiba004.intrigger.nii.ac.jp
+Submitting DACH-3 to chiba004.intrigger.nii.ac.jp
+   chiba005.intrigger.nii.ac.jp
+Submitting DACH-4 to chiba005.intrigger.nii.ac.jp
+   chiba006.intrigger.nii.ac.jp
+Submitting DACH-5 to chiba006.intrigger.nii.ac.jp
+   chiba007.intrigger.nii.ac.jp
+Submitting DACH-6 to chiba007.intrigger.nii.ac.jp
+   chiba008.intrigger.nii.ac.jp
+Submitting DACH-7 to chiba008.intrigger.nii.ac.jp
+   chiba009.intrigger.nii.ac.jp
+Submitting DACH-8 to chiba009.intrigger.nii.ac.jp
+   chiba010.intrigger.nii.ac.jp
+Submitting DACH-9 to chiba010.intrigger.nii.ac.jp
+   chiba011.intrigger.nii.ac.jp
+Submitting DACH-10 to chiba011.intrigger.nii.ac.jp
+   chiba012.intrigger.nii.ac.jp
+Submitting DACH-11 to chiba012.intrigger.nii.ac.jp
+   chiba013.intrigger.nii.ac.jp
+Submitting DACH-12 to chiba013.intrigger.nii.ac.jp
+   chiba014.intrigger.nii.ac.jp
+Submitting DACH-13 to chiba014.intrigger.nii.ac.jp
+   chiba015.intrigger.nii.ac.jp
+Submitting DACH-14 to chiba015.intrigger.nii.ac.jp
+   chiba016.intrigger.nii.ac.jp
+Submitting DACH-15 to chiba016.intrigger.nii.ac.jp
+   chiba017.intrigger.nii.ac.jp
+Submitting DACH-16 to chiba017.intrigger.nii.ac.jp
+   chiba018.intrigger.nii.ac.jp
+Submitting DACH-17 to chiba018.intrigger.nii.ac.jp
+   chiba019.intrigger.nii.ac.jp
+Submitting DACH-18 to chiba019.intrigger.nii.ac.jp
+   chiba020.intrigger.nii.ac.jp
+Submitting DACH-19 to chiba020.intrigger.nii.ac.jp
+   chiba021.intrigger.nii.ac.jp
+Submitting DACH-20 to chiba021.intrigger.nii.ac.jp
+   chiba022.intrigger.nii.ac.jp
+Submitting DACH-21 to chiba022.intrigger.nii.ac.jp
+   chiba023.intrigger.nii.ac.jp
+Submitting DACH-22 to chiba023.intrigger.nii.ac.jp
+   chiba024.intrigger.nii.ac.jp
+Submitting DACH-23 to chiba024.intrigger.nii.ac.jp
+   chiba025.intrigger.nii.ac.jp
+Submitting DACH-24 to chiba025.intrigger.nii.ac.jp
+   chiba026.intrigger.nii.ac.jp
+Submitting DACH-25 to chiba026.intrigger.nii.ac.jp
+   chiba027.intrigger.nii.ac.jp
+Submitting DACH-26 to chiba027.intrigger.nii.ac.jp
+   chiba028.intrigger.nii.ac.jp
+Submitting DACH-27 to chiba028.intrigger.nii.ac.jp
+   chiba029.intrigger.nii.ac.jp
+Submitting DACH-28 to chiba029.intrigger.nii.ac.jp
+   chiba030.intrigger.nii.ac.jp
+Submitting DACH-29 to chiba030.intrigger.nii.ac.jp
+   chiba031.intrigger.nii.ac.jp
+Submitting DACH-30 to chiba031.intrigger.nii.ac.jp
+   chiba032.intrigger.nii.ac.jp
+Submitting DACH-31 to chiba032.intrigger.nii.ac.jp
+   chiba033.intrigger.nii.ac.jp
+Submitting DACH-32 to chiba033.intrigger.nii.ac.jp
+   chiba034.intrigger.nii.ac.jp
+Submitting DACH-33 to chiba034.intrigger.nii.ac.jp
+   chiba035.intrigger.nii.ac.jp
+Submitting DACH-34 to chiba035.intrigger.nii.ac.jp
+   chiba036.intrigger.nii.ac.jp
+Submitting DACH-35 to chiba036.intrigger.nii.ac.jp
+   chiba037.intrigger.nii.ac.jp
+Submitting DACH-36 to chiba037.intrigger.nii.ac.jp
+   chiba038.intrigger.nii.ac.jp
+Submitting DACH-37 to chiba038.intrigger.nii.ac.jp
+   chiba039.intrigger.nii.ac.jp
+Submitting DACH-38 to chiba039.intrigger.nii.ac.jp
+   chiba040.intrigger.nii.ac.jp
+Submitting DACH-39 to chiba040.intrigger.nii.ac.jp
+   chiba041.intrigger.nii.ac.jp
+Submitting DACH-40 to chiba041.intrigger.nii.ac.jp
+   chiba042.intrigger.nii.ac.jp
+Submitting DACH-41 to chiba042.intrigger.nii.ac.jp
+   chiba043.intrigger.nii.ac.jp
+Submitting DACH-42 to chiba043.intrigger.nii.ac.jp
+   chiba044.intrigger.nii.ac.jp
+Submitting DACH-43 to chiba044.intrigger.nii.ac.jp
+   chiba045.intrigger.nii.ac.jp
+Submitting DACH-44 to chiba045.intrigger.nii.ac.jp
+   chiba046.intrigger.nii.ac.jp
+Submitting DACH-45 to chiba046.intrigger.nii.ac.jp
+   chiba047.intrigger.nii.ac.jp
+Submitting DACH-46 to chiba047.intrigger.nii.ac.jp
+   chiba048.intrigger.nii.ac.jp
+Submitting DACH-47 to chiba048.intrigger.nii.ac.jp
+   chiba049.intrigger.nii.ac.jp
+Submitting DACH-48 to chiba049.intrigger.nii.ac.jp
+   chiba050.intrigger.nii.ac.jp
+Submitting DACH-49 to chiba050.intrigger.nii.ac.jp
+   chiba051.intrigger.nii.ac.jp
+Submitting DACH-50 to chiba051.intrigger.nii.ac.jp
+   chiba052.intrigger.nii.ac.jp
+Submitting DACH-51 to chiba052.intrigger.nii.ac.jp
+   chiba053.intrigger.nii.ac.jp
+Submitting DACH-52 to chiba053.intrigger.nii.ac.jp
+   chiba054.intrigger.nii.ac.jp
+Submitting DACH-53 to chiba054.intrigger.nii.ac.jp
+   chiba055.intrigger.nii.ac.jp
+Submitting DACH-54 to chiba055.intrigger.nii.ac.jp
+   chiba056.intrigger.nii.ac.jp
+Submitting DACH-55 to chiba056.intrigger.nii.ac.jp
+   chiba057.intrigger.nii.ac.jp
+Submitting DACH-56 to chiba057.intrigger.nii.ac.jp
+   chiba058.intrigger.nii.ac.jp
+Submitting DACH-57 to chiba058.intrigger.nii.ac.jp
+   chiba059.intrigger.nii.ac.jp
+Submitting DACH-58 to chiba059.intrigger.nii.ac.jp
+   chiba060.intrigger.nii.ac.jp
+Submitting DACH-59 to chiba060.intrigger.nii.ac.jp
+   chiba061.intrigger.nii.ac.jp
+Submitting DACH-60 to chiba061.intrigger.nii.ac.jp
+   chiba062.intrigger.nii.ac.jp
+Submitting DACH-61 to chiba062.intrigger.nii.ac.jp
+   chiba063.intrigger.nii.ac.jp
+Submitting DACH-62 to chiba063.intrigger.nii.ac.jp
+   chiba064.intrigger.nii.ac.jp
+Submitting DACH-63 to chiba064.intrigger.nii.ac.jp
+   chiba065.intrigger.nii.ac.jp
+Submitting DACH-64 to chiba065.intrigger.nii.ac.jp
+   chiba066.intrigger.nii.ac.jp
+Submitting DACH-65 to chiba066.intrigger.nii.ac.jp
+   chiba067.intrigger.nii.ac.jp
+Submitting DACH-66 to chiba067.intrigger.nii.ac.jp
+   chiba068.intrigger.nii.ac.jp
+Submitting DACH-67 to chiba068.intrigger.nii.ac.jp
+   chiba069.intrigger.nii.ac.jp
+Submitting DACH-68 to chiba069.intrigger.nii.ac.jp
+   chiba100.intrigger.nii.ac.jp
+Submitting DACH-69 to chiba100.intrigger.nii.ac.jp
+   chiba100.intrigger.nii.ac.jp
+Submitting DACH-70 to chiba100.intrigger.nii.ac.jp
+   chiba101.intrigger.nii.ac.jp
+Submitting DACH-71 to chiba101.intrigger.nii.ac.jp
+   chiba101.intrigger.nii.ac.jp
+Submitting DACH-72 to chiba101.intrigger.nii.ac.jp
+   chiba102.intrigger.nii.ac.jp
+Submitting DACH-73 to chiba102.intrigger.nii.ac.jp
+   chiba102.intrigger.nii.ac.jp
+Submitting DACH-74 to chiba102.intrigger.nii.ac.jp
+   chiba103.intrigger.nii.ac.jp
+Submitting DACH-75 to chiba103.intrigger.nii.ac.jp
+   chiba103.intrigger.nii.ac.jp
+Submitting DACH-76 to chiba103.intrigger.nii.ac.jp
+   chiba104.intrigger.nii.ac.jp
+Submitting DACH-77 to chiba104.intrigger.nii.ac.jp
+   chiba104.intrigger.nii.ac.jp
+Submitting DACH-78 to chiba104.intrigger.nii.ac.jp
+   chiba105.intrigger.nii.ac.jp
+Submitting DACH-79 to chiba105.intrigger.nii.ac.jp
+   chiba105.intrigger.nii.ac.jp
+Submitting DACH-80 to chiba105.intrigger.nii.ac.jp
+   chiba106.intrigger.nii.ac.jp
+Submitting DACH-81 to chiba106.intrigger.nii.ac.jp
+   chiba106.intrigger.nii.ac.jp
+Submitting DACH-82 to chiba106.intrigger.nii.ac.jp
+   chiba107.intrigger.nii.ac.jp
+Submitting DACH-83 to chiba107.intrigger.nii.ac.jp
+   chiba107.intrigger.nii.ac.jp
+Submitting DACH-84 to chiba107.intrigger.nii.ac.jp
+   chiba108.intrigger.nii.ac.jp
+Submitting DACH-85 to chiba108.intrigger.nii.ac.jp
+   chiba108.intrigger.nii.ac.jp
+Submitting DACH-86 to chiba108.intrigger.nii.ac.jp
+   chiba109.intrigger.nii.ac.jp
+Submitting DACH-87 to chiba109.intrigger.nii.ac.jp
+   chiba109.intrigger.nii.ac.jp
+Submitting DACH-88 to chiba109.intrigger.nii.ac.jp
+   chiba110.intrigger.nii.ac.jp
+Submitting DACH-89 to chiba110.intrigger.nii.ac.jp
+   chiba110.intrigger.nii.ac.jp
+Submitting DACH-90 to chiba110.intrigger.nii.ac.jp
+   chiba111.intrigger.nii.ac.jp
+Submitting DACH-91 to chiba111.intrigger.nii.ac.jp
+   chiba111.intrigger.nii.ac.jp
+Submitting DACH-92 to chiba111.intrigger.nii.ac.jp
+   chiba112.intrigger.nii.ac.jp
+Submitting DACH-93 to chiba112.intrigger.nii.ac.jp
+   chiba112.intrigger.nii.ac.jp
+Submitting DACH-94 to chiba112.intrigger.nii.ac.jp
+   chiba113.intrigger.nii.ac.jp
+Submitting DACH-95 to chiba113.intrigger.nii.ac.jp
+   chiba113.intrigger.nii.ac.jp
+Submitting DACH-96 to chiba113.intrigger.nii.ac.jp
+   chiba114.intrigger.nii.ac.jp
+Submitting DACH-97 to chiba114.intrigger.nii.ac.jp
+   chiba114.intrigger.nii.ac.jp
+Submitting DACH-98 to chiba114.intrigger.nii.ac.jp
+   chiba115.intrigger.nii.ac.jp
+Submitting DACH-99 to chiba115.intrigger.nii.ac.jp
+   chiba115.intrigger.nii.ac.jp
+Submitting DACH-100 to chiba115.intrigger.nii.ac.jp
+   chiba116.intrigger.nii.ac.jp
+Submitting DACH-101 to chiba116.intrigger.nii.ac.jp
+   chiba116.intrigger.nii.ac.jp
+Submitting DACH-102 to chiba116.intrigger.nii.ac.jp
+   chiba117.intrigger.nii.ac.jp
+Submitting DACH-103 to chiba117.intrigger.nii.ac.jp
+   chiba117.intrigger.nii.ac.jp
+Submitting DACH-104 to chiba117.intrigger.nii.ac.jp
+   chiba118.intrigger.nii.ac.jp
+Submitting DACH-105 to chiba118.intrigger.nii.ac.jp
+   chiba118.intrigger.nii.ac.jp
+Submitting DACH-106 to chiba118.intrigger.nii.ac.jp
+   chiba119.intrigger.nii.ac.jp
+Submitting DACH-107 to chiba119.intrigger.nii.ac.jp
+   chiba119.intrigger.nii.ac.jp
+Submitting DACH-108 to chiba119.intrigger.nii.ac.jp
+   chiba120.intrigger.nii.ac.jp
+Submitting DACH-109 to chiba120.intrigger.nii.ac.jp
+   chiba120.intrigger.nii.ac.jp
+Submitting DACH-110 to chiba120.intrigger.nii.ac.jp
+   chiba121.intrigger.nii.ac.jp
+Submitting DACH-111 to chiba121.intrigger.nii.ac.jp
+   chiba121.intrigger.nii.ac.jp
+Submitting DACH-112 to chiba121.intrigger.nii.ac.jp
+   chiba122.intrigger.nii.ac.jp
+Submitting DACH-113 to chiba122.intrigger.nii.ac.jp
+   chiba122.intrigger.nii.ac.jp
+Submitting DACH-114 to chiba122.intrigger.nii.ac.jp
+   chiba123.intrigger.nii.ac.jp
+Submitting DACH-115 to chiba123.intrigger.nii.ac.jp
+   chiba123.intrigger.nii.ac.jp
+Submitting DACH-116 to chiba123.intrigger.nii.ac.jp
+   chiba124.intrigger.nii.ac.jp
+Submitting DACH-117 to chiba124.intrigger.nii.ac.jp
+   chiba124.intrigger.nii.ac.jp
+Submitting DACH-118 to chiba124.intrigger.nii.ac.jp
+   chiba125.intrigger.nii.ac.jp
+Submitting DACH-119 to chiba125.intrigger.nii.ac.jp
+   chiba125.intrigger.nii.ac.jp
+Submitting DACH-120 to chiba125.intrigger.nii.ac.jp
+   chiba126.intrigger.nii.ac.jp
+Submitting DACH-121 to chiba126.intrigger.nii.ac.jp
+   chiba126.intrigger.nii.ac.jp
+Submitting DACH-122 to chiba126.intrigger.nii.ac.jp
+   chiba127.intrigger.nii.ac.jp
+Submitting DACH-123 to chiba127.intrigger.nii.ac.jp
+   chiba127.intrigger.nii.ac.jp
+Submitting DACH-124 to chiba127.intrigger.nii.ac.jp
+   chiba128.intrigger.nii.ac.jp
+Submitting DACH-125 to chiba128.intrigger.nii.ac.jp
+   chiba128.intrigger.nii.ac.jp
+Submitting DACH-126 to chiba128.intrigger.nii.ac.jp
+   chiba129.intrigger.nii.ac.jp
+Submitting DACH-127 to chiba129.intrigger.nii.ac.jp
+   chiba129.intrigger.nii.ac.jp
+Submitting DACH-128 to chiba129.intrigger.nii.ac.jp
+   chiba130.intrigger.nii.ac.jp
+Submitting DACH-129 to chiba130.intrigger.nii.ac.jp
+   chiba130.intrigger.nii.ac.jp
+Submitting DACH-130 to chiba130.intrigger.nii.ac.jp
+   chiba131.intrigger.nii.ac.jp
+Submitting DACH-131 to chiba131.intrigger.nii.ac.jp
+   chiba131.intrigger.nii.ac.jp
+Submitting DACH-132 to chiba131.intrigger.nii.ac.jp
+   chiba132.intrigger.nii.ac.jp
+Submitting DACH-133 to chiba132.intrigger.nii.ac.jp
+   chiba132.intrigger.nii.ac.jp
+Submitting DACH-134 to chiba132.intrigger.nii.ac.jp
+   chiba133.intrigger.nii.ac.jp
+Submitting DACH-135 to chiba133.intrigger.nii.ac.jp
+   chiba133.intrigger.nii.ac.jp
+Submitting DACH-136 to chiba133.intrigger.nii.ac.jp
+   chiba134.intrigger.nii.ac.jp
+Submitting DACH-137 to chiba134.intrigger.nii.ac.jp
+   chiba134.intrigger.nii.ac.jp
+Submitting DACH-138 to chiba134.intrigger.nii.ac.jp
+   chiba135.intrigger.nii.ac.jp
+Submitting DACH-139 to chiba135.intrigger.nii.ac.jp
+   chiba135.intrigger.nii.ac.jp
+Submitting DACH-140 to chiba135.intrigger.nii.ac.jp
+   chiba136.intrigger.nii.ac.jp
+Submitting DACH-141 to chiba136.intrigger.nii.ac.jp
+   chiba136.intrigger.nii.ac.jp
+Submitting DACH-142 to chiba136.intrigger.nii.ac.jp
+   chiba137.intrigger.nii.ac.jp
+Submitting DACH-143 to chiba137.intrigger.nii.ac.jp
+   chiba137.intrigger.nii.ac.jp
+Submitting DACH-144 to chiba137.intrigger.nii.ac.jp
+   chiba138.intrigger.nii.ac.jp
+Submitting DACH-145 to chiba138.intrigger.nii.ac.jp
+   chiba138.intrigger.nii.ac.jp
+Submitting DACH-146 to chiba138.intrigger.nii.ac.jp
+   chiba139.intrigger.nii.ac.jp
+Submitting DACH-147 to chiba139.intrigger.nii.ac.jp
+   chiba139.intrigger.nii.ac.jp
+Submitting DACH-148 to chiba139.intrigger.nii.ac.jp
+   chiba140.intrigger.nii.ac.jp
+Submitting DACH-149 to chiba140.intrigger.nii.ac.jp
+   chiba140.intrigger.nii.ac.jp
+Submitting DACH-150 to chiba140.intrigger.nii.ac.jp
+   chiba141.intrigger.nii.ac.jp
+Submitting DACH-151 to chiba141.intrigger.nii.ac.jp
+   chiba141.intrigger.nii.ac.jp
+Submitting DACH-152 to chiba141.intrigger.nii.ac.jp
+   chiba142.intrigger.nii.ac.jp
+Submitting DACH-153 to chiba142.intrigger.nii.ac.jp
+   chiba142.intrigger.nii.ac.jp
+Submitting DACH-154 to chiba142.intrigger.nii.ac.jp
+   chiba143.intrigger.nii.ac.jp
+Submitting DACH-155 to chiba143.intrigger.nii.ac.jp
+   chiba143.intrigger.nii.ac.jp
+Submitting DACH-156 to chiba143.intrigger.nii.ac.jp
+   chiba144.intrigger.nii.ac.jp
+Submitting DACH-157 to chiba144.intrigger.nii.ac.jp
+   chiba144.intrigger.nii.ac.jp
+Submitting DACH-158 to chiba144.intrigger.nii.ac.jp
+   chiba145.intrigger.nii.ac.jp
+Submitting DACH-159 to chiba145.intrigger.nii.ac.jp
+   chiba145.intrigger.nii.ac.jp
+Submitting DACH-160 to chiba145.intrigger.nii.ac.jp
+   chiba146.intrigger.nii.ac.jp
+Submitting DACH-161 to chiba146.intrigger.nii.ac.jp
+   chiba146.intrigger.nii.ac.jp
+Submitting DACH-162 to chiba146.intrigger.nii.ac.jp
+   chiba147.intrigger.nii.ac.jp
+Submitting DACH-163 to chiba147.intrigger.nii.ac.jp
+   chiba147.intrigger.nii.ac.jp
+Submitting DACH-164 to chiba147.intrigger.nii.ac.jp
+   chiba148.intrigger.nii.ac.jp
+Submitting DACH-165 to chiba148.intrigger.nii.ac.jp
+   chiba148.intrigger.nii.ac.jp
+Submitting DACH-166 to chiba148.intrigger.nii.ac.jp
+   chiba149.intrigger.nii.ac.jp
+Submitting DACH-167 to chiba149.intrigger.nii.ac.jp
+   chiba149.intrigger.nii.ac.jp
+Submitting DACH-168 to chiba149.intrigger.nii.ac.jp
+   chiba150.intrigger.nii.ac.jp
+Submitting DACH-169 to chiba150.intrigger.nii.ac.jp
+   chiba150.intrigger.nii.ac.jp
+Submitting DACH-170 to chiba150.intrigger.nii.ac.jp
+   chiba151.intrigger.nii.ac.jp
+Submitting DACH-171 to chiba151.intrigger.nii.ac.jp
+   chiba151.intrigger.nii.ac.jp
+Submitting DACH-172 to chiba151.intrigger.nii.ac.jp
+   chiba152.intrigger.nii.ac.jp
+Submitting DACH-173 to chiba152.intrigger.nii.ac.jp
+   chiba152.intrigger.nii.ac.jp
+Submitting DACH-174 to chiba152.intrigger.nii.ac.jp
+   chiba153.intrigger.nii.ac.jp
+Submitting DACH-175 to chiba153.intrigger.nii.ac.jp
+   chiba153.intrigger.nii.ac.jp
+Submitting DACH-176 to chiba153.intrigger.nii.ac.jp
+   chiba154.intrigger.nii.ac.jp
+Submitting DACH-177 to chiba154.intrigger.nii.ac.jp
+   chiba154.intrigger.nii.ac.jp
+Submitting DACH-178 to chiba154.intrigger.nii.ac.jp
+   chiba155.intrigger.nii.ac.jp
+Submitting DACH-179 to chiba155.intrigger.nii.ac.jp
+   chiba155.intrigger.nii.ac.jp
+Submitting DACH-180 to chiba155.intrigger.nii.ac.jp
+   chiba156.intrigger.nii.ac.jp
+Submitting DACH-181 to chiba156.intrigger.nii.ac.jp
+   chiba156.intrigger.nii.ac.jp
+Submitting DACH-182 to chiba156.intrigger.nii.ac.jp
+   chiba157.intrigger.nii.ac.jp
+Submitting DACH-183 to chiba157.intrigger.nii.ac.jp
+   chiba157.intrigger.nii.ac.jp
+Submitting DACH-184 to chiba157.intrigger.nii.ac.jp

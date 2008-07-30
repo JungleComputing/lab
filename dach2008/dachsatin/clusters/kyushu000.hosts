@@ -1,0 +1,28 @@
+127.0.0.1	localhost.localdomain	localhost
+
+# Lucy's IP address used while installation
+10.0.1.3	kyushu-lucy.bioinfo.kyushu-u.ac.jp	kyushu-lucy
+
+# Private IPs
+
+# Global IPs
+133.5.189.2	kyushu-charlie.bioinfo.kyushu-u.ac.jp	kyushu-charlie
+133.5.189.3	kyushu-lucy.bioinfo.kyushu-u.ac.jp	kyushu-lucy
+133.5.189.10	kyushu000.bioinfo.kyushu-u.ac.jp	kyushu000
+133.5.189.11	kyushu001.bioinfo.kyushu-u.ac.jp	kyushu001
+133.5.189.12	kyushu002.bioinfo.kyushu-u.ac.jp	kyushu002
+133.5.189.13	kyushu003.bioinfo.kyushu-u.ac.jp	kyushu003
+133.5.189.14	kyushu004.bioinfo.kyushu-u.ac.jp	kyushu004
+133.5.189.15	kyushu005.bioinfo.kyushu-u.ac.jp	kyushu005
+133.5.189.16	kyushu006.bioinfo.kyushu-u.ac.jp	kyushu006
+133.5.189.17	kyushu007.bioinfo.kyushu-u.ac.jp	kyushu007
+133.5.189.18	kyushu008.bioinfo.kyushu-u.ac.jp	kyushu008
+133.5.189.19	kyushu009.bioinfo.kyushu-u.ac.jp	kyushu009
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts

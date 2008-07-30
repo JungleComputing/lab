@@ -3,7 +3,7 @@
 	Build file for DachSatin program
     </description>
 
-    <property name="version" value="0.8" />
+    <property name="version" value="0.9" />
 
     <property name="satinc-flags" value="-keep"/>
     <property name="dist-name" value="${ant.project.name}-${version}" />
@@ -33,12 +33,17 @@
 
         <!-- copy jars in external directory to lib -->
         <copy todir="${lib}">
-            <fileset dir="${external}" includes="**/*.jar" />
+            <fileset dir="${external}" includes="ibis/*.jar" />
+            <fileset dir="${external}" includes="deploy/**/*.jar" />
+            <fileset dir="${external}" includes="*.jar" />
         </copy>
 
         <path id="default.classpath">
             <fileset dir="${lib}">
                 <include name="**/*.jar" />
+            </fileset>
+            <fileset dir="${external}">
+                <include name="compile/*.jar" />
             </fileset>
             <pathelement path="${tmp}" />
         </path>
@@ -97,25 +102,25 @@
         <delete dir="${javadoc}" />
     </target>
 
-    <target name="dist-bin" depends="build">
+    <target name="bin.zip" depends="build">
         <delete file="${dist-name}-bin.zip" />
         <zip destfile="${dist-name}-bin.zip">
             <zipfileset dir="."
                         prefix="${dist-name}"
-                        includes="lib/*.jar,ibis.properties,log4j.properties,smartsockets.properties"/>
+                        includes="lib/*.jar,lib/**/*.jar,ibis.properties,log4j.properties,smartsockets.properties,clusters/*.cluster"/>
             <zipfileset dir="."
                         prefix="${dist-name}"
                         filemode="755"
-                        includes="bin/**,scripts/**" />
+                        includes="bin/master.sh" />
         </zip>
     </target>
 
-    <target name="dist-src" depends="clean">
+    <target name="src.zip" depends="clean">
         <delete file="${dist-name}-src.zip" />
 
         <zip destfile="${dist-name}-src.zip">
             <zipfileset dir="."                         
-                        includes="src/**,scripts/**,support-libs/**,ibis.properties.example,log4j.properties,smartsockets.properties.example,build.xml"
+                        includes="src/**,scripts/**,support-libs/**,ibis.properties.example,log4j.properties,smartsockets.properties.example,build.xml,clusters/**"
                         prefix="${dist-name}" />
 
             <zipfileset dir="."
@@ -125,7 +130,7 @@
         </zip>
     </target>
 
-    <target name="dist" depends="dist-src,dist-bin">
+    <target name="zip" depends="src.zip,bin.zip">
     </target>
 
 </project>
