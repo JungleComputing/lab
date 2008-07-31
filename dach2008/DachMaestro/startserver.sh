@@ -3,6 +3,8 @@
 #SERVERHOST=babylon.cs.vu.nl
 SERVERHOST=fs0.das3.cs.vu.nl
 
+source $HOME/.bashrc
+
 # Check setting of DACHMAESTRO_HOME
 if [ -z "$DACHMAESTRO_HOME" ];  then
     echo "please set DACHMAESTRO_HOME to the location of your Maestro installation" 1>&2

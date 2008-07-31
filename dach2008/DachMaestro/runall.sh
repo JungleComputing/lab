@@ -1,7 +1,10 @@
 #!/bin/sh
 
 #SERVERHOST=babylon.few.vu.nl
-SERVERHOST=fs0.das3.cs.vu.nl
+#SERVERHOST=fs0.das3.cs.vu.nl
+SERVERHOST=imade000.kuis.kyoto-u.ac.jp
+
+source $HOME/.bashrc
 
 # Check setting of DACHMAESTRO_HOME
 if [ -z "$DACHMAESTRO_HOME" ];  then
@@ -27,7 +30,7 @@ add_to_libclasspath "${DACHMAESTRO_HOME}"/lib
 
 # And finally, run ...
 #    -Dsmartsockets.file="$DACHMAESTRO_HOME"/smartsockets.properties \
-exec java \
+exec $JAVA \
     -server \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
