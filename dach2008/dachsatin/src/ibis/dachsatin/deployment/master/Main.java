@@ -1,21 +1,19 @@
 package ibis.dachsatin.deployment.master;
 
 import ibis.dachsatin.deployment.util.Cluster;
+import ibis.dachsatin.deployment.util.DachAPI;
 import ibis.dachsatin.deployment.util.JobController;
 import ibis.dachsatin.deployment.util.JobHandler;
 import ibis.dachsatin.deployment.util.Problem;
 import ibis.dachsatin.util.FileUtils;
 import ibis.server.Server;
 import ibis.server.ServerProperties;
-import ibis.util.RunProcess;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.ListIterator;
 import java.util.Properties;
 
 import org.gridlab.gat.GATObjectCreationException;
@@ -40,10 +38,7 @@ public class Main {
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
 	
-	private static String dachApi = "/home/dach911/dach_api/dach_api";
-
-	private static String [] getProblem = { dachApi, "--get_problem", "" };
-	private static String [] returnResult = { dachApi, "--check_ans", "", "" };
+	private static DachAPI dachAPI = new DachAPI();
 	
 	private static int dryRun = -1;
 	
@@ -73,15 +68,17 @@ public class Main {
 	private static LinkedList<Cluster> clusters = new LinkedList<Cluster>();
 
 	// This contains all the problem IDs (listed on the command line)
-	private static LinkedList<Problem> problems = new LinkedList<Problem>();
-
+	private static LinkedList<Problem> problems; 
+	
 	// This will be created once the required number of threads (or jobs) is
 	// known.
 	private static JobController controller;
 
 	// The next free job number
 	private static int jobNo = 0;
-
+	
+	private static long start;
+	
 	private static String getOuputDir() {
 
 		File tmp = new File(currentDir + File.separator + "output");
@@ -148,8 +145,22 @@ public class Main {
 		arguments.add(c.name);
 
 		arguments.add("-server");
-		arguments.add(getServerAddress());
+		arguments.add(server.getLocalAddress());
 
+		String [] hubs = server.getHubs();
+		
+		if (hubs != null && hubs.length > 0) { 
+			arguments.add("-hubs");
+			
+			String tmp = hubs[0];
+			
+			for (int h=1;h<hubs.length;h++) { 
+				tmp += "," + hubs[h];
+			}
+			
+			arguments.add(tmp);
+		}
+		
 		arguments.add("-exec");
 		arguments.add(exec);
 
@@ -226,61 +237,11 @@ public class Main {
 		doSubmit(c);
 	}
 	
-	private static void checkFiles(LinkedList<File> files) { 
-		
-		ListIterator<File> itt = files.listIterator();
-		
-		while (itt.hasNext()) { 
-			
-			File f = itt.next();
-			
-			if (f.exists()) {
-				System.out.println("Found result file: " + f.getPath());				
-				itt.remove();
-			} else { 
-				System.out.println("Have not found result file: " + f.getPath());				
-			}
-		}
-		
-		return;		
-	} 
 	
-	private static boolean waitForFiles(long timeout) { 
-		
-		LinkedList<File> files = new LinkedList<File>();
-		
-		for (Problem p : problems) { 			
-			files.addLast(p.outputFile);
-		}
-
-		long end = System.currentTimeMillis() + timeout;
-		
-		do { 
-			checkFiles(files);
-			
-			if (files.size() == 0) { 
-				return true;
-			} else {
-				try { 
-					Thread.sleep(1000);
-				} catch (Exception e) {
-					// ignore
-				}
-			}
-		
-		} while (System.currentTimeMillis() < end);
-		
-		return false;		
-	}
 	
 	private static void submitMaster(Cluster c) throws Exception {
 		c.setID("m." + (jobNo++) + "." + c.name);
 		doSubmit(c);
-		controller.waitUntilActive(c.getID(), 60000);
-		
-		if (!waitForFiles(60000)) { 
-			throw new Exception("Failed to find output files of the master!");
-		}
 	}
 	
 	private static void createServer() { 
@@ -308,39 +269,76 @@ public class Main {
 	     System.out.println("Create Ibis server on: " + server.getLocalAddress());
 	}
 	
-	private static void getProblem(String name) throws Exception { 
-		
-		getProblem[2] = name;
-		
-		System.out.println("Retrieving problem using " + Arrays.toString(getProblem));
-		
-		RunProcess p = new RunProcess(getProblem);
-		p.run();
-		int result = p.getExitStatus();
-		
-		if (result != 0) { 
-			throw new Exception("Failed to retrieve problem!");			
+	private static int time() { 
+		return (int)((System.currentTimeMillis() - start) / 1000);
+	}
+	
+	private static LinkedList<File> getOuputFiles() { 
+		LinkedList<File> files = new LinkedList<File>();
+
+		for (Problem p : problems) { 			
+			files.addLast(new File(p.outputFile));
 		}
 
-		String output = new String(p.getStdout()).trim();
-		
-		System.out.println("Result: " +  output);
-		
-		int index = output.indexOf(' ');
-		
-		if (index <= 0) { 
-			throw new Exception("Failed to understand output!");
+		return files;
+	}
+
+	private static LinkedList<File> getDoneFiles() { 
+		LinkedList<File> files = new LinkedList<File>();
+
+		for (Problem p : problems) { 			
+			files.addLast(new File(p.doneFile));
 		}
 
-		String ID = output.substring(0, index).trim();
-		String dir = output.substring(index).trim();
-		File file = new File(homeDir + File.separator + ID + ".txt");
+		return files;
+	}
+	
+	private static Problem getProblemUsingDoneFile(File f) { 
 		
-		problems.add(new Problem(ID, dir, file));
+		String name = f.getPath();
+		
+		for (Problem p : problems) { 
+			if (name.equals(p.doneFile)) { 
+				return p;
+			}
+		}
+		
+		return null;
+	}
+	
+	private static void processResults(LinkedList<File> files) { 
+		
+		if (files.size() == 0) { 
+			return;
+		}
+		
+		System.out.println(time() + ": " + files.size() + " results to process:");
+			
+		for (File f : files) { 
+			
+			Problem p = getProblemUsingDoneFile(f);
+			
+			if (p == null) { 
+				System.out.println("EEP: failed to find problem matching result file " + f);
+				System.exit(1);
+			}
+			
+			System.out.println(time() + ": Returning result " + p.ID);
+			
+			try {
+				String out = dachAPI.provideResult(p);
+				System.out.println(time() + ": DACH RESULT " + out);
+			} catch (Exception e) {
+				System.err.println(time() + ": DACH RESULT FAILED!");
+				e.printStackTrace(System.err);
+			}
+		}
 	}
 	
 	public static void main(String[] args) {
 
+		start = System.currentTimeMillis();
+		
 		LinkedList<String> problemNames = new LinkedList<String>();
 		
 		for (int i = 0; i < args.length; i++) {
@@ -424,14 +422,13 @@ public class Main {
 			System.err.println("No problems specified!");
 			System.exit(1);
 		}
-		
-		for (String p : problemNames) { 
-			try {
-				getProblem(p);
-			} catch (Exception e) {
-				System.err.println("Failed to retrieve problem: " + p);
-				e.printStackTrace();
-			}
+
+		try {			
+			problems = dachAPI.getProblems(problemNames, homeDir);
+		} catch (Exception e) {
+			System.err.println("Failed to retrieve problems!");
+			e.printStackTrace();
+			System.exit(1);
 		}
 		
 		if (problems.size() == 0) {
@@ -444,7 +441,12 @@ public class Main {
 			System.exit(1);
 		}
 
-		createServer();
+		outputDir = getOuputDir();
+
+		if (outputDir == null) {
+			System.err.println("Failed to create output dir!");
+			System.exit(1);
+		}
 		
 		try {
 			masterCluster = Cluster.read(masterClusterFile);
@@ -464,18 +466,13 @@ public class Main {
 			}
 		}
 
-		outputDir = getOuputDir();
-
-		if (outputDir == null) {
-			System.err.println("Failed to create output dir!");
-			System.exit(1);
-		}
-
+		createServer();
+		
 		localSubmitThreads = Math.min(submitThreads, clusters.size());
 
 		controller = new JobController(localSubmitThreads);
 
-		System.out.println("Starting Master on cluster: " + masterCluster.name);
+		System.out.println(time() + ": Starting Master on cluster: " + masterCluster.name);
 
 		try {
 			submitMaster(masterCluster);
@@ -483,8 +480,22 @@ public class Main {
 			e.printStackTrace();
 			System.exit(1);
 		} 
+
+		System.out.println(time() + ": Waiting for master to start....");
 		
-		System.out.println("Starting workers on " + clusters.size() + " clusters: ");
+		try {
+			controller.waitUntilActive(masterCluster.getID(), 60000);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+
+		LinkedList<File> files = getOuputFiles();
+		
+		while (!FileUtils.waitForFiles(files, 10000)) { 
+			System.out.println(time() + ": Master not completely started yet!");
+		}
+
+		System.out.println(time() + ": Starting workers on " + clusters.size() + " clusters: ");
 		
 		for (Cluster c : clusters) {
 
@@ -497,8 +508,24 @@ public class Main {
 				System.exit(1);
 			} 
 		}
-
-		controller.waitUntilDone();		
+	
+		files = getDoneFiles();
+		
+		while (files.size() > 0) { 
+		
+			LinkedList<File> results = FileUtils.selectExistingFiles(files);
+			processResults(results);
+			
+			if (files.size() > 0) {
+				try { 
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// ignored
+				}		
+			}	
+		}
+		
+		System.out.println(time() + ": Master is done -- all results are in!");
 		
 		server.end(10000);
 	}

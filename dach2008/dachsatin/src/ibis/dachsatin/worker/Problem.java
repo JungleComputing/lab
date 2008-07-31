@@ -1,6 +1,7 @@
 package ibis.dachsatin.worker;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -26,7 +27,7 @@ public class Problem {
 		out.flush();
 	}
 
-	public void done() { 
+	public void done() throws IOException { 
 		
 		if (out != null) {
 			try { 
@@ -36,5 +37,7 @@ public class Problem {
 				// ignore ?
 			}
 		}
+		
+		new File(ID + ".done").createNewFile();
 	}
 }

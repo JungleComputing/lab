@@ -2,6 +2,9 @@ package ibis.dachsatin.util;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
 
 public class FileUtils {
 
@@ -110,4 +113,60 @@ public class FileUtils {
 		return deleteDirectory(new File(dir));
 	}
 	
+	public static boolean checkFiles(List<File> files) { 
+		
+		for (File f : files) { 
+			
+			if (!f.exists()) {
+				System.out.println("Have not found result file: " + f.getPath());				
+				return false;
+			}
+		}
+		
+		return true;	
+	} 
+	
+	
+	
+	public static boolean waitForFiles(List<File> files, long timeout) { 
+		
+		long end = System.currentTimeMillis() + timeout;
+		
+		do { 
+			if (checkFiles(files)) { 
+				return true;
+			}
+			
+			try { 
+				Thread.sleep(1000);
+			} catch (Exception e) {
+				// ignore
+			}
+			
+		} while (System.currentTimeMillis() < end);
+		
+		return checkFiles(files);
+	}
+
+	public static LinkedList<File> selectExistingFiles(List<File> files) { 
+		
+		LinkedList<File> result = new LinkedList<File>();
+		
+		ListIterator<File> itt = files.listIterator();
+		
+		while (itt.hasNext()) { 
+			
+			File file = itt.next();
+			
+			if (file.exists()) {
+				result.add(file);
+				itt.remove();
+			}
+		}
+		
+		return result;
+	}
+
+
 }
+

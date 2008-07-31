@@ -6,21 +6,16 @@ public class Problem {
 
 	public final String ID;
 	public final String directory;	
-	public final File outputFile;
 	
-	public Problem(String ID, String name, File file) { 
+	public final String outputFile;	
+	public final String doneFile;	
+	
+	public Problem(String ID, String name, String homeDir) { 
 		this.ID = ID;
 		this.directory = name;		
-		this.outputFile = file;
-	}
-	
-	public boolean outputExists() { 
 		
-		if (outputFile == null) {
-			return false;
-		}
-		
-		return outputFile.exists();
+		outputFile = homeDir + File.separator + ID + ".txt";
+		doneFile = homeDir + File.separator + ID + ".done";
 	}
 }
 

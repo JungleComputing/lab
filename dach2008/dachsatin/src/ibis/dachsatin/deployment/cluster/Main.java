@@ -4,12 +4,15 @@ import ibis.dachsatin.deployment.util.Cluster;
 import ibis.dachsatin.deployment.util.JobController;
 import ibis.dachsatin.deployment.util.JobHandler;
 import ibis.dachsatin.deployment.util.Problem;
+import ibis.server.Server;
+import ibis.server.ServerProperties;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Properties;
 
 import org.gridlab.gat.GATObjectCreationException;
 import org.gridlab.gat.URI;
@@ -23,7 +26,7 @@ public class Main {
 	
 	private static String cluster = null;    	
 	private static String pool = null;
-	private static String server = null;
+	private static String serverAddress = null;
 	private static String exec = "/home/dach/finder/dach.sh";
 	private static String copy = "/bin/cp";
 	private static String java = "/usr/local/jdk/bin/java";
@@ -31,6 +34,7 @@ public class Main {
 	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
+	private static String hubs = null;
 	
 	private static int dryRun = -1;
 	
@@ -49,6 +53,9 @@ public class Main {
 	
 	// This will be created once the required number of threads (or jobs) is known.
 	private static JobController controller;
+	
+	private static Server server;
+	private static int serverPort = 5678;
 	
 	private static String getOuputDir() { 
 				
@@ -79,7 +86,7 @@ public class Main {
 	private static HashMap<String, String> getProperties(String ID) { 
 	
 		HashMap<String, String> properties = new HashMap<String, String>();
-		properties.put("ibis.server.address", server);  
+		properties.put("ibis.server.address", serverAddress);  
 		properties.put("ibis.pool.name", pool); 
 		properties.put("satin.detailedStats", "true");
 		properties.put("dach.executable", exec); 
@@ -203,6 +210,33 @@ public class Main {
         }
 	}
 	
+	private static void createHub(String knownHubs) { 
+		
+		 Properties properties = new Properties();
+
+		 properties.put(ServerProperties.PORT, Integer.toString(serverPort));
+		 properties.setProperty(ServerProperties.START_HUB, "true");
+		 properties.setProperty(ServerProperties.HUB_ONLY, "true");
+		 properties.setProperty(ServerProperties.HUB_ADDRESSES, knownHubs);
+		 //properties.setProperty(ServerProperties.HUB_ADDRESS_FILE, file);
+		 
+		 properties.setProperty(ServerProperties.PRINT_EVENTS, "true");
+	     properties.setProperty(ServerProperties.PRINT_ERRORS, "true");
+	     properties.setProperty(ServerProperties.PRINT_STATS, "true");
+	     // properties.setProperty(ServerProperties.REMOTE, "true");
+
+	     try {
+	    	 server = new Server(properties);
+	     } catch (Throwable t) {
+	    	 System.err.println("Could not start Ibis Hub: " + t);
+	    	 System.exit(0);
+	     }
+	     
+	     System.out.println("Create Ibis hub on: " + server.getLocalAddress());
+	}
+	
+	
+	
     public static void main(String[] args) {
     	
     	for (int i=0;i<args.length;i++) { 
@@ -226,9 +260,11 @@ public class Main {
     		} else if (args[i].equals("-cluster") && i != args.length-1) { 
     			cluster = args[++i];
     		} else if (args[i].equals("-server") && i != args.length-1) { 
-    			server = args[++i];
+    			serverAddress = args[++i];
     		} else if (args[i].equals("-home") && i != args.length-1) { 
     			homeDir = args[++i];    	
+    		} else if (args[i].equals("-hubs") && i != args.length-1) { 
+    			hubs = args[++i];    	
     		} else if (args[i].equals("-threads") && i != args.length-1) { 
     			submitThreads = Integer.parseInt(args[++i]);
     		} else if (args[i].equals("-problem") && i != args.length-2) {
@@ -248,7 +284,7 @@ public class Main {
     		System.exit(0);
     	}
     	
-    	if (server == null) { 
+    	if (serverAddress == null) { 
     		System.err.println("Ibis server not set!");
     		System.exit(0);
     	}
@@ -298,6 +334,11 @@ public class Main {
     		System.exit(0);
     	}
     	
+    	if (hubs == null) { 
+    		System.err.println("No hubs specified!");
+    		System.exit(0);
+    	}
+    	
     	try { 
     		targets = Cluster.read(targetFile);
     	} catch (Exception e) { 
@@ -312,6 +353,8 @@ public class Main {
     		System.err.println("Failed to create output dir!");
     		System.exit(0);
     	}
+    	
+    	createHub(hubs);
     	
     	if (submitThreads > targets.nodes.size()) { 
     		submitThreads = targets.nodes.size();

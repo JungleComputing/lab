@@ -130,7 +130,12 @@ public class Main {
         }
         
         for (Problem p : problems.values()) { 
-        	p.done();
+        	try {
+				p.done();
+			} catch (IOException e) {
+				System.err.println("ERROR: Failed to close result file " + p.ID);
+				e.printStackTrace();
+			}
         }
     }
 
