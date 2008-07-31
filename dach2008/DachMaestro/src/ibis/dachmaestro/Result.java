@@ -1,12 +1,15 @@
 package ibis.dachmaestro;
 
+import java.io.Serializable;
+
 /**
  * The result of a comparison.
  * 
  * @author Kees van Reeuwijk
  *
  */
-class Result {
+class Result implements Serializable
+{
     /** The output of the comparison process. It may be null if there was an error. */
     final String result;
     

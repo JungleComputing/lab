@@ -143,7 +143,6 @@ class ProblemSetTask implements MapReduceTask
         }
         int serial = 0;
         for( FilePair pair: pairs ) {
-            System.out.println( "Submitting: " + pair );
             handler.submit( compareJob, pair, serial++ );
         }
     }
@@ -174,7 +173,6 @@ class ProblemSetTask implements MapReduceTask
     public void reduce( Object id, Object resultObject )
     {
         Result result = (Result) resultObject;
-        System.out.println( "Reduce: adding " + result + " to the result" );
         resultFile.append( result.result );
     }
 
