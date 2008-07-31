@@ -2,12 +2,15 @@ package ibis.dachsatin.deployment.util;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.ListIterator;
 
-public class JobController {
+public class JobController extends Thread {
 
 	private static final int TIMEOUT = 1000;
 	
-	private LinkedList<JobHandler> toSubmit = new LinkedList<JobHandler>();
+	private LinkedList<JobHandler> undelayed = new LinkedList<JobHandler>();
+
+	private LinkedList<JobHandler> delayed = new LinkedList<JobHandler>();
 	
 	private HashMap<String, JobHandler> active = new HashMap<String, JobHandler>();
 	
@@ -26,13 +29,31 @@ public class JobController {
 		}
 	}
 	
-	public synchronized void addJobToSubmit(JobHandler h) { 
-		toSubmit.addLast(h);
+	public synchronized void addJobToSubmit(JobHandler h) {
+
+		long time = System.currentTimeMillis();
+		
+		if (h.nextSubmissionTime() <= time) { 
+			undelayed.addLast(h);
+		} else { 
+			ListIterator<JobHandler> itt = delayed.listIterator();
+			
+			while (itt.hasNext()) { 
+				JobHandler tmp = itt.next();
+				
+				if (tmp.nextSubmissionTime() > h.nextSubmissionTime()) { 
+					itt.add(h);
+					break;
+				}
+			}
+		}
+		
 		notifyAll();
 	}
 	
 	protected synchronized JobHandler getJobToSubmit() { 
-		while (toSubmit.size() == 0 && !done) { 
+		
+		while (undelayed.size() == 0 && !done) { 
 			try { 
 				wait(TIMEOUT);
 			} catch (InterruptedException e) {
@@ -44,7 +65,7 @@ public class JobController {
 			return null;
 		}
 		
-		JobHandler h = toSubmit.removeFirst();
+		JobHandler h = undelayed.removeFirst();
 		active.put(h.ID, h);
 		return h;
 	}
@@ -82,7 +103,46 @@ public class JobController {
 	}
 	
 	public synchronized boolean hasJobs() { 
-		return toSubmit.size() > 0 || active.size() > 0 || stopped.size() > 0;
+		return delayed.size() > 0 || undelayed.size() > 0 
+			|| active.size() > 0 || stopped.size() > 0;
+	}
+	
+	public void run() { 
+	
+		long waitUntil = -1;
+		long sleep = TIMEOUT;
+		
+		do { 
+			
+			if (delayed.size() > 0) { 
+				
+				long now = System.currentTimeMillis();
+				waitUntil = delayed.getFirst().nextSubmissionTime();
+			
+				if (now >= waitUntil) { 
+					undelayed.addLast(delayed.removeFirst());
+				}
+	
+				// HIERO!!!
+				
+			}
+			
+			
+		}
+		
+		
+		while (delayed.size() == 0 && !done) { 
+		
+			try {
+				wait(TIMEOUT);
+			} catch (InterruptedException e) {
+				// ignore
+			}
+		
+			
+			
+		}
+		
 	}
 	
 	

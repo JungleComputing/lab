@@ -19,7 +19,14 @@ public class JobHandler implements MetricListener {
 	public final String ID;
     public final JobDescription jobDescription;
     
-    public int attempt = -1;
+    private int attempt = -1;
+    
+    private long delay = 0;
+    
+    private long lastSubmissionTime = 0;
+    private long nextSubmissionTime = 0;
+    
+    private boolean hasRun = false;
     
     private Job job;
     
@@ -31,9 +38,21 @@ public class JobHandler implements MetricListener {
         this.jobDescription = jobDescription;
         this.target = target;
     }
-
+   
+    public synchronized void increaseDelay(int seconds) { 
+    	delay += seconds;
+    }
+    
+    public synchronized void delaySubmision() { 
+    	nextSubmissionTime = System.currentTimeMillis() + delay*1000;
+    }
+    
+    public synchronized long nextSubmissionTime() { 
+    	return nextSubmissionTime;
+    }
+    
     public synchronized void submitFailed() { 
-    	lastState = JobState.SUBMISSION_ERROR;
+    	lastState = JobState.SUBMISSION_ERROR;    	
     	controller.stopped(ID);
     }
  
@@ -63,9 +82,13 @@ public class JobHandler implements MetricListener {
     	lastState = JobState.INITIAL;
     	job = null;
     	attempt++;
+    
+    	lastSubmissionTime = System.currentTimeMillis();
+    	nextSubmissionTime = 0;
+    	hasRun = false;
     	
     	try {
-			File stdout = GAT.createFile("out." + ID + "." + attempt);
+ 			File stdout = GAT.createFile("out." + ID + "." + attempt);
 			jobDescription.getSoftwareDescription().setStdout(stdout);
 
 			File stderr = GAT.createFile("err." + ID + "." + attempt);
@@ -85,12 +108,15 @@ public class JobHandler implements MetricListener {
     		switch (state) { 
     		case PRE_STAGING:
     		case POST_STAGING:
-    		case RUNNING:
     		case SCHEDULED:
     		case ON_HOLD:
     		case UNKNOWN:
     		case INITIAL:
     			// Any need to handle these ?
+    			break;
+
+    		case RUNNING:
+    			hasRun = true;
     			break;
     			
     		case STOPPED:
@@ -115,7 +141,15 @@ public class JobHandler implements MetricListener {
     public synchronized boolean submissionError() { 
     	return lastState == JobState.SUBMISSION_ERROR; 
     }
- 
+    
+    public synchronized boolean hasRun() { 
+    	return hasRun;
+    }
+
+    public synchronized long lastSubmissionTime() { 
+    	return lastSubmissionTime;
+    }
+    
 	public synchronized void setJob(Job job) {
 		this.job = job;
 	}

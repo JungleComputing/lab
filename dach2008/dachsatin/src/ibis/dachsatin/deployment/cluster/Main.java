@@ -331,8 +331,14 @@ public class Main {
     		if (stopped != null) { 
  
     			for (JobHandler h : stopped) {
-    				if (h.submissionError() || h.hashCrashed()) { 
-    					System.out.println("Resubmitting " + h.ID + " to " + h.target);
+    				if (h.submissionError()) { 
+    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error");
+    					
+    					
+    					
+    					controller.addJobToSubmit(h);
+    	    		} else if (h.hashCrashed()) { 
+    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash");
     					controller.addJobToSubmit(h);
     				} else { 
     					System.out.println("Job " + h.ID + " on " + h.target + " is finished");
