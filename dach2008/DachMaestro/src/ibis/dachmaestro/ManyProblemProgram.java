@@ -9,6 +9,9 @@ import ibis.maestro.Service;
 import ibis.maestro.LabelTracker.Label;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -26,6 +29,15 @@ public class ManyProblemProgram {
         System.exit( 1 );
     }
 
+    private static void writeTextFile( File path, String text ) throws IOException
+    {
+	FileOutputStream stream = new FileOutputStream( path );
+	PrintStream s = new PrintStream( stream );
+	s.print( text );
+	s.close();
+	stream.close();
+    }
+
     private static class Listener implements CompletionListener
     {
         private final LabelTracker labelTracker = new LabelTracker();
@@ -40,17 +52,24 @@ public class ManyProblemProgram {
         @Override
         public void jobCompleted( Node node, Object id, Object resultObject )
         {
+            System.out.println( "Job " + id + " completed" );
             if( !(id instanceof LabelTracker.Label) ){
                 System.err.println( "Internal error: Object id is not a tracker label but a " + resultObject.getClass() + ": " + id );
                 System.exit( 1 );
             }
+            LabelTracker.Label label = (LabelTracker.Label) id;
+            labelTracker.returnLabel( label );
             if( !(resultObject instanceof String) ) {
                 System.err.println( "Internal error: result is not a string but a " + resultObject.getClass() + ": " + resultObject );
                 System.exit( 1 );
             }
             String result = (String) resultObject;
-            LabelTracker.Label label = (LabelTracker.Label) id;
-            labelTracker.returnLabel( label );
+            File resultFile = new File( "result-" + label + "-" + System.currentTimeMillis() + ".txt" );
+            try {
+		writeTextFile( resultFile, result );
+	    } catch (IOException e) {
+		System.out.println( "Cannot write result to file " + resultFile );
+	    }
             System.out.println( "Result for " + label + " is " + result );
             results.put( label, result );
             if( sentFinal && labelTracker.allAreReturned() ) {

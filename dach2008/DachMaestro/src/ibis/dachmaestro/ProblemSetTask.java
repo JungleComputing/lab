@@ -71,14 +71,7 @@ class ProblemSetTask implements MapReduceTask
         int exit = p.getExitStatus();
 
         if( exit != 0 ) {
-            String cmd = "";
-
-            for( String c: command ) {
-                if( !cmd.isEmpty() ) {
-                    cmd += ' ';
-                }
-                cmd += c;
-            }
+            String cmd = joinStringList( command );
 
             return "ERROR: command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() );
@@ -104,20 +97,15 @@ class ProblemSetTask implements MapReduceTask
             problemSet
         };
 
+        System.out.println( "Executing " + joinStringList(command) );
         RunProcess p = new RunProcess( command );
         p.run();
 
         int exit = p.getExitStatus();
 
+        System.out.println( "Execution finished" );
         if( exit != 0 ) {
-            String cmd = "";
-
-            for( String c: command ) {
-                if( !cmd.isEmpty() ) {
-                    cmd += ' ';
-                }
-                cmd += c;
-            }
+            String cmd = joinStringList( command );
 
             reportError(
                 "command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
@@ -155,8 +143,25 @@ class ProblemSetTask implements MapReduceTask
         }
         int serial = 0;
         for( FilePair pair: pairs ) {
+            System.out.println( "Submitting: " + pair );
             handler.submit( compareJob, pair, serial++ );
         }
+    }
+
+    /**
+     * @param l
+     * @return
+     */
+    private static String joinStringList(String[] l) {
+	String cmd = "";
+
+	for( String c: l ) {
+	    if( !cmd.isEmpty() ) {
+	        cmd += ' ';
+	    }
+	    cmd += c;
+	}
+	return cmd;
     }
 
     /**
@@ -169,6 +174,7 @@ class ProblemSetTask implements MapReduceTask
     public void reduce( Object id, Object resultObject )
     {
         Result result = (Result) resultObject;
+        System.out.println( "Reduce: adding " + result + " to the result" );
         resultFile.append( result.result );
     }
 

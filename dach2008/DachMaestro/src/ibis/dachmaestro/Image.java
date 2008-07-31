@@ -17,10 +17,11 @@ class Image {
     final byte[] bytes;
 
     /**
-     * @param file
-     * @param bytes
+     * @param file The file name of this image.
+     * @param bytes The file contents.
      */
-    private Image(String file, byte[] bytes) {
+    private Image( String file, byte[] bytes )
+    {
 	this.file = file;
 	this.bytes = bytes;
     }
@@ -51,7 +52,7 @@ class Image {
 	}
 	return true;
     }
-    
+
     File write( File path ) throws IOException
     {
 	File f = new File( path, file );

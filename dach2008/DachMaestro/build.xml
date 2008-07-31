@@ -101,6 +101,15 @@
             <zipfileset dir="."
                         prefix="${dist-name}"
                         includes="javadoc/**,docs/*.pdf,lib/**,notices/**,sources/**,BUGS.txt,LICENSE.txt,HISTORY.txt,README.txt,INSTALL.txt,ibis.properties.example,log4j.properties,smartsockets.properties.example,examples/**,benchmarks/**"/>
+
+            <zipfileset dir="."
+                        includes="*.sh"
+                         />
+
+            <zipfileset dir="."
+                        includes="log4j.properties"
+                         />
+
             <zipfileset dir="."
                         prefix="${dist-name}"
                         filemode="755"
