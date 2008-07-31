@@ -107,42 +107,50 @@ public class JobController extends Thread {
 			|| active.size() > 0 || stopped.size() > 0;
 	}
 	
+	public synchronized boolean isDone() { 
+		return done;
+	}
+	
+	public synchronized void done() { 
+		done = true;
+		notifyAll();
+	}
+	
 	public void run() { 
 	
-		long waitUntil = -1;
 		long sleep = TIMEOUT;
 		
 		do { 
-			
-			if (delayed.size() > 0) { 
+		
+			synchronized (this) {
+				if (delayed.size() > 0) { 
 				
-				long now = System.currentTimeMillis();
-				waitUntil = delayed.getFirst().nextSubmissionTime();
+					long now = System.currentTimeMillis();
+					long waitUntil = delayed.getFirst().nextSubmissionTime();
 			
-				if (now >= waitUntil) { 
-					undelayed.addLast(delayed.removeFirst());
+					// We have a minimum granularity of 50 ms. here
+					if ((now+50) >= waitUntil) { 
+						undelayed.addLast(delayed.removeFirst());
+					} else { 
+						sleep = waitUntil - now;
+					}
+				} else { 
+					sleep = TIMEOUT;
 				}
-	
-				// HIERO!!!
 				
+				// This shouldn't be necessary ?
+				if (sleep <= 0) { 
+					sleep = TIMEOUT;
+				}
+				
+				try { 
+					wait(sleep);
+				} catch (InterruptedException e) {
+					// ignore
+				}
 			}
 			
-			
-		}
-		
-		
-		while (delayed.size() == 0 && !done) { 
-		
-			try {
-				wait(TIMEOUT);
-			} catch (InterruptedException e) {
-				// ignore
-			}
-		
-			
-			
-		}
-		
+		} while (!isDone());
 	}
 	
 	
