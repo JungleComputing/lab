@@ -3,7 +3,7 @@
 	Build file for DachMaestro program
     </description>
 
-    <property name="version" value="0.2" />
+    <property name="version" value="0.2.1" />
 
     <property name="dist-name" value="${ant.project.name}-${version}" />
 

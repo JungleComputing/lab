@@ -31,7 +31,7 @@ class ProblemSetTask implements MapReduceTask
 
     private String errorString = null;
 
-    private static final String oracleName = "dach_api";
+    private static final String oracleName = "dach_api/dach_api";
 
     private void reportError( String s )
     {

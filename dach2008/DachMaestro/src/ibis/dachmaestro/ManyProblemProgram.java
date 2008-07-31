@@ -101,10 +101,6 @@ public class ManyProblemProgram {
     {
         boolean goForMaestro = false;
 
-        if (args.length == 0) { 
-            usage();
-        }
-
         try {
             String oracleHomeName = "/home/dach911";
             ArrayList<Label> labels = new ArrayList<Label>();
