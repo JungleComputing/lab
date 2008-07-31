@@ -9,22 +9,34 @@ import org.gridlab.gat.resources.ResourceBroker;
 public class Submitter extends Thread {
 
 	private final JobController controller;	
+	private final int number;	
 	
-	public Submitter(JobController controller) {
+	public Submitter(JobController controller, int number) {
 		this.controller = controller;
 		setDaemon(true);
+		this.number = number;
 	}
 	
 	private void submit(JobHandler h) { 
 		
+		long time = System.currentTimeMillis();
+		
+		System.out.println("Submitter(" + number + ") - attempting to submit job " + h.ID);
+		
 		ResourceBroker broker = null;
-	
+		
 		try {
 			broker = GAT.createResourceBroker(h.target);
 		} catch (GATObjectCreationException e) {
-			System.err.println("Failed to create ReourceBroker");
+			time = System.currentTimeMillis() - time;
+			
+			System.out.println("Submitter(" + number + ") - failed to create ResourceBroker (job " + h.ID + ") after " + time + " ms.");
+
+			// More detailed info to stderr
+			System.err.println("Submitter(" + number + ") - failed to create ResourceBroker (job " + h.ID + ") after " + time + " ms.");
 			e.printStackTrace(System.err);
 			h.submitFailed();
+			return;
 		}
 		
 		Job job = null;
@@ -34,13 +46,21 @@ public class Submitter extends Thread {
 		try {
 			job = broker.submitJob(h.jobDescription, h, "job.status");
 		} catch (GATInvocationException e) {
-			// TODO Auto-generated catch block
-			System.err.println("Failed to submit job!");
+			time = System.currentTimeMillis() - time;
+			System.out.println("Submitter(" + number + ") - failed to submit job " + h.ID + " in " + time + " ms.");
+			
+			// More detailed info to stderr
+			System.err.println("Submitter(" + number + ") - failed to submit job " + h.ID + " in " + time + " ms.");			
 			e.printStackTrace(System.err);
 			h.submitFailed();
+			return;
 		}
 		
 		h.setJob(job);
+
+		time = System.currentTimeMillis() - time;
+		
+		System.out.println("Submitter(" + number + ") - successfully submitted job " + h.ID + " in " + time + " ms.");		
 	}
 	
 	public void run() {

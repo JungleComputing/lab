@@ -85,6 +85,15 @@ public class Wrapper {
 		
 		ArrayList<String> newArgs = new ArrayList<String>();
  	
+		uniqueID = System.getProperty("dach.machine.id");
+		
+		if (uniqueID == null) { 
+			err.println("Machine ID not set!");
+			System.exit(0);
+		} else { 
+			System.out.println("Starting wrapper on " + uniqueID);
+		}
+		
 		for (int i=0;i<args.length;i++) { 
 			
 			if (args[i].equals("-dryRun") && i != args.length-1) { 
@@ -101,49 +110,33 @@ public class Wrapper {
 		}
 
 		if (targetClass == null) { 
-			err.println("Target class not set!");
+			err.println(uniqueID + ": Target class not set!");
 			System.exit(0);
 		}
 		
 		String out = System.getProperty("dach.dir.output");
 		
 		if (out == null) { 
-			err.println("Output directory not set!");
+			err.println(uniqueID + ": Output directory not set!");
 			System.exit(0);
 		}
 		
-		try { 
-			uniqueID = FileUtils.createUniqueName();
-		} catch (Exception e) {
-			err.println("Failed to generate unique name!");
-			e.printStackTrace(System.err);
-			System.exit(0);
-		}
-	
-		try { 
-			System.setOut(new PrintStream(out + File.separator + "out." + uniqueID));
-			System.setErr(new PrintStream(out + File.separator + "err." + uniqueID));
-		} catch (Exception e) {
-			err.println("Failed to re-route stdout/stderr!");
-			e.printStackTrace(System.err);
-			System.exit(0);
-		}
-		
-		try { 
+		try {
+			//uniqueID = FileUtils.createUniqueName(id);
 			createTMP();
 			mountDFS();
 		} catch (Exception e) {
-			System.err.println("Failed to init system!");
+			System.err.println(uniqueID + ": Failed to init system!");
 			e.printStackTrace(System.err);
 			System.exit(1);
 		}
 		
 		System.setProperty("dach.dir.data", dfsDir);
 		System.setProperty("dach.dir.tmp", tmpDir);
-		System.setProperty("dach.machine.id", uniqueID);
+		// System.setProperty("dach.machine.id", uniqueID);
 		
 		try { 
-			System.out.println("Using wrapper for class: " + targetClass);
+			System.out.println(uniqueID + ": loading class: " + targetClass);
 			
 			Class<?> c = Class.forName(targetClass);
 			Method m = c.getDeclaredMethod("main", new Class [] { String [].class });
@@ -151,20 +144,20 @@ public class Wrapper {
 			String [] a = newArgs.toArray(new String[newArgs.size()]);
 			
 			if (dryRun == 0) { 
-				System.out.println("DryRun -- NOT invoking: " + targetClass + ".main(" 
+				System.out.println(uniqueID + ": DryRun -- NOT invoking: " + targetClass + ".main(" 
 						+ Arrays.toString(a) + ")");
 			} else { 
 				m.invoke(null, new Object [] { a });
 			}
 		} catch (Exception e) {
-			System.err.println("Failed to wrap java class!!");
+			System.err.println(uniqueID + ": Failed to wrap java class!!");
 			e.printStackTrace(System.err);
 		}
 		
 		try {
 			umountDFS();
 		} catch (IOException e) {
-			System.err.println("Failed to unmount DFS!");
+			System.err.println(uniqueID + ": Failed to unmount DFS!");
 			e.printStackTrace(System.err);
 		}
 		

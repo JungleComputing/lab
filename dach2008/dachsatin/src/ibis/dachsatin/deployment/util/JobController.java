@@ -22,20 +22,28 @@ public class JobController extends Thread {
 	
 	public JobController(int threads) { 
 		
+		System.out.println("JobController starting " + threads + " SubmitThreads!");
+		
 		for (int i=0;i<threads;i++) { 
-			Submitter s = new Submitter(this);
+			Submitter s = new Submitter(this, i);
 			submitters.add(s);
 			s.start();
 		}
+
+		// Start ourselves too!
+		start();
 	}
 	
 	public synchronized void addJobToSubmit(JobHandler h) {
 
 		long time = System.currentTimeMillis();
 		
-		if (h.nextSubmissionTime() <= time) { 
+		if (h.nextSubmissionTime() <= time) {
+			System.out.println("Adding undelayed job: " + h.ID);
 			undelayed.addLast(h);
-		} else { 
+		} else {
+			System.out.println("Adding delayed job: " + h.ID);
+			
 			ListIterator<JobHandler> itt = delayed.listIterator();
 			
 			while (itt.hasNext()) { 
@@ -131,6 +139,7 @@ public class JobController extends Thread {
 					// We have a minimum granularity of 50 ms. here
 					if ((now+50) >= waitUntil) { 
 						undelayed.addLast(delayed.removeFirst());
+						notifyAll();
 					} else { 
 						sleep = waitUntil - now;
 					}

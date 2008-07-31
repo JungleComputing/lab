@@ -20,11 +20,16 @@ import org.gridlab.gat.URI;
 import org.gridlab.gat.resources.JavaSoftwareDescription;
 import org.gridlab.gat.resources.JobDescription;
 
+import com.sun.net.ssl.internal.ssl.Debug;
+
 public class Main {
 
 	// These are set (or overwitten) by command line arguments
-	private static int submitThreads = 15;
+	private static final int DEFAULT_SUBMIT_THREADS = 15;
 
+	private static int localSubmitThreads = DEFAULT_SUBMIT_THREADS;
+	private static int submitThreads = DEFAULT_SUBMIT_THREADS;
+	
 	private static String pool = null;
 	private static String exec = "/home/dach/finder/dach.sh";
 	private static String copy = "/bin/cp";
@@ -35,6 +40,9 @@ public class Main {
 	private static String homeDir = "/home/dach004";
 
 	private static int dryRun = -1;
+	
+	private static boolean debug = false;
+	private static boolean verbose = false;	
 
 	private static Server server;
 	private static int serverPort = 5678;
@@ -89,11 +97,21 @@ public class Main {
 
 		if (properties == null) {
 			properties = new HashMap<String, String>();
+			
 			properties.put("log4j.configuration", "file:" + homeDir 
 					+ File.separator + "log4j.properties");
+			
 			properties.put("gat.adaptor.path", homeDir + File.separator + "lib" 
 					+ File.separator + "deploy" + File.separator + "adaptors");
-			properties.put("gat.debug", "");
+			
+			properties.put("sshtrilead.connect.timeout", "10000");
+			properties.put("sshtrilead.kex.timeout", "10000");
+			
+			if (debug) { 
+				properties.put("gat.debug", "true");
+			} else if (verbose) { 
+				properties.put("gat.debug", "true");
+			}
 		}
 
 		return properties;
@@ -160,7 +178,7 @@ public class Main {
 	private static void submit(Cluster c) throws GATObjectCreationException,
 			URISyntaxException {
 
-		c.setID("DACH-CLUSTER-" + (jobNo++) + "@" + c.master);
+		c.setID("c." + (jobNo++) + "." + c.name);
 
 		System.out.println("Submitting " + c.getID());
 
@@ -186,7 +204,7 @@ public class Main {
 		JobDescription jd = new JobDescription(sd);
 
 		JobHandler h = new JobHandler(controller, c.getID(), jd, new URI(
-				"any://" + c.master));
+				"any://" + c.master), outputDir);
 		
 		if (dryRun == 0) { 
 			System.err.println("DryRun -- NOT submitting job " + c.getID() + " to " + c.master);
@@ -224,7 +242,11 @@ public class Main {
 
 		for (int i = 0; i < args.length; i++) {
 			
-			if (args[i].equals("-dryRun") && i != args.length-1) { 
+			if (args[i].equals("-debug")) { 
+    			debug = true;
+			} else if (args[i].equals("-verbose")) { 
+    			verbose = true;
+			} else if (args[i].equals("-dryRun") && i != args.length-1) { 
     			dryRun = Integer.parseInt(args[++i]);
 			} else if (args[i].equals("-copy") && i != args.length - 1) {
 				copy = args[++i];
@@ -321,11 +343,9 @@ public class Main {
 			System.exit(1);
 		}
 
-		if (submitThreads > clusters.size()) {
-			submitThreads = clusters.size();
-		}
+		localSubmitThreads = Math.min(submitThreads, clusters.size());
 
-		controller = new JobController(submitThreads);
+		controller = new JobController(localSubmitThreads);
 
 		System.out.println("Starting Master for " + clusters.size()
 				+ " clusters: ");
@@ -350,13 +370,25 @@ public class Main {
 			if (stopped != null) {
 
 				for (JobHandler h : stopped) {
-					if (h.submissionError() || h.hashCrashed()) {
-						System.out.println("Resubmitting " + h.ID + " to "
-								+ h.target);
+
+					if (h.submissionError()) { 
+						System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error (with delay)");
+						h.increaseDelay(30);
+						h.delaySubmision();
 						controller.addJobToSubmit(h);
-					} else {
-						System.out.println("Job " + h.ID + " on " + h.target
-								+ " is finished");
+					} else if (h.hashCrashed()) {
+
+						if (h.getRuntime() < 60000) { 
+							System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (with delay)");
+							h.increaseDelay(30);
+							h.delaySubmision();
+							controller.addJobToSubmit(h);
+						} else { 
+							System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (without delay)");
+							controller.addJobToSubmit(h);
+						}
+					} else { 
+						System.out.println("Job " + h.ID + " on " + h.target + " is finished");
 					}
 				}
 			}

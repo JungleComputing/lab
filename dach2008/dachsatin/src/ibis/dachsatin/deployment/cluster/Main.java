@@ -35,7 +35,6 @@ public class Main {
 	private static int dryRun = -1;
 	
 	// These are generated once
-	private static HashMap<String,String> properties = null; 
 	private static String [] arguments = null;
 	private static String classpath = null;
 	
@@ -77,25 +76,23 @@ public class Main {
 		return classpath;
 	}
 	
-	private static HashMap<String, String> getProperties() { 
+	private static HashMap<String, String> getProperties(String ID) { 
 	
-		if (properties == null) { 
-			properties = new HashMap<String, String>();
-			properties.put("ibis.server.address", server);  
-			properties.put("ibis.pool.name", pool); 
-			properties.put("satin.detailedStats", null);
-			properties.put("dach.executable", exec); 
-			properties.put("dach.copy", copy); 
-			properties.put("dach.master.ID", localID); 
-			properties.put("dach.dir.output", outputDir);
-			properties.put("log4j.configuration", "file:log4j.properties");
-		}
+		HashMap<String, String> properties = new HashMap<String, String>();
+		properties.put("ibis.server.address", server);  
+		properties.put("ibis.pool.name", pool); 
+		properties.put("satin.detailedStats", "true");
+		properties.put("dach.executable", exec); 
+		properties.put("dach.copy", copy); 
+		properties.put("dach.dir.output", outputDir);
+		properties.put("dach.machine.id", ID);
+		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
 		
 		return properties;
 	}
 	
 	private static String [] getArguments() { 
-		
+
 		if (arguments == null) { 
 			ArrayList<String> args = new ArrayList<String>();
 
@@ -103,18 +100,18 @@ public class Main {
 				args.add("-dryRun");
 				args.add(Integer.toString(dryRun-1));
 			}
-		
+
 			args.add("-class");
 			args.add("ibis.dachsatin.worker.Main");
-			
+
 			args.add("-mount");
 			args.add(mount);
-			
+
 			args.add("-unmount");
 			args.add(unmount);
-			
+
 			args.add("-v");
-			
+
 			for (Problem p : problems) { 
 				args.add("-p");
 				args.add(p.ID);
@@ -157,9 +154,26 @@ public class Main {
 	
 	private static int jobNo = 0;
 	
+	private static String getID(String target) { 
+		
+		if (target == null) { 
+			return "w." + jobNo++;			
+		}
+		
+		target = target.trim();
+		
+		int index = target.indexOf(".");
+		
+		if (index <= 0) { 
+			return "w." + jobNo++ + "." + target;
+		}
+		
+		return "w." + jobNo++ + "." + target.substring(0, index); 
+	}
+	
 	private static void submit(String target) throws GATObjectCreationException, URISyntaxException { 
 		
-		String ID = "DACH-" + jobNo++;
+		String ID = localID + "." + getID(target);
 	
 		System.out.println("Submitting " + ID + " to " + target);
 		
@@ -168,7 +182,7 @@ public class Main {
 		JavaSoftwareDescription sd = new JavaSoftwareDescription();
 		
 		sd.setJavaMain("ibis.dachsatin.deployment.wrapper.Wrapper");
-		sd.setJavaSystemProperties(getProperties());
+		sd.setJavaSystemProperties(getProperties(ID));
 		sd.setJavaArguments(getArguments());
 		sd.setJavaClassPath(getClassPath());
 		
@@ -180,7 +194,7 @@ public class Main {
 		
 		JobDescription jd = new JobDescription(sd);
         
-        JobHandler h = new JobHandler(controller, ID, jd, new URI("any://" + target));
+        JobHandler h = new JobHandler(controller, ID, jd, new URI("any://" + target), outputDir);
 
         if (dryRun == 0) { 
         	System.err.println("DryRun -- NOT submitting job " + ID + " to " + target);
@@ -302,7 +316,7 @@ public class Main {
     	if (submitThreads > targets.nodes.size()) { 
     		submitThreads = targets.nodes.size();
     	}
-    		
+    
     	controller = new JobController(submitThreads);
     	
     	System.out.println("Starting application on " + targets.nodes.size() + " nodes: ");
@@ -331,15 +345,23 @@ public class Main {
     		if (stopped != null) { 
  
     			for (JobHandler h : stopped) {
+    				
     				if (h.submissionError()) { 
-    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error");
-    					
-    					
-    					
+    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error (with delay)");
+    					h.increaseDelay(30);
+    					h.delaySubmision();
     					controller.addJobToSubmit(h);
-    	    		} else if (h.hashCrashed()) { 
-    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash");
-    					controller.addJobToSubmit(h);
+    	    		} else if (h.hashCrashed()) {
+    	    			
+    	    			if (h.getRuntime() < 60000) { 
+    	    				System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (with delay)");
+        					h.increaseDelay(30);
+        					h.delaySubmision();
+        					controller.addJobToSubmit(h);
+    	    			} else { 
+    	    				System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (without delay)");
+    	    				controller.addJobToSubmit(h);
+    	    			}
     				} else { 
     					System.out.println("Job " + h.ID + " on " + h.target + " is finished");
     				}

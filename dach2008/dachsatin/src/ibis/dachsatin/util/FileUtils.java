@@ -22,9 +22,13 @@ public class FileUtils {
 	}
 	
 	public static String createUniqueName() throws IOException { 
+		
 		File tmp1 = File.createTempFile("dach004-", "", null);
 		String uniqueID = tmp1.getName();
 		tmp1.delete();
+		
+		System.out.println("Created unique ID: " + uniqueID);
+		
 		return uniqueID;
 	}
 	
