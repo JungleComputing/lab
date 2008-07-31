@@ -234,7 +234,7 @@ public class Main {
     		} else if (args[i].equals("-problem") && i != args.length-2) {
     			String ID = args[++i];
     			String dir = args[++i];
-    			problems.add(new Problem(ID, dir));
+    			problems.add(new Problem(ID, dir, null));
     		} else if (args[i].equals("-targets") && i != args.length-1) {
     			targetFile = args[++i];
     		} else { 
@@ -338,36 +338,7 @@ public class Main {
     		System.out.flush();
     	}
     	
-    	while (controller.hasJobs()) { 
-    		
-    		LinkedList<JobHandler> stopped = controller.getStoppedJobs();
-    		
-    		if (stopped != null) { 
- 
-    			for (JobHandler h : stopped) {
-    				
-    				if (h.submissionError()) { 
-    					System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error (with delay)");
-    					h.increaseDelay(30);
-    					h.delaySubmision();
-    					controller.addJobToSubmit(h);
-    	    		} else if (h.hashCrashed()) {
-    	    			
-    	    			if (h.getRuntime() < 60000) { 
-    	    				System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (with delay)");
-        					h.increaseDelay(30);
-        					h.delaySubmision();
-        					controller.addJobToSubmit(h);
-    	    			} else { 
-    	    				System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (without delay)");
-    	    				controller.addJobToSubmit(h);
-    	    			}
-    				} else { 
-    					System.out.println("Job " + h.ID + " on " + h.target + " is finished");
-    				}
-    			}
-    		}
-    	}
+    	controller.waitUntilDone();		
     }
 
 }

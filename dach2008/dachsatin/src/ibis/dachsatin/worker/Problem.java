@@ -1,6 +1,5 @@
 package ibis.dachsatin.worker;
 
-import java.io.BufferedOutputStream;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;

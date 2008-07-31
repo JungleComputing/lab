@@ -7,20 +7,21 @@ import ibis.dachsatin.deployment.util.Problem;
 import ibis.dachsatin.util.FileUtils;
 import ibis.server.Server;
 import ibis.server.ServerProperties;
+import ibis.util.RunProcess;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Properties;
 
 import org.gridlab.gat.GATObjectCreationException;
 import org.gridlab.gat.URI;
 import org.gridlab.gat.resources.JavaSoftwareDescription;
 import org.gridlab.gat.resources.JobDescription;
-
-import com.sun.net.ssl.internal.ssl.Debug;
 
 public class Main {
 
@@ -38,7 +39,12 @@ public class Main {
 	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
+	
+	private static String dachApi = "/home/dach911/dach_api/dach_api";
 
+	private static String [] getProblem = { dachApi, "--get_problem", "" };
+	private static String [] returnResult = { dachApi, "--check_ans", "", "" };
+	
 	private static int dryRun = -1;
 	
 	private static boolean debug = false;
@@ -56,9 +62,14 @@ public class Main {
 
 	private static String outputDir = null;
 
+	private static String masterClusterFile = null;
+	
 	private static LinkedList<String> clusterFiles = new LinkedList<String>();
 
 	// This contains target hosts (usually listed in a file)
+	
+	private static Cluster masterCluster = null;
+	
 	private static LinkedList<Cluster> clusters = new LinkedList<Cluster>();
 
 	// This contains all the problem IDs (listed on the command line)
@@ -175,11 +186,8 @@ public class Main {
 		return arguments.toArray(new String[arguments.size()]);
 	}
 
-	private static void submit(Cluster c) throws GATObjectCreationException,
-			URISyntaxException {
-
-		c.setID("c." + (jobNo++) + "." + c.name);
-
+	private static void doSubmit(Cluster c) throws GATObjectCreationException,	URISyntaxException {
+		
 		System.out.println("Submitting " + c.getID());
 
 		// SoftwareDescription sd = new SoftwareDescription();
@@ -213,6 +221,68 @@ public class Main {
 		}
 	}
 	
+	private static void submit(Cluster c) throws GATObjectCreationException, URISyntaxException {
+		c.setID("c." + (jobNo++) + "." + c.name);
+		doSubmit(c);
+	}
+	
+	private static void checkFiles(LinkedList<File> files) { 
+		
+		ListIterator<File> itt = files.listIterator();
+		
+		while (itt.hasNext()) { 
+			
+			File f = itt.next();
+			
+			if (f.exists()) {
+				System.out.println("Found result file: " + f.getPath());				
+				itt.remove();
+			} else { 
+				System.out.println("Have not found result file: " + f.getPath());				
+			}
+		}
+		
+		return;		
+	} 
+	
+	private static boolean waitForFiles(long timeout) { 
+		
+		LinkedList<File> files = new LinkedList<File>();
+		
+		for (Problem p : problems) { 			
+			files.addLast(p.outputFile);
+		}
+
+		long end = System.currentTimeMillis() + timeout;
+		
+		do { 
+			checkFiles(files);
+			
+			if (files.size() == 0) { 
+				return true;
+			} else {
+				try { 
+					Thread.sleep(1000);
+				} catch (Exception e) {
+					// ignore
+				}
+			}
+		
+		} while (System.currentTimeMillis() < end);
+		
+		return false;		
+	}
+	
+	private static void submitMaster(Cluster c) throws Exception {
+		c.setID("m." + (jobNo++) + "." + c.name);
+		doSubmit(c);
+		controller.waitUntilActive(c.getID(), 60000);
+		
+		if (!waitForFiles(60000)) { 
+			throw new Exception("Failed to find output files of the master!");
+		}
+	}
+	
 	private static void createServer() { 
 		
 		 Properties properties = new Properties();
@@ -238,8 +308,41 @@ public class Main {
 	     System.out.println("Create Ibis server on: " + server.getLocalAddress());
 	}
 	
+	private static void getProblem(String name) throws Exception { 
+		
+		getProblem[2] = name;
+		
+		System.out.println("Retrieving problem using " + Arrays.toString(getProblem));
+		
+		RunProcess p = new RunProcess(getProblem);
+		p.run();
+		int result = p.getExitStatus();
+		
+		if (result != 0) { 
+			throw new Exception("Failed to retrieve problem!");			
+		}
+
+		String output = new String(p.getStdout()).trim();
+		
+		System.out.println("Result: " +  output);
+		
+		int index = output.indexOf(' ');
+		
+		if (index <= 0) { 
+			throw new Exception("Failed to understand output!");
+		}
+
+		String ID = output.substring(0, index).trim();
+		String dir = output.substring(index).trim();
+		File file = new File(homeDir + File.separator + ID + ".txt");
+		
+		problems.add(new Problem(ID, dir, file));
+	}
+	
 	public static void main(String[] args) {
 
+		LinkedList<String> problemNames = new LinkedList<String>();
+		
 		for (int i = 0; i < args.length; i++) {
 			
 			if (args[i].equals("-debug")) { 
@@ -264,10 +367,10 @@ public class Main {
 				submitThreads = Integer.parseInt(args[++i]);
 			} else if (args[i].equals("-home") && i != args.length - 1) {
 				homeDir = args[++i];
-			} else if (args[i].equals("-problem") && i != args.length - 2) {
-				String ID = args[++i];
-				String dir = args[++i];
-				problems.add(new Problem(ID, dir));
+			} else if (args[i].equals("-problem") && i != args.length - 1) {
+				problemNames.add(args[++i]);
+			} else if (args[i].equals("-masterCluster") && i != args.length - 1) {
+				masterClusterFile = args[++i];		
 			} else if (args[i].equals("-cluster") && i != args.length - 1) {
 				clusterFiles.add(args[++i]);
 			} else {
@@ -275,7 +378,6 @@ public class Main {
 				System.exit(1);
 			}
 		}
-
 		
 		if (pool == null) {
 			
@@ -313,11 +415,30 @@ public class Main {
 			System.exit(1);
 		}
 
-		if (problems.size() == 0) {
-			System.err.println("No problems specified!");
+		if (masterClusterFile == null) {
+			System.err.println("Master cluster not set!");
 			System.exit(1);
 		}
 
+		if (problemNames.size() == 0) {
+			System.err.println("No problems specified!");
+			System.exit(1);
+		}
+		
+		for (String p : problemNames) { 
+			try {
+				getProblem(p);
+			} catch (Exception e) {
+				System.err.println("Failed to retrieve problem: " + p);
+				e.printStackTrace();
+			}
+		}
+		
+		if (problems.size() == 0) {
+			System.err.println("No problems could be retrieved!");
+			System.exit(1);
+		}
+		
 		if (clusterFiles.size() == 0) {
 			System.err.println("No target cluster files specified!");
 			System.exit(1);
@@ -325,6 +446,13 @@ public class Main {
 
 		createServer();
 		
+		try {
+			masterCluster = Cluster.read(masterClusterFile);
+		} catch (Exception e) {
+			System.err.println("Failed to read cluster file: " + masterClusterFile);
+			e.printStackTrace(System.err);
+			System.exit(1);
+		}
 		
 		for (String f : clusterFiles) {
 			try {
@@ -347,55 +475,32 @@ public class Main {
 
 		controller = new JobController(localSubmitThreads);
 
-		System.out.println("Starting Master for " + clusters.size()
-				+ " clusters: ");
+		System.out.println("Starting Master on cluster: " + masterCluster.name);
 
+		try {
+			submitMaster(masterCluster);
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.exit(1);
+		} 
+		
+		System.out.println("Starting workers on " + clusters.size() + " clusters: ");
+		
 		for (Cluster c : clusters) {
 
 			System.out.println("   " + c);
 
 			try {
 				submit(c);
-			} catch (GATObjectCreationException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
-			} catch (URISyntaxException e) {
-				e.printStackTrace();
-			}
+				System.exit(1);
+			} 
 		}
 
-		while (controller.hasJobs()) {
-
-			LinkedList<JobHandler> stopped = controller.getStoppedJobs();
-
-			if (stopped != null) {
-
-				for (JobHandler h : stopped) {
-
-					if (h.submissionError()) { 
-						System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error (with delay)");
-						h.increaseDelay(30);
-						h.delaySubmision();
-						controller.addJobToSubmit(h);
-					} else if (h.hashCrashed()) {
-
-						if (h.getRuntime() < 60000) { 
-							System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (with delay)");
-							h.increaseDelay(30);
-							h.delaySubmision();
-							controller.addJobToSubmit(h);
-						} else { 
-							System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (without delay)");
-							controller.addJobToSubmit(h);
-						}
-					} else { 
-						System.out.println("Job " + h.ID + " on " + h.target + " is finished");
-					}
-				}
-			}
-		}
+		controller.waitUntilDone();		
 		
 		server.end(10000);
-
 	}
 
 }

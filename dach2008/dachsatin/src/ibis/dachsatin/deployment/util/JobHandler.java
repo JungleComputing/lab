@@ -30,8 +30,12 @@ public class JobHandler implements MetricListener {
     private long nextSubmissionTime = 0;
     
     private boolean hasRun = false;
+    
     private long startRunning = 0;    
     private long runningTime = 0;
+    
+    private long startSubmit = 0;    
+    private long submissionTime = 0;
     
     private Job job;
     
@@ -62,12 +66,22 @@ public class JobHandler implements MetricListener {
     }
     
     public synchronized void submitFailed() { 
-    	lastState = JobState.SUBMISSION_ERROR;    	
+    	
+    	lastState = JobState.SUBMISSION_ERROR;
+    	
+    	if (startSubmit != 0) { 
+    		submissionTime = System.currentTimeMillis() - startSubmit;
+    	}
+    	
     	controller.stopped(ID);
     }
  
-    public synchronized void jobStopped() { 
+    public void jobStopped() { 
     	controller.stopped(ID);
+    }
+    
+    public void jobRunning() { 
+    	controller.running(ID);
     }
  
     public synchronized boolean hashCrashed() { 
@@ -93,12 +107,13 @@ public class JobHandler implements MetricListener {
     	job = null;
     	attempt++;
     
-    	lastSubmissionTime = System.currentTimeMillis();
+    	startSubmit = lastSubmissionTime = System.currentTimeMillis();
     	nextSubmissionTime = 0;
     	
     	hasRun = false;    	
     	startRunning = 0;
     	runningTime = 0;
+    	submissionTime = 0;
     	
     	try {
  			File stdout = GAT.createFile(outputDir + File.separator + "stdout." + ID + "." + attempt);
@@ -129,6 +144,7 @@ public class JobHandler implements MetricListener {
     			break;
 
     		case RUNNING:
+    			jobRunning();
     			hasRun = true;
     			startRunning = System.currentTimeMillis(); 
     			break;
@@ -177,6 +193,14 @@ public class JobHandler implements MetricListener {
 		return job;
 	}
 
+	public synchronized long getSubmissionTime() {
+		return submissionTime;
+	}
+	
+	public synchronized int getAttempts() {
+		return (attempt + 1);
+	}
+	
 	public synchronized long getRuntime() {
 		
 		if (hasRun) { 

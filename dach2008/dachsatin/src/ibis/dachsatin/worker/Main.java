@@ -42,13 +42,13 @@ public class Main {
             	problems.put(ID, new Problem(ID, dir));
             } else { 
             	System.err.println("FATAL: Unknown option: " + args[i]);
-            	System.exit(1);
+            	return;
             }
         }
 
         if (problems.size() == 0) { 
         	System.err.println("FATAL: No problems specified!");
-        	System.exit(1);
+        	return;
         }
         
 		File dir = new File(Util.dataDir);
@@ -62,12 +62,24 @@ public class Main {
     	} catch (IOException e) {
     		System.err.println("FATAL: Failed to load all pairs from directory " + dir);
     		e.printStackTrace(System.err);
-    		System.exit(1);
+    		return;
     	}
     	
     	if (pairs.size() == 0) { 
     		System.err.println("FATAL: No pairs found in directory " + dir);
-    		System.exit(1);
+    		return;
+    	}
+    	
+    	for (String s : problems.keySet()) {
+    		try { 
+    			System.out.println("Creating output file: " + s + ".txt");
+    			File f = new File(s + ".txt");
+    			f.createNewFile();
+    		} catch (Exception e) {
+        		System.err.println("FATAL: failed to create output files!");
+        		e.printStackTrace(System.err);
+        		return;
+    		}
     	}
     	
     	if (verbose) { 

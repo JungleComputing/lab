@@ -7,10 +7,14 @@ import java.util.ListIterator;
 public class JobController extends Thread {
 
 	private static final int TIMEOUT = 1000;
+
+	private static final long MAX_SUBMISSION_TIME = 60000;
 	
 	private LinkedList<JobHandler> undelayed = new LinkedList<JobHandler>();
 
 	private LinkedList<JobHandler> delayed = new LinkedList<JobHandler>();
+	
+	private HashMap<String, JobHandler> submitted = new HashMap<String, JobHandler>();
 	
 	private HashMap<String, JobHandler> active = new HashMap<String, JobHandler>();
 	
@@ -19,6 +23,8 @@ public class JobController extends Thread {
 	private boolean done = false;
 	
 	private LinkedList<Submitter> submitters = new LinkedList<Submitter>();
+	
+	private int addedJobs = 0;
 	
 	public JobController(int threads) { 
 		
@@ -36,6 +42,8 @@ public class JobController extends Thread {
 	
 	public synchronized void addJobToSubmit(JobHandler h) {
 
+		addedJobs++;
+		
 		long time = System.currentTimeMillis();
 		
 		if (h.nextSubmissionTime() <= time) {
@@ -74,16 +82,31 @@ public class JobController extends Thread {
 		}
 		
 		JobHandler h = undelayed.removeFirst();
-		active.put(h.ID, h);
+		submitted.put(h.ID, h);
+		notifyAll();
 		return h;
 	}
+	
+	public synchronized void running(String ID) { 
+		
+		JobHandler tmp = submitted.remove(ID);
+		
+		if (tmp == null) { 
+			System.err.println("EEP: running() got non-existent ID!");
+			return;
+		}
+		
+		active.put(ID, tmp);
+		notifyAll();
+	}
+	
 	
 	public synchronized void stopped(String ID) { 
 		
 		JobHandler tmp = active.remove(ID);
 		
 		if (tmp == null) { 
-			System.err.println("EEP: stopped got non-existent ID!");
+			System.err.println("EEP: stopped() got non-existent ID!");
 			return;
 		}
 		
@@ -93,14 +116,6 @@ public class JobController extends Thread {
 
 	public synchronized LinkedList<JobHandler> getStoppedJobs() {
 
-		if (stopped.size() == 0) { 
-			try { 
-				wait(TIMEOUT);
-			} catch (InterruptedException e) {
-				// ignore
-			}
-		} 
-		
 		if (stopped.size() == 0) { 
 			return null;
 		}
@@ -124,43 +139,118 @@ public class JobController extends Thread {
 		notifyAll();
 	}
 	
-	public void run() { 
+	private synchronized void processedDelayedJobs() { 
+		
+		long now = System.currentTimeMillis();
+
+		while (delayed.size() > 0) { 
+
+			long waitUntil = delayed.getFirst().nextSubmissionTime();
+
+			if (now >= waitUntil) { 
+				undelayed.addLast(delayed.removeFirst());
+			}			
+		}
+		
+		notifyAll();
+	}
 	
-		long sleep = TIMEOUT;
+	private void processStoppedJobs() { 
 		
-		do { 
-		
-			synchronized (this) {
-				if (delayed.size() > 0) { 
-				
-					long now = System.currentTimeMillis();
-					long waitUntil = delayed.getFirst().nextSubmissionTime();
-			
-					// We have a minimum granularity of 50 ms. here
-					if ((now+50) >= waitUntil) { 
-						undelayed.addLast(delayed.removeFirst());
-						notifyAll();
-					} else { 
-						sleep = waitUntil - now;
-					}
-				} else { 
-					sleep = TIMEOUT;
-				}
-				
-				// This shouldn't be necessary ?
-				if (sleep <= 0) { 
-					sleep = TIMEOUT;
-				}
-				
-				try { 
-					wait(sleep);
-				} catch (InterruptedException e) {
-					// ignore
-				}
+		LinkedList<JobHandler> stopped = getStoppedJobs();
+
+		if (stopped != null) { 
+
+			if (addedJobs > 0 && active.size() == 0 && undelayed.size() == 0) { 
+				System.out.println("Terminating -- there are no active/undelayed jobs left!");
+				done();
 			}
 			
-		} while (!isDone());
+			for (JobHandler h : stopped) {
+
+				if (h.submissionError()) { 
+
+					long time = h.getSubmissionTime();
+					
+					if (isDone()) { 
+						System.out.println("Dropping resubmit of " + h.ID + " to " + h.target + " after submission error -- we are done");
+					} else if (time > MAX_SUBMISSION_TIME) { 
+						System.out.println("Dropping resubmit of " + h.ID + " to " + h.target + " since previous attempt took: " +
+								(time/1000) + " seconds");
+					} else if (!done) { 						
+						System.out.println("Resubmitting " + h.ID + " to " + h.target + " after submission error (with delay)");
+						h.increaseDelay(30);
+						h.delaySubmision();
+						addJobToSubmit(h);
+					} 
+				} else if (h.hashCrashed()) {
+					
+					if (isDone()) { 
+						System.out.println("Dropping resubmit of " + h.ID + " to " + h.target + " after crash -- we are done");
+					} else if (h.getRuntime() < 60000) { 
+						System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (with delay)");
+						h.increaseDelay(30);
+						h.delaySubmision();
+						addJobToSubmit(h);
+					} else { 
+						System.out.println("Resubmitting " + h.ID + " to " + h.target + " after crash (without delay)");
+						addJobToSubmit(h);
+					}
+				} else { 
+					System.out.println("Job " + h.ID + " on " + h.target + " is finished");
+				}
+			}
+		}
 	}
+	
+	public synchronized void waitUntilDone() {
+		while (!done) { 
+			try { 
+				wait(TIMEOUT);
+			} catch (InterruptedException e) {
+				// ignore
+			}
+		}		
+	}
+
+	public void waitUntilActive(String ID, long timeout) throws Exception {
+		
+		long end = System.currentTimeMillis() + timeout;
+		
+		while (active.containsKey(ID)) { 
+			try { 
+				wait(TIMEOUT);
+			} catch (InterruptedException e) {
+				// ignore
+			}
+			
+			if (System.currentTimeMillis() > end) { 
+				throw new Exception("Failed to start " + ID + " in given time!");
+			}			
+		}
+	}
+	
+	public void run() { 
+
+		while (!isDone()) { 
+
+			processStoppedJobs();
+			
+			if (!isDone()) { 
+				processedDelayedJobs();
+			
+				synchronized (this) {
+					try { 
+						wait(TIMEOUT);
+					} catch (InterruptedException e) {
+						// ignore
+					}
+				}
+			}
+		}
+	}
+
+
 	
 	
 }
