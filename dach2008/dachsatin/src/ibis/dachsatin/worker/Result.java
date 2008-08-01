@@ -64,8 +64,9 @@ public class Result implements Serializable {
 		result = text;		
 		time = System.currentTimeMillis() - startTime;
 
-		System.out.println("RESULT( " + t + " , " + time() + " ): finished job " + input.before + " - " 
-				+ input.after + " in " + time + " ms.");
+		System.out.println("RESULT( " + t + " , " + time() + " ): finished job " 
+				+ input.beforeInfo.name + " - " 
+				+ input.afterInfo.name + " in " + time + " ms.");
 	}
 	
 	public static String mergeResult(List<Result> results) {

@@ -32,13 +32,8 @@ public class Pair implements Serializable {
 	/** The size of the 'after' file. */
 //	public final long afterSize;
 	
-	enum When { 
-		BEFORE,
-		AFTER;
-	}
-	
-	public final FileInfo before;
-	public final FileInfo after;
+	public final FileInfo beforeInfo;
+	public final FileInfo afterInfo;
 	
 	public int executionAttempts = 0;
 	
@@ -46,8 +41,8 @@ public class Pair implements Serializable {
 			final String after, final long afterSize) {
 		this.ID = ID;
 		this.problem = problem;
-		this.before = new FileInfo(before, beforeSize);
-		this.after = new FileInfo(after, afterSize);
+		this.beforeInfo = new FileInfo(before, beforeSize);
+		this.afterInfo = new FileInfo(after, afterSize);
 	}
 	
 	public String getProblemDir(String dataDir) {
@@ -55,11 +50,11 @@ public class Pair implements Serializable {
 	}
 
 	public String getBefore() {		
-		return problem + File.separator + before.name;
+		return problem + File.separator + beforeInfo.name;
 	}
 
 	public String getAfter() {		
-		return problem + File.separator + after.name;
+		return problem + File.separator + afterInfo.name;
 	}
 	
 	public String getBeforePath(String dataDir) {		
@@ -79,7 +74,7 @@ public class Pair implements Serializable {
 	}	
 	
 	public int scoreLocation(String host) { 
-		return before.score(host) + after.score(host);
+		return beforeInfo.score(host) + afterInfo.score(host);
 	}
 	
 }

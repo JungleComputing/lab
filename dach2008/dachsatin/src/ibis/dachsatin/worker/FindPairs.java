@@ -208,8 +208,8 @@ public class FindPairs {
 	}
 	
 	public void getReplicaLocations(Pair p) { 
-		p.before.addReplicaHosts(getReplicaHosts(p.getBefore()));
-		p.after.addReplicaHosts(getReplicaHosts(p.getAfter()));
+		p.beforeInfo.addReplicaHosts(getReplicaHosts(p.getBefore()));
+		p.afterInfo.addReplicaHosts(getReplicaHosts(p.getAfter()));
 	}
 		
 	public ArrayList<Pair> getPairs(boolean skipErrors) throws IOException { 

@@ -106,7 +106,7 @@ public class Main {
         
         for (Result r : results) { 
         	
-        	System.out.println("STATS: Pair  : " + r.input.before + " - " + r.input.after);        
+        	System.out.println("STATS: Pair  : " + r.input.beforeInfo.name + " - " + r.input.afterInfo.name);        
         	System.out.println("STATS: Time  : " + r.time);        
         	System.out.println("STATS: Error : " + r.stderr);        
         	System.out.println("STATS: Output: " + r.stdout);
@@ -122,8 +122,8 @@ public class Main {
         		try { 
         			p.writeResult(r.result);
         		} catch (Exception e) {
-        			System.err.println("ERROR: Failed to write result " + r.input.before 
-        					+ " - " + r.input.after + " of problem " + p.directory 
+        			System.err.println("ERROR: Failed to write result " + r.input.beforeInfo.name 
+        					+ " - " + r.input.afterInfo.name + " of problem " + p.directory 
         					+ " to output " + r.input.ID);
         		}       		
         	}

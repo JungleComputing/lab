@@ -91,7 +91,7 @@ public class Main {
 		return classpath;
 	}
 	
-	private static HashMap<String, String> getProperties(String ID, String domain) { 
+	private static HashMap<String, String> getProperties(String ID, String host) { 
 	
 		HashMap<String, String> properties = new HashMap<String, String>();
 		properties.put("ibis.server.address", serverAddress);  
@@ -104,7 +104,7 @@ public class Main {
 		properties.put("dach.dir.data", dataDir);
 		properties.put("dach.dir.tmp", tmpDir);
 		properties.put("dach.machine.id", ID);
-		properties.put("dach.domain", domain);
+		properties.put("dach.host", host);
 		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
 		
 		return properties;
@@ -209,7 +209,7 @@ public class Main {
 		JavaSoftwareDescription sd = new JavaSoftwareDescription();
 		
 		sd.setJavaMain("ibis.dachsatin.worker.Main");
-		sd.setJavaSystemProperties(getProperties(ID, getDomain(target)));
+		sd.setJavaSystemProperties(getProperties(ID, target));
 		sd.setJavaArguments(getArguments());
 		sd.setJavaClassPath(getClassPath());
 		

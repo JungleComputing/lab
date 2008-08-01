@@ -1,10 +1,13 @@
 package ibis.dachsatin.worker;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class FileInfo {
+public class FileInfo implements Serializable {
 	
+	private static final long serialVersionUID = -1393754777305462517L;
+
 	/** The local filename */
 	public final String name;
 
@@ -86,10 +89,10 @@ public class FileInfo {
 	public int score(String host) {
 		
 		if (onHost(host)) { 
-			return 3;	
+			return 4;	
 		}
 		
-		if (onSite(getDomain(host))) { 
+		if (onSiteOfHost(host)) { 
 			return 2;
 		}
 		

@@ -55,7 +55,7 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 
     	Result r = new Result(pair, Util.machineID);
 
-    	r.info("Comparing '" + pair.before + "' and '" + pair.after + "'\n", Util.time());
+    	r.info("Comparing '" + pair.beforeInfo.name + "' and '" + pair.afterInfo.name + "'\n", Util.time());
     	
     	String problem = pair.getProblemDir(Util.dataDir);
     	String before = pair.getBeforePath(Util.dataDir);
@@ -74,8 +74,8 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     		return r;
     	}
     			
-    	before = Util.tmpDir + File.separator + pair.before;
-    	after = Util.tmpDir + File.separator + pair.after;
+    	before = Util.tmpDir + File.separator + pair.beforeInfo.name;
+    	after = Util.tmpDir + File.separator + pair.afterInfo.name;
     	
 		String [] command = new String [] { Util.exec, "-w", Util.tmpDir, before, after };
 		
@@ -113,7 +113,7 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     	// For the first four we prefer the largest file size, for the 
     	// last two we prefer the smallest file size.
       	
-    	System.out.println("Selecting job for host \"" + Util.domain + "\"");
+    	System.out.println("Selecting job for host \"" + Util.host + "\"");
     	
     	if (pairs.size() == 1) { 
     		// No choice
@@ -122,12 +122,12 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     
     	Pair p = pairs.get(0);
     	int index = 0;
-    	int score = p.scoreLocation(Util.domain);
+    	int score = p.scoreLocation(Util.host);
     	
     	for (int i=1;i<pairs.size();i++) { 
     		
     		Pair tmp = pairs.get(i);
-			int tmpScore = tmp.scoreLocation(Util.domain);
+			int tmpScore = tmp.scoreLocation(Util.host);
     	
 			if (tmpScore > score) { 
 				p = tmp;
@@ -137,14 +137,14 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 				
 				if (tmpScore >= 4) { 
 					// Prefer the biggest files
-					if (tmp.before.size > p.before.size) {
+					if (tmp.beforeInfo.size > p.beforeInfo.size) {
 						p = tmp;
 						index = i;
 						score = tmpScore;
 					} 
 				} else { 
 					// Prefer the smallest files
-					if (tmp.before.size < p.before.size) {
+					if (tmp.beforeInfo.size < p.beforeInfo.size) {
 						p = tmp;
 						index = i;
 						score = tmpScore;
@@ -154,8 +154,8 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
     	}
 		
     	System.out.println("Selected job with score " + score + " : " 
-    			+ p.before.name + " - " + p.after.name + " sizes: " 
-    			+ p.before.size + " " + p.after.size);
+    			+ p.beforeInfo.name + " - " + p.afterInfo.name + " sizes: " 
+    			+ p.beforeInfo.size + " " + p.afterInfo.size);
     	
     	pairs.remove(index);
     	return p;

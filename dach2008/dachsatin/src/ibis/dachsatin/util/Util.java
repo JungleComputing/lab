@@ -20,7 +20,7 @@ public class Util {
 	public static String machineID = null;
 
 	// File locality hack
-	public static String domain = null;
+	public static String host = null;
 	
 	// Local executable hack
 	public static String exec = null;
@@ -70,9 +70,9 @@ public class Util {
 			System.exit(1);
 		}
 
-		domain = System.getProperty("dach.domain");
+		host = System.getProperty("dach.host");
 
-		if (domain == null) { 
+		if (host == null) { 
 			System.err.println("DACH domain not set! (dach.domain)");
 			// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
 			System.exit(1);
