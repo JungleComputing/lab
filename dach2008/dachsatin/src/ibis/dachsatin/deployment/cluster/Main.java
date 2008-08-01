@@ -85,7 +85,7 @@ public class Main {
 		return classpath;
 	}
 	
-	private static HashMap<String, String> getProperties(String ID) { 
+	private static HashMap<String, String> getProperties(String ID, String domain) { 
 	
 		HashMap<String, String> properties = new HashMap<String, String>();
 		properties.put("ibis.server.address", serverAddress);  
@@ -95,6 +95,7 @@ public class Main {
 		properties.put("dach.copy", copy); 
 		properties.put("dach.dir.output", outputDir);
 		properties.put("dach.machine.id", ID);
+		properties.put("dach.domain", domain);
 		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
 		
 		return properties;
@@ -180,6 +181,23 @@ public class Main {
 		return "w." + jobNo++ + "." + target.substring(0, index); 
 	}
 	
+	private static String getDomain(String host) { 
+		
+		if (host == null) { 
+			return null;
+		}
+
+		host = host.trim();
+
+		int index = host.indexOf('.');
+
+		if (index <= 0) { 
+			return null;
+		}
+
+		return host.substring(index+1);
+	}
+	
 	private static void submit(String target) throws GATObjectCreationException, URISyntaxException { 
 		
 		String ID = localID + "." + getID(target);
@@ -191,7 +209,7 @@ public class Main {
 		JavaSoftwareDescription sd = new JavaSoftwareDescription();
 		
 		sd.setJavaMain("ibis.dachsatin.deployment.wrapper.Wrapper");
-		sd.setJavaSystemProperties(getProperties(ID));
+		sd.setJavaSystemProperties(getProperties(ID, getDomain(target)));
 		sd.setJavaArguments(getArguments());
 		sd.setJavaClassPath(getClassPath());
 		

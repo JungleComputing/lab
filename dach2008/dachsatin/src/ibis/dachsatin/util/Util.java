@@ -70,6 +70,14 @@ public class Util {
 			System.exit(1);
 		}
 
+		domain = System.getProperty("dach.domain");
+
+		if (domain == null) { 
+			System.err.println("DACH domain not set! (dach.domain)");
+			// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
+			System.exit(1);
+		}
+		
 		exec = System.getProperty("dach.executable");
 
 		if (exec == null ) {
