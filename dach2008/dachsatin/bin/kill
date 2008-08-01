@@ -1,1 +1,0 @@
-for i in `cat hongo.all` ; do  echo $i ; ssh -o ConnectTimeout=10 $i killall -u dach004 ; done

@@ -3,7 +3,7 @@
 	Build file for DachSatin program
     </description>
 
-    <property name="version" value="0.92" />
+    <property name="version" value="0.93" />
 
     <property name="satinc-flags" value="-keep"/>
     <property name="dist-name" value="${ant.project.name}-${version}" />
@@ -107,11 +107,11 @@
         <zip destfile="${dist-name}-bin.zip">
             <zipfileset dir="."
                         prefix="${dist-name}"
-                        includes="lib/*.jar,lib/**/*.jar,ibis.properties,log4j.properties,smartsockets.properties,clusters/*.cluster"/>
+                        includes="lib/*.jar,lib/**/*.jar,ibis.properties,log4j.properties,smartsockets.properties,clusters/*.cluster,bin/nodes/**"/>
             <zipfileset dir="."
                         prefix="${dist-name}"
                         filemode="755"
-                        includes="bin/master.sh" />
+                        includes="bin/*.sh" />
         </zip>
     </target>
 
