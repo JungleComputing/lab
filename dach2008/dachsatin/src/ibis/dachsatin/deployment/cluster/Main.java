@@ -27,13 +27,19 @@ public class Main {
 	private static String cluster = null;    	
 	private static String pool = null;
 	private static String serverAddress = null;
+	
 	private static String exec = "/home/dach/finder/dach.sh";
 	private static String copy = "/bin/cp";
+	private static String location = "/data/local/gfarm_v2/bin/gfwhere";
+	
 	private static String java = "/usr/local/jdk/bin/java";
 	private static String localID = null;
 	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
 	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
+	private static String dataDir = "/tmp/dach004/dfs";
+	private static String tmpDir = "/tmp/dach004";
+	
 	private static String hubs = null;
 	
 	private static int dryRun = -1;
@@ -90,10 +96,13 @@ public class Main {
 		HashMap<String, String> properties = new HashMap<String, String>();
 		properties.put("ibis.server.address", serverAddress);  
 		properties.put("ibis.pool.name", pool); 
-		properties.put("satin.detailedStats", "true");
+		// properties.put("satin.detailedStats", "true");
 		properties.put("dach.executable", exec); 
+		properties.put("dach.location", location); 
 		properties.put("dach.copy", copy); 
 		properties.put("dach.dir.output", outputDir);
+		properties.put("dach.dir.data", dataDir);
+		properties.put("dach.dir.tmp", tmpDir);
 		properties.put("dach.machine.id", ID);
 		properties.put("dach.domain", domain);
 		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
@@ -110,16 +119,7 @@ public class Main {
 				args.add("-dryRun");
 				args.add(Integer.toString(dryRun-1));
 			}
-
-			args.add("-class");
-			args.add("ibis.dachsatin.worker.Main");
-
-			args.add("-mount");
-			args.add(mount);
-
-			args.add("-unmount");
-			args.add(unmount);
-
+	
 			args.add("-v");
 
 			for (Problem p : problems) { 
@@ -184,7 +184,7 @@ public class Main {
 	private static String getDomain(String host) { 
 		
 		if (host == null) { 
-			return null;
+			return "unknown";
 		}
 
 		host = host.trim();
@@ -192,7 +192,7 @@ public class Main {
 		int index = host.indexOf('.');
 
 		if (index <= 0) { 
-			return null;
+			return "unknown";
 		}
 
 		return host.substring(index+1);
@@ -208,7 +208,7 @@ public class Main {
 	    
 		JavaSoftwareDescription sd = new JavaSoftwareDescription();
 		
-		sd.setJavaMain("ibis.dachsatin.deployment.wrapper.Wrapper");
+		sd.setJavaMain("ibis.dachsatin.worker.Main");
 		sd.setJavaSystemProperties(getProperties(ID, getDomain(target)));
 		sd.setJavaArguments(getArguments());
 		sd.setJavaClassPath(getClassPath());

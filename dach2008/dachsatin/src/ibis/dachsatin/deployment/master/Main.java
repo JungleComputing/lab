@@ -437,8 +437,7 @@ public class Main {
 		}
 		
 		if (clusterFiles.size() == 0) {
-			System.err.println("No target cluster files specified!");
-			System.exit(1);
+			System.err.println("WARNING: No worker cluster files specified!");
 		}
 
 		outputDir = getOuputDir();
@@ -468,8 +467,8 @@ public class Main {
 
 		createServer();
 		
-		localSubmitThreads = Math.min(submitThreads, clusters.size());
-
+		localSubmitThreads = Math.min(submitThreads, 1+clusters.size());
+		
 		controller = new JobController(localSubmitThreads);
 
 		System.out.println(time() + ": Starting Master on cluster: " + masterCluster.name);

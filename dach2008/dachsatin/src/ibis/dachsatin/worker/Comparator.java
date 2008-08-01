@@ -101,45 +101,61 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
    
     private Pair selectJob(ArrayList<Pair> pairs) { 
     
+    	// When selecting a job, we prefer then is this order:
+    	//
+    	//   - two files on this node
+    	//   - one file on this node, and one in this site
+    	//   - one file on this node, one in a remote site
+    	//   - two files on this site
+    	//   - one file in this site, one in a remote site
+    	//   - two files in a remote site
+    	//
+    	// For the first four we prefer the largest file size, for the 
+    	// last two we prefer the smallest file size.
+      	
+    	System.out.println("Selecting job for host \"" + Util.domain + "\"");
+    	
     	if (pairs.size() == 1) { 
+    		// No choice
     		return pairs.remove(0);
     	}
     
     	Pair p = pairs.get(0);
     	int index = 0;
-    	boolean local = p.inReplicaSite(Util.domain);
+    	int score = p.scoreLocation(Util.domain);
     	
     	for (int i=1;i<pairs.size();i++) { 
     		
     		Pair tmp = pairs.get(i);
-			
-    		if (tmp.inReplicaSite(Util.domain)) { 
-    		
-    			if (!local) { 
-    				// Always prefer a locally replicated pair of files!
-    				p = tmp;
-    				index = i;
-    				local = true;
-    			} else if (tmp.beforeSize > p.beforeSize) {  
-    				// If both are local we prefer the largest problem
-    				p = tmp;
-    				index = i;
-    			} 
-    		
-    		} else if (!local && tmp.beforeSize < p.beforeSize) {  
-    			// If neither are local we prefer the smallest problem
-    			p = tmp;
-    			index = i;
-    		} 
+			int tmpScore = tmp.scoreLocation(Util.domain);
+    	
+			if (tmpScore > score) { 
+				p = tmp;
+				index = i;
+				score = tmpScore;
+			} else if (tmpScore == score) {
+				
+				if (tmpScore >= 4) { 
+					// Prefer the biggest files
+					if (tmp.before.size > p.before.size) {
+						p = tmp;
+						index = i;
+						score = tmpScore;
+					} 
+				} else { 
+					// Prefer the smallest files
+					if (tmp.before.size < p.before.size) {
+						p = tmp;
+						index = i;
+						score = tmpScore;
+					}
+				}
+			}
     	}
-    		
-    	if (local) { 
-    		System.out.println("Selected LOCAL job " + p.before + " - " + p.after + " sizes: " 
-    				+ p.beforeSize + " " + p.afterSize);
-    	} else { 
-    		System.out.println("Selected REMOTE job " + p.before + " - " + p.after + " sizes: " 
-    				+ p.beforeSize + " " + p.afterSize);		
-    	}
+		
+    	System.out.println("Selected job with score " + score + " : " 
+    			+ p.before.name + " - " + p.after.name + " sizes: " 
+    			+ p.before.size + " " + p.after.size);
     	
     	pairs.remove(index);
     	return p;

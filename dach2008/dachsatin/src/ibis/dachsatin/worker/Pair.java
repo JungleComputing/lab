@@ -2,13 +2,11 @@ package ibis.dachsatin.worker;
 
 import java.io.File;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A pair of images that should be compared.
  * 
- * @author Kees van Reeuwijk, Jason Maassen
+ * @author Jason Maassen, Kees van Reeuwijk
  *
  */
 public class Pair implements Serializable {
@@ -23,43 +21,53 @@ public class Pair implements Serializable {
 	public final String problem;
 	
 	/** The local filename of the 'before' file. */
-	public final String before;
+//	public final String before;
 
 	/** The local filename of the 'after' file. */
-	public final String after;
+//	public final String after;
 
 	/** The size of the 'before' file. */
-	public final long beforeSize;
+//	public final long beforeSize;
 
 	/** The size of the 'after' file. */
-	public final long afterSize;
+//	public final long afterSize;
 	
-	public Set<String> replicaSites = null;
+	enum When { 
+		BEFORE,
+		AFTER;
+	}
 	
-	public Set<String> blacklist = null;
-
+	public final FileInfo before;
+	public final FileInfo after;
+	
 	public int executionAttempts = 0;
 	
 	Pair(final String ID, final String problem, final String before, final long beforeSize, 
 			final String after, final long afterSize) {
 		this.ID = ID;
 		this.problem = problem;
-		this.before = before;
-		this.after = after;
-		this.beforeSize = beforeSize;
-		this.afterSize = afterSize;
+		this.before = new FileInfo(before, beforeSize);
+		this.after = new FileInfo(after, afterSize);
 	}
 	
 	public String getProblemDir(String dataDir) {
 		return dataDir + File.separator + problem; 
 	}
+
+	public String getBefore() {		
+		return problem + File.separator + before.name;
+	}
+
+	public String getAfter() {		
+		return problem + File.separator + after.name;
+	}
 	
 	public String getBeforePath(String dataDir) {		
-		return dataDir + File.separator + problem + File.separator + before;
+		return dataDir + File.separator + getBefore();
 	}
 		
 	public String getAfterPath(String dataDir) {
-		return dataDir + File.separator + problem + File.separator + after;
+		return dataDir + File.separator + getAfter();
 	} 
 	
 	public void incrementAttempts() { 
@@ -68,51 +76,10 @@ public class Pair implements Serializable {
 	
 	public int getAttempts() { 
 		return executionAttempts;
+	}	
+	
+	public int scoreLocation(String host) { 
+		return before.score(host) + after.score(host);
 	}
 	
-	public void addToBlacklist(String machineID) { 
-		
-		if (blacklist == null) { 
-			blacklist = new HashSet<String>();
-		}
-		
-		blacklist.add(machineID);
-	}
-
-	public boolean onBlacklist(String machineID) { 
-		
-		if (blacklist == null) { 
-			return false;
-		}
-		
-		return blacklist.contains(machineID);		
-	}
-
-	public void addReplicaSite(String domain) { 
-		
-		if (replicaSites == null) { 
-			replicaSites = new HashSet<String>();
-		}
-		
-		replicaSites.add(domain);
-	}
-
-	public void addReplicaSites(Set<String> sites) { 
-		
-		if (replicaSites == null) { 
-			replicaSites = new HashSet<String>();
-		}
-		
-		replicaSites.addAll(sites);
-	}
-	
-	public boolean inReplicaSite(String domain) { 
-		
-		if (replicaSites == null) { 
-			return false;
-		}
-		
-		return blacklist.contains(replicaSites);		
-	}
-
 }
