@@ -57,6 +57,8 @@ public class Main {
 	private static Server server;
 	private static int serverPort = 5678;
 	
+	private static long start;
+	
 	private static String getOuputDir() { 
 				
 		System.out.println("Creating output dir: " + homeDir + File.separator + "output");
@@ -235,9 +237,13 @@ public class Main {
 	     System.out.println("Create Ibis hub on: " + server.getLocalAddress());
 	}
 	
-	
+	private static int time() { 
+		return (int)((System.currentTimeMillis() - start) / 1000);
+	}
 	
     public static void main(String[] args) {
+    	
+    	start = System.currentTimeMillis();
     	
     	for (int i=0;i<args.length;i++) { 
     		
@@ -362,7 +368,7 @@ public class Main {
     
     	controller = new JobController(submitThreads);
     	
-    	System.out.println("Starting application on " + targets.nodes.size() + " nodes: ");
+    	System.out.println(time() + ": Starting application on " + targets.nodes.size() + " nodes: ");
     	
     	for (String node : targets.nodes) { 
     		
@@ -381,7 +387,19 @@ public class Main {
     		System.out.flush();
     	}
     	
+    	System.out.println(time() + ": All submissions done, waiting ....");
+    	
     	controller.waitUntilDone();		
+    	
+    	System.out.println(time() + ": Application seems to be finished!");
+    	
+    	System.out.println(time() + ": Killing server");
+		
+		server.end(10000);
+		
+		System.out.println(time() + ": Doing exit");
+
+		System.exit(0);
     }
 
 }

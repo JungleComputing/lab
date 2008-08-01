@@ -49,15 +49,18 @@ public class Wrapper {
 		RunProcess p = new RunProcess(mountCMD);
 		p.run();
 		int result = p.getExitStatus();
-		
-		if (result != 0) { 
-			throw new IOException("Failed to mount DFS!");			
-		}
+	
+		// Note: the DFS may already be mounted, so check first, and only complain if 
+		// the problem dir is not there 
 		
 		File check = new File(dfsDir + File.separator + "problems");
 		
-		if (!check.exists()) { 
-			throw new IOException("DFS is empty ?");			
+		if (!check.exists()) {
+			if (result != 0) { 
+				throw new IOException("Failed to mount DFS!");			
+			} else { 
+				throw new IOException("DFS is empty ?");			
+			}
 		}
 	}
 	
@@ -162,5 +165,8 @@ public class Wrapper {
 		}
 		
 		FileUtils.deleteDirectory(tmpRoot);
+
+		// Apparently, Satin needs a little persuasion before it wants to stop!
+		System.exit(0);
 	}	
 }

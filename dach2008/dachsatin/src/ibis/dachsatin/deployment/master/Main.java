@@ -526,8 +526,15 @@ public class Main {
 		}
 		
 		System.out.println(time() + ": Master is done -- all results are in!");
+
+		System.out.println(time() + ": Killing server");
 		
 		server.end(10000);
+		
+		System.out.println(time() + ": Doing exit");
+
+		System.exit(0);
+
 	}
 
 }

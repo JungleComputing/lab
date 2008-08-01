@@ -3,7 +3,7 @@
 	Build file for DachSatin program
     </description>
 
-    <property name="version" value="0.93" />
+    <property name="version" value="0.95" />
 
     <property name="satinc-flags" value="-keep"/>
     <property name="dist-name" value="${ant.project.name}-${version}" />

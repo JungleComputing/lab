@@ -2,11 +2,17 @@ package ibis.dachsatin.worker;
 
 
 
+import ibis.util.RunProcess;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
+import java.util.StringTokenizer;
 
 /**
  * Utility class that finds file pair in a given directory. 
@@ -26,10 +32,16 @@ public class FindPairs {
 
 	private final ArrayList<Pair> pairs = new ArrayList<Pair>();
 
-	public FindPairs(File directory, Collection<Problem> problems, boolean verbose) { 
+	private String [] locationCommand = { "/data/local/gfarm_v2/bin/gfwhere", "" };
+	
+	public FindPairs(File directory, Collection<Problem> problems, String locationCMD, boolean verbose) { 
 		this.directory = directory;
 		this.problems = problems;
 		this.verbose = verbose;
+	
+		if (locationCMD != null) { 
+			locationCommand[0] = locationCMD;
+		}
 	}
 
 	private void addFile(String ID, String problem, File f) { 
@@ -49,7 +61,7 @@ public class FindPairs {
 			File tmp = single.remove(other);
 
 			if (tmp != null) { 
-				pairs.add(new Pair(ID, problem, f.getName(), tmp.getName()));
+				pairs.add(new Pair(ID, problem, f.getName(), f.length(), tmp.getName(), tmp.length()));
 			} else { 
 				single.put(name, f);
 			}
@@ -61,7 +73,7 @@ public class FindPairs {
 			File tmp = single.remove(other);
 
 			if (tmp != null) { 
-				pairs.add(new Pair(ID, problem, tmp.getName(), f.getName()));
+				pairs.add(new Pair(ID, problem, tmp.getName(), tmp.length(), f.getName(), f.length()));
 			} else { 
 				single.put(name, f);
 			}
@@ -107,6 +119,106 @@ public class FindPairs {
 		}
 	}
 	
+	private String getDomain(String host) { 
+		
+		if (host == null) { 
+			return null;
+		}
+		
+		host = host.trim();
+		
+		int index = host.indexOf('.');
+		
+		if (index <= 0) { 
+			return null;
+		}
+	
+		return host.substring(index+1);
+	}
+	
+	private Set<String> getReplicaLocations(String file) { 
+		
+		locationCommand[1] = file;
+
+		RunProcess p = new RunProcess(locationCommand);
+		p.run();
+		int result = p.getExitStatus();
+
+		if (result != 0) { 
+			System.err.println("FAILED to get replication sites for file " + file
+					+ ": " + new String(p.getStderr()));
+			return null;
+		}
+
+		String out = new String(p.getStdout()).trim();
+
+		if (out.length() == 0) { 
+			System.err.println("FAILED to get replication sites for file " + file
+					+ ": NO OUTPUT");
+			return null;
+		}
+
+		Set<String> tmp = new HashSet<String>();
+
+		StringTokenizer t = new StringTokenizer(out);
+
+		while (t.hasMoreTokens()) { 
+			String domain = getDomain(t.nextToken());
+
+			if (domain != null) { 
+				tmp.add(domain);
+			}
+		}
+
+		return tmp;
+	}
+	
+	public void getReplicaLocations(Pair p) { 
+
+		String file1 = p.problem + File.separator + p.before;
+		String file2 = p.problem + File.separator + p.after;
+		
+		Set<String> locations1 = getReplicaLocations(file1);
+		Set<String> locations2 = getReplicaLocations(file2);
+		
+		if (locations1 == null && locations2 == null) { 
+			System.err.println("No replicas found for " + file1 + " - " + file2);
+			return;
+		}
+		
+		if (locations1 == null) { 
+			
+			if (locations2 == null) { 
+				System.err.println("No replicas found for " + file1 + " - " + file2);
+				return;
+			} else { 
+				System.err.println("Replication sites do not match for " + file1 + " [ ] - " 
+						+ file2 + " " + locations2.toString());
+				p.addReplicaSites(locations2);
+				return;
+			}
+		
+		} else {
+			
+			if (locations2 == null) { 
+				System.err.println("Replication sites do not match for " + file1 + " " 
+						+ locations1 + " - " + file2 + " [ ]");
+				p.addReplicaSites(locations1);
+				return;
+			} else if (!locations1.equals(locations2)) { 
+				System.err.println("Replication sites do not match for " + file1 + " " 
+						+ locations1.toString() + " - " + file2 + " " + locations2.toString());
+				p.addReplicaSites(locations1);
+				p.addReplicaSites(locations2);
+				return;
+			} else { 
+				System.err.println("Replication sites match for " + file1 + " " 
+						+ locations1.toString() + " - " + file2 + " " + locations2.toString());
+				p.addReplicaSites(locations1);	
+			}	
+		}
+	}
+		
 	public ArrayList<Pair> getPairs(boolean skipErrors) throws IOException { 
 
 		for (Problem p : problems) { 
@@ -125,6 +237,10 @@ public class FindPairs {
 			}				
 		}
 
+		for (Pair p : pairs) { 
+			getReplicaLocations(p);
+		}
+		
 		return pairs;
 	}
 }

@@ -53,7 +53,7 @@ public class Main {
         
 		File dir = new File(Util.dataDir);
         
-		FindPairs finder = new FindPairs(dir, problems.values(), verbose);
+		FindPairs finder = new FindPairs(dir, problems.values(), Util.location, verbose);
     	
     	ArrayList<Pair> pairs = null;
     	

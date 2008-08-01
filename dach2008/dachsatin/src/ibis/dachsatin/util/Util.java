@@ -1,8 +1,5 @@
 package ibis.dachsatin.util;
 
-
-import java.io.File;
-
 public class Util {
 
 	public static final int MAX_ATTEMPTS = 10;
@@ -22,9 +19,15 @@ public class Util {
 	// Machine identification hack
 	public static String machineID = null;
 
+	// File locality hack
+	public static String domain = null;
+	
 	// Local executable hack
 	public static String exec = null;
-
+	
+	// Location command hack
+	public static String location = null;
+	
 	// Static block to initialize local static configuration.
 	static { 
 
@@ -94,7 +97,20 @@ public class Util {
 			// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
 			System.exit(1);
 		}
+		
+		location = System.getProperty("dach.location");
 
+		if (location == null ) {
+			System.err.println("DACH location executable not set! (dach.location)");
+			// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
+			System.exit(1);
+		}
+
+		if (!FileUtils.fileExists(location)) {
+			System.err.println("DACH location executable (" + location + ") not found!");
+			// NOTE: this is fatal! Commit suicide to prevent stealing any additional jobs!  
+			System.exit(1);
+		}
 	}
 
 	public static long time() { 

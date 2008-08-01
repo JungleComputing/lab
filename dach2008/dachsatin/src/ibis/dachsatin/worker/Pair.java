@@ -27,16 +27,27 @@ public class Pair implements Serializable {
 
 	/** The local filename of the 'after' file. */
 	public final String after;
+
+	/** The size of the 'before' file. */
+	public final long beforeSize;
+
+	/** The size of the 'after' file. */
+	public final long afterSize;
+	
+	public Set<String> replicaSites = null;
 	
 	public Set<String> blacklist = null;
 
 	public int executionAttempts = 0;
 	
-	Pair(final String ID, final String problem, final String before, final String after) {
+	Pair(final String ID, final String problem, final String before, final long beforeSize, 
+			final String after, final long afterSize) {
 		this.ID = ID;
 		this.problem = problem;
 		this.before = before;
 		this.after = after;
+		this.beforeSize = beforeSize;
+		this.afterSize = afterSize;
 	}
 	
 	public String getProblemDir(String dataDir) {
@@ -77,5 +88,31 @@ public class Pair implements Serializable {
 		return blacklist.contains(machineID);		
 	}
 
+	public void addReplicaSite(String domain) { 
+		
+		if (replicaSites == null) { 
+			replicaSites = new HashSet<String>();
+		}
+		
+		replicaSites.add(domain);
+	}
+
+	public void addReplicaSites(Set<String> sites) { 
+		
+		if (replicaSites == null) { 
+			replicaSites = new HashSet<String>();
+		}
+		
+		replicaSites.addAll(sites);
+	}
 	
+	public boolean inReplicaSite(String domain) { 
+		
+		if (replicaSites == null) { 
+			return false;
+		}
+		
+		return blacklist.contains(replicaSites);		
+	}
+
 }

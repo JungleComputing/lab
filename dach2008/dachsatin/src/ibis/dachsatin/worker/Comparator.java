@@ -98,6 +98,85 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 		
 		return r;
     }
+   
+    private Pair selectJob(ArrayList<Pair> pairs) { 
+    
+    	if (pairs.size() == 1) { 
+    		return pairs.remove(0);
+    	}
+    
+    	Pair p = pairs.get(0);
+    	int index = 0;
+    	boolean local = p.inReplicaSite(Util.domain);
+    	
+    	for (int i=1;i<pairs.size();i++) { 
+    		
+    		Pair tmp = pairs.get(i);
+			
+    		if (tmp.inReplicaSite(Util.domain)) { 
+    		
+    			if (!local) { 
+    				// Always prefer a locally replicated pair of files!
+    				p = tmp;
+    				index = i;
+    				local = true;
+    			} else if (tmp.beforeSize > p.beforeSize) {  
+    				// If both are local we prefer the largest problem
+    				p = tmp;
+    				index = i;
+    			} 
+    		
+    		} else if (!local && tmp.beforeSize < p.beforeSize) {  
+    			// If neither are local we prefer the smallest problem
+    			p = tmp;
+    			index = i;
+    		} 
+    	}
+    		
+    	if (local) { 
+    		System.out.println("Selected LOCAL job " + p.before + " - " + p.after + " sizes: " 
+    				+ p.beforeSize + " " + p.afterSize);
+    	} else { 
+    		System.out.println("Selected REMOTE job " + p.before + " - " + p.after + " sizes: " 
+    				+ p.beforeSize + " " + p.afterSize);		
+    	}
+    	
+    	pairs.remove(index);
+    	return p;
+    }
+    
+    private void sortResults(Result local, ArrayList<Result> resa, ArrayList<Result> resb, 
+    		ArrayList<Result> success, ArrayList<Pair> failed) { 
+    	
+    	// Add the local result to the right list
+        if (local.failed && local.input.getAttempts() < Util.MAX_ATTEMPTS) { 
+			failed.add(local.input);
+		} else { 
+			success.add(local);
+		}
+        
+        // Add the results from the first spawned job (if necessary)
+        if (resa != null) { 	
+        	for (Result r : resa) { 
+        		if (r.failed && r.input.getAttempts() < Util.MAX_ATTEMPTS) { 
+        			failed.add(r.input);
+        		} else { 
+        			success.add(r);
+        		}
+        	}
+        }
+        
+        // Add the results from the first spawned job (if necessary)
+        if (resb != null) {
+        	for (Result r : resb) { 
+        		if (r.failed && r.input.getAttempts() < Util.MAX_ATTEMPTS) { 
+        			failed.add(r.input);
+        		} else { 
+        			success.add(r);
+        		}
+        	}
+        }
+    }
     
     /**
      *
@@ -106,51 +185,50 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
      */
     public ArrayList<Result> compareAllPairs(ArrayList<Pair> pairs) {
         	
-    	if (pairs.size() == 1) {
+    	// We pick the job that suits us best, typically the largest job we can 
+    	// find that is replicated locally. We then spawn the rest, compute our job,
+    	// and sync for the results. This way, we actually have some influence on what 
+    	// job is assigned to us.
     		
-    		Pair p = pairs.get(0);
-    		p.incrementAttempts();    		
-    		Result r = compare(p);
+    	Pair local = selectJob(pairs);
+    	
+    	ArrayList<Result> resa = null;
+    	ArrayList<Result> resb = null;
+    	
+    	int size = pairs.size();
+    	
+    	if (size == 1) { 
+    		// Will be spawned
+    		resa = compareAllPairs(pairs);
+    	} else if (size >= 2) { 
+    		// There is something left to spawn!
+    		int mid = pairs.size() / 2;
+        	
+        	// NOTE: Need this because Satin is way too strict about passing non-serializable 
+        	// interfaces! As a result, we cannot pass a 'List', and the type returned by subList 
+        	// is NOT an arrayList!
+        	ArrayList<Pair> suba = new ArrayList<Pair>(pairs.subList(0, mid));
+        	ArrayList<Pair> subb = new ArrayList<Pair>(pairs.subList(mid, pairs.size()));
+        	
+        	// Both will be spawned
+        	resa = compareAllPairs(suba);
+            resb = compareAllPairs(subb);
+    	}
+    	
+    	// Perform local computation here!
+    	local.incrementAttempts();    		
+    	Result localResult = compare(local);
     		
-    		ArrayList<Result> result = new ArrayList<Result>();
-    		result.add(r);    		
-    		return result;    		
-        }
-        
-    	int mid = pairs.size() / 2;
-    	
-    	
-    	// NOTE: Need this because Satin is way too strict about passing non-serializable 
-    	// interfaces! As a result, we cannot pass a 'List', and the type returned by subList 
-    	// is NOT an arrayList!
-    	ArrayList<Pair> suba = new ArrayList<Pair>(pairs.subList(0, mid));
-    	ArrayList<Pair> subb = new ArrayList<Pair>(pairs.subList(mid, pairs.size()));
-    	
-    	ArrayList<Result> resa = compareAllPairs(suba);
-        ArrayList<Result> resb = compareAllPairs(subb);
-        
-        sync();
+    	// Wait for the results to come in from the spawned jobs
+    	sync();
 
         // Combine the results.
         ArrayList<Result> success = new ArrayList<Result>();
         ArrayList<Pair> failed = new ArrayList<Pair>();
-        
-        for (Result r : resa) { 
-        	if (r.failed && r.input.getAttempts() < Util.MAX_ATTEMPTS) { 
-        		failed.add(r.input);
-        	} else { 
-        		success.add(r);
-        	}
-        }
-        
-        for (Result r : resb) { 
-        	if (r.failed && r.input.getAttempts() < Util.MAX_ATTEMPTS) { 
-        		failed.add(r.input);
-        	} else { 
-        		success.add(r);
-        	}
-        }
 
+        sortResults(localResult, resa, resb, success, failed);
+        
+        // Respawn any failed jobs ?
         while (failed.size() > 0) { 
         	
         	// TODO: how do I force these jobs to run on a different machine ????
