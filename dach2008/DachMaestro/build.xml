@@ -102,9 +102,8 @@
                         prefix="${dist-name}"
                         includes="javadoc/**,docs/*.pdf,lib/**,notices/**,sources/**,BUGS.txt,LICENSE.txt,HISTORY.txt,README.txt,INSTALL.txt,ibis.properties.example,log4j.properties,smartsockets.properties.example,examples/**,benchmarks/**"/>
 
-            <zipfileset dir="."
-                        includes="*.sh"
-                         />
+            <zipfileset dir="." includes="*.sh" />
+            <zipfileset dir="." includes=".bashrc" />
 
             <zipfileset dir="deployment-tables" prefix="deployment-tables" />
 
