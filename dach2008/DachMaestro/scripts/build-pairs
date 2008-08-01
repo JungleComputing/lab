@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 import random
-npairs = 120
+npairs = 10
 linewidth = 78
-lines = 10000
 
 def writeFile( fnm, differ ):
     f = open( fnm, 'w' )
     code = 0x21
+    lines = 5000 + int( 10000*random.random() )
     for l in range(lines):
         charCode = code
         if differ and l == 10:

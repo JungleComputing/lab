@@ -10,6 +10,8 @@ import java.io.Serializable;
  */
 class Result implements Serializable
 {
+    private static final long serialVersionUID = 1L;
+
     /** The output of the comparison process. It may be null if there was an error. */
     final String result;
     

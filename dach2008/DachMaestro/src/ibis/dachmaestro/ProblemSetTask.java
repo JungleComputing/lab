@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
-import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 /**
  * 
@@ -121,7 +121,7 @@ class ProblemSetTask implements MapReduceTask
             reportError( "Problem directory '" + directory + "' does not exist" );
             return;
         }
-        ArrayList<FilePair> pairs = FindPairs.getPairs( directory, verbose );
+        PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
 
         if (pairs.isEmpty() ) { 
             System.err.println("No pairs found in directory " + directory );
@@ -142,7 +142,8 @@ class ProblemSetTask implements MapReduceTask
             System.out.printf("Starting comparison of " + pairs.size() + " pairs.");
         }
         int serial = 0;
-        for( FilePair pair: pairs ) {
+        while( !pairs.isEmpty() ) {
+            FilePair pair = pairs.remove();
             handler.submit( compareJob, pair, serial++ );
         }
     }

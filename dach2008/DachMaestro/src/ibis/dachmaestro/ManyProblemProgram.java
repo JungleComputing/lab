@@ -24,10 +24,7 @@ import java.util.LinkedList;
  */
 public class ManyProblemProgram {
 
-    private static void usage() { 
-        System.err.println( "Usage: ManyProblemProgram <problem-name> .. <problem-name>" );
-        System.exit( 1 );
-    }
+    private static final String DEFAULT_ORACLE_HOME = "/home/dach911";
 
     private static void writeTextFile( File path, String text ) throws IOException
     {
@@ -92,6 +89,14 @@ public class ManyProblemProgram {
         }
     }
 
+    private static void usage( PrintStream s ) { 
+        s.println( "Usage: ManyProblemProgram <problem-name> .. <problem-name>" );
+        s.println( " -c <command> Use the given command as comparator (default from DACHCOMPARATOR)" );
+        s.println( " -h           Show this help text" );
+        s.println( " -o <dir>     The directory where the oracle lives (default is " + DEFAULT_ORACLE_HOME + ")" );
+        s.println( " -v           Be verbose" );
+    }
+
     /**
      * Runs this program.
      * @param args The command-line parameters.
@@ -102,7 +107,7 @@ public class ManyProblemProgram {
         boolean goForMaestro = false;
 
         try {
-            String oracleHomeName = "/home/dach911";
+            String oracleHomeName = DEFAULT_ORACLE_HOME;
             ArrayList<Label> labels = new ArrayList<Label>();
             boolean verbose = false;
             String command = null;
@@ -110,7 +115,11 @@ public class ManyProblemProgram {
 
             for (int i=0;i<args.length;i++) { 
 
-                if (args[i].equals("-v") || args[i].equals("--verbose")) { 
+                if (args[i].equals("-h") || args[i].equals("--help")) { 
+                    usage( System.out );
+                    System.exit( 0 );
+                }
+                else if (args[i].equals("-v") || args[i].equals("--verbose")) { 
                     verbose = true;
                 }
                 else if (args[i].equals("-c") || args[i].equals("--command")) {

@@ -8,7 +8,7 @@ import ibis.maestro.Node;
 import ibis.maestro.Service;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 /**
  * Command-line interface.
@@ -141,7 +141,7 @@ public class OneProblemProgram {
 	    );
 	    Listener listener = new Listener();
 
-	    ArrayList<FilePair> pairs = FindPairs.getPairs( dir, verbose );
+	    PriorityQueue<FilePair> pairs = FindPairs.getPairs( dir, verbose );
 
 	    if (pairs.isEmpty() ) { 
 		System.err.println("No pairs found in directory " + args[0]);
@@ -157,10 +157,11 @@ public class OneProblemProgram {
 	    System.out.println( "Node created" );
 	    long startTime = System.nanoTime();
 	    if( node.isMaestro() ) {
-		for( FilePair pair: pairs ) {
+	        while( !pairs.isEmpty() ) {
+	            FilePair pair = pairs.remove();
 		    Object label = listener.getLabel();
 		    job.submit( node, pair, label, listener );
-		}
+	        }
 		listener.setFinished();
 		System.out.println( "Jobs submitted" );
 	    }

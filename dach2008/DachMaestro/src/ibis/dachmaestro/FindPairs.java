@@ -1,8 +1,8 @@
 package ibis.dachmaestro;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.PriorityQueue;
 
 /**
  * Utility class that finds file pair in a given directory. 
@@ -12,7 +12,9 @@ import java.util.HashMap;
  */
 public class FindPairs {
 
-    private static void addFile( ArrayList<FilePair> pairs, HashMap<String, File> singles, File f, boolean verbose)
+    private static final String FITS_EXTENSION = ".fits";
+
+    private static void addFile( PriorityQueue<FilePair> pairs, HashMap<String, File> singles, File f, boolean verbose)
     {
 	String name = f.getName();
 
@@ -27,7 +29,7 @@ public class FindPairs {
 
 	    String other = name.substring(0, name.length()-2) + "t1";
 
-	    File tmp = singles.remove(other);
+	    File tmp = singles.remove( other );
 
 	    if (tmp != null) { 
 		pairs.add( new FilePair( f, tmp ) );
@@ -61,17 +63,17 @@ public class FindPairs {
      * @param verbose Trace the proceedings of this method?
      * @return The pairs in the directory.
      */
-    static ArrayList<FilePair> getPairs( File directory, boolean verbose )
+    static PriorityQueue<FilePair> getPairs( File directory, boolean verbose )
     {
 	final HashMap<String, File> single = new HashMap<String, File>();
 
-	final ArrayList<FilePair> pairs = new ArrayList<FilePair>();
+	final PriorityQueue<FilePair> pairs = new PriorityQueue<FilePair>();
 
 	File [] files = directory.listFiles();
 
-	for (File f : files) { 
+	for( File f : files ) { 
 
-	    if (f.getName().endsWith(".fits")) { 
+	    if( f.getName().endsWith( FITS_EXTENSION ) ) { 
 		addFile( pairs, single, f, verbose );
 	    }
 	    else {
