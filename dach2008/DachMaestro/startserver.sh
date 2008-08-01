@@ -1,8 +1,5 @@
 #!/bin/sh
 
-#SERVERHOST=babylon.cs.vu.nl
-SERVERHOST=fs0.das3.cs.vu.nl
-
 source $HOME/.bashrc
 
 # Check setting of DACHMAESTRO_HOME

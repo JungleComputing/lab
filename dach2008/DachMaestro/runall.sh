@@ -2,7 +2,7 @@
 
 #SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=fs0.das3.cs.vu.nl
-SERVERHOST=imade000.kuis.kyoto-u.ac.jp
+SERVERHOST=hongo000.logos.ic.i.u-tokyo.ac.jp
 
 source $HOME/.bashrc
 
@@ -35,5 +35,5 @@ exec $JAVA \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
-    -Xmx900M \
+    -Xmx$MEMORY \
      ibis.dachmaestro.ManyProblemProgram "$@"

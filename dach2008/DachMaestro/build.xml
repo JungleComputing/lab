@@ -3,7 +3,7 @@
 	Build file for DachMaestro program
     </description>
 
-    <property name="version" value="0.2.1" />
+    <property name="version" value="0.2" />
 
     <property name="dist-name" value="${ant.project.name}-${version}" />
 
@@ -105,6 +105,8 @@
             <zipfileset dir="."
                         includes="*.sh"
                          />
+
+            <zipfileset dir="deployment-tables" prefix="deployment-tables" />
 
             <zipfileset dir="."
                         includes="log4j.properties"
