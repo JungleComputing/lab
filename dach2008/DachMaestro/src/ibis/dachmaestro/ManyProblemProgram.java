@@ -25,6 +25,7 @@ import java.util.LinkedList;
 public class ManyProblemProgram {
 
     private static final String DEFAULT_ORACLE_HOME = "/home/dach911";
+    private static final String DEFAULT_PROBLEMS_DIR = "/tmp/dach001";
 
     private static void writeTextFile( File path, String text ) throws IOException
     {
@@ -46,6 +47,7 @@ public class ManyProblemProgram {
          * @param id The task that was completed.
          * @param resultObject The result of the task.
          */
+        @SuppressWarnings("synthetic-access")
         @Override
         public void jobCompleted( Node node, Object id, Object resultObject )
         {
@@ -94,6 +96,8 @@ public class ManyProblemProgram {
         s.println( " -c <command> Use the given command as comparator (default from DACHCOMPARATOR)" );
         s.println( " -h           Show this help text" );
         s.println( " -o <dir>     The directory where the oracle lives (default is " + DEFAULT_ORACLE_HOME + ")" );
+        s.println( " -p <dir>     The directory where the problem directories live (default is " + DEFAULT_PROBLEMS_DIR + ")" );
+        s.println( " -w <nodes>   Wait until there are at least this many nodes before submitting the problems" );
         s.println( " -v           Be verbose" );
     }
 
@@ -108,9 +112,11 @@ public class ManyProblemProgram {
 
         try {
             String oracleHomeName = DEFAULT_ORACLE_HOME;
+            String problemsDirName = DEFAULT_PROBLEMS_DIR;
             ArrayList<Label> labels = new ArrayList<Label>();
             boolean verbose = false;
             String command = null;
+            int waitNodes = 0;
             LinkedList<String> problems = new LinkedList<String>();
 
             for (int i=0;i<args.length;i++) { 
@@ -134,6 +140,12 @@ public class ManyProblemProgram {
                 else if (args[i].equals("-o") || args[i].equals("--oraclehome")) {
                     oracleHomeName = args[++i];
                 }
+                else if (args[i].equals("-w") || args[i].equals("--waitnodes")) {
+                    waitNodes = Integer.parseInt(  args[++i] );
+                }
+                else if (args[i].equals("-p") || args[i].equals("--problemsdir")) {
+                    problemsDirName = args[++i];
+                }
                 else {
                     problems.add( args[i] );
                 }
@@ -148,6 +160,7 @@ public class ManyProblemProgram {
                 }
             }
             File oracleHome = new File( oracleHomeName );
+            File problemsDir = new File( problemsDirName );
 
             JobList jobs = new JobList();
             Job job = jobs.createJob(
@@ -156,7 +169,7 @@ public class ManyProblemProgram {
             );
             Job problemSetJob = jobs.createJob(
                 "run problem set",
-                new ProblemSetTask( job, oracleHome, verbose )
+                new ProblemSetTask( job, oracleHome, problemsDir, verbose )
             );
             Listener listener = new Listener();
 
@@ -172,6 +185,12 @@ public class ManyProblemProgram {
             System.out.println( "Node created" );
             long startTime = System.nanoTime();
             if( node.isMaestro() ) {
+                if( waitNodes>0 ) {
+                    System.out.println( "Waiting for " + waitNodes + " ready nodes" );
+                    long deadline = 5*60*1000; // 5 minutes in ms
+                    int n = node.waitForReadyNodes( waitNodes, deadline );
+                    System.out.println( "Continuing; there are now " + n + " ready nodes" );
+                }
                 for( String problem: problems ) {
                     Label label = listener.getLabel();
                     problemSetJob.submit( node, problem, label, listener );

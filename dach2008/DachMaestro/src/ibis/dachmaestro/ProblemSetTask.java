@@ -22,6 +22,7 @@ class ProblemSetTask implements MapReduceTask
     private static final long serialVersionUID = 1L;
     private final Job compareJob;
     private final File oracleHome;
+    private final File problemsDir;
     private File resultFileName = null;
     private PrintStream resultFile = null;
     private final boolean verbose;
@@ -39,10 +40,11 @@ class ProblemSetTask implements MapReduceTask
         System.err.println( s );
     }
 
-    ProblemSetTask( Job compareJob, File oracleHome, boolean verbose )
+    ProblemSetTask( Job compareJob, File oracleHome, File problemsDir, boolean verbose )
     {
         this.compareJob = compareJob;
         this.oracleHome = oracleHome;
+        this.problemsDir = problemsDir;
         this.verbose = verbose;
     }
 
@@ -116,7 +118,7 @@ class ProblemSetTask implements MapReduceTask
         System.out.println( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
         String words[] = oracleOutput.split( " " );
         handle = words[0];
-        File directory = new File( oracleHome, words[1] );
+        File directory = new File( problemsDir, words[1] );
         if( !directory.exists() ) {
             reportError( "Problem directory '" + directory + "' does not exist" );
             return;

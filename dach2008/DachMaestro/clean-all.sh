@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Usage: deploy-all <site-set> <output-directory>
+# Usage: clean-all <site-set> <output-directory>
 #
 export GXP_SESSION=`gxpc --create_daemon 1`
 trap 'gxpc quit; exit 1' 2
