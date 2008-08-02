@@ -1,5 +1,7 @@
 package ibis.dachsatin.util;
 
+import ibis.util.RunProcess;
+
 public class Util {
 
 	public static final int MAX_ATTEMPTS = 10;
@@ -124,7 +126,7 @@ public class Util {
 	public static long time() { 
 		return System.currentTimeMillis() - start;
 	}
-
+	
 	public static void check() {
 		// dummy used to trigger the static block ?
 	}

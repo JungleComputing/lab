@@ -67,10 +67,18 @@ public class Comparator extends SatinObject implements ComparatorSatinInterface 
 		}
     	
     	if (!prepareInputFile(r, before)) { 
+    		
+    		System.err.println("FATAL problem while copying file: " + before);
+    		System.exit(0);
+    		
     		return r;
     	}
     	
     	if (!prepareInputFile(r, after)) { 
+    	
+    		System.err.println("FATAL problem while copying file: " + after);
+    		System.exit(0);
+    	
     		return r;
     	}
     			

@@ -34,8 +34,6 @@ public class Main {
 	
 	private static String java = "/usr/local/jdk/bin/java";
 	private static String localID = null;
-	private static String mount = "/data/local/gfarm_v2/bin/gfarm2fs";
-	private static String unmount = "/usr/bin/fusermount";
 	private static String homeDir = "/home/dach004";
 	private static String dataDir = "/tmp/dach004/dfs";
 	private static String tmpDir = "/tmp/dach004";
@@ -61,7 +59,7 @@ public class Main {
 	private static JobController controller;
 	
 	private static Server server;
-	private static int serverPort = 5678;
+	//private static int serverPort = 5678;
 	
 	private static long start;
 	
@@ -95,8 +93,8 @@ public class Main {
 	
 		HashMap<String, String> properties = new HashMap<String, String>();
 		properties.put("ibis.server.address", serverAddress);  
+		properties.put("ibis.hub.addresses", hubs);  
 		properties.put("ibis.pool.name", pool); 
-		// properties.put("satin.detailedStats", "true");
 		properties.put("dach.executable", exec); 
 		properties.put("dach.location", location); 
 		properties.put("dach.copy", copy); 
@@ -105,6 +103,8 @@ public class Main {
 		properties.put("dach.dir.tmp", tmpDir);
 		properties.put("dach.machine.id", ID);
 		properties.put("dach.host", host);
+		properties.put("satin.alg", "RS");
+		
 		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
 		
 		return properties;
@@ -234,7 +234,7 @@ public class Main {
 		
 		 Properties properties = new Properties();
 
-		 properties.put(ServerProperties.PORT, Integer.toString(serverPort));
+		 properties.put(ServerProperties.PORT, "0");
 		 properties.setProperty(ServerProperties.START_HUB, "true");
 		 properties.setProperty(ServerProperties.HUB_ONLY, "true");
 		 properties.setProperty(ServerProperties.HUB_ADDRESSES, knownHubs);
@@ -253,6 +253,24 @@ public class Main {
 	     }
 	     
 	     System.out.println("Create Ibis hub on: " + server.getLocalAddress());
+	     
+	     String [] hubs = server.getHubs();
+	     
+	     String tmp = null;
+	     
+	     if (hubs != null && hubs.length > 0) { 
+	    	 tmp = hubs[0];
+			
+	    	 for (int h=1;h<hubs.length;h++) { 
+	    		 tmp += "," + hubs[h];
+	    	 }
+	     }
+	     
+	     if (tmp != null && tmp.length() > 0) { 
+	    	 Main.hubs = tmp;
+	     }
+	     
+	     System.out.println("List of known hubs: " + Main.hubs);
 	}
 	
 	private static int time() { 
@@ -277,10 +295,6 @@ public class Main {
 				java = args[++i];
 			} else if (args[i].equals("-pool") && i != args.length-1) { 
     			pool = args[++i];
-    		} else if (args[i].equals("-mount") && i != args.length-1) { 
-    			mount = args[++i];
-    		} else if (args[i].equals("-unmount") && i != args.length-1) { 
-    			unmount = args[++i];
     		} else if (args[i].equals("-cluster") && i != args.length-1) { 
     			cluster = args[++i];
     		} else if (args[i].equals("-server") && i != args.length-1) { 
@@ -337,16 +351,6 @@ public class Main {
 			System.err.println("Java executable not set!");
 			System.exit(0);
 		}
-    	
-    	if (mount == null) { 
-    		System.err.println("Mount executable not set!");
-    		System.exit(0);
-    	}
-    
-    	if (unmount == null) { 
-    		System.err.println("unmount executable not set!");
-    		System.exit(0);
-    	}
     
     	if (problems.size() == 0) { 
     		System.err.println("No problems specified!");

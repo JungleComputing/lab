@@ -46,7 +46,7 @@ public class Main {
 	private static boolean verbose = false;	
 
 	private static Server server;
-	private static int serverPort = 5678;
+	// private static int serverPort = 5678;
 	
 	// These are generated once
 	private static HashMap<String, String> properties = null;
@@ -125,10 +125,6 @@ public class Main {
 		return properties;
 	}
 
-	private static String getServerAddress() {
-		return server.getLocalAddress();
-	}
-
 	private static String[] getArguments(Cluster c) {
 
 		ArrayList<String> arguments = new ArrayList<String>();
@@ -166,12 +162,6 @@ public class Main {
 
 		arguments.add("-copy");
 		arguments.add(copy);
-
-		arguments.add("-mount");
-		arguments.add(mount);
-
-		arguments.add("-unmount");
-		arguments.add(unmount);
 
 		arguments.add("-threads");
 		arguments.add(Integer.toString(submitThreads));
@@ -253,7 +243,7 @@ public class Main {
 		 //properties.setProperty(ServerProperties.HUB_ADDRESSES, args[i]);
 		 //properties.setProperty(ServerProperties.HUB_ADDRESS_FILE, file);
 		 
-		 properties.put(ServerProperties.PORT, Integer.toString(serverPort));
+		 properties.put(ServerProperties.PORT, "0");
 		 properties.setProperty(ServerProperties.PRINT_EVENTS, "true");
 	     properties.setProperty(ServerProperties.PRINT_ERRORS, "true");
 	     properties.setProperty(ServerProperties.PRINT_STATS, "true");
