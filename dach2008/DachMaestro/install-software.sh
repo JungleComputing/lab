@@ -7,15 +7,14 @@ SRCJARFILE=$HOME/dachmaestro-0.2.zip
 INSTALLJARFILE=$HOME/tmp-dachmaestro-0.2.zip
 JAR=/usr/local/jdk/bin/jar
 GFARMDIR=/tmp/dach001
-gxpc quit
+$JAR xf $SRCJARFILE
+chmod +x *.sh
 gxpc use ssh '' ''
-gxpc explore -t $HOME/deployment-tables/headnodes.list
-gxpc e scp $MYNAME:.gfarm_shared_key .
+gxpc explore --timeout 60 -t $HOME/deployment-tables/remoteheadnodes.list
 gxpc e scp $MYNAME:$SRCJARFILE $INSTALLJARFILE
+gxpc e rm -rf '*.sh' deployment-tables
 gxpc e $JAR xf $INSTALLJARFILE
 gxpc e rm -f $INSTALLJARFILE
-gxpc e chmod +x *.sh
+gxpc e chmod +x '*.sh'
 gxpc e cp -f .bashrc .profile
-gxpc e /data/local/gfarm_v2/bin/fusermount -u $GFARMDIR
-gxpc e /data/local/gfarm_v2/bin/gfarm2fs $GFARMDIR
 gxpc quit
