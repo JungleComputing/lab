@@ -103,8 +103,9 @@ public class Main {
 		properties.put("dach.dir.tmp", tmpDir);
 		properties.put("dach.machine.id", ID);
 		properties.put("dach.host", host);
-		properties.put("satin.alg", "RS");
-		
+		properties.put("satin.alg", "MW");
+		properties.put("satin.lazyMaster", "true");
+			
 		properties.put("log4j.configuration", "file:" + homeDir	+ File.separator + "log4j.properties");
 		
 		return properties;
