@@ -119,7 +119,7 @@ class ProblemSetTask implements MapReduceTask
         String words[] = oracleOutput.split( " " );
         handle = words[0];
         File directory = new File( problemsDir, words[1].trim() );
-        if( !directory.exists() ) {
+        if( false && !directory.exists() ) {
             reportError( "Problem directory '" + directory + "' does not exist" );
             return;
         }
