@@ -37,7 +37,7 @@ class ProblemSetTask implements MapReduceTask
     private void reportError( String s )
     {
         errorString = s;
-        System.err.println( s );
+        System.out.println( s );
     }
 
     ProblemSetTask( Job compareJob, File oracleHome, File problemsDir, boolean verbose )
@@ -118,7 +118,7 @@ class ProblemSetTask implements MapReduceTask
         System.out.println( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
         String words[] = oracleOutput.split( " " );
         handle = words[0];
-        File directory = new File( problemsDir, words[1] );
+        File directory = new File( problemsDir, words[1].trim() );
         if( !directory.exists() ) {
             reportError( "Problem directory '" + directory + "' does not exist" );
             return;
@@ -126,8 +126,8 @@ class ProblemSetTask implements MapReduceTask
         PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
 
         if (pairs.isEmpty() ) { 
-            System.err.println("No pairs found in directory " + directory );
-            System.exit(1);
+            reportError( "No pairs found in directory " + directory );
+            return;
         }
 
         try{
