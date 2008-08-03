@@ -58,7 +58,7 @@ class ProblemSetTask implements MapReduceTask
     public Object getResult()
     {
         if( errorString != null ) {
-            return "ERROR: " + errorString;
+            return "ERROR: " + errorString + "\n";
         }
         String command [] = {
             oracleHome + "/" + oracleName,
@@ -197,6 +197,11 @@ class ProblemSetTask implements MapReduceTask
     public boolean isSupported()
     {
         File f = new File( oracleHome, oracleName );
+        File probeFile = new File( "problem-base" );
+        if( !probeFile.exists() ) {
+            System.out.println( "Probe file " + probeFile.getAbsolutePath() + " does not exist, so I'm not running ProblemSetTasks" );
+            return false;
+        }
         boolean res = f.exists();
         if( !res ) {
             System.out.println( "No oracle at [" + f + "]" );
