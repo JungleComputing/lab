@@ -9,7 +9,9 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Calendar;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 /**
  * 
@@ -26,6 +28,7 @@ class ProblemSetTask implements MapReduceTask
     private File resultFileName = null;
     private PrintStream resultFile = null;
     private final boolean verbose;
+    private static final Random rng = new Random();
 
     /** The handle of this problem set run for the oracle. */
     private String handle = null;
@@ -123,15 +126,19 @@ class ProblemSetTask implements MapReduceTask
             reportError( "Problem directory '" + directory + "' does not exist" );
             return;
         }
+        System.out.println( "Getting problem pairs from directory " + directory );
         PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
 
         if (pairs.isEmpty() ) { 
             reportError( "No pairs found in directory " + directory );
             return;
         }
+        System.out.println( "I now have " + pairs.size() + " pairs" );
 
         try{
-            resultFileName = File.createTempFile( "result-" + problemSet, ".txt" );
+            long now = System.currentTimeMillis();
+            // FIXME: don't make this a temp file, we want to keep it.
+            resultFileName = new File( "result-" + problemSet + "-" + String.format( "%D-%tT", now, now ) + "-" + rng.nextDouble() + ".txt" );
             resultFileName.deleteOnExit();
             resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
         }

@@ -70,6 +70,10 @@ public class FindPairs {
 	final PriorityQueue<FilePair> pairs = new PriorityQueue<FilePair>();
 
 	File [] files = directory.listFiles();
+        if( files == null ){
+            System.out.println( "Directory " + directory + " does not exist" );
+            return pairs;
+        }
 
 	for( File f : files ) { 
 

@@ -1,5 +1,5 @@
 #!/bin/sh
-LOGDIR=`hostname`-output
+LOGDIR=`hostname`-cleaner-output
 rm -rf $LOGDIR
 mkdir $LOGDIR
 export GXP_SESSION=`gxpc --create_daemon 1`
