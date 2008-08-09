@@ -212,7 +212,13 @@ class ProblemSetTask implements MapReduceTask
         if( !res ) {
             System.out.println( "No oracle at [" + f + "]" );
         }
-        return res;
+        String hardwarename = System.getProperty( "hardwarename" );
+        boolean supported = true;
+        if( hardwarename.equals( "x86_64" ) ) {
+            supported = false;
+        }
+        System.out.println( "hardwarename=" + hardwarename + " supported=" + supported );
+        return supported;
     }
 
 }

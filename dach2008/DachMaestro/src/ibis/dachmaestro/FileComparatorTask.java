@@ -3,7 +3,7 @@ package ibis.dachmaestro;
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
-import ibis.maestro.TaskExecutionTimeEstimator;
+import ibis.maestro.UnpredictableTask;
 import ibis.util.RunProcess;
 
 /**
@@ -11,7 +11,7 @@ import ibis.util.RunProcess;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class FileComparatorTask implements AtomicTask, TaskExecutionTimeEstimator
+public class FileComparatorTask implements AtomicTask, UnpredictableTask
 {
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
@@ -81,7 +81,13 @@ public class FileComparatorTask implements AtomicTask, TaskExecutionTimeEstimato
     @Override
     public boolean isSupported()
     {
-        return true;
+        String hardwarename = System.getProperty( "hardwarename" );
+        boolean supported = false;
+        if( hardwarename.equals( "x86_64" ) ) {
+            supported = true;
+        }
+        System.out.println( "hardwarename=" + hardwarename + " supported=" + supported );
+        return supported;
     }
 
     /**
