@@ -29,11 +29,11 @@ public class ManyProblemProgram {
 
     private static void writeTextFile( File path, String text ) throws IOException
     {
-	FileOutputStream stream = new FileOutputStream( path );
-	PrintStream s = new PrintStream( stream );
-	s.print( text );
-	s.close();
-	stream.close();
+        FileOutputStream stream = new FileOutputStream( path );
+        PrintStream s = new PrintStream( stream );
+        s.print( text );
+        s.close();
+        stream.close();
     }
 
     private static class Listener implements CompletionListener
@@ -65,10 +65,10 @@ public class ManyProblemProgram {
             String result = (String) resultObject;
             File resultFile = new File( "result-" + label + "-" + System.currentTimeMillis() + ".txt" );
             try {
-		writeTextFile( resultFile, result );
-	    } catch (IOException e) {
-		System.out.println( "Cannot write result to file " + resultFile );
-	    }
+                writeTextFile( resultFile, result );
+            } catch (IOException e) {
+                System.out.println( "Cannot write result to file " + resultFile );
+            }
             System.out.println( "Result for " + label + " is " + result );
             results.put( label, result );
             if( sentFinal && labelTracker.allAreReturned() ) {
@@ -84,7 +84,7 @@ public class ManyProblemProgram {
         void setFinished() {
             sentFinal = true;	    
         }
-        
+
         HashMap<Label, String> getResults()
         {
             return results;
@@ -185,19 +185,31 @@ public class ManyProblemProgram {
             System.out.println( "Node created" );
             long startTime = System.nanoTime();
             if( node.isMaestro() ) {
+                boolean goodToSubmit = true;
+
                 if( waitNodes>0 ) {
                     System.out.println( "Waiting for " + waitNodes + " ready nodes" );
                     long deadline = 5*60*1000; // 5 minutes in ms
                     int n = node.waitForReadyNodes( waitNodes, deadline );
                     System.out.println( "Continuing; there are now " + n + " ready nodes" );
+                    if( n*3<waitNodes ) {
+                        System.out.println( "That's less than a third of the required nodes (" + waitNodes + "); giving up" );
+                        goodToSubmit = false;
+                    }
                 }
-                for( String problem: problems ) {
-                    Label label = listener.getLabel();
-                    problemSetJob.submit( node, problem, label, listener );
-                    labels.add( label );
+                if( goodToSubmit ) {
+                    for( String problem: problems ) {
+                        Label label = listener.getLabel();
+                        problemSetJob.submit( node, problem, label, listener );
+                        labels.add( label );
+                    }
+                    listener.setFinished();
+                    System.out.println( "Jobs submitted" );
                 }
-                listener.setFinished();
-                System.out.println( "Jobs submitted" );
+                else {
+                    System.out.println( "Emergency stop." );
+                    node.setStopped();
+                }
             }
             node.waitToTerminate();
             HashMap<Label, String> l = listener.getResults();

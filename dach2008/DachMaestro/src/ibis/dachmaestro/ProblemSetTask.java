@@ -26,6 +26,8 @@ class ProblemSetTask implements MapReduceTask
     private final File problemsDir;
     private File resultFileName = null;
     private PrintStream resultFile = null;
+    private int submittedPairs = 0;
+    private int returnedPairs = 0;
     private final boolean verbose;
     private static final Random rng = new Random();
 
@@ -154,6 +156,7 @@ class ProblemSetTask implements MapReduceTask
             FilePair pair = pairs.remove();
             handler.submit( compareJob, pair, serial++ );
         }
+        submittedPairs = serial;
     }
 
     /**
@@ -183,6 +186,8 @@ class ProblemSetTask implements MapReduceTask
     {
         Result result = (Result) resultObject;
         resultFile.append( result.result );
+        returnedPairs++;
+        System.out.println( "I now have " + returnedPairs + " of " + submittedPairs + " solutions" );
     }
 
     /**
