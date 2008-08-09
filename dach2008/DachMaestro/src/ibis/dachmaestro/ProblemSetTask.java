@@ -222,7 +222,7 @@ class ProblemSetTask implements MapReduceTask
         if( hardwarename.equals( "x86_64" ) ) {
             supported = false;
         }
-        System.out.println( "hardwarename=" + hardwarename + " supported=" + supported );
+        System.out.println( "ProblemSetTask: hardwarename=" + hardwarename + " supported=" + supported );
         return supported;
     }
 

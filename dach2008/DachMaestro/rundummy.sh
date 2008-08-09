@@ -36,5 +36,5 @@ exec $JAVA \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
     -Dhardwarename=`uname -m` \
-    -Xmx$MEMORY \
-     ibis.dachmaestro.ManyProblemProgram "$@"
+    -Xmx800M \
+     ibis.maestro.MasterWorkerProgram "$@"

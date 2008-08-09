@@ -3,7 +3,7 @@ package ibis.dachmaestro;
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
-import ibis.maestro.UnpredictableTask;
+import ibis.maestro.UnpredictableAtomicTask;
 import ibis.util.RunProcess;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class ImageComparatorTask implements AtomicTask, UnpredictableTask
+public class ImageComparatorTask implements AtomicTask, UnpredictableAtomicTask
 {
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
@@ -109,7 +109,7 @@ public class ImageComparatorTask implements AtomicTask, UnpredictableTask
         if( hardwarename.equals( "x86_64" ) ) {
             supported = true;
         }
-        System.out.println( "hardwarename=" + hardwarename + " supported=" + supported );
+        System.out.println( "ImageComparatorTask: hardwarename=" + hardwarename + " supported=" + supported );
 	return supported;
     }
 

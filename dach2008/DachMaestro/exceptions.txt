@@ -1,0 +1,58 @@
+
+java.io.EOFException
+        at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:323)
+        at java.io.DataInputStream.readUTF(DataInputStream.java:572)
+        at java.io.DataInputStream.readUTF(DataInputStream.java:547)
+        at ibis.ipl.impl.tcp.TcpIbis.handleConnectionRequest(TcpIbis.java:234)
+        at ibis.ipl.impl.tcp.TcpIbis.run(TcpIbis.java:332)
+        at ibis.util.ThreadPool$PoolThread.run(ThreadPool.java:121)
+
+--------------------------------
+
+java.io.EOFException
+        at java.io.DataInputStream.readUnsignedShort(DataInputStream.java:323)
+        at java.io.DataInputStream.readUTF(DataInputStream.java:572)
+        at Error: Cannot send a non-essential class ibis.maestro.GossipMessage message to ibis (Ibis 75, location hongo102@logos@ic@i@u-tokyo@ac@jp)
+
+--------------------------------
+
+  2 stuks in registry!
+
+java.lang.Exception: ibis unknown: (Ibis 21, location kyoto026@para@media@kyoto-u@ac@jp)
+        at ibis.ipl.impl.registry.central.server.Pool.leave(Pool.java:370)
+        at ibis.ipl.impl.registry.central.server.ServerConnectionHandler.handleLeave(ServerConnectionHandler.java:134)
+        at ibis.ipl.impl.registry.central.server.ServerConnectionHandler.run(ServerConnectionHandler.java:379)
+        at ibis.util.ThreadPool$PoolThread.run(ThreadPool.java:121)
+08:29:56 Central Registry: (Ibis 50, location chiba120@intrigger@nii@ac@jp) died in pool "MaestroPool" now 7 members
+08:29:56 Central Registry: (Ibis 62, location hongo101@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 6 members
+08:29:59 Central Registry: (Ibis 65, location hongo113@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 5 members
+08:29:59 Central Registry: (Ibis 58, location hongo110@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 4 members
+08:30:03 Central Registry: (Ibis 41, location chiba117@intrigger@nii@ac@jp) died in pool "MaestroPool" now 3 members
+08:30:31 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   3    83      6    74         1       0       N.A.  false false
+
+08:30:32 Central Registry: (Ibis 79, location hongo108@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 2 members
+08:30:41 Central Registry: (Ibis 40, location chiba110@intrigger@nii@ac@jp) died in pool "MaestroPool" now 1 members
+08:31:31 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   1    83      6    76         1       0       N.A.  false false
+
+08:31:35 Central Registry: (Ibis 11, location suzuk025@intrigger@titech@ac@jp) died in pool "MaestroPool" now 0 members
+08:31:35 Central Registry: pool MaestroPool ended
+08:32:31 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   0    83      6    77         1       0       N.A.  false  true
+
+Central Registry: pool "MaestroPool" ended
+08:34:02 FATAL [ClientConnection(157.82.22.81-38535/10.0.1.81-38535)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(157.82.22.81-38535/10.0.1.81-38535)
+java.lang.OutOfMemoryError: Java heap space
+        at ibis.smartsockets.direct.DirectSocketAddress.read(DirectSocketAddress.java:810)
+        at ibis.smartsockets.hub.connections.MessageForwardingConnection.handleCreateVirtual(MessageForwardingConnection.java:334)
+        at ibis.smartsockets.hub.connections.MessageForwardingConnection.runConnection(MessageForwardingConnection.java:1089)
+        at ibis.smartsockets.hub.connections.BaseConnection.run(BaseConnection.java:49)
+        at ibis.util.ThreadPool$PoolThread.run(ThreadPool.java:121)
+
