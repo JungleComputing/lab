@@ -2,7 +2,7 @@
 
 #SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=fs0.das3.cs.vu.nl
-SERVERHOST=hongo000.logos.ic.i.u-tokyo.ac.jp
+SERVERHOST=hongo001.logos.ic.i.u-tokyo.ac.jp
 
 source $HOME/.bashrc
 
