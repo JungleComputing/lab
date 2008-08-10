@@ -123,10 +123,6 @@ class ProblemSetTask implements MapReduceTask
         String words[] = oracleOutput.split( " " );
         handle = words[0];
         File directory = new File( problemsDir, words[1].trim() );
-        if( false && !directory.exists() ) {
-            reportError( "Problem directory '" + directory + "' does not exist" );
-            return;
-        }
         System.out.println( "Getting problem pairs from directory " + directory );
         PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
 
@@ -138,9 +134,7 @@ class ProblemSetTask implements MapReduceTask
 
         try{
             long now = System.currentTimeMillis();
-            // FIXME: don't make this a temp file, we want to keep it.
             resultFileName = new File( "result-" + problemSet + "-" + String.format( "%D-%tT", now, now ) + "-" + rng.nextDouble() + ".txt" );
-            resultFileName.deleteOnExit();
             resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
         }
         catch( IOException e ){
