@@ -6,7 +6,6 @@ MYNAME=`hostname -f`
 SRCJARFILE=$HOME/dachmaestro-0.2.zip
 INSTALLJARFILE=$HOME/tmp-dachmaestro-0.2.zip
 JAR=/usr/local/jdk/bin/jar
-GFARMDIR=/tmp/dach001
 rm -rf dachmaestro-0.2
 $JAR xf $SRCJARFILE
 chmod +x *.sh
