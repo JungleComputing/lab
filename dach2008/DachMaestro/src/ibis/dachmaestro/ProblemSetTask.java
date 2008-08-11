@@ -205,16 +205,6 @@ class ProblemSetTask implements MapReduceTask
     @Override
     public boolean isSupported()
     {
-        File f = new File( oracleHome, oracleName );
-        File probeFile = new File( "problem-base" );
-        if( !probeFile.exists() ) {
-            System.out.println( "Probe file " + probeFile.getAbsolutePath() + " does not exist, so I'm not running ProblemSetTasks" );
-            return false;
-        }
-        boolean res = f.exists();
-        if( !res ) {
-            System.out.println( "No oracle at [" + f + "]" );
-        }
         String hardwarename = System.getProperty( "hardwarename" );
         boolean supported = true;
         if( hardwarename.equals( "x86_64" ) ) {

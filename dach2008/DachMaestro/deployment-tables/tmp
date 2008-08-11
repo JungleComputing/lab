@@ -1,0 +1,12 @@
+cp chiba000-all.list chiba000.intrigger.nii.ac.jp-all.list
+cp hiro000-all.list hiro000.net.hiroshima-u.ac.jp-all.list
+cp hongo000-all.list hongo000.logos.ic.i.u-tokyo.ac.jp-all.list
+cp imade000-all.list imade000.kuis.kyoto-u.ac.jp-all.list
+cp keio000-all.list  keio000.sslab.ics.keio.ac.jp-all.list
+cp kobe000-all.list kobe000.intrigger.scitec.kobe-u.ac.jp-all.list
+cp kyoto000-all.list kyoto000.para.media.kyoto-u.ac.jp-all.list
+cp kyushu000-all.list kyushu000.bioinfo.kyushu-u.ac.jp-all.list
+cp mirai000-all.list mirai000.intrigger.jp-all.list
+cp nimbus.titech.hpcc.jp-all.list nimbus.titech.hpcc.jp-all.list
+cp okubo000-all.list okubo000.yama.info.waseda.ac.jp-all.list
+cp suzuk000-all.list suzuk000.intrigger.titech.ac.jp-all.list

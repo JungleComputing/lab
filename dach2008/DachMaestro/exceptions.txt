@@ -56,3 +56,42 @@ java.lang.OutOfMemoryError: Java heap space
         at ibis.smartsockets.hub.connections.BaseConnection.run(BaseConnection.java:49)
         at ibis.util.ThreadPool$PoolThread.run(ThreadPool.java:121)
 
+
+
+--------------
+
+dach001@hongo001:~$ ./startserver.sh
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Exception in thread "DirectModule AcceptThread" java.lang.NoClassDefFoundError: ibis/smartsockets/util/CountingOutputStream
+        at ibis.smartsockets.virtual.modules.direct.Direct.createVirtualSocket(Direct.java:266)
+        at ibis.smartsockets.virtual.modules.AbstractDirectModule.accept(AbstractDirectModule.java:93)
+        at ibis.smartsockets.virtual.modules.AbstractDirectModule.handleAccept(AbstractDirectModule.java:153)
+        at ibis.smartsockets.virtual.modules.direct.Direct.handleAccept(Direct.java:210)
+        at ibis.smartsockets.virtual.modules.direct.Direct$AcceptThread.run(Direct.java:42)
+Caused by: java.lang.ClassNotFoundException: ibis.smartsockets.util.CountingOutputStream
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:197)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:188)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:306)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:276)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:251)
+        at java.lang.ClassLoader.loadClassInternal(ClassLoader.java:319)
+        ... 5 more
+Caused by: java.util.zip.ZipException: error reading zip file
+        at java.util.zip.ZipFile.read(Native Method)
+        at java.util.zip.ZipFile.access$1200(ZipFile.java:29)
+        at java.util.zip.ZipFile$ZipFileInputStream.read(ZipFile.java:447)
+        at java.util.zip.ZipFile$1.fill(ZipFile.java:230)
+        at java.util.zip.InflaterInputStream.read(InflaterInputStream.java:141)
+        at sun.misc.Resource.getBytes(Resource.java:97)
+        at java.net.URLClassLoader.defineClass(URLClassLoader.java:256)
+        at java.net.URLClassLoader.access$000(URLClassLoader.java:56)
+        at java.net.URLClassLoader$1.run(URLClassLoader.java:195)
+        ... 11 more
+#
+# An unexpected error has been detected by Java Runtime Environment:
