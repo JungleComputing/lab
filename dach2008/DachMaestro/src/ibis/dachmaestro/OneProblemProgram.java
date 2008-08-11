@@ -6,9 +6,15 @@ import ibis.maestro.JobList;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
+import ibis.util.RunProcess;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.util.HashSet;
 import java.util.PriorityQueue;
+import java.util.Random;
 
 /**
  * Command-line interface.
@@ -16,17 +22,30 @@ import java.util.PriorityQueue;
  * @author Kees van Reeuwijk, Jason Maassen
  *
  */
-public class OneProblemProgram {
+public class OneProblemProgram
+{
+    private static final Random rng = new Random();
+    private static int submittedPairs = 0;
+    private static int returnedPairs = 0;
+    private static File resultFileName = null;
+    private static PrintStream resultFile = null;
+    private static File oracleHome;
+    private static String handle;
+
+    private static final String DEFAULT_ORACLE_HOME = "/home/dach911";
+    private static final String DEFAULT_PROBLEMS_DIR = "/tmp/dach001";
+    private static final String oracleName = "dach_api/dach_api";
 
     private static void usage() { 
-	System.err.println("Usage: Main <directory>");
+	System.err.println( "Usage: Main <problem>" );
 	System.exit(1);
     }
+
     private static class Listener implements CompletionListener
     {
 	private final LabelTracker labelTracker = new LabelTracker();
+	private final HashSet<LabelTracker.Label> returnedResults = new HashSet<LabelTracker.Label>();
 	private boolean sentFinal = false;
-	private StringBuilder resultString = new StringBuilder();
 
 	/** Handle the completion of task with identifier 'id': the result is 'result'.
 	 * @param node The node we're running this on.
@@ -44,18 +63,29 @@ public class OneProblemProgram {
 		System.err.println( "Internal error: result is not a Result but a " + resultObject.getClass() + ": " + resultObject );
 		System.exit( 1 );
 	    }
+	    LabelTracker.Label label = (LabelTracker.Label) id;
 	    Result result = (Result) resultObject;
 	    if( result.error == null ) {
 		// All went well.
-		resultString.append( result.result );
+		if( returnedResults.contains( label ) ) {
+		    System.out.println( "Duplicate result ignored" );
+		}
+		else {
+		    resultFile.append( result.result );
+		    returnedPairs++;
+		    System.out.println( "I now have " + returnedPairs + " of " + submittedPairs + " solutions" );
+		    returnedResults.add( label );
+		}
 	    }
 	    else {
 		System.err.println( "Comparison failed: " + result.error );
 	    }
-	    labelTracker.returnLabel( (LabelTracker.Label) id );
+	    labelTracker.returnLabel( label );
 	    if( sentFinal && labelTracker.allAreReturned() ) {
 		System.out.println( "I got all job results back; stopping program" );
 		node.setStopped();
+		resultFile.close();
+		reportResultToOracle();
 	    }
 	}
 
@@ -66,11 +96,85 @@ public class OneProblemProgram {
 	void setFinished() {
 	    sentFinal = true;	    
 	}
-	
-	String getResult()
-	{
-	    return resultString.toString();
+    }
+
+    /**
+     * @param l
+     * @return
+     */
+    private static String joinStringList( String[] l )
+    {
+	String cmd = "";
+
+	for( String c: l ) {
+	    if( !cmd.isEmpty() ) {
+		cmd += ' ';
+	    }
+	    cmd += c;
 	}
+	return cmd;
+    }
+
+    private static boolean submitProblem( Node node, String problem, File oracleHome, String oracleName, File problemsDir, Job compareJob, boolean verbose, Listener listener )
+    {
+	String problemSet = problem;
+
+	String command [] = {
+		oracleHome + "/" + oracleName,
+		"--get_problem",
+		problemSet
+	};
+
+	System.out.println( "Executing " + joinStringList(command) );
+	RunProcess p = new RunProcess( command );
+	p.run();
+
+	int exit = p.getExitStatus();
+
+	System.out.println( "Execution finished" );
+	if( exit != 0 ) {
+	    String cmd = joinStringList( command );
+
+	    System.err.println(
+		    "command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+		    + " stderr: " + new String( p.getStderr() ) );
+	    return false;
+	}
+	String oracleOutput = new String( p.getStdout() ).trim();
+	System.out.println( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
+	String words[] = oracleOutput.split( " " );
+	handle = words[0];
+	File directory = new File( problemsDir, words[1].trim() );
+	System.out.println( "Getting problem pairs from directory " + directory );
+	PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
+
+	if (pairs.isEmpty() ) { 
+	    System.err.println( "No pairs found in directory " + directory );
+	    return false;
+	}
+
+	System.out.println( "I now have " + pairs.size() + " pairs" );
+
+	try{
+	    resultFileName = new File( "result-" + problemSet + "-" + rng.nextDouble() + ".txt" );
+	    resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
+	}
+	catch( IOException e ){
+	    System.err.println( "I/O error: " + e.getLocalizedMessage() );
+	    return false;
+	}
+
+	if (verbose) { 
+	    System.out.printf("Starting comparison of " + pairs.size() + " pairs.");
+	}
+
+	while( !pairs.isEmpty() ) {
+	    FilePair pair = pairs.remove();
+	    Object label = listener.getLabel();
+	    compareJob.submit( node, pair, label, listener );
+	    submittedPairs++;
+	}
+	return true;
     }
 
     /**
@@ -81,15 +185,18 @@ public class OneProblemProgram {
     public static void main( String[] args )
     {
 	boolean goForMaestro = false;
+	String problem = null;
 
 	if (args.length == 0) { 
 	    usage();
 	}
 
 	try {
-	    File dir = null;
 	    boolean verbose = false;
 	    String command = null;
+	    String oracleHomeName = DEFAULT_ORACLE_HOME;
+	    int waitNodes = 0;
+	    String problemsDirName = DEFAULT_PROBLEMS_DIR;
 
 	    for (int i=0;i<args.length;i++) { 
 
@@ -105,65 +212,74 @@ public class OneProblemProgram {
 			System.exit(1);
 		    }
 		}
-		else if (args[i].equals("-d") || args[i].equals("--directory")) { 
-		    if (dir == null) {  
-			dir = new File(args[++i]);
-		    } else { 
-			System.err.println( "Directory already specified!");
-			System.exit( 1 );
-		    }
+		else if (args[i].equals("-o") || args[i].equals("--oraclehome")) {
+		    oracleHomeName = args[++i];
+		}
+		else if (args[i].equals("-w") || args[i].equals("--waitnodes")) {
+		    waitNodes = Integer.parseInt(  args[++i] );
+		}
+		else if (args[i].equals("-p") || args[i].equals("--problemsdir")) {
+		    problemsDirName = args[++i];
 		}
 		else {
-		    usage();
+		    System.out.println( "Problemset '" + args[i] + "'" );
+		    if( problem != null ) {
+			System.err.println( "More than one problem specified: " + args[i] + " and " + problem );
+			System.exit( 1 );
+		    }
+		    problem = args[i];
+		    goForMaestro = true;
 		}
 	    }
+	    if (command == null) {
+		command = System.getenv( "DACHCOMPARATOR" );
+
+		if (command == null ) {
+		    System.err.println( "No comparison command given, and DACHCOMPARATOR environement variable is not set" );
+		    System.exit( 1 );	
+		}
+	    }
+	    oracleHome = new File( oracleHomeName );
+	    File problemsDir = new File( problemsDirName );
 
 	    if (command == null) {
-	        command = System.getenv( "DACHCOMPARATOR" );
+		command = System.getenv( "DACHCOMPARATOR" );
 
-	        if (command == null ) {
-	            System.err.println( "No comparison command given, and DACHCOMPARATOR environement variable is not set" );
-	            System.exit( 1 );	
-	        }
-	    }
-
-	    if( dir != null ) {
-		goForMaestro = true;
-		if (!dir.exists() || !dir.canRead() || !dir.isDirectory()) { 
-		    System.err.println("Directory " + dir + " cannot be accessed!");
-		    System.exit( 1 );
+		if (command == null ) {
+		    System.err.println( "No comparison command given, and DACHCOMPARATOR environement variable is not set" );
+		    System.exit( 1 );	
 		}
 	    }
+
 	    JobList jobs = new JobList();
 	    Job job = jobs.createJob(
-		"comparison",
-		new FileComparatorTask( command )
+		    "comparison",
+		    new FileComparatorTask( command )
 	    );
 	    Listener listener = new Listener();
 
-	    PriorityQueue<FilePair> pairs = FindPairs.getPairs( dir, verbose );
-
-	    if (pairs.isEmpty() ) { 
-		System.err.println("No pairs found in directory " + args[0]);
-		System.exit(1);
-	    }
-
-	    if (verbose) { 
-		System.out.printf("Starting comparison of " + pairs.size() + " pairs.");
-	    }
 
 	    Node node = new Node( jobs, goForMaestro );
 
 	    System.out.println( "Node created" );
 	    long startTime = System.nanoTime();
 	    if( node.isMaestro() ) {
-	        while( !pairs.isEmpty() ) {
-	            FilePair pair = pairs.remove();
-		    Object label = listener.getLabel();
-		    job.submit( node, pair, label, listener );
-	        }
-		listener.setFinished();
-		System.out.println( "Jobs submitted" );
+		boolean goodToSubmit = true;
+		if( waitNodes>0 ) {
+		    System.out.println( "Waiting for " + waitNodes + " ready nodes" );
+		    long deadline = 5*60*1000; // 5 minutes in ms
+		    int n = node.waitForReadyNodes( waitNodes, deadline );
+		    System.out.println( "Continuing; there are now " + n + " ready nodes" );
+		    if( n*3<waitNodes ) {
+			System.out.println( "That's less than a third of the required nodes (" + waitNodes + "); giving up" );
+			goodToSubmit = false;
+		    }
+		}
+		if( goodToSubmit ) {
+		    submitProblem( node, problem, oracleHome, oracleName, problemsDir, job, verbose, listener );
+		    listener.setFinished();
+		    System.out.println( "Jobs submitted" );
+		}
 	    }
 	    node.waitToTerminate();
 	    long stopTime = System.nanoTime();
@@ -173,6 +289,34 @@ public class OneProblemProgram {
 	    System.out.println( "main(): caught exception:" + x );
 	    x.printStackTrace();
 	}
+    }
+
+    /**
+     * @param oracleHome
+     */
+    private static void reportResultToOracle()
+    {
+	String reportCommand [] = {
+		oracleHome + "/" + oracleName,
+		"--check_ans",
+		handle,
+		resultFileName.getAbsolutePath()
+	};
+
+	RunProcess p = new RunProcess( reportCommand );
+	p.run();
+
+	int exit = p.getExitStatus();
+
+	if( exit != 0 ) {
+	    String cmd = joinStringList( reportCommand );
+
+	    System.err.println( "ERROR: command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+	    + " stderr: " + new String( p.getStderr() ) );
+	    System.exit( 1 );
+	}
+	String verdict = new String( p.getStdout() );
+	System.out.println( "Oracle verdict: " + verdict );
     }
 
 }

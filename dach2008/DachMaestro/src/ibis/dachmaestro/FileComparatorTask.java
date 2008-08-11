@@ -83,7 +83,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
     {
         String hardwarename = System.getProperty( "hardwarename" );
         boolean supported = false;
-        if( hardwarename.equals( "x86_64" ) ) {
+        if( hardwarename == null || hardwarename.equals( "x86_64" ) ) {
             supported = true;
         }
         System.out.println( "FileComparatorTask: hardwarename=" + hardwarename + " supported=" + supported );
