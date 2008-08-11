@@ -13,7 +13,7 @@ mkdir $GFARMDIR
 gxpc use ssh '' ''
 ## We're very persistent since the nodes can be very busy.
 ## The point is to change that...
-gxpc explore --timeout 120 `cat $1`
+gxpc explore --timeout 60 `cat $1`
 gxpc e -H `hostname` /usr/bin/fusermount -u $GFARMDIR
 gxpc e -H `hostname` rm -rf $GFARMDIR
 gxpc e -H `hostname` mkdir $GFARMDIR

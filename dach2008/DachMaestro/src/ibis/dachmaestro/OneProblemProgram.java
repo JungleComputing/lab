@@ -36,7 +36,8 @@ public class OneProblemProgram
     private static final String DEFAULT_PROBLEMS_DIR = "/tmp/dach001";
     private static final String oracleName = "dach_api/dach_api";
 
-    private static void usage() { 
+    private static void usage()
+    { 
 	System.err.println( "Usage: Main <problem>" );
 	System.exit(1);
     }
@@ -52,7 +53,8 @@ public class OneProblemProgram
 	 * @param id The task that was completed.
 	 * @param resultObject The result of the task.
 	 */
-	@Override
+	@SuppressWarnings("synthetic-access")
+    @Override
 	public void jobCompleted( Node node, Object id, Object resultObject )
 	{
 	    if( !(id instanceof LabelTracker.Label) ){
@@ -73,6 +75,7 @@ public class OneProblemProgram
 		else {
 		    resultFile.append( result.result );
 		    returnedPairs++;
+		    System.out.println( "Problem " + label + " took " + Service.formatNanoseconds( result.computeTime ) );
 		    System.out.println( "I now have " + returnedPairs + " of " + submittedPairs + " solutions" );
 		    returnedResults.add( label );
 		}
@@ -115,7 +118,7 @@ public class OneProblemProgram
 	return cmd;
     }
 
-    private static boolean submitProblem( Node node, String problem, File oracleHome, String oracleName, File problemsDir, Job compareJob, boolean verbose, Listener listener )
+    private static boolean submitProblem( Node node, String problem, File problemsDir, Job compareJob, boolean verbose, Listener listener )
     {
 	String problemSet = problem;
 
@@ -153,7 +156,7 @@ public class OneProblemProgram
 	    return false;
 	}
 
-	System.out.println( "I now have " + pairs.size() + " pairs" );
+	System.out.println( "There are " + pairs.size() + " pairs" );
 
 	try{
 	    resultFileName = new File( "result-" + problemSet + "-" + rng.nextDouble() + ".txt" );
@@ -174,6 +177,7 @@ public class OneProblemProgram
 	    compareJob.submit( node, pair, label, listener );
 	    submittedPairs++;
 	}
+        listener.setFinished();
 	return true;
     }
 
@@ -186,10 +190,6 @@ public class OneProblemProgram
     {
 	boolean goForMaestro = false;
 	String problem = null;
-
-	if (args.length == 0) { 
-	    usage();
-	}
 
 	try {
 	    boolean verbose = false;
@@ -276,9 +276,14 @@ public class OneProblemProgram
 		    }
 		}
 		if( goodToSubmit ) {
-		    submitProblem( node, problem, oracleHome, oracleName, problemsDir, job, verbose, listener );
-		    listener.setFinished();
+		    boolean ok = submitProblem( node, problem, problemsDir, job, verbose, listener );
+		    if( ok ) {
 		    System.out.println( "Jobs submitted" );
+		    }
+		    else {
+		        System.err.println( "Could not submit jobs" );
+		        node.setStopped();
+		    }
 		}
 	    }
 	    node.waitToTerminate();

@@ -10,7 +10,7 @@ rm -rf dachmaestro-0.2
 $JAR xf $SRCJARFILE
 chmod +x *.sh
 gxpc use ssh '' ''
-gxpc explore --timeout 60 -t $HOME/deployment-tables/remoteheadnodes.list
+gxpc explore --timeout 120 -t $HOME/deployment-tables/remoteheadnodes.list
 gxpc e -H `hostname` scp $MYNAME:$SRCJARFILE $INSTALLJARFILE
 gxpc e -H `hostname` rm -rf '*.sh' deployment-tables dachmaestro-0.2
 gxpc e -H `hostname` $JAR xf $INSTALLJARFILE

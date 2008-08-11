@@ -3,6 +3,8 @@
 #SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=fs0.das3.cs.vu.nl
 SERVERHOST=hongo001.logos.ic.i.u-tokyo.ac.jp
+#SERVERHOST=lily.local
+DACHMAESTRO_HOME=dachmaestro-0.2
 
 source $HOME/.bashrc
 
@@ -27,6 +29,7 @@ add_to_libclasspath () {
 
 # Add the jar files in the Maestro lib dir to the classpath.
 add_to_libclasspath "${DACHMAESTRO_HOME}"/lib
+add_to_libclasspath ./lib
 
 # And finally, run ...
 #    -Dsmartsockets.file="$DACHMAESTRO_HOME"/smartsockets.properties \
@@ -35,6 +38,6 @@ exec $JAVA \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
     -Dibis.server.address=$SERVERHOST:5437 \
-    -Dhardwarename=`uname -m` \
+    -Dhardwarename="`uname -m`" \
     -Xmx$MEMORY \
-     ibis.dachmaestro.ManyProblemProgram "$@"
+     ibis.dachmaestro.OneProblemProgram "$@"
