@@ -20,7 +20,10 @@ public class FilePair implements Serializable, Comparable<FilePair> {
     /** The local filename of the 'after' file. */
     public final File after;
 
-    FilePair( final File before, final File after ) {
+    int serial;
+
+    FilePair( final File before, final File after )
+    {
 	this.before = before;
 	this.after = after;
     }

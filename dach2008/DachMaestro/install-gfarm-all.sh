@@ -5,12 +5,11 @@
 MYNAME=`hostname -f`
 export GXP_SESSION=`gxpc --create_daemon 1`
 trap 'gxpc quit; exit 1' 2
-HOSTS=`cat deployment-tables/remoteheadnodes.list'
+HOSTS=`cat deployment-tables/remoteheadnodes.list`
 rm -rf gfarmlog
 mkdir gfarmlog
-gxpc use ssh '' ''
-gxpc explore $HOSTS
-gxpc e -H $MYNAME scp $MYNAME:.gfarm_shared_key .
-gxpc e sh -x install-gfarm-site.sh deployment-tables/'`hostname`'-all.list '>' '`hostname`'-install-gfarm.out '2>' '`hostname`'-install-gfarm.err
-gxpc e scp -r '*-install-gfarm.*' '`hostname`'-gfarm-output `hostname -f`:gfarmlog
-gxpc quit
+for host in $HOSTS; do
+    scp install-gfarm-site.sh $host
+    ssh $host sh -x ./install-gfarm-site.sh deployment-tables/$host-all.list '>' $host-instal-gfarm.out '2>' $host-istall-gfarm.err
+    scp -r '*-install-gfarm.*' $host-gfarm-output `hostname -f`:gfarmlog
+done

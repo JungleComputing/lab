@@ -146,9 +146,12 @@ class ProblemSetTask implements MapReduceTask
             System.out.printf("Starting comparison of " + pairs.size() + " pairs.");
         }
         int serial = 0;
+
+        
         while( !pairs.isEmpty() ) {
             FilePair pair = pairs.remove();
-            handler.submit( compareJob, pair, serial++ );
+            pair.serial = serial++;
+            handler.submit( pair, pair.serial, true, compareJob );
         }
         submittedPairs = serial;
     }
@@ -157,7 +160,8 @@ class ProblemSetTask implements MapReduceTask
      * @param l
      * @return
      */
-    private static String joinStringList(String[] l) {
+    private static String joinStringList( String[] l )
+    {
 	String cmd = "";
 
 	for( String c: l ) {
