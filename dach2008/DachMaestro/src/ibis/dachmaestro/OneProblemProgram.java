@@ -6,12 +6,14 @@ import ibis.maestro.JobList;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
+import ibis.maestro.LabelTracker.Label;
 import ibis.util.RunProcess;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -47,6 +49,7 @@ public class OneProblemProgram
         private final LabelTracker labelTracker = new LabelTracker();
         private final HashSet<LabelTracker.Label> returnedResults = new HashSet<LabelTracker.Label>();
         private boolean sentFinal = false;
+        private int failures = 0;
 
         /** Handle the completion of task with identifier 'id': the result is 'result'.
          * @param node The node we're running this on.
@@ -58,37 +61,45 @@ public class OneProblemProgram
         public void jobCompleted( Node node, Object id, Object resultObject )
         {
             if( !(id instanceof LabelTracker.Label) ){
-                System.err.println( "Internal error: Object id is not a tracker label but a " + resultObject.getClass() + ": " + id );
+                node.reportInternalError( "Object id is not a tracker label but a " + resultObject.getClass() + ": " + id );
                 System.exit( 1 );
             }
             if( !(resultObject instanceof Result) ) {
-                System.err.println( "Internal error: result is not a Result but a " + resultObject.getClass() + ": " + resultObject );
+                node.reportInternalError( "Internal error: result is not a Result but a " + resultObject.getClass() + ": " + resultObject );
                 System.exit( 1 );
             }
             LabelTracker.Label label = (LabelTracker.Label) id;
+            labelTracker.returnLabel( label );
             Result result = (Result) resultObject;
             if( result.error == null ) {
                 // All went well.
                 if( returnedResults.contains( label ) ) {
-                    System.out.println( "Duplicate result ignored" );
+                    node.reportProgress( "Duplicate result ignored" );
                 }
                 else {
                     resultFile.append( result.result );
                     returnedPairs++;
-                    System.out.println( "Problem " + label + " took " + Service.formatNanoseconds( result.computeTime ) );
-                    System.out.println( "I now have " + returnedPairs + " of " + submittedPairs + " solutions" );
-                    returnedResults.add( label );
+                    node.reportProgress( "Problem " + label + " took " + Service.formatNanoseconds( result.computeTime ) );
                 }
             }
             else {
-                System.err.println( "Comparison failed: " + result.error );
+                node.reportError( "Comparison failed: " + result.error );
+                failures++;
             }
-            labelTracker.returnLabel( label );
+            long issuedLabels = labelTracker.getIssuedLabels();
+            long returnedLabels = labelTracker.getReturnedLabels();
+            node.reportProgress( "I now have " + returnedLabels + " of " + issuedLabels + " pairs, " + failures + " failures" );
+            if( (issuedLabels-returnedLabels)<20 ) {
+                Label[] labels = labelTracker.listOutstandingLabels();
+                
+                node.reportProgress( "Still missing: " + Arrays.deepToString( labels ) );
+            }
+            returnedResults.add( label );
             if( sentFinal && labelTracker.allAreReturned() ) {
-                System.out.println( "I got all job results back; stopping program" );
+                node.reportProgress( "I got all job results back; stopping program" );
                 node.setStopped();
                 resultFile.close();
-                reportResultToOracle();
+                reportResultToOracle( node );
             }
         }
 
@@ -128,47 +139,47 @@ public class OneProblemProgram
             problemSet
         };
 
-        System.out.println( "Executing " + joinStringList(command) );
+        node.reportProgress( "Executing " + joinStringList(command) );
         RunProcess p = new RunProcess( command );
         p.run();
 
         int exit = p.getExitStatus();
 
-        System.out.println( "Execution finished" );
+        node.reportProgress( "Execution finished" );
         if( exit != 0 ) {
             String cmd = joinStringList( command );
 
-            System.err.println(
+            node.reportError(
                 "command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() ) );
             return false;
         }
         String oracleOutput = new String( p.getStdout() ).trim();
-        System.out.println( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
+        node.reportProgress( "oracle output for problem '" + problemSet + "' is '" + oracleOutput + "'" );
         String words[] = oracleOutput.split( " " );
         handle = words[0];
         File directory = new File( problemsDir, words[1].trim() );
-        System.out.println( "Getting problem pairs from directory " + directory );
+        node.reportProgress( "Getting problem pairs from directory " + directory );
         PriorityQueue<FilePair> pairs = FindPairs.getPairs( directory, verbose );
 
         if (pairs.isEmpty() ) { 
-            System.err.println( "No pairs found in directory " + directory );
+            node.reportError( "No pairs found in directory " + directory );
             return false;
         }
 
-        System.out.println( "There are " + pairs.size() + " pairs" );
+        node.reportProgress( "There are " + pairs.size() + " pairs" );
 
         try{
             resultFileName = new File( "result-" + problemSet + "-" + rng.nextDouble() + ".txt" );
             resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
         }
         catch( IOException e ){
-            System.err.println( "I/O error: " + e.getLocalizedMessage() );
+            node.reportInternalError( "I/O error: " + e.getLocalizedMessage() );
             return false;
         }
 
-        if (verbose) { 
-            System.out.println( "Starting comparison of " + pairs.size() + " pairs." );
+        if (verbose) {
+            node.reportProgress( "Starting comparison of " + pairs.size() + " pairs." );
         }
 
         while( !pairs.isEmpty() ) {
@@ -296,10 +307,7 @@ public class OneProblemProgram
         }
     }
 
-    /**
-     * @param oracleHome
-     */
-    private static void reportResultToOracle()
+    private static void reportResultToOracle( Node node )
     {
         String reportCommand [] = {
             oracleHome + "/" + oracleName,
@@ -316,12 +324,12 @@ public class OneProblemProgram
         if( exit != 0 ) {
             String cmd = joinStringList( reportCommand );
 
-            System.err.println( "ERROR: command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
+            node.reportError( "ERROR: command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
             + " stderr: " + new String( p.getStderr() ) );
-            System.exit( 1 );
+            return;
         }
         String verdict = new String( p.getStdout() );
-        System.out.println( "Oracle verdict: " + verdict );
+        node.reportProgress( "Oracle verdict: " + verdict );
     }
 
 }
