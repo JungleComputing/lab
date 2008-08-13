@@ -1,8 +1,88 @@
 Final report includes
 
 title
-team information
+-----
+
+Using the Maestro dataflow middleware for the DACH challenge
+Kees van Reeuwijk
+Vrije Universiteit Amsterdam
+reeuwijk@few.vu.nl
+
+Team information
+----------------
+
+Team dach001 consists of one member: Kees van Reeuwijk.
+However, the entry heavily uses the the Ibis middleware, so the support
+from the various members of the Ibis team was invaluable for this program.
+In particular Jason Maassen and Ceriel Jacobs were very helpful.
+
+It is also worth pointing out that there is another team from the
+VU, dach004, which in fact has Jason Maassen as team leader. The
+software described in this report is an independent effort, and no
+competition software from that team was used for this effort.
+However, the discussions and performance results from that team
+were very helpful (and vice versa, hopefully).
+
+Results
+-------
 time (one line output of dach_api --check_ans) in BT category and/or FT category
+
+
+The used software
+-----------------
+
+The purpose of participating in this challenge was to test the usefulness
+of Maestro, a middleware for self-organizing dataflow computations, on
+a system of the scale of Intrigger, and for a real-life application
+such as the astronomy application behind the DACH challenge.
+
+It was clear from the start that the challenge would be quite
+difficult, since the software is still very much in development.
+Moreover, a central assumption in Maestro is that a computation
+consists of a number of clearly distinct types of task, where each
+task is executed many times and has a more-or-less repeatable
+execution time. The system uses these properties to learn the best
+allocation of computations to processors based on previous performance.
+
+The computation of the DACH challenge does not match these assumptions,
+since the comparison operations for the different images have greatly
+varying computation times.  Moreover, since worst case only one or
+two computations fit in the allocated time frame, the system cannot
+afford to experiment, but must assign at least all the longest jobs
+correctly in all cases. Fortunately, as we will explain below, we could
+easily extend the Maestro framework to also support such computations.
+
+Given the size of the challenge data set and the Intrigger system,
+and the distribution of computation times for the different pairs,
+an obvious strategy is to implement a simple master/worker scheme,
+and make sure the largest computations are started as soon as
+possible on the fastest processors.  As long as a reasonably efficient
+allocation of the remaining jobs is chosen, the completion time is
+then determined by the longest jobs.
+
+Maestro is designed for computations that require a number of different
+sequential steps, but master/worker is of course a special case
+of that more general computational model.
+
+Experiments from the dach004 team showed that there is a reasonable
+correlation between image file size and computation, so the final
+program uses a simple heuristic where the master first assigns the
+image pair with the largest total file size to the best processor,
+the second largest to the best still available processor, and so on.
+The performance of each processor is determined by running an 
+image convolution as a benchmark. To encourage the spread of
+the computations over more-or-less equivalent processors, a penalty
+of 10% is added to the benchmark score for each job that is already
+running on the (multicore) processor.
+
+Considering the total number of cores in the system, we could use
+all the cores in the system and compare only one or perhaps two
+pairs on each of them. However, since managing such a large cluster
+of systems is hard, and since the communication network can be
+saturated by a large load, we only used about a 100 nodes with
+roughly 600 cores in competition, and even then three of these nodes
+are only used for management.
+
 software component and optimization
 evaulation
 consideration
