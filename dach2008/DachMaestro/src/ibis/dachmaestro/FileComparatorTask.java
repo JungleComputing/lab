@@ -3,6 +3,7 @@ package ibis.dachmaestro;
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
 import ibis.maestro.Service;
+import ibis.maestro.TaskFailedException;
 import ibis.maestro.UnpredictableAtomicTask;
 import ibis.util.RunProcess;
 
@@ -33,7 +34,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
         this.exec = exec;
     }
 
-    private Result compare( FilePair pair )
+    private Result compare( FilePair pair ) throws TaskFailedException 
     {
         System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         long startTime = System.nanoTime();
@@ -45,7 +46,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
             pair.after.getAbsolutePath()
         };
 
-        RunProcess p = new RunProcess(command);
+        RunProcess p = new RunProcess( command );
         p.run();
         long time = System.nanoTime()-startTime;
 
@@ -60,10 +61,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
                 }
                 cmd += c;
             }
-
-            return new Result(
-                null,
-                time,
+            throw new ibis.maestro.TaskFailedException(
                 "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() )
             );
@@ -95,9 +93,10 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
      * @param in The input.
      * @param node The node this runs on.
      * @return The comparison result.
+     * @throws TaskFailedException Thrown if a comparison failed
      */
     @Override
-    public Object run( Object in, Node node )
+    public Object run( Object in, Node node ) throws TaskFailedException
     {
         FilePair pair = (FilePair) in;
         return compare( pair );

@@ -26,7 +26,8 @@ class Result implements Serializable
      * @param computeTime The time in ns it took to do the comparison.
      * @param error <code>null</code> if all went well, else an error message.
      */
-    Result(String result, long computeTime, String error) {
+    Result(String result, long computeTime, String error )
+    {
 	this.result = result;
 	this.computeTime = computeTime;
 	this.error = error;

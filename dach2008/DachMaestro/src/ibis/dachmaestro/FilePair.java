@@ -20,6 +20,8 @@ public class FilePair implements Serializable, Comparable<FilePair> {
     /** The local filename of the 'after' file. */
     public final File after;
 
+    int tries = 1;
+
     int serial;
 
     FilePair( final File before, final File after )

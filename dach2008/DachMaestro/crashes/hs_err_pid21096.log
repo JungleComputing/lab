@@ -1,0 +1,335 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+#  SIGBUS (0x7) at pc=0xb7d24c53, pid=21096, tid=2102102960
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b23 mixed mode linux-x86)
+# Problematic frame:
+# C  [libzip.so+0xbc53]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x08533c00):  JavaThread "ClientConnection(133.41.10.241-47329/10.0.1.241-47329)" daemon [_thread_in_native, id=22241, stack(0x7d469000,0x7d4b9000)]
+
+siginfo:si_signo=SIGBUS: si_errno=0, si_code=2 (BUS_ADRERR), si_addr=0x7d892b67
+
+Registers:
+EAX=0x082107f8, EBX=0xb7d297bc, ECX=0x7d891000, EDX=0x00064000
+ESP=0x7d4b6d68, EBP=0x7d4b6d90, ESI=0x7d892b4a, EDI=0x080c3438
+EIP=0xb7d24c53, CR2=0x7d892b67, EFLAGS=0x00210202
+
+Top of Stack: (sp=0x7d4b6d68)
+0x7d4b6d68:   00000030 08533330 08533338 08533724
+0x7d4b6d78:   082108a0 082108a0 b7d24c0b b7d297bc
+0x7d4b6d88:   08210ce8 00000000 7d4b6dc0 b7d2500b
+0x7d4b6d98:   082107f8 08210ce8 00000000 7d4b6dd8
+0x7d4b6da8:   08533c00 81e30818 42f8f1c6 b7d297bc
+0x7d4b6db8:   7d4b6e08 08533cf4 7d4b7230 b7d1c1b9
+0x7d4b6dc8:   082107f8 7d4b6e08 00000035 00000035
+0x7d4b6dd8:   7d4b6e08 b5d1bd77 81e30130 7e0f10f0 
+
+Instructions: (pc=0xb7d24c53)
+0xb7d24c43:   8b 70 04 8b 45 08 8b 48 10 8b 50 1c 01 ce 29 d6
+0xb7d24c53:   0f b6 46 1d 0f b6 56 1c c1 e0 08 09 c2 89 55 f0 
+
+Stack: [0x7d469000,0x7d4b9000],  sp=0x7d4b6d68,  free space=311k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libzip.so+0xbc53]
+C  [libzip.so+0xc00b]  ZIP_GetEntry+0x10b
+C  [libzip.so+0x31b9]  Java_java_util_zip_ZipFile_getEntry+0xc9
+J  java.util.zip.ZipFile.getEntry(JLjava/lang/String;Z)J
+J  java.util.zip.ZipFile.getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+J  sun.misc.URLClassPath$JarLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;
+J  sun.misc.URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+V  [libjvm.so+0x21c63d]
+V  [libjvm.so+0x3107b8]
+V  [libjvm.so+0x21c4d0]
+V  [libjvm.so+0x272383]
+C  [libjava.so+0xaa5c]  Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedExceptionAction_2Ljava_security_AccessControlContext_2+0x3c
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+V  [libjvm.so+0x21c63d]
+V  [libjvm.so+0x3107b8]
+V  [libjvm.so+0x21c161]
+V  [libjvm.so+0x21c24a]
+V  [libjvm.so+0x3758d7]
+V  [libjvm.so+0x374375]
+V  [libjvm.so+0x3733e7]
+V  [libjvm.so+0x3730f2]
+V  [libjvm.so+0x1bc043]
+V  [libjvm.so+0x20c956]
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+V  [libjvm.so+0x21c63d]
+V  [libjvm.so+0x3107b8]
+V  [libjvm.so+0x21bf50]
+V  [libjvm.so+0x21bfdd]
+V  [libjvm.so+0x28c1e5]
+V  [libjvm.so+0x391ffd]
+V  [libjvm.so+0x311469]
+C  [libpthread.so.0+0x50bd]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  java.util.zip.ZipFile.getEntry(JLjava/lang/String;Z)J
+J  java.util.zip.ZipFile.getEntry(Ljava/lang/String;)Ljava/util/zip/ZipEntry;
+J  sun.misc.URLClassPath$JarLoader.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;
+J  sun.misc.URLClassPath.getResource(Ljava/lang/String;Z)Lsun/misc/Resource;
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::Interpreter
+v  ~BufferBlob::StubRoutines (1)
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x080c2400 JavaThread "ClientConnection(133.5.189.10-58216/10.0.1.10-58216)" daemon [_thread_in_native, id=22243, stack(0x7d419000,0x7d469000)]
+  0x08406400 JavaThread "ClientConnection(133.5.189.10-43166/10.0.1.10-43166)" daemon [_thread_in_native, id=22242, stack(0x7d829000,0x7d879000)]
+=>0x08533c00 JavaThread "ClientConnection(133.41.10.241-47329/10.0.1.241-47329)" daemon [_thread_in_native, id=22241, stack(0x7d469000,0x7d4b9000)]
+  0x08532400 JavaThread "ClientConnection(202.209.203.69-47118/10.0.1.69-47118)" daemon [_thread_blocked, id=22240, stack(0x7d4b9000,0x7d509000)]
+  0x08535000 JavaThread "ClientConnection(202.209.203.68-56430/10.0.1.68-56430)" daemon [_thread_in_native, id=22239, stack(0x7d509000,0x7d559000)]
+  0x0852e800 JavaThread "bootstrap service connection handler" daemon [_thread_blocked, id=21116, stack(0x7d559000,0x7d5a9000)]
+  0x0852d800 JavaThread "Central Registry Service" daemon [_thread_blocked, id=21115, stack(0x7d5a9000,0x7d5f9000)]
+  0x08530c00 JavaThread "server connection handler" daemon [_thread_blocked, id=21114, stack(0x7d5f9000,0x7d649000)]
+  0x08530000 JavaThread "PoolInfoService" daemon [_thread_blocked, id=21113, stack(0x7d649000,0x7d699000)]
+  0x08418c00 JavaThread "ClientConnection(157.82.22.11-5437)" daemon [_thread_in_native, id=21112, stack(0x7d699000,0x7d6e9000)]
+  0x083f6000 JavaThread "ServiceLink Message Reader" daemon [_thread_in_native, id=21111, stack(0x7d6e9000,0x7d739000)]
+  0x083f9400 JavaThread "Hub" [_thread_blocked, id=21110, stack(0x7d739000,0x7d789000)]
+  0x083f8800 JavaThread "HubConnector" daemon [_thread_blocked, id=21109, stack(0x7d789000,0x7d7d9000)]
+  0x08405000 JavaThread "HubAcceptor" daemon [_thread_blocked, id=21108, stack(0x7d7d9000,0x7d829000)]
+  0x080c8000 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=21105, stack(0x7d945000,0x7d995000)]
+  0x080bd400 JavaThread "CompilerThread0" daemon [_thread_blocked, id=21104, stack(0x7d995000,0x7da15000)]
+  0x080bc000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=21103, stack(0x7da15000,0x7da65000)]
+  0x080a9c00 JavaThread "Finalizer" daemon [_thread_blocked, id=21102, stack(0x7da65000,0x7dab5000)]
+  0x080a8c00 JavaThread "Reference Handler" daemon [_thread_blocked, id=21101, stack(0x7dab5000,0x7db05000)]
+  0x08059800 JavaThread "main" [_thread_blocked, id=21099, stack(0xb7dac000,0xb7dfc000)]
+
+Other Threads:
+  0x080a5800 VMThread [stack: 0x7db05000,0x7db85000] [id=21100]
+  0x080c9400 WatcherThread [stack: 0x7d8c5000,0x7d945000] [id=21106]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 960K, used 550K [0x7e090000, 0x7e190000, 0x81e10000)
+  eden space 896K,  54% used [0x7e090000, 0x7e109848, 0x7e170000)
+  from space 64K, 100% used [0x7e170000, 0x7e180000, 0x7e180000)
+  to   space 64K,   0% used [0x7e180000, 0x7e180000, 0x7e190000)
+ tenured generation   total 4096K, used 337K [0x81e10000, 0x82210000, 0xb0090000)
+   the space 4096K,   8% used [0x81e10000, 0x81e645a0, 0x81e64600, 0x82210000)
+ compacting perm gen  total 12288K, used 3868K [0xb0090000, 0xb0c90000, 0xb4090000)
+   the space 12288K,  31% used [0xb0090000, 0xb04571a8, 0xb0457200, 0xb0c90000)
+No shared spaces configured.
+
+Dynamic libraries:
+06000000-0641b000 r-xp 00000000 03:01 146635     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/client/libjvm.so
+0641b000-06435000 rwxp 0041a000 03:01 146635     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/client/libjvm.so
+06435000-06855000 rwxp 06435000 00:00 0 
+08048000-08052000 r-xp 00000000 03:01 115856     /usr/local/jdk1.6.0_07_i586/bin/java
+08052000-08053000 rwxp 00009000 03:01 115856     /usr/local/jdk1.6.0_07_i586/bin/java
+08053000-08542000 rwxp 08053000 00:00 0          [heap]
+7d419000-7d41c000 ---p 7d419000 00:00 0 
+7d41c000-7d469000 rwxp 7d41c000 00:00 0 
+7d469000-7d46c000 ---p 7d469000 00:00 0 
+7d46c000-7d4b9000 rwxp 7d46c000 00:00 0 
+7d4b9000-7d4bc000 ---p 7d4b9000 00:00 0 
+7d4bc000-7d509000 rwxp 7d4bc000 00:00 0 
+7d509000-7d50c000 ---p 7d509000 00:00 0 
+7d50c000-7d559000 rwxp 7d50c000 00:00 0 
+7d559000-7d55c000 ---p 7d559000 00:00 0 
+7d55c000-7d5a9000 rwxp 7d55c000 00:00 0 
+7d5a9000-7d5ac000 ---p 7d5a9000 00:00 0 
+7d5ac000-7d5f9000 rwxp 7d5ac000 00:00 0 
+7d5f9000-7d5fc000 ---p 7d5f9000 00:00 0 
+7d5fc000-7d649000 rwxp 7d5fc000 00:00 0 
+7d649000-7d64c000 ---p 7d649000 00:00 0 
+7d64c000-7d699000 rwxp 7d64c000 00:00 0 
+7d699000-7d69c000 ---p 7d699000 00:00 0 
+7d69c000-7d6e9000 rwxp 7d69c000 00:00 0 
+7d6e9000-7d6ec000 ---p 7d6e9000 00:00 0 
+7d6ec000-7d739000 rwxp 7d6ec000 00:00 0 
+7d739000-7d73c000 ---p 7d739000 00:00 0 
+7d73c000-7d789000 rwxp 7d73c000 00:00 0 
+7d789000-7d78c000 ---p 7d789000 00:00 0 
+7d78c000-7d7d9000 rwxp 7d78c000 00:00 0 
+7d7d9000-7d7dc000 ---p 7d7d9000 00:00 0 
+7d7dc000-7d829000 rwxp 7d7dc000 00:00 0 
+7d829000-7d82c000 ---p 7d829000 00:00 0 
+7d82c000-7d879000 rwxp 7d82c000 00:00 0 
+7d879000-7d88c000 r-xp 00000000 03:01 146614     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libnet.so
+7d88c000-7d88d000 rwxp 00013000 03:01 146614     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libnet.so
+7d88d000-7d891000 r-xs 0003a000 00:11 28295648   /home/dach001/dachmaestro-0.2/lib/trilead-ssh2-build213.jar
+7d891000-7d897000 r-xs 00064000 00:11 28295647   /home/dach001/dachmaestro-0.2/lib/smartsockets-1.21.jar
+7d897000-7d89a000 r-xs 00020000 00:11 28295646   /home/dach001/dachmaestro-0.2/lib/sbbi-upnplib-1.0.2.jar
+7d89a000-7d89d000 r-xs 0001c000 00:11 28295644   /home/dach001/dachmaestro-0.2/lib/maestro-0.0.1.jar
+7d89d000-7d89f000 r-xs 0000d000 00:11 28295641   /home/dach001/dachmaestro-0.2/lib/lrmc.jar
+7d89f000-7d8a6000 r-xs 00051000 00:11 28295640   /home/dach001/dachmaestro-0.2/lib/log4j-1.2.13.jar
+7d8a6000-7d8ab000 r-xs 00023000 00:11 28295639   /home/dach001/dachmaestro-0.2/lib/junit-4.4.jar
+7d8ab000-7d8ac000 r-xs 0000d000 00:11 28295638   /home/dach001/dachmaestro-0.2/lib/jstun-0.6.1.jar
+7d8ac000-7d8ad000 r-xs 00005000 00:11 28295637   /home/dach001/dachmaestro-0.2/lib/ipl-impl-tcp-2.2.jar
+7d8ad000-7d8ae000 r-xs 0000e000 00:11 28295636   /home/dach001/dachmaestro-0.2/lib/ipl-impl-nio-2.2.jar
+7d8ae000-7d8af000 r-xs 00003000 00:11 28295635   /home/dach001/dachmaestro-0.2/lib/ipl-impl-dummy-2.2.jar
+7d8af000-7d8b3000 r-xs 00030000 00:11 28295634   /home/dach001/dachmaestro-0.2/lib/ipl-impl-2.2.jar
+7d8b3000-7d8b5000 r-xs 00007000 00:11 28295633   /home/dach001/dachmaestro-0.2/lib/ipl-2.2.jar
+7d8b5000-7d8b6000 r-xs 00008000 00:11 28295632   /home/dach001/dachmaestro-0.2/lib/ibis-util-2.2.jar
+7d8b6000-7d8b8000 r-xs 00004000 00:11 28295631   /home/dach001/dachmaestro-0.2/lib/ibis-server-2.2.jar
+7d8b8000-7d8ba000 r-xs 00001000 00:11 28295630   /home/dach001/dachmaestro-0.2/lib/ibis-poolinfo-2.2.jar
+7d8ba000-7d8bd000 r-xs 0002e000 00:11 28295629   /home/dach001/dachmaestro-0.2/lib/ibis-io-2.2.jar
+7d8bd000-7d8bf000 r-xs 00005000 00:11 28295628   /home/dach001/dachmaestro-0.2/lib/ibis-compile-2.2.jar
+7d8bf000-7d8c3000 r-xs 00038000 00:11 28295627   /home/dach001/dachmaestro-0.2/lib/ganymed-ssh2-build211beta4-jason.jar
+7d8c3000-7d8c4000 r-xs 00007000 00:11 28295626   /home/dach001/dachmaestro-0.2/lib/dachmaestro-0.2.jar
+7d8c4000-7d8c5000 r-xs 00007000 00:11 28295625   /home/dach001/dachmaestro-0.2/lib/commons-logging.jar
+7d8c5000-7d8c6000 ---p 7d8c5000 00:00 0 
+7d8c6000-7d945000 rwxp 7d8c6000 00:00 0 
+7d945000-7d948000 ---p 7d945000 00:00 0 
+7d948000-7d995000 rwxp 7d948000 00:00 0 
+7d995000-7d998000 ---p 7d995000 00:00 0 
+7d998000-7da15000 rwxp 7d998000 00:00 0 
+7da15000-7da18000 ---p 7da15000 00:00 0 
+7da18000-7da65000 rwxp 7da18000 00:00 0 
+7da65000-7da68000 ---p 7da65000 00:00 0 
+7da68000-7dab5000 rwxp 7da68000 00:00 0 
+7dab5000-7dab8000 ---p 7dab5000 00:00 0 
+7dab8000-7db05000 rwxp 7dab8000 00:00 0 
+7db05000-7db06000 ---p 7db05000 00:00 0 
+7db06000-7dbb7000 rwxp 7db06000 00:00 0 
+7dbb7000-7dd42000 r-xs 02def000 03:01 146840     /usr/local/jdk1.6.0_07_i586/jre/lib/rt.jar
+7dd42000-7dd49000 rwxp 7dd42000 00:00 0 
+7dd49000-7dd63000 rwxp 7dd49000 00:00 0 
+7dd63000-7dd66000 rwxp 7dd63000 00:00 0 
+7dd66000-7ded5000 rwxp 7dd66000 00:00 0 
+7ded5000-7ded6000 rwxp 7ded5000 00:00 0 
+7ded6000-7def3000 rwxp 7ded6000 00:00 0 
+7def3000-7def6000 rwxp 7def3000 00:00 0 
+7def6000-7e065000 rwxp 7def6000 00:00 0 
+7e065000-7e06b000 rwxp 7e065000 00:00 0 
+7e06b000-7e08f000 rwxp 7e06b000 00:00 0 
+7e08f000-7e190000 rwxp 7e08f000 00:00 0 
+7e190000-81e10000 rwxp 7e190000 00:00 0 
+81e10000-82210000 rwxp 81e10000 00:00 0 
+82210000-b0090000 rwxp 82210000 00:00 0 
+b0090000-b0c90000 rwxp b0090000 00:00 0 
+b0c90000-b5c90000 rwxp b0c90000 00:00 0 
+b5c90000-b5c99000 r-xs 00075000 00:11 28295620   /home/dach001/dachmaestro-0.2/lib/bcel-5.1-fixed.jar
+b5c99000-b5c9c000 rwxp b5c99000 00:00 0 
+b5c9c000-b5d19000 rwxp b5c9c000 00:00 0 
+b5d19000-b5dc9000 rwxp b5d19000 00:00 0 
+b5dc9000-b7d19000 rwxp b5dc9000 00:00 0 
+b7d19000-b7d28000 r-xp 00000000 03:01 146627     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libzip.so
+b7d28000-b7d2a000 rwxp 0000e000 03:01 146627     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libzip.so
+b7d2a000-b7d4d000 r-xp 00000000 03:01 146645     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libjava.so
+b7d4d000-b7d4f000 rwxp 00023000 03:01 146645     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libjava.so
+b7d4f000-b7d5a000 r-xp 00000000 03:01 146620     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libverify.so
+b7d5a000-b7d5b000 rwxp 0000b000 03:01 146620     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/libverify.so
+b7d5b000-b7d63000 rwxs 00000000 03:06 224455     /tmp/hsperfdata_dach001/21096
+b7d63000-b7d6c000 r-xp 00000000 03:01 67306      /lib/tls/libnss_files-2.3.6.so
+b7d6c000-b7d6e000 rwxp 00008000 03:01 67306      /lib/tls/libnss_files-2.3.6.so
+b7d6e000-b7d76000 r-xp 00000000 03:01 67308      /lib/tls/libnss_nis-2.3.6.so
+b7d76000-b7d78000 rwxp 00007000 03:01 67308      /lib/tls/libnss_nis-2.3.6.so
+b7d78000-b7d7f000 r-xp 00000000 03:01 67304      /lib/tls/libnss_compat-2.3.6.so
+b7d7f000-b7d81000 rwxp 00006000 03:01 67304      /lib/tls/libnss_compat-2.3.6.so
+b7d81000-b7d93000 r-xp 00000000 03:01 67303      /lib/tls/libnsl-2.3.6.so
+b7d93000-b7d95000 rwxp 00011000 03:01 67303      /lib/tls/libnsl-2.3.6.so
+b7d95000-b7d97000 rwxp b7d95000 00:00 0 
+b7d97000-b7d98000 r-xs 00005000 00:11 28295624   /home/dach001/dachmaestro-0.2/lib/commons-logging-api.jar
+b7d98000-b7d9d000 r-xs 0003d000 00:11 28295621   /home/dach001/dachmaestro-0.2/lib/commons-jxpath-1.1.jar
+b7d9d000-b7da3000 r-xp 00000000 03:01 146629     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/native_threads/libhpi.so
+b7da3000-b7da4000 rwxp 00006000 03:01 146629     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/native_threads/libhpi.so
+b7da4000-b7daa000 r-xp 00000000 03:01 67313      /lib/tls/librt-2.3.6.so
+b7daa000-b7dac000 rwxp 00005000 03:01 67313      /lib/tls/librt-2.3.6.so
+b7dac000-b7daf000 ---p b7dac000 00:00 0 
+b7daf000-b7dfc000 rwxp b7daf000 00:00 0 
+b7dfc000-b7e1f000 r-xp 00000000 03:01 67301      /lib/tls/libm-2.3.6.so
+b7e1f000-b7e21000 rwxp 00022000 03:01 67301      /lib/tls/libm-2.3.6.so
+b7e21000-b7e22000 rwxp b7e21000 00:00 0 
+b7e22000-b7f4a000 r-xp 00000000 03:01 67297      /lib/tls/libc-2.3.6.so
+b7f4a000-b7f4f000 r-xp 00128000 03:01 67297      /lib/tls/libc-2.3.6.so
+b7f4f000-b7f51000 rwxp 0012d000 03:01 67297      /lib/tls/libc-2.3.6.so
+b7f51000-b7f54000 rwxp b7f51000 00:00 0 
+b7f54000-b7f56000 r-xp 00000000 03:01 67300      /lib/tls/libdl-2.3.6.so
+b7f56000-b7f58000 rwxp 00001000 03:01 67300      /lib/tls/libdl-2.3.6.so
+b7f58000-b7f5f000 r-xp 00000000 03:01 146610     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/jli/libjli.so
+b7f5f000-b7f61000 rwxp 00006000 03:01 146610     /usr/local/jdk1.6.0_07_i586/jre/lib/i386/jli/libjli.so
+b7f61000-b7f6f000 r-xp 00000000 03:01 67311      /lib/tls/libpthread-2.3.6.so
+b7f6f000-b7f71000 rwxp 0000d000 03:01 67311      /lib/tls/libpthread-2.3.6.so
+b7f71000-b7f74000 rwxp b7f71000 00:00 0 
+b7f74000-b7f78000 r-xs 0001d000 00:11 28295619   /home/dach001/dachmaestro-0.2/lib/TGGraphLayout-JM.jar
+b7f78000-b7f79000 rwxp b7f78000 00:00 0 
+b7f79000-b7f7a000 r-xp b7f79000 00:00 0 
+b7f7a000-b7f7c000 rwxp b7f7a000 00:00 0 
+b7f7c000-b7f7d000 r-xp b7f7c000 00:00 0          [vdso]
+b7f7d000-b7f92000 r-xp 00000000 03:01 67272      /lib/ld-2.3.6.so
+b7f92000-b7f94000 rwxp 00014000 03:01 67272      /lib/ld-2.3.6.so
+bfcf2000-bfd07000 rwxp bfcf2000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Dlog4j.configuration=file:/home/dach001/dachmaestro-0.2/log4j.properties -Xmx800M 
+java_command: ibis.server.Server --stats --events --port 5437
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/local/jdk
+PATH=/data/local/gfarm_v2/bin:/data/local/gfarm_v2/bin:/usr/local/jdk/bin:/usr/local/bin:/usr/bin:/bin:/usr/games
+LD_LIBRARY_PATH=/usr/local/jdk1.6.0_07_i586/jre/lib/i386/client:/usr/local/jdk1.6.0_07_i586/jre/lib/i386:/usr/local/jdk1.6.0_07_i586/jre/../lib/i386
+SHELL=/bin/bash
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x3be780], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x3be780], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x30f880], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x30f880], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x30f880], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x30f880], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3118c0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x311660], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x311660], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x311660], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x311660], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:4.0
+
+uname:Linux 2.6.18-6-686 #1 SMP Sun Feb 10 22:11:31 UTC 2008 i686
+libc:glibc 2.3.6 NPTL 2.3.6 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 1024, AS infinity
+load average:0.15 0.10 0.09
+
+CPU:total 1 (1 cores per cpu, 1 threads per core) family 6 model 13 stepping 8, cmov, cx8, fxsr, mmx, sse, sse2
+
+Memory: 4k page, physical 1003064k(367376k free), swap 1028152k(770524k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b23) for linux-x86 JRE (1.6.0_07-b06), built on Jun 10 2008 01:33:02 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Tue Aug 12 03:57:57 2008
+elapsed time: 438 seconds
+
