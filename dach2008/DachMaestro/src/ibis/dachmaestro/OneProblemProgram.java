@@ -277,29 +277,29 @@ public class OneProblemProgram
             if( node.isMaestro() ) {
                 boolean goodToSubmit = true;
                 if( waitNodes>0 ) {
-                    System.out.println( "Waiting for " + waitNodes + " ready nodes" );
+                    node.reportProgress( "Waiting for " + waitNodes + " ready nodes" );
                     long deadline = 5*60*1000; // 5 minutes in ms
                     int n = node.waitForReadyNodes( waitNodes, deadline );
-                    System.out.println( "Continuing; there are now " + n + " ready nodes" );
+                    node.reportProgress( "Continuing; there are now " + n + " ready nodes" );
                     if( n*3<waitNodes ) {
-                        System.out.println( "That's less than a third of the required nodes (" + waitNodes + "); giving up" );
+                        node.reportProgress( "That's less than a third of the required nodes (" + waitNodes + "); giving up" );
                         goodToSubmit = false;
                     }
                 }
                 if( goodToSubmit ) {
                     boolean ok = submitProblem( node, problem, problemsDir, job, verbose, listener );
                     if( ok ) {
-                        System.out.println( "Jobs submitted" );
+                        node.reportProgress( "Jobs submitted" );
                     }
                     else {
-                        System.err.println( "Could not submit jobs" );
+                        node.reportError( "Could not submit jobs" );
                         node.setStopped();
                     }
                 }
             }
             node.waitToTerminate();
             long stopTime = System.nanoTime();
-            System.out.println( "Duration of this run: " + Service.formatNanoseconds( stopTime-startTime ) );
+            node.reportProgress( "Duration of this run: " + Service.formatNanoseconds( stopTime-startTime ) );
         }
         catch (Exception x) {
             System.out.println( "main(): caught exception:" + x );

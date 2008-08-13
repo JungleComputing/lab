@@ -9,7 +9,7 @@ import ibis.util.RunProcess;
 
 /**
  * This class implements a divide-and-conquer parallel comparator for a given list of image pairs.
- * @author Kees van Reeuwijk, Jason Maassen
+ * @author Kees van Reeuwijk
  *
  */
 public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
@@ -34,9 +34,9 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
         this.exec = exec;
     }
 
-    private Result compare( FilePair pair ) throws TaskFailedException 
+    private Result compare( FilePair pair, Node node ) throws TaskFailedException 
     {
-        System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         long startTime = System.nanoTime();
 
         // FIXME: specify temp directory.
@@ -67,7 +67,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
             );
         }
 
-        System.out.println("Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
+        node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
 
         return new Result( new String( p.getStdout() ), time, null );
     }
@@ -99,7 +99,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
     public Object run( Object in, Node node ) throws TaskFailedException
     {
         FilePair pair = (FilePair) in;
-        return compare( pair );
+        return compare( pair, node );
     }
 
     private static final int BANDS = 3;

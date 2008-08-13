@@ -38,12 +38,12 @@ public class ImageComparatorTask implements AtomicTask, UnpredictableAtomicTask
 	return "Compare images";
     }
 
-    private Result compare( ImagePair pair )
+    private Result compare( ImagePair pair, Node node )
     {
         File beforeFile;
         File afterFile;
 
-        System.out.println( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         try {
             beforeFile = pair.before.write( scratchDirectory );
         }
@@ -92,7 +92,7 @@ public class ImageComparatorTask implements AtomicTask, UnpredictableAtomicTask
             );
         }
 
-        System.out.println("Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
+        node.reportProgress("Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
 
         return new Result( new String( p.getStdout() ), time, null );
     }
@@ -123,10 +123,10 @@ public class ImageComparatorTask implements AtomicTask, UnpredictableAtomicTask
     public Object run( Object in, Node node )
     {
 	if( !(in instanceof ImagePair) ) {
-	    System.err.println( "Internal error: ImageComparatorTask requires an ImagePair, but got a " + in.getClass() );
+	    node.reportInternalError( "ImageComparatorTask requires an ImagePair, but got a " + in.getClass() );
 	}
 	ImagePair pair = (ImagePair) in;
-	return compare( pair );
+	return compare( pair, node );
     }
 
 
