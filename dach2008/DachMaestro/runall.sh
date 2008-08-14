@@ -2,7 +2,8 @@
 
 #SERVERHOST=babylon.few.vu.nl
 #SERVERHOST=fs0.das3.cs.vu.nl
-SERVERHOST=hongo001.logos.ic.i.u-tokyo.ac.jp
+#SERVERHOST=hongo001.logos.ic.i.u-tokyo.ac.jp
+SERVERHOST=hongo100.logos.ic.i.u-tokyo.ac.jp
 #SERVERHOST=lily.local
 DACHMAESTRO_HOME=dachmaestro-0.2
 

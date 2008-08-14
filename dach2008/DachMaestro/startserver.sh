@@ -28,5 +28,5 @@ add_to_libclasspath "${DACHMAESTRO_HOME}"/lib
 exec java \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
-    -Xmx$MEMORY \
+    -Xmx3600M \
      ibis.server.Server --stats --events --port 5437

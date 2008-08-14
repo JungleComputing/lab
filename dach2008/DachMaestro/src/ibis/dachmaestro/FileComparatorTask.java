@@ -39,7 +39,6 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
         node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         long startTime = System.nanoTime();
 
-        // FIXME: specify temp directory.
         String command [] = {
             exec,
             pair.before.getAbsolutePath(),
