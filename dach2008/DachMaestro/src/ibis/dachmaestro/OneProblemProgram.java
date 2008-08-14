@@ -77,7 +77,9 @@ public class OneProblemProgram
                     node.reportProgress( "Duplicate result ignored" );
                 }
                 else {
-                    resultFile.append( result.result );
+                    synchronized( resultFile ) {
+                        resultFile.append( result.result );
+                    }
                     returnedPairs++;
                     node.reportProgress( "Problem " + label + " took " + Service.formatNanoseconds( result.computeTime ) );
                 }
