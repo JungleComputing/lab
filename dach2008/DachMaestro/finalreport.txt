@@ -19,13 +19,11 @@ In particular Jason Maassen and Ceriel Jacobs were very helpful.
 It is also worth pointing out that there is another team from the
 VU, dach004, which in fact has Jason Maassen as team leader. The
 software described in this report is an independent effort, and no
-competition software from that team was used for this effort.
-However, the discussions and performance results from that team
-were very helpful (and vice versa, hopefully).
+competition software from dac004 was used for this effort.  However,
+experiences and performance results were freely shared between the
+two teams, and were very helpful for the development of this program.
 
-Results
--------
-time (one line output of dach_api --check_ans) in BT category and/or FT category
+
 
 
 The used software
@@ -34,57 +32,167 @@ The used software
 The purpose of participating in this challenge was to test the usefulness
 of Maestro, a middleware for self-organizing dataflow computations, on
 a system of the scale of Intrigger, and for a real-life application
-such as the astronomy application behind the DACH challenge.
+such as the astronomy application behind the Data Analysis Challenge.
 
 It was clear from the start that the challenge would be quite
-difficult, since the software is still very much in development.
-Moreover, a central assumption in Maestro is that a computation
+difficult, since Maestro is still very much in development.  Moreover,
+it was not immediately obvious that the computational model of
+Maestro would be suitable the Data Analysis Challenge computation.
+
+Maestro is designed for dataflow systems, where computations `flow'
+through a number of distinct processing steps.  However, the Data
+Analysis Challenge computation can be seen as the case where the
+number of processing steps is one, reducing the system to a simple
+master/worker configuration.
+
+Also, a central assumption in Maestro is that a computation
 consists of a number of clearly distinct types of task, where each
 task is executed many times and has a more-or-less repeatable
 execution time. The system uses these properties to learn the best
 allocation of computations to processors based on previous performance.
+The computation of the Data Analysis Challenge does not match these
+assumptions, since the comparison operations for the different
+images have greatly varying computation times.  Moreover, since
+worst case only one or two computations fit in the allocated time
+frame, the system cannot afford to learn from
+earlier results, but must assign at
+least all the longest jobs correctly in all cases. We solved
+this problem by
 
-The computation of the DACH challenge does not match these assumptions,
-since the comparison operations for the different images have greatly
-varying computation times.  Moreover, since worst case only one or
-two computations fit in the allocated time frame, the system cannot
-afford to experiment, but must assign at least all the longest jobs
-correctly in all cases. Fortunately, as we will explain below, we could
-easily extend the Maestro framework to also support such computations.
+1. Doing a small benchmark (an image convolution kernal) on each
+node of the system on startup, and prefer nodes with fast benchmark
+results.  To encourage the spread of the computations over more-or-less
+equivalent processors, a penalty of 10% is added to the benchmark
+score for each job that is already running on the (multicore)
+processor.
 
-Given the size of the challenge data set and the Intrigger system,
-and the distribution of computation times for the different pairs,
-an obvious strategy is to implement a simple master/worker scheme,
-and make sure the largest computations are started as soon as
-possible on the fastest processors.  As long as a reasonably efficient
-allocation of the remaining jobs is chosen, the completion time is
-then determined by the longest jobs.
+2. Not updating these performance estimates with the results
+from completed jobs, as Maestro would normally do, since
+for jobs with unpredicable performance such an update is meaningless.
 
-Maestro is designed for computations that require a number of different
-sequential steps, but master/worker is of course a special case
-of that more general computational model.
+3. Allocating the jobs to the processors in order of decreasing 
+execution time.
 
-Experiments from the dach004 team showed that there is a reasonable
-correlation between image file size and computation, so the final
-program uses a simple heuristic where the master first assigns the
-image pair with the largest total file size to the best processor,
-the second largest to the best still available processor, and so on.
-The performance of each processor is determined by running an 
-image convolution as a benchmark. To encourage the spread of
-the computations over more-or-less equivalent processors, a penalty
-of 10% is added to the benchmark score for each job that is already
-running on the (multicore) processor.
+Obviously, the required exution time of a given pair of images
+is not known beforehand.  However, experiments from the dach004
+team showed that there is a reasonable correlation between image
+file size and computation, so the final program uses a simple
+heuristic where the master first assigns the image pair with the
+largest total file size to the best processor, the second largest
+to the best still available processor, and so on.
 
 Considering the total number of cores in the system, we could use
 all the cores in the system and compare only one or perhaps two
 pairs on each of them. However, since managing such a large cluster
 of systems is hard, and since the communication network can be
-saturated by a large load, we only used about a 100 nodes with
-roughly 600 cores in competition, and even then three of these nodes
+saturated by a large load, we only used about a 130 nodes with
+roughly 700 cores in competition, and even then three of these nodes
 are only used for management.
 
-software component and optimization
-evaulation
+
+
+Results
+-------
+
+The Intrigger platform proved to be more problematic for our software
+than the local clusters we normally use, so in all of the pre-assigned
+time-slots we were not able to complete a run due to internal problems
+in the Maestro implementation.
+
+Only in the final extra, and extra-long timeslot we were able to
+run the problem dataset entirely.  In that timeslot we were able
+to do two runs that computed all pairs. Unfortunately both failed:
+the program collects all results in a result file, but the dach_api
+returns a FAIL verdict. It is not clear if this is only due to the
+rounding errors announced by the challenge committee, or due to
+some corruption of the results or image files.
+
+The first run produced the following results:
+
+FAIL TRIAL-final_dach-267294 8421.87942505 hongo102 Thu Aug 14 23:30:45 2008 7b156778424f531a2180574cc1de5a67
+
+Due to stability problems of Maestro, 21 of the 129 nodes used in the
+computation failed, and some of their computations had to be restarted.
+Some of these failures occured very late in the run, and caused a very
+long delay. However, the fact that we could complete the entire
+run was a milestone in its own right.
+
+The second run used an new version of Maestro with a number of bug fixes.
+We chose to run the FT variant since we knew through hard-won experience
+that the system was able to handle crashing nodes, so we were prepared
+to take our chances with the process killer of the FT variant. 
+
+Remarkably, none of the nodes in the computation was in fact killed,
+so Maestro ended the run with the same number of nodes it started
+with: 129.  It is not clear why none of the nodes was killed, but
+we note that since we used only a small fraction of all available
+nodes, killing all processes on a random node in the system has a
+high probability of `missing' our computation entirely.
+
+This time, the system was much more stable, and was able to handle all
+jobs very rapidly. 
+
+FAIL TRIAL-final_dach_ft-207557 2940.93734503 hongo102 Fri Aug 15 00:27:35 2008 dba8b531197a7e2b8ea1f64d106a4646
+
+Thus, were the first run took more than two hours, the second one
+only took about 50 minutes.
+
+As a sidenote: if there are 20 pairs or less still outstanding, the
+program prints all missing pairs. The first such output from this
+run neatly demonstrates the validity of the largest-files-first
+heuristic:
+
+Still missing: [label#2, label#3, label#4, label#5, label#6, label#7, label#10, label#12, label#13, label#14, label#15, label#16, label#17, label#22, label#23, label#25, label#26, label#27, label#29]
+
+Since these labels are handed out in sequential order, this shows
+that all 20 pairs that were the last to complete were in the first 30
+to be started.
+
+Evaluation
+----------
+
+The Data Analysis Challenge has exposed Maestro to a more `real-world'
+environment than it was ready for. This resulted in a large number
+of problems in the program, and forced us to do substantial rewriting
+on large parts of the implementation. The resulting program is clearly
+far more mature, and whereas the original program could only handle
+simple linear sequences of processing steps with
+repeatable execution time, in Maestro now also also supports
+
+- processing steps with unpredictable execution time
+- map/reduce steps where a processing step spawns a number
+of sub-computations that are then reduced into one result.
+(We expected the final challenge to consist of multiple problems,
+and each problem would be implemented as a map/reduce step.
+- Alternative data flows, where the system is given a choice
+between different alternative ways to execute the computation,
+and can choose the fastest one. (This was implemented for
+a locality-aware implementation would try to do each computation
+on a 'home' node of an image pair.)
+- An mechanism to explicitly fail a node for a particular type of job.
+This was introduced to handle comparisons that sometimes failed. By
+declaring a computation a failure, it can be executed again. By
+failing the node where the problem occured, we make sure it doesn't get
+the same job again.
+
+
+The far more experienced team members of dach004 tell me that
+a system like Intrigger is normal for a grid system, but I was
+still discouraged by all the small problems that crop up on
+such a system: the firewalls between some systems but not all, the
+slight inconsistencies between nodes (there is a cluster where
+/one/ node does not have Java installed), the repeated problems
+of the Gfarm system, etc.
+
+This is not intended as critisism of the Intrigger system managers:
+maintaining a system of this scale is difficult, and there are no
+easy answers to the management problem. Nevertheless, I hope
+to be forgiven for observing that the current system is not yet
+ready to reliably and predictably analyze astronomy data.
+
+
+
+
 consideration
 next step
 conclusion
