@@ -1,0 +1,1712 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Last login: Tue Aug 12 17:58:44 on ttyp2
+Welcome to Darwin!
+lily:~% ssh dachhome
+Linux hongo000 2.6.18-6-686 #1 SMP Sun Feb 10 22:11:31 UTC 2008 i686
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Aug 13 06:53:25 2008 from cvr.xs4all.nl
+dach001@hongo000:~$ ls
+build-testcluster        hongo001-cleaner.out
+clean-all.sh             install-gfarm-all.sh
+clean-site.sh            install-gfarm-site.sh
+cleanlog                 install-software.sh
+cleanout                 killalljava.sh
+copy-and-compare.sh      log4j.properties
+dachmaestro-0.2          out
+dachmaestro-0.2.zip      outdir
+deploy                   placefiles
+deploy-all.sh            problem-base
+deploy-site.sh           result-final_dach-0.3395367793269852.txt
+deploy-small             result-final_dach-0.4277374168878413.txt
+deployment-tables        result-final_dach-0.7345609347448798.txt
+destroydir               result-sample011536.txt
+dummy-compare.sh         runall.sh
+gfarmlog                 rundummy.sh
+hongo000-cleaner-output  search-and-destroy.sh
+hongo000-cleaner.err     startserver.sh
+hongo000-cleaner.out     t
+hongo000-deployer.err    testsites
+hongo000-deployer.out    tmp
+hongo000-output          uninstall-gfarm-all.sh
+hongo001-cleaner-output  uninstall-gfarm-site.sh
+hongo001-cleaner.err     upout
+dach001@hongo000:~$ l
+total 11852
+-rwxr-xr-x  1 dach001 dach001      81 Aug  1 05:28 build-testcluster
+-rwxr-xr-x  1 dach001 dach001     482 Aug 12 08:02 clean-all.sh
+-rwxr-xr-x  1 dach001 dach001     482 Aug  6 15:41 clean-site.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 13 07:10 cleanlog
+drwxr-xr-x 13 dach001 dach001    4096 Aug  2 21:02 cleanout
+-rwxr-xr-x  1 dach001 dach001     198 Aug  2 12:51 copy-and-compare.sh
+drwxr-xr-x  6 dach001 dach001    4096 Aug 12 12:29 dachmaestro-0.2
+-rw-r--r--  1 dach001 dach001 3291254 Aug 13 07:10 dachmaestro-0.2.zip
+drwxr-xr-x  2 dach001 dach001    4096 Aug  2 02:09 deploy
+-rwxr-xr-x  1 dach001 dach001     496 Aug 11 21:01 deploy-all.sh
+-rwxr-xr-x  1 dach001 dach001     274 Aug  1 23:07 deploy-site.sh
+-rw-r--r--  1 dach001 dach001     867 Aug  1 06:23 deploy-small
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 23:27 deployment-tables
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 04:41 destroydir
+-rwxr-xr-x  1 dach001 dach001     142 Aug 11 20:53 dummy-compare.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 14:37 gfarmlog
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:32 hongo000-cleaner-output
+-rw-r--r--  1 dach001 dach001    7518 Aug 12 19:32 hongo000-cleaner.err
+-rw-r--r--  1 dach001 dach001    5458 Aug 12 19:32 hongo000-cleaner.out
+-rw-r--r--  1 dach001 dach001     167 Aug 12 19:33 hongo000-deployer.err
+-rw-r--r--  1 dach001 dach001     316 Aug 12 19:33 hongo000-deployer.out
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 hongo000-output
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 21:59 hongo001-cleaner-output
+-rw-r--r--  1 dach001 dach001     832 Aug 11 21:59 hongo001-cleaner.err
+-rw-r--r--  1 dach001 dach001      41 Aug 11 21:59 hongo001-cleaner.out
+-rwxr-xr-x  1 dach001 dach001     287 Aug 11 22:25 install-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     645 Aug 11 22:26 install-gfarm-site.sh
+-rwxr-xr-x  1 dach001 dach001     683 Aug 11 20:56 install-software.sh
+-rwxr-xr-x  1 dach001 dach001      86 Aug  2 21:45 killalljava.sh
+-rw-r--r--  1 dach001 dach001    1263 Aug  1 11:00 log4j.properties
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 out
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 06:11 outdir
+-rw-r--r--  1 dach001 dach001     848 Aug  1 05:37 placefiles
+-rw-r--r--  1 dach001 dach001       0 Aug  3 06:26 problem-base
+-rw-r--r--  1 dach001 dach001 2464392 Aug 12 20:28 result-final_dach-0.3395367793269852.txt
+-rw-r--r--  1 dach001 dach001       0 Aug 12 18:50 result-final_dach-0.4277374168878413.txt
+-rw-r--r--  1 dach001 dach001       0 Aug 12 19:21 result-final_dach-0.7345609347448798.txt
+-rw-r--r--  1 dach001 dach001 3718531 Aug  4 20:48 result-sample011536.txt
+-rwxr-xr-x  1 dach001 dach001    1149 Aug 11 20:45 runall.sh
+-rwxr-xr-x  1 dach001 dach001    1060 Aug 10 13:15 rundummy.sh
+-rwxr-xr-x  1 dach001 dach001      73 Aug  1 21:45 search-and-destroy.sh
+-rwxr-xr-x  1 dach001 dach001     804 Aug 10 13:17 startserver.sh
+-rwxr-xr-x  1 dach001 dach001     620 Aug  6 21:22 t
+-rw-r--r--  1 dach001 dach001     939 Aug 12 06:35 testsites
+-rw-r--r--  1 dach001 dach001 2464392 Aug 13 05:10 tmp
+-rwxr-xr-x  1 dach001 dach001     547 Aug 10 23:53 uninstall-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     395 Aug 10 23:54 uninstall-gfarm-site.sh
+drwxr-xr-x 13 dach001 dach001    4096 Aug 12 19:08 upout
+dach001@hongo000:~$ rm result-final_dach-0.7345609347448798.txt 
+dach001@hongo000:~$ rm result-final_dach-0.4277374168878413.txt 
+dach001@hongo000:~$ l
+total 11852
+-rwxr-xr-x  1 dach001 dach001      81 Aug  1 05:28 build-testcluster
+-rwxr-xr-x  1 dach001 dach001     482 Aug 12 08:02 clean-all.sh
+-rwxr-xr-x  1 dach001 dach001     482 Aug  6 15:41 clean-site.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 13 07:10 cleanlog
+drwxr-xr-x 13 dach001 dach001    4096 Aug  2 21:02 cleanout
+-rwxr-xr-x  1 dach001 dach001     198 Aug  2 12:51 copy-and-compare.sh
+drwxr-xr-x  6 dach001 dach001    4096 Aug 12 12:29 dachmaestro-0.2
+-rw-r--r--  1 dach001 dach001 3291254 Aug 13 07:10 dachmaestro-0.2.zip
+drwxr-xr-x  2 dach001 dach001    4096 Aug  2 02:09 deploy
+-rwxr-xr-x  1 dach001 dach001     496 Aug 11 21:01 deploy-all.sh
+-rwxr-xr-x  1 dach001 dach001     274 Aug  1 23:07 deploy-site.sh
+-rw-r--r--  1 dach001 dach001     867 Aug  1 06:23 deploy-small
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 23:27 deployment-tables
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 04:41 destroydir
+-rwxr-xr-x  1 dach001 dach001     142 Aug 11 20:53 dummy-compare.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 14:37 gfarmlog
+drwxr-xr-x  2 dach001 dach001    4096 Aug 13 07:10 hongo000-cleaner-output
+-rw-r--r--  1 dach001 dach001    6578 Aug 13 07:11 hongo000-cleaner.err
+-rw-r--r--  1 dach001 dach001    5264 Aug 13 07:11 hongo000-cleaner.out
+-rw-r--r--  1 dach001 dach001     167 Aug 12 19:33 hongo000-deployer.err
+-rw-r--r--  1 dach001 dach001     316 Aug 12 19:33 hongo000-deployer.out
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 hongo000-output
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 21:59 hongo001-cleaner-output
+-rw-r--r--  1 dach001 dach001     832 Aug 11 21:59 hongo001-cleaner.err
+-rw-r--r--  1 dach001 dach001      41 Aug 11 21:59 hongo001-cleaner.out
+-rwxr-xr-x  1 dach001 dach001     287 Aug 11 22:25 install-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     645 Aug 11 22:26 install-gfarm-site.sh
+-rwxr-xr-x  1 dach001 dach001     683 Aug 11 20:56 install-software.sh
+-rwxr-xr-x  1 dach001 dach001      86 Aug  2 21:45 killalljava.sh
+-rw-r--r--  1 dach001 dach001    1263 Aug  1 11:00 log4j.properties
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 out
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 06:11 outdir
+-rw-r--r--  1 dach001 dach001     848 Aug  1 05:37 placefiles
+-rw-r--r--  1 dach001 dach001       0 Aug  3 06:26 problem-base
+-rw-r--r--  1 dach001 dach001 2464392 Aug 12 20:28 result-final_dach-0.3395367793269852.txt
+-rw-r--r--  1 dach001 dach001 3718531 Aug  4 20:48 result-sample011536.txt
+-rwxr-xr-x  1 dach001 dach001    1149 Aug 11 20:45 runall.sh
+-rwxr-xr-x  1 dach001 dach001    1060 Aug 10 13:15 rundummy.sh
+-rwxr-xr-x  1 dach001 dach001      73 Aug  1 21:45 search-and-destroy.sh
+-rwxr-xr-x  1 dach001 dach001     804 Aug 10 13:17 startserver.sh
+-rwxr-xr-x  1 dach001 dach001     620 Aug  6 21:22 t
+-rw-r--r--  1 dach001 dach001     939 Aug 12 06:35 testsites
+-rw-r--r--  1 dach001 dach001 2464392 Aug 13 05:10 tmp
+-rwxr-xr-x  1 dach001 dach001     547 Aug 10 23:53 uninstall-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     395 Aug 10 23:54 uninstall-gfarm-site.sh
+drwxr-xr-x 13 dach001 dach001    4096 Aug 12 19:08 upout
+dach001@hongo000:~$ m result-sample011536.txt 
+69.2189512 -1.3346559 
+69.2151638 -1.3456707 
+69.2141216 -1.4272674 
+69.2145900 -1.4057098 
+69.2141198 -1.3777973 
+69.2142920 -1.3328180 
+69.2142303 -1.4007939 
+69.2143227 -1.4350125 
+69.2137857 -1.4367134 
+69.2156575 -1.3646467 
+69.2148421 -1.4316500 
+69.2148131 -1.4106953 
+69.2153443 -1.3491106 
+69.2153041 -1.3980153 
+69.2155219 -1.3429056 
+69.2164272 -1.4115460 
+69.2157572 -1.3753681 
+69.2168784 -1.3697649 
+69.2166435 -1.4333980 
+69.2178350 -1.3565125 
+69.2168720 -1.4112450 
+69.2174485 -1.3978768 
+69.2171200 -1.3822434 
+69.2180496 -1.3919597 
+69.2173630 -1.4227793 
+69.2177492 -1.4293848 
+69.2190951 -1.3675814 
+69.2187675 -1.3859305 
+69.2189644 -1.3852054 
+69.2189713 -1.4313142 
+69.2187053 -1.4462175 
+69.2227223 -1.4465309 
+69.2188444 -1.3874192 
+69.2195506 -1.3689165 
+69.2194002 -1.4218443 
+69.2196827 -1.3662196 
+69.2193077 -1.4057774 
+69.2194741 -1.3805399 
+69.2214248 -1.3385611 
+69.2193777 -1.4121972 
+69.2209944 -1.4469465 
+69.2205557 -1.3415164 
+69.2197482 -1.3711902 
+69.2203577 -1.3661043 
+69.2200929 -1.4345311 
+69.2205083 -1.4460789 
+69.2212531 -1.4444048 
+69.2219977 -1.3693112 
+69.2222587 -1.4287619 
+69.2222601 -1.4432374 
+69.2222897 -1.3491292 
+69.2226500 -1.4331810 
+69.2226701 -1.3808542 
+69.2238284 -1.4022681 
+69.2239756 -1.3856185 
+69.2242096 -1.4371224 
+69.2238986 -1.3430836 
+69.2246073 -1.3802605 
+69.2241180 -1.3879183 
+69.2239345 -1.3397309 
+69.2243832 -1.3461233 
+69.2245600 -1.3611967 
+69.2247317 -1.4118947 
+69.2244137 -1.3755032 
+69.2262987 -1.3867150 
+69.2249256 -1.4439087 
+69.2246999 -1.3764939 
+69.2253509 -1.3666645 
+69.2261581 -1.3374945 
+69.2256386 -1.4254041 
+dach001@hongo000:~$ ls
+build-testcluster        hongo001-cleaner.err
+clean-all.sh             hongo001-cleaner.out
+clean-site.sh            install-gfarm-all.sh
+cleanlog                 install-gfarm-site.sh
+cleanout                 install-software.sh
+copy-and-compare.sh      killalljava.sh
+dachmaestro-0.2          log4j.properties
+dachmaestro-0.2.zip      out
+deploy                   outdir
+deploy-all.sh            placefiles
+deploy-site.sh           problem-base
+deploy-small             result-final_dach-0.3395367793269852.txt
+deployment-tables        result-sample011536.txt
+destroydir               runall.sh
+dummy-compare.sh         rundummy.sh
+gfarmlog                 search-and-destroy.sh
+hongo000-cleaner-output  startserver.sh
+hongo000-cleaner.err     t
+hongo000-cleaner.out     testsites
+hongo000-deployer.err    tmp
+hongo000-deployer.out    uninstall-gfarm-all.sh
+hongo000-output          uninstall-gfarm-site.sh
+hongo001-cleaner-output  upout
+dach001@hongo000:~$ l
+total 11852
+-rwxr-xr-x  1 dach001 dach001      81 Aug  1 05:28 build-testcluster
+-rwxr-xr-x  1 dach001 dach001     482 Aug 12 08:02 clean-all.sh
+-rwxr-xr-x  1 dach001 dach001     482 Aug  6 15:41 clean-site.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 13 07:10 cleanlog
+drwxr-xr-x 13 dach001 dach001    4096 Aug  2 21:02 cleanout
+-rwxr-xr-x  1 dach001 dach001     198 Aug  2 12:51 copy-and-compare.sh
+drwxr-xr-x  6 dach001 dach001    4096 Aug 12 12:29 dachmaestro-0.2
+-rw-r--r--  1 dach001 dach001 3291254 Aug 13 07:10 dachmaestro-0.2.zip
+drwxr-xr-x  2 dach001 dach001    4096 Aug  2 02:09 deploy
+-rwxr-xr-x  1 dach001 dach001     496 Aug 11 21:01 deploy-all.sh
+-rwxr-xr-x  1 dach001 dach001     274 Aug  1 23:07 deploy-site.sh
+-rw-r--r--  1 dach001 dach001     867 Aug  1 06:23 deploy-small
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 23:27 deployment-tables
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 04:41 destroydir
+-rwxr-xr-x  1 dach001 dach001     142 Aug 11 20:53 dummy-compare.sh
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 14:37 gfarmlog
+drwxr-xr-x  2 dach001 dach001    4096 Aug 13 07:10 hongo000-cleaner-output
+-rw-r--r--  1 dach001 dach001    6578 Aug 13 07:11 hongo000-cleaner.err
+-rw-r--r--  1 dach001 dach001    5264 Aug 13 07:11 hongo000-cleaner.out
+-rw-r--r--  1 dach001 dach001     167 Aug 12 19:33 hongo000-deployer.err
+-rw-r--r--  1 dach001 dach001     316 Aug 12 19:33 hongo000-deployer.out
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 hongo000-output
+drwxr-xr-x  2 dach001 dach001    4096 Aug 11 21:59 hongo001-cleaner-output
+-rw-r--r--  1 dach001 dach001     832 Aug 11 21:59 hongo001-cleaner.err
+-rw-r--r--  1 dach001 dach001      41 Aug 11 21:59 hongo001-cleaner.out
+-rwxr-xr-x  1 dach001 dach001     287 Aug 11 22:25 install-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     645 Aug 11 22:26 install-gfarm-site.sh
+-rwxr-xr-x  1 dach001 dach001     683 Aug 11 20:56 install-software.sh
+-rwxr-xr-x  1 dach001 dach001      86 Aug  2 21:45 killalljava.sh
+-rw-r--r--  1 dach001 dach001    1263 Aug  1 11:00 log4j.properties
+drwxr-xr-x  2 dach001 dach001    4096 Aug 12 19:33 out
+drwxr-xr-x 12 dach001 dach001    4096 Aug  2 06:11 outdir
+-rw-r--r--  1 dach001 dach001     848 Aug  1 05:37 placefiles
+-rw-r--r--  1 dach001 dach001       0 Aug  3 06:26 problem-base
+-rw-r--r--  1 dach001 dach001 2464392 Aug 12 20:28 result-final_dach-0.3395367793269852.txt
+-rw-r--r--  1 dach001 dach001 3718531 Aug  4 20:48 result-sample011536.txt
+-rwxr-xr-x  1 dach001 dach001    1149 Aug 11 20:45 runall.sh
+-rwxr-xr-x  1 dach001 dach001    1060 Aug 10 13:15 rundummy.sh
+-rwxr-xr-x  1 dach001 dach001      73 Aug  1 21:45 search-and-destroy.sh
+-rwxr-xr-x  1 dach001 dach001     804 Aug 10 13:17 startserver.sh
+-rwxr-xr-x  1 dach001 dach001     620 Aug  6 21:22 t
+-rw-r--r--  1 dach001 dach001     939 Aug 12 06:35 testsites
+-rw-r--r--  1 dach001 dach001 2464392 Aug 13 05:10 tmp
+-rwxr-xr-x  1 dach001 dach001     547 Aug 10 23:53 uninstall-gfarm-all.sh
+-rwxr-xr-x  1 dach001 dach001     395 Aug 10 23:54 uninstall-gfarm-site.sh
+drwxr-xr-x 13 dach001 dach001    4096 Aug 12 19:08 upout
+dach001@hongo000:~$ rm result-sample011536.txt 
+dach001@hongo000:~$ cat deployment-tables/
+cat: deployment-tables/: Is a directory
+dach001@hongo000:~$ cat deployment-tables/headnodes.list 
+chiba000.intrigger.nii.ac.jp
+hongo000.logos.ic.i.u-tokyo.ac.jp
+imade000.kuis.kyoto-u.ac.jp
+kyoto000.para.media.kyoto-u.ac.jp
+mirai000.intrigger.jp
+kobe000.intrigger.scitec.kobe-u.ac.jp
+suzuk000.intrigger.titech.ac.jp
+kyushu000.bioinfo.kyushu-u.ac.jp
+hiro000.net.hiroshima-u.ac.jp
+nimbus.titech.hpcc.jp
+okubo000.yama.info.waseda.ac.jp
+dach001@hongo000:~$ cat install-gfarm-
+install-gfarm-all.sh   install-gfarm-site.sh  
+dach001@hongo000:~$ cat install-gfarm-site.sh 
+#!/bin/sh
+LOGDIR=`hostname`-gfarm-output
+GFARMDIR=/tmp/dach001
+MYNAME=`hostname -f`
+rm -rf $LOGDIR
+mkdir $LOGDIR
+export GXP_SESSION=`gxpc --create_daemon 1`
+trap 'gxpc quit; exit 1' 2
+/usr/bin/fusermount -u $GFARMDIR
+rm -rf $GFARMDIR
+mkdir $GFARMDIR
+/data/local/gfarm_v2/bin/gfarm2fs $GFARMDIR
+gxpc use ssh '' ''
+## We're very persistent since the nodes can be very busy.
+## The point is to change that...
+gxpc explore --timeout 60 `cat $1`
+gxpc e -H `hostname` /usr/bin/fusermount -u $GFARMDIR
+gxpc e -H `hostname` rm -rf $GFARMDIR
+gxpc e -H `hostname` mkdir $GFARMDIR
+gxpc e -H `hostname` /data/local/gfarm_v2/bin/gfarm2fs $GFARMDIR
+gxpc quit
+dach001@hongo000:~$ ssh hongo113
+Linux hongo113 2.6.18-6-amd64 #1 SMP Fri Jun 6 05:24:08 UTC 2008 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Aug 12 16:27:55 2008 from hongo001.logos.ic.i.u-tokyo.ac.jp
+dach001@hongo113:~$ /usr/bin/fusermount -u /tmp/dach001
+dach001@hongo113:~$ /data/local/gfarm_v2/bin/gfarm2fs /tmp/dach001
+dach001@hongo113:~$ logout
+Connection to hongo113 closed.
+dach001@hongo000:~$ ssh hongo001
+Linux hongo001 2.6.18-6-686 #1 SMP Sun Feb 10 22:11:31 UTC 2008 i686
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Aug 12 14:54:42 2008 from hongo000.logos.ic.i.u-tokyo.ac.jp
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Central Registry: creating new pool: "MaestroPool"
+07:38:54 Central Registry: (Ibis 0, location mirai000@intrigger@jp) joined pool "MaestroPool" now 1 members
+07:38:54 Central Registry: (Ibis 1, location kyushu009@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 2 members
+07:38:54 Central Registry: (Ibis 2, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 3 members
+07:38:54 Central Registry: (Ibis 3, location kyushu007@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 4 members
+07:38:54 Central Registry: (Ibis 4, location kobe008@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 5 members
+07:38:54 Central Registry: (Ibis 5, location kyushu008@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 6 members
+07:38:54 Central Registry: (Ibis 6, location kyushu003@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 7 members
+07:38:54 Central Registry: (Ibis 7, location imade001@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 8 members
+07:38:54 Central Registry: (Ibis 8, location imade002@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 9 members
+07:38:54 Central Registry: (Ibis 9, location imade000@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 10 members
+07:38:54 Central Registry: (Ibis 10, location kyushu004@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 11 members
+07:38:54 Central Registry: (Ibis 11, location kyushu005@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 12 members
+07:38:54 Central Registry: (Ibis 12, location kyushu001@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 13 members
+07:38:54 Central Registry: (Ibis 13, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 14 members
+07:38:54 Central Registry: (Ibis 14, location mirai005@intrigger@jp) joined pool "MaestroPool" now 15 members
+07:38:54 Central Registry: (Ibis 15, location mirai004@intrigger@jp) joined pool "MaestroPool" now 16 members
+07:38:54 Central Registry: (Ibis 16, location mirai003@intrigger@jp) joined pool "MaestroPool" now 17 members
+07:38:54 Central Registry: (Ibis 17, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 18 members
+07:38:54 Central Registry: (Ibis 18, location mirai002@intrigger@jp) joined pool "MaestroPool" now 19 members
+07:38:54 Central Registry: (Ibis 19, location mirai001@intrigger@jp) joined pool "MaestroPool" now 20 members
+07:38:54 Central Registry: (Ibis 20, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 21 members
+07:38:54 Central Registry: (Ibis 21, location kyushu002@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 22 members
+07:38:54 Central Registry: (Ibis 22, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 23 members
+07:38:54 Central Registry: (Ibis 23, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 24 members
+07:38:54 Central Registry: (Ibis 24, location kobe006@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 25 members
+07:38:54 Central Registry: (Ibis 25, location kobe005@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 26 members
+07:38:54 Central Registry: (Ibis 26, location kobe004@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 27 members
+07:38:54 Central Registry: (Ibis 27, location kobe007@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 28 members
+07:38:54 Central Registry: (Ibis 28, location kobe010@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 29 members
+07:38:55 Central Registry: (Ibis 29, location kobe009@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 30 members
+07:38:55 Central Registry: (Ibis 30, location kobe001@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 31 members
+07:38:55 Central Registry: (Ibis 31, location kobe002@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 32 members
+07:38:55 Central Registry: (Ibis 32, location kobe003@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 33 members
+07:38:55 Central Registry: (Ibis 33, location imade003@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 34 members
+07:38:55 Central Registry: (Ibis 34, location hiro002@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 35 members
+07:38:55 Central Registry: (Ibis 35, location hiro007@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 36 members
+07:38:55 Central Registry: (Ibis 36, location hiro008@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 37 members
+07:38:55 Central Registry: (Ibis 37, location hiro006@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 38 members
+07:38:55 Central Registry: (Ibis 38, location hiro005@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 39 members
+07:38:55 Central Registry: (Ibis 39, location suzuk000@intrigger@titech@ac@jp) joined pool "MaestroPool" now 40 members
+07:38:55 Central Registry: (Ibis 40, location suzuk005@intrigger@titech@ac@jp) joined pool "MaestroPool" now 41 members
+07:38:55 Central Registry: (Ibis 41, location hiro009@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 42 members
+07:38:55 Central Registry: (Ibis 42, location suzuk001@intrigger@titech@ac@jp) joined pool "MaestroPool" now 43 members
+07:38:55 Central Registry: (Ibis 43, location hiro010@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 44 members
+07:38:55 Central Registry: (Ibis 44, location suzuk010@intrigger@titech@ac@jp) joined pool "MaestroPool" now 45 members
+07:38:55 Central Registry: (Ibis 45, location suzuk004@intrigger@titech@ac@jp) joined pool "MaestroPool" now 46 members
+07:38:55 Central Registry: (Ibis 46, location suzuk003@intrigger@titech@ac@jp) joined pool "MaestroPool" now 47 members
+07:38:55 Central Registry: (Ibis 47, location suzuk013@intrigger@titech@ac@jp) joined pool "MaestroPool" now 48 members
+07:38:55 Central Registry: (Ibis 48, location suzuk014@intrigger@titech@ac@jp) joined pool "MaestroPool" now 49 members
+07:38:55 Central Registry: (Ibis 49, location suzuk012@intrigger@titech@ac@jp) joined pool "MaestroPool" now 50 members
+07:38:55 Central Registry: (Ibis 50, location suzuk009@intrigger@titech@ac@jp) joined pool "MaestroPool" now 51 members
+07:38:55 Central Registry: (Ibis 51, location suzuk011@intrigger@titech@ac@jp) joined pool "MaestroPool" now 52 members
+07:38:55 Central Registry: (Ibis 52, location suzuk002@intrigger@titech@ac@jp) joined pool "MaestroPool" now 53 members
+07:38:55 Central Registry: (Ibis 53, location suzuk007@intrigger@titech@ac@jp) joined pool "MaestroPool" now 54 members
+07:38:55 Central Registry: (Ibis 54, location suzuk008@intrigger@titech@ac@jp) joined pool "MaestroPool" now 55 members
+07:38:55 Central Registry: (Ibis 55, location suzuk006@intrigger@titech@ac@jp) joined pool "MaestroPool" now 56 members
+07:38:55 Central Registry: (Ibis 56, location hiro001@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 57 members
+07:38:55 Central Registry: (Ibis 57, location hiro003@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 58 members
+07:38:55 Central Registry: (Ibis 58, location hiro004@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 59 members
+07:38:55 Central Registry: (Ibis 59, location chiba000@intrigger@nii@ac@jp) joined pool "MaestroPool" now 60 members
+07:38:55 Central Registry: (Ibis 60, location chiba104@intrigger@nii@ac@jp) joined pool "MaestroPool" now 61 members
+07:38:55 Central Registry: (Ibis 61, location chiba108@intrigger@nii@ac@jp) joined pool "MaestroPool" now 62 members
+07:38:55 Central Registry: (Ibis 62, location chiba107@intrigger@nii@ac@jp) joined pool "MaestroPool" now 63 members
+07:38:56 Central Registry: (Ibis 63, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 64 members
+07:38:56 Central Registry: (Ibis 64, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 65 members
+07:38:56 Central Registry: (Ibis 65, location kyushu006@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 66 members
+07:38:57 Central Registry: (Ibis 66, location chiba103@intrigger@nii@ac@jp) joined pool "MaestroPool" now 67 members
+07:38:57 Central Registry: (Ibis 67, location chiba105@intrigger@nii@ac@jp) joined pool "MaestroPool" now 68 members
+07:38:59 Central Registry: (Ibis 68, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 69 members
+07:38:59 Central Registry: (Ibis 69, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 70 members
+07:38:59 Central Registry: (Ibis 70, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 71 members
+07:38:59 Central Registry: (Ibis 71, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 72 members
+07:38:59 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) joined pool "MaestroPool" now 73 members
+07:38:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  73    73      0     0         0       0       N.A.  false false
+
+07:39:00 Central Registry: (Ibis 73, location okubo005@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 74 members
+07:39:00 Central Registry: (Ibis 74, location okubo009@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 75 members
+07:39:00 Central Registry: (Ibis 75, location okubo013@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 76 members
+07:39:00 Central Registry: (Ibis 76, location okubo004@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 77 members
+07:39:00 Central Registry: (Ibis 77, location okubo002@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 78 members
+07:39:00 Central Registry: (Ibis 78, location okubo010@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 79 members
+07:39:00 Central Registry: (Ibis 79, location okubo007@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 80 members
+07:39:00 Central Registry: (Ibis 80, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 81 members
+07:39:00 Central Registry: (Ibis 81, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 82 members
+07:39:00 Central Registry: (Ibis 82, location okubo003@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 83 members
+07:39:00 Central Registry: (Ibis 83, location okubo001@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 84 members
+07:39:00 Central Registry: (Ibis 84, location okubo006@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 85 members
+07:39:00 Central Registry: (Ibis 85, location okubo012@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 86 members
+07:39:05 Central Registry: (Ibis 86, location okubo008@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 87 members
+07:39:13 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 88 members
+07:39:13 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) won election "maestro-election" in pool "MaestroPool"
+07:39:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+07:40:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+07:41:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+07:42:03 Central Registry: (Ibis 88, location mirai000@intrigger@jp) joined pool "MaestroPool" now 89 members
+07:42:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:43:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:44:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:45:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:46:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:47:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:48:59 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  89    89      0     0         1       0       N.A.  false false
+
+07:49:48 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 88 members
+07:49:49 Central Registry: (Ibis 51, location suzuk011@intrigger@titech@ac@jp) left pool "MaestroPool" now 87 members
+07:49:55 Central Registry: (Ibis 7, location imade001@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 86 members
+07:49:55 Central Registry: (Ibis 9, location imade000@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 85 members
+07:49:55 Central Registry: (Ibis 2, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 84 members
+07:49:55 Central Registry: (Ibis 4, location kobe008@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 83 members
+07:49:55 Central Registry: (Ibis 22, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 82 members
+07:49:55 Central Registry: (Ibis 40, location suzuk005@intrigger@titech@ac@jp) left pool "MaestroPool" now 81 members
+07:49:55 Central Registry: (Ibis 24, location kobe006@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 80 members
+07:49:55 Central Registry: (Ibis 42, location suzuk001@intrigger@titech@ac@jp) left pool "MaestroPool" now 79 members
+07:49:55 Central Registry: (Ibis 44, location suzuk010@intrigger@titech@ac@jp) left pool "MaestroPool" now 78 members
+07:49:55 Central Registry: (Ibis 46, location suzuk003@intrigger@titech@ac@jp) left pool "MaestroPool" now 77 members
+07:49:55 Central Registry: (Ibis 47, location suzuk013@intrigger@titech@ac@jp) left pool "MaestroPool" now 76 members
+07:49:55 Central Registry: (Ibis 48, location suzuk014@intrigger@titech@ac@jp) left pool "MaestroPool" now 75 members
+07:49:55 Central Registry: (Ibis 49, location suzuk012@intrigger@titech@ac@jp) left pool "MaestroPool" now 74 members
+07:49:55 Central Registry: (Ibis 50, location suzuk009@intrigger@titech@ac@jp) left pool "MaestroPool" now 73 members
+07:49:55 Central Registry: (Ibis 52, location suzuk002@intrigger@titech@ac@jp) left pool "MaestroPool" now 72 members
+07:49:56 Central Registry: (Ibis 13, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 71 members
+07:49:56 Central Registry: (Ibis 23, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 70 members
+07:49:56 Central Registry: (Ibis 25, location kobe005@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 69 members
+07:49:56 Central Registry: (Ibis 26, location kobe004@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 68 members
+07:49:56 Central Registry: (Ibis 3, location kyushu007@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 67 members
+07:49:56 Central Registry: (Ibis 5, location kyushu008@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 66 members
+07:49:56 Central Registry: (Ibis 1, location kyushu009@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 65 members
+07:49:56 Central Registry: (Ibis 11, location kyushu005@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 64 members
+07:49:56 Central Registry: (Ibis 12, location kyushu001@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 63 members
+07:49:56 Central Registry: (Ibis 10, location kyushu004@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 62 members
+07:49:56 Central Registry: (Ibis 17, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 61 members
+07:49:56 Central Registry: (Ibis 20, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 60 members
+07:49:56 Central Registry: (Ibis 6, location kyushu003@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 59 members
+07:49:56 Central Registry: (Ibis 21, location kyushu002@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 58 members
+07:49:56 Central Registry: (Ibis 27, location kobe007@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 57 members
+07:49:56 Central Registry: (Ibis 28, location kobe010@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 56 members
+07:49:56 Central Registry: (Ibis 29, location kobe009@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 55 members
+07:49:56 Central Registry: (Ibis 30, location kobe001@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 54 members
+07:49:56 Central Registry: (Ibis 31, location kobe002@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 53 members
+07:49:56 Central Registry: (Ibis 59, location chiba000@intrigger@nii@ac@jp) left pool "MaestroPool" now 52 members
+07:49:56 Central Registry: (Ibis 32, location kobe003@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 51 members
+07:49:56 Central Registry: (Ibis 70, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 50 members
+07:49:56 Central Registry: (Ibis 71, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 49 members
+07:49:56 Central Registry: (Ibis 60, location chiba104@intrigger@nii@ac@jp) left pool "MaestroPool" now 48 members
+07:49:56 Central Registry: (Ibis 69, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 47 members
+07:49:56 Central Registry: (Ibis 68, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 46 members
+07:49:56 Central Registry: (Ibis 73, location okubo005@yama@info@waseda@ac@jp) left pool "MaestroPool" now 45 members
+07:49:56 Central Registry: (Ibis 61, location chiba108@intrigger@nii@ac@jp) left pool "MaestroPool" now 44 members
+07:49:56 Central Registry: (Ibis 77, location okubo002@yama@info@waseda@ac@jp) left pool "MaestroPool" now 43 members
+07:49:56 Central Registry: (Ibis 74, location okubo009@yama@info@waseda@ac@jp) left pool "MaestroPool" now 42 members
+07:49:56 Central Registry: (Ibis 75, location okubo013@yama@info@waseda@ac@jp) left pool "MaestroPool" now 41 members
+07:49:56 Central Registry: (Ibis 76, location okubo004@yama@info@waseda@ac@jp) left pool "MaestroPool" now 40 members
+07:49:56 Central Registry: (Ibis 78, location okubo010@yama@info@waseda@ac@jp) left pool "MaestroPool" now 39 members
+07:49:56 Central Registry: (Ibis 79, location okubo007@yama@info@waseda@ac@jp) left pool "MaestroPool" now 38 members
+07:49:56 Central Registry: (Ibis 62, location chiba107@intrigger@nii@ac@jp) left pool "MaestroPool" now 37 members
+07:49:56 Central Registry: (Ibis 80, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 36 members
+07:49:56 Central Registry: (Ibis 66, location chiba103@intrigger@nii@ac@jp) left pool "MaestroPool" now 35 members
+07:49:56 Central Registry: (Ibis 81, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 34 members
+07:49:56 Central Registry: (Ibis 67, location chiba105@intrigger@nii@ac@jp) left pool "MaestroPool" now 33 members
+07:49:56 Central Registry: (Ibis 84, location okubo006@yama@info@waseda@ac@jp) left pool "MaestroPool" now 32 members
+07:49:56 Central Registry: (Ibis 86, location okubo008@yama@info@waseda@ac@jp) left pool "MaestroPool" now 31 members
+07:49:56 Central Registry: (Ibis 83, location okubo001@yama@info@waseda@ac@jp) left pool "MaestroPool" now 30 members
+07:49:56 Central Registry: (Ibis 85, location okubo012@yama@info@waseda@ac@jp) left pool "MaestroPool" now 29 members
+07:49:56 Central Registry: (Ibis 82, location okubo003@yama@info@waseda@ac@jp) left pool "MaestroPool" now 28 members
+07:49:56 Central Registry: (Ibis 34, location hiro002@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 27 members
+07:49:56 Central Registry: (Ibis 35, location hiro007@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 26 members
+07:49:56 Central Registry: (Ibis 36, location hiro008@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 25 members
+07:49:56 Central Registry: (Ibis 37, location hiro006@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 24 members
+07:49:56 Central Registry: (Ibis 38, location hiro005@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 23 members
+07:49:56 Central Registry: (Ibis 41, location hiro009@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 22 members
+07:49:56 Central Registry: (Ibis 43, location hiro010@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 21 members
+07:49:56 Central Registry: (Ibis 56, location hiro001@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 20 members
+07:49:56 Central Registry: (Ibis 15, location mirai004@intrigger@jp) left pool "MaestroPool" now 19 members
+07:49:56 Central Registry: (Ibis 65, location kyushu006@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 18 members
+07:49:56 Central Registry: (Ibis 63, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 17 members
+07:49:57 Central Registry: (Ibis 64, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 16 members
+07:49:57 Central Registry: (Ibis 19, location mirai001@intrigger@jp) left pool "MaestroPool" now 15 members
+07:49:57 Central Registry: (Ibis 0, location mirai000@intrigger@jp) left pool "MaestroPool" now 14 members
+07:49:57 Central Registry: (Ibis 57, location hiro003@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 13 members
+07:49:57 Central Registry: (Ibis 14, location mirai005@intrigger@jp) left pool "MaestroPool" now 12 members
+07:49:57 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) left pool "MaestroPool" now 11 members
+07:49:57 Central Registry: (Ibis 88, location mirai000@intrigger@jp) left pool "MaestroPool" now 10 members
+07:49:57 Central Registry: (Ibis 16, location mirai003@intrigger@jp) left pool "MaestroPool" now 9 members
+07:49:57 Central Registry: (Ibis 58, location hiro004@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 8 members
+07:49:57 Central Registry: (Ibis 18, location mirai002@intrigger@jp) left pool "MaestroPool" now 7 members
+07:49:57 Central Registry: (Ibis 39, location suzuk000@intrigger@titech@ac@jp) left pool "MaestroPool" now 6 members
+07:49:57 Central Registry: (Ibis 45, location suzuk004@intrigger@titech@ac@jp) left pool "MaestroPool" now 5 members
+07:49:57 Central Registry: (Ibis 54, location suzuk008@intrigger@titech@ac@jp) left pool "MaestroPool" now 4 members
+07:49:57 Central Registry: (Ibis 55, location suzuk006@intrigger@titech@ac@jp) left pool "MaestroPool" now 3 members
+07:49:57 Central Registry: (Ibis 53, location suzuk007@intrigger@titech@ac@jp) left pool "MaestroPool" now 2 members
+07:49:59 Central Registry: (Ibis 33, location imade003@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 1 members
+07:49:59 Central Registry: (Ibis 8, location imade002@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 0 members
+07:49:59 Central Registry: pool "MaestroPool" ended
+07:50:00 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   0    89     88     1         1       0       N.A.  false  true
+
+Central Registry: pool "MaestroPool" ended
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Central Registry: creating new pool: "MaestroPool"
+08:07:07 Central Registry: (Ibis 0, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 1 members
+08:07:07 Central Registry: (Ibis 1, location mirai001@intrigger@jp) joined pool "MaestroPool" now 2 members
+08:07:07 Central Registry: (Ibis 2, location mirai005@intrigger@jp) joined pool "MaestroPool" now 3 members
+08:07:07 Central Registry: (Ibis 3, location mirai004@intrigger@jp) joined pool "MaestroPool" now 4 members
+08:07:07 Central Registry: (Ibis 4, location mirai002@intrigger@jp) joined pool "MaestroPool" now 5 members
+08:07:07 Central Registry: (Ibis 5, location kyushu007@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 6 members
+08:07:07 Central Registry: (Ibis 6, location kyushu001@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 7 members
+08:07:07 Central Registry: (Ibis 7, location kyushu009@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 8 members
+08:07:07 Central Registry: (Ibis 8, location kyushu002@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 9 members
+08:07:07 Central Registry: (Ibis 9, location mirai003@intrigger@jp) joined pool "MaestroPool" now 10 members
+08:07:07 Central Registry: (Ibis 10, location mirai000@intrigger@jp) joined pool "MaestroPool" now 11 members
+08:07:07 Central Registry: (Ibis 11, location kyushu005@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 12 members
+08:07:07 Central Registry: (Ibis 12, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 13 members
+08:07:07 Central Registry: (Ibis 13, location kyushu008@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 14 members
+08:07:07 Central Registry: (Ibis 14, location kyushu006@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 15 members
+08:07:07 Central Registry: (Ibis 15, location kyushu003@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 16 members
+08:07:07 Central Registry: (Ibis 16, location kyushu004@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 17 members
+08:07:07 Central Registry: (Ibis 17, location imade000@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 18 members
+08:07:07 Central Registry: (Ibis 18, location imade001@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 19 members
+08:07:07 Central Registry: (Ibis 19, location imade003@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 20 members
+08:07:07 Central Registry: (Ibis 20, location imade002@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 21 members
+08:07:07 Central Registry: (Ibis 21, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 22 members
+08:07:07 Central Registry: (Ibis 22, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 23 members
+08:07:07 Central Registry: (Ibis 23, location hiro010@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 24 members
+08:07:07 Central Registry: (Ibis 24, location hiro007@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 25 members
+08:07:07 Central Registry: (Ibis 25, location hiro003@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 26 members
+08:07:07 Central Registry: (Ibis 26, location hiro005@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 27 members
+08:07:07 Central Registry: (Ibis 27, location hiro001@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 28 members
+08:07:07 Central Registry: (Ibis 28, location hiro006@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 29 members
+08:07:07 Central Registry: (Ibis 29, location hiro009@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 30 members
+08:07:07 Central Registry: (Ibis 30, location hiro008@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 31 members
+08:07:07 Central Registry: (Ibis 31, location hiro002@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 32 members
+08:07:07 Central Registry: (Ibis 32, location hiro004@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 33 members
+08:07:07 Central Registry: (Ibis 33, location mirai000@intrigger@jp) joined pool "MaestroPool" now 34 members
+08:07:08 Central Registry: (Ibis 34, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 35 members
+08:07:08 Central Registry: (Ibis 35, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 36 members
+08:07:08 Central Registry: (Ibis 36, location kobe002@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 37 members
+08:07:08 Central Registry: (Ibis 37, location kobe005@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 38 members
+08:07:08 Central Registry: (Ibis 38, location kobe001@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 39 members
+08:07:08 Central Registry: (Ibis 39, location kobe007@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 40 members
+08:07:08 Central Registry: (Ibis 40, location kobe009@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 41 members
+08:07:08 Central Registry: (Ibis 41, location kobe004@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 42 members
+08:07:08 Central Registry: (Ibis 42, location kobe003@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 43 members
+08:07:08 Central Registry: (Ibis 43, location kobe006@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 44 members
+08:07:08 Central Registry: (Ibis 44, location kobe008@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 45 members
+08:07:08 Central Registry: (Ibis 45, location suzuk000@intrigger@titech@ac@jp) joined pool "MaestroPool" now 46 members
+08:07:08 Central Registry: (Ibis 46, location chiba000@intrigger@nii@ac@jp) joined pool "MaestroPool" now 47 members
+08:07:08 Central Registry: (Ibis 47, location chiba105@intrigger@nii@ac@jp) joined pool "MaestroPool" now 48 members
+08:07:08 Central Registry: (Ibis 48, location chiba107@intrigger@nii@ac@jp) joined pool "MaestroPool" now 49 members
+08:07:08 Central Registry: (Ibis 49, location suzuk001@intrigger@titech@ac@jp) joined pool "MaestroPool" now 50 members
+08:07:08 Central Registry: (Ibis 50, location suzuk003@intrigger@titech@ac@jp) joined pool "MaestroPool" now 51 members
+08:07:08 Central Registry: (Ibis 51, location suzuk014@intrigger@titech@ac@jp) joined pool "MaestroPool" now 52 members
+08:07:08 Central Registry: (Ibis 52, location suzuk009@intrigger@titech@ac@jp) joined pool "MaestroPool" now 53 members
+08:07:08 Central Registry: (Ibis 53, location suzuk004@intrigger@titech@ac@jp) joined pool "MaestroPool" now 54 members
+08:07:08 Central Registry: (Ibis 54, location suzuk005@intrigger@titech@ac@jp) joined pool "MaestroPool" now 55 members
+08:07:08 Central Registry: (Ibis 55, location suzuk002@intrigger@titech@ac@jp) joined pool "MaestroPool" now 56 members
+08:07:08 Central Registry: (Ibis 56, location chiba104@intrigger@nii@ac@jp) joined pool "MaestroPool" now 57 members
+08:07:08 Central Registry: (Ibis 57, location suzuk008@intrigger@titech@ac@jp) joined pool "MaestroPool" now 58 members
+08:07:08 Central Registry: (Ibis 58, location suzuk012@intrigger@titech@ac@jp) joined pool "MaestroPool" now 59 members
+08:07:08 Central Registry: (Ibis 59, location suzuk007@intrigger@titech@ac@jp) joined pool "MaestroPool" now 60 members
+08:07:08 Central Registry: (Ibis 60, location suzuk010@intrigger@titech@ac@jp) joined pool "MaestroPool" now 61 members
+08:07:08 Central Registry: (Ibis 61, location suzuk013@intrigger@titech@ac@jp) joined pool "MaestroPool" now 62 members
+08:07:08 Central Registry: (Ibis 62, location suzuk006@intrigger@titech@ac@jp) joined pool "MaestroPool" now 63 members
+08:07:08 Central Registry: (Ibis 63, location suzuk011@intrigger@titech@ac@jp) joined pool "MaestroPool" now 64 members
+08:07:08 Central Registry: (Ibis 64, location chiba103@intrigger@nii@ac@jp) joined pool "MaestroPool" now 65 members
+08:07:08 Central Registry: (Ibis 65, location chiba108@intrigger@nii@ac@jp) joined pool "MaestroPool" now 66 members
+08:07:08 Central Registry: (Ibis 66, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 67 members
+08:07:08 Central Registry: (Ibis 67, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 68 members
+08:07:08 Central Registry: (Ibis 68, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 69 members
+08:07:08 Central Registry: (Ibis 69, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 70 members
+08:07:10 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 71 members
+08:07:10 Central Registry: (Ibis 71, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 72 members
+08:07:11 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) joined pool "MaestroPool" now 73 members
+08:07:12 Central Registry: (Ibis 73, location okubo008@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 74 members
+08:07:12 Central Registry: (Ibis 74, location okubo002@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 75 members
+08:07:12 Central Registry: (Ibis 75, location okubo004@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 76 members
+08:07:12 Central Registry: (Ibis 76, location okubo001@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 77 members
+08:07:12 Central Registry: (Ibis 77, location okubo005@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 78 members
+08:07:12 Central Registry: (Ibis 78, location okubo007@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 79 members
+08:07:12 Central Registry: (Ibis 79, location okubo003@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 80 members
+08:07:12 Central Registry: (Ibis 80, location okubo009@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 81 members
+08:07:12 Central Registry: (Ibis 81, location okubo013@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 82 members
+08:07:12 Central Registry: (Ibis 82, location okubo006@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 83 members
+08:07:12 Central Registry: (Ibis 83, location okubo010@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 84 members
+08:07:12 Central Registry: (Ibis 84, location okubo012@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 85 members
+08:07:12 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 86 members
+08:07:13 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 87 members
+08:07:24 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 88 members
+08:07:25 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) won election "maestro-election" in pool "MaestroPool"
+08:07:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:08:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:09:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:10:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:11:00 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 87 members
+08:11:10 Central Registry: (Ibis 18, location imade001@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 86 members
+08:11:10 Central Registry: (Ibis 20, location imade002@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 85 members
+08:11:10 Central Registry: (Ibis 19, location imade003@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 84 members
+08:11:10 Central Registry: (Ibis 17, location imade000@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 83 members
+08:11:10 Central Registry: (Ibis 0, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 82 members
+08:11:10 Central Registry: (Ibis 24, location hiro007@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 81 members
+08:11:10 Central Registry: (Ibis 21, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 80 members
+08:11:10 Central Registry: (Ibis 22, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 79 members
+08:11:10 Central Registry: (Ibis 23, location hiro010@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 78 members
+08:11:10 Central Registry: (Ibis 11, location kyushu005@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 77 members
+08:11:10 Central Registry: (Ibis 6, location kyushu001@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 76 members
+08:11:10 Central Registry: (Ibis 5, location kyushu007@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 75 members
+08:11:10 Central Registry: (Ibis 7, location kyushu009@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 74 members
+08:11:10 Central Registry: (Ibis 13, location kyushu008@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 73 members
+08:11:10 Central Registry: (Ibis 8, location kyushu002@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 72 members
+08:11:10 Central Registry: (Ibis 15, location kyushu003@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 71 members
+08:11:10 Central Registry: (Ibis 12, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 70 members
+08:11:10 Central Registry: (Ibis 14, location kyushu006@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 69 members
+08:11:10 Central Registry: (Ibis 16, location kyushu004@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 68 members
+08:11:10 Central Registry: (Ibis 52, location suzuk009@intrigger@titech@ac@jp) left pool "MaestroPool" now 67 members
+08:11:10 Central Registry: (Ibis 51, location suzuk014@intrigger@titech@ac@jp) left pool "MaestroPool" now 66 members
+08:11:10 Central Registry: (Ibis 55, location suzuk002@intrigger@titech@ac@jp) left pool "MaestroPool" now 65 members
+08:11:10 Central Registry: (Ibis 53, location suzuk004@intrigger@titech@ac@jp) left pool "MaestroPool" now 64 members
+08:11:10 Central Registry: (Ibis 54, location suzuk005@intrigger@titech@ac@jp) left pool "MaestroPool" now 63 members
+08:11:10 Central Registry: (Ibis 57, location suzuk008@intrigger@titech@ac@jp) left pool "MaestroPool" now 62 members
+08:11:10 Central Registry: (Ibis 58, location suzuk012@intrigger@titech@ac@jp) left pool "MaestroPool" now 61 members
+08:11:10 Central Registry: (Ibis 59, location suzuk007@intrigger@titech@ac@jp) left pool "MaestroPool" now 60 members
+08:11:10 Central Registry: (Ibis 66, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 59 members
+08:11:10 Central Registry: (Ibis 60, location suzuk010@intrigger@titech@ac@jp) left pool "MaestroPool" now 58 members
+08:11:10 Central Registry: (Ibis 67, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 57 members
+08:11:10 Central Registry: (Ibis 68, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 56 members
+08:11:10 Central Registry: (Ibis 69, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 55 members
+08:11:10 Central Registry: (Ibis 35, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 54 members
+08:11:10 Central Registry: (Ibis 36, location kobe002@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 53 members
+08:11:10 Central Registry: (Ibis 34, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 52 members
+08:11:10 Central Registry: (Ibis 37, location kobe005@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 51 members
+08:11:10 Central Registry: (Ibis 39, location kobe007@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 50 members
+08:11:10 Central Registry: (Ibis 38, location kobe001@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 49 members
+08:11:10 Central Registry: (Ibis 41, location kobe004@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 48 members
+08:11:10 Central Registry: (Ibis 40, location kobe009@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 47 members
+08:11:10 Central Registry: (Ibis 46, location chiba000@intrigger@nii@ac@jp) left pool "MaestroPool" now 46 members
+08:11:10 Central Registry: (Ibis 48, location chiba107@intrigger@nii@ac@jp) left pool "MaestroPool" now 45 members
+08:11:10 Central Registry: (Ibis 47, location chiba105@intrigger@nii@ac@jp) left pool "MaestroPool" now 44 members
+08:11:10 Central Registry: (Ibis 28, location hiro006@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 43 members
+08:11:10 Central Registry: (Ibis 25, location hiro003@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 42 members
+08:11:10 Central Registry: (Ibis 26, location hiro005@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 41 members
+08:11:10 Central Registry: (Ibis 29, location hiro009@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 40 members
+08:11:10 Central Registry: (Ibis 74, location okubo002@yama@info@waseda@ac@jp) left pool "MaestroPool" now 39 members
+08:11:10 Central Registry: (Ibis 73, location okubo008@yama@info@waseda@ac@jp) left pool "MaestroPool" now 38 members
+08:11:10 Central Registry: (Ibis 56, location chiba104@intrigger@nii@ac@jp) left pool "MaestroPool" now 37 members
+08:11:10 Central Registry: (Ibis 65, location chiba108@intrigger@nii@ac@jp) left pool "MaestroPool" now 36 members
+08:11:10 Central Registry: (Ibis 64, location chiba103@intrigger@nii@ac@jp) left pool "MaestroPool" now 35 members
+08:11:10 Central Registry: (Ibis 75, location okubo004@yama@info@waseda@ac@jp) left pool "MaestroPool" now 34 members
+08:11:10 Central Registry: (Ibis 76, location okubo001@yama@info@waseda@ac@jp) left pool "MaestroPool" now 33 members
+08:11:10 Central Registry: (Ibis 77, location okubo005@yama@info@waseda@ac@jp) left pool "MaestroPool" now 32 members
+08:11:10 Central Registry: (Ibis 80, location okubo009@yama@info@waseda@ac@jp) left pool "MaestroPool" now 31 members
+08:11:10 Central Registry: (Ibis 79, location okubo003@yama@info@waseda@ac@jp) left pool "MaestroPool" now 30 members
+08:11:10 Central Registry: (Ibis 78, location okubo007@yama@info@waseda@ac@jp) left pool "MaestroPool" now 29 members
+08:11:10 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 28 members
+08:11:10 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) left pool "MaestroPool" now 27 members
+08:11:10 Central Registry: (Ibis 81, location okubo013@yama@info@waseda@ac@jp) left pool "MaestroPool" now 26 members
+08:11:10 Central Registry: (Ibis 30, location hiro008@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 25 members
+08:11:10 Central Registry: (Ibis 84, location okubo012@yama@info@waseda@ac@jp) left pool "MaestroPool" now 24 members
+08:11:10 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 23 members
+08:11:10 Central Registry: (Ibis 32, location hiro004@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 22 members
+08:11:10 Central Registry: (Ibis 71, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 21 members
+08:11:10 Central Registry: (Ibis 44, location kobe008@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 20 members
+08:11:10 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 19 members
+08:11:11 Central Registry: (Ibis 83, location okubo010@yama@info@waseda@ac@jp) left pool "MaestroPool" now 18 members
+08:11:11 Central Registry: (Ibis 31, location hiro002@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 17 members
+08:11:11 Central Registry: (Ibis 82, location okubo006@yama@info@waseda@ac@jp) left pool "MaestroPool" now 16 members
+08:11:11 Central Registry: (Ibis 50, location suzuk003@intrigger@titech@ac@jp) left pool "MaestroPool" now 15 members
+08:11:13 Central Registry: (Ibis 33, location mirai000@intrigger@jp) left pool "MaestroPool" now 14 members
+08:11:13 Central Registry: (Ibis 45, location suzuk000@intrigger@titech@ac@jp) left pool "MaestroPool" now 13 members
+08:11:13 Central Registry: (Ibis 49, location suzuk001@intrigger@titech@ac@jp) left pool "MaestroPool" now 12 members
+08:11:13 Central Registry: (Ibis 62, location suzuk006@intrigger@titech@ac@jp) left pool "MaestroPool" now 11 members
+08:11:13 Central Registry: (Ibis 61, location suzuk013@intrigger@titech@ac@jp) left pool "MaestroPool" now 10 members
+08:11:13 Central Registry: (Ibis 63, location suzuk011@intrigger@titech@ac@jp) left pool "MaestroPool" now 9 members
+08:11:14 Central Registry: (Ibis 2, location mirai005@intrigger@jp) left pool "MaestroPool" now 8 members
+08:11:14 Central Registry: (Ibis 4, location mirai002@intrigger@jp) left pool "MaestroPool" now 7 members
+08:11:14 Central Registry: (Ibis 10, location mirai000@intrigger@jp) left pool "MaestroPool" now 6 members
+08:11:14 Central Registry: (Ibis 3, location mirai004@intrigger@jp) left pool "MaestroPool" now 5 members
+08:11:14 Central Registry: (Ibis 9, location mirai003@intrigger@jp) left pool "MaestroPool" now 4 members
+08:11:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   4    88     83     1         1       0       N.A.  false false
+
+08:12:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   4    88     83     1         1       0       N.A.  false false
+
+08:13:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   4    88     83     1         1       0       N.A.  false false
+
+08:14:51 Central Registry: (Ibis 1, location mirai001@intrigger@jp) died in pool "MaestroPool" now 3 members
+08:14:51 Central Registry: (Ibis 43, location kobe006@intrigger@scitec@kobe-u@ac@jp) died in pool "MaestroPool" now 2 members
+08:14:51 Central Registry: (Ibis 27, location hiro001@net@hiroshima-u@ac@jp) died in pool "MaestroPool" now 1 members
+08:14:51 Central Registry: (Ibis 42, location kobe003@intrigger@scitec@kobe-u@ac@jp) died in pool "MaestroPool" now 0 members
+08:14:51 Central Registry: pool MaestroPool ended
+08:14:57 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   0    88     83     5         1       0       N.A.  false  true
+
+Central Registry: pool "MaestroPool" ended
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Central Registry: creating new pool: "MaestroPool"
+08:16:34 Central Registry: (Ibis 0, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 1 members
+08:16:34 Central Registry: (Ibis 1, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 2 members
+08:16:34 Central Registry: (Ibis 2, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 3 members
+08:16:34 Central Registry: (Ibis 3, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 4 members
+08:16:34 Central Registry: (Ibis 4, location kobe004@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 5 members
+08:16:34 Central Registry: (Ibis 5, location kobe008@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 6 members
+08:16:34 Central Registry: (Ibis 6, location kobe009@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 7 members
+08:16:34 Central Registry: (Ibis 7, location kobe006@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 8 members
+08:16:34 Central Registry: (Ibis 8, location kobe003@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 9 members
+08:16:34 Central Registry: (Ibis 9, location kobe007@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 10 members
+08:16:35 Central Registry: (Ibis 10, location kyushu007@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 11 members
+08:16:35 Central Registry: (Ibis 11, location kyushu009@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 12 members
+08:16:35 Central Registry: (Ibis 12, location kobe001@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 13 members
+08:16:35 Central Registry: (Ibis 13, location kyushu002@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 14 members
+08:16:35 Central Registry: (Ibis 14, location kobe005@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 15 members
+08:16:35 Central Registry: (Ibis 15, location kyushu004@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 16 members
+08:16:35 Central Registry: (Ibis 16, location kyushu008@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 17 members
+08:16:35 Central Registry: (Ibis 17, location kyushu003@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 18 members
+08:16:35 Central Registry: (Ibis 18, location kyushu006@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 19 members
+08:16:35 Central Registry: (Ibis 19, location kyushu005@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 20 members
+08:16:35 Central Registry: (Ibis 20, location mirai001@intrigger@jp) joined pool "MaestroPool" now 21 members
+08:16:35 Central Registry: (Ibis 21, location kobe002@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 22 members
+08:16:35 Central Registry: (Ibis 22, location kyushu001@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 23 members
+08:16:35 Central Registry: (Ibis 23, location mirai005@intrigger@jp) joined pool "MaestroPool" now 24 members
+08:16:35 Central Registry: (Ibis 24, location mirai004@intrigger@jp) joined pool "MaestroPool" now 25 members
+08:16:35 Central Registry: (Ibis 25, location mirai002@intrigger@jp) joined pool "MaestroPool" now 26 members
+08:16:35 Central Registry: (Ibis 26, location mirai000@intrigger@jp) joined pool "MaestroPool" now 27 members
+08:16:35 Central Registry: (Ibis 27, location mirai000@intrigger@jp) joined pool "MaestroPool" now 28 members
+08:16:35 Central Registry: (Ibis 28, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 29 members
+08:16:35 Central Registry: (Ibis 29, location mirai003@intrigger@jp) joined pool "MaestroPool" now 30 members
+08:16:35 Central Registry: (Ibis 30, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 31 members
+08:16:35 Central Registry: (Ibis 31, location imade000@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 32 members
+08:16:35 Central Registry: (Ibis 32, location hiro003@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 33 members
+08:16:35 Central Registry: (Ibis 33, location hiro006@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 34 members
+08:16:35 Central Registry: (Ibis 34, location hiro007@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 35 members
+08:16:35 Central Registry: (Ibis 35, location hiro002@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 36 members
+08:16:35 Central Registry: (Ibis 36, location hiro008@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 37 members
+08:16:35 Central Registry: (Ibis 37, location imade003@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 38 members
+08:16:35 Central Registry: (Ibis 38, location hiro010@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 39 members
+08:16:35 Central Registry: (Ibis 39, location hiro004@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 40 members
+08:16:35 Central Registry: (Ibis 40, location hiro005@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 41 members
+08:16:35 Central Registry: (Ibis 41, location imade001@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 42 members
+08:16:35 Central Registry: (Ibis 42, location hiro001@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 43 members
+08:16:35 Central Registry: (Ibis 43, location hiro009@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 44 members
+08:16:35 Central Registry: (Ibis 44, location chiba104@intrigger@nii@ac@jp) joined pool "MaestroPool" now 45 members
+08:16:35 Central Registry: (Ibis 45, location chiba107@intrigger@nii@ac@jp) joined pool "MaestroPool" now 46 members
+08:16:35 Central Registry: (Ibis 46, location chiba000@intrigger@nii@ac@jp) joined pool "MaestroPool" now 47 members
+08:16:35 Central Registry: (Ibis 47, location chiba103@intrigger@nii@ac@jp) joined pool "MaestroPool" now 48 members
+08:16:35 Central Registry: (Ibis 48, location chiba105@intrigger@nii@ac@jp) joined pool "MaestroPool" now 49 members
+08:16:35 Central Registry: (Ibis 49, location chiba108@intrigger@nii@ac@jp) joined pool "MaestroPool" now 50 members
+08:16:35 Central Registry: (Ibis 50, location suzuk000@intrigger@titech@ac@jp) joined pool "MaestroPool" now 51 members
+08:16:35 Central Registry: (Ibis 51, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 52 members
+08:16:35 Central Registry: (Ibis 52, location suzuk001@intrigger@titech@ac@jp) joined pool "MaestroPool" now 53 members
+08:16:35 Central Registry: (Ibis 53, location suzuk010@intrigger@titech@ac@jp) joined pool "MaestroPool" now 54 members
+08:16:35 Central Registry: (Ibis 54, location suzuk007@intrigger@titech@ac@jp) joined pool "MaestroPool" now 55 members
+08:16:35 Central Registry: (Ibis 55, location suzuk008@intrigger@titech@ac@jp) joined pool "MaestroPool" now 56 members
+08:16:35 Central Registry: (Ibis 56, location suzuk004@intrigger@titech@ac@jp) joined pool "MaestroPool" now 57 members
+08:16:35 Central Registry: (Ibis 57, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 58 members
+08:16:35 Central Registry: (Ibis 58, location suzuk009@intrigger@titech@ac@jp) joined pool "MaestroPool" now 59 members
+08:16:35 Central Registry: (Ibis 59, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 60 members
+08:16:35 Central Registry: (Ibis 60, location suzuk003@intrigger@titech@ac@jp) joined pool "MaestroPool" now 61 members
+08:16:35 Central Registry: (Ibis 61, location suzuk013@intrigger@titech@ac@jp) joined pool "MaestroPool" now 62 members
+08:16:35 Central Registry: (Ibis 62, location suzuk014@intrigger@titech@ac@jp) joined pool "MaestroPool" now 63 members
+08:16:35 Central Registry: (Ibis 63, location suzuk002@intrigger@titech@ac@jp) joined pool "MaestroPool" now 64 members
+08:16:35 Central Registry: (Ibis 64, location suzuk011@intrigger@titech@ac@jp) joined pool "MaestroPool" now 65 members
+08:16:35 Central Registry: (Ibis 65, location suzuk005@intrigger@titech@ac@jp) joined pool "MaestroPool" now 66 members
+08:16:35 Central Registry: (Ibis 66, location suzuk012@intrigger@titech@ac@jp) joined pool "MaestroPool" now 67 members
+08:16:35 Central Registry: (Ibis 67, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 68 members
+08:16:35 Central Registry: (Ibis 68, location suzuk006@intrigger@titech@ac@jp) joined pool "MaestroPool" now 69 members
+08:16:36 Central Registry: (Ibis 69, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 70 members
+08:16:36 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 71 members
+08:16:37 Central Registry: (Ibis 71, location imade002@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 72 members
+08:16:39 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) joined pool "MaestroPool" now 73 members
+08:16:39 Central Registry: (Ibis 73, location okubo010@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 74 members
+08:16:39 Central Registry: (Ibis 74, location okubo008@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 75 members
+08:16:39 Central Registry: (Ibis 75, location okubo012@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 76 members
+08:16:39 Central Registry: (Ibis 76, location okubo009@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 77 members
+08:16:39 Central Registry: (Ibis 77, location okubo013@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 78 members
+08:16:39 Central Registry: (Ibis 78, location okubo002@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 79 members
+08:16:39 Central Registry: (Ibis 79, location okubo003@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 80 members
+08:16:39 Central Registry: (Ibis 80, location okubo004@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 81 members
+08:16:39 Central Registry: (Ibis 81, location okubo006@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 82 members
+08:16:39 Central Registry: (Ibis 82, location okubo001@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 83 members
+08:16:39 Central Registry: (Ibis 83, location okubo005@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 84 members
+08:16:39 Central Registry: (Ibis 84, location okubo007@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 85 members
+08:16:40 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 86 members
+08:16:40 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 87 members
+08:16:48 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 88 members
+08:16:48 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) won election "maestro-election" in pool "MaestroPool"
+08:17:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:18:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:19:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:20:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:20:44 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 87 members
+08:20:58 Central Registry: (Ibis 0, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 86 members
+08:20:58 Central Registry: (Ibis 1, location kobe000@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 85 members
+08:20:58 Central Registry: (Ibis 4, location kobe004@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 84 members
+08:20:58 Central Registry: (Ibis 9, location kobe007@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 83 members
+08:20:58 Central Registry: (Ibis 6, location kobe009@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 82 members
+08:20:58 Central Registry: (Ibis 21, location kobe002@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 81 members
+08:20:58 Central Registry: (Ibis 7, location kobe006@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 80 members
+08:20:58 Central Registry: (Ibis 8, location kobe003@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 79 members
+08:20:58 Central Registry: (Ibis 12, location kobe001@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 78 members
+08:20:58 Central Registry: (Ibis 5, location kobe008@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 77 members
+08:20:58 Central Registry: (Ibis 14, location kobe005@intrigger@scitec@kobe-u@ac@jp) left pool "MaestroPool" now 76 members
+08:20:58 Central Registry: (Ibis 44, location chiba104@intrigger@nii@ac@jp) left pool "MaestroPool" now 75 members
+08:20:58 Central Registry: (Ibis 45, location chiba107@intrigger@nii@ac@jp) left pool "MaestroPool" now 74 members
+08:20:58 Central Registry: (Ibis 51, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 73 members
+08:20:58 Central Registry: (Ibis 50, location suzuk000@intrigger@titech@ac@jp) left pool "MaestroPool" now 72 members
+08:20:58 Central Registry: (Ibis 52, location suzuk001@intrigger@titech@ac@jp) left pool "MaestroPool" now 71 members
+08:20:58 Central Registry: (Ibis 53, location suzuk010@intrigger@titech@ac@jp) left pool "MaestroPool" now 70 members
+08:20:58 Central Registry: (Ibis 2, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 69 members
+08:20:58 Central Registry: (Ibis 59, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 68 members
+08:20:58 Central Registry: (Ibis 3, location kyushu000@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 67 members
+08:20:58 Central Registry: (Ibis 57, location hongo112@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 66 members
+08:20:58 Central Registry: (Ibis 11, location kyushu009@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 65 members
+08:20:58 Central Registry: (Ibis 10, location kyushu007@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 64 members
+08:20:58 Central Registry: (Ibis 13, location kyushu002@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 63 members
+08:20:58 Central Registry: (Ibis 55, location suzuk008@intrigger@titech@ac@jp) left pool "MaestroPool" now 62 members
+08:20:58 Central Registry: (Ibis 15, location kyushu004@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 61 members
+08:20:58 Central Registry: (Ibis 18, location kyushu006@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 60 members
+08:20:58 Central Registry: (Ibis 56, location suzuk004@intrigger@titech@ac@jp) left pool "MaestroPool" now 59 members
+08:20:58 Central Registry: (Ibis 16, location kyushu008@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 58 members
+08:20:58 Central Registry: (Ibis 19, location kyushu005@bioinfo@kyushu-u@ac@jp) left pool "MaestroPool" now 57 members
+08:20:58 Central Registry: (Ibis 58, location suzuk009@intrigger@titech@ac@jp) left pool "MaestroPool" now 56 members
+08:20:58 Central Registry: (Ibis 46, location chiba000@intrigger@nii@ac@jp) left pool "MaestroPool" now 55 members
+08:20:58 Central Registry: (Ibis 47, location chiba103@intrigger@nii@ac@jp) left pool "MaestroPool" now 54 members
+08:20:58 Central Registry: (Ibis 48, location chiba105@intrigger@nii@ac@jp) left pool "MaestroPool" now 53 members
+08:20:58 Central Registry: (Ibis 65, location suzuk005@intrigger@titech@ac@jp) left pool "MaestroPool" now 52 members
+08:20:58 Central Registry: (Ibis 60, location suzuk003@intrigger@titech@ac@jp) left pool "MaestroPool" now 51 members
+08:20:58 Central Registry: (Ibis 67, location hongo113@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 50 members
+08:20:58 Central Registry: (Ibis 31, location imade000@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 49 members
+08:20:58 Central Registry: (Ibis 61, location suzuk013@intrigger@titech@ac@jp) left pool "MaestroPool" now 48 members
+08:20:58 Central Registry: (Ibis 62, location suzuk014@intrigger@titech@ac@jp) left pool "MaestroPool" now 47 members
+08:20:58 Central Registry: (Ibis 63, location suzuk002@intrigger@titech@ac@jp) left pool "MaestroPool" now 46 members
+08:20:58 Central Registry: (Ibis 69, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 45 members
+08:20:58 Central Registry: (Ibis 64, location suzuk011@intrigger@titech@ac@jp) left pool "MaestroPool" now 44 members
+08:20:58 Central Registry: (Ibis 41, location imade001@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 43 members
+08:20:58 Central Registry: (Ibis 66, location suzuk012@intrigger@titech@ac@jp) left pool "MaestroPool" now 42 members
+08:20:58 Central Registry: (Ibis 49, location chiba108@intrigger@nii@ac@jp) left pool "MaestroPool" now 41 members
+08:20:58 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 40 members
+08:20:58 Central Registry: (Ibis 73, location okubo010@yama@info@waseda@ac@jp) left pool "MaestroPool" now 39 members
+08:20:58 Central Registry: (Ibis 78, location okubo002@yama@info@waseda@ac@jp) left pool "MaestroPool" now 38 members
+08:20:58 Central Registry: (Ibis 74, location okubo008@yama@info@waseda@ac@jp) left pool "MaestroPool" now 37 members
+08:20:58 Central Registry: (Ibis 75, location okubo012@yama@info@waseda@ac@jp) left pool "MaestroPool" now 36 members
+08:20:58 Central Registry: (Ibis 76, location okubo009@yama@info@waseda@ac@jp) left pool "MaestroPool" now 35 members
+08:20:59 Central Registry: (Ibis 24, location mirai004@intrigger@jp) left pool "MaestroPool" now 34 members
+08:20:59 Central Registry: (Ibis 84, location okubo007@yama@info@waseda@ac@jp) left pool "MaestroPool" now 33 members
+08:20:59 Central Registry: (Ibis 77, location okubo013@yama@info@waseda@ac@jp) left pool "MaestroPool" now 32 members
+08:20:59 Central Registry: (Ibis 32, location hiro003@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 31 members
+08:20:59 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) left pool "MaestroPool" now 30 members
+08:20:59 Central Registry: (Ibis 26, location mirai000@intrigger@jp) left pool "MaestroPool" now 29 members
+08:20:59 Central Registry: (Ibis 79, location okubo003@yama@info@waseda@ac@jp) left pool "MaestroPool" now 28 members
+08:20:59 Central Registry: (Ibis 38, location hiro010@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 27 members
+08:20:59 Central Registry: (Ibis 23, location mirai005@intrigger@jp) left pool "MaestroPool" now 26 members
+08:20:59 Central Registry: (Ibis 43, location hiro009@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 25 members
+08:20:59 Central Registry: (Ibis 42, location hiro001@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 24 members
+08:20:59 Central Registry: (Ibis 34, location hiro007@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 23 members
+08:20:59 Central Registry: (Ibis 35, location hiro002@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 22 members
+08:20:59 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 21 members
+08:21:00 Central Registry: (Ibis 54, location suzuk007@intrigger@titech@ac@jp) left pool "MaestroPool" now 20 members
+08:21:00 Central Registry: (Ibis 39, location hiro004@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 19 members
+08:21:00 Central Registry: (Ibis 27, location mirai000@intrigger@jp) left pool "MaestroPool" now 18 members
+08:21:00 Central Registry: (Ibis 40, location hiro005@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 17 members
+08:21:00 Central Registry: (Ibis 25, location mirai002@intrigger@jp) left pool "MaestroPool" now 16 members
+08:21:00 Central Registry: (Ibis 80, location okubo004@yama@info@waseda@ac@jp) left pool "MaestroPool" now 15 members
+08:21:00 Central Registry: (Ibis 36, location hiro008@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 14 members
+08:21:00 Central Registry: (Ibis 30, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 13 members
+08:21:00 Central Registry: (Ibis 28, location hiro000@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 12 members
+08:21:00 Central Registry: (Ibis 81, location okubo006@yama@info@waseda@ac@jp) left pool "MaestroPool" now 11 members
+08:21:00 Central Registry: (Ibis 20, location mirai001@intrigger@jp) left pool "MaestroPool" now 10 members
+08:21:00 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) left pool "MaestroPool" now 9 members
+08:21:00 Central Registry: (Ibis 82, location okubo001@yama@info@waseda@ac@jp) left pool "MaestroPool" now 8 members
+08:21:00 Central Registry: (Ibis 68, location suzuk006@intrigger@titech@ac@jp) left pool "MaestroPool" now 7 members
+08:21:00 Central Registry: (Ibis 33, location hiro006@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 6 members
+08:21:00 Central Registry: (Ibis 29, location mirai003@intrigger@jp) left pool "MaestroPool" now 5 members
+08:21:00 Central Registry: (Ibis 83, location okubo005@yama@info@waseda@ac@jp) left pool "MaestroPool" now 4 members
+08:21:01 Central Registry: (Ibis 37, location imade003@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 3 members
+08:21:04 Central Registry: (Ibis 71, location imade002@kuis@kyoto-u@ac@jp) left pool "MaestroPool" now 2 members
+08:21:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   2    88     85     1         1       0       N.A.  false false
+
+08:22:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   2    88     85     1         1       0       N.A.  false false
+
+08:22:41 Central Registry: (Ibis 22, location kyushu001@bioinfo@kyushu-u@ac@jp) died in pool "MaestroPool" now 1 members
+08:23:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   1    88     85     2         1       0       N.A.  false false
+
+08:24:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   1    88     85     2         1       0       N.A.  false false
+
+08:25:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   1    88     85     2         1       0       N.A.  false false
+
+08:26:15 Central Registry: (Ibis 17, location kyushu003@bioinfo@kyushu-u@ac@jp) died in pool "MaestroPool" now 0 members
+08:26:15 Central Registry: pool MaestroPool ended
+08:26:20 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                   0    88     85     3         1       0       N.A.  false  true
+
+Central Registry: pool "MaestroPool" ended
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Central Registry: creating new pool: "MaestroPool"
+08:27:36 Central Registry: (Ibis 0, location mirai000@intrigger@jp) joined pool "MaestroPool" now 1 members
+08:27:36 Central Registry: (Ibis 1, location mirai000@intrigger@jp) joined pool "MaestroPool" now 2 members
+08:27:36 Central Registry: (Ibis 2, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 3 members
+08:27:36 Central Registry: (Ibis 3, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 4 members
+08:27:36 Central Registry: (Ibis 4, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 5 members
+08:27:36 Central Registry: (Ibis 5, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 6 members
+08:27:36 Central Registry: (Ibis 6, location mirai001@intrigger@jp) joined pool "MaestroPool" now 7 members
+08:27:36 Central Registry: (Ibis 7, location mirai004@intrigger@jp) joined pool "MaestroPool" now 8 members
+08:27:36 Central Registry: (Ibis 8, location mirai002@intrigger@jp) joined pool "MaestroPool" now 9 members
+08:27:36 Central Registry: (Ibis 9, location mirai005@intrigger@jp) joined pool "MaestroPool" now 10 members
+08:27:36 Central Registry: (Ibis 10, location mirai003@intrigger@jp) joined pool "MaestroPool" now 11 members
+08:27:36 Central Registry: (Ibis 11, location kobe003@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 12 members
+08:27:36 Central Registry: (Ibis 12, location kobe001@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 13 members
+08:27:36 Central Registry: (Ibis 13, location kobe009@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 14 members
+08:27:36 Central Registry: (Ibis 14, location kobe006@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 15 members
+08:27:36 Central Registry: (Ibis 15, location kyushu009@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 16 members
+08:27:36 Central Registry: (Ibis 16, location kobe008@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 17 members
+08:27:36 Central Registry: (Ibis 17, location kobe004@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 18 members
+08:27:36 Central Registry: (Ibis 18, location kobe005@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 19 members
+08:27:36 Central Registry: (Ibis 19, location kobe002@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 20 members
+08:27:36 Central Registry: (Ibis 20, location kobe007@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 21 members
+08:27:36 Central Registry: (Ibis 21, location kyushu002@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 22 members
+08:27:36 Central Registry: (Ibis 22, location kyushu001@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 23 members
+08:27:36 Central Registry: (Ibis 23, location kyushu008@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 24 members
+08:27:37 Central Registry: (Ibis 24, location kyushu005@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 25 members
+08:27:37 Central Registry: (Ibis 25, location kyushu006@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 26 members
+08:27:37 Central Registry: (Ibis 26, location kyushu007@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 27 members
+08:27:37 Central Registry: (Ibis 27, location kyushu003@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 28 members
+08:27:37 Central Registry: (Ibis 28, location kyushu004@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 29 members
+08:27:37 Central Registry: (Ibis 29, location imade000@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 30 members
+08:27:37 Central Registry: (Ibis 30, location imade001@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 31 members
+08:27:37 Central Registry: (Ibis 31, location imade003@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 32 members
+08:27:37 Central Registry: (Ibis 32, location imade002@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 33 members
+08:27:37 Central Registry: (Ibis 33, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 34 members
+08:27:37 Central Registry: (Ibis 34, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 35 members
+08:27:37 Central Registry: (Ibis 35, location hiro003@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 36 members
+08:27:37 Central Registry: (Ibis 36, location hiro008@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 37 members
+08:27:37 Central Registry: (Ibis 37, location hiro007@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 38 members
+08:27:37 Central Registry: (Ibis 38, location hiro010@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 39 members
+08:27:37 Central Registry: (Ibis 39, location hiro006@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 40 members
+08:27:37 Central Registry: (Ibis 40, location hiro001@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 41 members
+08:27:37 Central Registry: (Ibis 41, location hiro004@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 42 members
+08:27:37 Central Registry: (Ibis 42, location hiro009@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 43 members
+08:27:37 Central Registry: (Ibis 43, location hiro005@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 44 members
+08:27:37 Central Registry: (Ibis 44, location hiro002@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 45 members
+08:27:37 Central Registry: (Ibis 45, location chiba000@intrigger@nii@ac@jp) joined pool "MaestroPool" now 46 members
+08:27:37 Central Registry: (Ibis 46, location chiba107@intrigger@nii@ac@jp) joined pool "MaestroPool" now 47 members
+08:27:37 Central Registry: (Ibis 47, location chiba103@intrigger@nii@ac@jp) joined pool "MaestroPool" now 48 members
+08:27:37 Central Registry: (Ibis 48, location chiba104@intrigger@nii@ac@jp) joined pool "MaestroPool" now 49 members
+08:27:37 Central Registry: (Ibis 49, location chiba105@intrigger@nii@ac@jp) joined pool "MaestroPool" now 50 members
+08:27:37 Central Registry: (Ibis 50, location chiba108@intrigger@nii@ac@jp) joined pool "MaestroPool" now 51 members
+08:27:37 Central Registry: (Ibis 51, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 52 members
+08:27:37 Central Registry: (Ibis 52, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 53 members
+08:27:37 Central Registry: (Ibis 53, location suzuk000@intrigger@titech@ac@jp) joined pool "MaestroPool" now 54 members
+08:27:37 Central Registry: (Ibis 54, location suzuk003@intrigger@titech@ac@jp) joined pool "MaestroPool" now 55 members
+08:27:37 Central Registry: (Ibis 55, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 56 members
+08:27:37 Central Registry: (Ibis 56, location suzuk004@intrigger@titech@ac@jp) joined pool "MaestroPool" now 57 members
+08:27:37 Central Registry: (Ibis 57, location suzuk013@intrigger@titech@ac@jp) joined pool "MaestroPool" now 58 members
+08:27:37 Central Registry: (Ibis 58, location suzuk008@intrigger@titech@ac@jp) joined pool "MaestroPool" now 59 members
+08:27:37 Central Registry: (Ibis 59, location suzuk007@intrigger@titech@ac@jp) joined pool "MaestroPool" now 60 members
+08:27:37 Central Registry: (Ibis 60, location suzuk011@intrigger@titech@ac@jp) joined pool "MaestroPool" now 61 members
+08:27:37 Central Registry: (Ibis 61, location suzuk001@intrigger@titech@ac@jp) joined pool "MaestroPool" now 62 members
+08:27:37 Central Registry: (Ibis 62, location suzuk002@intrigger@titech@ac@jp) joined pool "MaestroPool" now 63 members
+08:27:37 Central Registry: (Ibis 63, location suzuk014@intrigger@titech@ac@jp) joined pool "MaestroPool" now 64 members
+08:27:37 Central Registry: (Ibis 64, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 65 members
+08:27:37 Central Registry: (Ibis 65, location suzuk009@intrigger@titech@ac@jp) joined pool "MaestroPool" now 66 members
+08:27:37 Central Registry: (Ibis 66, location suzuk005@intrigger@titech@ac@jp) joined pool "MaestroPool" now 67 members
+08:27:37 Central Registry: (Ibis 67, location suzuk006@intrigger@titech@ac@jp) joined pool "MaestroPool" now 68 members
+08:27:37 Central Registry: (Ibis 68, location suzuk010@intrigger@titech@ac@jp) joined pool "MaestroPool" now 69 members
+08:27:37 Central Registry: (Ibis 69, location suzuk012@intrigger@titech@ac@jp) joined pool "MaestroPool" now 70 members
+08:27:37 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 71 members
+08:27:37 Central Registry: (Ibis 71, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 72 members
+08:27:41 Central Registry: (Ibis 72, location kyoto000@para@media@kyoto-u@ac@jp) joined pool "MaestroPool" now 73 members
+08:27:42 Central Registry: (Ibis 73, location okubo012@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 74 members
+08:27:42 Central Registry: (Ibis 74, location okubo005@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 75 members
+08:27:42 Central Registry: (Ibis 75, location okubo007@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 76 members
+08:27:42 Central Registry: (Ibis 76, location okubo013@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 77 members
+08:27:42 Central Registry: (Ibis 77, location okubo008@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 78 members
+08:27:42 Central Registry: (Ibis 78, location okubo010@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 79 members
+08:27:42 Central Registry: (Ibis 79, location okubo006@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 80 members
+08:27:42 Central Registry: (Ibis 80, location okubo001@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 81 members
+08:27:42 Central Registry: (Ibis 81, location okubo003@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 82 members
+08:27:42 Central Registry: (Ibis 82, location okubo009@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 83 members
+08:27:42 Central Registry: (Ibis 83, location okubo004@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 84 members
+08:27:42 Central Registry: (Ibis 84, location okubo002@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 85 members
+08:27:42 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 86 members
+08:27:42 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 87 members
+08:27:57 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 88 members
+08:27:57 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) won election "maestro-election" in pool "MaestroPool"
+08:28:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:29:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:30:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:31:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:32:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:33:14 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) died in pool "MaestroPool" now 87 members
+08:33:14 Central Registry: (Ibis 45, location chiba000@intrigger@nii@ac@jp) left pool "MaestroPool" now 86 members
+08:33:14 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 85 members
+08:33:14 Central Registry: (Ibis 71, location hongo000@logos@ic@i@u-tokyo@ac@jp) left pool "MaestroPool" now 84 members
+08:33:14 Central Registry: (Ibis 41, location hiro004@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 83 members
+08:33:14 Central Registry: (Ibis 37, location hiro007@net@hiroshima-u@ac@jp) left pool "MaestroPool" now 82 members
+08:33:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  82    88      5     1         1       0       N.A.  false false
+
+08:34:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  82    88      5     1         1       0       N.A.  false false
+
+08:35:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  82    88      5     1         1       0       N.A.  false false
+
+08:36:25 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  82    88      5     1         1       0       N.A.  false false
+
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+dach001@hongo001:~$ ./startserver.sh 
+Ibis server running on 157.82.22.11-5437
+List of Services:
+    Bootstrap service on virtual port 303
+    PoolInfo service on virtual port 301
+    Central Registry service on virtual port 302
+Known hubs now: 157.82.22.11-5437
+Central Registry: creating new pool: "MaestroPool"
+08:38:06 Central Registry: (Ibis 0, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 1 members
+08:38:06 Central Registry: (Ibis 1, location kobe000@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 2 members
+08:38:06 Central Registry: (Ibis 2, location kobe007@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 3 members
+08:38:06 Central Registry: (Ibis 3, location kobe005@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 4 members
+08:38:06 Central Registry: (Ibis 4, location kobe002@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 5 members
+08:38:06 Central Registry: (Ibis 5, location kobe008@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 6 members
+08:38:06 Central Registry: (Ibis 6, location kobe001@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 7 members
+08:38:06 Central Registry: (Ibis 7, location kobe003@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 8 members
+08:38:06 Central Registry: (Ibis 8, location kobe004@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 9 members
+08:38:06 Central Registry: (Ibis 9, location kobe009@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 10 members
+08:38:06 Central Registry: (Ibis 10, location kobe006@intrigger@scitec@kobe-u@ac@jp) joined pool "MaestroPool" now 11 members
+08:38:06 Central Registry: (Ibis 11, location kyushu004@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 12 members
+08:38:06 Central Registry: (Ibis 12, location kyushu006@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 13 members
+08:38:06 Central Registry: (Ibis 13, location kyushu008@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 14 members
+08:38:06 Central Registry: (Ibis 14, location kyushu007@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 15 members
+08:38:06 Central Registry: (Ibis 15, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 16 members
+08:38:06 Central Registry: (Ibis 16, location kyushu000@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 17 members
+08:38:06 Central Registry: (Ibis 17, location kyushu003@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 18 members
+08:38:06 Central Registry: (Ibis 18, location kyushu005@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 19 members
+08:38:06 Central Registry: (Ibis 19, location kyushu001@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 20 members
+08:38:06 Central Registry: (Ibis 20, location kyushu009@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 21 members
+08:38:06 Central Registry: (Ibis 21, location kyushu002@bioinfo@kyushu-u@ac@jp) joined pool "MaestroPool" now 22 members
+08:38:06 Central Registry: (Ibis 22, location mirai002@intrigger@jp) joined pool "MaestroPool" now 23 members
+08:38:06 Central Registry: (Ibis 23, location mirai003@intrigger@jp) joined pool "MaestroPool" now 24 members
+08:38:06 Central Registry: (Ibis 24, location mirai004@intrigger@jp) joined pool "MaestroPool" now 25 members
+08:38:06 Central Registry: (Ibis 25, location imade002@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 26 members
+08:38:06 Central Registry: (Ibis 26, location imade000@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 27 members
+08:38:06 Central Registry: (Ibis 27, location imade003@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 28 members
+08:38:06 Central Registry: (Ibis 28, location imade001@kuis@kyoto-u@ac@jp) joined pool "MaestroPool" now 29 members
+08:38:07 Central Registry: (Ibis 29, location mirai005@intrigger@jp) joined pool "MaestroPool" now 30 members
+08:38:07 Central Registry: (Ibis 30, location mirai001@intrigger@jp) joined pool "MaestroPool" now 31 members
+08:38:07 Central Registry: (Ibis 31, location mirai000@intrigger@jp) joined pool "MaestroPool" now 32 members
+08:38:07 Central Registry: (Ibis 32, location mirai000@intrigger@jp) joined pool "MaestroPool" now 33 members
+08:38:07 Central Registry: (Ibis 33, location chiba107@intrigger@nii@ac@jp) joined pool "MaestroPool" now 34 members
+08:38:07 Central Registry: (Ibis 34, location chiba103@intrigger@nii@ac@jp) joined pool "MaestroPool" now 35 members
+08:38:07 Central Registry: (Ibis 35, location chiba108@intrigger@nii@ac@jp) joined pool "MaestroPool" now 36 members
+08:38:07 Central Registry: (Ibis 36, location chiba104@intrigger@nii@ac@jp) joined pool "MaestroPool" now 37 members
+08:38:07 Central Registry: (Ibis 37, location chiba105@intrigger@nii@ac@jp) joined pool "MaestroPool" now 38 members
+08:38:07 Central Registry: (Ibis 38, location chiba000@intrigger@nii@ac@jp) joined pool "MaestroPool" now 39 members
+08:38:07 Central Registry: (Ibis 39, location suzuk001@intrigger@titech@ac@jp) joined pool "MaestroPool" now 40 members
+08:38:07 Central Registry: (Ibis 40, location suzuk012@intrigger@titech@ac@jp) joined pool "MaestroPool" now 41 members
+08:38:07 Central Registry: (Ibis 41, location suzuk000@intrigger@titech@ac@jp) joined pool "MaestroPool" now 42 members
+08:38:07 Central Registry: (Ibis 42, location suzuk009@intrigger@titech@ac@jp) joined pool "MaestroPool" now 43 members
+08:38:07 Central Registry: (Ibis 43, location suzuk010@intrigger@titech@ac@jp) joined pool "MaestroPool" now 44 members
+08:38:07 Central Registry: (Ibis 44, location suzuk014@intrigger@titech@ac@jp) joined pool "MaestroPool" now 45 members
+08:38:07 Central Registry: (Ibis 45, location suzuk008@intrigger@titech@ac@jp) joined pool "MaestroPool" now 46 members
+08:38:07 Central Registry: (Ibis 46, location suzuk005@intrigger@titech@ac@jp) joined pool "MaestroPool" now 47 members
+08:38:07 Central Registry: (Ibis 47, location suzuk004@intrigger@titech@ac@jp) joined pool "MaestroPool" now 48 members
+08:38:07 Central Registry: (Ibis 48, location hiro003@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 49 members
+08:38:07 Central Registry: (Ibis 49, location hiro007@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 50 members
+08:38:07 Central Registry: (Ibis 50, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 51 members
+08:38:07 Central Registry: (Ibis 51, location suzuk007@intrigger@titech@ac@jp) joined pool "MaestroPool" now 52 members
+08:38:07 Central Registry: (Ibis 52, location suzuk002@intrigger@titech@ac@jp) joined pool "MaestroPool" now 53 members
+08:38:07 Central Registry: (Ibis 53, location hiro009@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 54 members
+08:38:07 Central Registry: (Ibis 54, location hiro006@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 55 members
+08:38:07 Central Registry: (Ibis 55, location suzuk006@intrigger@titech@ac@jp) joined pool "MaestroPool" now 56 members
+08:38:07 Central Registry: (Ibis 56, location hiro002@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 57 members
+08:38:07 Central Registry: (Ibis 57, location suzuk003@intrigger@titech@ac@jp) joined pool "MaestroPool" now 58 members
+08:38:07 Central Registry: (Ibis 58, location hiro005@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 59 members
+08:38:07 Central Registry: (Ibis 59, location hiro000@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 60 members
+08:38:07 Central Registry: (Ibis 60, location suzuk013@intrigger@titech@ac@jp) joined pool "MaestroPool" now 61 members
+08:38:07 Central Registry: (Ibis 61, location hiro008@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 62 members
+08:38:07 Central Registry: (Ibis 62, location hiro004@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 63 members
+08:38:07 Central Registry: (Ibis 63, location suzuk011@intrigger@titech@ac@jp) joined pool "MaestroPool" now 64 members
+08:38:07 Central Registry: (Ibis 64, location hiro010@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 65 members
+08:38:07 Central Registry: (Ibis 65, location hiro001@net@hiroshima-u@ac@jp) joined pool "MaestroPool" now 66 members
+08:38:07 Central Registry: (Ibis 66, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 67 members
+08:38:07 Central Registry: (Ibis 67, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 68 members
+08:38:07 Central Registry: (Ibis 68, location hongo112@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 69 members
+08:38:07 Central Registry: (Ibis 69, location hongo113@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 70 members
+08:38:07 Central Registry: (Ibis 70, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 71 members
+08:38:07 Central Registry: (Ibis 71, location kyoto000@para@media@kyoto-u@ac@jp) joined pool "MaestroPool" now 72 members
+08:38:07 Central Registry: (Ibis 72, location hongo000@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 73 members
+08:38:08 Central Registry: (Ibis 73, location okubo008@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 74 members
+08:38:08 Central Registry: (Ibis 74, location okubo009@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 75 members
+08:38:08 Central Registry: (Ibis 75, location okubo004@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 76 members
+08:38:08 Central Registry: (Ibis 76, location okubo002@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 77 members
+08:38:08 Central Registry: (Ibis 77, location okubo003@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 78 members
+08:38:08 Central Registry: (Ibis 78, location okubo010@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 79 members
+08:38:08 Central Registry: (Ibis 79, location okubo007@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 80 members
+08:38:08 Central Registry: (Ibis 80, location okubo013@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 81 members
+08:38:08 Central Registry: (Ibis 81, location okubo012@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 82 members
+08:38:08 Central Registry: (Ibis 82, location okubo001@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 83 members
+08:38:08 Central Registry: (Ibis 83, location okubo006@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 84 members
+08:38:08 Central Registry: (Ibis 84, location okubo005@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 85 members
+08:38:08 Central Registry: (Ibis 85, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 86 members
+08:38:08 Central Registry: (Ibis 86, location okubo000@yama@info@waseda@ac@jp) joined pool "MaestroPool" now 87 members
+08:38:14 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) joined pool "MaestroPool" now 88 members
+08:38:14 Central Registry: (Ibis 87, location hongo002@logos@ic@i@u-tokyo@ac@jp) won election "maestro-election" in pool "MaestroPool"
+08:39:05 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:40:05 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:41:05 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:42:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:43:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:44:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:45:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:46:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:47:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:48:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:49:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:50:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:51:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:52:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:53:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:54:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:55:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:56:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:57:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:58:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+08:59:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:00:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:01:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:02:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:03:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:04:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:05:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:06:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:07:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:08:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:09:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:10:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:11:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  88    88      0     0         1       0       N.A.  false false
+
+09:12:01 Central Registry: (Ibis 46, location suzuk005@intrigger@titech@ac@jp) died in pool "MaestroPool" now 87 members
+09:12:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  87    88      0     1         1       0       N.A.  false false
+
+09:13:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  87    88      0     1         1       0       N.A.  false false
+
+09:14:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  87    88      0     1         1       0       N.A.  false false
+
+09:14:14 Central Registry: (Ibis 60, location suzuk013@intrigger@titech@ac@jp) died in pool "MaestroPool" now 86 members
+09:15:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:16:06 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:17:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:18:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:19:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:20:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:21:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:22:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:23:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:24:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:25:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:26:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:27:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:28:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:29:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:30:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:31:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:32:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:33:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:34:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:35:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  86    88      0     2         1       0       N.A.  false false
+
+09:35:13 Central Registry: (Ibis 42, location suzuk009@intrigger@titech@ac@jp) died in pool "MaestroPool" now 85 members
+09:35:55 Central Registry: (Ibis 36, location chiba104@intrigger@nii@ac@jp) died in pool "MaestroPool" now 84 members
+09:36:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:37:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:38:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:39:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:40:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:41:07 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+MaestroPool
+                  84    88      0     4         1       0       N.A.  false false
+
+09:42:08 list of pools:
+        CURRENT_SIZE JOINS LEAVES DIEDS ELECTIONS SIGNALS FIXED_SIZE CLOSED ENDED
+Exception in thread "ClientConnection(133.9.245.78-57737/10.0.1.78-57737)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.41.10.242-46172/10.0.1.242-46172)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.9.245.73-41376/10.0.1.73-41376)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.41.10.251-56045/10.0.1.251-56045)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.9.245.75-60560/10.0.1.75-60560)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.41.10.247-39710/10.0.1.247-39710)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "event pusher scheduler thread" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "pool pinger thread" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.9.245.80-59063/10.0.1.80-59063)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.9.245.77-41386/10.0.1.77-41386)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(133.30.111.108-55041/10.0.1.108-55041)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "event pusher thread" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "event pusher thread" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(131.112.251.23-53433/10.0.1.23-53433)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(157.82.22.11-5437)" java.lang.OutOfMemoryError: Java heap space
+Exception in thread "ClientConnection(157.82.22.92-38801/10.0.1.92-38801)" java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(157.82.22.92-38801/10.0.1.92-38801)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(157.82.22.92-38801/10.0.1.92-38801)
+09:45:18 FATAL [ClientConnection(133.30.111.104-47051/10.0.1.104-47051)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.30.111.104-47051/10.0.1.104-47051)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(131.112.251.11-58839/10.0.1.11-58839)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(131.112.251.11-58839/10.0.1.11-58839)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [event pusher thread] ibis.util.ThreadPool - caught exception in pool thread event pusher thread
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [event pusher thread] ibis.util.ThreadPool - caught exception in pool thread event pusher thread
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.9.245.68-54203/10.0.1.68-54203)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.9.245.68-54203/10.0.1.68-54203)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(130.54.22.82-35065/192.168.1.10/172.16.1.10/10.0.1.10-35065)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(130.54.22.82-35065/192.168.1.10/172.16.1.10/10.0.1.10-35065)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [event pusher thread] ibis.util.ThreadPool - caught exception in pool thread event pusher thread
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [Central Registry Service] ibis.util.ThreadPool - caught exception in pool thread Central Registry Service
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.9.245.74-57752/10.0.1.74-57752)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.9.245.74-57752/10.0.1.74-57752)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.5.189.11-60821/10.0.1.11-60821)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.5.189.11-60821/10.0.1.11-60821)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(130.54.22.83-40667/192.168.1.11/172.16.1.11/10.0.1.11-40667)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(130.54.22.83-40667/192.168.1.11/172.16.1.11/10.0.1.11-40667)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.41.10.241-57700/10.0.1.241-57700)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.41.10.241-57700/10.0.1.241-57700)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.41.10.250-41662/10.0.1.250-41662)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.41.10.250-41662/10.0.1.250-41662)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.9.245.70-36444/10.0.1.70-36444)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.9.245.70-36444/10.0.1.70-36444)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.41.10.245-52468/10.0.1.245-52468)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.41.10.245-52468/10.0.1.245-52468)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(157.82.22.10-43056)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(157.82.22.10-43056)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.41.10.241-38803/10.0.1.241-38803)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.41.10.241-38803/10.0.1.241-38803)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.41.10.246-42915/10.0.1.246-42915)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.41.10.246-42915/10.0.1.246-42915)
+java.lang.OutOfMemoryError: Java heap space
+09:45:18 FATAL [ClientConnection(133.9.245.81-60377/10.0.1.81-60377)] ibis.util.ThreadPool - caught exception in pool thread ClientConnection(133.9.245.81-60377/10.0.1.81-60377)
+java.lang.OutOfMemoryError: Java heap space
+        at ibis.smartsockets.hub.connections.VirtualConnection.setSecondBuffer(VirtualConnection.java:42)
+        at ibis.smartsockets.hub.connections.MessageForwardingConnection.processVirtualConnectACK(MessageForwardingConnection.java:925)
+        at ibis.smartsockets.hub.connections.MessageForwardingConnection.handleACKCreateVirtualConnection(MessageForwardingConnection.java:457)
+        at ibis.smartsockets.hub.connections.MessageForwardingConnection.runConnection(MessageForwardingConnection.java:1097)
+        at ibis.smartsockets.hub.connections.BaseConnection.run(BaseConnection.java:49)
+        at ibis.util.ThreadPool$PoolThread.run(ThreadPool.java:121)
+dach001@hongo001:~$ 
