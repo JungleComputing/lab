@@ -18,41 +18,36 @@ public class FindPairs {
     {
 	String name = f.getName();
 
-	if (verbose) { 
-	    System.out.println("Adding file: " + f.getName());
+	if( verbose ) { 
+	    System.out.println( "Adding file: " + f.getName() );
 	}
 
 	// Remove the '.fits' extension.
 	name = name.substring( 0, name.length()-5 ); 
 
+	String label = name.substring( 0, name.length()-3 );
 	if( name.endsWith( "t0" ) ) {
-
-	    String other = name.substring(0, name.length()-2) + "t1";
-
-	    File tmp = singles.remove( other );
+	    File tmp = singles.remove( label );
 
 	    if (tmp != null) { 
-		pairs.add( new FilePair( f, tmp ) );
+		pairs.add( new FilePair( f, tmp, label ) );
 	    } else { 
-		singles.put( name, f );
+		singles.put( label, f );
 	    }
 
 	}
-	else if (name.endsWith("t1")) { 
-
-	    String other = name.substring(0, name.length()-2) + "t0";
-
-	    File tmp = singles.remove(other);
+	else if( name.endsWith( "t1" ) ) { 
+	    File tmp = singles.remove( label );
 
 	    if (tmp != null) { 
-		pairs.add( new FilePair( tmp, f ) );
+		pairs.add( new FilePair( tmp, f, label ) );
 	    } else { 
-		singles.put( name, f );
+		singles.put( label, f );
 	    }
 	}
 	else { 
-	    if (verbose) { 
-		System.out.println("Cannot handle file: " + f);
+	    if( verbose ){ 
+		System.out.println( "Cannot handle file: " + f );
 	    }
 	}
     }

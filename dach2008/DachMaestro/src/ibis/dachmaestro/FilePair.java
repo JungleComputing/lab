@@ -19,15 +19,19 @@ public class FilePair implements Serializable, Comparable<FilePair> {
 
     /** The local filename of the 'after' file. */
     public final File after;
+    
+    /** The label (common prefix) of this pair. */
+    public final String label;
 
     int tries = 1;
 
     int serial;
 
-    FilePair( final File before, final File after )
+    FilePair( final File before, final File after, final String label )
     {
 	this.before = before;
 	this.after = after;
+        this.label = label;
     }
 
     /**

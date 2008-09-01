@@ -4,7 +4,8 @@
 # -u: complain about non-existent variables
 set -e -u
 DIR=/tmp/dach001-scratch-$$
-COMPARATOR=/home/dach/finder/dach.sh
+#COMPARATOR=/home/dach/finder/dach.sh
+COMPARATOR=./robust-dach.sh
 mkdir $DIR
 cp $1 $DIR/file1.fits
 cp $2 $DIR/file2.fits

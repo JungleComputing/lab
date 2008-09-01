@@ -54,7 +54,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
         if( exit != 0 ) {
             String cmd = "";
 
-            for (String c: command) {
+            for( String c: command ){
                 if (!cmd.isEmpty()) {
                     cmd += ' ';
                 }
@@ -68,7 +68,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
 
         node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatNanoseconds( time ) );
 
-        return new Result( new String( p.getStdout() ), time, null );
+        return new Result( new String( p.getStdout() ), pair, time, null );
     }
 
     /**

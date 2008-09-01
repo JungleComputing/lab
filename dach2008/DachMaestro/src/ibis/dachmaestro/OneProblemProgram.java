@@ -21,7 +21,7 @@ import java.util.Random;
 /**
  * Command-line interface.
  * 
- * @author Kees van Reeuwijk, Jason Maassen
+ * @author Kees van Reeuwijk
  *
  */
 public class OneProblemProgram
@@ -33,6 +33,7 @@ public class OneProblemProgram
     private static PrintStream resultFile = null;
     private static File oracleHome;
     private static String handle;
+    private static File separateResultDir = null;
 
     private static final String DEFAULT_ORACLE_HOME = "/home/dach911";
     private static final String DEFAULT_PROBLEMS_DIR = "/tmp/dach001";
@@ -42,6 +43,35 @@ public class OneProblemProgram
     { 
         System.err.println( "Usage: Main <problem>" );
         System.exit(1);
+    }
+    
+    private static void writeSeparateResultFile( Node node, String result, String label )
+    {
+        PrintStream s = null;
+        FileOutputStream fos = null;
+
+        try {
+            File f = new File( separateResultDir, "result-" + label + ".txt" );
+            fos = new FileOutputStream( f );
+            s = new PrintStream( fos );
+            s.append( result );
+        }
+        catch( IOException e ){
+            node.reportInternalError( "I/O error: " + e.getLocalizedMessage() );
+        }
+        finally {
+            if( s != null ){
+                s.close();
+            }
+            if( fos != null ){
+                try {
+                    fos.close();
+                }
+                catch( IOException x ){
+                    // Nothing to do.
+                }
+            }
+        }
     }
 
     private static class Listener implements JobCompletionListener
@@ -80,6 +110,7 @@ public class OneProblemProgram
                     synchronized( resultFile ) {
                         resultFile.append( result.result );
                     }
+                    writeSeparateResultFile( node, result.result, result.pair.label );
                     returnedPairs++;
                     node.reportProgress( "Problem " + label + " took " + Utils.formatNanoseconds( result.computeTime ) );
                 }
@@ -172,7 +203,10 @@ public class OneProblemProgram
         node.reportProgress( "There are " + pairs.size() + " pairs" );
 
         try{
-            resultFileName = new File( "result-" + problemSet + "-" + rng.nextDouble() + ".txt" );
+            double lbl = rng.nextDouble();
+
+            separateResultDir = new File( "results-" + handle + "-" + problemSet + "-" + lbl );
+            resultFileName = new File( "result-" + handle + "-" + problemSet + "-" + lbl + ".txt" );
             resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
         }
         catch( IOException e ){
