@@ -50,6 +50,10 @@ public class OneProblemProgram
         PrintStream s = null;
         FileOutputStream fos = null;
 
+        if( separateResultDir == null ) {
+            // No directory to write to.
+            return;
+        }
         try {
             File f = new File( separateResultDir, "result-" + label + ".txt" );
             fos = new FileOutputStream( f );
@@ -206,6 +210,11 @@ public class OneProblemProgram
             double lbl = rng.nextDouble();
 
             separateResultDir = new File( "results-" + handle + "-" + problemSet + "-" + lbl );
+            boolean ok = separateResultDir.mkdir();
+            if( !ok ) {
+        	node.reportInternalError( "Cannot create results directory " + separateResultDir );
+        	separateResultDir = null;
+            }
             resultFileName = new File( "result-" + handle + "-" + problemSet + "-" + lbl + ".txt" );
             resultFile = new PrintStream( new FileOutputStream( resultFileName ) );
         }
@@ -222,6 +231,7 @@ public class OneProblemProgram
             FilePair pair = pairs.remove();
             Object label = listener.getLabel();
             compareJob.submit( node, pair, label, listener );
+	    System.out.println( "PAIRSIZE " + pair.label + " " + pair.totalLength() );
             submittedPairs++;
         }
         listener.setFinished();
@@ -247,7 +257,7 @@ public class OneProblemProgram
 
             for (int i=0;i<args.length;i++) { 
 
-                if (args[i].equals("-v") || args[i].equals("--verbose")) { 
+                if( args[i].equals("-v") || args[i].equals("--verbose") ) { 
                     verbose = true;
                 }
                 else if (args[i].equals("-c") || args[i].equals("--command")) {

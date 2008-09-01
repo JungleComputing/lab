@@ -1,5 +1,8 @@
 package ibis.dachmaestro;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
 import ibis.maestro.Utils;
@@ -18,6 +21,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
     private static final long serialVersionUID = -858338988356512054L;
     private final String exec;
     private static final long BENCHMARK_MULTIPLIER = 10;
+    private final SimpleDateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd'T'HH:mm:ss.SSSZ" );
 
     /**
      * Returns the name of this task.
@@ -37,6 +41,12 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
     private Result compare( FilePair pair, Node node ) throws TaskFailedException 
     {
         node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        synchronized( this ) {
+            System.out.print( "STARTTIME " );
+            System.out.print( pair.label );
+            System.out.print( ' ' );
+            System.out.println( dateFormat.format( new Date() ) );
+        }
         long startTime = System.nanoTime();
 
         String command [] = {
@@ -68,6 +78,12 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
 
         node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatNanoseconds( time ) );
 
+        synchronized( this ) {
+            System.out.print( "ENDTIME " );
+            System.out.print( pair.label );
+            System.out.print( ' ' );
+            System.out.println( dateFormat.format( new Date() ) );
+        }
         return new Result( new String( p.getStdout() ), pair, time, null );
     }
 

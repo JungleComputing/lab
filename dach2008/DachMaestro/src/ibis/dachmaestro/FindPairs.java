@@ -95,5 +95,3 @@ public class FindPairs {
 	return pairs;
     }
 }
-
-
