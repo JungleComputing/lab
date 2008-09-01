@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Before exit1"
+./exit1
+echo "After exit1"
