@@ -2,7 +2,7 @@ package ibis.dachmaestro;
 
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
-import ibis.maestro.Service;
+import ibis.maestro.Utils;
 import ibis.maestro.TaskFailedException;
 import ibis.maestro.UnpredictableAtomicTask;
 import ibis.util.RunProcess;
@@ -60,13 +60,13 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
                 }
                 cmd += c;
             }
-            throw new ibis.maestro.TaskFailedException(
+            throw new TaskFailedException(
                 "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() )
             );
         }
 
-        node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
+        node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatNanoseconds( time ) );
 
         return new Result( new String( p.getStdout() ), time, null );
     }

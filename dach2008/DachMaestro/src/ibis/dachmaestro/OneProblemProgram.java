@@ -1,11 +1,11 @@
 package ibis.dachmaestro;
 
-import ibis.maestro.CompletionListener;
 import ibis.maestro.Job;
+import ibis.maestro.JobCompletionListener;
 import ibis.maestro.JobList;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
-import ibis.maestro.Service;
+import ibis.maestro.Utils;
 import ibis.maestro.LabelTracker.Label;
 import ibis.util.RunProcess;
 
@@ -44,7 +44,7 @@ public class OneProblemProgram
         System.exit(1);
     }
 
-    private static class Listener implements CompletionListener
+    private static class Listener implements JobCompletionListener
     {
         private final LabelTracker labelTracker = new LabelTracker();
         private final HashSet<LabelTracker.Label> returnedResults = new HashSet<LabelTracker.Label>();
@@ -81,7 +81,7 @@ public class OneProblemProgram
                         resultFile.append( result.result );
                     }
                     returnedPairs++;
-                    node.reportProgress( "Problem " + label + " took " + Service.formatNanoseconds( result.computeTime ) );
+                    node.reportProgress( "Problem " + label + " took " + Utils.formatNanoseconds( result.computeTime ) );
                 }
             }
             else {
@@ -301,7 +301,7 @@ public class OneProblemProgram
             }
             node.waitToTerminate();
             long stopTime = System.nanoTime();
-            node.reportProgress( "Duration of this run: " + Service.formatNanoseconds( stopTime-startTime ) );
+            node.reportProgress( "Duration of this run: " + Utils.formatNanoseconds( stopTime-startTime ) );
         }
         catch (Exception x) {
             System.out.println( "main(): caught exception:" + x );

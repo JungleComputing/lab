@@ -2,8 +2,8 @@ package ibis.dachmaestro;
 
 import ibis.maestro.AtomicTask;
 import ibis.maestro.Node;
-import ibis.maestro.Service;
 import ibis.maestro.UnpredictableAtomicTask;
+import ibis.maestro.Utils;
 import ibis.util.RunProcess;
 
 import java.io.File;
@@ -92,7 +92,7 @@ public class ImageComparatorTask implements AtomicTask, UnpredictableAtomicTask
             );
         }
 
-        node.reportProgress("Completed '" + pair.before + "' and '" + pair.after + "' in " + Service.formatNanoseconds( time ) );
+        node.reportProgress("Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatNanoseconds( time ) );
 
         return new Result( new String( p.getStdout() ), time, null );
     }

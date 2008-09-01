@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-#
+# -e: stop on non-zero exit code
+# -u: complain about non-existent variables
+set -e -u
 DIR=/tmp/dach001-scratch-$$
 COMPARATOR=/home/dach/finder/dach.sh
 mkdir $DIR
