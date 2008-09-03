@@ -23,7 +23,7 @@ public class FilePair implements Serializable, Comparable<FilePair> {
     /** The label (common prefix) of this pair. */
     public final String label;
 
-    int tries = 1;
+    private long pairSize = -1;   // Cached size of the pair, or -1.
 
     int serial;
 
@@ -61,6 +61,9 @@ public class FilePair implements Serializable, Comparable<FilePair> {
 
     long totalLength()
     {
-	return before.length() + after.length();
+        if( pairSize<0 ) {
+            pairSize = before.length() + after.length();
+        }
+        return pairSize;
     }
 }

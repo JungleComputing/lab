@@ -6,6 +6,7 @@
 SERVERHOST=hongo100.logos.ic.i.u-tokyo.ac.jp
 #SERVERHOST=lily.local
 DACHMAESTRO_HOME=dachmaestro-0.2
+GFARMDIR=/tmp/dach001
 
 source $HOME/.bashrc
 
@@ -14,6 +15,11 @@ if [ -z "$DACHMAESTRO_HOME" ];  then
     echo "please set DACHMAESTRO_HOME to the location of your Maestro installation" 1>&2
     exit 1
 fi
+
+/usr/bin/fusermount -u $GFARMDIR
+rm -rf $GFARMDIR
+mkdir $GFARMDIR
+/data/local/gfarm_v2/bin/gfarm2fs $GFARMDIR
 
 # Jar-files from library.
 LIBCLASSPATH=""
