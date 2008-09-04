@@ -16,11 +16,6 @@ if [ -z "$DACHMAESTRO_HOME" ];  then
     exit 1
 fi
 
-/usr/bin/fusermount -u $GFARMDIR
-rm -rf $GFARMDIR
-mkdir $GFARMDIR
-/data/local/gfarm_v2/bin/gfarm2fs $GFARMDIR
-
 # Jar-files from library.
 LIBCLASSPATH=""
 add_to_libclasspath () {
