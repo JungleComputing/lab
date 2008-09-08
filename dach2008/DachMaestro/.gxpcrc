@@ -1,0 +1,61 @@
+if [ -n "$PS1" ] ; then
+  export PS1='\h:\W`gxpc prompt 2> /dev/null`% '
+fi
+
+# ------------------------ intrigger ------------------------
+
+function intrigger_sites () {
+  echo chiba hongo okubo suzuk imade mirai kobe kyushu hiro kyoto keio
+}
+
+# print_nodes prefix domain node_min node_max
+# 	it displays node information in GXPC format:
+#		$prefix[[$node_min-$node_max]] $cores
+function print_nodes ()
+{
+	# display in GXPC format
+	printf "%s[[%03d-%03d]] " $1 $3 $4
+}
+
+function echo_intrigger_nodes () {
+cat <<EOF | while read prefix domain node_min node_max cores; do print_nodes $prefix $domain $node_min $node_max; done
+hongo logos.ic.i.u-tokyo.ac.jp 100 113 2
+chiba intrigger.nii.ac.jp 100 157 2
+okubo yama.info.waseda.ac.jp 0 13 2
+suzuk intrigger.titech.ac.jp 0 35 2
+kyoto para.media.kyoto-u.ac.jp 0 34 2
+imade kuis.kyoto-u.ac.jp 0 29 2
+mirai intrigger.jp 0 5 8
+kobe intrigger.scitec.kobe-u.ac.jp 0 10 8
+kyushu bioinfo.kyushu-u.ac.jp 0 9 8
+hiro net.hiroshima-u.ac.jp 0 10 8
+keio sslab.ics.keio.ac.jp 0 10 8
+EOF
+}
+
+# usage: gxpc explore `intrigger_nodes`
+function intrigger_nodes () {
+	echo_intrigger_nodes
+	# newline
+	echo
+}
+
+function intrigger_heads () {
+  for site in `intrigger_sites` ; do 
+    case $site in
+	chiba*|hongo*)
+	    echo -n "${site}100 " ;;
+	*)
+	    echo -n "${site}000 " ;;
+    esac
+  done
+}
+
+function use_intrigger () {
+  for host in `intrigger_heads` ; do
+    gxpc use ssh `hostname` ${host}
+  done
+  for site in `intrigger_sites` ; do
+    gxpc use ssh ${site}
+  done
+}

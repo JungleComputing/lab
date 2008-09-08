@@ -7,8 +7,10 @@ mkdir $LOGDIR
 export GXP_SESSION=`gxpc --create_daemon 1`
 trap 'gxpc quit; exit 1' 2
 /usr/bin/fusermount -u $GFARMDIR
+rmdir $GFARMDIR
 gxpc use ssh '' ''
 ## We're very persistent since the nodes can be very busy.
 gxpc explore --timeout 120 `cat $1`
 gxpc e -H `hostname` /usr/bin/fusermount -u $GFARMDIR
+gxpc e -H `hostname` rmdir $GFARMDIR
 gxpc quit

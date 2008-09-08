@@ -2,8 +2,6 @@
 
 source $HOME/.bashrc
 
-HUBHOST=hongo101.logos.ic.i.u-tokyo.ac.jp
-
 # Check setting of DACHMAESTRO_HOME
 if [ -z "$DACHMAESTRO_HOME" ];  then
     echo "please set DACHMAESTRO_HOME to the location of your Maestro installation" 1>&2
@@ -30,5 +28,5 @@ add_to_libclasspath "${DACHMAESTRO_HOME}"/lib
 exec java \
     -classpath "$CLASSPATH:$LIBCLASSPATH" \
     -Dlog4j.configuration=file:"$DACHMAESTRO_HOME"/log4j.properties \
-    -Xmx3600M \
-     ibis.server.Server --stats --events --no-hub --hub-addresses $HUBHOST:5437 --port 5437
+    -Xmx4500M \
+     ibis.server.Server --stats --events --hub-only --port 5437
