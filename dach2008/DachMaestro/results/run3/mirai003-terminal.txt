@@ -1,0 +1,460 @@
+Last login: Wed Sep 10 00:45:50 on ttyp6
+Welcome to Darwin!
+lily:~% ssh dachhome
+Linux hongo000 2.6.18-6-686 #1 SMP Mon Aug 18 08:42:39 UTC 2008 i686
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Sep 10 07:52:41 2008 from cvr.xs4all.nl
+dach001@hongo000:~$ ssh mirai
+Linux mirai000 2.6.18-6-amd64 #1 SMP Mon Jun 16 22:30:01 UTC 2008 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Sep 10 07:52:46 2008 from hongo000.logos.ic.i.u-tokyo.ac.jp
+dach001@mirai000:~$ ssh mirai002
+Linux mirai002 2.6.18-6-amd64 #1 SMP Mon Jun 16 22:30:01 UTC 2008 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Sep 10 07:53:10 2008 from mirai000.intrigger.jp
+dach001@mirai002:~$ logout
+Connection to mirai002 closed.
+dach001@mirai000:~$ ssh mirai003
+Linux mirai003 2.6.18-6-amd64 #1 SMP Mon Jun 16 22:30:01 UTC 2008 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Sep  4 20:46:32 2008 from mirai000.intrigger.jp
+dach001@mirai003:~$ top
+
+
+
+
+
+top - 07:55:30 up 16 days, 16:06,  1 user,  load average: 1.15, 2.31, 3.66
+Tasks: 174 total,   2 running, 172 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.0%us,  0.0%sy,  0.0%ni, 99.9%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:  16433856k total,  7705520k used,  8728336k free,   613072k buffers
+Swap: 16386292k total,        0k used, 16386292k free,  6625060k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+21943 kamo2     18   0 28624 5452 2488 S    1  0.0   0:25.92 python             
+    1 root      18   0  6124  680  560 S    0  0.0   0:07.37 init               
+    2 root      RT   0     0    0    0 S    0  0.0   0:01.63 migration/0        
+    3 root      34  19     0    0    0 S    0  0.0   0:00.01 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/0         
+    5 root      RT   0     0    0    0 S    0  0.0   0:00.14 migration/1        
+    6 root      34  19     0    0    0 S    0  0.0   0:00.00 ksoftirqd/1        
+    7 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/1         
+    8 root      RT   0     0    0    0 S    0  0.0   0:00.44 migration/2        
+    9 root      34  19     0    0    0 S    0  0.0   0:00.00 ksoftirqd/2        
+   10 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/2         
+   11 root      RT   0     0    0    0 S    0  0.0   0:02.16 migration/3        
+   12 root      34  19     0    0    0 S    0  0.0   0:00.05 ksoftirqd/3        
+   13 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/3         
+   14 root      RT   0     0    0    0 S    0  0.0   0:00.12 migration/4        
+   15 root      34  19     0    0    0 S    0  0.0   0:00.00 ksoftirqd/4        
+   16 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/4         
+   17 root      RT   0     0    0    0 S    0  0.0   0:00.02 migration/5        
+   18 root      34  19     0    0    0 S    0  0.0   0:00.00 ksoftirqd/5        
+   19 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/5         
+   20 root      RT   0     0    0    0 S    0  0.0   0:00.65 migration/6        
+   21 root      34  19     0    0    0 S    0  0.0   0:00.02 ksoftirqd/6        
+   22 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/6         
+   23 root      RT   0     0    0    0 S    0  0.0   0:00.43 migration/7        
+   24 root      34  19     0    0    0 S    0  0.0   0:00.00 ksoftirqd/7        
+   25 root      RT   0     0    0    0 S    0  0.0   0:00.00 watchdog/7         
+   26 root      10  -5     0    0    0 S    0  0.0   0:00.30 events/0           
+   27 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/1           
+   28 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/2           
+   29 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/3           
+   30 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/4           
+   31 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/5           
+   32 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/6           
+   33 root      10  -5     0    0    0 S    0  0.0   0:00.00 events/7           
+   34 root      10  -5     0    0    0 S    0  0.0   0:00.00 khelper            
+   35 root      14  -5     0    0    0 S    0  0.0   0:00.00 kthread            
+   46 root      10  -5     0    0    0 S    0  0.0   0:00.20 kblockd/0          
+   47 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/1          
+   48 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/2          
+   49 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/3          
+   50 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/4          
+   51 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/5          
+   52 root      10  -5     0    0    0 S    0  0.0   0:00.00 kblockd/6          
+dach001@mirai003:~$ ./runall.sh -v
+./runall.sh: line 22: cd: ./lib: No such file or directory
+FileComparatorTask: hardwarename=x86_64 supported=true
+2008-09-10T07:56:13.823+0900 Started ibis (Ibis 97, location mirai003@intrigger@jp): isMaestro=false
+Node created
+2008-09-10T07:56:13.841+0900 Ibis (Ibis 93, location hongo000@logos@ic@i@u-tokyo@ac@jp) was elected maestro
+2008-09-10T07:56:43.228+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0456_01_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0456_01_t1.fits'
+STARTTIME r0456_01 2008-09-10T07:56:43.228+0900
+2008-09-10T07:56:43.239+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0227_40_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0227_40_t1.fits'
+STARTTIME r0227_40 2008-09-10T07:56:43.239+0900
+2008-09-10T07:56:43.246+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0460_21_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0460_21_t1.fits'
+STARTTIME r0460_21 2008-09-10T07:56:43.246+0900
+2008-09-10T07:56:43.246+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0221_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0221_10_t1.fits'
+STARTTIME r0221_10 2008-09-10T07:56:43.247+0900
+2008-09-10T07:56:43.247+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0455_00_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0455_00_t1.fits'
+STARTTIME r0455_00 2008-09-10T07:56:43.247+0900
+2008-09-10T07:56:43.247+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0461_30_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0461_30_t1.fits'
+STARTTIME r0461_30 2008-09-10T07:56:43.248+0900
+2008-09-10T07:56:43.307+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0459_20_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0459_20_t1.fits'
+STARTTIME r0459_20 2008-09-10T07:56:43.308+0900
+2008-09-10T07:56:43.308+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0457_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0457_10_t1.fits'
+STARTTIME r0457_10 2008-09-10T07:56:43.308+0900
+2008-09-10T08:14:20.349+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0221_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0221_10_t1.fits' in 1057.1 s
+ENDTIME r0221_10 2008-09-10T08:14:20.349+0900
+2008-09-10T08:14:23.377+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0227_40_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0227_40_t1.fits' in 1060.1 s
+ENDTIME r0227_40 2008-09-10T08:14:23.377+0900
+2008-09-10T08:15:03.177+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0341_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0341_10_t1.fits'
+STARTTIME r0341_10 2008-09-10T08:15:03.177+0900
+2008-09-10T08:15:03.184+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0246_31_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0246_31_t1.fits'
+STARTTIME r0246_31 2008-09-10T08:15:03.185+0900
+2008-09-10T08:16:12.312+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0455_00_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0455_00_t1.fits' in 1169.1 s
+ENDTIME r0455_00 2008-09-10T08:16:12.313+0900
+2008-09-10T08:16:12.480+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0346_31_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0346_31_t1.fits'
+STARTTIME r0346_31 2008-09-10T08:16:12.480+0900
+2008-09-10T08:18:18.540+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0456_01_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0456_01_t1.fits' in 1295.3 s
+ENDTIME r0456_01 2008-09-10T08:18:18.540+0900
+2008-09-10T08:18:18.678+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0339_00_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0339_00_t1.fits'
+STARTTIME r0339_00 2008-09-10T08:18:18.678+0900
+2008-09-10T08:18:47.702+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0459_20_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0459_20_t1.fits' in 1324.4 s
+ENDTIME r0459_20 2008-09-10T08:18:47.702+0900
+2008-09-10T08:18:47.865+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0342_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0342_11_t1.fits'
+STARTTIME r0342_11 2008-09-10T08:18:47.865+0900
+2008-09-10T08:18:56.110+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0461_30_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0461_30_t1.fits' in 1332.9 s
+ENDTIME r0461_30 2008-09-10T08:18:56.110+0900
+2008-09-10T08:19:08.862+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0457_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0457_10_t1.fits' in 1345.5 s
+ENDTIME r0457_10 2008-09-10T08:19:08.863+0900
+2008-09-10T08:19:21.021+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0460_21_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0460_21_t1.fits' in 1357.8 s
+ENDTIME r0460_21 2008-09-10T08:19:21.021+0900
+2008-09-10T08:19:26.696+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0348_41_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0348_41_t1.fits'
+STARTTIME r0348_41 2008-09-10T08:19:26.696+0900
+2008-09-10T08:19:26.772+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0114_20_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0114_20_t1.fits'
+STARTTIME r0114_20 2008-09-10T08:19:26.772+0900
+2008-09-10T08:19:26.830+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0113_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0113_11_t1.fits'
+STARTTIME r0113_11 2008-09-10T08:19:26.830+0900
+2008-09-10T08:27:57.986+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0341_10_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0341_10_t1.fits' in 774.8 s
+ENDTIME r0341_10 2008-09-10T08:27:57.986+0900
+2008-09-10T08:27:58.125+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0598_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0598_11_t1.fits'
+STARTTIME r0598_11 2008-09-10T08:27:58.125+0900
+2008-09-10T08:28:00.778+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0246_31_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0246_31_t1.fits' in 777.6 s
+ENDTIME r0246_31 2008-09-10T08:28:00.778+0900
+2008-09-10T08:28:04.310+0900 Comparing files '/tmp/dach001/problems/final_dach_3141/r0603_41_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0603_41_t1.fits'
+STARTTIME r0603_41 2008-09-10T08:28:04.310+0900
+2008-09-10T08:28:33.221+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0346_31_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0346_31_t1.fits' in 740.7 s
+ENDTIME r0346_31 2008-09-10T08:28:33.221+0900
+2008-09-10T08:29:35.126+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0598_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0598_11_t1.fits' in 97.0 s
+ENDTIME r0598_11 2008-09-10T08:29:35.126+0900
+2008-09-10T08:29:43.229+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0603_41_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0603_41_t1.fits' in 98.9 s
+ENDTIME r0603_41 2008-09-10T08:29:43.229+0900
+2008-09-10T08:29:59.061+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0339_00_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0339_00_t1.fits' in 700.4 s
+ENDTIME r0339_00 2008-09-10T08:29:59.061+0900
+2008-09-10T08:30:28.991+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0342_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0342_11_t1.fits' in 701.1 s
+ENDTIME r0342_11 2008-09-10T08:30:28.992+0900
+2008-09-10T08:33:08.671+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0113_11_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0113_11_t1.fits' in 821.8 s
+ENDTIME r0113_11 2008-09-10T08:33:08.671+0900
+2008-09-10T08:33:11.776+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0114_20_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0114_20_t1.fits' in 825.0 s
+ENDTIME r0114_20 2008-09-10T08:33:11.776+0900
+2008-09-10T08:33:15.533+0900 Completed '/tmp/dach001/problems/final_dach_3141/r0348_41_t0.fits' and '/tmp/dach001/problems/final_dach_3141/r0348_41_t1.fits' in 828.8 s
+ENDTIME r0348_41 2008-09-10T08:33:15.533+0900
+2008-09-10T12:38:07.161+0900 The maestro has left; stopping..
+# work threads  =    10
+Node (Ibis 79, location chiba116@intrigger@nii@ac@jp)
+Node (Ibis 78, location chiba108@intrigger@nii@ac@jp)
+Node (Ibis 35, location imade001@kuis@kyoto-u@ac@jp)
+Node (Ibis 36, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 33, location suzuk007@intrigger@titech@ac@jp)
+Node (Ibis 34, location imade000@kuis@kyoto-u@ac@jp)
+Node (Ibis 39, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 37, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 38, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 43, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 42, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 41, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 40, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 82, location chiba112@intrigger@nii@ac@jp)
+Node (Ibis 83, location chiba113@intrigger@nii@ac@jp)
+Node (Ibis 80, location chiba115@intrigger@nii@ac@jp)
+Node (Ibis 81, location chiba114@intrigger@nii@ac@jp)
+Node (Ibis 86, location chiba111@intrigger@nii@ac@jp)
+Node (Ibis 87, location chiba102@intrigger@nii@ac@jp)
+Node (Ibis 84, location chiba106@intrigger@nii@ac@jp)
+Node (Ibis 85, location chiba117@intrigger@nii@ac@jp)
+Node (Ibis 67, location okubo005@yama@info@waseda@ac@jp)
+Node (Ibis 66, location okubo008@yama@info@waseda@ac@jp)
+Node (Ibis 69, location okubo006@yama@info@waseda@ac@jp)
+Node (Ibis 68, location okubo002@yama@info@waseda@ac@jp)
+Node (Ibis 22, location suzuk000@intrigger@titech@ac@jp)
+Node (Ibis 23, location suzuk008@intrigger@titech@ac@jp)
+Node (Ibis 24, location suzuk005@intrigger@titech@ac@jp)
+Node (Ibis 25, location suzuk004@intrigger@titech@ac@jp)
+Node (Ibis 26, location suzuk001@intrigger@titech@ac@jp)
+Node (Ibis 27, location suzuk006@intrigger@titech@ac@jp)
+Node (Ibis 28, location suzuk015@intrigger@titech@ac@jp)
+Node (Ibis 29, location suzuk009@intrigger@titech@ac@jp)
+Node (Ibis 3, location mirai004@intrigger@jp)
+Node (Ibis 2, location mirai003@intrigger@jp)
+Node (Ibis 1, location kyushu000@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 0, location mirai000@intrigger@jp)
+Node (Ibis 30, location suzuk003@intrigger@titech@ac@jp)
+Node (Ibis 7, location kyushu001@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 6, location kyushu003@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 32, location suzuk002@intrigger@titech@ac@jp)
+Node (Ibis 5, location kyushu007@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 31, location suzuk011@intrigger@titech@ac@jp)
+Node (Ibis 4, location kyushu005@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 70, location okubo001@yama@info@waseda@ac@jp)
+Node (Ibis 9, location kyushu008@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 71, location okubo009@yama@info@waseda@ac@jp)
+Node (Ibis 8, location kyushu009@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 72, location okubo013@yama@info@waseda@ac@jp)
+Node (Ibis 73, location okubo007@yama@info@waseda@ac@jp)
+Node (Ibis 74, location okubo010@yama@info@waseda@ac@jp)
+Node (Ibis 75, location okubo004@yama@info@waseda@ac@jp)
+Node (Ibis 76, location okubo003@yama@info@waseda@ac@jp)
+Node (Ibis 59, location kyoto008@para@media@kyoto-u@ac@jp)
+Node (Ibis 58, location kyoto014@para@media@kyoto-u@ac@jp)
+Node (Ibis 57, location kyoto010@para@media@kyoto-u@ac@jp)
+Node (Ibis 19, location hiro005@net@hiroshima-u@ac@jp)
+Node (Ibis 56, location kyoto000@para@media@kyoto-u@ac@jp)
+Node (Ibis 55, location keio001@sslab@ics@keio@ac@jp)
+Node (Ibis 17, location hiro002@net@hiroshima-u@ac@jp)
+Node (Ibis 18, location hiro001@net@hiroshima-u@ac@jp)
+Node (Ibis 15, location hiro007@net@hiroshima-u@ac@jp)
+Node (Ibis 16, location hiro003@net@hiroshima-u@ac@jp)
+Node (Ibis 13, location hiro006@net@hiroshima-u@ac@jp)
+Node (Ibis 14, location mirai005@intrigger@jp)
+Node (Ibis 11, location kyushu004@bioinfo@kyushu-u@ac@jp)
+Node (Ibis 12, location mirai002@intrigger@jp)
+Node (Ibis 21, location hiro004@net@hiroshima-u@ac@jp)
+Node (Ibis 20, location hiro000@net@hiroshima-u@ac@jp)
+Node (Ibis 64, location kyoto009@para@media@kyoto-u@ac@jp)
+Node (Ibis 65, location okubo000@yama@info@waseda@ac@jp)
+Node (Ibis 62, location kyoto013@para@media@kyoto-u@ac@jp)
+Node (Ibis 63, location kyoto007@para@media@kyoto-u@ac@jp)
+Node (Ibis 60, location kyoto012@para@media@kyoto-u@ac@jp)
+Node (Ibis 61, location kyoto011@para@media@kyoto-u@ac@jp)
+Node (Ibis 49, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 97, location mirai003@intrigger@jp) (local)
+Node (Ibis 48, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 96, location mirai002@intrigger@jp)
+Node (Ibis 95, location keio003@sslab@ics@keio@ac@jp)
+Node (Ibis 94, location okubo012@yama@info@waseda@ac@jp)
+Node (Ibis 45, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 93, location hongo000@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 44, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 92, location chiba109@intrigger@nii@ac@jp)
+Node (Ibis 47, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 91, location chiba103@intrigger@nii@ac@jp)
+Node (Ibis 46, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+Node (Ibis 90, location chiba105@intrigger@nii@ac@jp)
+Node (Ibis 10, location mirai001@intrigger@jp)
+Node (Ibis 52, location keio000@sslab@ics@keio@ac@jp)
+Node (Ibis 53, location keio002@sslab@ics@keio@ac@jp)
+Node (Ibis 54, location keio003@sslab@ics@keio@ac@jp)
+Node (Ibis 88, location chiba110@intrigger@nii@ac@jp)
+Node (Ibis 89, location chiba107@intrigger@nii@ac@jp)
+Job 'comparison': 0 s
+update       messages:      33 sent
+submit       messages:       0 sent
+task result  messages:      18 sent
+job result   messages:      18 sent
+job fail     messages:       0 sent
+Sent 697 gossip messages, with 67 failures, received 60420 gossip items, 285 new
+Sent 16MB in 37.3 s, administration time 107.7 s
+                (J0,T0)  |  (J0,T0) 
+ ql   dequeue   compute  | 
+  0  501.4 us     1.2 s  |    1.2 s (Ibis 97, location mirai003@intrigger@jp)
+  0  232.2 us     1.2 s  |    1.2 s (Ibis 3, location mirai004@intrigger@jp)
+  0  263.2 us     1.2 s  |    1.2 s (Ibis 2, location mirai003@intrigger@jp)
+  0  279.9 us     1.2 s  |    1.2 s (Ibis 10, location mirai001@intrigger@jp)
+  0  186.2 us     1.2 s  |    1.2 s (Ibis 0, location mirai000@intrigger@jp)
+  0  301.7 us     1.2 s  |    1.2 s (Ibis 1, location kyushu000@bioinfo@kyushu-u@ac@jp)
+  0  483.4 us     1.2 s  |    1.2 s (Ibis 12, location mirai002@intrigger@jp)
+  0  743.2 us     1.3 s  |    1.3 s (Ibis 76, location okubo003@yama@info@waseda@ac@jp)
+  0  851.1 us     1.8 s  |    1.8 s (Ibis 45, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+  0    1.6 ms     1.5 s  |    1.5 s (Ibis 40, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+  0    4.9 ms     1.4 s  |    1.4 s (Ibis 39, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+  0    2.3 ms     1.5 s  |    1.5 s (Ibis 47, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+  0    7.3 ms     2.6 s  |    2.6 s (Ibis 48, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+  0  570.8 us     1.3 s  |    1.3 s (Ibis 38, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+  0  168.0 us     1.4 s  |    1.4 s (Ibis 36, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+  0    1.7 ms     1.7 s  |    1.7 s (Ibis 44, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+  0  608.0 us     1.3 s  |    1.3 s (Ibis 42, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+  0  177.9 us     1.8 s  |    1.8 s (Ibis 43, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+  0  410.0 us     1.3 s  |    1.3 s (Ibis 41, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+  0    1.2 ms     2.2 s  |    2.2 s (Ibis 46, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+  0    1.3 ms     1.5 s  |    1.5 s (Ibis 37, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+  0    4.2 ms     2.1 s  |    2.1 s (Ibis 49, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+  0  632.0 us     1.2 s  |    1.2 s (Ibis 4, location kyushu005@bioinfo@kyushu-u@ac@jp)
+  0  418.9 us     1.2 s  |    1.2 s (Ibis 6, location kyushu003@bioinfo@kyushu-u@ac@jp)
+  0  277.1 us  infinite  | 3601.2 s (Ibis 5, location kyushu007@bioinfo@kyushu-u@ac@jp)
+  0  323.6 us     1.2 s  |    1.2 s (Ibis 7, location kyushu001@bioinfo@kyushu-u@ac@jp)
+  0    1.1 ms     1.2 s  |    1.2 s (Ibis 8, location kyushu009@bioinfo@kyushu-u@ac@jp)
+  0  231.7 us     1.2 s  |    1.2 s (Ibis 9, location kyushu008@bioinfo@kyushu-u@ac@jp)
+  0  164.9 us     1.3 s  |    1.3 s (Ibis 26, location suzuk001@intrigger@titech@ac@jp)
+  0    3.1 ms     1.3 s  |    1.3 s (Ibis 22, location suzuk000@intrigger@titech@ac@jp)
+  0  176.2 us     1.3 s  |    1.3 s (Ibis 29, location suzuk009@intrigger@titech@ac@jp)
+  0    1.3 ms     1.4 s  |    1.4 s (Ibis 23, location suzuk008@intrigger@titech@ac@jp)
+  0  237.7 us     1.2 s  |    1.2 s (Ibis 14, location mirai005@intrigger@jp)
+  0  260.0 us     1.2 s  |    1.2 s (Ibis 11, location kyushu004@bioinfo@kyushu-u@ac@jp)
+  0  199.0 us     1.2 s  |    1.2 s (Ibis 13, location hiro006@net@hiroshima-u@ac@jp)
+  0  300.0 us     1.2 s  |    1.2 s (Ibis 15, location hiro007@net@hiroshima-u@ac@jp)
+  0  657.7 us     1.2 s  |    1.2 s (Ibis 16, location hiro003@net@hiroshima-u@ac@jp)
+  0  166.0 us     1.2 s  |    1.2 s (Ibis 19, location hiro005@net@hiroshima-u@ac@jp)
+  0  235.5 us     1.2 s  |    1.2 s (Ibis 20, location hiro000@net@hiroshima-u@ac@jp)
+  0  350.6 us     1.2 s  |    1.2 s (Ibis 21, location hiro004@net@hiroshima-u@ac@jp)
+  0  161.5 us     1.5 s  |    1.5 s (Ibis 24, location suzuk005@intrigger@titech@ac@jp)
+  0  584.5 us     1.3 s  |    1.3 s (Ibis 28, location suzuk015@intrigger@titech@ac@jp)
+  0    5.1 ms     1.3 s  |    1.3 s (Ibis 27, location suzuk006@intrigger@titech@ac@jp)
+  0  225.7 us     1.3 s  |    1.3 s (Ibis 30, location suzuk003@intrigger@titech@ac@jp)
+  0    5.1 ms     1.5 s  |    1.5 s (Ibis 32, location suzuk002@intrigger@titech@ac@jp)
+  0    5.2 ms     1.3 s  |    1.3 s (Ibis 33, location suzuk007@intrigger@titech@ac@jp)
+  0  678.6 us     1.3 s  |    1.3 s (Ibis 25, location suzuk004@intrigger@titech@ac@jp)
+  0  435.1 us     1.3 s  |    1.3 s (Ibis 35, location imade001@kuis@kyoto-u@ac@jp)
+  0    5.6 ms     1.4 s  |    1.4 s (Ibis 31, location suzuk011@intrigger@titech@ac@jp)
+  0    4.0 ms     1.4 s  |    1.4 s (Ibis 69, location okubo006@yama@info@waseda@ac@jp)
+  0  153.3 us     1.4 s  |    1.4 s (Ibis 67, location okubo005@yama@info@waseda@ac@jp)
+  0  179.0 us     1.3 s  |    1.3 s (Ibis 65, location okubo000@yama@info@waseda@ac@jp)
+  0  480.5 us     1.2 s  |    1.2 s (Ibis 17, location hiro002@net@hiroshima-u@ac@jp)
+  0  179.3 us     1.4 s  |    1.4 s (Ibis 56, location kyoto000@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.3 s  |    1.3 s (Ibis 63, location kyoto007@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.3 s  |    1.3 s (Ibis 59, location kyoto008@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.3 s  |    1.3 s (Ibis 64, location kyoto009@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.4 s  |    1.4 s (Ibis 57, location kyoto010@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.5 s  |    1.5 s (Ibis 60, location kyoto012@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.3 s  |    1.3 s (Ibis 62, location kyoto013@para@media@kyoto-u@ac@jp)
+  0    1.0 ms     1.3 s  |    1.3 s (Ibis 58, location kyoto014@para@media@kyoto-u@ac@jp)
+  0  261.4 us     1.2 s  |    1.2 s (Ibis 18, location hiro001@net@hiroshima-u@ac@jp)
+  0  783.3 us     1.3 s  |    1.3 s (Ibis 73, location okubo007@yama@info@waseda@ac@jp)
+  0  176.5 us     1.3 s  |    1.3 s (Ibis 66, location okubo008@yama@info@waseda@ac@jp)
+  0  244.5 us     1.2 s  |    1.2 s (Ibis 54, location keio003@sslab@ics@keio@ac@jp)
+  0  462.2 us     1.2 s  |    1.2 s (Ibis 52, location keio000@sslab@ics@keio@ac@jp)
+  0  448.1 us     1.2 s  |    1.2 s (Ibis 53, location keio002@sslab@ics@keio@ac@jp)
+  0  288.9 us     1.2 s  |    1.2 s (Ibis 55, location keio001@sslab@ics@keio@ac@jp)
+  0  397.9 us     1.3 s  |    1.3 s (Ibis 71, location okubo009@yama@info@waseda@ac@jp)
+  0   10.3 ms     1.4 s  |    1.4 s (Ibis 74, location okubo010@yama@info@waseda@ac@jp)
+  0    2.9 ms     1.4 s  |    1.4 s (Ibis 68, location okubo002@yama@info@waseda@ac@jp)
+  0  223.4 us     1.3 s  |    1.3 s (Ibis 70, location okubo001@yama@info@waseda@ac@jp)
+  0  172.6 us     1.5 s  |    1.5 s (Ibis 72, location okubo013@yama@info@waseda@ac@jp)
+  0  189.0 us     1.4 s  |    1.4 s (Ibis 34, location imade000@kuis@kyoto-u@ac@jp)
+  0  188.9 us     1.3 s  |    1.3 s (Ibis 75, location okubo004@yama@info@waseda@ac@jp)
+  0  379.6 us     1.4 s  |    1.4 s (Ibis 78, location chiba108@intrigger@nii@ac@jp)
+  0    4.7 ms     1.5 s  |    1.5 s (Ibis 84, location chiba106@intrigger@nii@ac@jp)
+  0    2.2 ms     1.6 s  |    1.6 s (Ibis 89, location chiba107@intrigger@nii@ac@jp)
+  0    1.0 ms     1.4 s  |    1.4 s (Ibis 79, location chiba116@intrigger@nii@ac@jp)
+  0  150.6 us     1.4 s  |    1.4 s (Ibis 80, location chiba115@intrigger@nii@ac@jp)
+  0    3.2 ms     1.4 s  |    1.4 s (Ibis 82, location chiba112@intrigger@nii@ac@jp)
+  0    6.3 ms     1.4 s  |    1.4 s (Ibis 81, location chiba114@intrigger@nii@ac@jp)
+  0    2.1 ms     1.6 s  |    1.6 s (Ibis 86, location chiba111@intrigger@nii@ac@jp)
+  0  277.6 us     1.5 s  |    1.5 s (Ibis 90, location chiba105@intrigger@nii@ac@jp)
+  0  815.4 us     1.6 s  |    1.6 s (Ibis 83, location chiba113@intrigger@nii@ac@jp)
+  0  209.7 us     1.4 s  |    1.4 s (Ibis 85, location chiba117@intrigger@nii@ac@jp)
+  0    1.2 ms  infinite  | 3601.2 s (Ibis 92, location chiba109@intrigger@nii@ac@jp)
+  0    3.3 ms     1.9 s  |    1.9 s (Ibis 91, location chiba103@intrigger@nii@ac@jp)
+  1   16.5 ms     1.7 s  |    1.7 s (Ibis 87, location chiba102@intrigger@nii@ac@jp)
+  0    4.2 ms     1.9 s  |    1.9 s (Ibis 88, location chiba110@intrigger@nii@ac@jp)
+  0    1.0 ms     1.4 s  |    1.4 s (Ibis 61, location kyoto011@para@media@kyoto-u@ac@jp)
+  0    19.5 s     3.5 s  |    6.0 s (Ibis 93, location hongo000@logos@ic@i@u-tokyo@ac@jp)
+  0  455.6 us     1.4 s  |    1.4 s (Ibis 94, location okubo012@yama@info@waseda@ac@jp)
+  1    5.0 ms     1.2 s  |    1.2 s (Ibis 95, location keio003@sslab@ics@keio@ac@jp)
+  0    7.6 ms     1.2 s  |    1.2 s (Ibis 96, location mirai002@intrigger@jp)
+send port: sent 724KB in 69 remote messages; 0 local sends
+send port: total send time  448.9 ms;  6.5 ms per message
+send port: sent 499KB in 20 remote messages
+sendport cache: 88 hits, of which 20 non-essential, 1 misses, 0 evictions
+ R    69 messages   2MB   node (Ibis 93, location hongo000@logos@ic@i@u-tokyo@ac@jp)
+ L     0 messages    0B   node (Ibis 97, location mirai003@intrigger@jp)
+ R     0 messages    0B   node (Ibis 79, location chiba116@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 78, location chiba108@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 35, location imade001@kuis@kyoto-u@ac@jp)
+ R     0 messages    0B   node (Ibis 36, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 34, location imade000@kuis@kyoto-u@ac@jp)
+ R     0 messages    0B   node (Ibis 39, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 37, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 38, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 43, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 42, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 41, location hongo103@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 40, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 82, location chiba112@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 83, location chiba113@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 85, location chiba117@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 67, location okubo005@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 66, location okubo008@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 22, location suzuk000@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 23, location suzuk008@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 24, location suzuk005@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 25, location suzuk004@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 26, location suzuk001@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 29, location suzuk009@intrigger@titech@ac@jp)
+ R     0 messages    0B   node (Ibis 3, location mirai004@intrigger@jp)
+ R     0 messages    0B   node (Ibis 1, location kyushu000@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 0, location mirai000@intrigger@jp)
+ R     0 messages    0B   node (Ibis 7, location kyushu001@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 4, location kyushu005@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 70, location okubo001@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 9, location kyushu008@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 71, location okubo009@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 8, location kyushu009@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 72, location okubo013@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 75, location okubo004@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 19, location hiro005@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 56, location kyoto000@para@media@kyoto-u@ac@jp)
+ R     0 messages    0B   node (Ibis 55, location keio001@sslab@ics@keio@ac@jp)
+ R     0 messages    0B   node (Ibis 18, location hiro001@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 15, location hiro007@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 16, location hiro003@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 13, location hiro006@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 14, location mirai005@intrigger@jp)
+ R     0 messages    0B   node (Ibis 11, location kyushu004@bioinfo@kyushu-u@ac@jp)
+ R     0 messages    0B   node (Ibis 21, location hiro004@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 20, location hiro000@net@hiroshima-u@ac@jp)
+ R     0 messages    0B   node (Ibis 65, location okubo000@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 49, location hongo106@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 48, location hongo107@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 96, location mirai002@intrigger@jp)
+ R     0 messages    0B   node (Ibis 95, location keio003@sslab@ics@keio@ac@jp)
+ R     0 messages    0B   node (Ibis 94, location okubo012@yama@info@waseda@ac@jp)
+ R     0 messages    0B   node (Ibis 45, location hongo109@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 44, location hongo104@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 92, location chiba109@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 47, location hongo108@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 46, location hongo105@logos@ic@i@u-tokyo@ac@jp)
+ R     0 messages    0B   node (Ibis 90, location chiba105@intrigger@nii@ac@jp)
+ R     0 messages    0B   node (Ibis 10, location mirai001@intrigger@jp)
+ R     0 messages    0B   node (Ibis 52, location keio000@sslab@ics@keio@ac@jp)
+Worker: total idle time = 1195.9 s (7.1%)
+worker queue for (J0,T0): 18 tasks; dequeue interval: 501.4 us; maximal queue size: 3
+Worker: (J0,T0):
+    # tasks          =    18
+    total work time = 16308.5 s (96.6%)
+    queue time/task  =  4.5 ms
+    work time/task   = 906.0 s
+    aver. dwell time = 906.0 s
+run time        = 16884.0 s
+activated after = 29.4 s
+master queue for (J0,T0): 0 tasks; dequeue interval:  1.0 ms; maximal queue size: 0
+Master: # incoming tasks =     0
+Peak thread count: 51
+2008-09-10T12:38:07.349+0900 Duration of this run: 16913.5 s
+dach001@mirai003:~$ 
