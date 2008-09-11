@@ -1,0 +1,1 @@
+./bin/master.sh -homeDir `pwd` -tmpDir /data/local/dach004 -problem final_dach -dataDir /home/dach911 -workers chiba,hongo,imade,kyoto,okubo,suzuk,mirai,kobe,kyushu,hiro,presto -datasites chiba,hongo,imade,kyoto,okubo,suzuk,mirai,kobe,kyushu,hiro,presto -singleCoreExec /home/dach004/bin/dach-orig.sh -concurrent 2>&1 | tee master.out
