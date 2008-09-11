@@ -158,7 +158,7 @@ public class DFSJobs implements JobProducer {
 		p.afterInfo.addReplicaHosts(getReplicaHosts(p.getAfter()));
 	}
 		
-	public List<DACHJob> produceJobs(boolean skipErrors) throws IOException { 
+	public List<DACHJob> produceJobs(boolean skipErrors, int duplicate) throws IOException { 
 
 		//for (Problem p : problems) { 
 			

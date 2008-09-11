@@ -62,7 +62,7 @@ implements MouseInputListener, MouseWheelListener {
 
 		this.old = old;
 
-		int totalLines = 200;  // stats.size() * 4 + 4;
+		int totalLines = 800;  // stats.size() * 4 + 4;
 		long endTime = 0;
 		long jobEndTime = 0;
 
@@ -192,6 +192,12 @@ implements MouseInputListener, MouseWheelListener {
 				big.fillRect(computeT, myLine, computeTime , 1);
 				
 				myLine++;
+
+				big.setColor(Color.DARK_GRAY);
+				big.fillRect(0, myLine, imageW, 1);
+
+				myLine++;
+
 				break;
 			}
 		}
@@ -206,7 +212,7 @@ implements MouseInputListener, MouseWheelListener {
 
 		for (NodeStatistics n : c.nodes) { 
 			myLine += drawNode(big, n, myLine);
-			myLine++;
+			myLine +=4;
 		}
 
 		return (myLine - line);

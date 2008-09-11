@@ -63,7 +63,7 @@ public class LocalJobs implements JobProducer {
 		}*/
 	}
 	
-	public List<DACHJob> produceJobs(boolean skipErrors) throws IOException {
+	public List<DACHJob> produceJobs(boolean skipErrors, int duplicate) throws IOException {
 
 		for (Problem p : problems) { 
 			

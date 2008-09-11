@@ -44,6 +44,8 @@ public class DACHMaster implements ResultProcessor {
 	
 	private static boolean workersAreDFSServer = false; 
 	
+	private static int duplicate = 1;
+	
 	private int totalJobs = 0;
 	private int jobsDone = 0;
 	private int jobsFailed = 0;
@@ -240,10 +242,17 @@ public class DACHMaster implements ResultProcessor {
 			}			
 		}
 		
+		if (duplicate <= 0) {
+			logger.warn("Job duplication has illegal value: " + duplicate + " (reset to 1)");
+			duplicate = 1;
+		} else { 
+			logger.info("Job duplication set to: " + duplicate);
+		}
+		
     	List<DACHJob> jobs = null;
     	
     	try { 
-    		jobs = producer.produceJobs(false);
+    		jobs = producer.produceJobs(false, duplicate);
     	} catch (IOException e) {
     		logger.fatal("Failed to load all pairs from directory " + dataDir, e);
     		System.exit(1);
@@ -362,7 +371,9 @@ public class DACHMaster implements ResultProcessor {
     		if (args[i].equals("-dryRun")) { 
     			dryRun = true;
     		} else if (args[i].equals("-dataDir") && i != args.length-1) { 
-    			dataDir = args[++i];    	
+    			dataDir = args[++i];
+    		} else if (args[i].equals("-duplicate") && i != args.length-1) { 
+    			duplicate = Integer.parseInt(args[++i]);    			
     		} else if (args[i].equals("-dach_api") && i != args.length-1) { 
     			String tmp = args[++i];
     			api = new DachAPI(tmp, tmp);    	

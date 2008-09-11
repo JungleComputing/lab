@@ -62,6 +62,7 @@ public class NodeStatistics {
 			lastestEndTime = Math.max(lastestEndTime, time);
 			break;
 		case STEAL_REPLY_FULL:
+			earliestStartTime = Math.min(earliestStartTime, time);
 			earliestJobStartTime = Math.min(earliestJobStartTime, time);
 			lastestEndTime = Math.max(lastestEndTime, time);
 			break;

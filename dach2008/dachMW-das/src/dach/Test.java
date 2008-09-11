@@ -101,7 +101,7 @@ public class Test {
 		List<DACHJob> jobs = null;
 
 		try {
-			jobs = producer.produceJobs(false);
+			jobs = producer.produceJobs(false, 1);
 
 			System.out.println("Produced " + jobs.size() + " jobs");
 			

@@ -205,7 +205,7 @@ public class DistributedJobs implements JobProducer {
 		return result;*/
 	}
 	
-	private void createJobs(HashMap<String, FileInfo> files, Problem problem) { 
+	private void createJobs(HashMap<String, FileInfo> files, Problem problem, int duplicate) { 
 		
 		LinkedList<String> keys = new LinkedList<String>(files.keySet());
 		
@@ -223,7 +223,9 @@ public class DistributedJobs implements JobProducer {
 					Set<String> locations = getFileLocations(t0);
 					locations.addAll(getFileLocations(t1));
 					
-					jobs.add(new DACHJob(problem.ID, problem.directory, t0, t1, locations));					
+					for (int i=0;i<duplicate;i++) { 
+						jobs.add(new DACHJob(problem.ID, problem.directory, t0, t1, locations));
+					}
 				}
 			}
 		}
@@ -248,7 +250,7 @@ public class DistributedJobs implements JobProducer {
 	}*/
 		
 	
-	public List<DACHJob> produceJobs(boolean skipErrors) throws IOException {
+	public List<DACHJob> produceJobs(boolean skipErrors, int duplicate) throws IOException {
 
 		/*
 		for (Problem p : problems) { 
@@ -257,7 +259,7 @@ public class DistributedJobs implements JobProducer {
 		
 		waitUntilDone();
 		
-		createJobs(files, problem);
+		createJobs(files, problem, duplicate);
 				
 		return jobs;
 	}
