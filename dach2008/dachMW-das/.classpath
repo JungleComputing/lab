@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="external/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="external/ibis/ibis-server-2.2.jar"/>
+	<classpathentry kind="lib" path="external/ibis/ibis-util-2.2.jar"/>
+	<classpathentry kind="lib" path="external/ibis/ipl-2.2.jar"/>
+	<classpathentry kind="lib" path="external/deploy/GAT-API.jar"/>
+	<classpathentry kind="lib" path="external/ibis/smartsockets-1.21.jar"/>
+	<classpathentry kind="output" path="build-eclipse"/>
+</classpath>
