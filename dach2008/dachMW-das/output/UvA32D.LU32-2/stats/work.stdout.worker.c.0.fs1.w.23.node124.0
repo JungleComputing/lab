@@ -1,0 +1,21 @@
+23:08:25 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:25 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+23:08:56 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:56 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(58, TRIAL-01234, r004_20_t0.fits (34787520), r004_20_t1.fits (34787520), [node223.das3.science.uva.nl], [node223.das3.science.uva.nl])
+23:09:06 INFO  [Thread-10] dach.worker - Completed '/local/jason/r004_20_t0.fits' and '/local/jason/r004_20_t1.fits' in 9140 ms. Total time 9555 ms.
+23:09:06 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:09:06 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(36, TRIAL-01234, r002_30_t0.fits (35455680), r002_30_t1.fits (35455680), [node205.das3.science.uva.nl], [node205.das3.science.uva.nl])
+23:11:48 INFO  [Thread-10] dach.worker - Completed '/local/jason/r002_30_t0.fits' and '/local/jason/r002_30_t1.fits' in 161974 ms. Total time 162395 ms.
+23:11:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:11:49 INFO  [main] masterworker.worker - Got steal reply 3 (no work, 0)
+23:12:19 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:12:19 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+23:12:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:12:49 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+23:13:20 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:13:20 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:14:20 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:14:50 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:15:51 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:16:21 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:17:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

@@ -1,0 +1,18 @@
+01:28:06 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:06 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:28:37 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:37 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(270, TRIAL-01234, node206-node208-r005_11_t0.fits (36014400), node206-node208-r005_11_t1.fits (36014400), [node208.das3.science.uva.nl], [node208.das3.science.uva.nl])
+01:31:54 INFO  [Thread-10] dach.worker - Completed '/local/jason/node206-node208-r005_11_t0.fits' and '/local/jason/node206-node208-r005_11_t1.fits' in 183144 ms. Total time 196900 ms.
+01:31:55 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:31:55 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(394, TRIAL-01234, r009_01_t0.fits (35455680), r009_01_t1.fits (35455680), [node208.das3.science.uva.nl], [node208.das3.science.uva.nl])
+01:34:16 INFO  [Thread-10] dach.worker - Completed '/local/jason/r009_01_t0.fits' and '/local/jason/r009_01_t1.fits' in 140027 ms. Total time 140699 ms.
+01:34:17 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:34:17 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(484, TRIAL-01234, node211-node215-r003_00_t0.fits (35429760), node211-node215-r003_00_t1.fits (35429760), [node215.das3.science.uva.nl], [node215.das3.science.uva.nl])
+01:36:54 INFO  [Thread-10] dach.worker - Completed '/local/jason/node211-node215-r003_00_t0.fits' and '/local/jason/node211-node215-r003_00_t1.fits' in 155533 ms. Total time 157041 ms.
+01:36:55 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:36:55 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+01:37:25 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:25 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+01:37:56 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:56 WARN  [main] masterworker.worker - Failed to send steal request to master!
+01:38:56 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

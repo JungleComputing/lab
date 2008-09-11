@@ -1,0 +1,11 @@
+18:37:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+18:37:50 INFO  [main] masterworker.worker - Got steal reply 0 (work, 0): Job 113 TRIAL-01234, r008_11_t0.fits  36014400 r008_11_t1.fits  36014400 [fs1.das3.liacs.nl] [fs1.das3.liacs.nl])
+18:40:18 INFO  [Thread-10] dach.worker - Completed Job 113 /local/jason/r008_11_t0.fits  /local/jason/r008_11_t1.fits 148248 Transfer 677 408 269 Compute 147571
+18:40:19 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+18:40:19 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job 3 TRIAL-01234, r000_00_t0.fits  35997120 r000_00_t1.fits  35997120 [fs1.das3.liacs.nl] [fs1.das3.liacs.nl])
+18:43:08 INFO  [Thread-10] dach.worker - Completed Job 3 /local/jason/r000_00_t0.fits  /local/jason/r000_00_t1.fits 169114 Transfer 279 155 124 Compute 168835
+18:43:08 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+18:43:08 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job 53 TRIAL-01234, r003_21_t0.fits  35429760 r003_21_t1.fits  35429760 [fs1.das3.liacs.nl] [fs1.das3.liacs.nl])
+18:46:09 INFO  [Thread-10] dach.worker - Completed Job 53 /local/jason/r003_21_t0.fits  /local/jason/r003_21_t1.fits 181028 Transfer 247 128 119 Compute 180781
+18:46:10 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+18:46:10 INFO  [main] masterworker.worker - Got steal reply 3 (done, 0)

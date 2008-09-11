@@ -1,0 +1,1124 @@
+09:42:19 WARN  [main] dach.worker - DACHWorker parsing command line
+09:42:19 WARN  [main] dach.worker - DACHWorker starting!
+09:42:19 INFO  [main] masterworker.worker - Starting worker on node081.das3.cs.vu.nl at location fs0
+09:42:19 INFO  [main] ibis.simpleComm - Creating SimpleCommunication
+09:42:21 INFO  [main] ibis.simpleComm - Ibis created!
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 0, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Election result master8698 (Ibis 0, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Election result DFSNameService (Ibis 0, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 1, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 2, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Election result master-fs043239 (Ibis 2, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 3, location fs1@das3@liacs@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Election result master-fs137151 (Ibis 3, location fs1@das3@liacs@nl)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 4, location node102@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 5, location node113@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 6, location node103@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 7, location node115@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 8, location node034@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 9, location node101@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 10, location node040@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 11, location node016@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 12, location node026@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 13, location node013@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 14, location node106@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 15, location node108@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 16, location node112@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 17, location node006@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 18, location node039@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 19, location node114@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 20, location node021@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 21, location node107@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 22, location node010@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 23, location node116@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 24, location node111@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 25, location node109@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 26, location node032@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 27, location node017@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 28, location node117@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 29, location node120@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 30, location node110@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 31, location node022@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 32, location node020@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 33, location node003@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 34, location node104@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 35, location node030@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 36, location node105@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 37, location node119@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 38, location node118@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 39, location node124@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 40, location node121@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 41, location node123@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 42, location node126@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 43, location node122@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 44, location node050@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 45, location node125@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 46, location node131@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 47, location node129@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 48, location node127@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 49, location node130@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 50, location node128@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 51, location node056@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 52, location node132@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 53, location node069@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 54, location node061@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 55, location node067@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 56, location node058@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 57, location node054@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 58, location node066@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 59, location node075@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 60, location node057@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 61, location node047@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 62, location node064@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 63, location node068@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 64, location node083@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 65, location node045@beowulf@cluster)
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 66, location node081@beowulf@cluster)
+09:42:22 WARN  [main] masterworker.worker - Starting 1 workers!
+09:42:22 INFO  [main] masterworker.worker - Worker register at master...
+09:42:22 WARN  [main] ibis.simpleComm - Creating connection to (Ibis 2, location fs0@das3@cs@vu@nl)
+09:42:22 WARN  [main] ibis.simpleComm - Connecting to (Ibis 2, location fs0@das3@cs@vu@nl)
+09:42:22 INFO  [main] masterworker.worker - Worker registered at master...
+09:42:22 INFO  [main] masterworker.worker - Sleeping for 1627 ms.
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 67, location node079@beowulf@cluster)
+09:42:23 INFO  [main] masterworker.replyhandler - Register single req 0
+09:42:23 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+09:42:24 INFO  [main] masterworker.worker - Got steal reply 0 (work, 0): Job(24, TRIAL-01234, r005_30_t0.fits (36014400), r005_30_t1.fits (36014400), [fs0], [fs0.das3.cs.vu.nl])
+09:42:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:24 INFO  [Thread-10] masterworker.worker - WorkerThread0: Processing job
+09:42:24 INFO  [Thread-10] dach.worker - Comparing 'r005_30_t0.fits' and 'r005_30_t1.fits'
+
+09:42:24 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r005_30_t0.fits to local file /local/jason/r005_30_t0.fits
+09:42:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:28 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r005_30_t0.fits took 4468 ms.
+09:42:28 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r005_30_t1.fits to local file /local/jason/r005_30_t1.fits
+09:42:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:30 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r005_30_t1.fits took 2345 ms.
+09:42:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:32 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:32 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:47 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:47 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:48 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:48 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:49 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:49 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:50 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:50 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:51 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:51 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:52 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:52 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:52 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:42:52 up 12 days, 22:56,  0 users,  load average: 1.17, 0.28, 0.09
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1507740k used,  2535392k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   902444k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+21932 jason     25   0  158m 102m  728 R 99.6  2.6   0:13.57 imsub3vp3          
+21933 jason     25   0  159m 103m  728 R 99.6  2.6   0:13.48 imsub3vp3          
+21934 jason     25   0  159m 103m  728 R 99.6  2.6   0:13.54 imsub3vp3          
+21935 jason     25   0  162m 106m  728 R 99.6  2.7   0:13.54 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:42:53 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:42:53 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:53 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:54 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:54 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:55 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:55 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:56 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:56 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:57 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:57 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:58 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:58 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:42:59 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:42:59 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:00 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:00 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:01 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:01 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:02 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:02 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:03 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:03 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:04 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:04 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:05 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:05 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:06 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:06 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:07 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:07 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:08 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:08 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:09 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:09 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:10 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:10 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:11 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:11 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:12 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:12 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:13 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:13 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:14 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:14 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:15 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:15 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:16 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:16 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:17 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:17 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:18 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:18 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:19 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:19 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:20 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:20 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:21 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:21 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:22 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:22 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:23 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:43:23 up 12 days, 22:57,  0 users,  load average: 2.29, 0.64, 0.21
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1548712k used,  2494420k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   918184k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+21934 jason     25   0  159m 111m 3664 R 101.0  2.8   0:44.06 imsub3vp3         
+21932 jason     25   0  156m 109m 3648 R 99.0  2.8   0:44.09 imsub3vp3          
+21933 jason     25   0  159m 117m 6584 R 99.0  3.0   0:43.99 imsub3vp3          
+21935 jason     25   0  161m 120m 6608 R 99.0  3.0   0:44.06 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:43:23 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:43:23 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:23 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:24 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:32 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:32 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:47 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:47 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:48 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:48 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:49 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:49 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:50 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:50 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:51 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:51 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:52 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:52 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:53 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:43:53 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:53 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:53 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:43:53 up 12 days, 22:57,  0 users,  load average: 2.81, 0.92, 0.32
+Tasks: 101 total,   3 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1340600k used,  2702532k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   933896k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+21932 jason     25   0  156m 116m 6576 R 99.4  3.0   1:14.58 imsub3vp3          
+21933 jason     25   0  155m 115m 6584 R 99.4  2.9   1:14.51 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+
+09:43:54 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:54 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:55 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:55 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:56 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:56 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:57 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:57 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:58 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:58 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:43:59 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:43:59 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:00 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:00 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:01 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:01 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:02 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:02 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:03 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:03 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:04 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:04 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:05 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:05 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:06 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:06 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:07 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:07 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:08 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:08 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:09 WARN  [Thread-10] dach.worker - 
+09:44:09 INFO  [Thread-10] dach.worker - Completed '/local/jason/r005_30_t0.fits' and '/local/jason/r005_30_t1.fits' in 98152ms. Total time 105014 ms.
+09:44:09 INFO  [main] masterworker.replyhandler - Register single req 1
+09:44:09 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+09:44:09 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(87, TRIAL-01234, r000_40_t0.fits (35997120), r000_40_t1.fits (35997120), [fs0], [fs0.das3.cs.vu.nl])
+09:44:09 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:09 INFO  [Thread-10] masterworker.worker - WorkerThread0: Processing job
+09:44:09 INFO  [Thread-10] dach.worker - Comparing 'r000_40_t0.fits' and 'r000_40_t1.fits'
+
+09:44:09 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r000_40_t0.fits to local file /local/jason/r000_40_t0.fits
+09:44:10 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r000_40_t0.fits took 760 ms.
+09:44:10 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r000_40_t1.fits to local file /local/jason/r000_40_t1.fits
+09:44:10 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:10 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:11 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r000_40_t1.fits took 737 ms.
+09:44:11 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:11 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:12 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:12 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:13 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:13 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:14 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:14 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:15 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:15 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:16 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:16 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:17 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:17 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:18 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:18 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:19 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:19 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:20 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:20 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:21 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:21 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:22 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:22 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:23 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:44:23 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:23 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:24 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:44:24 up 12 days, 22:58,  0 users,  load average: 2.39, 0.99, 0.36
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1574700k used,  2468432k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   975560k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22003 jason     25   0  160m 104m  728 R 101.1  2.6   0:04.96 imsub3vp3         
+22004 jason     25   0  159m 103m  728 R 101.1  2.6   0:04.88 imsub3vp3         
+22005 jason     25   0  160m 104m  728 R 99.1  2.6   0:04.90 imsub3vp3          
+22006 jason     25   0  155m  99m  724 R 99.1  2.5   0:04.92 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:44:24 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:32 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:32 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:47 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:47 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:48 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:48 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:49 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:49 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:50 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:50 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:51 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:51 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:52 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:52 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:53 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:44:53 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:53 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:54 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:44:54 up 12 days, 22:59,  0 users,  load average: 3.02, 1.28, 0.48
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1610024k used,  2433108k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   983424k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22003 jason     25   0  158m 109m 3648 R 99.5  2.8   0:35.47 imsub3vp3          
+22004 jason     25   0  157m 109m 3656 R 99.5  2.8   0:35.40 imsub3vp3          
+22005 jason     25   0  164m 115m 3656 R 99.5  2.9   0:35.41 imsub3vp3          
+22006 jason     25   0  162m 113m 3656 R 99.5  2.9   0:35.43 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:44:54 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:54 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:55 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:55 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:56 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:56 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:57 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:57 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:58 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:58 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:44:59 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:44:59 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:00 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:00 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:01 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:01 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:02 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:02 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:03 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:03 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:04 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:04 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:05 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:05 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:06 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:06 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:07 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:07 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:08 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:08 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:09 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:09 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:10 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:10 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:11 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:11 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:12 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:12 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:13 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:13 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:14 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:14 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:15 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:15 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:16 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:16 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:17 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:17 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:18 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:18 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:19 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:19 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:20 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:20 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:21 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:21 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:22 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:22 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:23 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:45:23 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:23 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:24 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:25 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:45:25 up 12 days, 22:59,  0 users,  load average: 3.41, 1.54, 0.59
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1644544k used,  2398588k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   999136k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22003 jason     25   0  157m 109m 3648 R 99.2  2.8   1:05.97 imsub3vp3          
+22004 jason     25   0  162m 122m 6576 R 99.2  3.1   1:05.92 imsub3vp3          
+22005 jason     25   0  158m 119m 6584 R 99.2  3.0   1:05.94 imsub3vp3          
+22006 jason     25   0  164m 124m 6600 R 99.2  3.1   1:05.94 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:45:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:47 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:47 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:47 WARN  [Thread-10] dach.worker - 
+09:45:47 INFO  [Thread-10] dach.worker - Completed '/local/jason/r000_40_t0.fits' and '/local/jason/r000_40_t1.fits' in 96455ms. Total time 97955 ms.
+09:45:48 INFO  [main] masterworker.replyhandler - Register single req 2
+09:45:48 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+09:45:48 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(103, TRIAL-01234, r009_30_t0.fits (35455680), r009_30_t1.fits (35455680), [fs0], [fs0.das3.cs.vu.nl])
+09:45:48 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:48 INFO  [Thread-10] masterworker.worker - WorkerThread0: Processing job
+09:45:48 INFO  [Thread-10] dach.worker - Comparing 'r009_30_t0.fits' and 'r009_30_t1.fits'
+
+09:45:48 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r009_30_t0.fits to local file /local/jason/r009_30_t0.fits
+09:45:48 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r009_30_t0.fits took 308 ms.
+09:45:48 WARN  [Thread-10] ibis.dfs.client - Copying local file: /var/scratch/jason/data-challenge/sample0_0123/r009_30_t1.fits to local file /local/jason/r009_30_t1.fits
+09:45:48 INFO  [Thread-10] ibis.dfs.client - Local copying /var/scratch/jason/data-challenge/sample0_0123/r009_30_t1.fits took 309 ms.
+09:45:49 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:49 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:50 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:50 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:51 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:51 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:52 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:52 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:53 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:53 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:54 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:45:54 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:54 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:55 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:55 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:55 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:45:55 up 12 days, 23:00,  0 users,  load average: 2.80, 1.58, 0.63
+Tasks: 100 total,   2 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1249544k used,  2793588k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,  1043456k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22126 jason     25   0 28500  24m  580 R 99.5  0.6   0:03.16 match2             
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+
+09:45:56 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:56 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:57 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:57 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:58 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:58 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:45:59 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:45:59 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:00 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:00 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:01 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:01 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:02 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:02 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:03 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:03 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:04 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:04 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:05 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:05 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:06 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:06 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:07 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:07 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:08 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:08 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:09 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:09 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:10 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:10 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:11 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:11 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:12 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:12 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:13 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:13 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:14 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:14 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:15 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:15 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:16 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:16 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:17 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:17 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:18 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:18 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:19 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:19 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:20 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:20 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:21 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:21 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:22 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:22 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:23 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:23 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:24 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:46:24 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:26 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:46:26 up 12 days, 23:00,  0 users,  load average: 3.11, 1.76, 0.72
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1675844k used,  2367288k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,  1051408k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22144 jason     25   0  164m 116m 3608 R 101.1  3.0   0:29.44 imsub3vp3         
+22145 jason     25   0  158m 110m 3616 R 101.1  2.8   0:29.39 imsub3vp3         
+22147 jason     25   0  159m 111m 3616 R 101.1  2.8   0:29.36 imsub3vp3         
+22146 jason     25   0  155m 107m 3616 R 99.1  2.7   0:29.36 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:46:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:32 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:32 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:47 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:47 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:48 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:48 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:49 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:49 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:50 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:50 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:51 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:51 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:52 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:52 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:53 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:53 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:54 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:46:54 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:54 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:55 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:55 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:56 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:56 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:56 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:46:56 up 12 days, 23:01,  0 users,  load average: 3.51, 2.01, 0.84
+Tasks: 103 total,   5 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1707716k used,  2335416k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,  1063016k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22144 jason     25   0  166m 119m 3608 R 99.6  3.0   0:59.99 imsub3vp3          
+22145 jason     25   0  161m 122m 6496 R 99.6  3.1   0:59.94 imsub3vp3          
+22146 jason     25   0  158m 111m 3616 R 99.6  2.8   0:59.92 imsub3vp3          
+22147 jason     25   0  156m 117m 6512 R 99.6  3.0   0:59.93 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+
+09:46:57 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:57 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:58 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:58 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:46:59 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:46:59 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:00 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:00 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:01 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:01 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:02 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:02 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:03 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:03 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:04 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:04 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:05 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:05 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:06 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:06 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:07 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:07 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:08 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:08 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:09 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:09 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:10 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:10 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:11 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:11 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:12 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:12 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:13 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:13 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:14 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:14 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:15 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:15 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:16 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:16 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:17 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:17 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:18 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:18 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:19 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:19 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:20 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:20 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:21 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:21 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:22 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:22 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:23 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:23 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:24 INFO  [main] masterworker.worker - Sending status: 1 / 1
+09:47:24 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:24 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:25 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:25 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:26 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:26 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:27 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:47:27 up 12 days, 23:01,  0 users,  load average: 3.28, 2.10, 0.91
+Tasks: 101 total,   3 running,  98 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1494408k used,  2548724k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,  1074608k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+22144 jason     25   0  164m 125m 6488 R 99.2  3.2   1:30.52 imsub3vp3          
+22145 jason     25   0  159m 119m 6504 R 99.2  3.0   1:30.45 imsub3vp3          
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+
+09:47:27 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:27 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:28 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:28 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:29 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:29 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:30 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:30 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:31 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:31 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:32 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:32 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:33 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:33 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:34 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:34 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:35 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:35 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:36 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:36 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:36 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 56, location node058@beowulf@cluster)
+09:47:37 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:37 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:38 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:38 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:39 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:39 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:40 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:40 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:41 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:41 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:42 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:42 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:43 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:43 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:44 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:44 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:45 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:45 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:46 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 37, location node119@beowulf@cluster)
+09:47:46 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 36, location node105@beowulf@cluster)
+09:47:46 INFO  [main] masterworker.worker - NOT sending steal request (false / 0 / 0)
+09:47:46 INFO  [main] masterworker.worker - Sleeping for 1000 ms.
+09:47:46 WARN  [Thread-10] dach.worker - 
+09:47:46 INFO  [Thread-10] dach.worker - Completed '/local/jason/r009_30_t0.fits' and '/local/jason/r009_30_t1.fits' in 117910ms. Total time 118528 ms.
+09:47:47 INFO  [main] masterworker.replyhandler - Register single req 3
+09:47:47 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+09:47:57 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:47:57 up 12 days, 23:02,  0 users,  load average: 2.23, 1.96, 0.90
+Tasks:  97 total,   1 running,  96 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1134992k used,  2908140k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   955884k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+   13 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/3           
+
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 46, location node131@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 2, location fs0@das3@cs@vu@nl)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Election result master-fs043239 null
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 3, location fs1@das3@liacs@nl)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Election result master-fs137151 null
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 20, location node021@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 58, location node066@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 13, location node013@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 34, location node104@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 9, location node101@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 43, location node122@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 52, location node132@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 50, location node128@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 29, location node120@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 10, location node040@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 38, location node118@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 12, location node026@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 24, location node111@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 60, location node057@beowulf@cluster)
+09:48:28 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:48:28 up 12 days, 23:02,  0 users,  load average: 1.35, 1.77, 0.87
+Tasks:  97 total,   1 running,  96 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1134496k used,  2908636k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   955884k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+   13 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/3           
+
+09:48:58 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:48:58 up 12 days, 23:03,  0 users,  load average: 0.82, 1.60, 0.84
+Tasks:  97 total,   1 running,  96 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1134228k used,  2908904k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   955884k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+   13 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/3           
+
+09:49:29 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:49:29 up 12 days, 23:03,  0 users,  load average: 0.49, 1.45, 0.81
+Tasks:  97 total,   1 running,  96 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1134360k used,  2908772k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   955884k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+   13 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/3           
+
+09:50:00 INFO  [Thread-11] dach.worker - LoadMonitor (20):
+top - 09:50:00 up 12 days, 23:04,  0 users,  load average: 0.30, 1.31, 0.79
+Tasks:  97 total,   1 running,  96 sleeping,   0 stopped,   0 zombie
+Cpu(s):  0.2% us,  0.9% sy,  3.9% ni, 94.6% id,  0.3% wa,  0.0% hi,  0.0% si
+Mem:   4043132k total,  1134344k used,  2908788k free,       80k buffers
+Swap:  3906240k total,    48852k used,  3857388k free,   955888k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND            
+    1 root      15   0  4840  520  436 S  0.0  0.0   0:02.87 init               
+    2 root      RT   0     0    0    0 S  0.0  0.0   0:00.18 migration/0        
+    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0        
+    4 root      RT   0     0    0    0 S  0.0  0.0   0:00.50 migration/1        
+    5 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/1        
+    6 root      RT   0     0    0    0 S  0.0  0.0   0:00.20 migration/2        
+    7 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/2        
+    8 root      RT   0     0    0    0 S  0.0  0.0   0:00.30 migration/3        
+    9 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/3        
+   10 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/0           
+   11 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/1           
+   12 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/2           
+   13 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 events/3           
+

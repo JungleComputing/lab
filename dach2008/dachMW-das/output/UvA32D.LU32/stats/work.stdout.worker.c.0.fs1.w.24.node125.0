@@ -1,0 +1,24 @@
+21:55:26 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:55:26 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+21:55:57 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:55:57 INFO  [main] masterworker.worker - Got steal reply 1 (no work, 0)
+21:56:28 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:56:28 INFO  [main] masterworker.worker - Got steal reply 2 (no work, 0)
+21:56:58 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:56:58 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(60, TRIAL-01234, r009_20_t0.fits (35455680), r009_20_t1.fits (35455680), [node202.das3.science.uva.nl], [node202.das3.science.uva.nl])
+21:59:44 INFO  [Thread-10] dach.worker - Completed '/local/jason/r009_20_t0.fits' and '/local/jason/r009_20_t1.fits' in 165812 ms. Total time 166143 ms.
+21:59:45 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:59:45 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+22:00:15 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:00:15 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+22:00:46 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:00:46 INFO  [main] masterworker.worker - Got steal reply 6 (no work, 0)
+22:01:16 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:01:17 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:02:18 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:02:48 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:03:48 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:04:19 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:05:19 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:05:49 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:06:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

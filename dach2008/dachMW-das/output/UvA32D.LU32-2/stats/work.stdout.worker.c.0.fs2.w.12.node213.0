@@ -1,0 +1,21 @@
+23:08:11 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:12 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+23:08:25 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:25 INFO  [main] masterworker.worker - Got steal reply 1 (no work, 0)
+23:08:56 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:56 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(54, TRIAL-01234, r002_31_t0.fits (35455680), r002_31_t1.fits (35455680), [node204.das3.science.uva.nl], [node204.das3.science.uva.nl])
+23:10:44 INFO  [Thread-10] dach.worker - Completed '/local/jason/r002_31_t0.fits' and '/local/jason/r002_31_t1.fits' in 107897 ms. Total time 108172 ms.
+23:10:44 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:10:44 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(26, TRIAL-01234, r010_01_t0.fits (35447040), r010_01_t1.fits (35447040), [node228.das3.science.uva.nl], [node228.das3.science.uva.nl])
+23:12:22 INFO  [Thread-10] dach.worker - Completed '/local/jason/r010_01_t0.fits' and '/local/jason/r010_01_t1.fits' in 97420 ms. Total time 97709 ms.
+23:12:23 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:12:23 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+23:12:48 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:12:48 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+23:13:18 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:13:18 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:14:18 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:14:48 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:15:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:16:19 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:17:20 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

@@ -1,0 +1,33 @@
+23:38:46 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:38:47 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+23:39:18 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:39:18 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(595, TRIAL-01234, node220-node223-r007_11_t0.fits (34663680), node220-node223-r007_11_t1.fits (34663680), [node223.das3.science.uva.nl], [node223.das3.science.uva.nl])
+23:39:28 INFO  [Thread-10] dach.worker - Completed '/local/jason/node220-node223-r007_11_t0.fits' and '/local/jason/node220-node223-r007_11_t1.fits' in 9638 ms. Total time 9943 ms.
+23:39:28 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:39:28 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(535, TRIAL-01234, node229-node230-r002_41_t0.fits (35455680), node229-node230-r002_41_t1.fits (35455680), [node230.das3.science.uva.nl], [node230.das3.science.uva.nl])
+23:41:18 INFO  [Thread-10] dach.worker - Completed '/local/jason/node229-node230-r002_41_t0.fits' and '/local/jason/node229-node230-r002_41_t1.fits' in 110281 ms. Total time 110571 ms.
+23:41:19 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:41:19 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(374, TRIAL-01234, node206-node209-r001_31_t0.fits (35095680), node206-node209-r001_31_t1.fits (35095680), [node209.das3.science.uva.nl], [node209.das3.science.uva.nl])
+23:41:30 INFO  [Thread-10] dach.worker - Completed '/local/jason/node206-node209-r001_31_t0.fits' and '/local/jason/node206-node209-r001_31_t1.fits' in 10143 ms. Total time 10444 ms.
+23:41:30 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:41:30 INFO  [main] masterworker.worker - Got steal reply 4 (work, 0): Job(344, TRIAL-01234, node238-node202-r011_40_t0.fits (38520000), node238-node202-r011_40_t1.fits (38520000), [node202.das3.science.uva.nl], [node202.das3.science.uva.nl])
+23:43:35 INFO  [Thread-10] dach.worker - Completed '/local/jason/node238-node202-r011_40_t0.fits' and '/local/jason/node238-node202-r011_40_t1.fits' in 124697 ms. Total time 125022 ms.
+23:43:36 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:43:36 INFO  [main] masterworker.worker - Got steal reply 5 (work, 0): Job(135, TRIAL-01234, node225-node229-r005_41_t0.fits (36014400), node225-node229-r005_41_t1.fits (36014400), [node229.das3.science.uva.nl], [node229.das3.science.uva.nl])
+23:45:42 INFO  [Thread-10] dach.worker - Completed '/local/jason/node225-node229-r005_41_t0.fits' and '/local/jason/node225-node229-r005_41_t1.fits' in 126117 ms. Total time 126361 ms.
+23:45:43 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:45:43 INFO  [main] masterworker.worker - Got steal reply 6 (work, 0): Job(40, TRIAL-01234, r005_31_t0.fits (36014400), r005_31_t1.fits (36014400), [node219.das3.science.uva.nl], [node219.das3.science.uva.nl])
+23:47:38 INFO  [Thread-10] dach.worker - Completed '/local/jason/r005_31_t0.fits' and '/local/jason/r005_31_t1.fits' in 114860 ms. Total time 115139 ms.
+23:47:38 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:47:38 INFO  [main] masterworker.worker - Got steal reply 7 (no work, 0)
+23:48:08 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:48:08 INFO  [main] masterworker.worker - Got steal reply 8 (no work, 0)
+23:48:39 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:48:39 INFO  [main] masterworker.worker - Got steal reply 9 (no work, 0)
+23:49:09 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:49:09 INFO  [main] masterworker.worker - Got steal reply 10 (no work, 0)
+23:49:40 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:49:40 INFO  [main] masterworker.worker - Got steal reply 11 (no work, 0)
+23:50:11 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:50:11 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:51:12 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

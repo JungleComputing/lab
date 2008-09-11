@@ -1,0 +1,30 @@
+01:12:54 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:12:54 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:13:24 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:13:24 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(384, TRIAL-01234, node219-node223-r005_31_t0.fits (36014400), node219-node223-r005_31_t1.fits (36014400), [node223.das3.science.uva.nl], [node223.das3.science.uva.nl])
+01:15:10 INFO  [Thread-10] dach.worker - Completed '/local/jason/node219-node223-r005_31_t0.fits' and '/local/jason/node219-node223-r005_31_t1.fits' in 105460 ms. Total time 105881 ms.
+01:15:11 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:15:11 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(430, TRIAL-01234, node201-node203-r000_31_t0.fits (35997120), node201-node203-r000_31_t1.fits (35997120), [node203.das3.science.uva.nl], [node203.das3.science.uva.nl])
+01:17:04 INFO  [Thread-10] dach.worker - Completed '/local/jason/node201-node203-r000_31_t0.fits' and '/local/jason/node201-node203-r000_31_t1.fits' in 112569 ms. Total time 112856 ms.
+01:17:04 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:17:04 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(128, TRIAL-01234, node207-node208-r009_31_t0.fits (35455680), node207-node208-r009_31_t1.fits (35455680), [node208.das3.science.uva.nl], [node208.das3.science.uva.nl])
+01:18:54 INFO  [Thread-10] dach.worker - Completed '/local/jason/node207-node208-r009_31_t0.fits' and '/local/jason/node207-node208-r009_31_t1.fits' in 109366 ms. Total time 109683 ms.
+01:18:55 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:18:55 INFO  [main] masterworker.worker - Got steal reply 4 (work, 0): Job(434, TRIAL-01234, node217-node221-r006_11_t0.fits (35205120), node217-node221-r006_11_t1.fits (35205120), [node221.das3.science.uva.nl], [node221.das3.science.uva.nl])
+01:19:07 INFO  [Thread-10] dach.worker - Completed '/local/jason/node217-node221-r006_11_t0.fits' and '/local/jason/node217-node221-r006_11_t1.fits' in 12116 ms. Total time 12452 ms.
+01:19:08 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:19:08 INFO  [main] masterworker.worker - Got steal reply 5 (work, 0): Job(5, TRIAL-01234, node217-node218-r006_11_t0.fits (35205120), node217-node218-r006_11_t1.fits (35205120), [node218.das3.science.uva.nl], [node218.das3.science.uva.nl])
+01:19:20 INFO  [Thread-10] dach.worker - Completed '/local/jason/node217-node218-r006_11_t0.fits' and '/local/jason/node217-node218-r006_11_t1.fits' in 12072 ms. Total time 12428 ms.
+01:19:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:19:21 INFO  [main] masterworker.worker - Got steal reply 6 (work, 0): Job(59, TRIAL-01234, node229-node240-r001_41_t0.fits (35095680), node229-node240-r001_41_t1.fits (35095680), [node240.das3.science.uva.nl], [node240.das3.science.uva.nl])
+01:19:39 INFO  [Thread-10] dach.worker - Completed '/local/jason/node229-node240-r001_41_t0.fits' and '/local/jason/node229-node240-r001_41_t1.fits' in 9520 ms. Total time 18099 ms.
+01:19:40 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:19:40 INFO  [main] masterworker.worker - Got steal reply 7 (work, 0): Job(500, TRIAL-01234, node220-node221-r007_11_t0.fits (34663680), node220-node221-r007_11_t1.fits (34663680), [node221.das3.science.uva.nl], [node221.das3.science.uva.nl])
+01:20:55 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:20:55 INFO  [main] masterworker.worker - Got steal reply 8 (no work, 0)
+01:21:25 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:21:25 INFO  [main] masterworker.worker - Got steal reply 9 (no work, 0)
+01:21:55 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:21:56 WARN  [main] masterworker.worker - Failed to send steal request to master!
+01:22:57 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:23:27 WARN  [main] masterworker.worker - Failed to send steal request to master!

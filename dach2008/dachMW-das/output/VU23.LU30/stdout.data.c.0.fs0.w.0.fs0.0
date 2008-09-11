@@ -1,0 +1,1029 @@
+09:41:41 ERROR [main] ibis.dfs.server - Unknown or incomplete option: -location
+09:41:41 ERROR [main] ibis.dfs.server - Unknown or incomplete option: fs0
+09:41:41 INFO  [main] ibis.simpleComm - Creating SimpleCommunication
+09:41:41 INFO  [main] ibis.simpleComm - Ibis created!
+09:41:41 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 0, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Election result master8698 (Ibis 0, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Election result DFSNameService (Ibis 0, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 1, location fs0@das3@cs@vu@nl)
+09:41:41 WARN  [main] ibis.simpleComm - Creating connection to (Ibis 0, location fs0@das3@cs@vu@nl)
+09:41:41 WARN  [main] ibis.simpleComm - Connecting to (Ibis 0, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 2, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Election result master-fs043239 (Ibis 2, location fs0@das3@cs@vu@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 3, location fs1@das3@liacs@nl)
+09:41:41 INFO  [upcaller] ibis.simpleComm - Election result master-fs137151 (Ibis 3, location fs1@das3@liacs@nl)
+09:41:42 INFO  [Connection Handler] ibis.dfs.server - Server got list request: 2 [sample0_0123]
+09:41:42 INFO  [main] ibis.dfs.server - Server alive!
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 4, location node102@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 5, location node113@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 6, location node103@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 7, location node115@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 8, location node034@beowulf@cluster)
+09:41:43 INFO  [main] ibis.dfs.server - Server alive!
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 9, location node101@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 10, location node040@beowulf@cluster)
+09:41:43 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 11, location node016@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 12, location node026@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 13, location node013@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 14, location node106@beowulf@cluster)
+09:41:44 INFO  [main] ibis.dfs.server - Server alive!
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 15, location node108@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 16, location node112@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 17, location node006@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 18, location node039@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 19, location node114@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 20, location node021@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 21, location node107@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 22, location node010@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 23, location node116@beowulf@cluster)
+09:41:44 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_21_t0.fits false
+09:41:44 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 4, location node102@beowulf@cluster)
+09:41:44 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 4, location node102@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 24, location node111@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 25, location node109@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 26, location node032@beowulf@cluster)
+09:41:44 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 27, location node017@beowulf@cluster)
+09:41:44 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_10_t0.fits false
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 5, location node113@beowulf@cluster)
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 5, location node113@beowulf@cluster)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_21_t0.fits took 338 ms for 34663680 bytes (820 MBit/s)
+09:41:45 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_21_t1.fits false
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 28, location node117@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 29, location node120@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 30, location node110@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 31, location node022@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 32, location node020@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 33, location node003@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 34, location node104@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 35, location node030@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 36, location node105@beowulf@cluster)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_01_t0.fits false
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 6, location node103@beowulf@cluster)
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 6, location node103@beowulf@cluster)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_20_t0.fits false
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 7, location node115@beowulf@cluster)
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 7, location node115@beowulf@cluster)
+09:41:45 INFO  [main] ibis.dfs.server - Server alive!
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 37, location node119@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 38, location node118@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 39, location node124@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 40, location node121@beowulf@cluster)
+09:41:45 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_21_t1.fits took 475 ms for 34663680 bytes (583 MBit/s)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_10_t0.fits took 831 ms for 34663680 bytes (333 MBit/s)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_11_t0.fits false
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 41, location node123@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 42, location node126@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 43, location node122@beowulf@cluster)
+09:41:45 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 44, location node050@beowulf@cluster)
+09:41:45 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_10_t1.fits false
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 9, location node101@beowulf@cluster)
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 9, location node101@beowulf@cluster)
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_01_t0.fits took 576 ms for 34663680 bytes (481 MBit/s)
+09:41:45 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_01_t1.fits false
+09:41:45 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_30_t0.fits false
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 16, location node112@beowulf@cluster)
+09:41:45 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 16, location node112@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_41_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 14, location node106@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 14, location node106@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_31_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 21, location node107@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 21, location node107@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 45, location node125@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 46, location node131@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 47, location node129@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 48, location node127@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 49, location node130@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 50, location node128@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 51, location node056@beowulf@cluster)
+09:41:46 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 52, location node132@beowulf@cluster)
+09:41:46 INFO  [main] ibis.dfs.server - Server alive!
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_00_t0.fits false
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_40_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 15, location node108@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 15, location node108@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 23, location node116@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 23, location node116@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_20_t0.fits took 1356 ms for 34663680 bytes (204 MBit/s)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_11_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 30, location node110@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 30, location node110@beowulf@cluster)
+09:41:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_20_t1.fits false
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_01_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 19, location node114@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 19, location node114@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_11_t0.fits took 996 ms for 34663680 bytes (278 MBit/s)
+09:41:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_11_t1.fits false
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_20_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 40, location node121@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 40, location node121@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_40_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 25, location node109@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 25, location node109@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_10_t0.fits false
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 34, location node104@beowulf@cluster)
+09:41:46 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 34, location node104@beowulf@cluster)
+09:41:46 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_30_t0.fits took 1005 ms for 34663680 bytes (275 MBit/s)
+09:41:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_30_t1.fits false
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_21_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 28, location node117@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 28, location node117@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_31_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 29, location node120@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 29, location node120@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_30_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 36, location node105@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 36, location node105@beowulf@cluster)
+09:41:47 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_10_t1.fits took 1574 ms for 34663680 bytes (176 MBit/s)
+09:41:47 INFO  [main] ibis.dfs.server - Server alive!
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_00_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 37, location node119@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 37, location node119@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_00_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 39, location node124@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 39, location node124@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 52, location node132@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_41_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 52, location node132@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 52, location node132@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_21_t0.fits false
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_41_t0.fits false
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_01_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 38, location node118@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 38, location node118@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 43, location node122@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 43, location node122@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 41, location node123@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 41, location node123@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_40_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 42, location node126@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 42, location node126@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_30_t0.fits false
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 48, location node127@beowulf@cluster)
+09:41:47 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 48, location node127@beowulf@cluster)
+09:41:47 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_10_t0.fits took 993 ms for 34787520 bytes (280 MBit/s)
+09:41:47 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_10_t1.fits false
+09:41:48 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_01_t0.fits took 1323 ms for 34787520 bytes (210 MBit/s)
+09:41:48 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_01_t1.fits false
+09:41:48 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_31_t0.fits false
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 47, location node129@beowulf@cluster)
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 47, location node129@beowulf@cluster)
+09:41:48 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_20_t0.fits false
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 49, location node130@beowulf@cluster)
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 49, location node130@beowulf@cluster)
+09:41:48 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_10_t0.fits false
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 46, location node131@beowulf@cluster)
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 46, location node131@beowulf@cluster)
+09:41:48 INFO  [Connection Handler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_11_t0.fits false
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Creating connection to (Ibis 45, location node125@beowulf@cluster)
+09:41:48 WARN  [Connection Handler] ibis.simpleComm - Connecting to (Ibis 45, location node125@beowulf@cluster)
+09:41:48 INFO  [main] ibis.dfs.server - Server alive!
+09:41:48 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_30_t1.fits took 1984 ms for 34663680 bytes (139 MBit/s)
+09:41:49 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_11_t0.fits took 2482 ms for 34787520 bytes (112 MBit/s)
+09:41:49 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_11_t1.fits false
+09:41:49 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_00_t0.fits took 2694 ms for 34663680 bytes (102 MBit/s)
+09:41:49 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_00_t1.fits false
+09:41:49 INFO  [main] ibis.dfs.server - Server alive!
+09:41:49 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_31_t0.fits took 3393 ms for 34663680 bytes (81 MBit/s)
+09:41:49 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_31_t1.fits false
+09:41:50 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_40_t0.fits took 3150 ms for 34787520 bytes (88 MBit/s)
+09:41:50 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_40_t1.fits false
+09:41:50 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_21_t0.fits took 2551 ms for 35095680 bytes (110 MBit/s)
+09:41:50 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_21_t1.fits false
+09:41:50 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_00_t0.fits took 2812 ms for 34787520 bytes (98 MBit/s)
+09:41:50 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_00_t1.fits false
+09:41:50 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_10_t0.fits took 2205 ms for 35095680 bytes (127 MBit/s)
+09:41:50 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_10_t1.fits false
+09:41:50 INFO  [main] ibis.dfs.server - Server alive!
+09:41:51 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_21_t0.fits took 4114 ms for 34787520 bytes (67 MBit/s)
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_21_t1.fits false
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_20_t1.fits took 4757 ms for 34663680 bytes (58 MBit/s)
+09:41:51 INFO  [main] ibis.dfs.server - Server alive!
+09:41:51 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_30_t0.fits took 4364 ms for 34787520 bytes (63 MBit/s)
+09:41:51 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_40_t0.fits took 4942 ms for 34663680 bytes (56 MBit/s)
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_40_t1.fits false
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_30_t1.fits false
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_11_t1.fits took 4992 ms for 34663680 bytes (55 MBit/s)
+09:41:51 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_00_t0.fits took 4324 ms for 35095680 bytes (64 MBit/s)
+09:41:51 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_00_t1.fits false
+09:41:52 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_21_t1.fits took 2064 ms for 35095680 bytes (136 MBit/s)
+09:41:52 INFO  [main] ibis.dfs.server - Server alive!
+09:41:52 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_00_t1.fits took 3343 ms for 34663680 bytes (82 MBit/s)
+09:41:52 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_11_t0.fits took 4638 ms for 35095680 bytes (60 MBit/s)
+09:41:52 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_11_t1.fits false
+09:41:53 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_40_t0.fits took 5329 ms for 35095680 bytes (52 MBit/s)
+09:41:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_40_t1.fits false
+09:41:53 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_41_t0.fits took 7233 ms for 34663680 bytes (38 MBit/s)
+09:41:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r007_41_t1.fits false
+09:41:53 INFO  [main] ibis.dfs.server - Server alive!
+09:41:53 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_31_t0.fits took 6672 ms for 34787520 bytes (41 MBit/s)
+09:41:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_31_t1.fits false
+09:41:53 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_20_t0.fits took 6948 ms for 34787520 bytes (40 MBit/s)
+09:41:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_20_t1.fits false
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_31_t1.fits took 4749 ms for 34663680 bytes (58 MBit/s)
+09:41:54 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_01_t0.fits took 6616 ms for 35095680 bytes (42 MBit/s)
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_01_t1.fits false
+09:41:54 INFO  [main] ibis.dfs.server - Server alive!
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_11_t1.fits took 5377 ms for 34787520 bytes (51 MBit/s)
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_00_t0.fits false
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_00_t1.fits took 2771 ms for 35095680 bytes (101 MBit/s)
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_01_t1.fits took 6745 ms for 34787520 bytes (41 MBit/s)
+09:41:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_00_t1.fits took 4675 ms for 34787520 bytes (59 MBit/s)
+09:41:55 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_40_t1.fits took 5122 ms for 34787520 bytes (54 MBit/s)
+09:41:55 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_01_t1.fits took 9433 ms for 34663680 bytes (29 MBit/s)
+09:41:55 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_20_t0.fits took 7335 ms for 35095680 bytes (38 MBit/s)
+09:41:55 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_20_t1.fits false
+09:41:55 INFO  [main] ibis.dfs.server - Server alive!
+09:41:55 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_11_t1.fits took 2669 ms for 35095680 bytes (105 MBit/s)
+09:41:55 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_41_t0.fits took 8166 ms for 35095680 bytes (34 MBit/s)
+09:41:55 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_41_t1.fits false
+09:41:56 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_41_t0.fits took 8445 ms for 34787520 bytes (32 MBit/s)
+09:41:56 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 52, location node132@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r004_41_t1.fits false
+09:41:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_21_t1.fits took 5314 ms for 34787520 bytes (52 MBit/s)
+09:41:56 INFO  [main] ibis.dfs.server - Server alive!
+09:41:56 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_31_t0.fits false
+09:41:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_40_t1.fits took 5330 ms for 34663680 bytes (52 MBit/s)
+09:41:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_01_t1.fits took 2628 ms for 35095680 bytes (106 MBit/s)
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_40_t1.fits took 3946 ms for 35095680 bytes (71 MBit/s)
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_20_t1.fits took 3373 ms for 34787520 bytes (82 MBit/s)
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_31_t0.fits took 720 ms for 35205120 bytes (391 MBit/s)
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_31_t1.fits false
+09:41:57 INFO  [main] ibis.dfs.server - Server alive!
+09:41:57 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_30_t0.fits took 9722 ms for 35095680 bytes (28 MBit/s)
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_30_t1.fits false
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_40_t0.fits false
+09:41:57 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_10_t1.fits took 7568 ms for 35095680 bytes (37 MBit/s)
+09:41:58 INFO  [Connection Handler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_31_t0.fits took 10071 ms for 35095680 bytes (27 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r001_31_t1.fits false
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_41_t1.fits took 2405 ms for 35095680 bytes (116 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_10_t1.fits took 10358 ms for 34787520 bytes (26 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_41_t1.fits took 2426 ms for 34787520 bytes (114 MBit/s)
+09:41:58 INFO  [main] ibis.dfs.server - Server alive!
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_30_t1.fits took 7064 ms for 34787520 bytes (39 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_00_t0.fits took 4060 ms for 35205120 bytes (69 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_00_t1.fits false
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r007_41_t1.fits took 5503 ms for 34663680 bytes (50 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_31_t1.fits took 1375 ms for 35205120 bytes (204 MBit/s)
+09:41:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r004_31_t1.fits took 5065 ms for 34787520 bytes (54 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_30_t1.fits took 1628 ms for 35095680 bytes (172 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_31_t1.fits took 1204 ms for 35095680 bytes (233 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_40_t0.fits took 1523 ms for 35205120 bytes (184 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_40_t1.fits false
+09:41:59 INFO  [main] ibis.dfs.server - Server alive!
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_00_t1.fits took 926 ms for 35205120 bytes (304 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r001_20_t1.fits took 4141 ms for 35095680 bytes (67 MBit/s)
+09:41:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_40_t1.fits took 315 ms for 35205120 bytes (894 MBit/s)
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_01_t0.fits false
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_01_t0.fits took 185 ms for 35205120 bytes (1522 MBit/s)
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_01_t1.fits false
+09:42:00 INFO  [main] ibis.dfs.server - Server alive!
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_01_t1.fits took 187 ms for 35205120 bytes (1506 MBit/s)
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_21_t0.fits false
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_21_t0.fits took 261 ms for 35205120 bytes (1079 MBit/s)
+09:42:00 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_21_t1.fits false
+09:42:01 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_21_t1.fits took 306 ms for 35205120 bytes (920 MBit/s)
+09:42:01 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_11_t0.fits false
+09:42:01 INFO  [main] ibis.dfs.server - Server alive!
+09:42:01 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_30_t0.fits false
+09:42:01 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_11_t0.fits took 215 ms for 35205120 bytes (1309 MBit/s)
+09:42:01 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_11_t1.fits false
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_11_t1.fits took 360 ms for 35205120 bytes (782 MBit/s)
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_20_t0.fits false
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_30_t0.fits took 521 ms for 35205120 bytes (540 MBit/s)
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_30_t1.fits false
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_20_t0.fits took 377 ms for 35205120 bytes (747 MBit/s)
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_20_t1.fits false
+09:42:02 INFO  [main] ibis.dfs.server - Server alive!
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_41_t0.fits false
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_30_t1.fits took 609 ms for 35205120 bytes (462 MBit/s)
+09:42:02 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_20_t1.fits took 457 ms for 35205120 bytes (616 MBit/s)
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_10_t0.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_41_t0.fits took 471 ms for 35205120 bytes (597 MBit/s)
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_41_t1.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_10_t0.fits took 267 ms for 35205120 bytes (1054 MBit/s)
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r006_10_t1.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_40_t0.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_10_t0.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_10_t1.fits took 234 ms for 35205120 bytes (1203 MBit/s)
+09:42:03 INFO  [main] ibis.dfs.server - Server alive!
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_31_t0.fits false
+09:42:03 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r006_41_t1.fits took 743 ms for 35205120 bytes (379 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_10_t0.fits took 664 ms for 35429760 bytes (426 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_10_t1.fits false
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_31_t0.fits took 527 ms for 35429760 bytes (537 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_31_t1.fits false
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_41_t0.fits false
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_40_t0.fits took 976 ms for 35429760 bytes (290 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_40_t1.fits false
+09:42:04 INFO  [main] ibis.dfs.server - Server alive!
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_31_t1.fits took 664 ms for 35429760 bytes (426 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r011_40_t0.fits false
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_41_t0.fits took 749 ms for 35429760 bytes (378 MBit/s)
+09:42:04 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_41_t1.fits false
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_10_t1.fits took 975 ms for 35429760 bytes (290 MBit/s)
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_40_t1.fits took 836 ms for 35429760 bytes (339 MBit/s)
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_30_t0.fits false
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r011_40_t0.fits took 447 ms for 38520000 bytes (689 MBit/s)
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r011_40_t1.fits false
+09:42:05 INFO  [main] ibis.dfs.server - Server alive!
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_30_t0.fits took 238 ms for 35429760 bytes (1190 MBit/s)
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_30_t1.fits false
+09:42:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_21_t0.fits false
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_20_t0.fits false
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_41_t1.fits took 1050 ms for 35429760 bytes (269 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r011_40_t1.fits took 803 ms for 38520000 bytes (383 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_30_t1.fits took 621 ms for 35429760 bytes (456 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_21_t0.fits took 650 ms for 35429760 bytes (436 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_21_t1.fits false
+09:42:06 INFO  [main] ibis.dfs.server - Server alive!
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_21_t1.fits took 210 ms for 35429760 bytes (1349 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_01_t0.fits false
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_20_t0.fits took 890 ms for 35429760 bytes (318 MBit/s)
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_20_t1.fits false
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_00_t0.fits false
+09:42:06 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r011_21_t0.fits false
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_20_t1.fits took 374 ms for 35429760 bytes (757 MBit/s)
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_01_t0.fits took 538 ms for 35429760 bytes (526 MBit/s)
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_01_t1.fits false
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r011_21_t0.fits took 481 ms for 38520000 bytes (640 MBit/s)
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r011_21_t1.fits false
+09:42:07 INFO  [main] ibis.dfs.server - Server alive!
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 52, location node132@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_11_t0.fits false
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_00_t0.fits took 747 ms for 35429760 bytes (379 MBit/s)
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_20_t0.fits false
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_00_t1.fits false
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_11_t0.fits took 260 ms for 35429760 bytes (1090 MBit/s)
+09:42:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 52, location node132@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r003_11_t1.fits false
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_11_t0.fits false
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_31_t0.fits false
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_01_t1.fits took 896 ms for 35429760 bytes (316 MBit/s)
+09:42:08 INFO  [main] ibis.dfs.server - Server alive!
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_00_t1.fits took 1068 ms for 35429760 bytes (265 MBit/s)
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r011_21_t1.fits took 1322 ms for 38520000 bytes (233 MBit/s)
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_40_t0.fits false
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_21_t0.fits false
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_11_t0.fits took 813 ms for 35447040 bytes (348 MBit/s)
+09:42:08 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_11_t1.fits false
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_31_t0.fits took 800 ms for 35447040 bytes (354 MBit/s)
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_31_t1.fits false
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_41_t0.fits false
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_30_t0.fits false
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r003_11_t1.fits took 1502 ms for 35429760 bytes (188 MBit/s)
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_20_t0.fits took 1821 ms for 35447040 bytes (155 MBit/s)
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_20_t1.fits false
+09:42:09 INFO  [main] ibis.dfs.server - Server alive!
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_21_t0.fits took 621 ms for 35447040 bytes (456 MBit/s)
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_21_t1.fits false
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_11_t1.fits took 736 ms for 35447040 bytes (385 MBit/s)
+09:42:09 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_31_t1.fits took 762 ms for 35447040 bytes (372 MBit/s)
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_10_t0.fits false
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_40_t0.fits took 1485 ms for 35447040 bytes (190 MBit/s)
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_40_t1.fits false
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_21_t1.fits took 950 ms for 35447040 bytes (298 MBit/s)
+09:42:10 INFO  [main] ibis.dfs.server - Server alive!
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_00_t0.fits false
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_01_t0.fits false
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_10_t0.fits took 627 ms for 35447040 bytes (452 MBit/s)
+09:42:10 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_10_t1.fits false
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_41_t0.fits took 1908 ms for 35447040 bytes (148 MBit/s)
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_41_t1.fits false
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_30_t0.fits took 1947 ms for 35447040 bytes (145 MBit/s)
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_30_t1.fits false
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_20_t1.fits took 1657 ms for 35447040 bytes (171 MBit/s)
+09:42:11 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_41_t1.fits took 479 ms for 35447040 bytes (592 MBit/s)
+09:42:11 INFO  [main] ibis.dfs.server - Server alive!
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_30_t0.fits false
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_10_t1.fits took 1232 ms for 35447040 bytes (230 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_40_t1.fits took 1672 ms for 35447040 bytes (169 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_01_t0.fits took 1289 ms for 35447040 bytes (219 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_01_t1.fits false
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_30_t1.fits took 985 ms for 35447040 bytes (287 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_00_t0.fits took 1505 ms for 35447040 bytes (188 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r010_00_t1.fits false
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_01_t0.fits false
+09:42:12 INFO  [main] ibis.dfs.server - Server alive!
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_01_t0.fits false
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_30_t0.fits took 788 ms for 35455680 bytes (359 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_30_t1.fits false
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_01_t1.fits took 776 ms for 35447040 bytes (365 MBit/s)
+09:42:12 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r010_00_t1.fits took 777 ms for 35447040 bytes (364 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_30_t1.fits took 283 ms for 35455680 bytes (1002 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_01_t0.fits took 919 ms for 35455680 bytes (308 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_01_t1.fits false
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_01_t0.fits took 615 ms for 35455680 bytes (461 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_01_t1.fits false
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_01_t1.fits took 306 ms for 35455680 bytes (926 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_20_t0.fits false
+09:42:13 INFO  [main] ibis.dfs.server - Server alive!
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_01_t1.fits took 438 ms for 35455680 bytes (647 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_20_t0.fits took 411 ms for 35455680 bytes (690 MBit/s)
+09:42:13 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_20_t1.fits false
+09:42:13 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 53, location node069@beowulf@cluster)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_00_t0.fits false
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_20_t1.fits took 264 ms for 35455680 bytes (1074 MBit/s)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_00_t0.fits took 273 ms for 35455680 bytes (1038 MBit/s)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_00_t1.fits false
+09:42:14 INFO  [main] ibis.dfs.server - Server alive!
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_00_t1.fits took 197 ms for 35455680 bytes (1439 MBit/s)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_40_t0.fits false
+09:42:14 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 54, location node061@beowulf@cluster)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_40_t0.fits took 231 ms for 35455680 bytes (1227 MBit/s)
+09:42:14 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_40_t1.fits false
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_11_t0.fits false
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_40_t1.fits took 221 ms for 35455680 bytes (1283 MBit/s)
+09:42:15 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 55, location node067@beowulf@cluster)
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_11_t0.fits took 277 ms for 35455680 bytes (1023 MBit/s)
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_11_t1.fits false
+09:42:15 INFO  [main] ibis.dfs.server - Server alive!
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_11_t1.fits took 213 ms for 35455680 bytes (1331 MBit/s)
+09:42:15 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 56, location node058@beowulf@cluster)
+09:42:15 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 57, location node054@beowulf@cluster)
+09:42:15 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_31_t0.fits false
+09:42:15 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 58, location node066@beowulf@cluster)
+09:42:16 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_31_t0.fits took 258 ms for 35455680 bytes (1099 MBit/s)
+09:42:16 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_31_t1.fits false
+09:42:16 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 59, location node075@beowulf@cluster)
+09:42:16 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_31_t1.fits took 275 ms for 35455680 bytes (1031 MBit/s)
+09:42:16 INFO  [main] ibis.dfs.server - Server alive!
+09:42:17 INFO  [main] ibis.dfs.server - Server alive!
+09:42:18 INFO  [main] ibis.dfs.server - Server alive!
+09:42:19 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 60, location node057@beowulf@cluster)
+09:42:19 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 61, location node047@beowulf@cluster)
+09:42:19 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 62, location node064@beowulf@cluster)
+09:42:19 INFO  [main] ibis.dfs.server - Server alive!
+09:42:19 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 63, location node068@beowulf@cluster)
+09:42:19 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 64, location node083@beowulf@cluster)
+09:42:20 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 65, location node045@beowulf@cluster)
+09:42:20 INFO  [main] ibis.dfs.server - Server alive!
+09:42:20 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 66, location node081@beowulf@cluster)
+09:42:21 INFO  [main] ibis.dfs.server - Server alive!
+09:42:22 INFO  [upcaller] ibis.simpleComm - Worker joined (Ibis 67, location node079@beowulf@cluster)
+09:42:22 INFO  [main] ibis.dfs.server - Server alive!
+09:42:23 INFO  [main] ibis.dfs.server - Server alive!
+09:42:24 INFO  [main] ibis.dfs.server - Server alive!
+09:42:25 INFO  [main] ibis.dfs.server - Server alive!
+09:42:26 INFO  [main] ibis.dfs.server - Server alive!
+09:42:27 INFO  [main] ibis.dfs.server - Server alive!
+09:42:28 INFO  [main] ibis.dfs.server - Server alive!
+09:42:29 INFO  [main] ibis.dfs.server - Server alive!
+09:42:30 INFO  [main] ibis.dfs.server - Server alive!
+09:42:31 INFO  [main] ibis.dfs.server - Server alive!
+09:42:32 INFO  [main] ibis.dfs.server - Server alive!
+09:42:33 INFO  [main] ibis.dfs.server - Server alive!
+09:42:34 INFO  [main] ibis.dfs.server - Server alive!
+09:42:35 INFO  [main] ibis.dfs.server - Server alive!
+09:42:37 INFO  [main] ibis.dfs.server - Server alive!
+09:42:38 INFO  [main] ibis.dfs.server - Server alive!
+09:42:39 INFO  [main] ibis.dfs.server - Server alive!
+09:42:40 INFO  [main] ibis.dfs.server - Server alive!
+09:42:41 INFO  [main] ibis.dfs.server - Server alive!
+09:42:42 INFO  [main] ibis.dfs.server - Server alive!
+09:42:43 INFO  [main] ibis.dfs.server - Server alive!
+09:42:44 INFO  [main] ibis.dfs.server - Server alive!
+09:42:45 INFO  [main] ibis.dfs.server - Server alive!
+09:42:46 INFO  [main] ibis.dfs.server - Server alive!
+09:42:47 INFO  [main] ibis.dfs.server - Server alive!
+09:42:48 INFO  [main] ibis.dfs.server - Server alive!
+09:42:49 INFO  [main] ibis.dfs.server - Server alive!
+09:42:50 INFO  [main] ibis.dfs.server - Server alive!
+09:42:51 INFO  [main] ibis.dfs.server - Server alive!
+09:42:52 INFO  [main] ibis.dfs.server - Server alive!
+09:42:53 INFO  [main] ibis.dfs.server - Server alive!
+09:42:54 INFO  [main] ibis.dfs.server - Server alive!
+09:42:55 INFO  [main] ibis.dfs.server - Server alive!
+09:42:56 INFO  [main] ibis.dfs.server - Server alive!
+09:42:57 INFO  [main] ibis.dfs.server - Server alive!
+09:42:58 INFO  [main] ibis.dfs.server - Server alive!
+09:42:59 INFO  [main] ibis.dfs.server - Server alive!
+09:43:00 INFO  [main] ibis.dfs.server - Server alive!
+09:43:01 INFO  [main] ibis.dfs.server - Server alive!
+09:43:02 INFO  [main] ibis.dfs.server - Server alive!
+09:43:03 INFO  [main] ibis.dfs.server - Server alive!
+09:43:04 INFO  [main] ibis.dfs.server - Server alive!
+09:43:05 INFO  [main] ibis.dfs.server - Server alive!
+09:43:06 INFO  [main] ibis.dfs.server - Server alive!
+09:43:07 INFO  [main] ibis.dfs.server - Server alive!
+09:43:08 INFO  [main] ibis.dfs.server - Server alive!
+09:43:09 INFO  [main] ibis.dfs.server - Server alive!
+09:43:10 INFO  [main] ibis.dfs.server - Server alive!
+09:43:11 INFO  [main] ibis.dfs.server - Server alive!
+09:43:12 INFO  [main] ibis.dfs.server - Server alive!
+09:43:13 INFO  [main] ibis.dfs.server - Server alive!
+09:43:14 INFO  [main] ibis.dfs.server - Server alive!
+09:43:15 INFO  [main] ibis.dfs.server - Server alive!
+09:43:16 INFO  [main] ibis.dfs.server - Server alive!
+09:43:17 INFO  [main] ibis.dfs.server - Server alive!
+09:43:18 INFO  [main] ibis.dfs.server - Server alive!
+09:43:19 INFO  [main] ibis.dfs.server - Server alive!
+09:43:20 INFO  [main] ibis.dfs.server - Server alive!
+09:43:21 INFO  [main] ibis.dfs.server - Server alive!
+09:43:22 INFO  [main] ibis.dfs.server - Server alive!
+09:43:23 INFO  [main] ibis.dfs.server - Server alive!
+09:43:24 INFO  [main] ibis.dfs.server - Server alive!
+09:43:25 INFO  [main] ibis.dfs.server - Server alive!
+09:43:26 INFO  [main] ibis.dfs.server - Server alive!
+09:43:27 INFO  [main] ibis.dfs.server - Server alive!
+09:43:28 INFO  [main] ibis.dfs.server - Server alive!
+09:43:29 INFO  [main] ibis.dfs.server - Server alive!
+09:43:30 INFO  [main] ibis.dfs.server - Server alive!
+09:43:31 INFO  [main] ibis.dfs.server - Server alive!
+09:43:32 INFO  [main] ibis.dfs.server - Server alive!
+09:43:33 INFO  [main] ibis.dfs.server - Server alive!
+09:43:34 INFO  [main] ibis.dfs.server - Server alive!
+09:43:35 INFO  [main] ibis.dfs.server - Server alive!
+09:43:36 INFO  [main] ibis.dfs.server - Server alive!
+09:43:37 INFO  [main] ibis.dfs.server - Server alive!
+09:43:38 INFO  [main] ibis.dfs.server - Server alive!
+09:43:39 INFO  [main] ibis.dfs.server - Server alive!
+09:43:40 INFO  [main] ibis.dfs.server - Server alive!
+09:43:41 INFO  [main] ibis.dfs.server - Server alive!
+09:43:42 INFO  [main] ibis.dfs.server - Server alive!
+09:43:43 INFO  [main] ibis.dfs.server - Server alive!
+09:43:44 INFO  [main] ibis.dfs.server - Server alive!
+09:43:45 INFO  [main] ibis.dfs.server - Server alive!
+09:43:46 INFO  [main] ibis.dfs.server - Server alive!
+09:43:47 INFO  [main] ibis.dfs.server - Server alive!
+09:43:48 INFO  [main] ibis.dfs.server - Server alive!
+09:43:49 INFO  [main] ibis.dfs.server - Server alive!
+09:43:50 INFO  [main] ibis.dfs.server - Server alive!
+09:43:51 INFO  [main] ibis.dfs.server - Server alive!
+09:43:52 INFO  [main] ibis.dfs.server - Server alive!
+09:43:53 INFO  [main] ibis.dfs.server - Server alive!
+09:43:54 INFO  [main] ibis.dfs.server - Server alive!
+09:43:55 INFO  [main] ibis.dfs.server - Server alive!
+09:43:56 INFO  [main] ibis.dfs.server - Server alive!
+09:43:57 INFO  [main] ibis.dfs.server - Server alive!
+09:43:58 INFO  [main] ibis.dfs.server - Server alive!
+09:43:59 INFO  [main] ibis.dfs.server - Server alive!
+09:44:00 INFO  [main] ibis.dfs.server - Server alive!
+09:44:01 INFO  [main] ibis.dfs.server - Server alive!
+09:44:02 INFO  [main] ibis.dfs.server - Server alive!
+09:44:03 INFO  [main] ibis.dfs.server - Server alive!
+09:44:04 INFO  [main] ibis.dfs.server - Server alive!
+09:44:05 INFO  [main] ibis.dfs.server - Server alive!
+09:44:06 INFO  [main] ibis.dfs.server - Server alive!
+09:44:07 INFO  [main] ibis.dfs.server - Server alive!
+09:44:08 INFO  [main] ibis.dfs.server - Server alive!
+09:44:09 INFO  [main] ibis.dfs.server - Server alive!
+09:44:10 INFO  [main] ibis.dfs.server - Server alive!
+09:44:11 INFO  [main] ibis.dfs.server - Server alive!
+09:44:12 INFO  [main] ibis.dfs.server - Server alive!
+09:44:13 INFO  [main] ibis.dfs.server - Server alive!
+09:44:14 INFO  [main] ibis.dfs.server - Server alive!
+09:44:15 INFO  [main] ibis.dfs.server - Server alive!
+09:44:16 INFO  [main] ibis.dfs.server - Server alive!
+09:44:17 INFO  [main] ibis.dfs.server - Server alive!
+09:44:18 INFO  [main] ibis.dfs.server - Server alive!
+09:44:18 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_41_t0.fits false
+09:44:18 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_41_t0.fits took 187 ms for 35455680 bytes (1516 MBit/s)
+09:44:18 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 14, location node106@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_41_t1.fits false
+09:44:18 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_41_t1.fits took 203 ms for 35455680 bytes (1397 MBit/s)
+09:44:19 INFO  [main] ibis.dfs.server - Server alive!
+09:44:20 INFO  [main] ibis.dfs.server - Server alive!
+09:44:21 INFO  [main] ibis.dfs.server - Server alive!
+09:44:22 INFO  [main] ibis.dfs.server - Server alive!
+09:44:23 INFO  [main] ibis.dfs.server - Server alive!
+09:44:24 INFO  [main] ibis.dfs.server - Server alive!
+09:44:25 INFO  [main] ibis.dfs.server - Server alive!
+09:44:26 INFO  [main] ibis.dfs.server - Server alive!
+09:44:27 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_20_t0.fits false
+09:44:27 INFO  [main] ibis.dfs.server - Server alive!
+09:44:27 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_20_t0.fits took 222 ms for 35455680 bytes (1277 MBit/s)
+09:44:27 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 5, location node113@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_20_t1.fits false
+09:44:27 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_20_t1.fits took 216 ms for 35455680 bytes (1313 MBit/s)
+09:44:28 INFO  [main] ibis.dfs.server - Server alive!
+09:44:29 INFO  [main] ibis.dfs.server - Server alive!
+09:44:30 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_20_t0.fits false
+09:44:30 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_20_t0.fits took 151 ms for 35997120 bytes (1907 MBit/s)
+09:44:30 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 43, location node122@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_20_t1.fits false
+09:44:30 INFO  [main] ibis.dfs.server - Server alive!
+09:44:30 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_20_t1.fits took 155 ms for 35997120 bytes (1857 MBit/s)
+09:44:31 INFO  [main] ibis.dfs.server - Server alive!
+09:44:32 INFO  [main] ibis.dfs.server - Server alive!
+09:44:32 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_00_t0.fits false
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_00_t0.fits took 162 ms for 35997120 bytes (1777 MBit/s)
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 7, location node115@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_00_t1.fits false
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_00_t1.fits took 154 ms for 35997120 bytes (1869 MBit/s)
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_21_t0.fits false
+09:44:33 INFO  [main] ibis.dfs.server - Server alive!
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_21_t0.fits took 226 ms for 35455680 bytes (1255 MBit/s)
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 9, location node101@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_21_t1.fits false
+09:44:33 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_21_t1.fits took 233 ms for 35455680 bytes (1217 MBit/s)
+09:44:34 INFO  [main] ibis.dfs.server - Server alive!
+09:44:35 INFO  [main] ibis.dfs.server - Server alive!
+09:44:36 INFO  [main] ibis.dfs.server - Server alive!
+09:44:37 INFO  [main] ibis.dfs.server - Server alive!
+09:44:37 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_11_t0.fits false
+09:44:37 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_11_t0.fits took 240 ms for 35455680 bytes (1181 MBit/s)
+09:44:37 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 34, location node104@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_11_t1.fits false
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_11_t1.fits took 238 ms for 35455680 bytes (1191 MBit/s)
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_10_t0.fits false
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_10_t0.fits took 153 ms for 36014400 bytes (1883 MBit/s)
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 4, location node102@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_10_t1.fits false
+09:44:38 INFO  [main] ibis.dfs.server - Server alive!
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_10_t1.fits took 152 ms for 36014400 bytes (1895 MBit/s)
+09:44:38 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_30_t0.fits false
+09:44:39 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_30_t0.fits took 244 ms for 35455680 bytes (1162 MBit/s)
+09:44:39 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 46, location node131@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_30_t1.fits false
+09:44:39 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_30_t1.fits took 236 ms for 35455680 bytes (1201 MBit/s)
+09:44:39 INFO  [main] ibis.dfs.server - Server alive!
+09:44:40 INFO  [main] ibis.dfs.server - Server alive!
+09:44:40 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_41_t0.fits false
+09:44:40 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_00_t0.fits false
+09:44:40 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_00_t0.fits took 163 ms for 35455680 bytes (1740 MBit/s)
+09:44:40 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 29, location node120@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_00_t1.fits false
+09:44:41 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_41_t0.fits took 227 ms for 35455680 bytes (1249 MBit/s)
+09:44:41 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 36, location node105@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_41_t1.fits false
+09:44:41 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_00_t1.fits took 165 ms for 35455680 bytes (1719 MBit/s)
+09:44:41 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_41_t1.fits took 176 ms for 35455680 bytes (1611 MBit/s)
+09:44:41 INFO  [main] ibis.dfs.server - Server alive!
+09:44:42 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_11_t0.fits false
+09:44:42 INFO  [main] ibis.dfs.server - Server alive!
+09:44:42 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_11_t0.fits took 163 ms for 36014400 bytes (1767 MBit/s)
+09:44:42 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 48, location node127@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_11_t1.fits false
+09:44:42 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_11_t1.fits took 164 ms for 36014400 bytes (1756 MBit/s)
+09:44:43 INFO  [main] ibis.dfs.server - Server alive!
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_11_t0.fits false
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_11_t0.fits took 158 ms for 35997120 bytes (1822 MBit/s)
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 40, location node121@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_11_t1.fits false
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_41_t0.fits false
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_11_t1.fits took 197 ms for 35997120 bytes (1461 MBit/s)
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_41_t0.fits took 148 ms for 36014400 bytes (1946 MBit/s)
+09:44:43 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 47, location node129@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_41_t1.fits false
+09:44:44 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_41_t1.fits took 166 ms for 36014400 bytes (1735 MBit/s)
+09:44:44 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_10_t0.fits false
+09:44:44 INFO  [main] ibis.dfs.server - Server alive!
+09:44:44 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_10_t0.fits took 159 ms for 35997120 bytes (1811 MBit/s)
+09:44:44 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 42, location node126@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_10_t1.fits false
+09:44:44 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_10_t1.fits took 162 ms for 35997120 bytes (1777 MBit/s)
+09:44:45 INFO  [main] ibis.dfs.server - Server alive!
+09:44:45 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_41_t0.fits false
+09:44:45 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_41_t0.fits took 150 ms for 35997120 bytes (1919 MBit/s)
+09:44:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 49, location node130@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_41_t1.fits false
+09:44:46 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_41_t1.fits took 161 ms for 35997120 bytes (1788 MBit/s)
+09:44:46 INFO  [main] ibis.dfs.server - Server alive!
+09:44:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_31_t0.fits false
+09:44:46 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_31_t0.fits took 157 ms for 36014400 bytes (1835 MBit/s)
+09:44:46 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 21, location node107@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_31_t1.fits false
+09:44:47 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_31_t1.fits took 151 ms for 36014400 bytes (1908 MBit/s)
+09:44:47 INFO  [main] ibis.dfs.server - Server alive!
+09:44:48 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_21_t0.fits false
+09:44:48 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_21_t0.fits took 151 ms for 36014400 bytes (1908 MBit/s)
+09:44:48 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 38, location node118@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r005_21_t1.fits false
+09:44:48 INFO  [main] ibis.dfs.server - Server alive!
+09:44:48 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r005_21_t1.fits took 144 ms for 36014400 bytes (2000 MBit/s)
+09:44:49 INFO  [main] ibis.dfs.server - Server alive!
+09:44:50 INFO  [main] ibis.dfs.server - Server alive!
+09:44:51 INFO  [main] ibis.dfs.server - Server alive!
+09:44:52 INFO  [main] ibis.dfs.server - Server alive!
+09:44:52 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_21_t0.fits false
+09:44:52 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_21_t0.fits took 149 ms for 35455680 bytes (1903 MBit/s)
+09:44:52 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 25, location node109@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_21_t1.fits false
+09:44:52 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_21_t1.fits took 154 ms for 35455680 bytes (1841 MBit/s)
+09:44:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_30_t0.fits false
+09:44:53 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_30_t0.fits took 157 ms for 35997120 bytes (1834 MBit/s)
+09:44:53 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 30, location node110@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_30_t1.fits false
+09:44:53 INFO  [main] ibis.dfs.server - Server alive!
+09:44:53 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_30_t1.fits took 153 ms for 35997120 bytes (1882 MBit/s)
+09:44:54 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_31_t0.fits false
+09:44:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_31_t0.fits took 150 ms for 35455680 bytes (1890 MBit/s)
+09:44:54 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 37, location node119@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_31_t1.fits false
+09:44:54 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_31_t1.fits took 150 ms for 35455680 bytes (1890 MBit/s)
+09:44:54 INFO  [main] ibis.dfs.server - Server alive!
+09:44:55 INFO  [main] ibis.dfs.server - Server alive!
+09:44:55 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_31_t0.fits false
+09:44:55 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_31_t0.fits took 153 ms for 35997120 bytes (1882 MBit/s)
+09:44:55 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 16, location node112@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_31_t1.fits false
+09:44:55 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_40_t0.fits false
+09:44:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_31_t1.fits took 147 ms for 35997120 bytes (1959 MBit/s)
+09:44:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_40_t0.fits took 160 ms for 36014400 bytes (1800 MBit/s)
+09:44:56 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 45, location node125@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_40_t1.fits false
+09:44:56 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_40_t1.fits took 151 ms for 36014400 bytes (1908 MBit/s)
+09:44:56 INFO  [main] ibis.dfs.server - Server alive!
+09:44:57 INFO  [main] ibis.dfs.server - Server alive!
+09:44:58 INFO  [main] ibis.dfs.server - Server alive!
+09:44:58 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_40_t0.fits false
+09:44:58 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_40_t0.fits took 151 ms for 35997120 bytes (1907 MBit/s)
+09:44:58 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 6, location node103@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_40_t1.fits false
+09:44:59 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_40_t1.fits took 155 ms for 35997120 bytes (1857 MBit/s)
+09:44:59 INFO  [main] ibis.dfs.server - Server alive!
+09:45:00 INFO  [main] ibis.dfs.server - Server alive!
+09:45:01 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_10_t0.fits false
+09:45:01 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_10_t0.fits took 159 ms for 35455680 bytes (1783 MBit/s)
+09:45:01 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 15, location node108@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r002_10_t1.fits false
+09:45:01 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r002_10_t1.fits took 151 ms for 35455680 bytes (1878 MBit/s)
+09:45:01 INFO  [main] ibis.dfs.server - Server alive!
+09:45:02 INFO  [main] ibis.dfs.server - Server alive!
+09:45:03 INFO  [main] ibis.dfs.server - Server alive!
+09:45:04 INFO  [main] ibis.dfs.server - Server alive!
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_00_t0.fits false
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_00_t0.fits took 152 ms for 36014400 bytes (1895 MBit/s)
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 39, location node124@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r008_00_t1.fits false
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_21_t0.fits false
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r008_00_t1.fits took 182 ms for 36014400 bytes (1583 MBit/s)
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_21_t0.fits took 139 ms for 35997120 bytes (2071 MBit/s)
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 19, location node114@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_21_t1.fits false
+09:45:05 INFO  [main] ibis.dfs.server - Server alive!
+09:45:05 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_21_t1.fits took 152 ms for 35997120 bytes (1894 MBit/s)
+09:45:06 INFO  [main] ibis.dfs.server - Server alive!
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_10_t0.fits false
+09:45:07 INFO  [main] ibis.dfs.server - Server alive!
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_10_t0.fits took 163 ms for 35455680 bytes (1740 MBit/s)
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 41, location node123@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_10_t1.fits false
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_01_t0.fits false
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_10_t1.fits took 183 ms for 35455680 bytes (1549 MBit/s)
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_01_t0.fits took 153 ms for 35997120 bytes (1882 MBit/s)
+09:45:07 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 28, location node117@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r000_01_t1.fits false
+09:45:08 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r000_01_t1.fits took 151 ms for 35997120 bytes (1907 MBit/s)
+09:45:08 INFO  [main] ibis.dfs.server - Server alive!
+09:45:09 INFO  [main] ibis.dfs.server - Server alive!
+09:45:10 INFO  [main] ibis.dfs.server - Server alive!
+09:45:11 INFO  [main] ibis.dfs.server - Server alive!
+09:45:12 INFO  [main] ibis.dfs.server - Server alive!
+09:45:13 INFO  [main] ibis.dfs.server - Server alive!
+09:45:14 INFO  [main] ibis.dfs.server - Server alive!
+09:45:15 INFO  [main] ibis.dfs.server - Server alive!
+09:45:16 INFO  [main] ibis.dfs.server - Server alive!
+09:45:17 INFO  [main] ibis.dfs.server - Server alive!
+09:45:18 INFO  [main] ibis.dfs.server - Server alive!
+09:45:19 INFO  [main] ibis.dfs.server - Server alive!
+09:45:20 INFO  [main] ibis.dfs.server - Server alive!
+09:45:21 INFO  [main] ibis.dfs.server - Server alive!
+09:45:22 INFO  [main] ibis.dfs.server - Server alive!
+09:45:23 INFO  [main] ibis.dfs.server - Server alive!
+09:45:24 INFO  [main] ibis.dfs.server - Server alive!
+09:45:25 INFO  [main] ibis.dfs.server - Server alive!
+09:45:26 INFO  [main] ibis.dfs.server - Server alive!
+09:45:27 INFO  [main] ibis.dfs.server - Server alive!
+09:45:28 INFO  [main] ibis.dfs.server - Server alive!
+09:45:29 INFO  [main] ibis.dfs.server - Server alive!
+09:45:30 INFO  [main] ibis.dfs.server - Server alive!
+09:45:31 INFO  [main] ibis.dfs.server - Server alive!
+09:45:32 INFO  [main] ibis.dfs.server - Server alive!
+09:45:33 INFO  [main] ibis.dfs.server - Server alive!
+09:45:34 INFO  [main] ibis.dfs.server - Server alive!
+09:45:35 INFO  [main] ibis.dfs.server - Server alive!
+09:45:36 INFO  [main] ibis.dfs.server - Server alive!
+09:45:37 INFO  [main] ibis.dfs.server - Server alive!
+09:45:38 INFO  [main] ibis.dfs.server - Server alive!
+09:45:39 INFO  [main] ibis.dfs.server - Server alive!
+09:45:40 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_40_t0.fits false
+09:45:40 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_40_t0.fits took 163 ms for 35455680 bytes (1740 MBit/s)
+09:45:40 INFO  [ConnectionHandler] ibis.dfs.server - Server got get request from (Ibis 23, location node116@beowulf@cluster) /var/scratch/jason/data-challenge/sample0_0123/r009_40_t1.fits false
+09:45:40 INFO  [ConnectionHandler] ibis.dfs.server - File transfer of /var/scratch/jason/data-challenge/sample0_0123/r009_40_t1.fits took 157 ms for 35455680 bytes (1806 MBit/s)
+09:45:40 INFO  [main] ibis.dfs.server - Server alive!
+09:45:41 INFO  [main] ibis.dfs.server - Server alive!
+09:45:42 INFO  [main] ibis.dfs.server - Server alive!
+09:45:43 INFO  [main] ibis.dfs.server - Server alive!
+09:45:44 INFO  [main] ibis.dfs.server - Server alive!
+09:45:45 INFO  [main] ibis.dfs.server - Server alive!
+09:45:46 INFO  [main] ibis.dfs.server - Server alive!
+09:45:47 INFO  [main] ibis.dfs.server - Server alive!
+09:45:48 INFO  [main] ibis.dfs.server - Server alive!
+09:45:49 INFO  [main] ibis.dfs.server - Server alive!
+09:45:50 INFO  [main] ibis.dfs.server - Server alive!
+09:45:51 INFO  [main] ibis.dfs.server - Server alive!
+09:45:52 INFO  [main] ibis.dfs.server - Server alive!
+09:45:53 INFO  [main] ibis.dfs.server - Server alive!
+09:45:54 INFO  [main] ibis.dfs.server - Server alive!
+09:45:55 INFO  [main] ibis.dfs.server - Server alive!
+09:45:56 INFO  [main] ibis.dfs.server - Server alive!
+09:45:57 INFO  [main] ibis.dfs.server - Server alive!
+09:45:58 INFO  [main] ibis.dfs.server - Server alive!
+09:45:59 INFO  [main] ibis.dfs.server - Server alive!
+09:46:00 INFO  [main] ibis.dfs.server - Server alive!
+09:46:01 INFO  [main] ibis.dfs.server - Server alive!
+09:46:02 INFO  [main] ibis.dfs.server - Server alive!
+09:46:03 INFO  [main] ibis.dfs.server - Server alive!
+09:46:04 INFO  [main] ibis.dfs.server - Server alive!
+09:46:05 INFO  [main] ibis.dfs.server - Server alive!
+09:46:06 INFO  [main] ibis.dfs.server - Server alive!
+09:46:07 INFO  [main] ibis.dfs.server - Server alive!
+09:46:08 INFO  [main] ibis.dfs.server - Server alive!
+09:46:09 INFO  [main] ibis.dfs.server - Server alive!
+09:46:10 INFO  [main] ibis.dfs.server - Server alive!
+09:46:11 INFO  [main] ibis.dfs.server - Server alive!
+09:46:12 INFO  [main] ibis.dfs.server - Server alive!
+09:46:13 INFO  [main] ibis.dfs.server - Server alive!
+09:46:14 INFO  [main] ibis.dfs.server - Server alive!
+09:46:15 INFO  [main] ibis.dfs.server - Server alive!
+09:46:17 INFO  [main] ibis.dfs.server - Server alive!
+09:46:18 INFO  [main] ibis.dfs.server - Server alive!
+09:46:19 INFO  [main] ibis.dfs.server - Server alive!
+09:46:20 INFO  [main] ibis.dfs.server - Server alive!
+09:46:21 INFO  [main] ibis.dfs.server - Server alive!
+09:46:22 INFO  [main] ibis.dfs.server - Server alive!
+09:46:23 INFO  [main] ibis.dfs.server - Server alive!
+09:46:24 INFO  [main] ibis.dfs.server - Server alive!
+09:46:25 INFO  [main] ibis.dfs.server - Server alive!
+09:46:26 INFO  [main] ibis.dfs.server - Server alive!
+09:46:27 INFO  [main] ibis.dfs.server - Server alive!
+09:46:28 INFO  [main] ibis.dfs.server - Server alive!
+09:46:29 INFO  [main] ibis.dfs.server - Server alive!
+09:46:30 INFO  [main] ibis.dfs.server - Server alive!
+09:46:31 INFO  [main] ibis.dfs.server - Server alive!
+09:46:32 INFO  [main] ibis.dfs.server - Server alive!
+09:46:33 INFO  [main] ibis.dfs.server - Server alive!
+09:46:34 INFO  [main] ibis.dfs.server - Server alive!
+09:46:35 INFO  [main] ibis.dfs.server - Server alive!
+09:46:36 INFO  [main] ibis.dfs.server - Server alive!
+09:46:37 INFO  [main] ibis.dfs.server - Server alive!
+09:46:38 INFO  [main] ibis.dfs.server - Server alive!
+09:46:39 INFO  [main] ibis.dfs.server - Server alive!
+09:46:40 INFO  [main] ibis.dfs.server - Server alive!
+09:46:41 INFO  [main] ibis.dfs.server - Server alive!
+09:46:42 INFO  [main] ibis.dfs.server - Server alive!
+09:46:43 INFO  [main] ibis.dfs.server - Server alive!
+09:46:44 INFO  [main] ibis.dfs.server - Server alive!
+09:46:45 INFO  [main] ibis.dfs.server - Server alive!
+09:46:46 INFO  [main] ibis.dfs.server - Server alive!
+09:46:47 INFO  [main] ibis.dfs.server - Server alive!
+09:46:48 INFO  [main] ibis.dfs.server - Server alive!
+09:46:49 INFO  [main] ibis.dfs.server - Server alive!
+09:46:50 INFO  [main] ibis.dfs.server - Server alive!
+09:46:51 INFO  [main] ibis.dfs.server - Server alive!
+09:46:52 INFO  [main] ibis.dfs.server - Server alive!
+09:46:53 INFO  [main] ibis.dfs.server - Server alive!
+09:46:54 INFO  [main] ibis.dfs.server - Server alive!
+09:46:55 INFO  [main] ibis.dfs.server - Server alive!
+09:46:56 INFO  [main] ibis.dfs.server - Server alive!
+09:46:57 INFO  [main] ibis.dfs.server - Server alive!
+09:46:58 INFO  [main] ibis.dfs.server - Server alive!
+09:46:59 INFO  [main] ibis.dfs.server - Server alive!
+09:47:00 INFO  [main] ibis.dfs.server - Server alive!
+09:47:01 INFO  [main] ibis.dfs.server - Server alive!
+09:47:02 INFO  [main] ibis.dfs.server - Server alive!
+09:47:03 INFO  [main] ibis.dfs.server - Server alive!
+09:47:04 INFO  [main] ibis.dfs.server - Server alive!
+09:47:05 INFO  [main] ibis.dfs.server - Server alive!
+09:47:06 INFO  [main] ibis.dfs.server - Server alive!
+09:47:07 INFO  [main] ibis.dfs.server - Server alive!
+09:47:08 INFO  [main] ibis.dfs.server - Server alive!
+09:47:09 INFO  [main] ibis.dfs.server - Server alive!
+09:47:10 INFO  [main] ibis.dfs.server - Server alive!
+09:47:11 INFO  [main] ibis.dfs.server - Server alive!
+09:47:12 INFO  [main] ibis.dfs.server - Server alive!
+09:47:13 INFO  [main] ibis.dfs.server - Server alive!
+09:47:14 INFO  [main] ibis.dfs.server - Server alive!
+09:47:15 INFO  [main] ibis.dfs.server - Server alive!
+09:47:16 INFO  [main] ibis.dfs.server - Server alive!
+09:47:17 INFO  [main] ibis.dfs.server - Server alive!
+09:47:18 INFO  [main] ibis.dfs.server - Server alive!
+09:47:19 INFO  [main] ibis.dfs.server - Server alive!
+09:47:20 INFO  [main] ibis.dfs.server - Server alive!
+09:47:21 INFO  [main] ibis.dfs.server - Server alive!
+09:47:22 INFO  [main] ibis.dfs.server - Server alive!
+09:47:23 INFO  [main] ibis.dfs.server - Server alive!
+09:47:24 INFO  [main] ibis.dfs.server - Server alive!
+09:47:25 INFO  [main] ibis.dfs.server - Server alive!
+09:47:26 INFO  [main] ibis.dfs.server - Server alive!
+09:47:27 INFO  [main] ibis.dfs.server - Server alive!
+09:47:28 INFO  [main] ibis.dfs.server - Server alive!
+09:47:29 INFO  [main] ibis.dfs.server - Server alive!
+09:47:30 INFO  [main] ibis.dfs.server - Server alive!
+09:47:31 INFO  [main] ibis.dfs.server - Server alive!
+09:47:32 INFO  [main] ibis.dfs.server - Server alive!
+09:47:33 INFO  [main] ibis.dfs.server - Server alive!
+09:47:34 INFO  [main] ibis.dfs.server - Server alive!
+09:47:35 INFO  [main] ibis.dfs.server - Server alive!
+09:47:36 INFO  [main] ibis.dfs.server - Server alive!
+09:47:36 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 56, location node058@beowulf@cluster)
+09:47:37 INFO  [main] ibis.dfs.server - Server alive!
+09:47:38 INFO  [main] ibis.dfs.server - Server alive!
+09:47:39 INFO  [main] ibis.dfs.server - Server alive!
+09:47:40 INFO  [main] ibis.dfs.server - Server alive!
+09:47:41 INFO  [main] ibis.dfs.server - Server alive!
+09:47:42 INFO  [main] ibis.dfs.server - Server alive!
+09:47:43 INFO  [main] ibis.dfs.server - Server alive!
+09:47:44 INFO  [main] ibis.dfs.server - Server alive!
+09:47:45 INFO  [main] ibis.dfs.server - Server alive!
+09:47:46 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 37, location node119@beowulf@cluster)
+09:47:46 INFO  [main] ibis.dfs.server - Server alive!
+09:47:47 INFO  [main] ibis.dfs.server - Server alive!
+09:47:48 INFO  [main] ibis.dfs.server - Server alive!
+09:47:49 INFO  [main] ibis.dfs.server - Server alive!
+09:47:50 INFO  [main] ibis.dfs.server - Server alive!
+09:47:51 INFO  [main] ibis.dfs.server - Server alive!
+09:47:52 INFO  [main] ibis.dfs.server - Server alive!
+09:47:53 INFO  [main] ibis.dfs.server - Server alive!
+09:47:54 INFO  [main] ibis.dfs.server - Server alive!
+09:47:55 INFO  [main] ibis.dfs.server - Server alive!
+09:47:56 INFO  [main] ibis.dfs.server - Server alive!
+09:47:57 INFO  [main] ibis.dfs.server - Server alive!
+09:47:58 INFO  [main] ibis.dfs.server - Server alive!
+09:47:59 INFO  [main] ibis.dfs.server - Server alive!
+09:48:00 INFO  [main] ibis.dfs.server - Server alive!
+09:48:01 INFO  [main] ibis.dfs.server - Server alive!
+09:48:02 INFO  [main] ibis.dfs.server - Server alive!
+09:48:03 INFO  [main] ibis.dfs.server - Server alive!
+09:48:04 INFO  [main] ibis.dfs.server - Server alive!
+09:48:05 INFO  [main] ibis.dfs.server - Server alive!
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 36, location node105@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 46, location node131@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 2, location fs0@das3@cs@vu@nl)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Election result master-fs043239 null
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 3, location fs1@das3@liacs@nl)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Election result master-fs137151 null
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 20, location node021@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 58, location node066@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 13, location node013@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 34, location node104@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 9, location node101@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 43, location node122@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 52, location node132@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 50, location node128@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 29, location node120@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 10, location node040@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 38, location node118@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 12, location node026@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 24, location node111@beowulf@cluster)
+09:48:06 INFO  [upcaller] ibis.simpleComm - Worker left (Ibis 60, location node057@beowulf@cluster)
+09:48:06 INFO  [main] ibis.dfs.server - Server alive!
+09:48:07 INFO  [main] ibis.dfs.server - Server alive!
+09:48:08 INFO  [main] ibis.dfs.server - Server alive!
+09:48:09 INFO  [main] ibis.dfs.server - Server alive!
+09:48:10 INFO  [main] ibis.dfs.server - Server alive!
+09:48:11 INFO  [main] ibis.dfs.server - Server alive!
+09:48:12 INFO  [main] ibis.dfs.server - Server alive!
+09:48:13 INFO  [main] ibis.dfs.server - Server alive!
+09:48:14 INFO  [main] ibis.dfs.server - Server alive!
+09:48:15 INFO  [main] ibis.dfs.server - Server alive!
+09:48:16 INFO  [main] ibis.dfs.server - Server alive!
+09:48:17 INFO  [main] ibis.dfs.server - Server alive!
+09:48:18 INFO  [main] ibis.dfs.server - Server alive!
+09:48:19 INFO  [main] ibis.dfs.server - Server alive!
+09:48:20 INFO  [main] ibis.dfs.server - Server alive!
+09:48:21 INFO  [main] ibis.dfs.server - Server alive!
+09:48:22 INFO  [main] ibis.dfs.server - Server alive!
+09:48:23 INFO  [main] ibis.dfs.server - Server alive!
+09:48:24 INFO  [main] ibis.dfs.server - Server alive!
+09:48:25 INFO  [main] ibis.dfs.server - Server alive!
+09:48:26 INFO  [main] ibis.dfs.server - Server alive!
+09:48:27 INFO  [main] ibis.dfs.server - Server alive!
+09:48:28 INFO  [main] ibis.dfs.server - Server alive!
+09:48:29 INFO  [main] ibis.dfs.server - Server alive!
+09:48:30 INFO  [main] ibis.dfs.server - Server alive!
+09:48:31 INFO  [main] ibis.dfs.server - Server alive!
+09:48:32 INFO  [main] ibis.dfs.server - Server alive!
+09:48:33 INFO  [main] ibis.dfs.server - Server alive!
+09:48:34 INFO  [main] ibis.dfs.server - Server alive!
+09:48:35 INFO  [main] ibis.dfs.server - Server alive!
+09:48:36 INFO  [main] ibis.dfs.server - Server alive!
+09:48:37 INFO  [main] ibis.dfs.server - Server alive!
+09:48:38 INFO  [main] ibis.dfs.server - Server alive!
+09:48:39 INFO  [main] ibis.dfs.server - Server alive!
+09:48:40 INFO  [main] ibis.dfs.server - Server alive!
+09:48:41 INFO  [main] ibis.dfs.server - Server alive!
+09:48:42 INFO  [main] ibis.dfs.server - Server alive!
+09:48:43 INFO  [main] ibis.dfs.server - Server alive!
+09:48:44 INFO  [main] ibis.dfs.server - Server alive!
+09:48:45 INFO  [main] ibis.dfs.server - Server alive!
+09:48:46 INFO  [main] ibis.dfs.server - Server alive!
+09:48:47 INFO  [main] ibis.dfs.server - Server alive!
+09:48:48 INFO  [main] ibis.dfs.server - Server alive!
+09:48:49 INFO  [main] ibis.dfs.server - Server alive!
+09:48:50 INFO  [main] ibis.dfs.server - Server alive!
+09:48:51 INFO  [main] ibis.dfs.server - Server alive!
+09:48:52 INFO  [main] ibis.dfs.server - Server alive!
+09:48:53 INFO  [main] ibis.dfs.server - Server alive!
+09:48:54 INFO  [main] ibis.dfs.server - Server alive!
+09:48:55 INFO  [main] ibis.dfs.server - Server alive!
+09:48:56 INFO  [main] ibis.dfs.server - Server alive!
+09:48:57 INFO  [main] ibis.dfs.server - Server alive!
+09:48:58 INFO  [main] ibis.dfs.server - Server alive!
+09:48:59 INFO  [main] ibis.dfs.server - Server alive!
+09:49:00 INFO  [main] ibis.dfs.server - Server alive!
+09:49:01 INFO  [main] ibis.dfs.server - Server alive!
+09:49:02 INFO  [main] ibis.dfs.server - Server alive!
+09:49:03 INFO  [main] ibis.dfs.server - Server alive!
+09:49:04 INFO  [main] ibis.dfs.server - Server alive!
+09:49:05 INFO  [main] ibis.dfs.server - Server alive!
+09:49:06 INFO  [main] ibis.dfs.server - Server alive!
+09:49:07 INFO  [main] ibis.dfs.server - Server alive!
+09:49:08 INFO  [main] ibis.dfs.server - Server alive!
+09:49:09 INFO  [main] ibis.dfs.server - Server alive!
+09:49:10 INFO  [main] ibis.dfs.server - Server alive!
+09:49:11 INFO  [main] ibis.dfs.server - Server alive!
+09:49:12 INFO  [main] ibis.dfs.server - Server alive!
+09:49:13 INFO  [main] ibis.dfs.server - Server alive!
+09:49:14 INFO  [main] ibis.dfs.server - Server alive!
+09:49:15 INFO  [main] ibis.dfs.server - Server alive!
+09:49:16 INFO  [main] ibis.dfs.server - Server alive!
+09:49:17 INFO  [main] ibis.dfs.server - Server alive!
+09:49:18 INFO  [main] ibis.dfs.server - Server alive!
+09:49:19 INFO  [main] ibis.dfs.server - Server alive!
+09:49:20 INFO  [main] ibis.dfs.server - Server alive!
+09:49:21 INFO  [main] ibis.dfs.server - Server alive!
+09:49:22 INFO  [main] ibis.dfs.server - Server alive!
+09:49:23 INFO  [main] ibis.dfs.server - Server alive!
+09:49:24 INFO  [main] ibis.dfs.server - Server alive!
+09:49:25 INFO  [main] ibis.dfs.server - Server alive!
+09:49:26 INFO  [main] ibis.dfs.server - Server alive!
+09:49:27 INFO  [main] ibis.dfs.server - Server alive!
+09:49:28 INFO  [main] ibis.dfs.server - Server alive!
+09:49:29 INFO  [main] ibis.dfs.server - Server alive!
+09:49:30 INFO  [main] ibis.dfs.server - Server alive!
+09:49:31 INFO  [main] ibis.dfs.server - Server alive!
+09:49:32 INFO  [main] ibis.dfs.server - Server alive!
+09:49:33 INFO  [main] ibis.dfs.server - Server alive!
+09:49:34 INFO  [main] ibis.dfs.server - Server alive!
+09:49:35 INFO  [main] ibis.dfs.server - Server alive!

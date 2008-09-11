@@ -1,0 +1,27 @@
+21:55:26 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:55:26 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+21:55:57 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:55:57 INFO  [main] masterworker.worker - Got steal reply 1 (no work, 0)
+21:56:27 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:56:27 INFO  [main] masterworker.worker - Got steal reply 2 (no work, 0)
+21:56:57 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:56:57 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(63, TRIAL-01234, r001_40_t0.fits (35095680), r001_40_t1.fits (35095680), [node209.das3.science.uva.nl], [node209.das3.science.uva.nl])
+21:57:07 INFO  [Thread-10] dach.worker - Completed '/local/jason/r001_40_t0.fits' and '/local/jason/r001_40_t1.fits' in 9078 ms. Total time 9433 ms.
+21:57:07 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:57:07 INFO  [main] masterworker.worker - Got steal reply 4 (work, 0): Job(39, TRIAL-01234, r011_30_t0.fits (38520000), r011_30_t1.fits (38520000), [node221.das3.science.uva.nl], [node221.das3.science.uva.nl])
+21:59:47 INFO  [Thread-10] dach.worker - Completed '/local/jason/r011_30_t0.fits' and '/local/jason/r011_30_t1.fits' in 159371 ms. Total time 159738 ms.
+21:59:48 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+21:59:48 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+22:00:19 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:00:19 INFO  [main] masterworker.worker - Got steal reply 6 (no work, 0)
+22:00:49 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:00:49 INFO  [main] masterworker.worker - Got steal reply 7 (no work, 0)
+22:01:20 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:01:20 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:02:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:02:51 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:03:51 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:04:21 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:05:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+22:05:51 WARN  [main] masterworker.worker - Failed to send steal request to master!
+22:06:51 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

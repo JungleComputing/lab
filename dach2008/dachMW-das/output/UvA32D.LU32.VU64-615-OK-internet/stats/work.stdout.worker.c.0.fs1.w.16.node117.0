@@ -1,0 +1,17 @@
+01:28:06 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:06 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:28:37 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:37 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(366, TRIAL-01234, node205-node207-r005_00_t0.fits (36014400), node205-node207-r005_00_t1.fits (36014400), [node207.das3.science.uva.nl], [node207.das3.science.uva.nl])
+01:31:36 INFO  [Thread-10] dach.worker - Completed '/local/jason/node205-node207-r005_00_t0.fits' and '/local/jason/node205-node207-r005_00_t1.fits' in 165811 ms. Total time 179314 ms.
+01:31:36 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:31:36 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(453, TRIAL-01234, node204-node206-r002_00_t0.fits (35455680), node204-node206-r002_00_t1.fits (35455680), [node206.das3.science.uva.nl], [node206.das3.science.uva.nl])
+01:34:08 INFO  [Thread-10] dach.worker - Completed '/local/jason/node204-node206-r002_00_t0.fits' and '/local/jason/node204-node206-r002_00_t1.fits' in 150843 ms. Total time 151609 ms.
+01:34:08 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:34:08 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(602, TRIAL-01234, node222-node227-r003_40_t0.fits (35429760), node222-node227-r003_40_t1.fits (35429760), [node227.das3.science.uva.nl], [node227.das3.science.uva.nl])
+01:37:00 INFO  [Thread-10] dach.worker - Completed '/local/jason/node222-node227-r003_40_t0.fits' and '/local/jason/node222-node227-r003_40_t1.fits' in 168291 ms. Total time 172315 ms.
+01:37:01 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:01 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+01:37:03 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:03 INFO  [main] masterworker.worker - Got steal reply 5 (no work, 0)
+01:37:33 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:33 INFO  [main] masterworker.worker - Got steal reply 6 (done, 0)

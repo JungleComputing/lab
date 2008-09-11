@@ -1,0 +1,11 @@
+23:08:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:21 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+23:08:51 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:08:51 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(79, TRIAL-01234, r009_00_t0.fits (35455680), r009_00_t1.fits (35455680), [node211.das3.science.uva.nl], [node211.das3.science.uva.nl])
+23:11:24 INFO  [Thread-10] dach.worker - Completed '/local/jason/r009_00_t0.fits' and '/local/jason/r009_00_t1.fits' in 152291 ms. Total time 152678 ms.
+23:11:24 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:11:24 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(8, TRIAL-01234, r005_11_t0.fits (36014400), r005_11_t1.fits (36014400), [node206.das3.science.uva.nl], [node206.das3.science.uva.nl])
+23:14:26 INFO  [Thread-10] dach.worker - Completed '/local/jason/r005_11_t0.fits' and '/local/jason/r005_11_t1.fits' in 182023 ms. Total time 182371 ms.
+23:15:53 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+23:16:23 WARN  [main] masterworker.worker - Failed to send steal request to master!
+23:17:23 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

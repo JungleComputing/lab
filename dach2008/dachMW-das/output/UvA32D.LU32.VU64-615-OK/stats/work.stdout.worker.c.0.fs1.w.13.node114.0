@@ -1,0 +1,16 @@
+01:12:50 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:12:50 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:13:21 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:13:21 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(612, TRIAL-01234, node202-node205-r008_21_t0.fits (36014400), node202-node205-r008_21_t1.fits (36014400), [node205.das3.science.uva.nl], [node205.das3.science.uva.nl])
+01:16:05 INFO  [Thread-10] dach.worker - Completed '/local/jason/node202-node205-r008_21_t0.fits' and '/local/jason/node202-node205-r008_21_t1.fits' in 163039 ms. Total time 163483 ms.
+01:16:05 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:16:05 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(511, TRIAL-01234, node217-node219-r009_21_t0.fits (35455680), node217-node219-r009_21_t1.fits (35455680), [node219.das3.science.uva.nl], [node219.das3.science.uva.nl])
+01:18:41 INFO  [Thread-10] dach.worker - Completed '/local/jason/node217-node219-r009_21_t0.fits' and '/local/jason/node217-node219-r009_21_t1.fits' in 155565 ms. Total time 155915 ms.
+01:18:42 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:18:42 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(186, TRIAL-01234, node222-node223-r003_40_t0.fits (35429760), node222-node223-r003_40_t1.fits (35429760), [node223.das3.science.uva.nl], [node223.das3.science.uva.nl])
+01:21:30 INFO  [Thread-10] dach.worker - Completed '/local/jason/node222-node223-r003_40_t0.fits' and '/local/jason/node222-node223-r003_40_t1.fits' in 168296 ms. Total time 168672 ms.
+01:21:31 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:21:31 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+01:22:01 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:22:02 WARN  [main] masterworker.worker - Failed to send steal request to master!
+01:23:02 INFO  [main] masterworker.worker - Sending steal request (1 / 0)

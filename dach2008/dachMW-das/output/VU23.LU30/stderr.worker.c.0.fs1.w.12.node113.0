@@ -1,0 +1,16 @@
+Exception in thread "Thread-16" java.lang.NullPointerException
+	at ibis.simpleComm.ReceivePipe.receive(ReceivePipe.java:128)
+	at ibis.simpleComm.ReceivePipe.run(ReceivePipe.java:169)
+	at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-21" java.lang.NullPointerException
+	at ibis.simpleComm.ReceivePipe.receive(ReceivePipe.java:128)
+	at ibis.simpleComm.ReceivePipe.run(ReceivePipe.java:169)
+	at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-24" java.lang.NullPointerException
+	at ibis.simpleComm.ReceivePipe.receive(ReceivePipe.java:128)
+	at ibis.simpleComm.ReceivePipe.run(ReceivePipe.java:169)
+	at java.lang.Thread.run(Thread.java:619)
+Exception in thread "Thread-25" java.lang.NullPointerException
+	at ibis.simpleComm.ReceivePipe.receive(ReceivePipe.java:128)
+	at ibis.simpleComm.ReceivePipe.run(ReceivePipe.java:169)
+	at java.lang.Thread.run(Thread.java:619)

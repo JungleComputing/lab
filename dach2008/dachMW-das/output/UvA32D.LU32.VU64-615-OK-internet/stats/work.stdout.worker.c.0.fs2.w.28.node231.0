@@ -1,0 +1,23 @@
+01:28:05 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:06 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:28:36 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:36 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(507, TRIAL-01234, node206-node209-r005_11_t0.fits (36014400), node206-node209-r005_11_t1.fits (36014400), [node209.das3.science.uva.nl], [node209.das3.science.uva.nl])
+01:30:37 INFO  [Thread-10] dach.worker - Completed '/local/jason/node206-node209-r005_11_t0.fits' and '/local/jason/node206-node209-r005_11_t1.fits' in 121250 ms. Total time 121497 ms.
+01:30:38 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:30:38 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(55, TRIAL-01234, node202-node204-r008_21_t0.fits (36014400), node202-node204-r008_21_t1.fits (36014400), [node204.das3.science.uva.nl], [node204.das3.science.uva.nl])
+01:32:39 INFO  [Thread-10] dach.worker - Completed '/local/jason/node202-node204-r008_21_t0.fits' and '/local/jason/node202-node204-r008_21_t1.fits' in 120140 ms. Total time 120464 ms.
+01:32:39 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:32:39 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(264, TRIAL-01234, r009_20_t0.fits (35455680), r009_20_t1.fits (35455680), [node202.das3.science.uva.nl], [node202.das3.science.uva.nl])
+01:34:34 INFO  [Thread-10] dach.worker - Completed '/local/jason/r009_20_t0.fits' and '/local/jason/r009_20_t1.fits' in 114856 ms. Total time 115086 ms.
+01:34:34 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:34:34 INFO  [main] masterworker.worker - Got steal reply 4 (work, 0): Job(180, TRIAL-01234, node205-node208-r003_41_t0.fits (35429760), node205-node208-r003_41_t1.fits (35429760), [node208.das3.science.uva.nl], [node208.das3.science.uva.nl])
+01:36:33 INFO  [Thread-10] dach.worker - Completed '/local/jason/node205-node208-r003_41_t0.fits' and '/local/jason/node205-node208-r003_41_t1.fits' in 118961 ms. Total time 119200 ms.
+01:36:34 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:36:34 INFO  [main] masterworker.worker - Got steal reply 5 (work, 0): Job(165, TRIAL-01234, node216-node218-r007_30_t0.fits (34663680), node216-node218-r007_30_t1.fits (34663680), [node218.das3.science.uva.nl], [node218.das3.science.uva.nl])
+01:36:44 INFO  [Thread-10] dach.worker - Completed '/local/jason/node216-node218-r007_30_t0.fits' and '/local/jason/node216-node218-r007_30_t1.fits' in 9997 ms. Total time 10354 ms.
+01:36:45 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:36:45 INFO  [main] masterworker.worker - Got steal reply 6 (no work, 0)
+01:37:15 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:15 INFO  [main] masterworker.worker - Got steal reply 7 (no work, 0)
+01:37:46 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:47 INFO  [main] masterworker.worker - Got steal reply 8 (done, 0)

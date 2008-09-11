@@ -1,0 +1,17 @@
+01:28:06 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:06 INFO  [main] masterworker.worker - Got steal reply 0 (no work, 0)
+01:28:36 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:28:36 INFO  [main] masterworker.worker - Got steal reply 1 (work, 0): Job(382, TRIAL-01234, node222-node225-r005_20_t0.fits (36014400), node222-node225-r005_20_t1.fits (36014400), [node225.das3.science.uva.nl], [node225.das3.science.uva.nl])
+01:31:33 INFO  [Thread-10] dach.worker - Completed '/local/jason/node222-node225-r005_20_t0.fits' and '/local/jason/node222-node225-r005_20_t1.fits' in 162932 ms. Total time 176502 ms.
+01:31:33 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:31:33 INFO  [main] masterworker.worker - Got steal reply 2 (work, 0): Job(459, TRIAL-01234, node225-node229-r002_40_t0.fits (35455680), node225-node229-r002_40_t1.fits (35455680), [node229.das3.science.uva.nl], [node229.das3.science.uva.nl])
+01:34:07 INFO  [Thread-10] dach.worker - Completed '/local/jason/node225-node229-r002_40_t0.fits' and '/local/jason/node225-node229-r002_40_t1.fits' in 152725 ms. Total time 154229 ms.
+01:34:08 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:34:08 INFO  [main] masterworker.worker - Got steal reply 3 (work, 0): Job(585, TRIAL-01234, node204-node207-r003_30_t0.fits (35429760), node204-node207-r003_30_t1.fits (35429760), [node207.das3.science.uva.nl], [node207.das3.science.uva.nl])
+01:37:15 INFO  [Thread-10] dach.worker - Completed '/local/jason/node204-node207-r003_30_t0.fits' and '/local/jason/node204-node207-r003_30_t1.fits' in 183376 ms. Total time 187488 ms.
+01:37:16 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:16 INFO  [main] masterworker.worker - Got steal reply 4 (no work, 0)
+01:37:47 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:37:47 WARN  [main] masterworker.worker - Failed to send steal request to master!
+01:38:17 INFO  [main] masterworker.worker - Sending steal request (1 / 0)
+01:38:47 WARN  [main] masterworker.worker - Failed to send steal request to master!
