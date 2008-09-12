@@ -1,0 +1,11 @@
+
+Final image  to be completed: #816 uses files
+r0768_30_t0.fits
+r0768_30_t1.fits
+
+Both are 33M.
+
+Copy 6s on keio
+
+execution 7min42 on hongo, and 9min16 on keio.
+
