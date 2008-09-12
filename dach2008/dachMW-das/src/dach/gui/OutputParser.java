@@ -20,8 +20,12 @@ public class OutputParser {
 	
 	private boolean old = false;
 	
-	public OutputParser(boolean old) { 
+	private long startTime;
+	
+	public OutputParser(String startTime, boolean old) { 
 		this.old = old;
+		
+		this.startTime = getTime(startTime);
 	}
 	
 	public long getTime(String time) { 
@@ -37,7 +41,13 @@ public class OutputParser {
 		long minute = Integer.parseInt(tok.nextToken());
 		long second = Integer.parseInt(tok.nextToken());
 		
-		return second + 60*minute + 60*60*hour; 
+		long t = second + 60*minute + 60*60*hour;
+		
+		if (t < startTime) { 
+			t += 24*60*60;
+		}
+		
+		return t;
 	}
 	
 	private void skipTokens(StringTokenizer tok, int num) { 
@@ -196,9 +206,10 @@ public class OutputParser {
 		return s;
 	}
 	
-	public ClusterStatistics parseCluster(String cluster, long startTime, String [] nodes, File [] files) throws IOException { 
+	public ClusterStatistics parseCluster(String cluster, int cores, boolean runMultiCore, 
+			long startTime, String [] nodes, File [] files) throws IOException { 
 
-		ClusterStatistics c = new ClusterStatistics(cluster);
+		ClusterStatistics c = new ClusterStatistics(cluster, cores, runMultiCore);
 		
 		for (int i=0;i<nodes.length;i++) { 
 			NodeStatistics n = parseNode(cluster, nodes[i], startTime, files[i]);
@@ -208,7 +219,9 @@ public class OutputParser {
 		return c;
 	}
 
-	public LinkedList<ClusterStatistics> parseAll(File directory, long startTime, String prefix, String [] clusters, String postfix) throws IOException { 
+	public LinkedList<ClusterStatistics> parseAll(File directory, 
+			long startTime, String prefix, String [] clusters, 
+			String postfix) throws IOException { 
 		
 		totalWorkTime = 0;
 		totalComputeTime = 0;
@@ -222,7 +235,18 @@ public class OutputParser {
 		
 		for (String cluster : clusters) { 
 			
-			String tmp = prefix + cluster;
+			StringTokenizer tok = new StringTokenizer(cluster, ":");
+			
+			if (tok.countTokens() != 3) { 
+				System.err.println("Failed to parse cluster info: " + cluster);
+				System.exit(1);
+			}
+			
+			String clustername = tok.nextToken();
+			int cores = Integer.parseInt(tok.nextToken());
+			boolean runMultiCore = tok.nextToken().equalsIgnoreCase("M");
+			
+			String tmp = prefix + clustername;
 			
 			for (int i=0;i<listing.length;i++) { 
 		
@@ -242,7 +266,8 @@ public class OutputParser {
 			}
 
 			if (nodes.size() > 0) { 
-				ClusterStatistics c = parseCluster(cluster, startTime, 
+				ClusterStatistics c = parseCluster(clustername, 
+						cores, runMultiCore, startTime, 
 						nodes.toArray(new String[nodes.size()]), 
 						files.toArray(new File[files.size()]));
 				
@@ -265,7 +290,7 @@ public static void main(String [] args) {
 			System.exit(1);
 		}
 		
-		OutputParser p = new OutputParser(false);
+		OutputParser p = new OutputParser(args[0], false);
 		
 		long startTime = p.getTime(args[0]); 
 		File dir = new File(args[1]);

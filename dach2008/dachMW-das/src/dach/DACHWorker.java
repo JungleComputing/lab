@@ -346,7 +346,7 @@ public class DACHWorker implements JobProcessor {
 			result.setResult(out, time());
 			
 			String message = "Completed Job " + pair.ID + " "
-				+ before + " " + after  
+				+ before + " " + after + " " 
 				+ (end-start) + " Transfer " + 
 				+ (startCompute-start) + " " + (t1-start) + " " + (startCompute-t1) + " Compute "
 				+ (end-startCompute);

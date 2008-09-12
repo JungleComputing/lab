@@ -10,10 +10,18 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
+import javax.imageio.ImageIO;
 import javax.swing.JComponent;
 import javax.swing.event.MouseInputListener;
+
+import dach.gui.NodeStatistics.Event;
 
 public class WorkMap extends JComponent 
 implements MouseInputListener, MouseWheelListener {
@@ -62,7 +70,14 @@ implements MouseInputListener, MouseWheelListener {
 
 		this.old = old;
 
-		int totalLines = 800;  // stats.size() * 4 + 4;
+		int totalLines = 0;
+		
+		for (ClusterStatistics c : stats) { 
+			totalLines += c.cores * c.nodes.size() + c.nodes.size() * 4;
+		}
+		
+		totalLines += stats.size() * 4;
+		
 		long endTime = 0;
 		long jobEndTime = 0;
 
@@ -73,7 +88,7 @@ implements MouseInputListener, MouseWheelListener {
 			endTime = Math.max(endTime, c.getLatestEndTime());
 		}
 
-		imageW = (int) Math.max(jobEndTime, endTime);
+		imageW = (int) Math.max(jobEndTime, endTime) + 100;
 		imageH = totalLines;
 
 		//scaleW = scale(imageW, 1200);
@@ -112,7 +127,16 @@ implements MouseInputListener, MouseWheelListener {
 		big.fillRect((int)appEndTime-scaleW, 0, 2*scaleW, imageH);
 
 		System.out.println("FillRect " + appEndTime + " 0 " + scaleW + " " + imageH);
-
+		 
+		try {
+			ImageIO.write(bi2, "png", new File("out.png"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		System.exit(1);
+		
 		map = bi2;
 
 		imageW = map.getWidth(null);
@@ -153,13 +177,20 @@ implements MouseInputListener, MouseWheelListener {
 		return tmp;
 	}
 
-	private int drawNode(Graphics big, NodeStatistics n, final int line) { 
-	
+	private int drawNodeMC(Graphics big, int cores, NodeStatistics n, final int line) { 
+		
 		int myLine = line;
 		
 		int start = (int) n.getEarliestStartTime();
 		int end = (int) n.getLatestEndTime();
 
+		big.setColor(Color.DARK_GRAY);
+
+		big.fillRect(0, myLine, imageW, cores);
+
+		big.setColor(Color.GRAY);
+		big.fillRect(start, myLine, (end-start), cores);
+		
 		for (NodeStatistics.Event e : n.events) { 
 
 			switch (e.type) { 
@@ -170,12 +201,7 @@ implements MouseInputListener, MouseWheelListener {
 			case START_COMPUTE:
 				break;
 			case JOB_RESULT:
-				big.setColor(Color.DARK_GRAY);
-				big.fillRect(0, myLine, imageW, 1);
-
-				big.setColor(Color.GRAY);
-				big.fillRect(start, myLine, (end-start), 1);
-		
+			
 				long [] data = (long[]) e.data;
 				
 				int jobTime = (int) Math.round(data[0] / 1000.0);
@@ -185,34 +211,118 @@ implements MouseInputListener, MouseWheelListener {
 				int startT = (int) (e.time - jobTime);
 				int computeT = (int) (e.time - computeTime);
 				
-				big.setColor(Color.ORANGE);
-				big.fillRect(startT, myLine, transferTime, 1);
+				big.setColor(Color.RED);
+				big.fillRect(startT, myLine, transferTime, cores);
 				
 				big.setColor(Color.YELLOW);
-				big.fillRect(computeT, myLine, computeTime , 1);
-				
-				myLine++;
-
-				big.setColor(Color.DARK_GRAY);
-				big.fillRect(0, myLine, imageW, 1);
-
-				myLine++;
-
+				big.fillRect(computeT, myLine, computeTime, cores);
+	
 				break;
 			}
 		}
 		
+		myLine += cores;
+		
 		return (myLine - line);	
 	}
 	
+	private static class TimeSorter implements Comparator<NodeStatistics.Event> {
+
+		private long getStartTime(Event e) { 
+			long [] data = (long[]) e.data;
+			int jobTime = (int) Math.round(data[0] / 1000.0);
+			return (e.time - jobTime);
+		}
+		
+		public int compare(Event arg0, Event arg1) {
+			
+			long t0 = getStartTime(arg0);
+			long t1 = getStartTime(arg1);
+			
+			return (int) (t0-t1);
+		}
+	}
+	
+	private int drawNodeSC(Graphics big, int cores, NodeStatistics n, final int line) { 
+
+		long [] activity = new long[cores];
+		
+		Arrays.fill(activity, -1);
+		
+		int myLine = line;
+		
+		int start = (int) n.getEarliestStartTime();
+		int end = (int) n.getLatestEndTime();
+		
+		big.setColor(Color.DARK_GRAY);
+
+		big.fillRect(0, myLine, imageW, cores);
+
+		big.setColor(Color.GRAY);
+		big.fillRect(start, myLine, (end-start), cores);
+		
+		LinkedList<NodeStatistics.Event> tmp = new LinkedList<NodeStatistics.Event>();
+		
+		for (NodeStatistics.Event e : n.events) { 
+			if (e.type == NodeStatistics.EventType.JOB_RESULT) { 
+				tmp.add(e);
+			}
+		}
+
+		Collections.sort(tmp, new TimeSorter()); 
+		
+		for (NodeStatistics.Event e : tmp) { 
+			long [] data = (long[]) e.data;
+
+			int jobTime = (int) Math.round(data[0] / 1000.0);
+			int computeTime = (int) Math.round(data[4] / 1000.0);
+			int transferTime = (int) Math.round(data[1] / 1000.0);
+
+			int startT = (int) (e.time - jobTime);
+			int computeT = (int) (e.time - computeTime);
+
+			int index = -1;
+
+			for (int i=0;i<cores;i++) { 
+
+				if (activity[i] <= startT) { 
+					activity[i] = startT + jobTime-2;
+					index = i;
+					break;
+				}
+			}
+
+			if (index == -1) { 
+				System.err.println("EEP failed to find empty core slot! " + startT + " " 
+						+ Arrays.toString(activity));
+				System.exit(1);
+			}
+
+			big.setColor(Color.RED);
+			big.fillRect(startT, myLine+index, transferTime, 1);
+
+			big.setColor(Color.YELLOW);
+			big.fillRect(computeT, myLine+index, computeTime, 1);
+		}
+		
+		myLine += cores;
+		
+		return (myLine - line);	
+	}
 	
 	private int drawCluster(Graphics big, ClusterStatistics c, final int line) { 
 
 		int myLine = line;
 
 		for (NodeStatistics n : c.nodes) { 
-			myLine += drawNode(big, n, myLine);
-			myLine +=4;
+			
+			if (c.runMultiCore) { 
+				myLine += drawNodeMC(big, c.cores, n, myLine);
+				myLine +=4;
+			} else { 
+				myLine += drawNodeSC(big, c.cores, n, myLine);
+				myLine +=4;
+			}
 		}
 
 		return (myLine - line);

@@ -13,7 +13,7 @@ public class ShowWork {
 			System.exit(1);
 		}
 		
-		OutputParser p = new OutputParser(false);
+		OutputParser p = new OutputParser(args[0], false);
 		
 		long startTime = p.getTime(args[0]); 
 		long endTime = p.getTime(args[1]); 

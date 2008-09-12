@@ -16,6 +16,8 @@ public class ClusterStatistics {
 	private long lastestEndTime = Long.MIN_VALUE;
 	
 	private int jobs = 0;
+	public final int cores;
+	public final boolean runMultiCore;
 	
 	private class SortEndTime implements Comparator<NodeStatistics> {
 
@@ -25,8 +27,10 @@ public class ClusterStatistics {
 		
 	}
 	
-	public ClusterStatistics(final String name) {
+	public ClusterStatistics(final String name, int cores, boolean runMultiCore) {
 		this.name = name;
+		this.cores = cores;
+		this.runMultiCore = runMultiCore;
 	}
 
 	public void addNode(NodeStatistics n) { 
