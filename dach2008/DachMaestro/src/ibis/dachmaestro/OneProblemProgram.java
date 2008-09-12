@@ -126,7 +126,7 @@ public class OneProblemProgram
             long issuedLabels = labelTracker.getIssuedLabels();
             long returnedLabels = labelTracker.getReturnedLabels();
             node.reportProgress( "I now have " + returnedLabels + " of " + issuedLabels + " pairs, " + failures + " failures" );
-            if( (issuedLabels-returnedLabels)<20 ) {
+            if( (issuedLabels-returnedLabels)<25 ) {
                 Label[] labels = labelTracker.listOutstandingLabels();
                 
                 node.reportProgress( "Still missing: " + Arrays.deepToString( labels ) );
@@ -149,10 +149,6 @@ public class OneProblemProgram
         }
     }
 
-    /**
-     * @param l
-     * @return
-     */
     private static String joinStringList( String[] l )
     {
         String cmd = "";
