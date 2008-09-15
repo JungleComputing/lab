@@ -69,6 +69,7 @@ public class Master implements Upcall {
 	
 	private final boolean allowRemoteSteals;
 	
+	private boolean allowPendingJobDuplication = false;
 	
 	public Master(ResultProcessor processor, 
 			List<Cluster> workerClusters, List<String> workerOptions, String workerDir,
@@ -556,7 +557,7 @@ public class Master implements Upcall {
 			if (processor.needMoreJobs()) { 
 				// More jobs may have been produced
 				job = jobs.getJob(r.location, allowRemoteSteals);	
-			} else { 
+			} else if (allowPendingJobDuplication) {
 				// We are out of jobs, so get a pending one ?
 				job = selectPendingJob(src, r.location);
 				oldJob = true;	

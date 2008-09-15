@@ -294,7 +294,10 @@ public class DACHWorker implements JobProcessor {
 	
 	private void compare(DACHJob pair, DACHResult result) {
 
-		info(result, "Comparing Job " + pair.ID + " '" + pair.beforeInfo.name + "' and '" + pair.afterInfo.name + "'\n");
+		long start = System.currentTimeMillis();
+		
+		info(result, "Comparing Job " + pair.ID + " " + start + " " + pair.beforeInfo.name 
+				+ " " + pair.afterInfo.name + "\n");
     	
     	String problem = pair.getProblemDir(dataDir);
     	String before = pair.getBeforePath(dataDir);
@@ -307,8 +310,6 @@ public class DACHWorker implements JobProcessor {
     	
     	before = tmpDir + File.separator + pair.beforeInfo.name;
     	after = tmpDir + File.separator + pair.afterInfo.name;
-    	
-    	long start = System.currentTimeMillis();
     	
     	if (!prepareInputFile(pair, result, pair.beforeInfo, before)) { 
     		return;
@@ -346,7 +347,7 @@ public class DACHWorker implements JobProcessor {
 			result.setResult(out, time());
 			
 			String message = "Completed Job " + pair.ID + " "
-				+ before + " " + after + " " 
+				+ before + " " + after + " " + end + " " + 
 				+ (end-start) + " Transfer " + 
 				+ (startCompute-start) + " " + (t1-start) + " " + (startCompute-t1) + " Compute "
 				+ (end-startCompute);

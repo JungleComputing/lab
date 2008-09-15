@@ -247,7 +247,7 @@ implements MouseInputListener, MouseWheelListener {
 
 		long [] activity = new long[cores];
 		
-		Arrays.fill(activity, -1);
+		Arrays.fill(activity, Long.MIN_VALUE);
 		
 		int myLine = line;
 		
@@ -283,10 +283,14 @@ implements MouseInputListener, MouseWheelListener {
 
 			int index = -1;
 
+			if (startT < 0) { 
+				startT = 0;
+			}
+			
 			for (int i=0;i<cores;i++) { 
 
 				if (activity[i] <= startT) { 
-					activity[i] = startT + jobTime-2;
+					activity[i] = startT + jobTime-3;
 					index = i;
 					break;
 				}
@@ -294,7 +298,7 @@ implements MouseInputListener, MouseWheelListener {
 
 			if (index == -1) { 
 				System.err.println("EEP failed to find empty core slot! " + startT + " " 
-						+ Arrays.toString(activity));
+						+ Arrays.toString(activity) + " " + e.ID);
 				System.exit(1);
 			}
 

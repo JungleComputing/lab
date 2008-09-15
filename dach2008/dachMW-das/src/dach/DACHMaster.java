@@ -148,6 +148,7 @@ public class DACHMaster implements ResultProcessor {
 		}
 		
 		// HACK -- save all seperatedly
+/*		
 		String tmp = null;
 		
 		try { 
@@ -171,6 +172,7 @@ public class DACHMaster implements ResultProcessor {
 		} catch (Exception e) {
 			logger.error("  " + ID, e);
 		}
+*/
 	}
 	
 	private void createWriter(Problem p) {

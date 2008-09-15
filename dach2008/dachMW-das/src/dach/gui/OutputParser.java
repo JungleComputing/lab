@@ -145,8 +145,10 @@ public class OutputParser {
 				
 				long jobID = Long.parseLong(tok.nextToken());
 				
-				// Skip next 9 tokens
-				skipTokens(tok, 2);
+				// Skip next 2/3 tokens
+				
+				// NOTE: change from 3 to 2 for format 2	
+				skipTokens(tok, 3);
 				
 				long [] data = new long[5];
 				
