@@ -350,7 +350,7 @@ public class DACHWorker implements JobProcessor {
 				+ before + " " + after + " " + end + " " + 
 				+ (end-start) + " Transfer " + 
 				+ (startCompute-start) + " " + (t1-start) + " " + (startCompute-t1) + " Compute "
-				+ (end-startCompute);
+				+ (end-startCompute) + " [ " + start + " " + t1 + " " + startCompute + " " + end + " ]";
 			
 			info(result, message);
 		}

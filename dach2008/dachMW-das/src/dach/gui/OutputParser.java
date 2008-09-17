@@ -33,7 +33,7 @@ public class OutputParser {
 		StringTokenizer tok = new StringTokenizer(time, ":");
 		
 		if (tok.countTokens() != 3) { 
-			System.out.println("Cannot parse time! " + time);
+			System.err.println("Cannot parse time! " + time);
 			return 0;
 		}
 		
@@ -71,7 +71,7 @@ public class OutputParser {
 		StringTokenizer tok = new StringTokenizer(line);
 		
 		if (tok.countTokens() < 2) {
-			System.out.println("Failed to parse: " + line);
+			System.err.println("Failed to parse: " + line);
 			return;
 		}
 		
@@ -100,7 +100,7 @@ public class OutputParser {
 
 		if (old) { 
 			if (tok.countTokens() < 5) {
-				System.out.println("Failed to parse: " + line);
+				System.err.println("Failed to parse: " + line);
 				return;
 			}
 
@@ -135,7 +135,7 @@ public class OutputParser {
 				s.addEvent(NodeStatistics.EventType.JOB_RESULT, -1, time, null);
 				return;			
 			} else { 
-				System.out.println("Failed to parse: " + line);
+				System.err.println("Failed to parse: " + line);
 			}
 		} else { 
 			
@@ -203,7 +203,7 @@ public class OutputParser {
 			r.close();
 		}
 		
-		System.out.println("Node time: " + nodeWorkTime + " " + nodeComputeTime + " " + (nodeWorkTime-nodeComputeTime));
+		System.err.println("Node time: " + nodeWorkTime + " " + nodeComputeTime + " " + (nodeWorkTime-nodeComputeTime));
 		
 		return s;
 	}
@@ -307,24 +307,24 @@ public static void main(String [] args) {
 		try {
 			LinkedList<ClusterStatistics> s = p.parseAll(dir, startTime, prefix, clusters, postfix);
 
-			System.out.println("Got " + s.size() + " clusters");
+			System.err.println("Got " + s.size() + " clusters");
 		
 			long endTime = 0;
 			long jobEndTime = 0;
 			
 			for (ClusterStatistics c : s) { 
-				System.out.println("  " + c.name + " " + c.nodes.size() + " nodes " + c.getJobs() + " jobs");
+				System.err.println("  " + c.name + " " + c.nodes.size() + " nodes " + c.getJobs() + " jobs");
 			
 				jobEndTime = Math.max(jobEndTime, c.getLatestJobEndTime());
 				endTime = Math.max(endTime, c.getLatestEndTime());
 			}
 		
-			System.out.println("end time = " + endTime);
-			System.out.println("job end time = " + jobEndTime);
+			System.err.println("end time = " + endTime);
+			System.err.println("job end time = " + jobEndTime);
 	
-			System.out.println("total work time = " + p.totalWorkTime);
-			System.out.println("total compute time = " + p.totalComputeTime);
-			System.out.println("total transfer time = " + (p.totalWorkTime - p.totalComputeTime));
+			System.err.println("total work time = " + p.totalWorkTime);
+			System.err.println("total compute time = " + p.totalComputeTime);
+			System.err.println("total transfer time = " + (p.totalWorkTime - p.totalComputeTime));
 
 			
 		} catch (IOException e) {

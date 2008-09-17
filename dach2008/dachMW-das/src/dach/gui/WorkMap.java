@@ -217,6 +217,12 @@ implements MouseInputListener, MouseWheelListener {
 				big.setColor(Color.YELLOW);
 				big.fillRect(computeT, myLine, computeTime, cores);
 	
+				System.out.println("t" + e.ID + "(x) = " + startT + "<=x && x<=" 
+						+ computeT + " ? " + myLine + " : 1/0");
+			
+				System.out.println("c" + e.ID + "(x) = " + computeT + "<=x && x<=" 
+						+ (e.time) + " ? " + myLine + " : 1/0");
+				
 				break;
 			}
 		}
@@ -307,6 +313,13 @@ implements MouseInputListener, MouseWheelListener {
 
 			big.setColor(Color.YELLOW);
 			big.fillRect(computeT, myLine+index, computeTime, 1);
+			
+			System.out.println("t" + e.ID + "(x) = " + startT + "<=x && x<=" 
+					+ computeT + " ? " + (myLine+index) + " : 1/0");
+		
+			System.out.println("c" + e.ID + "(x) = " + computeT + "<=x && x<=" 
+					+ (e.time) + " ? " + (myLine+index) + " : 1/0");
+			
 		}
 		
 		myLine += cores;

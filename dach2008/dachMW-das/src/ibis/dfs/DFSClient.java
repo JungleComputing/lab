@@ -8,6 +8,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Logger;
@@ -42,6 +43,8 @@ public class DFSClient implements Upcall {
 	private final String location;
 	
 	private HashMap<Long, Object> replies = new HashMap<Long, Object>();
+	
+	private Map<String, IbisIdentifier> serverCache = Collections.synchronizedMap(new HashMap<String, IbisIdentifier>());
 	
 	public DFSClient(String node, String location) throws Exception { 
 		
@@ -418,6 +421,12 @@ public class DFSClient implements Upcall {
 
 	private IbisIdentifier getServer(String server) { 
 		
+		IbisIdentifier result = serverCache.get(server);
+		
+		if (result != null) { 
+			return result;
+		}
+		
 		long ID = getRequestID();
 		
 		registerSingleRequest(ID);
@@ -437,6 +446,9 @@ public class DFSClient implements Upcall {
 		
 		if (m instanceof LookupReply) { 
 			LookupReply reply = (LookupReply) m;
+			
+			serverCache.put(server, reply.id);
+			
 			return reply.id;
 		} else if (m instanceof ErrorReply) { 
 			logger.warn("Got error reply from the DFSNameService: " + ((ErrorReply) m).error);

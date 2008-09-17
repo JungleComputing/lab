@@ -1,5 +1,6 @@
 package ibis.masterworker;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -72,6 +73,9 @@ public class SimpleJobQueue implements JobQueue {
 		for (Job j : jobs) { 
 			addJob(j);
 		}
+		
+		// Randomize order!
+		Collections.shuffle(this.jobs);
 	}
 	
 	public synchronized int getLength() {

@@ -8,6 +8,8 @@ public class DistributeFiles {
 
 	private final File dir; 
 	private final String dst;
+	private final String domain;
+	
 	private final LinkedList<String> targets;
 	
 	private final HashMap<String, File> files = new HashMap<String, File>();
@@ -26,9 +28,10 @@ public class DistributeFiles {
 		
 	}
 	
-	public DistributeFiles(File dir, String dst, LinkedList<String> targets) {
+	public DistributeFiles(File dir, String dst, String domain, LinkedList<String> targets) {
 		this.dir = dir;
 		this.dst = dst;
+		this.domain = domain;
 		this.targets = targets;
 	}
 
@@ -80,7 +83,7 @@ public class DistributeFiles {
 		System.err.println("Found pairs: ");
 		
 		for (Pair p : pairs) { 
-			System.out.println("  " + p.f1.getName() + " " + p.f2.getName());
+			System.err.println("  " + p.f1.getName() + " " + p.f2.getName());
 		}
 	
 		int div = pairs.size() / targets.size(); 
@@ -109,7 +112,7 @@ public class DistributeFiles {
 			}
 			
 			System.out.println("echo Copying to " + node);
-			System.out.println("scp " + files + " " + node + ":" + dst);
+			System.out.println("scp " + files + " " + node + domain + ":" + dst);
 
 			index++;
 		}
@@ -119,6 +122,8 @@ public class DistributeFiles {
 		
 		File dir = null;
 		String dst = null;
+		String domain = "";
+		
 		LinkedList<String> targets = new LinkedList<String>();
 		
 		for (int i=0;i<args.length;i++) { 
@@ -127,6 +132,8 @@ public class DistributeFiles {
 				dir = new File(args[++i]);
 			} else if (args[i].equals("-dst") && i < args.length-1) { 
 				dst = args[++i];
+			} else if (args[i].equals("-domain") && i < args.length-1) { 
+				domain = args[++i];	
 			} else { 
 				targets.add(args[i]);
 			} 
@@ -147,7 +154,7 @@ public class DistributeFiles {
 			System.exit(1);
 		}
 		
-		new DistributeFiles(dir, dst, targets).start();
+		new DistributeFiles(dir, dst, domain, targets).start();
 	}
 	
 	
