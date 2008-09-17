@@ -142,7 +142,7 @@ public class DistributeFiles {
 			
 			String target = nodes.next();
 			
-			System.out.println("echo Copying to " + target + " (" + index + " / " + pairs.size() + ")");
+			System.out.println("echo Copying to " + target + " " + index + " of " + pairs.size());
 			System.out.println("ssh " + target + domain + " scp " + srcMachine + ":\"\\\"" 
 					+ p.f1.getPath() + " " + p.f2.getPath() + "\\\"\" " 
 					+ dst + (parallel > 1 ? " &": ""));	
