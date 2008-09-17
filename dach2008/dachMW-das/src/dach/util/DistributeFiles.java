@@ -10,6 +10,8 @@ public class DistributeFiles {
 	private final String dst;
 	private final String domain;
 	
+	private final int parallel = 10;
+	
 	private final LinkedList<String> targets;
 	
 	private final HashMap<String, File> files = new HashMap<String, File>();
@@ -112,9 +114,13 @@ public class DistributeFiles {
 			}
 			
 			System.out.println("echo Copying to " + node);
-			System.out.println("scp " + files + " " + node + domain + ":" + dst);
+			System.out.println("scp " + files + " " + node + domain + ":" + dst + (parallel > 1 ? " &": ""));
 
 			index++;
+			
+			if (parallel > 1 && index % parallel == 0) { 
+				System.out.println("wait");
+			}
 		}
 	}
 	
