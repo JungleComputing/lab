@@ -2,6 +2,7 @@ package dach.util;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class DistributeFiles {
@@ -100,7 +101,8 @@ public class DistributeFiles {
 		int index = 0;
 
 		System.out.println("#!/bin/sh");
-		
+	
+		/*
 		for (String node : targets) { 
 			
 			String files = "";
@@ -122,6 +124,28 @@ public class DistributeFiles {
 			} else { 
 				System.out.println("ssh " + node + domain + " scp " + srcMachine + ":\"\\\"" + files + "\\\"\" " + dst + (parallel > 1 ? " &": ""));	
 			}
+			
+			index++;
+			
+			if (parallel > 1 && index % parallel == 0) { 
+				System.out.println("wait");
+			}
+		}*/
+		
+		Iterator<String> nodes = targets.iterator();
+		
+		for (Pair p : pairs) { 
+			
+			if (!nodes.hasNext()) { 
+				 nodes = targets.iterator();
+			}
+			
+			String target = nodes.next();
+			
+			System.out.println("echo Copying to " + target);
+			System.out.println("ssh " + target + domain + " scp " + srcMachine + ":\"\\\"" 
+					+ p.f1.getPath() + " " + p.f2.getPath() + "\\\"\" " 
+					+ dst + (parallel > 1 ? " &": ""));	
 			
 			index++;
 			
