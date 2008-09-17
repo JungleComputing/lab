@@ -11,6 +11,8 @@ public class DistributeFiles {
 	private final String domain;
 	
 	private final int parallel = 10;
+	private final boolean pull = true;
+	private final String srcMachine = "carrot.cs.vu.nl";
 	
 	private final LinkedList<String> targets;
 	
@@ -114,8 +116,13 @@ public class DistributeFiles {
 			}
 			
 			System.out.println("echo Copying to " + node);
-			System.out.println("scp " + files + " " + node + domain + ":" + dst + (parallel > 1 ? " &": ""));
-
+			
+			if (!pull) {
+				System.out.println("scp " + files + " " + node + domain + ":" + dst + (parallel > 1 ? " &": ""));
+			} else { 
+				System.out.println("ssh " + node + domain + " scp " + srcMachine + ":\"" + files + "\" " + dst + (parallel > 1 ? " &": ""));	
+			}
+			
 			index++;
 			
 			if (parallel > 1 && index % parallel == 0) { 
