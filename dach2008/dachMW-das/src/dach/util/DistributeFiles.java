@@ -120,7 +120,7 @@ public class DistributeFiles {
 			if (!pull) {
 				System.out.println("scp " + files + " " + node + domain + ":" + dst + (parallel > 1 ? " &": ""));
 			} else { 
-				System.out.println("ssh " + node + domain + " scp " + srcMachine + ":\"" + files + "\" " + dst + (parallel > 1 ? " &": ""));	
+				System.out.println("ssh " + node + domain + " scp " + srcMachine + ":\"\\\"" + files + "\\\"\" " + dst + (parallel > 1 ? " &": ""));	
 			}
 			
 			index++;
