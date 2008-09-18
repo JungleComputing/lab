@@ -153,6 +153,11 @@ public class DistributeFiles {
 				System.out.println("wait");
 			}
 		}
+
+		if (parallel > 1) { 
+			System.out.println("wait");
+		}
+
 	}
 	
 	public static void main(String [] args) { 
