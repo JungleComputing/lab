@@ -106,10 +106,10 @@ implements MouseInputListener, MouseWheelListener {
 		Graphics big = bi2.getGraphics();
 //		big.drawImage(map, 0, 0, null);
 
-		big.setColor(Color.BLACK);
+		big.setColor(Color.WHITE);
 		big.fillRect(0, 0, imageW, imageH);
 
-		int line = 4;
+		int line = 20;
 
 		for (ClusterStatistics c : stats) { 
 
@@ -118,7 +118,7 @@ implements MouseInputListener, MouseWheelListener {
 				line += 4;
 			} else { 
 				line += drawCluster(big, c, line);
-				line += 4;
+				line += 20;
 			}
 
 		}
@@ -217,11 +217,13 @@ implements MouseInputListener, MouseWheelListener {
 				big.setColor(Color.YELLOW);
 				big.fillRect(computeT, myLine, computeTime, cores);
 	
+				/*
 				System.out.println("t" + e.ID + "(x) = " + startT + "<=x && x<=" 
 						+ computeT + " ? " + myLine + " : 1/0");
 			
 				System.out.println("c" + e.ID + "(x) = " + computeT + "<=x && x<=" 
 						+ (e.time) + " ? " + myLine + " : 1/0");
+				*/
 				
 				break;
 			}
@@ -260,11 +262,12 @@ implements MouseInputListener, MouseWheelListener {
 		int start = (int) n.getEarliestStartTime();
 		int end = (int) n.getLatestEndTime();
 		
-		big.setColor(Color.DARK_GRAY);
-
+		// My line
+		big.setColor(Color.WHITE);
 		big.fillRect(0, myLine, imageW, cores);
 
-		big.setColor(Color.GRAY);
+		// My active bit
+		big.setColor(Color.WHITE);
 		big.fillRect(start, myLine, (end-start), cores);
 		
 		LinkedList<NodeStatistics.Event> tmp = new LinkedList<NodeStatistics.Event>();
@@ -308,18 +311,22 @@ implements MouseInputListener, MouseWheelListener {
 				System.exit(1);
 			}
 
-			big.setColor(Color.RED);
+			// Contention
+			big.setColor(Color.BLACK);
 			big.fillRect(startT, myLine+index, transferTime, 1);
 
-			big.setColor(Color.YELLOW);
+			// Compute
+			big.setColor(Color.LIGHT_GRAY);
 			big.fillRect(computeT, myLine+index, computeTime, 1);
 			
+			
+			/*
 			System.out.println("t" + e.ID + "(x) = " + startT + "<=x && x<=" 
 					+ computeT + " ? " + (myLine+index) + " : 1/0");
 		
 			System.out.println("c" + e.ID + "(x) = " + computeT + "<=x && x<=" 
 					+ (e.time) + " ? " + (myLine+index) + " : 1/0");
-			
+			*/
 		}
 		
 		myLine += cores;

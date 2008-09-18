@@ -75,7 +75,7 @@ public class SimpleJobQueue implements JobQueue {
 		}
 		
 		// Randomize order!
-		Collections.shuffle(this.jobs);
+		// Collections.shuffle(this.jobs);
 	}
 	
 	public synchronized int getLength() {
