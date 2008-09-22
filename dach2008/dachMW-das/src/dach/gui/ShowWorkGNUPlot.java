@@ -15,7 +15,11 @@ public class ShowWorkGNUPlot {
 	
 	private int tcount = 0;
 	private int ccount = 0;
+	private int lcount = 0;
 	
+	
+	
+
 	public ShowWorkGNUPlot(LinkedList<ClusterStatistics> stats, long appEndTime) {
 
 		int totalLines = 0;
@@ -26,38 +30,43 @@ public class ShowWorkGNUPlot {
 
 		totalLines += stats.size() * 4;
 
-		long endTime = 0;
 		long jobEndTime = 0;
 
 		for (ClusterStatistics c : stats) { 
 			totalLines += c.getNodes();
-
 			jobEndTime = Math.max(jobEndTime, c.getLatestJobEndTime());
-			endTime = Math.max(endTime, c.getLatestEndTime());
 		}
-
+		
 		System.out.println("set term postscript eps enhanced");
 		System.out.println("set output \"eep.eps\"");
 		System.out.println("set font \"Helvetica\"");
 		System.out.println("unset key"); 
 		System.out.println("set xlabel \"Time (s)\"");
-		System.out.println("set ylabel \"Cores\"");
-		System.out.println("set size 2.5, 1.0"); 
-		System.out.println("set style line 1 lt 4 lw 0.5");
-		System.out.println("set style line 2 lt 1 lw 2");
+		System.out.println("set ylabel \"Clusters\"");
+		System.out.println("set size 2.0, 0.8"); 
+		System.out.println("set style line 1 lt 1 lw 1");
+		System.out.println("set style line 2 lt 1 lw 1.5");
+		System.out.println("set style line 3 lt 1 lw 3");
 		System.out.println("set samples 20000");
 		System.out.println("set multiplot");
 
 		int line = 10;
 
+		StringBuilder tmp = new StringBuilder();
+		
 		for (ClusterStatistics c : stats) { 
 
-			line += drawCluster(c, line);
-			line += 20;
+			int add = drawCluster(c, line);
+			
+			if (tmp.length() != 0) { 
+				tmp.append( ", ");
+			}
+			
+			tmp.append("\"" + c.name + "\" " + (line + add / 2));			
+			line += add + 20;
 		}
 
-		line += 20;
-
+		System.out.println("set ytics (" + tmp.toString() + ")");
 		
 		/*
 		for (Long job : jobs) {
@@ -80,15 +89,29 @@ public class ShowWorkGNUPlot {
 			}*/
 		// }
 		
+		/*
 		for (int i=0;i<ccount;i++) { 
 			System.out.println("plot [0:" + (jobEndTime+100) + "][0:" + line + "] c" 
 					+ i + "(x) w l ls 1");
 		}
+		*/
 		
 		for (int i=0;i<tcount;i++) { 
-			System.out.println("plot [0:" + (jobEndTime+100) + "][0:" + line + "] t" 
+			System.out.println("plot [0:" + appEndTime + "][0:" + line + "] t" 
 					+ i + "(x) w l ls 2");
 		}
+		
+		for (int i=0;i<lcount;i++) { 
+			System.out.println("plot [0:" + appEndTime + "][0:" + line + "] l" 
+					+ i + "(x) w l ls 1");
+		}
+		
+		System.out.println("set parametric");
+		System.out.println("const=" + jobEndTime);
+		System.out.println("set trange[" + 10 + ":" + (line-20) + "]");
+		System.out.println("set xrange[0:" + appEndTime + "]");
+		System.out.println("set yrange[0:" + line + "]");
+		System.out.println("plot const,t lt 3");		
 	}
 
 	private int drawNodeMC(int cores, NodeStatistics n, final int line) { 
@@ -98,7 +121,7 @@ public class ShowWorkGNUPlot {
 		int start = (int) n.getEarliestStartTime();
 		int end = (int) n.getLatestEndTime();
 
-		System.out.print("t" + n.node + "(x) = "); 
+		System.out.print("t" + (tcount++) + "(x) = "); 
 		
 		for (NodeStatistics.Event e : n.events) { 
 
@@ -132,9 +155,13 @@ public class ShowWorkGNUPlot {
 */
 			}
 			
-			System.out.println(" 1/0 ");
 		}
 
+		System.out.println(" 1/0 ");
+		
+		System.out.println("c" + ccount++ + "(x) = " + start + "<=x && x<=" 
+				+ end + " ? " + (myLine+(cores/2.0)) + " : 1/0");
+		
 		myLine += cores;
 
 		return (myLine - line);	
@@ -231,8 +258,10 @@ public class ShowWorkGNUPlot {
 			 */
 		}
 	
+		/*
 		System.out.println("c" + ccount++ + "(x) = " + start + "<=x && x<=" 
 				+ end + " ? " + (myLine+(cores/2.0)) + " : 1/0");
+		*/
 		
 		for (int i=0;i<cores;i++) { 
 		//	System.out.println("c" + ccount++ + "(x) = " + start + "<=x && x<=" 
@@ -252,6 +281,8 @@ public class ShowWorkGNUPlot {
 
 		int myLine = line;
 
+		System.out.println("l" + lcount++ + "(x) = " + myLine++);
+		
 		for (NodeStatistics n : c.nodes) { 
 
 			if (c.runMultiCore) { 
@@ -259,10 +290,15 @@ public class ShowWorkGNUPlot {
 				myLine +=4;
 			} else { 
 				myLine += drawNodeSC(c.cores, n, myLine);
-				myLine +=4;
+			//	myLine +=4;
 			}
 		}
 
+		System.out.println("l" + lcount++ + "(x) = " + myLine++);
+
+		
+		
+		
 		return (myLine - line);
 	}
 
