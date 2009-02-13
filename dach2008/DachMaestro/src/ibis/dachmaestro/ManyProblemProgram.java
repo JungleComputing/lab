@@ -1,8 +1,8 @@
 package ibis.dachmaestro;
 
-import ibis.maestro.Job;
 import ibis.maestro.JobCompletionListener;
 import ibis.maestro.JobList;
+import ibis.maestro.JobSequence;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
 import ibis.maestro.Utils;
@@ -163,12 +163,10 @@ public class ManyProblemProgram {
             File problemsDir = new File( problemsDirName );
 
             JobList jobs = new JobList();
-            Job job = jobs.createJob(
-                "comparison",
+            JobSequence job = jobs.createJobSequence(
                 new FileComparatorTask( command )
             );
-            Job problemSetJob = jobs.createJob(
-                "run problem set",
+            JobSequence problemSetJob = jobs.createJobSequence(
                 new ProblemSetTask( job, oracleHome, problemsDir, verbose )
             );
             Listener listener = new Listener();
@@ -200,7 +198,7 @@ public class ManyProblemProgram {
                 if( goodToSubmit ) {
                     for( String problem: problems ) {
                         Label label = listener.getLabel();
-                        problemSetJob.submit( node, problem, label, listener );
+                        node.submit( problem, label, true, listener, problemSetJob );
                         labels.add( label );
                     }
                     listener.setFinished();
@@ -218,7 +216,7 @@ public class ManyProblemProgram {
                 System.out.println( label + "->" + res );
             }
             long stopTime = System.nanoTime();
-            System.out.println( "Duration of this run: " + Utils.formatNanoseconds( stopTime-startTime ) );
+            System.out.println( "Duration of this run: " + Utils.formatSeconds( 1e-9*(stopTime-startTime) ) );
         }
         catch (Exception x) {
             System.out.println( "main(): caught exception:" + x );

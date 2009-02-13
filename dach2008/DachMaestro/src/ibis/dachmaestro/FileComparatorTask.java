@@ -1,21 +1,18 @@
 package ibis.dachmaestro;
 
+import ibis.maestro.JobFailedException;
+import ibis.maestro.UnpredictableAtomicJob;
+import ibis.util.RunProcess;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import ibis.maestro.AtomicTask;
-import ibis.maestro.Node;
-import ibis.maestro.Utils;
-import ibis.maestro.TaskFailedException;
-import ibis.maestro.UnpredictableAtomicTask;
-import ibis.util.RunProcess;
 
 /**
  * This class implements a divide-and-conquer parallel comparator for a given list of image pairs.
  * @author Kees van Reeuwijk
  *
  */
-public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
+public class FileComparatorTask implements UnpredictableAtomicJob
 {
     /** Contractual obligation. */
     private static final long serialVersionUID = -858338988356512054L;
@@ -23,24 +20,14 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
     private static final long BENCHMARK_MULTIPLIER = 10;
     private final SimpleDateFormat dateFormat = new SimpleDateFormat( "yyyy-MM-dd'T'HH:mm:ss.SSSZ" );
 
-    /**
-     * Returns the name of this task.
-     * @return The name.
-     */
-    @Override
-    public String getName()
-    {
-        return "Compare files";
-    }
-
     FileComparatorTask( String exec ) throws Exception
     {
         this.exec = exec;
     }
 
-    private Result compare( FilePair pair, Node node ) throws TaskFailedException 
+    private Result compare( FilePair pair ) throws JobFailedException 
     {
-        node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
+        //node.reportProgress( "Comparing files '" + pair.before + "' and '" + pair.after + "'" );
         synchronized( this ) {
             System.out.print( "STARTTIME " );
             System.out.print( pair.label );
@@ -70,13 +57,13 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
                 }
                 cmd += c;
             }
-            throw new TaskFailedException(
+            throw new JobFailedException(
                 "Comparison command '" + cmd + "' failed: stdout: " + new String(p.getStdout())
                 + " stderr: " + new String( p.getStderr() )
             );
         }
 
-        node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatNanoseconds( time ) );
+        //node.reportProgress( "Completed '" + pair.before + "' and '" + pair.after + "' in " + Utils.formatSeconds( 1e-9*time ) );
 
         synchronized( this ) {
             System.out.print( "ENDTIME " );
@@ -111,10 +98,10 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
      * @throws TaskFailedException Thrown if a comparison failed
      */
     @Override
-    public Object run( Object in, Node node ) throws TaskFailedException
+    public Object run( Object in) throws JobFailedException
     {
         FilePair pair = (FilePair) in;
-        return compare( pair, node );
+        return compare( pair );
     }
 
     private static final int BANDS = 3;
@@ -277,7 +264,7 @@ public class FileComparatorTask implements AtomicTask, UnpredictableAtomicTask
      * @return The estimated execution time of a task.
      */
     @Override
-    public long estimateTaskExecutionTime()
+    public double estimateTaskExecutionTime()
     {
         long benchmarkTime = runBenchmark();
         return BENCHMARK_MULTIPLIER*benchmarkTime;

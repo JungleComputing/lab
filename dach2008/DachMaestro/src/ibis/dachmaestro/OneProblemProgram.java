@@ -1,8 +1,8 @@
 package ibis.dachmaestro;
 
-import ibis.maestro.Job;
 import ibis.maestro.JobCompletionListener;
 import ibis.maestro.JobList;
+import ibis.maestro.JobSequence;
 import ibis.maestro.LabelTracker;
 import ibis.maestro.Node;
 import ibis.maestro.Utils;
@@ -116,7 +116,7 @@ public class OneProblemProgram
                     }
                     writeSeparateResultFile( node, result.result, result.pair.label );
                     returnedPairs++;
-                    node.reportProgress( "Problem " + label + " took " + Utils.formatNanoseconds( result.computeTime ) );
+                    node.reportProgress( "Problem " + label + " took " + Utils.formatSeconds( 1e-9*result.computeTime ) );
                 }
             }
             else {
@@ -140,7 +140,7 @@ public class OneProblemProgram
             }
         }
 
-        Object getLabel() {
+        Label getLabel() {
             return labelTracker.nextLabel();
         }
 
@@ -162,7 +162,7 @@ public class OneProblemProgram
         return cmd;
     }
 
-    private static boolean submitProblem( Node node, String problem, File problemsDir, Job compareJob, boolean verbose, Listener listener )
+    private static boolean submitProblem( Node node, String problem, File problemsDir, JobSequence compareJob, boolean verbose, Listener listener )
     {
         String problemSet = problem;
 
@@ -225,8 +225,8 @@ public class OneProblemProgram
 
         while( !pairs.isEmpty() ) {
             FilePair pair = pairs.remove();
-            Object label = listener.getLabel();
-            compareJob.submit( node, pair, label, listener );
+            Label label = listener.getLabel();
+            node.submit( pair, label, true, listener, compareJob );
 	    System.out.println( "PAIRSIZE " + pair.label + " " + pair.totalLength() );
             submittedPairs++;
         }
@@ -305,8 +305,7 @@ public class OneProblemProgram
             }
 
             JobList jobs = new JobList();
-            Job job = jobs.createJob(
-                "comparison",
+            JobSequence job = jobs.createJobSequence(
                 new FileComparatorTask( command )
             );
             Listener listener = new Listener();
@@ -341,7 +340,7 @@ public class OneProblemProgram
             }
             node.waitToTerminate();
             long stopTime = System.nanoTime();
-            node.reportProgress( "Duration of this run: " + Utils.formatNanoseconds( stopTime-startTime ) );
+            node.reportProgress( "Duration of this run: " + Utils.formatSeconds( 1e-9*(stopTime-startTime) ) );
         }
         catch (Exception x) {
             System.out.println( "main(): caught exception:" + x );

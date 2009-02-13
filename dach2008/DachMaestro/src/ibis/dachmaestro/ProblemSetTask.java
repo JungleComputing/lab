@@ -1,8 +1,8 @@
 package ibis.dachmaestro;
 
-import ibis.maestro.Job;
-import ibis.maestro.MapReduceHandler;
-import ibis.maestro.MapReduceTask;
+import ibis.maestro.JobSequence;
+import ibis.maestro.ParallelJob;
+import ibis.maestro.ParallelJobHandler;
 import ibis.util.RunProcess;
 
 import java.io.File;
@@ -18,10 +18,10 @@ import java.util.Random;
  *
  * @author Kees van Reeuwijk.
  */
-class ProblemSetTask implements MapReduceTask
+class ProblemSetTask implements ParallelJob
 {
     private static final long serialVersionUID = 1L;
-    private final Job compareJob;
+    private final JobSequence compareJob;
     private final File oracleHome;
     private final File problemsDir;
     private File resultFileName = null;
@@ -44,7 +44,7 @@ class ProblemSetTask implements MapReduceTask
         System.out.println( s );
     }
 
-    ProblemSetTask( Job compareJob, File oracleHome, File problemsDir, boolean verbose )
+    ProblemSetTask( JobSequence compareJob, File oracleHome, File problemsDir, boolean verbose )
     {
         this.compareJob = compareJob;
         this.oracleHome = oracleHome;
@@ -93,7 +93,7 @@ class ProblemSetTask implements MapReduceTask
      * @param handler The handler.
      */
     @Override
-    public void map( Object input, MapReduceHandler handler )
+    public void map( Object input, ParallelJobHandler handler )
     {
         String problemSet = (String) input;
 
@@ -151,7 +151,8 @@ class ProblemSetTask implements MapReduceTask
         while( !pairs.isEmpty() ) {
             FilePair pair = pairs.remove();
             pair.serial = serial++;
-            handler.submit( pair, pair.serial, true, compareJob );
+            Integer label = pair.serial;
+            handler.submit( pair, label, true, compareJob );
         }
         submittedPairs = serial;
     }
@@ -186,16 +187,6 @@ class ProblemSetTask implements MapReduceTask
         resultFile.append( result.result );
         returnedPairs++;
         System.out.println( "I now have " + returnedPairs + " of " + submittedPairs + " solutions" );
-    }
-
-    /**
-     * Returns the name of this task.
-     * @return The name of  this task.
-     */
-    @Override
-    public String getName()
-    {
-        return "Problem set";
     }
 
     /** Returns true iff this context can support this task.
